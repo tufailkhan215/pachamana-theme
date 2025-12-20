@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "sections": {
+      "section-header": {
+        "type": "section-header",
+        "blocks": {
+          "social_icon_jKqP9p": {
+            "type": "social_icon",
+            "settings": {
+              "icon": "instagram",
+              "url": "#"
+            }
+          },
+          "social_icon_rVbADt": {
+            "type": "social_icon",
+            "settings": {
+              "icon": "account",
+              "url": "#"
+            }
+          },
+          "social_icon_cpRHMV": {
+            "type": "social_icon",
+            "settings": {
+              "icon": "email",
+              "url": "#"
+            }
+          }
+        },
+        "block_order": [
+          "social_icon_jKqP9p",
+          "social_icon_rVbADt",
+          "social_icon_cpRHMV"
+        ],
+        "settings": {
+          "logo": "shopify://shop_images/PACHA-MANA-STACKED-LOCKUP.svg",
+          "menu": "main-menu",
+          "show_cart_icon": true
+        }
+      },
+      "section-footer": {
+        "type": "section-footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
+}

@@ -1,34 +1,94 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "section-background-motion": {
-      "type": "section-background-motion"
+      "type": "section-background-motion",
+      "settings": {
+        "image": "shopify://shop_images/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png",
+        "heading": "ceremony starts at the farm"
+      }
     },
     "section-animatied-title": {
-      "type": "section-animatied-title"
+      "type": "section-animatied-title",
+      "settings": {
+        "prefix_text": "OUR CACAO IS"
+      }
     },
     "section-image-with-text-button": {
-      "type": "section-image-with-text-button"
+      "type": "section-image-with-text-button",
+      "settings": {
+        "heading": "Ceremonial Cacao",
+        "subheading": "A Healing Superfood",
+        "text": "Rich, creamy, and deeply nourishing. Our ceremonial cacao is 100% pure, minimally processed, and packed with mood-boosting compounds to energize your body, open your heart, and elevate your life. Crafted with care by small-scale farmers in Peru who honor the land and the spirit of cacao.",
+        "button_text": "SHOP cacao",
+        "button_url": ""
+      }
     },
     "section-health-benifits": {
-      "type": "section-health-benifits"
+      "type": "section-health-benifits",
+      "settings": {
+        "main_heading": "HEALTH BENEFITS",
+        "main_subheading": "OF ceremonial cacao",
+        "pregnant_heading": "HEALTH BENEFITS",
+        "pregnant_subheading": "For Pregnant Women",
+        "postpartum_heading": "HEALTH BENEFITS",
+        "postpartum_subheading": "For Postpartum Women"
+      }
     },
     "section-featured-products": {
-      "type": "section-featured-products"
+      "type": "section-featured-products",
+      "settings": {
+        "heading": "FEATURED PRODUCTS",
+        "collection": "",
+        "products_to_show": 3
+      }
     },
     "section-text-images-grid": {
-      "type": "section-text-images-grid"
+      "type": "section-text-images-grid",
+      "settings": {
+        "heading": "TYPES OF CACAO",
+        "bottom_heading": "WHY CHUNCHO?",
+        "bottom_description": "<p>Ceremonial Chuncho cacao from Peru embodies the essence of ancient traditions, cultivated by indigenous farmers with reverence for their land. Mainly wild harvested, this exquisite cacao variety boasts a rich cocoa butter content from being grown at higher elevation. It gives subtle notes of Andean fruit, offering a sensory journey steeped with history and authenticity. </p><p>Its origins date back centuries, when it was grown by the Machiguenga indigenous communities in the Amazon basin since pre Inca civilization periods Wild harvested Chuncho cacao ensures the preservation of the biodiverse species of plants in the forests and jungles of Peru.</p>"
+      }
     },
     "section-image-text-dynamicbg": {
-      "type": "section-image-text-dynamicbg"
+      "type": "section-image-text-dynamicbg",
+      "settings": {
+        "heading": "Ceremony starts at the farm",
+        "text": "<p>At Pacha Mana, cacao is not a commodity — it's a sacred relationship. We work directly with a multi-generational, family-run collective in the highlands of Peru who cultivate heirloom Chuncho cacao with devotion and care. Grown in harmony with native species, this cacao preserves both culture and ecosystem.</p><p>We believe true ceremonial cacao begins with integrity — from seed to ceremony.</p>"
+      }
     },
     "section-rescent-articles": {
-      "type": "section-rescent-articles"
+      "type": "section-rescent-articles",
+      "settings": {
+        "heading": "RECENT ARTICLES",
+        "article_1_title": "",
+        "article_1_url": "",
+        "article_2_title": "",
+        "article_2_url": "",
+        "article_3_title": "",
+        "article_3_url": ""
+      }
     },
     "section-photo-gallery": {
-      "type": "section-photo-gallery"
+      "type": "section-photo-gallery",
+      "settings": {
+        "heading": "PHOTO GALLERY"
+      }
     },
     "section-faq": {
-      "type": "section-faq"
+      "type": "section-faq",
+      "settings": {
+        "heading": "Frequently asked questions"
+      }
     }
   },
   "order": [
