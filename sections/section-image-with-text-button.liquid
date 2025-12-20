@@ -1,11 +1,72 @@
-{%- if section.settings.background_image != blank -%}
 <style>
+  /* Section: Image With Text Button - Background image */
+  {%- if section.settings.background_image != blank -%}
   .section-image-with-text-button.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
-  .section-image-with-text-button.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  .section-image-with-text-button.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+  .elementor-63 .elementor-element.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
+  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+  .elementor-element[data-id="730fa71d"]:not(.elementor-motion-effects-element-type-background),
+  .elementor-element[data-id="730fa71d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+  {%- else -%}
+  .elementor-63 .elementor-element.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
+  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+  .elementor-element[data-id="730fa71d"]:not(.elementor-motion-effects-element-type-background),
+  .elementor-element[data-id="730fa71d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url('{{ "light-gold-fabric.png" | asset_url }}') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+  {%- endif -%}
+  
+  /* Section: Image With Text Button - ::before pseudo-element with cacao-fruit-isolated.png */
+  .elementor-63 .elementor-element.elementor-element-730fa71d::before,
+  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-background-video-container::before,
+  .elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-background-video-container::before,
+  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-background-slideshow::before,
+  .elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-background-slideshow::before,
+  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer::before,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d::before,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-background-video-container::before,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-background-video-container::before,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-background-slideshow::before,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-background-slideshow::before,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer::before,
+  .section-image-with-text-button.elementor-element-730fa71d::before,
+  .section-image-with-text-button.elementor-element-730fa71d > .elementor-background-video-container::before,
+  .section-image-with-text-button.elementor-element-730fa71d > .e-con-inner > .elementor-background-video-container::before,
+  .section-image-with-text-button.elementor-element-730fa71d > .elementor-background-slideshow::before,
+  .section-image-with-text-button.elementor-element-730fa71d > .e-con-inner > .elementor-background-slideshow::before,
+  .section-image-with-text-button.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer::before,
+  .elementor-element[data-id="730fa71d"]::before,
+  .elementor-element[data-id="730fa71d"] > .elementor-background-video-container::before,
+  .elementor-element[data-id="730fa71d"] > .e-con-inner > .elementor-background-video-container::before,
+  .elementor-element[data-id="730fa71d"] > .elementor-background-slideshow::before,
+  .elementor-element[data-id="730fa71d"] > .e-con-inner > .elementor-background-slideshow::before,
+  .elementor-element[data-id="730fa71d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer::before {
+    background-image: url('{{ "cacao-fruit-isolated.png" | asset_url }}') !important;
+    --background-overlay: '';
+    background-position: center left !important;
+    background-repeat: no-repeat !important;
+    background-size: 50% auto !important;
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
   }
 </style>
-{%- endif -%}
 <div class="plus_row_scroll_overflow elementor-element elementor-element-730fa71d e-flex e-con-boxed e-con e-parent section-image-with-text-button{% if section.settings.background_image != blank %} e-lazyloaded{% endif %}" data-id="730fa71d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;}">
 					<div class="e-con-inner">
 				<div class="elementor-shape elementor-shape-top" aria-hidden="true" data-negative="false">
