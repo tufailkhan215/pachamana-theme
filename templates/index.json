@@ -9,6 +9,14 @@
  */
 {
   "sections": {
+    "section_background_motion_MLrtBM": {
+      "type": "section-background-motion",
+      "name": "Background Motion",
+      "settings": {
+        "image": "shopify://shop_images/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png",
+        "heading": "ceremony starts at the farm"
+      }
+    },
     "section-background-motion": {
       "type": "section-background-motion",
       "settings": {
@@ -214,6 +222,7 @@
     }
   },
   "order": [
+    "section_background_motion_MLrtBM",
     "section-background-motion",
     "section-animatied-title",
     "section-image-with-text-button",
