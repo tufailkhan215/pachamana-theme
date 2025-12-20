@@ -80,6 +80,73 @@
     },
     "section-photo-gallery": {
       "type": "section-photo-gallery",
+      "blocks": {
+        "gallery_image_txbiWc": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/2-2.png"
+          }
+        },
+        "gallery_image_GgTbbt": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-25.jpg"
+          }
+        },
+        "gallery_image_ypdX4k": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/2-2.png"
+          }
+        },
+        "gallery_image_wYz8fM": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg"
+          }
+        },
+        "gallery_image_kTLi9R": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/2-2.png"
+          }
+        },
+        "gallery_image_GFjTL8": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-25.jpg"
+          }
+        },
+        "gallery_image_VrRhnP": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg"
+          }
+        },
+        "gallery_image_UBjLBh": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/2-2.png"
+          }
+        },
+        "gallery_image_C3rX4m": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_image_txbiWc",
+        "gallery_image_GgTbbt",
+        "gallery_image_ypdX4k",
+        "gallery_image_wYz8fM",
+        "gallery_image_kTLi9R",
+        "gallery_image_GFjTL8",
+        "gallery_image_VrRhnP",
+        "gallery_image_UBjLBh",
+        "gallery_image_C3rX4m"
+      ],
       "settings": {
         "heading": "PHOTO GALLERY"
       }
