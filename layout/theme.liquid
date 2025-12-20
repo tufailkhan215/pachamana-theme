@@ -549,106 +549,182 @@
     (function() {
       'use strict';
       
-      // Initialize Elementor animations
-      function initElementorAnimations() {
-        // Remove elementor-invisible class and trigger animations
-        var invisibleElements = document.querySelectorAll('.elementor-invisible');
+      // Track which elements have been animated to prevent re-animation
+      var animatedElements = new Set();
+      
+      // Trigger animation for an element
+      function triggerAnimation(el, animation, delay) {
+        // Skip if already animated
+        if (animatedElements.has(el)) {
+          return;
+        }
         
-        invisibleElements.forEach(function(el, index) {
-          // Get animation settings from data attribute
-          var settings = el.getAttribute('data-settings');
-          var animation = 'fadeIn'; // default
-          var delay = 0;
+        animatedElements.add(el);
+        
+        setTimeout(function() {
+          // Remove invisible class
+          el.classList.remove('elementor-invisible');
           
-          if (settings) {
-            try {
-              var parsed = JSON.parse(settings);
-              if (parsed._animation) {
-                animation = parsed._animation;
-              } else if (parsed.animation) {
-                animation = parsed.animation;
-              }
-              if (parsed._animation_delay) {
-                delay = parseInt(parsed._animation_delay) || 0;
-              } else if (parsed.animation_delay) {
-                delay = parseInt(parsed.animation_delay) || 0;
-              }
-            } catch(e) {
-              // If parsing fails, use defaults
+          // Add animation class if not already present
+          if (animation && animation !== 'none') {
+            var animationClass = 'elementor-animation-' + animation;
+            if (!el.classList.contains(animationClass)) {
+              el.classList.add(animationClass);
             }
           }
           
-          // Calculate delay: base delay + animation delay + staggered delay
-          var totalDelay = delay + (index * 100);
-          
-          setTimeout(function() {
-            // Remove invisible class
-            el.classList.remove('elementor-invisible');
-            
-            // Add animation class if not already present
-            if (animation && animation !== 'none') {
-              var animationClass = 'elementor-animation-' + animation;
-              if (!el.classList.contains(animationClass)) {
-                el.classList.add(animationClass);
-              }
-            }
-            
-            // Trigger reflow to ensure animation starts
-            el.offsetHeight;
-          }, totalDelay);
-        });
-        
-        // Also handle elements with animation in data-settings but no elementor-invisible class
-        var elementsWithAnimation = document.querySelectorAll('[data-settings*="animation"]');
-        elementsWithAnimation.forEach(function(el) {
-          if (!el.classList.contains('elementor-invisible')) {
+          // Trigger reflow to ensure animation starts
+          el.offsetHeight;
+        }, delay || 0);
+      }
+      
+      // Initialize Elementor animations with Intersection Observer (scroll-triggered)
+      function initElementorAnimations() {
+        // Check if Intersection Observer is supported
+        if (typeof IntersectionObserver === 'undefined') {
+          // Fallback: animate all elements immediately
+          var invisibleElements = document.querySelectorAll('.elementor-invisible');
+          invisibleElements.forEach(function(el, index) {
             var settings = el.getAttribute('data-settings');
+            var animation = 'fadeIn';
+            var delay = 0;
+            
             if (settings) {
               try {
                 var parsed = JSON.parse(settings);
-                var animation = parsed.animation || parsed._animation;
-                if (animation && animation !== 'none') {
-                  var animationClass = 'elementor-animation-' + animation;
-                  if (!el.classList.contains(animationClass)) {
-                    setTimeout(function() {
-                      el.classList.add(animationClass);
-                      el.offsetHeight;
-                    }, 100);
-                  }
-                }
-              } catch(e) {
-                // Ignore parse errors
-              }
+                animation = parsed._animation || parsed.animation || 'fadeIn';
+                delay = parseInt(parsed._animation_delay || parsed.animation_delay || 0);
+              } catch(e) {}
             }
+            
+            triggerAnimation(el, animation, delay + (index * 100));
+          });
+          return;
+        }
+        
+        // Use Intersection Observer for scroll-triggered animations
+        var observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1 // Trigger when 10% of element is visible
+        };
+        
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var settings = el.getAttribute('data-settings');
+              var animation = 'fadeIn';
+              var delay = 0;
+              
+              if (settings) {
+                try {
+                  var parsed = JSON.parse(settings);
+                  animation = parsed._animation || parsed.animation || 'fadeIn';
+                  delay = parseInt(parsed._animation_delay || parsed.animation_delay || 0);
+                } catch(e) {}
+              }
+              
+              triggerAnimation(el, animation, delay);
+              
+              // Stop observing once animated
+              observer.unobserve(el);
+            }
+          });
+        }, observerOptions);
+        
+        // Observe all invisible elements
+        var invisibleElements = document.querySelectorAll('.elementor-invisible');
+        invisibleElements.forEach(function(el) {
+          observer.observe(el);
+        });
+        
+        // Also observe elements with animation but no invisible class
+        var elementsWithAnimation = document.querySelectorAll('[data-settings*="animation"]:not(.elementor-invisible)');
+        elementsWithAnimation.forEach(function(el) {
+          if (!animatedElements.has(el)) {
+            observer.observe(el);
           }
         });
+        
+        // Fallback: If elements are already in viewport, animate them immediately
+        setTimeout(function() {
+          invisibleElements.forEach(function(el) {
+            var rect = el.getBoundingClientRect();
+            var isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+            if (isInViewport && !animatedElements.has(el)) {
+              var settings = el.getAttribute('data-settings');
+              var animation = 'fadeIn';
+              var delay = 0;
+              
+              if (settings) {
+                try {
+                  var parsed = JSON.parse(settings);
+                  animation = parsed._animation || parsed.animation || 'fadeIn';
+                  delay = parseInt(parsed._animation_delay || parsed.animation_delay || 0);
+                } catch(e) {}
+              }
+              
+              triggerAnimation(el, animation, delay);
+              observer.unobserve(el);
+            }
+          });
+        }, 100);
+      }
+      
+      // Also handle Elementor's built-in animation system
+      function initElementorBuiltInAnimations() {
+        if (typeof window.elementorFrontend !== 'undefined' && window.elementorFrontend.hooks) {
+          try {
+            // Trigger Elementor's animation system
+            if (typeof jQuery !== 'undefined') {
+              jQuery(document).trigger('elementor/frontend/init');
+              jQuery(window).trigger('elementor/frontend/init');
+            }
+          } catch(e) {
+            // Silently fail
+          }
+        }
       }
       
       // Initialize on DOM ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
           setTimeout(initElementorAnimations, 100);
+          setTimeout(initElementorBuiltInAnimations, 300);
           setTimeout(initElementorAnimations, 500);
-          setTimeout(initElementorAnimations, 1000);
         });
       } else {
         setTimeout(initElementorAnimations, 100);
+        setTimeout(initElementorBuiltInAnimations, 300);
         setTimeout(initElementorAnimations, 500);
-        setTimeout(initElementorAnimations, 1000);
       }
       
       // Also initialize after window load
       window.addEventListener('load', function() {
-        setTimeout(initElementorAnimations, 500);
+        setTimeout(initElementorAnimations, 200);
+        setTimeout(initElementorBuiltInAnimations, 400);
       });
       
-      // Fallback: Remove all invisible classes after 3 seconds
+      // Initialize after Elementor frontend is ready
+      if (typeof window.elementorFrontend !== 'undefined') {
+        if (typeof jQuery !== 'undefined') {
+          jQuery(document).on('elementor/frontend/init', function() {
+            setTimeout(initElementorAnimations, 100);
+          });
+        }
+      }
+      
+      // Fallback: Remove all invisible classes after 5 seconds (longer for scroll animations)
       setTimeout(function() {
         var allInvisible = document.querySelectorAll('.elementor-invisible');
         allInvisible.forEach(function(el) {
-          el.classList.remove('elementor-invisible');
+          if (!animatedElements.has(el)) {
+            el.classList.remove('elementor-invisible');
+            animatedElements.add(el);
+          }
         });
-      }, 3000);
+      }, 5000);
     })();
   </script>
   
