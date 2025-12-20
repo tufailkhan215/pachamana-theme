@@ -871,6 +871,41 @@
       width: 100%;
     }
     
+    /* Section: Animated Title - Background color and layout */
+    .elementor-element[data-id="e06c22d"]:not(.elementor-motion-effects-element-type-background),
+    .elementor-element[data-id="e06c22d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-color: var(--e-global-color-text) !important;
+      min-height: 141px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    /* Animated Headline Widget Styling */
+    .elementor-element[data-id="149562b"] .elementor-headline {
+      text-align: center;
+      font-family: "OAXACA", Sans-serif;
+    }
+    
+    .elementor-element[data-id="149562b"] .elementor-headline-plain-text {
+      color: var(--e-global-color-secondary);
+    }
+    
+    .elementor-element[data-id="149562b"] .elementor-headline-dynamic-text {
+      font-family: "OAXACA", Sans-serif;
+      color: var(--e-global-color-5abf1e8);
+    }
+    
+    /* Ensure animated headline animation works */
+    .elementor-headline-animation-type-typing .elementor-headline-dynamic-text {
+      display: inline-block;
+    }
+    
+    .elementor-headline-animation-type-typing.elementor-headline-letters .elementor-headline-dynamic-text {
+      display: inline-block;
+    }
+    
     section.section-image-with-text-button,
     .section-image-with-text-button {
       position: relative;
