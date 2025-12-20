@@ -986,10 +986,152 @@
       width: 100%;
     }
     
+    section.section-footer,
+    .section-footer {
+      position: relative;
+      width: 100%;
+    }
+    
+    /* Section: Header - Background and styling */
+    .section-header .elementor-element[data-id="f74e63a"]:not(.elementor-motion-effects-element-type-background),
+    .section-header .elementor-element[data-id="f74e63a"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-image: url("{{ 'peruvian_geometric_textile_pattern_3.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    .section-header .elementor-element[data-id="daad110"]:not(.elementor-motion-effects-element-type-background),
+    .section-header .elementor-element[data-id="daad110"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-color: var(--e-global-color-primary) !important;
+    }
+    
+    /* Section: Background Motion - Ensure animations work */
+    .section-background-motion .elementor-element[data-id="7088e09f"],
+    .section-background-motion .elementor-element[data-id="74ea8331"] {
+      animation-fill-mode: both;
+    }
+    
+    /* Section: Health Benefits - Background color (already set, ensure it applies) */
+    .section-health-benifits .elementor-element[data-id="db83c8e"]::before,
+    .section-health-benifits .elementor-element[data-id="db83c8e"] > .elementor-motion-effects-container > .elementor-motion-effects-layer::before {
+      background-image: url("{{ 'light-gold-fabric.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    /* Section: FAQ - Background and accordion styling */
+    .section-faq .elementor-element[data-id="910c96b"]:not(.elementor-motion-effects-element-type-background),
+    .section-faq .elementor-element[data-id="910c96b"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-image: url("{{ 'chocolate-fabric.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    .section-faq .elementor-element[data-id="cd14646"]::before,
+    .section-faq .elementor-element[data-id="cd14646"] > .elementor-motion-effects-container > .elementor-motion-effects-layer::before {
+      background-image: url("{{ 'gold-fabric.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    /* Ensure FAQ accordion items are visible on load */
+    .section-faq .theplus-accordion-wrapper .theplus-accordion-item .plus-accordion-content.active-default {
+      display: block !important;
+    }
+    
+    .section-faq .theplus-accordion-wrapper .theplus-accordion-item .plus-accordion-header.active-default {
+      color: var(--e-global-color-5abf1e8) !important;
+    }
+    
+    /* Section: Footer - Background */
+    .section-footer .elementor-element[data-id="4d8192a"]:not(.elementor-motion-effects-element-type-background),
+    .section-footer .elementor-element[data-id="4d8192a"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-image: url("{{ 'peruvian_geometric_textile_pattern_3.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
     /* Ensure elementor-invisible elements are hidden initially */
     .elementor-invisible {
       visibility: hidden;
       opacity: 0;
+    }
+    
+    .elementor-invisible.elementor-animation-fadeIn,
+    .elementor-invisible.elementor-animation-slideInDown,
+    .elementor-invisible.elementor-animation-zoomIn,
+    .elementor-invisible.elementor-animation-zoomInDown,
+    .elementor-invisible.elementor-animation-tada {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Animation keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+      to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    
+    @keyframes zoomInDown {
+      from {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+      60% {
+        opacity: 1;
+        transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+      }
+      to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+      }
+    }
+    
+    @keyframes tada {
+      from {
+        transform: scale3d(1, 1, 1);
+      }
+      10%, 20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+      }
+      30%, 50%, 70%, 90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+      }
+      40%, 60%, 80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+      }
+      to {
+        transform: scale3d(1, 1, 1);
+      }
     }
     
     /* Animation classes */
@@ -1006,7 +1148,7 @@
     }
     
     .elementor-animation-zoomInDown {
-      animation: zoomInDown 0.6s ease-in-out forwards;
+      animation: zoomInDown 0.8s ease-in-out forwards;
     }
     
     .elementor-animation-tada {
