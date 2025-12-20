@@ -626,8 +626,16 @@
       'use strict';
       
       // Initialize Elementor Frontend after all scripts load
+      var initAttempts = 0;
+      var maxInitAttempts = 20; // Limit retry attempts
+      var initComplete = false; // Prevent multiple initializations
+      
       function initElementorFrontend() {
-        if (typeof window.elementorFrontend !== 'undefined') {
+        // Prevent multiple initializations
+        if (initComplete) return;
+        
+        // Check if elementorFrontend exists and is not null
+        if (typeof window.elementorFrontend !== 'undefined' && window.elementorFrontend !== null && window.elementorFrontend) {
           try {
             // Initialize Elementor Frontend if not already initialized
             if (window.elementorFrontend.init && typeof window.elementorFrontend.init === 'function') {
@@ -639,15 +647,21 @@
                 try {
                   window.elementorFrontend.init();
                 } catch(e) {
-                  // Already initialized or error
+                  // Already initialized or error - this is fine, don't log
                 }
               }
               // Trigger Elementor initialization events
               if (typeof jQuery !== 'undefined') {
-                jQuery(document).trigger('elementor/frontend/init');
-                jQuery(window).trigger('elementor/frontend/init');
+                try {
+                  jQuery(document).trigger('elementor/frontend/init');
+                  jQuery(window).trigger('elementor/frontend/init');
+                } catch(e) {
+                  // jQuery might not be ready, that's okay
+                }
               }
             }
+            
+            initComplete = true;
             
             // Apply background images and styles
             setTimeout(function() {
@@ -656,16 +670,30 @@
               initMotionEffects();
             }, 500);
           } catch(e) {
-            console.warn('Elementor Frontend initialization error:', e);
+            // Only log if it's a meaningful error (not null reference)
+            if (e && e.message && !e.message.includes('null') && !e.message.includes('Cannot read properties of null')) {
+              console.warn('Elementor Frontend initialization error:', e);
+            }
             // Fallback: apply styles anyway
+            initComplete = true;
             setTimeout(function() {
               applyBackgroundImagesFromCSS();
               applyElementorStyles();
             }, 1000);
           }
         } else {
-          // Elementor not loaded yet, try again
-          setTimeout(initElementorFrontend, 200);
+          // Elementor not loaded yet, try again (with limit)
+          initAttempts++;
+          if (initAttempts < maxInitAttempts) {
+            setTimeout(initElementorFrontend, 200);
+          } else {
+            // After max attempts, just apply styles without Elementor
+            initComplete = true;
+            setTimeout(function() {
+              applyBackgroundImagesFromCSS();
+              applyElementorStyles();
+            }, 500);
+          }
         }
       }
       
