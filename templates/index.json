@@ -17,6 +17,78 @@
         "heading": "ceremony starts at the farm"
       }
     },
+    "section_animatied_title_9PRf4W": {
+      "type": "section-animatied-title",
+      "blocks": {
+        "rotating_text_YBHtiD": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "CEREMONIAL GRADE"
+          }
+        },
+        "rotating_text_fUEWFG": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "Regenerative"
+          }
+        },
+        "rotating_text_Agzyax": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "Heirloom"
+          }
+        },
+        "rotating_text_qwwmCp": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "DIRECT TRADE"
+          }
+        },
+        "rotating_text_tz9peU": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "ORGANIC"
+          }
+        },
+        "rotating_text_qiQKHW": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "HEAVY METAL TESTED"
+          }
+        },
+        "rotating_text_AkiJTc": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "GROWN IN PERU"
+          }
+        }
+      },
+      "block_order": [
+        "rotating_text_YBHtiD",
+        "rotating_text_fUEWFG",
+        "rotating_text_Agzyax",
+        "rotating_text_qwwmCp",
+        "rotating_text_tz9peU",
+        "rotating_text_qiQKHW",
+        "rotating_text_AkiJTc"
+      ],
+      "name": "Animated Title",
+      "settings": {
+        "prefix_text": "OUR CACAO IS"
+      }
+    },
+    "section_image_with_text_button_KL8gxF": {
+      "type": "section-image-with-text-button",
+      "name": "Image With Text Button",
+      "settings": {
+        "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg",
+        "heading": "Ceremonial Cacao",
+        "subheading": "A Healing Superfood",
+        "text": "Rich, creamy, and deeply nourishing. Our ceremonial cacao is 100% pure, minimally processed, and packed with mood-boosting compounds to energize your body, open your heart, and elevate your life. Crafted with care by small-scale farmers in Peru who honor the land and the spirit of cacao.",
+        "button_text": "SHOP cacao",
+        "button_url": "#"
+      }
+    },
     "section-background-motion": {
       "type": "section-background-motion",
       "settings": {
@@ -223,6 +295,8 @@
   },
   "order": [
     "section_background_motion_MLrtBM",
+    "section_animatied_title_9PRf4W",
+    "section_image_with_text_button_KL8gxF",
     "section-background-motion",
     "section-animatied-title",
     "section-image-with-text-button",
