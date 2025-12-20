@@ -89,29 +89,6 @@
         "button_url": "#"
       }
     },
-    "section-background-motion": {
-      "type": "section-background-motion",
-      "settings": {
-        "image": "shopify://shop_images/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png",
-        "heading": "ceremony starts at the farm"
-      }
-    },
-    "section-animatied-title": {
-      "type": "section-animatied-title",
-      "settings": {
-        "prefix_text": "OUR CACAO IS"
-      }
-    },
-    "section-image-with-text-button": {
-      "type": "section-image-with-text-button",
-      "settings": {
-        "heading": "Ceremonial Cacao",
-        "subheading": "A Healing Superfood",
-        "text": "Rich, creamy, and deeply nourishing. Our ceremonial cacao is 100% pure, minimally processed, and packed with mood-boosting compounds to energize your body, open your heart, and elevate your life. Crafted with care by small-scale farmers in Peru who honor the land and the spirit of cacao.",
-        "button_text": "SHOP cacao",
-        "button_url": ""
-      }
-    },
     "section-health-benifits": {
       "type": "section-health-benifits",
       "settings": {
@@ -297,9 +274,6 @@
     "section_background_motion_MLrtBM",
     "section_animatied_title_9PRf4W",
     "section_image_with_text_button_KL8gxF",
-    "section-background-motion",
-    "section-animatied-title",
-    "section-image-with-text-button",
     "section-health-benifits",
     "section-featured-products",
     "section-text-images-grid",
