@@ -701,6 +701,9 @@
               applyElementorStyles();
               initMotionEffects();
             }, 500);
+            
+            // Also initialize motion effects after a delay
+            setTimeout(initMotionEffects, 1000);
           } catch(e) {
             // Only log if it's a meaningful error (not null reference)
             if (e && e.message && !e.message.includes('null') && !e.message.includes('Cannot read properties of null')) {
@@ -711,6 +714,7 @@
             setTimeout(function() {
               applyBackgroundImagesFromCSS();
               applyElementorStyles();
+              initMotionEffects();
             }, 1000);
           }
         } else {
@@ -724,6 +728,7 @@
             setTimeout(function() {
               applyBackgroundImagesFromCSS();
               applyElementorStyles();
+              initMotionEffects();
             }, 500);
           }
         }
@@ -803,16 +808,109 @@
         });
       }
       
-      // Initialize motion effects
+      // Create motion effects container and layer if they don't exist
+      function createMotionEffectsStructure() {
+        var motionElements = document.querySelectorAll('[data-settings*="motion_fx"]');
+        motionElements.forEach(function(el) {
+          // Check if motion effects container already exists
+          var container = el.querySelector('.elementor-motion-effects-container');
+          if (!container) {
+            // Create container
+            container = document.createElement('div');
+            container.className = 'elementor-motion-effects-container';
+            container.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;';
+            
+            // Create layer
+            var layer = document.createElement('div');
+            layer.className = 'elementor-motion-effects-layer';
+            layer.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat;';
+            
+            container.appendChild(layer);
+            
+            // Ensure parent has relative positioning
+            var computedStyle = window.getComputedStyle(el);
+            if (computedStyle.position === 'static') {
+              el.style.position = 'relative';
+            }
+            
+            // Insert container as first child
+            if (el.firstChild) {
+              el.insertBefore(container, el.firstChild);
+            } else {
+              el.appendChild(container);
+            }
+            
+            // Copy background image to layer if it exists on the element
+            var bgImage = computedStyle.backgroundImage;
+            if (bgImage && bgImage !== 'none') {
+              layer.style.backgroundImage = bgImage;
+              layer.style.backgroundSize = computedStyle.backgroundSize || 'cover';
+              layer.style.backgroundPosition = computedStyle.backgroundPosition || 'center center';
+              layer.style.backgroundRepeat = computedStyle.backgroundRepeat || 'no-repeat';
+            }
+          }
+        });
+      }
+      
+      // Initialize motion effects with mouse tracking
       function initMotionEffects() {
+        // First, create the structure
+        createMotionEffectsStructure();
+        
+        // Then initialize mouse tracking
+        var motionElements = document.querySelectorAll('[data-settings*="motion_fx"]');
+        motionElements.forEach(function(el) {
+          try {
+            var settings = el.getAttribute('data-settings');
+            if (settings) {
+              var parsed = JSON.parse(settings);
+              // Check if mouse tracking is enabled
+              if (parsed.background_motion_fx_motion_fx_mouse === 'yes' || 
+                  parsed.background_motion_fx_mouseTrack_effect === 'yes') {
+                
+                var container = el.querySelector('.elementor-motion-effects-container');
+                var layer = el.querySelector('.elementor-motion-effects-layer');
+                
+                if (container && layer) {
+                  // Get speed from settings
+                  var speed = 1.7; // default
+                  if (parsed.background_motion_fx_mouseTrack_speed && 
+                      parsed.background_motion_fx_mouseTrack_speed.size) {
+                    speed = parsed.background_motion_fx_mouseTrack_speed.size;
+                  }
+                  
+                  // Add mouse move event listener
+                  el.addEventListener('mousemove', function(e) {
+                    var rect = el.getBoundingClientRect();
+                    var x = e.clientX - rect.left;
+                    var y = e.clientY - rect.top;
+                    
+                    // Calculate offset based on mouse position and speed
+                    var offsetX = (x - rect.width / 2) * (speed / 100);
+                    var offsetY = (y - rect.height / 2) * (speed / 100);
+                    
+                    // Apply transform to layer
+                    layer.style.transform = 'translate3d(' + offsetX + 'px, ' + offsetY + 'px, 0)';
+                  });
+                  
+                  // Reset on mouse leave
+                  el.addEventListener('mouseleave', function() {
+                    layer.style.transform = 'translate3d(0, 0, 0)';
+                  });
+                }
+              }
+            }
+          } catch(e) {
+            // Silently fail
+          }
+        });
+        
+        // Also try Elementor's built-in motion effects if available
         if (typeof window.elementorFrontend !== 'undefined' && window.elementorFrontend.modules) {
           try {
-            // Try to initialize motion effects module
             if (window.elementorFrontend.modules.motionEffects) {
-              var motionElements = document.querySelectorAll('[data-settings*="motion_fx"]');
               motionElements.forEach(function(el) {
                 try {
-                  // Elementor should handle this, but ensure it's triggered
                   if (typeof jQuery !== 'undefined') {
                     jQuery(el).trigger('elementor/motion-effects/init');
                   }
@@ -884,6 +982,7 @@
         setTimeout(initElementorFrontend, 500);
         setTimeout(applyBackgroundImagesFromCSS, 1000);
         setTimeout(applyElementorStyles, 1500);
+        setTimeout(initMotionEffects, 2000);
       });
     })();
   </script>
