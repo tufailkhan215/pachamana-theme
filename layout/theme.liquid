@@ -605,7 +605,212 @@
     })();
   </script>
   
-  {%- comment -%} CSS Support for Section Tags {%- endcomment -%}
+  {%- comment -%} Elementor Frontend Initialization and Background Image Support {%- endcomment -%}
+  <script>
+    (function() {
+      'use strict';
+      
+      // Initialize Elementor Frontend after all scripts load
+      function initElementorFrontend() {
+        if (typeof window.elementorFrontend !== 'undefined') {
+          try {
+            // Initialize Elementor Frontend if not already initialized
+            if (window.elementorFrontend.init && typeof window.elementorFrontend.init === 'function') {
+              if (!window.elementorFrontend.isEditMode) {
+                if (!window.elementorFrontend.config) {
+                  window.elementorFrontend.config = window.elementorFrontendConfig || {};
+                }
+                // Call init if it hasn't been called
+                try {
+                  window.elementorFrontend.init();
+                } catch(e) {
+                  // Already initialized or error
+                }
+              }
+              // Trigger Elementor initialization events
+              if (typeof jQuery !== 'undefined') {
+                jQuery(document).trigger('elementor/frontend/init');
+                jQuery(window).trigger('elementor/frontend/init');
+              }
+            }
+            
+            // Apply background images and styles
+            setTimeout(function() {
+              applyBackgroundImagesFromCSS();
+              applyElementorStyles();
+              initMotionEffects();
+            }, 500);
+          } catch(e) {
+            console.warn('Elementor Frontend initialization error:', e);
+            // Fallback: apply styles anyway
+            setTimeout(function() {
+              applyBackgroundImagesFromCSS();
+              applyElementorStyles();
+            }, 1000);
+          }
+        } else {
+          // Elementor not loaded yet, try again
+          setTimeout(initElementorFrontend, 200);
+        }
+      }
+      
+      // Apply Elementor styles from data-settings
+      function applyElementorStyles() {
+        var elements = document.querySelectorAll('.elementor-element[data-settings]');
+        elements.forEach(function(el) {
+          try {
+            var settings = el.getAttribute('data-settings');
+            if (settings) {
+              var parsed = JSON.parse(settings);
+              
+              // Apply background styles if present
+              if (parsed.background_background === 'classic' && parsed.background_image) {
+                var bgUrl = parsed.background_image.url;
+                if (bgUrl) {
+                  var motionLayer = el.querySelector('.elementor-motion-effects-layer');
+                  if (motionLayer) {
+                    motionLayer.style.backgroundImage = 'url("' + bgUrl + '")';
+                    motionLayer.style.backgroundSize = 'cover';
+                    motionLayer.style.backgroundPosition = 'center center';
+                  } else {
+                    el.style.backgroundImage = 'url("' + bgUrl + '")';
+                    el.style.backgroundSize = 'cover';
+                    el.style.backgroundPosition = 'center center';
+                  }
+                }
+              }
+            }
+          } catch(e) {
+            // Skip if parsing fails
+          }
+        });
+      }
+      
+      // Apply background images from CSS files - ensure they're visible
+      function applyBackgroundImagesFromCSS() {
+        // Ensure motion effects containers and layers exist
+        var elementsWithMotion = document.querySelectorAll('.elementor-element[data-settings*="motion_fx"], .elementor-element[data-id="f74e63a"], .elementor-element[data-id="4d8192a"], .elementor-element[data-id="13691562"]');
+        
+        elementsWithMotion.forEach(function(el) {
+          // Create motion effects container if it doesn't exist
+          var motionContainer = el.querySelector('.elementor-motion-effects-container');
+          if (!motionContainer && el.hasAttribute('data-settings')) {
+            try {
+              var settings = JSON.parse(el.getAttribute('data-settings'));
+              if (settings.background_motion_fx_motion_fx_mouse || settings.background_background === 'classic') {
+                motionContainer = document.createElement('div');
+                motionContainer.className = 'elementor-motion-effects-container';
+                el.style.position = 'relative';
+                el.insertBefore(motionContainer, el.firstChild);
+                
+                var motionLayer = document.createElement('div');
+                motionLayer.className = 'elementor-motion-effects-layer';
+                motionContainer.appendChild(motionLayer);
+              }
+            } catch(e) {
+              // Skip if parsing fails
+            }
+          }
+          
+          // Ensure background images from CSS are applied
+          var computedStyle = window.getComputedStyle(el);
+          var bgImage = computedStyle.backgroundImage;
+          
+          if (bgImage && bgImage !== 'none' && bgImage !== '') {
+            var motionLayer = el.querySelector('.elementor-motion-effects-layer');
+            if (motionLayer) {
+              motionLayer.style.backgroundImage = bgImage;
+              motionLayer.style.backgroundSize = computedStyle.backgroundSize || 'cover';
+              motionLayer.style.backgroundPosition = computedStyle.backgroundPosition || 'center center';
+              motionLayer.style.backgroundRepeat = computedStyle.backgroundRepeat || 'no-repeat';
+            }
+          }
+        });
+      }
+      
+      // Initialize motion effects
+      function initMotionEffects() {
+        if (typeof window.elementorFrontend !== 'undefined' && window.elementorFrontend.modules) {
+          try {
+            // Try to initialize motion effects module
+            if (window.elementorFrontend.modules.motionEffects) {
+              var motionElements = document.querySelectorAll('[data-settings*="motion_fx"]');
+              motionElements.forEach(function(el) {
+                try {
+                  // Elementor should handle this, but ensure it's triggered
+                  if (typeof jQuery !== 'undefined') {
+                    jQuery(el).trigger('elementor/motion-effects/init');
+                  }
+                } catch(e) {
+                  // Silently fail
+                }
+              });
+            }
+          } catch(e) {
+            // Motion effects not available
+          }
+        }
+      }
+      
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(initElementorFrontend, 300);
+          setTimeout(initElementorFrontend, 1000);
+        });
+      } else {
+        setTimeout(initElementorFrontend, 300);
+        setTimeout(initElementorFrontend, 1000);
+      }
+      
+      // Ensure Elementor parent classes exist for CSS selectors
+      function ensureElementorClasses() {
+        // Header should have elementor-57 class
+        var header = document.querySelector('.section-header, header.section-header');
+        if (header && !header.classList.contains('elementor-57')) {
+          header.classList.add('elementor', 'elementor-57', 'elementor-location-header');
+        }
+        
+        // Footer should have elementor-191 class
+        var footer = document.querySelector('.section-footer, footer.section-footer');
+        if (footer && !footer.classList.contains('elementor-191')) {
+          footer.classList.add('elementor', 'elementor-191', 'elementor-location-footer');
+        }
+        
+        // Background motion section should have elementor-63 context
+        var bgMotion = document.querySelector('.section-background-motion');
+        if (bgMotion && !bgMotion.closest('.elementor-63')) {
+          var parent = bgMotion.closest('section, div');
+          if (parent) {
+            parent.classList.add('elementor', 'elementor-63');
+          }
+        }
+      }
+      
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          ensureElementorClasses();
+          setTimeout(initElementorFrontend, 300);
+          setTimeout(initElementorFrontend, 1000);
+        });
+      } else {
+        ensureElementorClasses();
+        setTimeout(initElementorFrontend, 300);
+        setTimeout(initElementorFrontend, 1000);
+      }
+      
+      // Also initialize after window load
+      window.addEventListener('load', function() {
+        ensureElementorClasses();
+        setTimeout(initElementorFrontend, 500);
+        setTimeout(applyBackgroundImagesFromCSS, 1000);
+        setTimeout(applyElementorStyles, 1500);
+      });
+    })();
+  </script>
+  
+  {%- comment -%} CSS Support for Section Tags and Background Images {%- endcomment -%}
   <style>
     /* Ensure section classes work with both section tags and divs */
     section.section-background-motion,
@@ -693,6 +898,74 @@
     
     .elementor-animation-tada {
       animation: tada 1s ease-in-out forwards;
+    }
+    
+    /* Direct background image support - Target elements by data-id since parent elementor classes may not exist */
+    .elementor-element[data-id="f74e63a"]:not(.elementor-motion-effects-element-type-background),
+    .elementor-element[data-id="f74e63a"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-image: url("{{ 'peruvian_geometric_textile_pattern_3.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    .elementor-element[data-id="4d8192a"]:not(.elementor-motion-effects-element-type-background),
+    .elementor-element[data-id="4d8192a"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-image: url("{{ 'peruvian_geometric_textile_pattern_3.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    .elementor-element[data-id="13691562"]:not(.elementor-motion-effects-element-type-background),
+    .elementor-element[data-id="13691562"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-image: url("{{ 'cacao-sheny-leon-photography-maui-78.jpg' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    .elementor-element[data-id="cd87555"]:not(.elementor-motion-effects-element-type-background),
+    .elementor-element[data-id="cd87555"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-image: url("{{ 'light-gold-fabric.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    .elementor-element[data-id="2055cbe7"]:not(.elementor-motion-effects-element-type-background),
+    .elementor-element[data-id="2055cbe7"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+      background-image: url("{{ 'gold-fabric.png' | asset_url }}") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+    }
+    
+    /* Ensure motion effects containers are properly positioned */
+    .elementor-motion-effects-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    
+    .elementor-motion-effects-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    
+    /* Ensure elements with motion effects have relative positioning */
+    .elementor-element[data-settings*="motion_fx"] {
+      position: relative;
     }
   </style>
   
