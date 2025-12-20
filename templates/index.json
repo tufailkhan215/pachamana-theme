@@ -81,6 +81,7 @@
       "type": "section-image-with-text-button",
       "name": "Image With Text Button",
       "settings": {
+        "background_image": "shopify://shop_images/cacao-fruit-isolated.png",
         "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg",
         "heading": "Ceremonial Cacao",
         "subheading": "A Healing Superfood",
