@@ -1063,17 +1063,17 @@
     })();
   </script>
   
-  {%- comment -%} CSS Support for Section Tags and Background Images {%- endcomment -%}
+  {%- comment -%} CSS Support for Section Classes and Background Images {%- endcomment -%}
   <style>
-    /* Ensure section classes work with both section tags and divs */
-    section.section-background-motion,
-    .section-background-motion {
+    /* Sections are now divs to match source HTML structure - CSS targets class directly */
+    .section-background-motion,
+    div.section-background-motion {
       position: relative;
       width: 100%;
     }
     
-    section.section-animatied-title,
-    .section-animatied-title {
+    .section-animatied-title,
+    div.section-animatied-title {
       position: relative;
       width: 100%;
     }
@@ -1113,55 +1113,62 @@
       display: inline-block;
     }
     
-    section.section-image-with-text-button,
-    .section-image-with-text-button {
+    .section-image-with-text-button,
+    div.section-image-with-text-button {
       position: relative;
       width: 100%;
     }
     
-    section.section-health-benifits,
-    .section-health-benifits {
+    .section-health-benifits,
+    div.section-health-benifits {
       position: relative;
       width: 100%;
     }
     
-    section.section-featured-products,
-    .section-featured-products {
+    .section-featured-products,
+    div.section-featured-products {
       position: relative;
       width: 100%;
     }
     
-    section.section-text-images-grid,
-    .section-text-images-grid {
+    .section-text-images-grid,
+    div.section-text-images-grid {
       position: relative;
       width: 100%;
     }
     
-    section.section-image-text-dynamicbg,
-    .section-image-text-dynamicbg {
+    .section-image-text-dynamicbg,
+    div.section-image-text-dynamicbg {
       position: relative;
       width: 100%;
     }
     
-    section.section-rescent-articles,
-    .section-rescent-articles {
+    .section-rescent-articles,
+    div.section-rescent-articles {
       position: relative;
       width: 100%;
     }
     
-    section.section-photo-gallery,
-    .section-photo-gallery {
+    .section-photo-gallery,
+    div.section-photo-gallery {
       position: relative;
       width: 100%;
     }
     
-    section.section-faq,
-    .section-faq {
+    .section-faq,
+    div.section-faq {
       position: relative;
       width: 100%;
     }
     
-    section.section-footer,
+    /* Header and Footer remain as semantic HTML tags */
+    header.section-header,
+    .section-header {
+      position: relative;
+      width: 100%;
+    }
+    
+    footer.section-footer,
     .section-footer {
       position: relative;
       width: 100%;
