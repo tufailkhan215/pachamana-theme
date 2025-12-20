@@ -35,7 +35,7 @@
 															{%- if section.settings.image != blank -%}
 																<img loading="lazy" decoding="async" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" class="attachment-large size-large wp-image-124" alt="{{ section.settings.image.alt | default: section.settings.heading }}" src="{{ section.settings.image | image_url: width: 800 }}" sizes="(max-width: 800px) 100vw, 800px">
 															{%- else -%}
-																<img loading="lazy" decoding="async" width="800" height="534" class="attachment-large size-large wp-image-124" alt="" src="{{ "images/IMG_0666.jpg" | asset_url }}" sizes="(max-width: 800px) 100vw, 800px" onerror="this.style.display='none'">
+																<img loading="lazy" decoding="async" width="800" height="534" class="attachment-large size-large wp-image-124" alt="" src="{{ "IMG_0666.jpg" | asset_url }}" sizes="(max-width: 800px) 100vw, 800px" onerror="this.style.display='none'">
 															{%- endif -%}
 															</div>
 				</div>
@@ -50,7 +50,7 @@
 				</div>
 				<div class="elementor-element elementor-element-b26837d elementor-widget elementor-widget-text-editor" data-id="b26837d" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					{{ section.settings.text | default: '<p>At Pacha Mana, cacao is not a commodity — it\'s a sacred relationship. We work directly with a multi-generational, family-run collective in the highlands of Peru who cultivate heirloom Chuncho cacao with devotion and care. Grown in harmony with native species, this cacao preserves both culture and ecosystem.</p><p>We believe true ceremonial cacao begins with integrity — from seed to ceremony.</p>' }}
+					{{ section.settings.text | default: "<p>At Pacha Mana, cacao is not a commodity — it's a sacred relationship. We work directly with a multi-generational, family-run collective in the highlands of Peru who cultivate heirloom Chuncho cacao with devotion and care. Grown in harmony with native species, this cacao preserves both culture and ecosystem.</p><p>We believe true ceremonial cacao begins with integrity — from seed to ceremony.</p>" }}
 				</div>
 				</div>
 					</div>

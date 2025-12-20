@@ -40,7 +40,7 @@
 					{%- if block.settings.image != blank -%}
 						<img loading="lazy" decoding="async" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" class="attachment-full size-full wp-image-{{ block.id }}" alt="{{ block.settings.image.alt | default: block.settings.title }}" src="{{ block.settings.image | image_url: width: 800 }}" sizes="(max-width: 800px) 100vw, 800px">
 					{%- else -%}
-						<img loading="lazy" decoding="async" width="800" height="1600" class="attachment-full size-full wp-image-{{ block.id }}" alt="{{ block.settings.title }}" src="{{ "images/chuncho.png" | asset_url }}" sizes="(max-width: 800px) 100vw, 800px" onerror="this.style.display='none'">
+						<img loading="lazy" decoding="async" width="800" height="1600" class="attachment-full size-full wp-image-{{ block.id }}" alt="{{ block.settings.title }}" src="{{ "chuncho.png" | asset_url }}" sizes="(max-width: 800px) 100vw, 800px" onerror="this.style.display='none'">
 					{%- endif -%}
 				</div>
 				</div>
