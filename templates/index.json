@@ -269,12 +269,24 @@
       "settings": {
         "heading": "Frequently asked questions"
       }
+    },
+    "section_image_with_text_button_aqRGWn": {
+      "type": "section-image-with-text-button",
+      "name": "Image With Text Button",
+      "settings": {
+        "heading": "Ceremonial Cacao",
+        "subheading": "A Healing Superfood",
+        "text": "Rich, creamy, and deeply nourishing. Our ceremonial cacao is 100% pure, minimally processed, and packed with mood-boosting compounds to energize your body, open your heart, and elevate your life. Crafted with care by small-scale farmers in Peru who honor the land and the spirit of cacao.",
+        "button_text": "SHOP cacao",
+        "button_url": ""
+      }
     }
   },
   "order": [
     "section_background_motion_MLrtBM",
     "section_animatied_title_9PRf4W",
     "section_image_with_text_button_MkW7dz",
+    "section_image_with_text_button_aqRGWn",
     "section-health-benifits",
     "section-featured-products",
     "section-text-images-grid",
