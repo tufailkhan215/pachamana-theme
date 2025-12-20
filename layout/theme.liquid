@@ -195,7 +195,22 @@
   {%- section 'section-header' -%}
 
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-    {{ content_for_layout }}
+    {%- comment -%} Wrap content in Elementor structure to match source HTML {%- endcomment -%}
+    {%- if template.name == 'index' -%}
+      <div data-elementor-type="single-page" data-elementor-id="48" class="elementor elementor-48 elementor-location-single post-63 page type-page status-publish hentry">
+        <div class="plus_row_scroll_overflow elementor-element elementor-element-c259216 e-con-full e-flex e-con e-parent" data-id="c259216" data-element_type="container">
+          <div class="elementor-element elementor-element-73ada70 elementor-widget elementor-widget-theme-post-content" data-id="73ada70" data-element_type="widget" data-widget_type="theme-post-content.default">
+            <div class="elementor-widget-container">
+              <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63">
+                {{ content_for_layout }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- else -%}
+      {{ content_for_layout }}
+    {%- endif -%}
   </main>
 
   {%- section 'section-footer' -%}
@@ -777,13 +792,16 @@
           footer.classList.add('elementor', 'elementor-191', 'elementor-location-footer');
         }
         
-        // Background motion section should have elementor-63 context
-        var bgMotion = document.querySelector('.section-background-motion');
-        if (bgMotion && !bgMotion.closest('.elementor-63')) {
-          var parent = bgMotion.closest('section, div');
-          if (parent) {
-            parent.classList.add('elementor', 'elementor-63');
-          }
+        // Main content wrapper should have elementor-48 and elementor-63 classes
+        // These are now added in the HTML structure, but verify they exist
+        var elementor48 = document.querySelector('[data-elementor-id="48"]');
+        if (elementor48 && !elementor48.classList.contains('elementor-48')) {
+          elementor48.classList.add('elementor', 'elementor-48', 'elementor-location-single', 'post-63', 'page', 'type-page', 'status-publish', 'hentry');
+        }
+        
+        var elementor63 = document.querySelector('[data-elementor-id="63"]');
+        if (elementor63 && !elementor63.classList.contains('elementor-63')) {
+          elementor63.classList.add('elementor', 'elementor-63');
         }
       }
       
