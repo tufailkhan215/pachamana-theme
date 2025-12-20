@@ -1,0 +1,14 @@
+{%- comment -%}
+  Main page section
+{%- endcomment -%}
+
+<div class="page">
+  {% render 'breadcrumbs' %}
+  
+  <h1 class="page__title">{{ page.title | escape }}</h1>
+  
+  <div class="page__content">
+    {{ page.content }}
+  </div>
+</div>
+

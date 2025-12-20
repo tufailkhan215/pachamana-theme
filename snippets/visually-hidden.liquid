@@ -1,0 +1,20 @@
+{%- comment -%}
+  Visually hidden text for screen readers
+  Usage: {% render 'visually-hidden', text: 'Hidden text' %}
+{%- endcomment -%}
+
+<span class="visually-hidden">{{ text | default: '' }}</span>
+
+<style>
+  .visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+</style>
+

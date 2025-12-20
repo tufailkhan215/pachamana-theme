@@ -1,0 +1,48 @@
+{%- comment -%}
+  Main search section
+{%- endcomment -%}
+
+<div class="search">
+  <h1 class="search__title">{{ 'general.search.title' | t | default: 'Search' }}</h1>
+  
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search__form">
+    <input
+      type="search"
+      name="q"
+      value="{{ search.terms | escape }}"
+      placeholder="{{ 'general.search.placeholder' | t | default: 'Search...' }}"
+      class="search__input"
+    >
+    <button type="submit" class="button">{{ 'general.search.submit' | t | default: 'Search' }}</button>
+  </form>
+  
+  {%- if search.performed -%}
+    <div class="search__results">
+      {%- if search.results_count > 0 -%}
+        <p class="search__count">{{ 'general.search.results_count' | t: count: search.results_count }}</p>
+        
+        <div class="search__items">
+          {%- for item in search.results -%}
+            {%- case item.object_type -%}
+              {%- when 'product' -%}
+                {% render 'product-card', product: item %}
+              {%- when 'article' -%}
+                <div class="search__item">
+                  <h3><a href="{{ item.url }}">{{ item.title | escape }}</a></h3>
+                  <p>{{ item.excerpt_or_content | strip_html | truncatewords: 30 }}</p>
+                </div>
+              {%- when 'page' -%}
+                <div class="search__item">
+                  <h3><a href="{{ item.url }}">{{ item.title | escape }}</a></h3>
+                  <p>{{ item.content | strip_html | truncatewords: 30 }}</p>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <p>{{ 'general.search.no_results' | t | default: 'No results found' }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+

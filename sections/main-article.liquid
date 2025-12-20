@@ -1,0 +1,89 @@
+{%- comment -%}
+  Main article section
+{%- endcomment -%}
+
+<article class="article">
+  {% render 'breadcrumbs' %}
+  
+  <header class="article__header">
+    <h1 class="article__title">{{ article.title | escape }}</h1>
+    
+    <div class="article__meta">
+      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+        {{ article.published_at | date: format: 'abbreviated_date' }}
+      </time>
+      {%- if article.author != blank -%}
+        <span class="article__author">{{ article.author }}</span>
+      {%- endif -%}
+    </div>
+  </header>
+  
+  {%- if article.image -%}
+    <div class="article__image">
+      <img
+        src="{{ article.image | image_url: width: 1200 }}"
+        alt="{{ article.image.alt | escape }}"
+        loading="lazy"
+        width="{{ article.image.width }}"
+        height="{{ article.image.height }}"
+      >
+    </div>
+  {%- endif -%}
+  
+  <div class="article__content">
+    {{ article.content }}
+  </div>
+  
+  {% render 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+  
+  {%- if blog.comments_enabled? -%}
+    <div class="article__comments">
+      <h2>{{ 'blogs.comments.title' | t | default: 'Comments' }}</h2>
+      {%- paginate article.comments by 5 -%}
+        {%- for comment in article.comments -%}
+          <div class="article__comment">
+            <div class="article__comment-author">{{ comment.author }}</div>
+            <time datetime="{{ comment.created_at | date: '%Y-%m-%d' }}">
+              {{ comment.created_at | date: format: 'abbreviated_date' }}
+            </time>
+            <div class="article__comment-content">{{ comment.content }}</div>
+          </div>
+        {%- endfor -%}
+        
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate %}
+        {%- endif -%}
+      {%- endpaginate -%}
+      
+      <div class="article__comment-form">
+        {%- form 'new_comment', article -%}
+          <h3>{{ 'blogs.comments.form_title' | t | default: 'Leave a comment' }}</h3>
+          
+          {%- if form.errors -%}
+            <div class="form__errors">
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+          
+          <div class="form__field">
+            <label for="comment-author">{{ 'blogs.comments.name' | t }}</label>
+            <input type="text" id="comment-author" name="comment[author]" value="{{ form.author }}" required>
+          </div>
+          
+          <div class="form__field">
+            <label for="comment-email">{{ 'blogs.comments.email' | t }}</label>
+            <input type="email" id="comment-email" name="comment[email]" value="{{ form.email }}" required>
+          </div>
+          
+          <div class="form__field">
+            <label for="comment-body">{{ 'blogs.comments.message' | t }}</label>
+            <textarea id="comment-body" name="comment[body]" required>{{ form.body }}</textarea>
+          </div>
+          
+          <button type="submit" class="button">{{ 'blogs.comments.post' | t | default: 'Post comment' }}</button>
+        {%- endform -%}
+      </div>
+    </div>
+  {%- endif -%}
+</article>
+

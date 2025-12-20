@@ -1,0 +1,59 @@
+{%- comment -%}
+  Main blog section
+{%- endcomment -%}
+
+<div class="blog">
+  {% render 'breadcrumbs' %}
+  
+  <h1 class="blog__title">{{ blog.title | escape }}</h1>
+  
+  <div class="blog__articles">
+    {%- for article in blog.articles -%}
+      <article class="blog__article">
+        <div class="blog__article-image">
+          {%- if article.image -%}
+            <img
+              src="{{ article.image | image_url: width: 800 }}"
+              alt="{{ article.image.alt | escape }}"
+              loading="lazy"
+            >
+          {%- endif -%}
+        </div>
+        
+        <div class="blog__article-content">
+          <h2 class="blog__article-title">
+            <a href="{{ article.url }}">{{ article.title | escape }}</a>
+          </h2>
+          
+          <div class="blog__article-meta">
+            <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+              {{ article.published_at | date: format: 'abbreviated_date' }}
+            </time>
+            {%- if article.author != blank -%}
+              <span class="blog__article-author">{{ article.author }}</span>
+            {%- endif -%}
+          </div>
+          
+          <div class="blog__article-excerpt">
+            {%- if article.excerpt != blank -%}
+              {{ article.excerpt }}
+            {%- else -%}
+              {{ article.content | strip_html | truncatewords: 30 }}
+            {%- endif -%}
+          </div>
+          
+          <a href="{{ article.url }}" class="blog__article-link">
+            {{ 'blogs.article.read_more' | t | default: 'Read more' }}
+          </a>
+        </div>
+      </article>
+    {%- else -%}
+      <p>{{ 'blogs.general.no_articles' | t | default: 'No articles found' }}</p>
+    {%- endfor -%}
+  </div>
+  
+  {%- if paginate.pages > 1 -%}
+    {% render 'pagination', paginate: paginate %}
+  {%- endif -%}
+</div>
+

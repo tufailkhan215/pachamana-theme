@@ -1,0 +1,167 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Pacha Mana Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Pacha Mana",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "colors_accent_1",
+        "default": "#5C402F",
+        "label": "Accent color 1"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_2",
+        "default": "#E2AB43",
+        "label": "Accent color 2"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "default": "assistant_n4",
+        "label": "Heading font",
+        "info": "Select a font for headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "default": "assistant_n4",
+        "label": "Body font",
+        "info": "Select a font for body text"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "text",
+        "id": "shop_url",
+        "label": "Shop URL",
+        "default": "https://pachamana.com",
+        "info": "Base URL for the shop"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_copyright",
+        "label": "Copyright text",
+        "default": "© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved."
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "info": "https://www.facebook.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "info": "https://www.instagram.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter",
+        "info": "https://twitter.com/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "info": "https://www.pinterest.com/shopify"
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "product_show_vendor",
+        "label": "Show product vendor",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_show_sku",
+        "label": "Show product SKU",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "product_enable_payment_button",
+        "label": "Show dynamic checkout button",
+        "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_show_notes",
+        "label": "Show cart notes",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "cart_continue_shopping_text",
+        "label": "Continue shopping button text",
+        "default": "Continue shopping"
+      }
+    ]
+  },
+  {
+    "name": "Announcement Bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "announcement_enabled",
+        "label": "Show announcement bar",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement text",
+        "default": "Free shipping on orders over $50"
+      },
+      {
+        "type": "url",
+        "id": "announcement_link",
+        "label": "Announcement link"
+      }
+    ]
+  }
+]
+

@@ -1,0 +1,41 @@
+{%- comment -%}
+  Menu snippet for navigation
+  Usage: {% render 'menu', menu: linklists.main-menu %}
+{%- endcomment -%}
+
+{%- if menu != blank and menu.links.size > 0 -%}
+  <ul class="nav navbar-nav yamm menu-hover-none">
+    {%- for link in menu.links -%}
+      <li class="menu-item {% if link.links.size > 0 %}menu-item-has-children dropdown{% endif %} {% if link.active %}active{% endif %}">
+        <a href="{{ link.url }}" 
+           {% if link.links.size > 0 %}class="dropdown-toggle" aria-haspopup="true"{% endif %}
+           data-text="{{ link.title }}">
+          {{ link.title }}
+        </a>
+        {%- if link.links.size > 0 -%}
+          <ul role="menu" class="dropdown-menu">
+            {%- for child_link in link.links -%}
+              <li class="menu-item {% if child_link.links.size > 0 %}menu-item-has-children dropdown-submenu{% endif %} {% if child_link.active %}active{% endif %}">
+                <a href="{{ child_link.url }}" data-text="{{ child_link.title }}">
+                  {{ child_link.title }}
+                </a>
+                {%- if child_link.links.size > 0 -%}
+                  <ul role="menu" class="dropdown-menu">
+                    {%- for grandchild_link in child_link.links -%}
+                      <li class="menu-item {% if grandchild_link.active %}active{% endif %}">
+                        <a href="{{ grandchild_link.url }}" data-text="{{ grandchild_link.title }}">
+                          {{ grandchild_link.title }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
+

@@ -1,0 +1,75 @@
+{%- comment -%}
+  Cart drawer section
+{%- endcomment -%}
+
+<cart-drawer id="cart-drawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-drawer__overlay" data-cart-drawer-overlay></div>
+  
+  <div class="cart-drawer__inner">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">{{ 'sections.cart.title' | t | default: 'Cart' }}</h2>
+      <button type="button" class="cart-drawer__close" data-cart-drawer-close aria-label="{{ 'accessibility.close' | t | default: 'Close' }}">
+        {% render 'icon', icon: 'close' %}
+      </button>
+    </div>
+    
+    <div class="cart-drawer__content">
+      <div id="cart-drawer-items" class="cart-drawer__items">
+        {%- if cart.item_count > 0 -%}
+          {%- for item in cart.items -%}
+            <div class="cart-drawer__item" data-cart-item-key="{{ item.key }}">
+              <div class="cart-drawer__item-image">
+                {%- if item.image -%}
+                  <img src="{{ item.image | image_url: width: 150 }}" alt="{{ item.image.alt | escape }}" loading="lazy">
+                {%- endif -%}
+              </div>
+              
+              <div class="cart-drawer__item-details">
+                <h3 class="cart-drawer__item-title">{{ item.product.title | escape }}</h3>
+                {%- if item.variant.title != 'Default Title' -%}
+                  <p class="cart-drawer__item-variant">{{ item.variant.title }}</p>
+                {%- endif -%}
+                <div class="cart-drawer__item-price">{{ item.final_line_price | money }}</div>
+                
+                <div class="cart-drawer__item-quantity">
+                  <label for="cart-drawer-quantity-{{ item.key }}" class="visually-hidden">{{ 'products.product.quantity.label' | t }}</label>
+                  <input
+                    type="number"
+                    id="cart-drawer-quantity-{{ item.key }}"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    data-cart-item-quantity="{{ item.key }}"
+                  >
+                  <button type="button" data-cart-item-remove="{{ item.key }}" class="cart-drawer__item-remove">
+                    {{ 'cart.general.remove' | t | default: 'Remove' }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="cart-drawer__empty">
+            <p>{{ 'sections.cart.empty' | t | default: 'Your cart is empty' }}</p>
+            <a href="{{ routes.all_products_collection_url }}" class="button">
+              {{ 'general.continue_shopping' | t | default: 'Continue shopping' }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+      
+      {%- if cart.item_count > 0 -%}
+        <div class="cart-drawer__footer">
+          <div class="cart-drawer__subtotal">
+            <span>{{ 'sections.cart.subtotal' | t | default: 'Subtotal' }}</span>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
+          
+          <a href="{{ routes.cart_url }}" class="button button--primary cart-drawer__checkout">
+            {{ 'sections.cart.checkout' | t | default: 'Checkout' }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</cart-drawer>
+

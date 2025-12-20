@@ -1,0 +1,81 @@
+{%- comment -%}
+  Main product section
+{%- endcomment -%}
+
+<div class="product">
+  <div class="product__media">
+    {%- if product.featured_media -%}
+      <div class="product__media-gallery">
+        {%- for media in product.media -%}
+          <div class="product__media-item">
+            {%- case media.media_type -%}
+              {%- when 'image' -%}
+                <img
+                  src="{{ media | image_url: width: 1200 }}"
+                  alt="{{ media.alt | escape }}"
+                  loading="lazy"
+                  width="{{ media.width }}"
+                  height="{{ media.height }}"
+                >
+              {%- when 'video' -%}
+                {{ media | video_tag: controls: true }}
+              {%- when 'external_video' -%}
+                {{ media | external_video_tag }}
+              {%- when 'model' -%}
+                {{ media | model_viewer_tag }}
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+  
+  <div class="product__info">
+    {% render 'breadcrumbs' %}
+    
+    <h1 class="product__title">{{ product.title | escape }}</h1>
+    
+    <div class="product__price">
+      {% render 'price', product: product %}
+    </div>
+    
+    <div class="product__description">
+      {{ product.description }}
+    </div>
+    
+    {%- form 'product', product, id: 'product-form' -%}
+      {%- unless product.has_only_default_variant -%}
+        <div class="product__variants">
+          {%- for option in product.options_with_values -%}
+            <div class="product__option">
+              <label for="option-{{ forloop.index0 }}">{{ option.name }}</label>
+              <select name="options[{{ option.name | escape }}]" id="option-{{ forloop.index0 }}">
+                {%- for value in option.values -%}
+                  <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>
+                    {{ value }}
+                  </option>
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endunless -%}
+      
+      <div class="product__quantity">
+        <label for="quantity">{{ 'products.product.quantity.label' | t }}</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1">
+      </div>
+      
+      <button type="submit" name="add" class="product__add-to-cart button button--primary" {% unless product.available %}disabled{% endunless %}>
+        {%- if product.available -%}
+          {{ 'products.product.add_to_cart' | t | default: 'Add to cart' }}
+        {%- else -%}
+          {{ 'products.product.sold_out' | t | default: 'Sold out' }}
+        {%- endif -%}
+      </button>
+    {%- endform -%}
+    
+    {% render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_image %}
+  </div>
+</div>
+

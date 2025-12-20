@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "section-background-motion": {
+      "type": "section-background-motion"
+    },
+    "section-animatied-title": {
+      "type": "section-animatied-title"
+    },
+    "section-image-with-text-button": {
+      "type": "section-image-with-text-button"
+    },
+    "section-health-benifits": {
+      "type": "section-health-benifits"
+    },
+    "section-featured-products": {
+      "type": "section-featured-products"
+    },
+    "section-text-images-grid": {
+      "type": "section-text-images-grid"
+    },
+    "section-image-text-dynamicbg": {
+      "type": "section-image-text-dynamicbg"
+    },
+    "section-rescent-articles": {
+      "type": "section-rescent-articles"
+    },
+    "section-photo-gallery": {
+      "type": "section-photo-gallery"
+    },
+    "section-faq": {
+      "type": "section-faq"
+    }
+  },
+  "order": [
+    "section-background-motion",
+    "section-animatied-title",
+    "section-image-with-text-button",
+    "section-health-benifits",
+    "section-featured-products",
+    "section-text-images-grid",
+    "section-image-text-dynamicbg",
+    "section-rescent-articles",
+    "section-photo-gallery",
+    "section-faq"
+  ]
+}

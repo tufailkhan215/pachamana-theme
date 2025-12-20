@@ -1,0 +1,106 @@
+<div class="plus_row_scroll_overflow elementor-element elementor-element-e06c22d e-con-full e-flex e-con e-parent section-animatied-title" data-id="e06c22d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+				<div class="elementor-element elementor-element-149562b elementor-headline--style-rotate elementor-widget elementor-widget-animated-headline" data-id="149562b" data-element_type="widget" data-settings="{&quot;headline_style&quot;:&quot;rotate&quot;,&quot;rotating_text&quot;:&quot;CEREMONIAL GRADE\nRegenerative\nHeirloom\nDIRECT TRADE\nORGANIC\nHEAVY METAL TESTED \nGROWN IN PERU\n&quot;,&quot;rotate_iteration_delay&quot;:1000,&quot;animation_type&quot;:&quot;typing&quot;,&quot;loop&quot;:&quot;yes&quot;}" data-widget_type="animated-headline.default">
+				<div class="elementor-widget-container">
+							<h3 class="elementor-headline elementor-headline-animation-type-typing elementor-headline-letters">
+					<span class="elementor-headline-plain-text elementor-headline-text-wrapper">{{ section.settings.prefix_text | default: "OUR CACAO IS " }}</span>
+				<span class="elementor-headline-dynamic-wrapper elementor-headline-text-wrapper">
+					{%- for block in section.blocks -%}
+						{%- if block.type == 'rotating_text' and block.settings.text != blank -%}
+							<span class="elementor-headline-dynamic-text {% if forloop.first %}elementor-headline-text-active{% endif %}">
+								{{ block.settings.text }}
+							</span>
+						{%- endif -%}
+					{%- endfor -%}
+					{%- if section.blocks.size == 0 -%}
+						<span class="elementor-headline-dynamic-text elementor-headline-text-active">CEREMONIAL&nbsp;GRADE</span>
+						<span class="elementor-headline-dynamic-text">Regenerative</span>
+						<span class="elementor-headline-dynamic-text">Heirloom</span>
+						<span class="elementor-headline-dynamic-text">DIRECT&nbsp;TRADE</span>
+						<span class="elementor-headline-dynamic-text">ORGANIC</span>
+						<span class="elementor-headline-dynamic-text">HEAVY&nbsp;METAL&nbsp;TESTED&nbsp;</span>
+						<span class="elementor-headline-dynamic-text">GROWN&nbsp;IN&nbsp;PERU</span>
+					{%- endif -%}
+						</span>
+				</h3>
+						</div>
+				</div>
+				</div>
+	</div>
+{% schema %}
+{
+  "name": "Animated Title",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "prefix_text",
+      "label": "Prefix Text",
+      "default": "OUR CACAO IS "
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rotating_text",
+      "name": "Rotating Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "CEREMONIAL GRADE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Animated Title",
+      "blocks": [
+        {
+          "type": "rotating_text",
+          "settings": {
+            "text": "CEREMONIAL GRADE"
+          }
+        },
+        {
+          "type": "rotating_text",
+          "settings": {
+            "text": "Regenerative"
+          }
+        },
+        {
+          "type": "rotating_text",
+          "settings": {
+            "text": "Heirloom"
+          }
+        },
+        {
+          "type": "rotating_text",
+          "settings": {
+            "text": "DIRECT TRADE"
+          }
+        },
+        {
+          "type": "rotating_text",
+          "settings": {
+            "text": "ORGANIC"
+          }
+        },
+        {
+          "type": "rotating_text",
+          "settings": {
+            "text": "HEAVY METAL TESTED"
+          }
+        },
+        {
+          "type": "rotating_text",
+          "settings": {
+            "text": "GROWN IN PERU"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

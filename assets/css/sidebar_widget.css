@@ -1,0 +1,93 @@
+.r_sbw__container {
+    display: flex;
+    position: fixed;
+    padding: 10px;
+    gap: 10px;
+    top: 46%;
+    font-size: 20px;
+    writing-mode: tb-rl;
+    color: var(--r-r_sbw-text-color);
+    background-color: var(--r-r_sbw-bg-color);
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.r_sbw__top_bottom {
+    display: flex;
+    writing-mode: tb-rl;
+}
+
+.r_sbw__bottom_top {
+    display: flex;
+    flex-direction: row-reverse;
+    writing-mode: tb-rl;
+}
+
+.r_sb_wrapper {
+    transition: .25s;
+    overflow: hidden;
+    width: 50%;
+    outline: unset;
+    background-color: #ffffff;
+    box-shadow: 0px -2px 12px rgba(0, 0, 0, .08);
+}
+
+.r_sbw__pl_tb {
+    flex-direction: row-reverse;
+}
+
+.r_sbw__pl_tb .r_sbw__btn_icon {
+    transform: rotateZ(270deg);
+}
+
+.r_sbw__pl_tb .r_sbw__btn_text {
+    transform: rotateZ(180deg);
+}
+
+.r_sbw__pl_bt {
+    flex-direction: row;
+}
+
+.r_sbw__pl_bt .r_sbw__btn_icon {
+    transform: rotateZ(90deg);
+}
+
+.r_sbw__pl_bt .r_sbw__btn_text {
+    transform: rotateZ(0deg);
+}
+
+.r_sbw__pr_bt {
+    flex-direction: row-reverse;
+}
+
+.r_sbw__pr_bt .r_sbw__btn_icon {
+    transform: rotateZ(270deg);
+}
+
+.r_sbw__pr_bt .r_sbw__btn_text {
+    transform: rotateZ(180deg);
+}
+
+
+.r_sbw__pr_tb {
+    flex-direction: row;
+}
+
+.r_sbw__pr_tb .r_sbw__btn_icon {
+    transform: rotateZ(90deg);
+}
+
+.r_sbw__pr_tb .r_sbw__btn_text {
+    transform: rotateZ(0deg);
+}
+
+
+.r_sbw__left {
+    border-radius: 0 10px 10px 0;
+    left: 0;
+}
+
+.r_sbw__right {
+    border-radius: 10px 0 0 10px;
+    right: 0;
+}

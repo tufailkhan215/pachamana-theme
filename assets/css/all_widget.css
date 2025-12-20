@@ -1,0 +1,96 @@
+/* This class is not present in shadow dom it's the wrapper for shadow dom*/
+#r_rpw_product_widget_container_wrapper {
+  margin: 0 !important;
+  width: 100%;
+  max-width: 100% !important;
+}
+
+:root {
+  --r-f-toast-success-bg-color: #0c2b14;
+  --r-f-toast-error-bg-color: #530606;
+  --r-f-toast-success-color: #06a606;
+  --r-f-toast-error-color: #d48888;
+  --r-f-toast-font-name: inherit, serif, ui-monospace;
+}
+
+.r_f_toast_container {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.r_f_toast {
+  position: relative;
+  color: #fff;
+  border-radius: 5px;
+  animation: r_f_toast_show 1s ease 1 forwards;
+  background: #1b3b1b;
+  padding: 10px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.r_f_toast.success {
+  color: var(--r-f-toast-success-color);
+  background: var(--r-f-toast-success-bg-color);
+}
+
+.r_f_toast.error {
+  color: var(--r-f-toast-error-color);
+  background: var(--r-f-toast-error-bg-color);
+}
+
+.r_f_toast .r_f_toast_title {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--r-f-toast-font-name);
+}
+
+@keyframes r_f_toast_show {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.r_f_toast::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  width: 100%;
+  height: 3px;
+  background: white;
+  content: "";
+  animation: r_f_toast_underline_timeout 3s linear 1 forwards;
+}
+
+@keyframes r_f_toast_underline_timeout {
+  to {
+    width: 0;
+  }
+}
+
+/* Sidebar Widget */
+
+#sidebar-widget-iframe-container {
+  overflow: hidden;
+  padding-top: 80%;
+  position: relative;
+}
+
+#sidebar-widget-iframe-container iframe {
+  aspect-ratio: 16/9;
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

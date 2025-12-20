@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#333132">
+  <link rel="canonical" href="{{ canonical_url }}">
+  
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32 }}">
+  {%- endif -%}
+
+  {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  {%- endunless -%}
+
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% render 'meta-tags' %}
+
+  <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+  {{ content_for_header }}
+
+  {%- liquid
+    assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+    assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+    assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+  %}
+
+  {% style %}
+    {{ settings.type_body_font | font_face: font_display: 'swap' }}
+    {{ body_font_bold | font_face: font_display: 'swap' }}
+    {{ body_font_italic | font_face: font_display: 'swap' }}
+    {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+    {{ settings.type_header_font | font_face: font_display: 'swap' }}
+
+    :root {
+      --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+      --font-body-style: {{ settings.type_body_font.style }};
+      --font-body-weight: {{ settings.type_body_font.weight }};
+      --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
+
+      --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+      --font-heading-style: {{ settings.type_header_font.style }};
+      --font-heading-weight: {{ settings.type_header_font.weight }};
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    html {
+      box-sizing: border-box;
+      font-size: calc(var(--font-body-scale) * 62.5%);
+      height: 100%;
+    }
+
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.06rem;
+      line-height: calc(1 + 0.8 / var(--font-body-scale));
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+    }
+  {% endstyle %}
+
+  <!-- All CSS Files -->
+  {%- comment -%} Core CSS {%- endcomment -%}
+  {{ 'css/style.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/theme.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/custom-frontend.min.css' | asset_url | stylesheet_tag }}
+  
+  {%- comment -%} Elementor CSS {%- endcomment -%}
+  {{ 'css/plus-extra-adv.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-alignmnet.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-tabs-tours.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-adv-button.css' | asset_url | stylesheet_tag }}
+  {{ 'css/tp-bootstrap-grid.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-gallery-list.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-gl-style1.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-ht-style.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-ht-style-1.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-ht-style-2.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-nav-menu-lite.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-cta-style-3.css' | asset_url | stylesheet_tag }}
+  {{ 'css/style.css' | asset_url | stylesheet_tag }}
+  
+  {%- comment -%} Widget CSS {%- endcomment -%}
+  {{ 'css/widget-animated-headline.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-divider.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-heading.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-image.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-social-icons.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-spacer.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-form.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-rating.min.css' | asset_url | stylesheet_tag }}
+  
+  {%- comment -%} Animation CSS {%- endcomment -%}
+  {{ 'css/fadeIn.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/slideInDown.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/zoomIn.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/zoomInDown.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/tada.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/e-animation-pulse-grow.min.css' | asset_url | stylesheet_tag }}
+  
+  {%- comment -%} Font CSS {%- endcomment -%}
+  {{ 'css/barlow.css' | asset_url | stylesheet_tag }}
+  {{ 'css/barlowcondensed.css' | asset_url | stylesheet_tag }}
+  {{ 'css/roboto.css' | asset_url | stylesheet_tag }}
+  {{ 'css/robotoslab.css' | asset_url | stylesheet_tag }}
+  
+  {%- comment -%} Font Awesome {%- endcomment -%}
+  {{ 'css/all.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/v4-shims.min.css' | asset_url | stylesheet_tag }}
+  
+  {%- comment -%} Other CSS {%- endcomment -%}
+  {{ 'css/sticky.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/motion-fx.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/shapes.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/popup.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/header-footer.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/custom-apple-webkit.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/post-15.css' | asset_url | stylesheet_tag }}
+  {{ 'css/post-48.css' | asset_url | stylesheet_tag }}
+  {{ 'css/post-57.css' | asset_url | stylesheet_tag }}
+  {{ 'css/post-63.css' | asset_url | stylesheet_tag }}
+  {{ 'css/post-191.css' | asset_url | stylesheet_tag }}
+  {{ 'css/post-1197.css' | asset_url | stylesheet_tag }}
+  {{ 'css/custom-pro-widget-nav-menu.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/custom-pro-widget-woocommerce-menu-cart.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/custom-pro-widget-woocommerce-product-add-to-cart.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/custom-pro-widget-loop-grid.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/custom-widget-icon-list.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-loop-common.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-menu-anchor.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/widget-woocommerce-product-price.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/all_widget.css' | asset_url | stylesheet_tag }}
+  {{ 'css/rating_widget.css' | asset_url | stylesheet_tag }}
+  {{ 'css/sidebar_widget.css' | asset_url | stylesheet_tag }}
+  {{ 'css/review-fonts.css' | asset_url | stylesheet_tag }}
+  {{ 'css/brands.css' | asset_url | stylesheet_tag }}
+  {{ 'css/plus-temp-notice.css' | asset_url | stylesheet_tag }}
+  {{ 'css/woocommerce-layout.css' | asset_url | stylesheet_tag }}
+  {{ 'css/woocommerce-smallscreen.css' | asset_url | stylesheet_tag }}
+  {{ 'css/woocommerce.css' | asset_url | stylesheet_tag }}
+  {{ 'css/woocommerce-notices.min.css' | asset_url | stylesheet_tag }}
+  {{ 'css/wc-blocks.css' | asset_url | stylesheet_tag }}
+  {{ 'css/upe-blocks.css' | asset_url | stylesheet_tag }}
+
+  <style id='accordion-fallback-css'>
+    /* Fallback: Ensure accordion items are visible if JS doesn't load */
+    .theplus-accordion-wrapper.tp-stageraccr .theplus-accordion-item {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    /* Show items after a delay if JS hasn't animated them */
+    .theplus-accordion-wrapper.tp-stageraccr .theplus-accordion-item {
+      animation: accordion-fade-in 0.5s ease-in-out 1s forwards;
+    }
+    @keyframes accordion-fade-in {
+      to { opacity: 1; }
+    }
+  </style>
+
+  {%- comment -%} base.css not found, skipping {%- endcomment -%}
+</head>
+
+<body class="template-{{ template.name | handle }}">
+  <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+    {{ "accessibility.skip_to_text" | t | default: "Skip to content" }}
+  </a>
+
+  {%- if settings.cart_type == 'notification' -%}
+    {%- render 'cart-notification', color_scheme: settings.cart_notification_color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
+  {%- endif -%}
+
+  {%- section 'section-header' -%}
+
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {%- section 'section-footer' -%}
+
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t | default: 'Selecting a new language or country will refresh the page' }}</li>
+    <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t | default: 'Opens in a new window' }}</li>
+  </ul>
+
+  <script>
+    window.shopUrl = '{{ request.origin }}';
+    window.routes = {
+      cart_add_url: '{{ routes.cart_add_url }}',
+      cart_change_url: '{{ routes.cart_change_url }}',
+      cart_update_url: '{{ routes.cart_update_url }}',
+      cart_url: '{{ routes.cart_url }}',
+      predictive_search_url: '{{ routes.predictive_search_url }}'
+    };
+
+    window.cartStrings = {
+      error: `{{ 'sections.cart.cart_error' | t | default: 'There was an error while updating your cart. Please try again.' }}`,
+      quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' | default: 'You can only add [quantity] of this item to your cart.' }}`
+    }
+
+    window.variantStrings = {
+      addToCart: `{{ 'products.product.add_to_cart' | t | default: 'Add to cart' }}`,
+      soldOut: `{{ 'products.product.sold_out' | t | default: 'Sold out' }}`,
+      unavailable: `{{ 'products.product.unavailable' | t | default: 'Unavailable' }}`,
+      unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' | default: '[value] is unavailable' }}`,
+    }
+
+    window.accessibilityStrings = {
+      imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' | default: 'Image [index]' }}`,
+      shareSuccess: `{{ 'general.share.success_message' | t | default: 'Link copied to clipboard' }}`,
+      pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t | default: 'Pause slideshow' }}`,
+      playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t | default: 'Play slideshow' }}`,
+    }
+  </script>
+
+  <!-- All JavaScript Files -->
+  {%- comment -%} Elementor Frontend Config (MUST be before Elementor JS) {%- endcomment -%}
+  <script>
+    // Elementor Frontend Configuration - must be available before Elementor JS loads
+    (function() {
+      'use strict';
+      
+      var activeBreakpointsArray = ["viewport_mobile","viewport_mobile_extra","viewport_tablet"];
+      
+      // Create a complete config object that Elementor expects
+      var config = {
+        "environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},
+        "i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},
+        "is_rtl":false,
+        "breakpoints":{"xs":0,"sm":480,"md":880,"lg":1025,"xl":1440,"xxl":1600},
+        "version":"3.33.2",
+        "is_static":false,
+        "urls":{"assets":"{{ 'assets' | asset_url }}"},
+        "settings":{"page":[],"editorPreferences":[]},
+        "activeBreakpoints":activeBreakpointsArray,
+        "kit":{
+          "woocommerce_notices_elements":["wc_error","wc_message","wc_info"],
+          "body_background_background":"classic",
+          "active_breakpoints":activeBreakpointsArray,
+          "activeBreakpoints":activeBreakpointsArray,
+          "viewport_mobile":879,
+          "viewport_mobile_extra":895,
+          "viewport_tablet":1024,
+          "global_image_lightbox":"yes",
+          "lightbox_enable_counter":"yes",
+          "lightbox_enable_fullscreen":"yes",
+          "lightbox_enable_zoom":"yes",
+          "lightbox_enable_share":"yes"
+        },
+        "post":{"id":63,"title":"{{ page.title | escape }}","excerpt":"","featuredImage":false}
+      };
+      
+      // Set global config
+      window.elementorFrontendConfig = config;
+      var elementorFrontendConfig = config; // Legacy support
+      
+      // Elementor Pro Frontend Configuration (stub to prevent errors)
+      window.ElementorProFrontendConfig = window.ElementorProFrontendConfig || {
+        "urls": {
+          "assets": "{{ 'assets' | asset_url }}"
+        },
+        "settings": {},
+        "activeBreakpoints": activeBreakpointsArray
+      };
+      
+      // Intercept Elementor Frontend initialization to ensure config is always available
+      // This must run BEFORE Elementor JS loads
+      var originalElementorFrontend = null;
+      var elementorFrontendProxy = new Proxy({}, {
+        get: function(target, prop) {
+          if (originalElementorFrontend) {
+            return originalElementorFrontend[prop];
+          }
+          return undefined;
+        },
+        set: function(target, prop, value) {
+          if (prop === 'value' || !originalElementorFrontend) {
+            originalElementorFrontend = value;
+            // Patch immediately when Frontend is created
+            patchElementorFrontend(value);
+          } else {
+            originalElementorFrontend[prop] = value;
+          }
+          return true;
+        }
+      });
+      
+      // Try to intercept elementorFrontend assignment
+      try {
+        Object.defineProperty(window, 'elementorFrontend', {
+          get: function() {
+            return originalElementorFrontend;
+          },
+          set: function(value) {
+            originalElementorFrontend = value;
+            patchElementorFrontend(value);
+          },
+          configurable: true,
+          enumerable: true
+        });
+      } catch(e) {
+        // If defineProperty fails, try patching after load
+      }
+      
+      function patchElementorFrontend(elementorFrontend) {
+        if (!elementorFrontend) return;
+        
+        try {
+          // Patch Frontend class if it exists
+          if (elementorFrontend.modules && elementorFrontend.modules.Frontend) {
+            var Frontend = elementorFrontend.modules.Frontend;
+            if (Frontend.prototype && Frontend.prototype.populateActiveBreakpointsConfig) {
+              var originalMethod = Frontend.prototype.populateActiveBreakpointsConfig;
+              Frontend.prototype.populateActiveBreakpointsConfig = function() {
+                try {
+                  // Ensure this.config exists and has all required properties
+                  if (!this.config) {
+                    this.config = {};
+                    // Copy properties from global config (compatible with older browsers)
+                    var globalConfig = window.elementorFrontendConfig || config;
+                    for (var key in globalConfig) {
+                      if (globalConfig.hasOwnProperty(key)) {
+                        this.config[key] = globalConfig[key];
+                      }
+                    }
+                  }
+                  // Ensure activeBreakpoints exists
+                  if (!this.config.activeBreakpoints) {
+                    this.config.activeBreakpoints = activeBreakpointsArray;
+                  }
+                  if (!this.config.kit) {
+                    this.config.kit = {};
+                    // Copy kit properties
+                    var kitConfig = (window.elementorFrontendConfig && window.elementorFrontendConfig.kit) || config.kit || {};
+                    for (var kitKey in kitConfig) {
+                      if (kitConfig.hasOwnProperty(kitKey)) {
+                        this.config.kit[kitKey] = kitConfig[kitKey];
+                      }
+                    }
+                  }
+                  if (!this.config.kit.activeBreakpoints) {
+                    this.config.kit.activeBreakpoints = this.config.activeBreakpoints || activeBreakpointsArray;
+                  }
+                  if (!this.config.kit.active_breakpoints) {
+                    this.config.kit.active_breakpoints = this.config.activeBreakpoints || activeBreakpointsArray;
+                  }
+                  // Call original method with proper context
+                  if (originalMethod && typeof originalMethod === 'function') {
+                    return originalMethod.apply(this, arguments);
+                  }
+                } catch(err) {
+                  console.warn('Elementor populateActiveBreakpointsConfig error:', err);
+                  // Return undefined to prevent further errors
+                  return undefined;
+                }
+              };
+            }
+          }
+          
+          // Ensure config is available on the Frontend instance when it's created
+          if (elementorFrontend.init && typeof elementorFrontend.init === 'function') {
+            var originalInit = elementorFrontend.init;
+            elementorFrontend.init = function() {
+              try {
+                if (this && !this.config) {
+                  this.config = {};
+                  var globalConfig = window.elementorFrontendConfig || config;
+                  for (var key in globalConfig) {
+                    if (globalConfig.hasOwnProperty(key)) {
+                      this.config[key] = globalConfig[key];
+                    }
+                  }
+                }
+                return originalInit.apply(this, arguments);
+              } catch(e) {
+                console.warn('Elementor init error:', e);
+                return originalInit.apply(this, arguments);
+              }
+            };
+          }
+        } catch(e) {
+          console.warn('Elementor Frontend patch error:', e);
+        }
+      }
+      
+      // Also patch after scripts load (backup) - more aggressive patching
+      function patchElementorAfterLoad() {
+        try {
+          if (window.elementorFrontend) {
+            patchElementorFrontend(window.elementorFrontend);
+          }
+          
+          // Also try to patch webpack modules directly
+          if (window.__webpack_require__) {
+            var originalRequire = window.__webpack_require__;
+            window.__webpack_require__ = function() {
+              try {
+                var result = originalRequire.apply(this, arguments);
+                // If this is the Elementor Frontend module, patch it
+                if (result && result.modules && result.modules.Frontend) {
+                  patchElementorFrontend(result);
+                }
+                return result;
+              } catch(e) {
+                return originalRequire.apply(this, arguments);
+              }
+            };
+          }
+        } catch(e) {
+          // Silently fail
+        }
+      }
+      
+      // Try patching at various points - very aggressive
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', patchElementorAfterLoad);
+      } else {
+        setTimeout(patchElementorAfterLoad, 0);
+      }
+      setTimeout(patchElementorAfterLoad, 50);
+      setTimeout(patchElementorAfterLoad, 100);
+      setTimeout(patchElementorAfterLoad, 200);
+      setTimeout(patchElementorAfterLoad, 500);
+      setTimeout(patchElementorAfterLoad, 1000);
+      
+      // Also patch on window load
+      window.addEventListener('load', patchElementorAfterLoad);
+      
+      // Intercept errors to prevent them from breaking the page
+      window.addEventListener('error', function(e) {
+        if (e.message && e.message.indexOf('activeBreakpoints') !== -1) {
+          e.preventDefault();
+          console.warn('Elementor activeBreakpoints error caught and prevented');
+          return true;
+        }
+      }, true);
+    })();
+  </script>
+  
+  {%- comment -%} jQuery and Core JS - Load jQuery synchronously before Elementor {%- endcomment -%}
+  <script src="{{ 'js/jquery.min.js' | asset_url }}"></script>
+  <script src="{{ 'js/jquery-migrate.min.js' | asset_url }}"></script>
+  <script src="{{ 'js/wp-polyfill.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/hooks.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/i18n.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/hello-frontend.min.js' | asset_url }}" defer></script>
+  
+  {%- comment -%} Elementor JS - Load synchronously after jQuery is available {%- endcomment -%}
+  <script>
+    // Ensure jQuery is loaded before Elementor modules
+    if (typeof jQuery === 'undefined') {
+      console.error('jQuery must be loaded before Elementor modules');
+    }
+  </script>
+  <script src="{{ 'js/webpack.runtime.min.js' | asset_url }}"></script>
+  <script src="{{ 'js/frontend-modules.min.js' | asset_url }}"></script>
+  <script>
+    // Immediate patch after frontend-modules loads
+    (function() {
+      var attempts = 0;
+      var maxAttempts = 50;
+      var checkInterval = setInterval(function() {
+        attempts++;
+        if (window.elementorFrontend && window.elementorFrontend.modules && window.elementorFrontend.modules.Frontend) {
+          clearInterval(checkInterval);
+          try {
+            var Frontend = window.elementorFrontend.modules.Frontend;
+            if (Frontend.prototype && Frontend.prototype.populateActiveBreakpointsConfig) {
+              var originalMethod = Frontend.prototype.populateActiveBreakpointsConfig;
+              Frontend.prototype.populateActiveBreakpointsConfig = function() {
+                try {
+                  if (!this.config) {
+                    this.config = window.elementorFrontendConfig || {};
+                  }
+                  if (!this.config.activeBreakpoints) {
+                    this.config.activeBreakpoints = ["viewport_mobile","viewport_mobile_extra","viewport_tablet"];
+                  }
+                  if (!this.config.kit) {
+                    this.config.kit = (window.elementorFrontendConfig && window.elementorFrontendConfig.kit) || {};
+                  }
+                  if (!this.config.kit.activeBreakpoints) {
+                    this.config.kit.activeBreakpoints = this.config.activeBreakpoints;
+                  }
+                  return originalMethod.apply(this, arguments);
+                } catch(err) {
+                  console.warn('Elementor populateActiveBreakpointsConfig caught error:', err);
+                  return undefined;
+                }
+              };
+            }
+          } catch(e) {
+            console.warn('Elementor immediate patch error:', e);
+          }
+        } else if (attempts >= maxAttempts) {
+          clearInterval(checkInterval);
+        }
+      }, 10);
+    })();
+  </script>
+  <script>
+    // Verify jQuery is available before Elementor frontend
+    if (typeof jQuery === 'undefined') {
+      console.error('jQuery is required for Elementor but not loaded');
+    }
+  </script>
+  <script src="{{ 'js/elementor-frontend.min.js' | asset_url }}"></script>
+  <script src="{{ 'js/elements-handlers.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/frontend.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/webpack-pro.runtime.min.js' | asset_url }}" defer></script>
+  <script>
+    // Final safety check - ensure animations work even if Elementor has errors
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        // Remove elementor-invisible class from all elements after a delay
+        var invisibleElements = document.querySelectorAll('.elementor-invisible');
+        invisibleElements.forEach(function(el) {
+          if (el.classList.contains('elementor-invisible')) {
+            setTimeout(function() {
+              el.classList.remove('elementor-invisible');
+            }, 1000);
+            }
+        });
+      }, 2000);
+    });
+  </script>
+  
+  {%- comment -%} jQuery Plugins {%- endcomment -%}
+  <script src="{{ 'js/jquery.sticky.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/jquery.smartmenus.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/jquery.blockUI.min.js' | asset_url }}" defer></script>
+  {%- comment -%} jquery.ui.touch-punch.js not found in assets/js, skipping {%- endcomment -%}
+  
+  {%- comment -%} Other JS {%- endcomment -%}
+  <script src="{{ 'js/imagesloaded.pkgd.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/sourcebuster.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/plus-equal-height.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'js/plus-section-column-link.min.js' | asset_url }}" defer></script>
+  {%- comment -%} jQuery UI dependent scripts - Commented out as jQuery UI is not available {%- endcomment -%}
+  {%- comment -%} These scripts require jQuery UI (widget, mouse modules) which are not in the theme {%- endcomment -%}
+  {%- comment -%} <script src="{{ 'js/slider.min.js' | asset_url }}" defer></script> {%- endcomment -%}
+  {%- comment -%} <script src="{{ 'js/mouse.min.js' | asset_url }}" defer></script> {%- endcomment -%}
+  {%- comment -%} <script src="{{ 'js/draggable.min.js' | asset_url }}" defer></script> {%- endcomment -%}
+  {%- comment -%} bundle.js and yuko-review-main.js not found in assets/js, skipping {%- endcomment -%}
+  
+  {%- comment -%} Isotope Layout (using CDN as local file not found) {%- endcomment -%}
+  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3/dist/isotope.pkgd.min.js" defer></script>
+  
+  {%- comment -%} ThePlus JS (local files - see README for download instructions) {%- endcomment -%}
+  {%- comment -%} These files need to be manually downloaded and placed in assets/js/ {%- endcomment -%}
+  {%- comment -%} <script src="{{ 'js/plus-posts-metro-list.min.js' | asset_url }}" defer></script> {%- endcomment -%}
+  {%- comment -%} <script src="{{ 'js/plus-accordion.min.js' | asset_url }}" defer></script> {%- endcomment -%}
+  {%- comment -%} <script src="{{ 'js/gallery-list.min.js' | asset_url }}" defer></script> {%- endcomment -%}
+
+  {%- comment -%} Accordion Fallback JS {%- endcomment -%}
+  <script id="accordion-fallback-js">
+    // Accordion functionality: visibility and click handlers
+    (function() {
+      function initAccordion() {
+        if (typeof jQuery !== 'undefined') {
+          jQuery(document).ready(function($) {
+            // Initialize: Show items with active-default class
+            $('.theplus-accordion-wrapper .plus-accordion-header.active-default, .theplus-accordion-wrapper .plus-accordion-content.active-default').each(function() {
+              var $element = $(this);
+              var $item = $element.closest('.theplus-accordion-item');
+              var $header = $item.find('.plus-accordion-header').first();
+              var $content = $item.find('.plus-accordion-content').first();
+              if ($header.length && $content.length) {
+                $header.addClass('active');
+                $content.show();
+              }
+            });
+            
+            // Wait for accordion script to initialize, then check if items are still invisible
+            setTimeout(function() {
+              $('.theplus-accordion-wrapper.tp-stageraccr .theplus-accordion-item').each(function() {
+                var $item = $(this);
+                var opacity = parseFloat($item.css('opacity'));
+                if (isNaN(opacity) || opacity === 0) {
+                  $item.css({
+                    'opacity': '1',
+                    'transition': 'opacity 0.5s ease-in-out'
+                  });
+                }
+              });
+            }, 2000);
+            
+            // Add click handler for accordion functionality
+            $(document).on('click', '.theplus-accordion-wrapper .plus-accordion-header', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              var $header = $(this);
+              var $item = $header.closest('.theplus-accordion-item');
+              var $content = $item.find('.plus-accordion-content');
+              var $wrapper = $header.closest('.theplus-accordion-wrapper');
+              var isActive = $header.hasClass('active');
+              var accordionType = $wrapper.data('accordion-type') || 'accordion';
+              
+              // If accordion type (not toggle), close other items
+              if (accordionType === 'accordion' && !isActive) {
+                $wrapper.find('.plus-accordion-header.active').removeClass('active');
+                $wrapper.find('.plus-accordion-content').not($content).slideUp(300).removeClass('active-default');
+              }
+              
+              // Toggle current item
+              if (isActive) {
+                $header.removeClass('active');
+                $content.slideUp(300).removeClass('active-default');
+              } else {
+                $header.addClass('active');
+                $content.slideDown(300).addClass('active-default');
+              }
+            });
+          });
+        } else {
+          // If jQuery isn't loaded, use vanilla JS
+          document.addEventListener('DOMContentLoaded', function() {
+            // Initialize: Show items with active-default class
+            var defaultActive = document.querySelectorAll('.theplus-accordion-wrapper .plus-accordion-header.active-default, .theplus-accordion-wrapper .plus-accordion-content.active-default');
+            defaultActive.forEach(function(element) {
+              var item = element.closest('.theplus-accordion-item');
+              if (item) {
+                var header = item.querySelector('.plus-accordion-header');
+                var content = item.querySelector('.plus-accordion-content');
+                if (header && content) {
+                  header.classList.add('active');
+                  content.style.display = 'block';
+                  content.classList.add('active-default');
+                }
+              }
+            });
+            
+            setTimeout(function() {
+              var items = document.querySelectorAll('.theplus-accordion-wrapper.tp-stageraccr .theplus-accordion-item');
+              items.forEach(function(item) {
+                var opacity = parseFloat(window.getComputedStyle(item).opacity);
+                if (isNaN(opacity) || opacity === 0) {
+                  item.style.opacity = '1';
+                  item.style.transition = 'opacity 0.5s ease-in-out';
+                }
+              });
+            }, 2000);
+            
+            // Add click handler for accordion functionality (vanilla JS)
+            document.addEventListener('click', function(e) {
+              var header = e.target.closest('.theplus-accordion-wrapper .plus-accordion-header');
+              if (!header) return;
+              
+              e.preventDefault();
+              e.stopPropagation();
+              
+              var item = header.closest('.theplus-accordion-item');
+              var content = item.querySelector('.plus-accordion-content');
+              var wrapper = header.closest('.theplus-accordion-wrapper');
+              var isActive = header.classList.contains('active');
+              var accordionType = wrapper.getAttribute('data-accordion-type') || 'accordion';
+              
+              // If accordion type (not toggle), close other items
+              if (accordionType === 'accordion' && !isActive) {
+                var activeHeaders = wrapper.querySelectorAll('.plus-accordion-header.active');
+                activeHeaders.forEach(function(activeHeader) {
+                  activeHeader.classList.remove('active');
+                  var activeItem = activeHeader.closest('.theplus-accordion-item');
+                  var activeContent = activeItem ? activeItem.querySelector('.plus-accordion-content') : null;
+                  if (activeContent) {
+                    activeContent.style.display = 'none';
+                    activeContent.classList.remove('active-default');
+                  }
+                });
+              }
+              
+              // Toggle current item
+              if (isActive) {
+                header.classList.remove('active');
+                if (content) {
+                  content.style.display = 'none';
+                  content.classList.remove('active-default');
+                }
+              } else {
+                header.classList.add('active');
+                if (content) {
+                  content.style.display = 'block';
+                  content.classList.add('active-default');
+                }
+              }
+            });
+          });
+        }
+      }
+      
+      // Initialize immediately and also on DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAccordion);
+      } else {
+        initAccordion();
+      }
+    })();
+  </script>
+
+  {%- comment -%} Elementor Frontend Config (duplicate removed - now at top before JS files) {%- endcomment -%}
+
+  {%- comment -%} WP i18n Locale Data {%- endcomment -%}
+  <script id="wp-i18n-js-after">
+    if (typeof wp !== 'undefined' && wp.i18n) {
+      wp.i18n.setLocaleData({ 'text direction\u0004ltr': [ 'ltr' ] });
+    }
+  </script>
+
+  {%- comment -%} global.js already loaded in head, skipping duplicate {%- endcomment -%}
+</body>
+</html>

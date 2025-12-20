@@ -1,0 +1,72 @@
+{
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "refresh_page": "Selecting a new language or country will refresh the page",
+    "link_messages": {
+      "new_window": "Opens in a new window"
+    }
+  },
+  "general": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "The page you are looking for does not exist.",
+      "link": "Continue shopping"
+    },
+    "search": {
+      "title": "Search",
+      "placeholder": "Search...",
+      "submit": "Search",
+      "no_results": "No results found"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "share": {
+      "success_message": "Link copied to clipboard"
+    }
+  },
+  "sections": {
+    "cart": {
+      "title": "Cart",
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error_html": "You can only add [quantity] of this item to your cart.",
+      "cart_quantity_error": "You can only add {quantity} of this item to your cart."
+    },
+    "slideshow": {
+      "pause_slideshow": "Pause slideshow",
+      "play_slideshow": "Play slideshow"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "value_unavailable": "{value} is unavailable",
+      "media": {
+        "image_available": "Image {index}"
+      },
+      "related_products": "You may also like"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Read more"
+    },
+    "general": {
+      "no_articles": "No articles found"
+    },
+    "comments": {
+      "title": "Comments",
+      "form_title": "Leave a comment",
+      "post": "Post comment"
+    }
+  },
+  "cart": {
+    "general": {
+      "remove": "Remove"
+    }
+  }
+}
+

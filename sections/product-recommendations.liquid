@@ -1,0 +1,18 @@
+{%- comment -%}
+  Product recommendations section
+{%- endcomment -%}
+
+{%- if recommendations.performed and recommendations.products_count > 0 -%}
+  <div class="product-recommendations">
+    <h2 class="product-recommendations__title">
+      {{ 'products.product.related_products' | t | default: 'You may also like' }}
+    </h2>
+    
+    <div class="product-recommendations__products">
+      {%- for product in recommendations.products limit: 4 -%}
+        {% render 'product-card', product: product %}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+

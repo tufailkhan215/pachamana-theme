@@ -1,0 +1,49 @@
+{%- comment -%}
+  Breadcrumbs snippet
+  Usage: {% render 'breadcrumbs' %}
+{%- endcomment -%}
+
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <ol class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="{{ routes.root_url }}" class="breadcrumbs__link">
+        {{ 'general.breadcrumbs.home' | t | default: 'Home' }}
+      </a>
+    </li>
+    
+    {%- if template.name == 'product' -%}
+      {%- if collection -%}
+        <li class="breadcrumbs__item">
+          <a href="{{ collection.url }}" class="breadcrumbs__link">{{ collection.title }}</a>
+        </li>
+      {%- endif -%}
+      <li class="breadcrumbs__item breadcrumbs__item--current">
+        <span>{{ product.title }}</span>
+      </li>
+    {%- elsif template.name == 'collection' -%}
+      <li class="breadcrumbs__item breadcrumbs__item--current">
+        <span>{{ collection.title }}</span>
+      </li>
+    {%- elsif template.name == 'article' -%}
+      <li class="breadcrumbs__item">
+        <a href="{{ blog.url }}" class="breadcrumbs__link">{{ blog.title }}</a>
+      </li>
+      <li class="breadcrumbs__item breadcrumbs__item--current">
+        <span>{{ article.title }}</span>
+      </li>
+    {%- elsif template.name == 'page' -%}
+      <li class="breadcrumbs__item breadcrumbs__item--current">
+        <span>{{ page.title }}</span>
+      </li>
+    {%- elsif template.name == 'blog' -%}
+      <li class="breadcrumbs__item breadcrumbs__item--current">
+        <span>{{ blog.title }}</span>
+      </li>
+    {%- elsif template.name == 'cart' -%}
+      <li class="breadcrumbs__item breadcrumbs__item--current">
+        <span>{{ 'general.breadcrumbs.cart' | t | default: 'Cart' }}</span>
+      </li>
+    {%- endif -%}
+  </ol>
+</nav>
+

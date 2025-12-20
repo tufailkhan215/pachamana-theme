@@ -1,0 +1,37 @@
+{%- comment -%}
+  Pagination snippet
+  Usage: {% render 'pagination', paginate: paginate %}
+{%- endcomment -%}
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <ul class="pagination__list">
+    {%- if paginate.previous -%}
+      <li class="pagination__item">
+        <a href="{{ paginate.previous.url }}" class="pagination__link pagination__link--prev">
+          {% render 'icon', icon: 'arrow-left' %}
+          <span>{{ 'general.pagination.previous' | t | default: 'Previous' }}</span>
+        </a>
+      </li>
+    {%- endif -%}
+    
+    {%- for part in paginate.parts -%}
+      <li class="pagination__item">
+        {%- if part.is_link -%}
+          <a href="{{ part.url }}" class="pagination__link">{{ part.title }}</a>
+        {%- else -%}
+          <span class="pagination__link pagination__link--current">{{ part.title }}</span>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+    
+    {%- if paginate.next -%}
+      <li class="pagination__item">
+        <a href="{{ paginate.next.url }}" class="pagination__link pagination__link--next">
+          <span>{{ 'general.pagination.next' | t | default: 'Next' }}</span>
+          {% render 'icon', icon: 'arrow-right' %}
+        </a>
+      </li>
+    {%- endif -%}
+  </ul>
+</nav>
+

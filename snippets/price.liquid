@@ -1,0 +1,26 @@
+{%- comment -%}
+  Price snippet
+  Usage: {% render 'price', product: product %}
+{%- endcomment -%}
+
+<div class="price">
+  {%- if product.compare_at_price > product.price -%}
+    <span class="price-item price-item--regular">
+      {{ product.price | money }}
+    </span>
+    <span class="price-item price-item--sale">
+      {{ product.compare_at_price | money }}
+    </span>
+  {%- else -%}
+    <span class="price-item price-item--regular">
+      {{ product.price | money }}
+    </span>
+  {%- endif -%}
+  
+  {%- if product.available == false -%}
+    <span class="price-item price-item--sold-out">
+      {{ 'products.product.sold_out' | t }}
+    </span>
+  {%- endif -%}
+</div>
+

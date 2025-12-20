@@ -1,0 +1,35 @@
+{%- comment -%}
+  Product card snippet
+  Usage: {% render 'product-card', product: product %}
+{%- endcomment -%}
+
+<div class="product-card">
+  <a href="{{ product.url }}" class="product-card__link">
+    <div class="product-card__image">
+      {%- if product.featured_image -%}
+        <img
+          src="{{ product.featured_image | image_url: width: 533 }}"
+          alt="{{ product.featured_image.alt | escape }}"
+          loading="lazy"
+          width="{{ product.featured_image.width }}"
+          height="{{ product.featured_image.height }}"
+        >
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+    
+    <div class="product-card__info">
+      <h3 class="product-card__title">{{ product.title | escape }}</h3>
+      
+      <div class="product-card__price">
+        {% render 'price', product: product %}
+      </div>
+      
+      {%- if product.vendor != blank -%}
+        <div class="product-card__vendor">{{ product.vendor }}</div>
+      {%- endif -%}
+    </div>
+  </a>
+</div>
+
