@@ -529,22 +529,172 @@
   <script src="{{ 'elements-handlers.min.js' | asset_url }}" defer></script>
   <script src="{{ 'frontend.min.js' | asset_url }}" defer></script>
   <script src="{{ 'webpack-pro.runtime.min.js' | asset_url }}" defer></script>
+  {%- comment -%} Enhanced Animation Support - Handle elementor-invisible and trigger animations {%- endcomment -%}
   <script>
-    // Final safety check - ensure animations work even if Elementor has errors
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        // Remove elementor-invisible class from all elements after a delay
+    (function() {
+      'use strict';
+      
+      // Initialize Elementor animations
+      function initElementorAnimations() {
+        // Remove elementor-invisible class and trigger animations
         var invisibleElements = document.querySelectorAll('.elementor-invisible');
-        invisibleElements.forEach(function(el) {
-          if (el.classList.contains('elementor-invisible')) {
-            setTimeout(function() {
-              el.classList.remove('elementor-invisible');
-            }, 1000);
+        
+        invisibleElements.forEach(function(el, index) {
+          // Get animation settings from data attribute
+          var settings = el.getAttribute('data-settings');
+          var animation = 'fadeIn'; // default
+          var delay = 0;
+          
+          if (settings) {
+            try {
+              var parsed = JSON.parse(settings);
+              if (parsed._animation) {
+                animation = parsed._animation;
+              }
+              if (parsed._animation_delay) {
+                delay = parseInt(parsed._animation_delay) || 0;
+              }
+            } catch(e) {
+              // If parsing fails, use defaults
             }
+          }
+          
+          // Calculate delay: base delay + animation delay + staggered delay
+          var totalDelay = delay + (index * 100);
+          
+          setTimeout(function() {
+            // Remove invisible class
+            el.classList.remove('elementor-invisible');
+            
+            // Add animation class if not already present
+            if (animation && !el.classList.contains('elementor-animation-' + animation)) {
+              el.classList.add('elementor-animation-' + animation);
+            }
+            
+            // Trigger reflow to ensure animation starts
+            el.offsetHeight;
+          }, totalDelay);
         });
-      }, 2000);
-    });
+      }
+      
+      // Initialize on DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(initElementorAnimations, 100);
+          setTimeout(initElementorAnimations, 500);
+          setTimeout(initElementorAnimations, 1000);
+        });
+      } else {
+        setTimeout(initElementorAnimations, 100);
+        setTimeout(initElementorAnimations, 500);
+        setTimeout(initElementorAnimations, 1000);
+      }
+      
+      // Also initialize after window load
+      window.addEventListener('load', function() {
+        setTimeout(initElementorAnimations, 500);
+      });
+      
+      // Fallback: Remove all invisible classes after 3 seconds
+      setTimeout(function() {
+        var allInvisible = document.querySelectorAll('.elementor-invisible');
+        allInvisible.forEach(function(el) {
+          el.classList.remove('elementor-invisible');
+        });
+      }, 3000);
+    })();
   </script>
+  
+  {%- comment -%} CSS Support for Section Tags {%- endcomment -%}
+  <style>
+    /* Ensure section classes work with both section tags and divs */
+    section.section-background-motion,
+    .section-background-motion {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-animatied-title,
+    .section-animatied-title {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-image-with-text-button,
+    .section-image-with-text-button {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-health-benifits,
+    .section-health-benifits {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-featured-products,
+    .section-featured-products {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-text-images-grid,
+    .section-text-images-grid {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-image-text-dynamicbg,
+    .section-image-text-dynamicbg {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-rescent-articles,
+    .section-rescent-articles {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-photo-gallery,
+    .section-photo-gallery {
+      position: relative;
+      width: 100%;
+    }
+    
+    section.section-faq,
+    .section-faq {
+      position: relative;
+      width: 100%;
+    }
+    
+    /* Ensure elementor-invisible elements are hidden initially */
+    .elementor-invisible {
+      visibility: hidden;
+      opacity: 0;
+    }
+    
+    /* Animation classes */
+    .elementor-animation-fadeIn {
+      animation: fadeIn 0.6s ease-in-out forwards;
+    }
+    
+    .elementor-animation-slideInDown {
+      animation: slideInDown 0.6s ease-in-out forwards;
+    }
+    
+    .elementor-animation-zoomIn {
+      animation: zoomIn 0.6s ease-in-out forwards;
+    }
+    
+    .elementor-animation-zoomInDown {
+      animation: zoomInDown 0.6s ease-in-out forwards;
+    }
+    
+    .elementor-animation-tada {
+      animation: tada 1s ease-in-out forwards;
+    }
+  </style>
   
   {%- comment -%} jQuery Plugins {%- endcomment -%}
   <script src="{{ 'jquery.sticky.min.js' | asset_url }}" defer></script>
