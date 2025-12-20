@@ -1,4 +1,12 @@
-<div class="plus_row_scroll_overflow elementor-element elementor-element-730fa71d e-flex e-con-boxed e-con e-parent section-image-with-text-button" data-id="730fa71d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;}">
+{%- if section.settings.background_image != blank -%}
+<style>
+  .section-image-with-text-button.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
+  .section-image-with-text-button.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}') !important;
+  }
+</style>
+{%- endif -%}
+<div class="plus_row_scroll_overflow elementor-element elementor-element-730fa71d e-flex e-con-boxed e-con e-parent section-image-with-text-button{% if section.settings.background_image != blank %} e-lazyloaded{% endif %}" data-id="730fa71d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;}">
 					<div class="e-con-inner">
 				<div class="elementor-shape elementor-shape-top" aria-hidden="true" data-negative="false">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
@@ -24,7 +32,7 @@
 	<path class="elementor-shape-fill" d="M75.5,12.6c0.2,0.1,2-0.8,4.3-1.1c2.3-0.2,2.1-0.3,2.1-0.5c0-0.1-1.8-0.4-3.4,0	C76.9,11.5,75.3,12.5,75.5,12.6z"/>
 	<path class="elementor-shape-fill" d="M15.6,13.2c0-0.1,4.3,0,6.7,0.5c2.4,0.5,5,1.9,5,2c0,0.1-2.7-0.8-5.1-1.4	C19.9,13.7,15.7,13.3,15.6,13.2z"/>
 </svg>		</div>
-		<div class="elementor-element elementor-element-2055cbe7 elementor-invisible e-flex e-con-boxed e-con e-child" data-id="2055cbe7" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:0}">
+		<div class="elementor-element elementor-element-2055cbe7 e-flex e-con-boxed e-con e-child animated fadeIn" data-id="2055cbe7" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:0}">
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-5426dae0 e-flex e-con-boxed e-con e-child" data-id="5426dae0" data-element_type="container">
 					<div class="e-con-inner">
@@ -69,8 +77,15 @@
   "settings": [
     {
       "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Background image for the section (e.g., light-gold-fabric.png)"
+    },
+    {
+      "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Content Image",
+      "info": "Main content image displayed in the section"
     },
     {
       "type": "text",
