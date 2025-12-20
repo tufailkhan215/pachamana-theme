@@ -565,9 +565,13 @@
               var parsed = JSON.parse(settings);
               if (parsed._animation) {
                 animation = parsed._animation;
+              } else if (parsed.animation) {
+                animation = parsed.animation;
               }
               if (parsed._animation_delay) {
                 delay = parseInt(parsed._animation_delay) || 0;
+              } else if (parsed.animation_delay) {
+                delay = parseInt(parsed.animation_delay) || 0;
               }
             } catch(e) {
               // If parsing fails, use defaults
@@ -582,13 +586,41 @@
             el.classList.remove('elementor-invisible');
             
             // Add animation class if not already present
-            if (animation && !el.classList.contains('elementor-animation-' + animation)) {
-              el.classList.add('elementor-animation-' + animation);
+            if (animation && animation !== 'none') {
+              var animationClass = 'elementor-animation-' + animation;
+              if (!el.classList.contains(animationClass)) {
+                el.classList.add(animationClass);
+              }
             }
             
             // Trigger reflow to ensure animation starts
             el.offsetHeight;
           }, totalDelay);
+        });
+        
+        // Also handle elements with animation in data-settings but no elementor-invisible class
+        var elementsWithAnimation = document.querySelectorAll('[data-settings*="animation"]');
+        elementsWithAnimation.forEach(function(el) {
+          if (!el.classList.contains('elementor-invisible')) {
+            var settings = el.getAttribute('data-settings');
+            if (settings) {
+              try {
+                var parsed = JSON.parse(settings);
+                var animation = parsed.animation || parsed._animation;
+                if (animation && animation !== 'none') {
+                  var animationClass = 'elementor-animation-' + animation;
+                  if (!el.classList.contains(animationClass)) {
+                    setTimeout(function() {
+                      el.classList.add(animationClass);
+                      el.offsetHeight;
+                    }, 100);
+                  }
+                }
+              } catch(e) {
+                // Ignore parse errors
+              }
+            }
+          }
         });
       }
       
