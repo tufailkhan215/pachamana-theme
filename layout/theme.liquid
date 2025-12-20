@@ -1024,6 +1024,56 @@
       src: url("{{ 'fa-solid-900.woff2' | asset_url }}") format("woff2"),
            url("{{ 'fa-solid-900.woff' | asset_url }}") format("woff");
     }
+    
+    /* Elementor Global Color Variables - Define all CSS variables used in Elementor CSS */
+    :root,
+    .elementor,
+    .elementor-kit-15,
+    body.elementor-page {
+      /* Primary Colors */
+      --e-global-color-primary: #333132;
+      --e-global-color-secondary: #5C402F;
+      --e-global-color-text: #E2AB43;
+      --e-global-color-accent: #FFFFFF;
+      
+      /* Additional Custom Colors */
+      --e-global-color-58f068d: #044C4B;
+      --e-global-color-5abf1e8: #F9F2EF;
+      --e-global-color-26ebbe0: #3331324F;
+      --e-global-color-5511ca5: #F9F2EFD1;
+      --e-global-color-36c98fe: #5C402F85;
+      --e-global-color-a92bdc7: #F9F2EF70;
+      --e-global-color-77302cc: #E2AB43A1;
+      
+      /* Typography Variables */
+      --e-global-typography-primary-font-family: "OAXACA", Sans-serif;
+      --e-global-typography-primary-font-size: 28px;
+      --e-global-typography-secondary-font-family: "Roboto Slab", Sans-serif;
+      --e-global-typography-secondary-font-weight: 400;
+      --e-global-typography-text-font-family: "Roboto", Sans-serif;
+      --e-global-typography-text-font-weight: 400;
+      --e-global-typography-accent-font-family: "Roboto", Sans-serif;
+      --e-global-typography-accent-font-weight: 500;
+      --e-global-typography-ad91809-font-family: "Barlow", Sans-serif;
+      --e-global-typography-ad91809-font-size: 18px;
+      --e-global-typography-ad91809-font-weight: 500;
+    }
+    
+    /* Ensure elementor-kit-15 class has these variables */
+    .elementor-kit-15 {
+      --e-global-color-primary: #333132;
+      --e-global-color-secondary: #5C402F;
+      --e-global-color-text: #E2AB43;
+      --e-global-color-accent: #FFFFFF;
+      --e-global-color-58f068d: #044C4B;
+      --e-global-color-5abf1e8: #F9F2EF;
+      --e-global-color-26ebbe0: #3331324F;
+      --e-global-color-5511ca5: #F9F2EFD1;
+      --e-global-color-36c98fe: #5C402F85;
+      --e-global-color-a92bdc7: #F9F2EF70;
+      --e-global-color-77302cc: #E2AB43A1;
+      background-color: var(--e-global-color-secondary);
+    }
   </style>
   
   {%- comment -%} jQuery Plugins {%- endcomment -%}
