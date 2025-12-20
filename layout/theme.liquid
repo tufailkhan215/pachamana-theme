@@ -674,7 +674,10 @@
       
       // Also handle Elementor's built-in animation system
       function initElementorBuiltInAnimations() {
-        if (typeof window.elementorFrontend !== 'undefined' && window.elementorFrontend.hooks) {
+        if (typeof window.elementorFrontend !== 'undefined' && 
+            window.elementorFrontend !== null && 
+            window.elementorFrontend.hooks && 
+            window.elementorFrontend.hooks !== null) {
           try {
             // Trigger Elementor's animation system
             if (typeof jQuery !== 'undefined') {
@@ -982,7 +985,10 @@
         });
         
         // Also try Elementor's built-in motion effects if available
-        if (typeof window.elementorFrontend !== 'undefined' && window.elementorFrontend.modules) {
+        if (typeof window.elementorFrontend !== 'undefined' && 
+            window.elementorFrontend !== null && 
+            window.elementorFrontend.modules && 
+            window.elementorFrontend.modules !== null) {
           try {
             if (window.elementorFrontend.modules.motionEffects) {
               motionElements.forEach(function(el) {
@@ -1393,22 +1399,14 @@
       background-color: var(--e-global-color-text) !important;
     }
     
-    /* Section: Featured Products - cacao-beans and chocolate-fabric backgrounds */
+    /* Section: Featured Products - chocolate-fabric background (cacao-beans.png not available, using chocolate-fabric only) */
     .elementor-element[data-id="fde6372"]:not(.elementor-motion-effects-element-type-background),
     .elementor-element[data-id="fde6372"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
-      background-image: url("{{ 'cacao-beans.png' | asset_url }}") !important;
-      background-size: cover !important;
-      background-position: center center !important;
-      background-repeat: no-repeat !important;
-      background-color: var(--e-global-color-5abf1e8) !important;
-    }
-    
-    .elementor-element[data-id="fde6372"]::before,
-    .elementor-element[data-id="fde6372"] > .elementor-motion-effects-container > .elementor-motion-effects-layer::before {
       background-image: url("{{ 'chocolate-fabric.png' | asset_url }}") !important;
       background-size: cover !important;
       background-position: center center !important;
       background-repeat: no-repeat !important;
+      background-color: var(--e-global-color-5abf1e8) !important;
     }
     
     /* Section: Text Images Grid - light-gold-fabric background */
