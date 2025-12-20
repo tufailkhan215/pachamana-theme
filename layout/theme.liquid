@@ -1013,6 +1013,17 @@
     .elementor-element[data-settings*="motion_fx"] {
       position: relative;
     }
+    
+    /* Fix Font Awesome font paths - override CSS to use correct asset paths */
+    /* Only override fa-solid since that's what we have in assets */
+    @font-face {
+      font-family: "Font Awesome 5 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("{{ 'fa-solid-900.woff2' | asset_url }}") format("woff2"),
+           url("{{ 'fa-solid-900.woff' | asset_url }}") format("woff");
+    }
   </style>
   
   {%- comment -%} jQuery Plugins {%- endcomment -%}
@@ -1022,7 +1033,8 @@
   {%- comment -%} jquery.ui.touch-punch.js not found in assets/js, skipping {%- endcomment -%}
   
   {%- comment -%} Other JS {%- endcomment -%}
-  <script src="{{ 'imagesloaded.pkgd.min.js' | asset_url }}" defer></script>
+  {%- comment -%} imagesloaded.pkgd.min.js is corrupted, removed {%- endcomment -%}
+  {%- comment -%} <script src="{{ 'imagesloaded.pkgd.min.js' | asset_url }}" defer></script> {%- endcomment -%}
   <script src="{{ 'sourcebuster.min.js' | asset_url }}" defer></script>
   <script src="{{ 'plus-equal-height.min.js' | asset_url }}" defer></script>
   <script src="{{ 'plus-section-column-link.min.js' | asset_url }}" defer></script>
