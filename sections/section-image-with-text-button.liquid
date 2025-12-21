@@ -1,26 +1,5 @@
 <style>
-  /* Section: Image With Text Button - Main container 730fa71d (EXACT from post-63.css) */
-  .elementor-63 .elementor-element.elementor-element-730fa71d,
-  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d,
-  .elementor-element[data-id="730fa71d"],
-  .section-image-with-text-button.elementor-element-730fa71d {
-    --display: flex;
-    --min-height: 164px;
-    --flex-direction: column;
-    --container-widget-width: 100%;
-    --container-widget-height: initial;
-    --container-widget-flex-grow: 0;
-    --container-widget-align-self: initial;
-    --flex-wrap-mobile: wrap;
-    --overflow: hidden;
-    --overlay-opacity: 1;
-    --padding-top: 100px;
-    --padding-bottom: 100px;
-    --padding-left: 0px;
-    --padding-right: 0px;
-  }
-  
-  /* Section: Image With Text Button - Background image (EXACT from post-63.css) */
+  /* Only dynamic image URLs that need Liquid variables - all other CSS is in post-63.css */
   {%- if section.settings.background_image != blank -%}
   .elementor-63 .elementor-element.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
   .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer,
@@ -30,7 +9,7 @@
   .elementor-element[data-id="730fa71d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer,
   .section-image-with-text-button.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
   .section-image-with-text-button.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer {
-    background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}');
+    background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}') !important;
   }
   {%- else -%}
   .elementor-63 .elementor-element.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
@@ -41,11 +20,11 @@
   .elementor-element[data-id="730fa71d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer,
   .section-image-with-text-button.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
   .section-image-with-text-button.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer {
-    background-image: url('{{ "light-gold-fabric.png" | asset_url }}');
+    background-image: url('{{ "light-gold-fabric.png" | asset_url }}') !important;
   }
   {%- endif -%}
   
-  /* Section: Image With Text Button - ::before pseudo-element (EXACT from post-63.css) */
+  /* Override ::before pseudo-element image URL with Shopify asset path */
   .elementor-63 .elementor-element.elementor-element-730fa71d::before,
   .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-background-video-container::before,
   .elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-background-video-container::before,
@@ -70,160 +49,20 @@
   .elementor-element[data-id="730fa71d"] > .elementor-background-slideshow::before,
   .elementor-element[data-id="730fa71d"] > .e-con-inner > .elementor-background-slideshow::before,
   .elementor-element[data-id="730fa71d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer::before {
-    background-image: url('{{ "cacao-fruit-isolated.png" | asset_url }}');
-    --background-overlay: '';
-    background-position: center left;
-    background-repeat: no-repeat;
-    background-size: 50% auto;
+    background-image: url('{{ "cacao-fruit-isolated.png" | asset_url }}') !important;
   }
   
-  /* Section: Image With Text Button - Shape dividers (EXACT from post-63.css) */
-  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-shape-top .elementor-shape-fill,
-  .elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-shape-top .elementor-shape-fill {
-    fill: var(--e-global-color-text);
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-shape-top svg,
-  .elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-shape-top svg {
-    height: 34px;
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-shape-bottom .elementor-shape-fill,
-  .elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-shape-bottom .elementor-shape-fill {
-    fill: var(--e-global-color-text);
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-shape-bottom svg,
-  .elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner > .elementor-shape-bottom svg {
-    height: 34px;
-  }
-  
-  /* Section: Image With Text Button - Container 2055cbe7 (EXACT from post-63.css) */
-  .elementor-63 .elementor-element.elementor-element-2055cbe7,
-  .elementor.elementor-63 .elementor-element.elementor-element-2055cbe7,
-  .elementor-element[data-id="2055cbe7"] {
-    --display: flex;
-    --flex-direction: row;
-    --container-widget-width: calc((1 - var(--container-widget-flex-grow)) * 100%);
-    --container-widget-height: 100%;
-    --container-widget-flex-grow: 1;
-    --container-widget-align-self: stretch;
-    --flex-wrap-mobile: wrap;
-    --justify-content: center;
-    --align-items: center;
-    --gap: 10px 10px;
-    --row-gap: 10px;
-    --column-gap: 10px;
-    border-style: solid;
-    --border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    --border-top-width: 1px;
-    --border-right-width: 1px;
-    --border-bottom-width: 1px;
-    --border-left-width: 1px;
-    border-color: var(--e-global-color-text);
-    --border-color: var(--e-global-color-text);
-    --border-radius: 35px 35px 35px 35px;
-    box-shadow: 0px 0px 26px 0px rgba(56.1, 30.040012287334594, 5.731956521739129, 0.5);
-    --margin-top: 0px;
-    --margin-bottom: 0px;
-    --margin-left: 0px;
-    --margin-right: 0px;
-    --padding-top: 45px;
-    --padding-bottom: 45px;
-    --padding-left: 45px;
-    --padding-right: 45px;
-  }
-  
+  /* Override container 2055cbe7 background image with Shopify asset path */
   .elementor-63 .elementor-element.elementor-element-2055cbe7:not(.elementor-motion-effects-element-type-background),
   .elementor-63 .elementor-element.elementor-element-2055cbe7 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
   .elementor.elementor-63 .elementor-element.elementor-element-2055cbe7:not(.elementor-motion-effects-element-type-background),
   .elementor.elementor-63 .elementor-element.elementor-element-2055cbe7 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
   .elementor-element[data-id="2055cbe7"]:not(.elementor-motion-effects-element-type-background),
   .elementor-element[data-id="2055cbe7"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
-    background-color: var(--e-global-color-text);
-    background-image: url('{{ "gold-fabric.png" | asset_url }}');
+    background-image: url('{{ "gold-fabric.png" | asset_url }}') !important;
   }
   
-  /* Section: Image With Text Button - Child elements (EXACT from post-63.css) */
-  .elementor-63 .elementor-element.elementor-element-5426dae0,
-  .elementor.elementor-63 .elementor-element.elementor-element-5426dae0,
-  .elementor-element[data-id="5426dae0"] {
-    --display: flex;
-    --margin-top: 0px;
-    --margin-bottom: 0px;
-    --margin-left: 0px;
-    --margin-right: 0px;
-    --padding-top: 0px;
-    --padding-bottom: 0px;
-    --padding-left: 0px;
-    --padding-right: 0px;
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-6bb4f262,
-  .elementor.elementor-63 .elementor-element.elementor-element-6bb4f262,
-  .elementor-element[data-id="6bb4f262"] {
-    text-align: left;
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-6bb4f262 img,
-  .elementor.elementor-63 .elementor-element.elementor-element-6bb4f262 img,
-  .elementor-element[data-id="6bb4f262"] img {
-    width: 100%;
-    border-style: solid;
-    border-width: 2px 2px 2px 2px;
-    border-color: var(--e-global-color-text);
-    border-radius: 25px 25px 25px 25px;
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-4f01f2ba,
-  .elementor.elementor-63 .elementor-element.elementor-element-4f01f2ba,
-  .elementor-element[data-id="4f01f2ba"] {
-    --display: flex;
-    --gap: 0px 0px;
-    --row-gap: 0px;
-    --column-gap: 0px;
-    --margin-top: 0px;
-    --margin-bottom: 0px;
-    --margin-left: 0px;
-    --margin-right: 0px;
-    --padding-top: 5px;
-    --padding-bottom: 5px;
-    --padding-left: 5px;
-    --padding-right: 5px;
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-0a38d5b .heading .heading-title,
-  .elementor.elementor-63 .elementor-element.elementor-element-0a38d5b .heading .heading-title,
-  .elementor-element[data-id="0a38d5b"] .heading .heading-title {
-    font-family: "OAXACA", Sans-serif;
-    font-size: 38px;
-    letter-spacing: 1.5px;
-    color: var(--e-global-color-secondary);
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-0a38d5b .heading .heading-sub-title,
-  .elementor.elementor-63 .elementor-element.elementor-element-0a38d5b .heading .heading-sub-title,
-  .elementor-element[data-id="0a38d5b"] .heading .heading-sub-title {
-    font-family: "OAXACA", Sans-serif;
-    font-size: 18px;
-    letter-spacing: 5.9px;
-    color: var(--e-global-color-secondary);
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-9b850d3,
-  .elementor.elementor-63 .elementor-element.elementor-element-9b850d3,
-  .elementor-element[data-id="9b850d3"] {
-    column-gap: 0px;
-    text-align: center;
-    font-family: "Barlow", Sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    color: var(--e-global-color-secondary);
-  }
-  
-  /* Section: Image With Text Button - Button ad4e711 (EXACT from post-63.css) */
+  /* Override button ad4e711 background image with Shopify asset path */
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_1 .adv-button-link-wrap:before,
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_2 .adv-button-link-wrap:before,
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_3 .adv-button-link-wrap,
@@ -237,146 +76,7 @@
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_9 .adv-button-link-wrap,
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_12 .adv-button-link-wrap,
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_13 .adv-button-link-wrap {
-    background-image: url('{{ "gold-fabric.png" | asset_url }}');
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt-plus-adv-button-wrapper {
-    justify-content: center;
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_1 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_2 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_3 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_4 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_5 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_6 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_7 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_8 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_9 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_12 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_13 .adv-button-link-wrap {
-    padding: 15px 60px 15px 60px;
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_13 .adv-button-link-wrap:hover > span {
-    font-family: "OAXACA", Sans-serif;
-    font-size: 20px;
-    letter-spacing: -0.7px;
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_5 .adv-button-link-wrap .tp-cta-st5-text {
-    color: var(--e-global-color-secondary);
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_1 .adv-button-link-wrap:before,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_2 .adv-button-link-wrap:before,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_3 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_4 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_5 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_6 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_7 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_8 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_9 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_12 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_13 .adv-button-link-wrap {
-    border-style: solid;
-    border-color: var(--e-global-color-text);
-  }
-  
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_1 .adv-button-link-wrap:before,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_2 .adv-button-link-wrap:before,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_3 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_5 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_6 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_7 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_8 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_9 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_12 .adv-button-link-wrap,
-  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_13 .adv-button-link-wrap {
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  }
-  
-  /* Responsive styles (EXACT from post-63.css) */
-  @media (max-width: 879px) {
-    .elementor-63 .elementor-element.elementor-element-730fa71d,
-    .elementor.elementor-63 .elementor-element.elementor-element-730fa71d,
-    .elementor-element[data-id="730fa71d"],
-    .section-image-with-text-button.elementor-element-730fa71d {
-      --content-width: 100%;
-      --min-height: 134px;
-      --padding-top: 45px;
-      --padding-bottom: 45px;
-      --padding-left: 10px;
-      --padding-right: 10px;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-730fa71d.e-con,
-    .elementor.elementor-63 .elementor-element.elementor-element-730fa71d.e-con,
-    .elementor-element[data-id="730fa71d"].e-con,
-    .section-image-with-text-button.elementor-element-730fa71d.e-con {
-      --align-self: stretch;
-      --flex-grow: 1;
-      --flex-shrink: 0;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-2055cbe7,
-    .elementor.elementor-63 .elementor-element.elementor-element-2055cbe7,
-    .elementor-element[data-id="2055cbe7"] {
-      --border-radius: 20px 20px 20px 20px;
-      --padding-top: 15px;
-      --padding-bottom: 15px;
-      --padding-left: 15px;
-      --padding-right: 15px;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-6bb4f262 img,
-    .elementor.elementor-63 .elementor-element.elementor-element-6bb4f262 img,
-    .elementor-element[data-id="6bb4f262"] img {
-      border-radius: 15px 15px 15px 15px;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-4f01f2ba,
-    .elementor.elementor-63 .elementor-element.elementor-element-4f01f2ba,
-    .elementor-element[data-id="4f01f2ba"] {
-      --min-height: 75px;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-0a38d5b > .elementor-widget-container,
-    .elementor.elementor-63 .elementor-element.elementor-element-0a38d5b > .elementor-widget-container,
-    .elementor-element[data-id="0a38d5b"] > .elementor-widget-container {
-      margin: 0px 0px 10px 0px;
-      padding: 0px 0px 0px 0px;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-0a38d5b .heading .heading-title,
-    .elementor.elementor-63 .elementor-element.elementor-element-0a38d5b .heading .heading-title,
-    .elementor-element[data-id="0a38d5b"] .heading .heading-title {
-      font-size: 24px;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-0a38d5b .heading .heading-sub-title,
-    .elementor.elementor-63 .elementor-element.elementor-element-0a38d5b .heading .heading-sub-title,
-    .elementor-element[data-id="0a38d5b"] .heading .heading-sub-title {
-      font-size: 18px;
-      line-height: 0.3em;
-      letter-spacing: 2.1px;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-9b850d3,
-    .elementor.elementor-63 .elementor-element.elementor-element-9b850d3,
-    .elementor-element[data-id="9b850d3"] {
-      font-size: 18px;
-      line-height: 20px;
-      letter-spacing: -0.1px;
-    }
-    
-    .elementor-63 .elementor-element.elementor-element-ad4e711 > .elementor-widget-container,
-    .elementor.elementor-63 .elementor-element.elementor-element-ad4e711 > .elementor-widget-container,
-    .elementor-element[data-id="ad4e711"] > .elementor-widget-container {
-      margin: -38px 20px 20px 20px;
-    }
+    background-image: url('{{ "gold-fabric.png" | asset_url }}') !important;
   }
 </style>
 <div class="plus_row_scroll_overflow elementor-element elementor-element-730fa71d e-flex e-con-boxed e-con e-parent section-image-with-text-button{% if section.settings.background_image != blank %} e-lazyloaded{% endif %}" data-id="730fa71d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;}">
