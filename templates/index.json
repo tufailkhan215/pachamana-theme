@@ -77,6 +77,19 @@
         "prefix_text": "OUR CACAO IS"
       }
     },
+    "section_image_with_text_button_cGnRpk": {
+      "type": "section-image-with-text-button",
+      "name": "Image With Text Button",
+      "settings": {
+        "background_image": "shopify://shop_images/cacao-fruit-isolated.png",
+        "image": "shopify://shop_images/PACHAMANA-0179.jpg",
+        "heading": "Ceremonial Cacao",
+        "subheading": "A Healing Superfood",
+        "text": "Rich, creamy, and deeply nourishing. Our ceremonial cacao is 100% pure, minimally processed, and packed with mood-boosting compounds to energize your body, open your heart, and elevate your life. Crafted with care by small-scale farmers in Peru who honor the land and the spirit of cacao.",
+        "button_text": "SHOP cacao",
+        "button_url": ""
+      }
+    },
     "section-health-benifits": {
       "type": "section-health-benifits",
       "settings": {
@@ -255,17 +268,6 @@
       ],
       "settings": {
         "heading": "Frequently asked questions"
-      }
-    },
-    "section_image_with_text_button_cGnRpk": {
-      "type": "section-image-with-text-button",
-      "name": "Image With Text Button",
-      "settings": {
-        "heading": "Ceremonial Cacao",
-        "subheading": "A Healing Superfood",
-        "text": "Rich, creamy, and deeply nourishing. Our ceremonial cacao is 100% pure, minimally processed, and packed with mood-boosting compounds to energize your body, open your heart, and elevate your life. Crafted with care by small-scale farmers in Peru who honor the land and the spirit of cacao.",
-        "button_text": "SHOP cacao",
-        "button_url": ""
       }
     }
   },
