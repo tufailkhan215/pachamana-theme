@@ -20,13 +20,23 @@
   .elementor.elementor-63 .elementor-element.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
   .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer,
   .elementor-element[data-id="730fa71d"]:not(.elementor-motion-effects-element-type-background),
-  .elementor-element[data-id="730fa71d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  .elementor-element[data-id="730fa71d"] > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+  .section-image-with-text-button.elementor-element-730fa71d:not(.elementor-motion-effects-element-type-background),
+  .section-image-with-text-button.elementor-element-730fa71d > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-image: url('{{ "light-gold-fabric.png" | asset_url }}') !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
   {%- endif -%}
+  
+  /* Ensure the main container has relative positioning for ::before pseudo-element */
+  .elementor-63 .elementor-element.elementor-element-730fa71d,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d,
+  .elementor-element[data-id="730fa71d"],
+  .section-image-with-text-button.elementor-element-730fa71d {
+    position: relative !important;
+  }
   
   /* Section: Image With Text Button - Container 2055cbe7 styles from post-63.css */
   .elementor-63 .elementor-element.elementor-element-2055cbe7,
@@ -267,7 +277,17 @@
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    z-index: 0 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Ensure content is above the ::before pseudo-element */
+  .elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner,
+  .elementor.elementor-63 .elementor-element.elementor-element-730fa71d > .e-con-inner,
+  .elementor-element[data-id="730fa71d"] > .e-con-inner,
+  .section-image-with-text-button.elementor-element-730fa71d > .e-con-inner {
+    position: relative !important;
+    z-index: 2 !important;
   }
 </style>
 <div class="plus_row_scroll_overflow elementor-element elementor-element-730fa71d e-flex e-con-boxed e-con e-parent section-image-with-text-button{% if section.settings.background_image != blank %} e-lazyloaded{% endif %}" data-id="730fa71d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;}">
