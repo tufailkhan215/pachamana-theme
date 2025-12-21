@@ -62,7 +62,11 @@
     background-image: url('{{ "gold-fabric.png" | asset_url }}') !important;
   }
   
-  /* Override button ad4e711 background image with Shopify asset path */
+  /* Override button ad4e711 styles to match source HTML - override plus-cta-style-3.css defaults */
+  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt-plus-adv-button-wrapper {
+    justify-content: center !important;
+  }
+  
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_1 .adv-button-link-wrap:before,
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_2 .adv-button-link-wrap:before,
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_3 .adv-button-link-wrap,
@@ -77,6 +81,27 @@
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_12 .adv-button-link-wrap,
   .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_13 .adv-button-link-wrap {
     background-image: url('{{ "gold-fabric.png" | asset_url }}') !important;
+    background: none !important; /* Override plus-cta-style-3.css default background */
+    border-style: solid !important;
+    border-color: var(--e-global-color-text) !important;
+    border-width: 1px !important; /* Override plus-cta-style-3.css default 3px */
+    border-radius: 35px 35px 35px 35px !important; /* Override plus-cta-style-3.css default 50px */
+    padding: 15px 60px 15px 60px !important;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) !important;
+  }
+  
+  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta .adv-button-link-wrap,
+  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta .adv-button-link-wrap span {
+    font-family: "OAXACA", Sans-serif !important;
+    font-size: 20px !important;
+    letter-spacing: -0.7px !important;
+    color: var(--e-global-color-secondary) !important;
+  }
+  
+  .elementor-63 .elementor-element.elementor-element-ad4e711 .pt_plus_adv_button.ab-cta.tp_cta_st_13 .adv-button-link-wrap:hover > span {
+    font-family: "OAXACA", Sans-serif !important;
+    font-size: 20px !important;
+    letter-spacing: -0.7px !important;
   }
 </style>
 <div class="plus_row_scroll_overflow elementor-element elementor-element-730fa71d e-flex e-con-boxed e-con e-parent section-image-with-text-button{% if section.settings.background_image != blank %} e-lazyloaded{% endif %}" data-id="730fa71d" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;}">
