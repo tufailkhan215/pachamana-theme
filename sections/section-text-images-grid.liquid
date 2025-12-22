@@ -26,7 +26,7 @@
     box-sizing: border-box !important;
     display: block !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 10px !important;
     float: none !important;
     clear: none !important;
   }
@@ -42,6 +42,7 @@
     width: 100% !important;
     max-width: 100% !important;
     gap: 10px !important;
+    padding: 0 !important;
   }
 
   /* Image widget container - center images */
@@ -54,45 +55,46 @@
   }
 
 
-  /* Image sizing - match source CSS max-width percentages for each item */
-  /* First item (index 0) - 46% max-width */
+  /* Image sizing - increase sizes for 4-column layout to match source visual appearance */
+  /* Images should fill more of their 25% width containers to appear prominent */
+  /* First item (index 0) - use larger percentage for better visibility */
   .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(1) .elementor-widget-image img,
   .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(1) .elementor-widget-image img,
   .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element:nth-child(1) .elementor-widget-image img {
-    max-width: 46% !important;
+    max-width: 90% !important;
     width: auto !important;
     height: auto !important;
     display: inline-block !important;
     margin: 0 auto !important;
   }
 
-  /* Second item (index 1) - 52% max-width */
+  /* Second item (index 1) - use larger percentage */
   .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(2) .elementor-widget-image img,
   .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(2) .elementor-widget-image img,
   .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element:nth-child(2) .elementor-widget-image img {
-    max-width: 52% !important;
+    max-width: 95% !important;
     width: auto !important;
     height: auto !important;
     display: inline-block !important;
     margin: 0 auto !important;
   }
 
-  /* Third item (index 2) - 45% max-width */
+  /* Third item (index 2) - use larger percentage */
   .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(3) .elementor-widget-image img,
   .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(3) .elementor-widget-image img,
   .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element:nth-child(3) .elementor-widget-image img {
-    max-width: 45% !important;
+    max-width: 90% !important;
     width: auto !important;
     height: auto !important;
     display: inline-block !important;
     margin: 0 auto !important;
   }
 
-  /* Fourth item (index 3) - 40% max-width */
+  /* Fourth item (index 3) - use larger percentage */
   .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(4) .elementor-widget-image img,
   .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(4) .elementor-widget-image img,
   .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element:nth-child(4) .elementor-widget-image img {
-    max-width: 40% !important;
+    max-width: 85% !important;
     width: auto !important;
     height: auto !important;
     display: inline-block !important;
@@ -104,12 +106,20 @@
   .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading,
   .elementor-element[data-id="1ca5e9e"] .elementor-widget-heading {
     text-align: center !important;
+    width: 100% !important;
   }
 
   .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading .elementor-widget-container,
   .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading .elementor-widget-container,
   .elementor-element[data-id="1ca5e9e"] .elementor-widget-heading .elementor-widget-container {
     text-align: center !important;
+    width: 100% !important;
+  }
+
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading .elementor-heading-title,
+  .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading .elementor-heading-title,
+  .elementor-element[data-id="1ca5e9e"] .elementor-widget-heading .elementor-heading-title {
+    font-size: inherit !important;
   }
 
   .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-text-editor,
@@ -123,6 +133,8 @@
   .elementor-element[data-id="1ca5e9e"] .elementor-widget-text-editor .elementor-widget-container {
     text-align: center !important;
     max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 10px !important;
   }
 
   .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-text-editor .elementor-widget-container p,
@@ -152,12 +164,36 @@
       max-width: 100% !important;
     }
 
-    /* All images become 29% on mobile */
+    /* All images become 29% on mobile (matches source) */
     .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element .elementor-widget-image img,
     .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element .elementor-widget-image img,
     .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element .elementor-widget-image img {
       width: 29% !important;
       max-width: 29% !important;
+    }
+    
+    /* Tablet: restore original percentages when in 2-column layout */
+    @media (max-width: 1024px) and (min-width: 880px) {
+      .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(1) .elementor-widget-image img,
+      .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(1) .elementor-widget-image img,
+      .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element:nth-child(1) .elementor-widget-image img {
+        max-width: 46% !important;
+      }
+      .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(2) .elementor-widget-image img,
+      .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(2) .elementor-widget-image img,
+      .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element:nth-child(2) .elementor-widget-image img {
+        max-width: 52% !important;
+      }
+      .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(3) .elementor-widget-image img,
+      .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(3) .elementor-widget-image img,
+      .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element:nth-child(3) .elementor-widget-image img {
+        max-width: 45% !important;
+      }
+      .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(4) .elementor-widget-image img,
+      .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(4) .elementor-widget-image img,
+      .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element:nth-child(4) .elementor-widget-image img {
+        max-width: 40% !important;
+      }
     }
   }
 
