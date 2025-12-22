@@ -195,17 +195,11 @@
   {%- section 'section-header' -%}
 
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-    {%- comment -%} Wrap content in Elementor structure to match source HTML {%- endcomment -%}
+    {%- comment -%} Wrap content in Elementor structure to match source HTML exactly {%- endcomment -%}
     {%- if template.name == 'index' -%}
-      <div data-elementor-type="single-page" data-elementor-id="48" class="elementor elementor-48 elementor-location-single post-63 page type-page status-publish hentry">
-        <div class="plus_row_scroll_overflow elementor-element elementor-element-c259216 e-con-full e-flex e-con e-parent" data-id="c259216" data-element_type="container">
-          <div class="elementor-element elementor-element-73ada70 elementor-widget elementor-widget-theme-post-content" data-id="73ada70" data-element_type="widget" data-widget_type="theme-post-content.default">
-            <div class="elementor-widget-container">
-              <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63">
-                {{ content_for_layout }}
-              </div>
-            </div>
-          </div>
+      <div class="elementor-widget-container">
+        <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63 elementor-motion-effects-parent">
+          {{ content_for_layout }}
         </div>
       </div>
     {%- else -%}
