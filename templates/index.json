@@ -91,6 +91,14 @@
     "section-health-benifits": {
       "type": "section-health-benifits",
       "blocks": {
+        "benefit_item_JJaDxr": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "postpartum",
+            "text": "Energy Boost",
+            "link": "#"
+          }
+        },
         "benefit_item_VmRexU": {
           "type": "benefit_item",
           "settings": {
@@ -181,6 +189,7 @@
         }
       },
       "block_order": [
+        "benefit_item_JJaDxr",
         "benefit_item_VmRexU",
         "benefit_item_kr4GzU",
         "benefit_item_hEiryr",
