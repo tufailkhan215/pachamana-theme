@@ -192,22 +192,22 @@
     {%- render 'cart-notification', color_scheme: settings.cart_notification_color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
   {%- endif -%}
 
-  {%- section 'section-header' -%}
-
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-    {%- comment -%} Wrap content in Elementor structure to match source HTML exactly {%- endcomment -%}
+    {%- comment -%} Wrap all sections in Elementor structure to match source HTML exactly {%- endcomment -%}
     {%- if template.name == 'index' -%}
       <div class="elementor-widget-container">
         <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63 elementor-motion-effects-parent">
+          {%- section 'section-header' -%}
           {{ content_for_layout }}
+          {%- section 'section-footer' -%}
         </div>
       </div>
     {%- else -%}
+      {%- section 'section-header' -%}
       {{ content_for_layout }}
+      {%- section 'section-footer' -%}
     {%- endif -%}
   </main>
-
-  {%- section 'section-footer' -%}
 
   <ul hidden>
     <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t | default: 'Selecting a new language or country will refresh the page' }}</li>
