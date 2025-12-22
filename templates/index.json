@@ -91,6 +91,14 @@
     "section-health-benifits": {
       "type": "section-health-benifits",
       "blocks": {
+        "benefit_item_VmRexU": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "pregnant",
+            "text": "Rich in Essential Minerals",
+            "link": "#"
+          }
+        },
         "benefit_item_AaBTjz": {
           "type": "benefit_item",
           "settings": {
@@ -157,6 +165,7 @@
         }
       },
       "block_order": [
+        "benefit_item_VmRexU",
         "benefit_item_AaBTjz",
         "benefit_item_VkK6Db",
         "benefit_item_FBhFGH",
