@@ -198,6 +198,7 @@
   {%- comment -%} Check for index template - template.name should be 'index' for homepage using index.json template {%- endcomment -%}
   {%- liquid
     assign is_index = false
+    assign is_article = false
     
     comment
       Check multiple ways to detect index template:
@@ -216,6 +217,17 @@
     elsif template.directory == 'templates' and template.name == 'index'
       assign is_index = true
     endif
+    
+    comment
+      Check for article template
+    endcomment
+    if template.name == 'article'
+      assign is_article = true
+    elsif template == 'article'
+      assign is_article = true
+    elsif request.page_type == 'article'
+      assign is_article = true
+    endif
   -%}
   {%- if is_index -%}
     {%- comment -%} 
@@ -226,6 +238,23 @@
       section-rescent-articles, section-photo-gallery, section-faq
     {%- endcomment -%}
     <div data-elementor-type="single-page" data-elementor-id="48" class="elementor elementor-48 elementor-location-single post-63 page type-page status-publish hentry">
+      <div class="plus_row_scroll_overflow elementor-element elementor-element-c259216 e-con-full e-flex e-con e-parent" data-id="c259216" data-element_type="container">
+        <div class="elementor-element elementor-element-73ada70 elementor-widget elementor-widget-theme-post-content" data-id="73ada70" data-element_type="widget" data-widget_type="theme-post-content.default">
+          <div class="elementor-widget-container">
+            <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63 elementor-motion-effects-parent">
+              {{ content_for_layout }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- elsif is_article -%}
+    {%- comment -%} 
+      ARTICLE TEMPLATE DETECTED: 
+      Article pages use the same Elementor wrapper structure as homepage
+      The main-article section will handle the content rendering
+    {%- endcomment -%}
+    <div data-elementor-type="single-page" data-elementor-id="48" class="elementor elementor-48 elementor-location-single post-{{ article.id }} post type-post status-publish format-standard hentry">
       <div class="plus_row_scroll_overflow elementor-element elementor-element-c259216 e-con-full e-flex e-con e-parent" data-id="c259216" data-element_type="container">
         <div class="elementor-element elementor-element-73ada70 elementor-widget elementor-widget-theme-post-content" data-id="73ada70" data-element_type="widget" data-widget_type="theme-post-content.default">
           <div class="elementor-widget-container">

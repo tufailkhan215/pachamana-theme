@@ -1,89 +1,319 @@
 {%- comment -%}
-  Main article section
+  Main article section - matches WordPress blog post structure
+  Based on: https://pachamana.com/health-benefits-ceremonial-cacao/
+  This section is only used in article.json template, so article context is guaranteed
 {%- endcomment -%}
 
-<article class="article">
-  {% render 'breadcrumbs' %}
-  
-  <header class="article__header">
-    <h1 class="article__title">{{ article.title | escape }}</h1>
-    
-    <div class="article__meta">
-      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
-        {{ article.published_at | date: format: 'abbreviated_date' }}
-      </time>
-      {%- if article.author != blank -%}
-        <span class="article__author">{{ article.author }}</span>
-      {%- endif -%}
-    </div>
-  </header>
-  
-  {%- if article.image -%}
-    <div class="article__image">
-      <img
-        src="{{ article.image | image_url: width: 1200 }}"
-        alt="{{ article.image.alt | escape }}"
-        loading="lazy"
-        width="{{ article.image.width }}"
-        height="{{ article.image.height }}"
-      >
-    </div>
-  {%- endif -%}
-  
-  <div class="article__content">
-    {{ article.content }}
-  </div>
-  
-  {% render 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
-  
-  {%- if blog.comments_enabled? -%}
-    <div class="article__comments">
-      <h2>{{ 'blogs.comments.title' | t | default: 'Comments' }}</h2>
-      {%- paginate article.comments by 5 -%}
-        {%- for comment in article.comments -%}
-          <div class="article__comment">
-            <div class="article__comment-author">{{ comment.author }}</div>
-            <time datetime="{{ comment.created_at | date: '%Y-%m-%d' }}">
-              {{ comment.created_at | date: format: 'abbreviated_date' }}
-            </time>
-            <div class="article__comment-content">{{ comment.content }}</div>
-          </div>
-        {%- endfor -%}
-        
-        {%- if paginate.pages > 1 -%}
-          {% render 'pagination', paginate: paginate %}
-        {%- endif -%}
-      {%- endpaginate -%}
-      
-      <div class="article__comment-form">
-        {%- form 'new_comment', article -%}
-          <h3>{{ 'blogs.comments.form_title' | t | default: 'Leave a comment' }}</h3>
-          
-          {%- if form.errors -%}
-            <div class="form__errors">
-              {{ form.errors | default_errors }}
+{%- comment -%} Article page with Elementor structure {%- endcomment -%}
+  <div data-elementor-type="single-page" data-elementor-id="48" class="elementor elementor-48 elementor-location-single post-{{ article.id }} post type-post status-publish format-standard hentry">
+    <div class="plus_row_scroll_overflow elementor-element elementor-element-c259216 e-con-full e-flex e-con e-parent" data-id="c259216" data-element_type="container">
+      <div class="elementor-element elementor-element-73ada70 elementor-widget elementor-widget-theme-post-content" data-id="73ada70" data-element_type="widget" data-widget_type="theme-post-content.default">
+        <div class="elementor-widget-container">
+          <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63 elementor-motion-effects-parent">
+            
+            {%- comment -%} Featured Image Section {%- endcomment -%}
+            {%- if article.image -%}
+              <div class="elementor-element elementor-element-7088e09f elementor-invisible elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="7088e09f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;slideInDown&quot;}" data-widget_type="theme-post-featured-image.default">
+                <div class="elementor-widget-container">
+                  <img 
+                    loading="lazy" 
+                    decoding="async" 
+                    width="{{ article.image.width }}" 
+                    height="{{ article.image.height }}" 
+                    class="attachment-full size-full wp-image-{{ article.id }}" 
+                    alt="{{ article.image.alt | default: article.title | escape }}" 
+                    src="{{ article.image | image_url: width: 1200 }}" 
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                  >
+                </div>
+              </div>
+            {%- endif -%}
+            
+            {%- comment -%} Article Title {%- endcomment -%}
+            <div class="elementor-element elementor-element-article-title elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="article-title" data-element_type="widget" data-widget_type="theme-post-title.default">
+              <div class="elementor-widget-container">
+                <h1 class="elementor-heading-title elementor-size-default">{{ article.title | escape }}</h1>
+              </div>
             </div>
-          {%- endif -%}
-          
-          <div class="form__field">
-            <label for="comment-author">{{ 'blogs.comments.name' | t }}</label>
-            <input type="text" id="comment-author" name="comment[author]" value="{{ form.author }}" required>
+            
+            {%- comment -%} Article Meta (Date, Author) {%- endcomment -%}
+            {%- if article.published_at or article.author != blank -%}
+              <div class="elementor-element elementor-element-article-meta elementor-widget elementor-widget-text-editor" data-id="article-meta" data-element_type="widget" data-widget_type="text-editor.default">
+                <div class="elementor-widget-container">
+                  <div class="article__meta">
+                    {%- if article.published_at -%}
+                      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                        {{ article.published_at | date: format: 'abbreviated_date' }}
+                      </time>
+                    {%- endif -%}
+                    {%- if article.author != blank -%}
+                      <span class="article__author">{{ article.author }}</span>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+            
+            {%- comment -%} Article Content {%- endcomment -%}
+            <div class="elementor-element elementor-element-article-content elementor-widget elementor-widget-text-editor" data-id="article-content" data-element_type="widget" data-widget_type="text-editor.default">
+              <div class="elementor-widget-container">
+                <div class="article__content">
+                  {{ article.content }}
+                </div>
+              </div>
+            </div>
+            
+            {%- comment -%} Social Sharing {%- endcomment -%}
+            {%- if section.settings.show_social_sharing -%}
+              {% render 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+            {%- endif -%}
+            
+            {%- comment -%} Related Articles Section {%- endcomment -%}
+            {%- if section.settings.show_related_articles and blog.articles_count > 1 -%}
+              <div class="elementor-element elementor-element-related-articles elementor-widget" data-id="related-articles" data-element_type="widget">
+                <div class="elementor-widget-container">
+                  <h2 class="elementor-heading-title elementor-size-default">Related</h2>
+                  <div class="related-articles-grid">
+                    {%- assign related_count = 0 -%}
+                    {%- for related_article in blog.articles -%}
+                      {%- if related_article.id != article.id and related_count < 3 -%}
+                        {%- assign related_count = related_count | plus: 1 -%}
+                        <article class="related-article">
+                          {%- if related_article.image -%}
+                            <div class="related-article__image">
+                              <a href="{{ related_article.url }}">
+                                <img 
+                                  src="{{ related_article.image | image_url: width: 400 }}" 
+                                  alt="{{ related_article.image.alt | default: related_article.title | escape }}"
+                                  loading="lazy"
+                                >
+                              </a>
+                            </div>
+                          {%- endif -%}
+                          <div class="related-article__content">
+                            <h3 class="related-article__title">
+                              <a href="{{ related_article.url }}">{{ related_article.title | escape }}</a>
+                            </h3>
+                            {%- if related_article.excerpt != blank -%}
+                              <div class="related-article__excerpt">
+                                {{ related_article.excerpt | strip_html | truncatewords: 20 }}
+                              </div>
+                            {%- endif -%}
+                            <a href="{{ related_article.url }}" class="related-article__link">Read More</a>
+                          </div>
+                        </article>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+            
+            {%- comment -%} Comments Section {%- endcomment -%}
+            {%- if blog.comments_enabled? -%}
+              <div class="elementor-element elementor-element-article-comments elementor-widget" data-id="article-comments" data-element_type="widget">
+                <div class="elementor-widget-container">
+                  <div class="article__comments">
+                    <h2>{{ 'blogs.comments.title' | t | default: 'Comments' }}</h2>
+                    {%- paginate article.comments by 5 -%}
+                      {%- for comment in article.comments -%}
+                        <div class="article__comment">
+                          <div class="article__comment-author">{{ comment.author }}</div>
+                          <time datetime="{{ comment.created_at | date: '%Y-%m-%d' }}">
+                            {{ comment.created_at | date: format: 'abbreviated_date' }}
+                          </time>
+                          <div class="article__comment-content">{{ comment.content }}</div>
+                        </div>
+                      {%- endfor -%}
+                      
+                      {%- if paginate.pages > 1 -%}
+                        {% render 'pagination', paginate: paginate %}
+                      {%- endif -%}
+                    {%- endpaginate -%}
+                    
+                    <div class="article__comment-form">
+                      {%- form 'new_comment', article -%}
+                        <h3>{{ 'blogs.comments.form_title' | t | default: 'Leave a comment' }}</h3>
+                        
+                        {%- if form.errors -%}
+                          <div class="form__errors">
+                            {{ form.errors | default_errors }}
+                          </div>
+                        {%- endif -%}
+                        
+                        <div class="form__field">
+                          <label for="comment-author">{{ 'blogs.comments.name' | t }}</label>
+                          <input type="text" id="comment-author" name="comment[author]" value="{{ form.author }}" required>
+                        </div>
+                        
+                        <div class="form__field">
+                          <label for="comment-email">{{ 'blogs.comments.email' | t }}</label>
+                          <input type="email" id="comment-email" name="comment[email]" value="{{ form.email }}" required>
+                        </div>
+                        
+                        <div class="form__field">
+                          <label for="comment-body">{{ 'blogs.comments.message' | t }}</label>
+                          <textarea id="comment-body" name="comment[body]" required>{{ form.body }}</textarea>
+                        </div>
+                        
+                        <button type="submit" class="button">{{ 'blogs.comments.post' | t | default: 'Post comment' }}</button>
+                      {%- endform -%}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+            
           </div>
-          
-          <div class="form__field">
-            <label for="comment-email">{{ 'blogs.comments.email' | t }}</label>
-            <input type="email" id="comment-email" name="comment[email]" value="{{ form.email }}" required>
-          </div>
-          
-          <div class="form__field">
-            <label for="comment-body">{{ 'blogs.comments.message' | t }}</label>
-            <textarea id="comment-body" name="comment[body]" required>{{ form.body }}</textarea>
-          </div>
-          
-          <button type="submit" class="button">{{ 'blogs.comments.post' | t | default: 'Post comment' }}</button>
-        {%- endform -%}
+        </div>
       </div>
     </div>
-  {%- endif -%}
-</article>
+  
+  <style>
+    /* Article page styling to match WordPress */
+    .elementor-63 .elementor-element.elementor-element-article-title .elementor-heading-title {
+      font-family: "OAXACA", Sans-serif;
+      font-size: 46px;
+      letter-spacing: 2.9px;
+      color: var(--e-global-color-secondary);
+      margin-bottom: 20px;
+    }
+    
+    .elementor-63 .elementor-element.elementor-element-article-content .article__content {
+      font-family: var(--e-global-typography-text-font-family), Sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--e-global-color-secondary);
+    }
+    
+    .elementor-63 .elementor-element.elementor-element-article-content .article__content h2,
+    .elementor-63 .elementor-element.elementor-element-article-content .article__content h3 {
+      font-family: "OAXACA", Sans-serif;
+      color: var(--e-global-color-secondary);
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    
+    .elementor-63 .elementor-element.elementor-element-article-content .article__content p {
+      margin-bottom: 20px;
+    }
+    
+    .elementor-63 .elementor-element.elementor-element-article-content .article__content ul,
+    .elementor-63 .elementor-element.elementor-element-article-content .article__content ol {
+      margin-bottom: 20px;
+      padding-left: 30px;
+    }
+    
+    .elementor-63 .elementor-element.elementor-element-article-content .article__content li {
+      margin-bottom: 10px;
+    }
+    
+    .elementor-63 .elementor-element.elementor-element-article-meta .article__meta {
+      font-family: var(--e-global-typography-text-font-family), Sans-serif;
+      font-size: 16px;
+      color: var(--e-global-color-text);
+      margin-bottom: 30px;
+    }
+    
+    .elementor-63 .elementor-element.elementor-element-article-meta .article__meta time,
+    .elementor-63 .elementor-element.elementor-element-article-meta .article__meta .article__author {
+      display: inline-block;
+      margin-right: 15px;
+    }
+    
+    .elementor-63 .related-articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .elementor-63 .related-article {
+      background-color: var(--e-global-color-5abf1e8);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    }
+    
+    .elementor-63 .related-article__image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .elementor-63 .related-article__title {
+      font-family: "OAXACA", Sans-serif;
+      font-size: 23px;
+      color: var(--e-global-color-secondary);
+      margin-bottom: 10px;
+    }
+    
+    .elementor-63 .related-article__title a {
+      color: var(--e-global-color-secondary);
+      text-decoration: none;
+    }
+    
+    .elementor-63 .related-article__title a:hover {
+      color: var(--e-global-color-text);
+    }
+    
+    .elementor-63 .related-article__excerpt {
+      font-family: var(--e-global-typography-text-font-family), Sans-serif;
+      font-size: 16px;
+      color: var(--e-global-color-secondary);
+      margin-bottom: 15px;
+    }
+    
+    .elementor-63 .related-article__link {
+      display: inline-block;
+      background-color: var(--e-global-color-secondary);
+      color: var(--e-global-color-5abf1e8);
+      padding: 10px 20px;
+      border-radius: 35px;
+      text-decoration: none;
+      font-family: var(--e-global-typography-ad91809-font-family), Sans-serif;
+      font-weight: 500;
+    }
+    
+    .elementor-63 .related-article__link:hover {
+      background-color: var(--e-global-color-text);
+      color: var(--e-global-color-secondary);
+    }
+    
+    @media (max-width: 1024px) {
+      .elementor-63 .related-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .elementor-63 .elementor-element.elementor-element-article-title .elementor-heading-title {
+        font-size: 30px;
+      }
+      
+      .elementor-63 .related-articles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 
+{% schema %}
+{
+  "name": "Article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_social_sharing",
+      "label": "Show social sharing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_related_articles",
+      "label": "Show related articles",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
