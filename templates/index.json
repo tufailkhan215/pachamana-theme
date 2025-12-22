@@ -99,6 +99,30 @@
             "link": "#"
           }
         },
+        "benefit_item_a8QFa3": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "postpartum",
+            "text": "Mood Support",
+            "link": "#"
+          }
+        },
+        "benefit_item_q9crca": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "postpartum",
+            "text": "Rich in Antioxidants",
+            "link": "#"
+          }
+        },
+        "benefit_item_CAJt4m": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "postpartum",
+            "text": "Enhanced Nutrient Intake",
+            "link": "#"
+          }
+        },
         "benefit_item_VmRexU": {
           "type": "benefit_item",
           "settings": {
@@ -190,6 +214,9 @@
       },
       "block_order": [
         "benefit_item_JJaDxr",
+        "benefit_item_a8QFa3",
+        "benefit_item_q9crca",
+        "benefit_item_CAJt4m",
         "benefit_item_VmRexU",
         "benefit_item_kr4GzU",
         "benefit_item_hEiryr",
