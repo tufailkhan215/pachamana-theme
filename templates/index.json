@@ -99,6 +99,22 @@
             "link": "#"
           }
         },
+        "benefit_item_kr4GzU": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "pregnant",
+            "text": "Mood Enhancement",
+            "link": "#"
+          }
+        },
+        "benefit_item_hEiryr": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "pregnant",
+            "text": "Blood Pressure Management",
+            "link": "#"
+          }
+        },
         "benefit_item_AaBTjz": {
           "type": "benefit_item",
           "settings": {
@@ -166,6 +182,8 @@
       },
       "block_order": [
         "benefit_item_VmRexU",
+        "benefit_item_kr4GzU",
+        "benefit_item_hEiryr",
         "benefit_item_AaBTjz",
         "benefit_item_VkK6Db",
         "benefit_item_FBhFGH",
