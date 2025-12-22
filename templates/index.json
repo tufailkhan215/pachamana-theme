@@ -240,9 +240,20 @@
     },
     "section-featured-products": {
       "type": "section-featured-products",
+      "blocks": {
+        "product_cAGBkd": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_cAGBkd"
+      ],
       "settings": {
         "heading": "FEATURED PRODUCTS",
-        "collection": "",
+        "collection": "frontpage",
         "products_to_show": 3
       }
     },
