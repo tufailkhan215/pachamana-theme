@@ -91,6 +91,22 @@
     "section-health-benifits": {
       "type": "section-health-benifits",
       "blocks": {
+        "benefit_item_4xXMac": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Rich in Antioxidants",
+            "link": ""
+          }
+        },
+        "benefit_item_yxyab6": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Rich in Antioxidants",
+            "link": ""
+          }
+        },
         "benefit_item_AaBTjz": {
           "type": "benefit_item",
           "settings": {
@@ -119,15 +135,7 @@
           "type": "benefit_item",
           "settings": {
             "group": "general",
-            "text": "Rich in Antioxidants",
-            "link": ""
-          }
-        },
-        "benefit_item_HX9mXg": {
-          "type": "benefit_item",
-          "settings": {
-            "group": "general",
-            "text": "Rich in Antioxidants",
+            "text": "Heart Health",
             "link": ""
           }
         },
@@ -135,18 +143,37 @@
           "type": "benefit_item",
           "settings": {
             "group": "general",
-            "text": "Rich in Antioxidants",
+            "text": "Anti-Inflammatory",
             "link": "#"
+          }
+        },
+        "benefit_item_HX9mXg": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Improved Insulin Sensitivity",
+            "link": "#"
+          }
+        },
+        "benefit_item_hyjMM4": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Lower LDL Cholesterol",
+            "link": ""
           }
         }
       },
       "block_order": [
+        "benefit_item_4xXMac",
+        "benefit_item_yxyab6",
         "benefit_item_AaBTjz",
         "benefit_item_VkK6Db",
         "benefit_item_FBhFGH",
         "benefit_item_kqmzzw",
+        "benefit_item_LBrBhQ",
         "benefit_item_HX9mXg",
-        "benefit_item_LBrBhQ"
+        "benefit_item_hyjMM4"
       ],
       "settings": {
         "main_heading": "HEALTH BENEFITS",
