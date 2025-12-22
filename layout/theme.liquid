@@ -194,18 +194,53 @@
 
   {%- section 'section-header' -%}
 
-  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-    {%- comment -%} Wrap content sections in elementor-widget-container and elementor-63 - header and footer stay outside {%- endcomment -%}
-    {%- if template.name == 'index' -%}
-      <div class="elementor-widget-container">
-        <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63 elementor-motion-effects-parent">
-          {{ content_for_layout }}
+  {%- comment -%} Match source HTML structure: elementor-48 wrapper -> c259216 container -> 73ada70 widget -> elementor-widget-container -> elementor-63 {%- endcomment -%}
+  {%- comment -%} Check for index template - template.name should be 'index' for homepage using index.json template {%- endcomment -%}
+  {%- liquid
+    assign is_index = false
+    
+    comment
+      Check multiple ways to detect index template:
+      1. template.name == 'index' (standard way)
+      2. template == 'index' (alternative)
+      3. request.page_type == 'index' (fallback)
+      4. Check if we're on the homepage route
+    endcomment
+    
+    if template.name == 'index'
+      assign is_index = true
+    elsif template == 'index'
+      assign is_index = true
+    elsif request.page_type == 'index'
+      assign is_index = true
+    elsif template.directory == 'templates' and template.name == 'index'
+      assign is_index = true
+    endif
+  -%}
+  {%- if is_index -%}
+    {%- comment -%} 
+      INDEX TEMPLATE DETECTED: 
+      All sections from templates/index.json will be rendered inside elementor-63 wrapper via content_for_layout.
+      Sections included: section-background-motion, section-animatied-title, section-image-with-text-button, 
+      section-health-benifits, section-featured-products, section-text-images-grid, section-image-text-dynamicbg, 
+      section-rescent-articles, section-photo-gallery, section-faq
+    {%- endcomment -%}
+    <div data-elementor-type="single-page" data-elementor-id="48" class="elementor elementor-48 elementor-location-single post-63 page type-page status-publish hentry">
+      <div class="plus_row_scroll_overflow elementor-element elementor-element-c259216 e-con-full e-flex e-con e-parent" data-id="c259216" data-element_type="container">
+        <div class="elementor-element elementor-element-73ada70 elementor-widget elementor-widget-theme-post-content" data-id="73ada70" data-element_type="widget" data-widget_type="theme-post-content.default">
+          <div class="elementor-widget-container">
+            <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63 elementor-motion-effects-parent">
+              {{ content_for_layout }}
+            </div>
+          </div>
         </div>
       </div>
-    {%- else -%}
+    </div>
+  {%- else -%}
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
-    {%- endif -%}
-  </main>
+    </main>
+  {%- endif -%}
 
   {%- section 'section-footer' -%}
 
@@ -538,6 +573,129 @@
   <script src="{{ 'elements-handlers.min.js' | asset_url }}" defer></script>
   <script src="{{ 'frontend.min.js' | asset_url }}" defer></script>
   <script src="{{ 'webpack-pro.runtime.min.js' | asset_url }}" defer></script>
+  {%- comment -%} Ensure all sections are inside elementor-63 wrapper - CRITICAL FIX {%- endcomment -%}
+  <script>
+    (function() {
+      'use strict';
+      
+      // Move any sections that are outside elementor-63 wrapper to inside it
+      function ensureSectionsInsideWrapper() {
+        // Find elementor-63 wrapper - try multiple selectors
+        var elementor63 = document.querySelector('[data-elementor-id="63"]') || 
+                         document.querySelector('.elementor-63') ||
+                         document.querySelector('[data-elementor-type="wp-page"][data-elementor-id="63"]');
+        
+        if (!elementor63) {
+          console.warn('Elementor-63 wrapper not found');
+          return;
+        }
+        
+        // Find all shopify-section divs on the page
+        var allSections = document.querySelectorAll('.shopify-section.section, .shopify-section');
+        var movedCount = 0;
+        
+        allSections.forEach(function(section) {
+          // Check if section is NOT inside elementor-63
+          if (!elementor63.contains(section)) {
+            // Check if it's a content section (not header/footer)
+            var sectionId = section.id || '';
+            var sectionClass = section.className || '';
+            
+            // Skip header and footer sections
+            if (sectionId.includes('section-header') || 
+                sectionId.includes('section-footer') ||
+                sectionClass.includes('section-header') ||
+                sectionClass.includes('section-footer')) {
+              return;
+            }
+            
+            // Check if it's a content section (has section- prefix in class or id)
+            var isContentSection = false;
+            if (sectionId.includes('section_') || 
+                sectionClass.includes('section-background-motion') ||
+                sectionClass.includes('section-animatied-title') ||
+                sectionClass.includes('section-image-with-text-button') ||
+                sectionClass.includes('section-health-benifits') ||
+                sectionClass.includes('section-featured-products') ||
+                sectionClass.includes('section-text-images-grid') ||
+                sectionClass.includes('section-image-text-dynamicbg') ||
+                sectionClass.includes('section-rescent-articles') ||
+                sectionClass.includes('section-photo-gallery') ||
+                sectionClass.includes('section-faq')) {
+              isContentSection = true;
+            }
+            
+            // Also check if section contains elementor elements (likely a content section)
+            if (!isContentSection) {
+              var hasElementorElements = section.querySelector('.elementor-element, [data-elementor-type], [data-id]');
+              if (hasElementorElements) {
+                isContentSection = true;
+              }
+            }
+            
+            if (isContentSection) {
+              // Move section inside elementor-63 (append to end)
+              elementor63.appendChild(section);
+              movedCount++;
+            }
+          }
+        });
+        
+        if (movedCount > 0) {
+          console.log('Moved ' + movedCount + ' sections inside elementor-63 wrapper');
+        }
+      }
+      
+      // Run immediately and multiple times to catch all sections
+      function runMultipleTimes() {
+        ensureSectionsInsideWrapper();
+        setTimeout(ensureSectionsInsideWrapper, 50);
+        setTimeout(ensureSectionsInsideWrapper, 100);
+        setTimeout(ensureSectionsInsideWrapper, 200);
+        setTimeout(ensureSectionsInsideWrapper, 500);
+        setTimeout(ensureSectionsInsideWrapper, 1000);
+      }
+      
+      // Run on DOM ready and after delays
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runMultipleTimes);
+      } else {
+        runMultipleTimes();
+      }
+      
+      // Also run after window load
+      window.addEventListener('load', function() {
+        setTimeout(ensureSectionsInsideWrapper, 100);
+        setTimeout(ensureSectionsInsideWrapper, 500);
+        setTimeout(ensureSectionsInsideWrapper, 1000);
+      });
+      
+      // Use MutationObserver to catch sections added dynamically
+      if (typeof MutationObserver !== 'undefined') {
+        var observer = new MutationObserver(function(mutations) {
+          var shouldCheck = false;
+          mutations.forEach(function(mutation) {
+            if (mutation.addedNodes.length > 0) {
+              mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1 && (node.classList.contains('shopify-section') || node.querySelector('.shopify-section'))) {
+                  shouldCheck = true;
+                }
+              });
+            }
+          });
+          if (shouldCheck) {
+            setTimeout(ensureSectionsInsideWrapper, 100);
+          }
+        });
+        
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+      }
+    })();
+  </script>
+  
   {%- comment -%} Enhanced Animation Support - Handle elementor-invisible and trigger animations {%- endcomment -%}
   <script>
     (function() {
@@ -1065,6 +1223,36 @@
   
   {%- comment -%} CSS Support for Section Classes and Background Images {%- endcomment -%}
   <style>
+    /* CRITICAL: Ensure all Shopify section wrappers stay inside elementor-63 container */
+    .elementor-63 .shopify-section,
+    .elementor.elementor-63 .shopify-section,
+    [data-elementor-id="63"] .shopify-section,
+    [data-elementor-type="wp-page"][data-elementor-id="63"] .shopify-section {
+      display: block !important;
+      width: 100% !important;
+      position: relative !important;
+      float: none !important;
+      clear: both !important;
+    }
+    
+    /* Remove any positioning that might break sections out of container */
+    .elementor-63 .shopify-section.section,
+    .elementor.elementor-63 .shopify-section.section,
+    [data-elementor-id="63"] .shopify-section.section {
+      position: relative !important;
+      float: none !important;
+      clear: both !important;
+      margin: 0 !important;
+    }
+    
+    /* Ensure elementor-63 wrapper contains all sections */
+    [data-elementor-id="63"],
+    .elementor-63 {
+      position: relative !important;
+      width: 100% !important;
+      overflow: visible !important;
+    }
+    
     /* Sections are now divs to match source HTML structure - CSS targets class directly */
     .section-background-motion,
     div.section-background-motion {
