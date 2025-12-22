@@ -1,165 +1,143 @@
+{%- comment -%}
+  Recent Articles Section - Dynamically displays recent blog posts
+  Uses Shopify blog articles instead of static data
+{%- endcomment -%}
+
+{%- liquid
+  assign blog_handle = section.settings.blog_handle | default: 'news'
+  assign articles_to_show = section.settings.articles_to_show | default: 3
+  assign selected_blog = blogs[blog_handle]
+-%}
+
 <div class="plus_row_scroll_overflow elementor-element elementor-element-217fad0 e-flex e-con-boxed e-con e-parent section-rescent-articles" data-id="217fad0" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-					<div class="e-con-inner">
-		<div class="elementor-element elementor-element-e494d6d elementor-invisible e-flex e-con-boxed e-con e-child" data-id="e494d6d" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;zoomIn&quot;}">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-e340354 elementor-widget elementor-widget-heading" data-id="e340354" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default"><a href="{{ settings.shop_url }}/articles/">Recent Articles</a></h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-794ed23 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="794ed23" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#039;http://www.w3.org/2000/svg&#039; preserveAspectRatio=&#039;xMidYMid meet&#039; overflow=&#039;visible&#039; height=&#039;100%&#039; viewBox=&#039;0 0 126 26&#039; fill=&#039;black&#039; stroke=&#039;none&#039;%3E%3Cpath d=&#039;M3,10.2c2.6,0,2.6,2,2.6,3.2S4.4,16.5,3,16.5s-3-1.4-3-3.2S0.4,10.2,3,10.2z M18.8,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.2-1.4-3.2-3.2S17,10.2,18.8,10.2z M34.6,10.2c1.5,0,2.6,1.4,2.6,3.2s-0.5,3.2-1.9,3.2c-1.5,0-3.4-1.4-3.4-3.2S33.1,10.2,34.6,10.2z M50.5,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.3-0.9-3.3-2.6S48.7,10.2,50.5,10.2z M66.2,10.2c1.5,0,3.4,1.4,3.4,3.2s-1.9,3.2-3.4,3.2c-1.5,0-2.6-0.4-2.6-2.1S64.8,10.2,66.2,10.2z M82.2,10.2c1.7,0.8,2.6,1.4,2.6,3.2s-0.1,3.2-1.6,3.2c-1.5,0-3.7-1.4-3.7-3.2S80.5,9.4,82.2,10.2zM98.6,10.2c1.5,0,2.6,0.4,2.6,2.1s-1.2,4.2-2.6,4.2c-1.5,0-3.7-0.4-3.7-2.1S97.1,10.2,98.6,10.2z M113.4,10.2c1.2,0,2.2,0.9,2.2,3.2s-0.1,3.2-1.3,3.2s-3.1-1.4-3.1-3.2S112.2,10.2,113.4,10.2z&#039;/%3E%3C/svg%3E&quot;);">
-			<span class="elementor-divider-separator">
-						</span>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-bf4df4d elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="bf4df4d" data-element_type="widget" data-settings="{&quot;template_id&quot;:1058,&quot;pagination_type&quot;:&quot;prev_next&quot;,&quot;_skin&quot;:&quot;post&quot;,&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;2&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;pagination_load_type&quot;:&quot;page_reload&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
-				<div class="elementor-widget-container">
-							<div class="elementor-loop-container elementor-grid" role="list">
-		<style id="loop-1058">.elementor-1058 .elementor-element.elementor-element-2f1ec59{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:space-between;--border-radius:15px 15px 15px 15px;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);--padding-top:20px;--padding-bottom:20px;--padding-left:20px;--padding-right:20px;}.elementor-1058 .elementor-element.elementor-element-2f1ec59:not(.elementor-motion-effects-element-type-background), .elementor-1058 .elementor-element.elementor-element-2f1ec59 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-image:url("{{ "light-gold-fabric.png" | asset_url }}");}.elementor-1058 .elementor-element.elementor-element-97712f6{text-align:center;}.elementor-1058 .elementor-element.elementor-element-97712f6 .elementor-heading-title{font-family:"OAXACA", Sans-serif;font-size:23px;color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{text-align:center;font-family:var( --e-global-typography-ad91809-font-family ), Sans-serif;font-size:var( --e-global-typography-ad91809-font-size );font-weight:var( --e-global-typography-ad91809-font-weight );color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button{background-color:var( --e-global-color-secondary );fill:var( --e-global-color-5abf1e8 );color:var( --e-global-color-5abf1e8 );border-radius:35px 35px 35px 35px;}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:hover, .elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:focus{background-color:var( --e-global-color-text );color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:hover svg, .elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:focus svg{fill:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-efde82b{--display:flex;}@media(max-width:1024px){.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{font-size:var( --e-global-typography-ad91809-font-size );}}@media(max-width:879px){.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{font-size:var( --e-global-typography-ad91809-font-size );}}</style>		<div data-elementor-type="loop-item" data-elementor-id="1058" class="elementor elementor-1058 e-loop-item e-loop-item-2924 post-2924 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized tag-cacao tag-cadmium tag-ceremonial-cacao tag-consumer-reports tag-health tag-heavy tag-heavy-metal-free tag-heavy-metals tag-pacha-mana tag-pacha-mana-cacao tag-pacha-mana-cacao-heavy-metals tag-pacha-mana-heavy-metals tag-pacha-mana-lead tag-pachamama-cacao" data-custom-edit-handle="1">
-			<div class="elementor-element elementor-element-2f1ec59 elementor-invisible e-flex e-con-boxed e-con e-parent" data-id="2f1ec59" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomInDown&quot;,&quot;animation_delay&quot;:500}">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-b04fc69 elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="b04fc69" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
-				<div class="elementor-widget-container">
-																<a href="{{ settings.shop_url }}/heavy-metals-in-cacao-low-test-results/">
-							{%- if section.settings.article_1_image != blank -%}
-								<img loading="lazy" decoding="async" width="{{ section.settings.article_1_image.width }}" height="{{ section.settings.article_1_image.height }}" class="attachment-large size-large wp-image-2944" alt="{{ section.settings.article_1_image.alt | default: 'Article image' }}" src="{{ section.settings.article_1_image | image_url: width: 800 }}" sizes="(max-width: 800px) 100vw, 800px">
-							{%- else -%}
-								<img loading="lazy" decoding="async" width="800" height="534" class="attachment-large size-large wp-image-2944" alt="couch" src="{{ "PACHAMANA-160.jpg" | asset_url }}" sizes="(max-width: 800px) 100vw, 800px" onerror="this.style.display='none'">
-							{%- endif -%}
-								</a>
-															</div>
-				</div>
-				<div class="elementor-element elementor-element-97712f6 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="97712f6" data-element_type="widget" data-widget_type="theme-post-title.default">
-				<div class="elementor-widget-container">
-					<h1 class="elementor-heading-title elementor-size-default"><a href="{{ settings.shop_url }}/heavy-metals-in-cacao-low-test-results/">Heavy Metals in Cacao: Pacha Mana’s Low Test Results &amp; The Truth About Chocolate Safety</a></h1>				</div>
-				</div>
-				<div class="elementor-element elementor-element-e508ee5 elementor-widget elementor-widget-theme-post-excerpt" data-id="e508ee5" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
-				<div class="elementor-widget-container">
-					Pacha Mana’s cacao has some of the lowest heavy metal levels in the industry. Learn how high-elevation cacao naturally reduces cadmium and lead, plus the real science behind safe consumption.				</div>
-				</div>
-				<div class="elementor-element elementor-element-1033908 elementor-align-justify elementor-widget elementor-widget-button" data-id="1033908" data-element_type="widget" data-widget_type="button.default">
-				<div class="elementor-widget-container">
-									<div class="elementor-button-wrapper">
-					<a class="elementor-button elementor-button-link elementor-size-sm" href="{{ settings.shop_url }}/heavy-metals-in-cacao-low-test-results/">
-						<span class="elementor-button-content-wrapper">
-									<span class="elementor-button-text">Read More</span>
-					</span>
-					</a>
-				</div>
-								</div>
-				</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-efde82b e-flex e-con-boxed e-con e-parent" data-id="efde82b" data-element_type="container">
-					<div class="e-con-inner">
-					</div>
-				</div>
-				</div>
-				<div data-elementor-type="loop-item" data-elementor-id="1058" class="elementor elementor-1058 e-loop-item e-loop-item-2840 post-2840 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized tag-ceremonial-cacao tag-pacha-mana tag-pacha-mana-cacao tag-sustainable" data-custom-edit-handle="1">
-			<div class="elementor-element elementor-element-2f1ec59 e-flex e-con-boxed e-con e-parent" data-id="2f1ec59" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomInDown&quot;,&quot;animation_delay&quot;:500}">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-b04fc69 elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="b04fc69" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
-				<div class="elementor-widget-container">
-																<a href="{{ settings.shop_url }}/pacha-mana-redefining-the-future-of-cacao/">
-							{%- if section.settings.article_2_image != blank -%}
-								<img loading="lazy" decoding="async" width="{{ section.settings.article_2_image.width }}" height="{{ section.settings.article_2_image.height }}" class="attachment-large size-large wp-image-865" alt="{{ section.settings.article_2_image.alt | default: 'Article image' }}" src="{{ section.settings.article_2_image | image_url: width: 800 }}" sizes="(max-width: 800px) 100vw, 800px">
-							{%- else -%}
-								<img loading="lazy" decoding="async" width="800" height="534" class="attachment-large size-large wp-image-865" alt="pachamana cacao" src="{{ "cacao-sheny-leon-photography-maui-10.jpg" | asset_url }}" sizes="(max-width: 800px) 100vw, 800px" onerror="this.style.display='none'">
-							{%- endif -%}
-								</a>
-															</div>
-				</div>
-				<div class="elementor-element elementor-element-97712f6 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="97712f6" data-element_type="widget" data-widget_type="theme-post-title.default">
-				<div class="elementor-widget-container">
-					<h1 class="elementor-heading-title elementor-size-default"><a href="{{ settings.shop_url }}/pacha-mana-redefining-the-future-of-cacao/">Pacha Mana: Redefining the Future of Cacao</a></h1>				</div>
-				</div>
-				<div class="elementor-element elementor-element-e508ee5 elementor-widget elementor-widget-theme-post-excerpt" data-id="e508ee5" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
-				<div class="elementor-widget-container">
-					With a focus on ethical sourcing, sustainable farming, and the highest quality most delicious cacao, we’re bringing a movement of change to the mainstream chocolate industry.				</div>
-				</div>
-				<div class="elementor-element elementor-element-1033908 elementor-align-justify elementor-widget elementor-widget-button" data-id="1033908" data-element_type="widget" data-widget_type="button.default">
-				<div class="elementor-widget-container">
-									<div class="elementor-button-wrapper">
-					<a class="elementor-button elementor-button-link elementor-size-sm" href="{{ settings.shop_url }}/pacha-mana-redefining-the-future-of-cacao/">
-						<span class="elementor-button-content-wrapper">
-									<span class="elementor-button-text">Read More</span>
-					</span>
-					</a>
-				</div>
-								</div>
-				</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-efde82b e-flex e-con-boxed e-con e-parent" data-id="efde82b" data-element_type="container">
-					<div class="e-con-inner">
-					</div>
-				</div>
-				</div>
-				<div data-elementor-type="loop-item" data-elementor-id="1058" class="elementor elementor-1058 e-loop-item e-loop-item-323 post-323 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized tag-agroforestry tag-biodiversity tag-ceremonial-cacao tag-farming tag-heirloom tag-pacha-mana tag-pacha-mana-cacao tag-peru tag-sacred-valley tag-sustainable tag-syntropic-farming tag-theobromine" data-custom-edit-handle="1">
-			<div class="elementor-element elementor-element-2f1ec59 e-flex e-con-boxed e-con e-parent" data-id="2f1ec59" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomInDown&quot;,&quot;animation_delay&quot;:500}">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-b04fc69 elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="b04fc69" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
-				<div class="elementor-widget-container">
-																<a href="{{ settings.shop_url }}/farming-chuncho-cacao-sustainable-heirloom-cacao/">
-							{%- if section.settings.article_3_image != blank -%}
-								<img loading="lazy" decoding="async" width="{{ section.settings.article_3_image.width }}" height="{{ section.settings.article_3_image.height }}" class="attachment-large size-large wp-image-124" alt="{{ section.settings.article_3_image.alt | default: 'Article image' }}" src="{{ section.settings.article_3_image | image_url: width: 800 }}" sizes="(max-width: 800px) 100vw, 800px">
-							{%- else -%}
-								{%- comment -%} IMG_0666.jpg not available, using alternative image {%- endcomment -%}
-								<img loading="lazy" decoding="async" width="800" height="534" class="attachment-large size-large wp-image-124" alt="" src="{{ "PACHAMANA-0179.jpg" | asset_url }}" sizes="(max-width: 800px) 100vw, 800px" onerror="this.style.display='none'">
-							{%- endif -%}
-								</a>
-															</div>
-				</div>
-				<div class="elementor-element elementor-element-97712f6 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="97712f6" data-element_type="widget" data-widget_type="theme-post-title.default">
-				<div class="elementor-widget-container">
-					<h1 class="elementor-heading-title elementor-size-default"><a href="{{ settings.shop_url }}/farming-chuncho-cacao-sustainable-heirloom-cacao/">Farming Heirloom Cacao: Chuncho</a></h1>				</div>
-				</div>
-				<div class="elementor-element elementor-element-e508ee5 elementor-widget elementor-widget-theme-post-excerpt" data-id="e508ee5" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
-				<div class="elementor-widget-container">
-					Preserving Tradition: The Story of Chuncho Cacao from Southern Peru. At Pacha Mana, Ceremony Starts at the farm. Let's take a deeper dive into what we mean by that!				</div>
-				</div>
-				<div class="elementor-element elementor-element-1033908 elementor-align-justify elementor-widget elementor-widget-button" data-id="1033908" data-element_type="widget" data-widget_type="button.default">
-				<div class="elementor-widget-container">
-									<div class="elementor-button-wrapper">
-					<a class="elementor-button elementor-button-link elementor-size-sm" href="{{ settings.shop_url }}/farming-chuncho-cacao-sustainable-heirloom-cacao/">
-						<span class="elementor-button-content-wrapper">
-									<span class="elementor-button-text">Read More</span>
-					</span>
-					</a>
-				</div>
-								</div>
-				</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-efde82b e-flex e-con-boxed e-con e-parent" data-id="efde82b" data-element_type="container">
-					<div class="e-con-inner">
-					</div>
-				</div>
-				</div>
-				</div>
-		
-				<div class="e-load-more-anchor" data-page="1" data-max-page="2" data-next-page="https://pachamana.com/page/2/"></div>
-				<nav class="elementor-pagination" aria-label="Pagination">
-			<span class="page-numbers prev">Previous</span>
-<a class="page-numbers next" href="{{ settings.shop_url }}/page/2/">Next</a>		</nav>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-d8305e8 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d8305e8" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#039;http://www.w3.org/2000/svg&#039; preserveAspectRatio=&#039;xMidYMid meet&#039; overflow=&#039;visible&#039; height=&#039;100%&#039; viewBox=&#039;0 0 126 26&#039; fill=&#039;black&#039; stroke=&#039;none&#039;%3E%3Cpath d=&#039;M3,10.2c2.6,0,2.6,2,2.6,3.2S4.4,16.5,3,16.5s-3-1.4-3-3.2S0.4,10.2,3,10.2z M18.8,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.2-1.4-3.2-3.2S17,10.2,18.8,10.2z M34.6,10.2c1.5,0,2.6,1.4,2.6,3.2s-0.5,3.2-1.9,3.2c-1.5,0-3.4-1.4-3.4-3.2S33.1,10.2,34.6,10.2z M50.5,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.3-0.9-3.3-2.6S48.7,10.2,50.5,10.2z M66.2,10.2c1.5,0,3.4,1.4,3.4,3.2s-1.9,3.2-3.4,3.2c-1.5,0-2.6-0.4-2.6-2.1S64.8,10.2,66.2,10.2z M82.2,10.2c1.7,0.8,2.6,1.4,2.6,3.2s-0.1,3.2-1.6,3.2c-1.5,0-3.7-1.4-3.7-3.2S80.5,9.4,82.2,10.2zM98.6,10.2c1.5,0,2.6,0.4,2.6,2.1s-1.2,4.2-2.6,4.2c-1.5,0-3.7-0.4-3.7-2.1S97.1,10.2,98.6,10.2z M113.4,10.2c1.2,0,2.2,0.9,2.2,3.2s-0.1,3.2-1.3,3.2s-3.1-1.4-3.1-3.2S112.2,10.2,113.4,10.2z&#039;/%3E%3C/svg%3E&quot;);">
-			<span class="elementor-divider-separator">
-						</span>
-		</div>
-						</div>
-				</div>
-					</div>
-				</div>
-					</div>
-				</div>
-		</div>
-	</div>
+  <div class="e-con-inner">
+    <div class="elementor-element elementor-element-e494d6d elementor-invisible e-flex e-con-boxed e-con e-child" data-id="e494d6d" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;zoomIn&quot;}">
+      <div class="e-con-inner">
+        <div class="elementor-element elementor-element-e340354 elementor-widget elementor-widget-heading" data-id="e340354" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+            <h2 class="elementor-heading-title elementor-size-default">
+              <a href="{% if selected_blog %}{{ selected_blog.url }}{% else %}{{ routes.blogs_url }}{% endif %}">Recent Articles</a>
+            </h2>
+          </div>
+        </div>
+        <div class="elementor-element elementor-element-794ed23 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="794ed23" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#039;http://www.w3.org/2000/svg&#039; preserveAspectRatio=&#039;xMidYMid meet&#039; overflow=&#039;visible&#039; height=&#039;100%&#039; viewBox=&#039;0 0 126 26&#039; fill=&#039;black&#039; stroke=&#039;none&#039;%3E%3Cpath d=&#039;M3,10.2c2.6,0,2.6,2,2.6,3.2S4.4,16.5,3,16.5s-3-1.4-3-3.2S0.4,10.2,3,10.2z M18.8,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.2-1.4-3.2-3.2S17,10.2,18.8,10.2z M34.6,10.2c1.5,0,2.6,1.4,2.6,3.2s-0.5,3.2-1.9,3.2c-1.5,0-3.4-1.4-3.4-3.2S33.1,10.2,34.6,10.2z M50.5,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.3-0.9-3.3-2.6S48.7,10.2,50.5,10.2z M66.2,10.2c1.5,0,3.4,1.4,3.4,3.2s-1.9,3.2-3.4,3.2c-1.5,0-2.6-0.4-2.6-2.1S64.8,10.2,66.2,10.2z M82.2,10.2c1.7,0.8,2.6,1.4,2.6,3.2s-0.1,3.2-1.6,3.2c-1.5,0-3.7-1.4-3.7-3.2S80.5,9.4,82.2,10.2zM98.6,10.2c1.5,0,2.6,0.4,2.6,2.1s-1.2,4.2-2.6,4.2c-1.5,0-3.7-0.4-3.7-2.1S97.1,10.2,98.6,10.2z M113.4,10.2c1.2,0,2.2,0.9,2.2,3.2s-0.1,3.2-1.3,3.2s-3.1-1.4-3.1-3.2S112.2,10.2,113.4,10.2z&#039;/%3E%3C/svg%3E&quot;);">
+              <span class="elementor-divider-separator"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="elementor-element elementor-element-bf4df4d elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="bf4df4d" data-element_type="widget" data-settings="{&quot;template_id&quot;:1058,&quot;pagination_type&quot;:&quot;prev_next&quot;,&quot;_skin&quot;:&quot;post&quot;,&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;2&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;pagination_load_type&quot;:&quot;page_reload&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
+      <div class="elementor-widget-container">
+        <div class="elementor-loop-container elementor-grid" role="list">
+          <style id="loop-1058">.elementor-1058 .elementor-element.elementor-element-2f1ec59{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:space-between;--border-radius:15px 15px 15px 15px;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);--padding-top:20px;--padding-bottom:20px;--padding-left:20px;--padding-right:20px;}.elementor-1058 .elementor-element.elementor-element-2f1ec59:not(.elementor-motion-effects-element-type-background), .elementor-1058 .elementor-element.elementor-element-2f1ec59 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-image:url("{{ "light-gold-fabric.png" | asset_url }}");}.elementor-1058 .elementor-element.elementor-element-97712f6{text-align:center;}.elementor-1058 .elementor-element.elementor-element-97712f6 .elementor-heading-title{font-family:"OAXACA", Sans-serif;font-size:23px;color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{text-align:center;font-family:var( --e-global-typography-ad91809-font-family ), Sans-serif;font-size:var( --e-global-typography-ad91809-font-size );font-weight:var( --e-global-typography-ad91809-font-weight );color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button{background-color:var( --e-global-color-secondary );fill:var( --e-global-color-5abf1e8 );color:var( --e-global-color-5abf1e8 );border-radius:35px 35px 35px 35px;}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:hover, .elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:focus{background-color:var( --e-global-color-text );color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:hover svg, .elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:focus svg{fill:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-efde82b{--display:flex;}@media(max-width:1024px){.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{font-size:var( --e-global-typography-ad91809-font-size );}}@media(max-width:879px){.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{font-size:var( --e-global-typography-ad91809-font-size );}}</style>
+          
+          {%- if selected_blog and selected_blog.articles.size > 0 -%}
+            {%- assign article_count = 0 -%}
+            {%- for article in selected_blog.articles limit: articles_to_show -%}
+              {%- if article_count < articles_to_show -%}
+                <div data-elementor-type="loop-item" data-elementor-id="1058" class="elementor elementor-1058 e-loop-item e-loop-item-{{ article.id }} post-{{ article.id }} post type-post status-publish format-standard {% if article.image %}has-post-thumbnail{% endif %} hentry" data-custom-edit-handle="1">
+                  <div class="elementor-element elementor-element-2f1ec59 elementor-invisible e-flex e-con-boxed e-con e-parent" data-id="2f1ec59" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomInDown&quot;,&quot;animation_delay&quot;:{{ article_count | times: 200 }}}">
+                    <div class="e-con-inner">
+                      {%- comment -%} Featured Image {%- endcomment -%}
+                      <div class="elementor-element elementor-element-b04fc69 elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="b04fc69" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
+                        <div class="elementor-widget-container">
+                          <a href="{{ article.url }}">
+                            {%- if article.image -%}
+                              <img 
+                                loading="lazy" 
+                                decoding="async" 
+                                width="{{ article.image.width }}" 
+                                height="{{ article.image.height }}" 
+                                class="attachment-large size-large wp-image-{{ article.id }}" 
+                                alt="{{ article.image.alt | default: article.title | escape }}" 
+                                src="{{ article.image | image_url: width: 800 }}" 
+                                sizes="(max-width: 800px) 100vw, 800px"
+                              >
+                            {%- else -%}
+                              {%- comment -%} Fallback image if article has no featured image {%- endcomment -%}
+                              <img 
+                                loading="lazy" 
+                                decoding="async" 
+                                width="800" 
+                                height="534" 
+                                class="attachment-large size-large wp-image-{{ article.id }}" 
+                                alt="{{ article.title | escape }}" 
+                                src="{{ "PACHAMANA-160.jpg" | asset_url }}" 
+                                sizes="(max-width: 800px) 100vw, 800px" 
+                                onerror="this.style.display='none'"
+                              >
+                            {%- endif -%}
+                          </a>
+                        </div>
+                      </div>
+                      
+                      {%- comment -%} Article Title {%- endcomment -%}
+                      <div class="elementor-element elementor-element-97712f6 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="97712f6" data-element_type="widget" data-widget_type="theme-post-title.default">
+                        <div class="elementor-widget-container">
+                          <h1 class="elementor-heading-title elementor-size-default">
+                            <a href="{{ article.url }}">{{ article.title | escape }}</a>
+                          </h1>
+                        </div>
+                      </div>
+                      
+                      {%- comment -%} Article Excerpt {%- endcomment -%}
+                      <div class="elementor-element elementor-element-e508ee5 elementor-widget elementor-widget-theme-post-excerpt" data-id="e508ee5" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
+                        <div class="elementor-widget-container">
+                          {%- if article.excerpt != blank -%}
+                            {{ article.excerpt | strip_html | truncatewords: 25 }}
+                          {%- else -%}
+                            {{ article.content | strip_html | truncatewords: 25 }}
+                          {%- endif -%}
+                        </div>
+                      </div>
+                      
+                      {%- comment -%} Read More Button {%- endcomment -%}
+                      <div class="elementor-element elementor-element-1033908 elementor-align-justify elementor-widget elementor-widget-button" data-id="1033908" data-element_type="widget" data-widget_type="button.default">
+                        <div class="elementor-widget-container">
+                          <div class="elementor-button-wrapper">
+                            <a class="elementor-button elementor-button-link elementor-size-sm" href="{{ article.url }}">
+                              <span class="elementor-button-content-wrapper">
+                                <span class="elementor-button-text">Read More</span>
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="elementor-element elementor-element-efde82b e-flex e-con-boxed e-con e-parent" data-id="efde82b" data-element_type="container">
+                    <div class="e-con-inner"></div>
+                  </div>
+                </div>
+                {%- assign article_count = article_count | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- comment -%} Fallback: Show message if no blog or articles found {%- endcomment -%}
+            <div class="elementor-element elementor-element-no-articles elementor-widget" data-id="no-articles">
+              <div class="elementor-widget-container">
+                <p>No articles found. Please create a blog and add articles in your Shopify admin.</p>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+    
+    <div class="elementor-element elementor-element-d8305e8 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d8305e8" data-element_type="widget" data-widget_type="divider.default">
+      <div class="elementor-widget-container">
+        <div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#039;http://www.w3.org/2000/svg&#039; preserveAspectRatio=&#039;xMidYMid meet&#039; overflow=&#039;visible&#039; height=&#039;100%&#039; viewBox=&#039;0 0 126 26&#039; fill=&#039;black&#039; stroke=&#039;none&#039;%3E%3Cpath d=&#039;M3,10.2c2.6,0,2.6,2,2.6,3.2S4.4,16.5,3,16.5s-3-1.4-3-3.2S0.4,10.2,3,10.2z M18.8,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.2-1.4-3.2-3.2S17,10.2,18.8,10.2z M34.6,10.2c1.5,0,2.6,1.4,2.6,3.2s-0.5,3.2-1.9,3.2c-1.5,0-3.4-1.4-3.4-3.2S33.1,10.2,34.6,10.2z M50.5,10.2c1.7,0,3.2,1.4,3.2,3.2s-1.4,3.2-3.2,3.2c-1.7,0-3.3-0.9-3.3-2.6S48.7,10.2,50.5,10.2z M66.2,10.2c1.5,0,3.4,1.4,3.4,3.2s-1.9,3.2-3.4,3.2c-1.5,0-2.6-0.4-2.6-2.1S64.8,10.2,66.2,10.2z M82.2,10.2c1.7,0.8,2.6,1.4,2.6,3.2s-0.1,3.2-1.6,3.2c-1.5,0-3.7-1.4-3.7-3.2S80.5,9.4,82.2,10.2zM98.6,10.2c1.5,0,2.6,0.4,2.6,2.1s-1.2,4.2-2.6,4.2c-1.5,0-3.7-0.4-3.7-2.1S97.1,10.2,98.6,10.2z M113.4,10.2c1.2,0,2.2,0.9,2.2,3.2s-0.1,3.2-1.3,3.2s-3.1-1.4-3.1-3.2S112.2,10.2,113.4,10.2z&#039;/%3E%3C/svg%3E&quot;);">
+          <span class="elementor-divider-separator"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% schema %}
 {
   "name": "Recent Articles",
@@ -170,52 +148,22 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "RECENT ARTICLES"
+      "default": "Recent Articles"
     },
     {
-      "type": "image_picker",
-      "id": "article_1_image",
-      "label": "Article 1 Image"
+      "type": "blog",
+      "id": "blog_handle",
+      "label": "Blog",
+      "info": "Select the blog to display recent articles from"
     },
     {
-      "type": "text",
-      "id": "article_1_title",
-      "label": "Article 1 Title"
-    },
-    {
-      "type": "url",
-      "id": "article_1_url",
-      "label": "Article 1 Link"
-    },
-    {
-      "type": "image_picker",
-      "id": "article_2_image",
-      "label": "Article 2 Image"
-    },
-    {
-      "type": "text",
-      "id": "article_2_title",
-      "label": "Article 2 Title"
-    },
-    {
-      "type": "url",
-      "id": "article_2_url",
-      "label": "Article 2 Link"
-    },
-    {
-      "type": "image_picker",
-      "id": "article_3_image",
-      "label": "Article 3 Image"
-    },
-    {
-      "type": "text",
-      "id": "article_3_title",
-      "label": "Article 3 Title"
-    },
-    {
-      "type": "url",
-      "id": "article_3_url",
-      "label": "Article 3 Link"
+      "type": "range",
+      "id": "articles_to_show",
+      "label": "Number of articles to show",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 3
     }
   ],
   "presets": [
