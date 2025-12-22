@@ -39,49 +39,22 @@
                 <div data-elementor-type="loop-item" data-elementor-id="1058" class="elementor elementor-1058 e-loop-item e-loop-item-{{ article.id }} post-{{ article.id }} post type-post status-publish format-standard {% if article.image %}has-post-thumbnail{% endif %} hentry" data-custom-edit-handle="1">
                   <div class="elementor-element elementor-element-2f1ec59 elementor-invisible e-flex e-con-boxed e-con e-parent" data-id="2f1ec59" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomInDown&quot;,&quot;animation_delay&quot;:{{ article_count | times: 200 }}}">
                     <div class="e-con-inner">
-                      {%- comment -%} Featured Image {%- endcomment -%}
                       <div class="elementor-element elementor-element-b04fc69 elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="b04fc69" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
                         <div class="elementor-widget-container">
                           <a href="{{ article.url }}">
                             {%- if article.image -%}
-                              <img 
-                                loading="lazy" 
-                                decoding="async" 
-                                width="{{ article.image.width }}" 
-                                height="{{ article.image.height }}" 
-                                class="attachment-large size-large wp-image-{{ article.id }}" 
-                                alt="{{ article.image.alt | default: article.title | escape }}" 
-                                src="{{ article.image | image_url: width: 800 }}" 
-                                sizes="(max-width: 800px) 100vw, 800px"
-                              >
+                              <img loading="lazy" decoding="async" width="{{ article.image.width }}" height="{{ article.image.height }}" class="attachment-large size-large wp-image-{{ article.id }}" alt="{{ article.image.alt | default: article.title | escape }}" src="{{ article.image | image_url: width: 800 }}" sizes="(max-width: 800px) 100vw, 800px">
                             {%- else -%}
-                              {%- comment -%} Fallback image if article has no featured image {%- endcomment -%}
-                              <img 
-                                loading="lazy" 
-                                decoding="async" 
-                                width="800" 
-                                height="534" 
-                                class="attachment-large size-large wp-image-{{ article.id }}" 
-                                alt="{{ article.title | escape }}" 
-                                src="{{ "PACHAMANA-160.jpg" | asset_url }}" 
-                                sizes="(max-width: 800px) 100vw, 800px" 
-                                onerror="this.style.display='none'"
-                              >
+                              <img loading="lazy" decoding="async" width="800" height="534" class="attachment-large size-large wp-image-{{ article.id }}" alt="{{ article.title | escape }}" src="{{ "PACHAMANA-160.jpg" | asset_url }}" sizes="(max-width: 800px) 100vw, 800px" onerror="this.style.display='none'">
                             {%- endif -%}
                           </a>
                         </div>
                       </div>
-                      
-                      {%- comment -%} Article Title {%- endcomment -%}
                       <div class="elementor-element elementor-element-97712f6 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="97712f6" data-element_type="widget" data-widget_type="theme-post-title.default">
                         <div class="elementor-widget-container">
-                          <h1 class="elementor-heading-title elementor-size-default">
-                            <a href="{{ article.url }}">{{ article.title | escape }}</a>
-                          </h1>
+                          <h1 class="elementor-heading-title elementor-size-default"><a href="{{ article.url }}">{{ article.title | escape }}</a></h1>
                         </div>
                       </div>
-                      
-                      {%- comment -%} Article Excerpt {%- endcomment -%}
                       <div class="elementor-element elementor-element-e508ee5 elementor-widget elementor-widget-theme-post-excerpt" data-id="e508ee5" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
                         <div class="elementor-widget-container">
                           {%- if article.excerpt != blank -%}
@@ -91,8 +64,6 @@
                           {%- endif -%}
                         </div>
                       </div>
-                      
-                      {%- comment -%} Read More Button {%- endcomment -%}
                       <div class="elementor-element elementor-element-1033908 elementor-align-justify elementor-widget elementor-widget-button" data-id="1033908" data-element_type="widget" data-widget_type="button.default">
                         <div class="elementor-widget-container">
                           <div class="elementor-button-wrapper">
