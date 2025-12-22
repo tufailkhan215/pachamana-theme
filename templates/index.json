@@ -248,6 +248,46 @@
     },
     "section-text-images-grid": {
       "type": "section-text-images-grid",
+      "blocks": {
+        "grid_item_tWWKaT": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/chuncho.png",
+            "title": "chuncho",
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+          }
+        },
+        "grid_item_PJTtjd": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/nacional.png",
+            "title": "chuncho",
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+          }
+        },
+        "grid_item_h6FtQV": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/criollo.png",
+            "title": "chuncho",
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+          }
+        },
+        "grid_item_97BDfA": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/trinitario.png",
+            "title": "chuncho",
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_tWWKaT",
+        "grid_item_PJTtjd",
+        "grid_item_h6FtQV",
+        "grid_item_97BDfA"
+      ],
       "settings": {
         "heading": "TYPES OF CACAO",
         "bottom_heading": "WHY CHUNCHO?",
