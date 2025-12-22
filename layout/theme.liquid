@@ -195,10 +195,12 @@
   {%- section 'section-header' -%}
 
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-    {%- comment -%} Wrap content sections in Elementor structure to match source HTML - header and footer stay outside {%- endcomment -%}
+    {%- comment -%} Wrap content sections in elementor-widget-container and elementor-63 - header and footer stay outside {%- endcomment -%}
     {%- if template.name == 'index' -%}
-      <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63 elementor-motion-effects-parent">
-        {{ content_for_layout }}
+      <div class="elementor-widget-container">
+        <div data-elementor-type="wp-page" data-elementor-id="63" class="elementor elementor-63 elementor-motion-effects-parent">
+          {{ content_for_layout }}
+        </div>
       </div>
     {%- else -%}
       {{ content_for_layout }}
