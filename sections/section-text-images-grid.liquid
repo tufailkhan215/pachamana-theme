@@ -1,4 +1,13 @@
 <style>
+  /* Load OAXACA font - ensure font-face is defined */
+  @font-face {
+    font-family: 'OAXACA';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url('https://pachamana.com/wp-content/uploads/2024/01/OaxacaRegular.svg#OAXACA') format('svg');
+  }
+  
   /* Apply CSS from post-63.css using nth-child selectors since IDs are dynamic */
   /* Image sizing - match source CSS max-width percentages for each item */
   .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element:nth-child(1) .elementor-widget-image img {
@@ -15,16 +24,22 @@
   }
   
   /* Main section heading (static ID 5dc8a35) - match post-63.css */
-  .elementor-63 .elementor-element.elementor-element-5dc8a35 .elementor-heading-title {
-    font-family: "OAXACA", Sans-serif !important;
+  /* Use higher specificity to ensure font-family applies */
+  .elementor-63 .elementor-element.elementor-element-5dc8a35 .elementor-heading-title,
+  .elementor-63 .elementor-element.elementor-element-5dc8a35 .elementor-heading-title.elementor-size-default,
+  .elementor-63 .elementor-element.elementor-element-5dc8a35 h2.elementor-heading-title {
+    font-family: "OAXACA", "OAXACA", Sans-serif !important;
     font-size: 46px !important;
     letter-spacing: 2.9px !important;
     color: var(--e-global-color-secondary) !important;
   }
   
   /* Grid item headings (dynamic IDs) - match post-63.css styles for all grid item headings */
-  .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading .elementor-heading-title {
-    font-family: "OAXACA", Sans-serif !important;
+  /* Use higher specificity to ensure font-family applies */
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading .elementor-heading-title,
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading .elementor-heading-title.elementor-size-default,
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-heading h2.elementor-heading-title {
+    font-family: "OAXACA", "OAXACA", Sans-serif !important;
     color: var(--e-global-color-secondary) !important;
   }
   
