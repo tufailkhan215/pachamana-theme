@@ -1878,13 +1878,14 @@
            url("{{ 'fa-solid-900.woff' | asset_url }}") format("woff");
     }
     
-    /* Load OAXACA font - use Shopify asset URL */
+    /* Load OAXACA font - use WordPress URL as fallback since SVG fonts are deprecated */
+    /* Note: SVG fonts are not supported in modern browsers. The font should be provided in WOFF2/WOFF format. */
     @font-face {
       font-family: 'OAXACA';
       font-style: normal;
       font-weight: normal;
       font-display: swap;
-      src: url("{{ 'OaxacaRegular.svg' | asset_url }}#OAXACA") format('svg');
+      src: url('https://pachamana.com/wp-content/uploads/2024/01/OaxacaRegular.svg#OAXACA') format('svg');
     }
     
     /* Elementor Global Color Variables - Define all CSS variables used in Elementor CSS */
