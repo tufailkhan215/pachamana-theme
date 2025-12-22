@@ -90,6 +90,19 @@
     },
     "section-health-benifits": {
       "type": "section-health-benifits",
+      "blocks": {
+        "benefit_item_LBrBhQ": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Rich in Antioxidants",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_item_LBrBhQ"
+      ],
       "settings": {
         "main_heading": "HEALTH BENEFITS",
         "main_subheading": "OF ceremonial cacao",
