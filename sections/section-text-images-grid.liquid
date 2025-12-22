@@ -1,3 +1,74 @@
+<style>
+  /* Fix grid layout and image sizing for section-text-images-grid */
+  /* Grid container - use flex with wrap to create 2-column layout */
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner,
+  .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner,
+  .elementor-element[data-id="1ca5e9e"] .e-con-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  /* Grid item sizing - each item takes ~50% width minus gap */
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element,
+  .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element,
+  .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element {
+    flex: 0 0 calc(50% - 15px) !important;
+    width: calc(50% - 15px) !important;
+    max-width: calc(50% - 15px) !important;
+    min-width: 0 !important;
+  }
+
+  /* Image sizing - ensure images are full width within their containers and maintain aspect ratio */
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-image img,
+  .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-image img,
+  .elementor-element[data-id="1ca5e9e"] .elementor-widget-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Image widget container - full width */
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-image .elementor-widget-container,
+  .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .elementor-widget-image .elementor-widget-container,
+  .elementor-element[data-id="1ca5e9e"] .elementor-widget-image .elementor-widget-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Grid item inner container */
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element .e-con-inner,
+  .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element .e-con-inner,
+  .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element .e-con-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Responsive - single column on mobile */
+  @media (max-width: 767px) {
+    .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element,
+    .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element,
+    .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element {
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  /* Ensure grid items are visible */
+  .elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element.elementor-invisible,
+  .elementor.elementor-63 .elementor-element.elementor-element-1ca5e9e .e-con-inner > .elementor-element.elementor-invisible,
+  .elementor-element[data-id="1ca5e9e"] .e-con-inner > .elementor-element.elementor-invisible {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+</style>
 <div class="plus_row_scroll_overflow elementor-element elementor-element-cd87555 e-flex e-con-boxed e-con e-parent section-text-images-grid" data-id="cd87555" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-7669d6e elementor-widget elementor-widget-shortcode" data-id="7669d6e" data-element_type="widget" data-widget_type="shortcode.default">
