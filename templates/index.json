@@ -91,6 +91,46 @@
     "section-health-benifits": {
       "type": "section-health-benifits",
       "blocks": {
+        "benefit_item_AaBTjz": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Rich in Antioxidants",
+            "link": ""
+          }
+        },
+        "benefit_item_VkK6Db": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Rich in Essential Minerals",
+            "link": "#"
+          }
+        },
+        "benefit_item_FBhFGH": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Mood Enhancement",
+            "link": "#"
+          }
+        },
+        "benefit_item_kqmzzw": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Rich in Antioxidants",
+            "link": ""
+          }
+        },
+        "benefit_item_HX9mXg": {
+          "type": "benefit_item",
+          "settings": {
+            "group": "general",
+            "text": "Rich in Antioxidants",
+            "link": ""
+          }
+        },
         "benefit_item_LBrBhQ": {
           "type": "benefit_item",
           "settings": {
@@ -101,6 +141,11 @@
         }
       },
       "block_order": [
+        "benefit_item_AaBTjz",
+        "benefit_item_VkK6Db",
+        "benefit_item_FBhFGH",
+        "benefit_item_kqmzzw",
+        "benefit_item_HX9mXg",
         "benefit_item_LBrBhQ"
       ],
       "settings": {
