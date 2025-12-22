@@ -2,8 +2,8 @@
 	font-family: 'OAXACA';
 	font-style: normal;
 	font-weight: normal;
-	font-display: auto;
+	font-display: swap;
 	src: 
-		url('https://pachamana.com/wp-content/uploads/2024/01/OaxacaRegular.svg#OAXACA') format('svg');
+		url('OaxacaRegular.svg#OAXACA') format('svg');
 }
 /* End Custom Fonts CSS */

@@ -1878,6 +1878,15 @@
            url("{{ 'fa-solid-900.woff' | asset_url }}") format("woff");
     }
     
+    /* Load OAXACA font - use Shopify asset URL */
+    @font-face {
+      font-family: 'OAXACA';
+      font-style: normal;
+      font-weight: normal;
+      font-display: swap;
+      src: url("{{ 'OaxacaRegular.svg' | asset_url }}#OAXACA") format('svg');
+    }
+    
     /* Elementor Global Color Variables - Define all CSS variables used in Elementor CSS */
     :root,
     .elementor,
