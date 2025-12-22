@@ -1,12 +1,14 @@
 <style>
-  /* Load OAXACA font - use WordPress URL as fallback since SVG fonts are deprecated */
-  /* Note: SVG fonts are not supported in modern browsers. The font should be provided in WOFF2/WOFF format. */
+  /* Load OAXACA font - use local assets with multiple formats for browser compatibility */
   @font-face {
     font-family: 'OAXACA';
     font-style: normal;
     font-weight: normal;
     font-display: swap;
-    src: url('https://pachamana.com/wp-content/uploads/2024/01/OaxacaRegular.svg#OAXACA') format('svg');
+    src: url('{{ "OaxacaRegular.woff2" | asset_url }}') format('woff2'),
+         url('{{ "OaxacaRegular.woff" | asset_url }}') format('woff'),
+         url('{{ "OaxacaRegular.ttf" | asset_url }}') format('truetype'),
+         url('{{ "OaxacaRegular.svg" | asset_url }}#OAXACA') format('svg');
   }
   
   /* Apply CSS from post-63.css using nth-child selectors since IDs are dynamic */
