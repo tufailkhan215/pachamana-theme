@@ -328,19 +328,17 @@
         "background_image": "shopify://shop_images/sacred_valley_peru.png"
       }
     },
-    "section-rescent-articles": {
+    "section_rescent_articles_LArLB4": {
       "type": "section-rescent-articles",
+      "name": "Recent Articles",
       "settings": {
         "heading": "RECENT ARTICLES",
-        "article_1_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-24.jpg",
-        "article_1_title": "Article 1 Title",
-        "article_1_url": "#",
-        "article_2_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-24.jpg",
-        "article_2_title": "Article 1 Title",
-        "article_2_url": "#",
-        "article_3_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-24.jpg",
-        "article_3_title": "Article 1 Title",
-        "article_3_url": "#"
+        "article_1_title": "",
+        "article_1_url": "",
+        "article_2_title": "",
+        "article_2_url": "",
+        "article_3_title": "",
+        "article_3_url": ""
       }
     },
     "section-photo-gallery": {
@@ -483,7 +481,7 @@
     "section-featured-products",
     "section-text-images-grid",
     "section-image-text-dynamicbg",
-    "section-rescent-articles",
+    "section_rescent_articles_LArLB4",
     "section-photo-gallery",
     "section-faq"
   ]
