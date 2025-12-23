@@ -160,14 +160,27 @@
                   {%- if related_article.id != article.id and related_index < max_related -%}
                     {%- liquid
                       comment
-                        Always construct Shopify URL from article handle to ensure correct format
+                        Always construct Shopify URL - extract handle from article URL if needed
                         Format: /blogs/{blog_handle}/{article_handle}
-                        blog.url returns /blogs/{blog_handle} (no trailing slash)
                       endcomment
+                      assign related_article_handle = related_article.handle
+                      
+                      comment
+                        If handle is blank or URL contains WordPress domain, extract handle from URL
+                      endcomment
+                      if related_article_handle == blank or related_article.url contains 'pachamana.com' or related_article.url contains 'http'
+                        assign related_url_parts = related_article.url | split: '/'
+                        for part in related_url_parts
+                          if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and related_article_handle == blank
+                            assign related_article_handle = part
+                          endif
+                        endfor
+                      endif
+                      
                       if current_blog and current_blog.url
-                        assign related_url = current_blog.url | append: '/' | append: related_article.handle
+                        assign related_url = current_blog.url | append: '/' | append: related_article_handle
                       else
-                        assign related_url = '/blogs/news/' | append: related_article.handle
+                        assign related_url = '/blogs/news/' | append: related_article_handle
                       endif
                     -%}
                     <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
@@ -205,14 +218,27 @@
 				{%- if prev_article -%}
 					{%- liquid
 						comment
-						  Always construct Shopify URL from article handle to ensure correct format
+						  Always construct Shopify URL - extract handle from article URL if needed
 						  Format: /blogs/{blog_handle}/{article_handle}
-						  blog.url returns /blogs/{blog_handle} (no trailing slash)
 						endcomment
+						assign prev_article_handle = prev_article.handle
+						
+						comment
+						  If handle is blank or URL contains WordPress domain, extract handle from URL
+						endcomment
+						if prev_article_handle == blank or prev_article.url contains 'pachamana.com' or prev_article.url contains 'http'
+						  assign prev_url_parts = prev_article.url | split: '/'
+						  for part in prev_url_parts
+						    if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and prev_article_handle == blank
+						      assign prev_article_handle = part
+						    endif
+						  endfor
+						endif
+						
 						if current_blog and current_blog.url
-						  assign prev_url = current_blog.url | append: '/' | append: prev_article.handle
+						  assign prev_url = current_blog.url | append: '/' | append: prev_article_handle
 						else
-						  assign prev_url = '/blogs/news/' | append: prev_article.handle
+						  assign prev_url = '/blogs/news/' | append: prev_article_handle
 						endif
 					-%}
 					<a href="{{ prev_url }}" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-left" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">Previous</span><span class="post-navigation__prev--title">{{ prev_article.title | escape }}</span></span></a>
@@ -225,14 +251,27 @@
 				{%- if next_article -%}
 					{%- liquid
 						comment
-						  Always construct Shopify URL from article handle to ensure correct format
+						  Always construct Shopify URL - extract handle from article URL if needed
 						  Format: /blogs/{blog_handle}/{article_handle}
-						  blog.url returns /blogs/{blog_handle} (no trailing slash)
 						endcomment
+						assign next_article_handle = next_article.handle
+						
+						comment
+						  If handle is blank or URL contains WordPress domain, extract handle from URL
+						endcomment
+						if next_article_handle == blank or next_article.url contains 'pachamana.com' or next_article.url contains 'http'
+						  assign next_url_parts = next_article.url | split: '/'
+						  for part in next_url_parts
+						    if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and next_article_handle == blank
+						      assign next_article_handle = part
+						    endif
+						  endfor
+						endif
+						
 						if current_blog and current_blog.url
-						  assign next_url = current_blog.url | append: '/' | append: next_article.handle
+						  assign next_url = current_blog.url | append: '/' | append: next_article_handle
 						else
-						  assign next_url = '/blogs/news/' | append: next_article.handle
+						  assign next_url = '/blogs/news/' | append: next_article_handle
 						endif
 					-%}
 					<a href="{{ next_url }}" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Next</span><span class="post-navigation__next--title">{{ next_article.title | escape }}</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-right" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><span class="elementor-screen-only">Next</span></span></a>
