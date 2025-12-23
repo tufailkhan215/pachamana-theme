@@ -104,7 +104,7 @@
 				</div>
         {%- comment -%} Related Articles Section {%- endcomment -%}
         {%- if current_blog and current_blog.articles.size > 1 -%}
-          <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important; visibility: visible !important; opacity: 1 !important; background-color: #f0f0f0 !important; padding: 20px !important; margin: 20px 0 !important; border: 2px solid red !important;">
+          <div id="jp-relatedposts" class="jp-relatedposts">
             <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
             <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
               {%- assign related_index = 0 -%}
@@ -199,6 +199,16 @@
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+  }
+  
+  /* Related posts headline styling from related-posts.css */
+  #jp-relatedposts h3.jp-relatedposts-headline {
+    margin: 0 0 1em 0;
+    display: inline-block;
+    float: left;
+    font-size: 9pt;
+    font-weight: 700;
+    font-family: inherit;
   }
   
   .jp-relatedposts-items {
