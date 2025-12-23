@@ -160,32 +160,9 @@
                   {%- if related_article.id != article.id and related_index < max_related -%}
                     {%- liquid
                       comment
-                        Always construct Shopify URL from article handle
-                        Format: /blogs/{blog_handle}/{article_handle}
-                        Use article.handle directly - it's Shopify's native handle
+                        Use Shopify's native article.url directly - no extraction needed
                       endcomment
-                      assign related_article_handle = related_article.handle
-                      
-                      comment
-                        If handle is blank, try to extract from article URL (fallback only)
-                      endcomment
-                      if related_article_handle == blank
-                        assign related_url_parts = related_article.url | split: '/'
-                        assign found_blogs = false
-                        for part in related_url_parts
-                          if part == 'blogs'
-                            assign found_blogs = true
-                          elsif found_blogs and part != '' and part != 'news' and part != 'articles' and related_article_handle == blank
-                            assign related_article_handle = part
-                          endif
-                        endfor
-                      endif
-                      
-                      if current_blog and current_blog.url
-                        assign related_url = current_blog.url | append: '/' | append: related_article_handle
-                      else
-                        assign related_url = '/blogs/news/' | append: related_article_handle
-                      endif
+                      assign related_url = related_article.url
                     -%}
                     <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
                       <span class="jp-relatedposts-post-title">
@@ -236,32 +213,9 @@
 				{%- if next_article -%}
 					{%- liquid
 						comment
-						  Always construct Shopify URL from article handle
-						  Format: /blogs/{blog_handle}/{article_handle}
-						  Use article.handle directly - it's Shopify's native handle
+						  Use Shopify's native article.url directly - no extraction needed
 						endcomment
-						assign next_article_handle = next_article.handle
-						
-						comment
-						  If handle is blank, try to extract from article URL (fallback only)
-						endcomment
-						if next_article_handle == blank
-						  assign next_url_parts = next_article.url | split: '/'
-						  assign found_blogs = false
-						  for part in next_url_parts
-						    if part == 'blogs'
-						      assign found_blogs = true
-						    elsif found_blogs and part != '' and part != 'news' and part != 'articles' and next_article_handle == blank
-						      assign next_article_handle = part
-						    endif
-						  endfor
-						endif
-						
-						if current_blog and current_blog.url
-						  assign next_url = current_blog.url | append: '/' | append: next_article_handle
-						else
-						  assign next_url = '/blogs/news/' | append: next_article_handle
-						endif
+						assign next_url = next_article.url
 					-%}
 					<a href="{{ next_url }}" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Next</span><span class="post-navigation__next--title">{{ next_article.title | escape }}</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-right" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><span class="elementor-screen-only">Next</span></span></a>
 				{%- endif -%}
