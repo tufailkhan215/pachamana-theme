@@ -168,13 +168,28 @@
                       comment
                         If handle is blank or URL contains WordPress domain, extract handle from URL
                       endcomment
-                      if related_article_handle == blank or related_article.url contains 'pachamana.com' or related_article.url contains 'http'
+                      if related_article_handle == blank or related_article.url contains 'pachamana.com' or related_article.url contains 'http://' or related_article.url contains 'https://'
                         assign related_url_parts = related_article.url | split: '/'
+                        assign found_blogs = false
                         for part in related_url_parts
-                          if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and related_article_handle == blank
+                          if part == 'blogs'
+                            assign found_blogs = true
+                          elsif found_blogs and part != '' and part != 'news' and part != 'articles'
                             assign related_article_handle = part
+                            break
                           endif
                         endfor
+                        
+                        comment
+                          If still blank, try to get last non-empty part
+                        endcomment
+                        if related_article_handle == blank
+                          for part in related_url_parts
+                            if part != '' and part != 'blogs' and part != 'news' and part != 'articles'
+                              assign related_article_handle = part
+                            endif
+                          endfor
+                        endif
                       endif
                       
                       if current_blog and current_blog.url
@@ -226,13 +241,28 @@
 						comment
 						  If handle is blank or URL contains WordPress domain, extract handle from URL
 						endcomment
-						if prev_article_handle == blank or prev_article.url contains 'pachamana.com' or prev_article.url contains 'http'
+						if prev_article_handle == blank or prev_article.url contains 'pachamana.com' or prev_article.url contains 'http://' or prev_article.url contains 'https://'
 						  assign prev_url_parts = prev_article.url | split: '/'
+						  assign found_blogs = false
 						  for part in prev_url_parts
-						    if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and prev_article_handle == blank
+						    if part == 'blogs'
+						      assign found_blogs = true
+						    elsif found_blogs and part != '' and part != 'news' and part != 'articles'
 						      assign prev_article_handle = part
+						      break
 						    endif
 						  endfor
+						  
+						  comment
+						    If still blank, try to get last non-empty part
+						  endcomment
+						  if prev_article_handle == blank
+						    for part in prev_url_parts
+						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles'
+						        assign prev_article_handle = part
+						      endif
+						    endfor
+						  endif
 						endif
 						
 						if current_blog and current_blog.url
@@ -259,13 +289,28 @@
 						comment
 						  If handle is blank or URL contains WordPress domain, extract handle from URL
 						endcomment
-						if next_article_handle == blank or next_article.url contains 'pachamana.com' or next_article.url contains 'http'
+						if next_article_handle == blank or next_article.url contains 'pachamana.com' or next_article.url contains 'http://' or next_article.url contains 'https://'
 						  assign next_url_parts = next_article.url | split: '/'
+						  assign found_blogs = false
 						  for part in next_url_parts
-						    if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and next_article_handle == blank
+						    if part == 'blogs'
+						      assign found_blogs = true
+						    elsif found_blogs and part != '' and part != 'news' and part != 'articles'
 						      assign next_article_handle = part
+						      break
 						    endif
 						  endfor
+						  
+						  comment
+						    If still blank, try to get last non-empty part
+						  endcomment
+						  if next_article_handle == blank
+						    for part in next_url_parts
+						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles'
+						        assign next_article_handle = part
+						      endif
+						    endfor
+						  endif
 						endif
 						
 						if current_blog and current_blog.url
