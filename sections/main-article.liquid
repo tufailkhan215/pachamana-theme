@@ -239,10 +239,16 @@
 						
 						comment
 						  If handle is blank or URL contains WordPress domain, extract handle from URL
+						  WordPress URL format: https://pachamana.com/article-slug/
+						  Shopify URL format: /blogs/news/article-slug
 						endcomment
 						if prev_article_handle == blank or prev_article.url contains 'pachamana.com' or prev_article.url contains 'http://' or prev_article.url contains 'https://'
 						  assign prev_url_parts = prev_article.url | split: '/'
 						  assign found_blogs = false
+						  
+						  comment
+						    First try to find handle after 'blogs' (for Shopify URLs)
+						  endcomment
 						  for part in prev_url_parts
 						    if part == 'blogs'
 						      assign found_blogs = true
@@ -252,14 +258,20 @@
 						  endfor
 						  
 						  comment
-						    If still blank, try to get last non-empty part
+						    If not found (WordPress URL), get the last non-empty part and remove trailing characters
 						  endcomment
 						  if prev_article_handle == blank
 						    for part in prev_url_parts
-						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles'
+						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:'
 						        assign prev_article_handle = part
 						      endif
 						    endfor
+						    comment
+						      Remove trailing slash or query parameters if any
+						    endcomment
+						    if prev_article_handle contains '?'
+						      assign prev_article_handle = prev_article_handle | split: '?' | first
+						    endif
 						  endif
 						endif
 						
@@ -286,10 +298,16 @@
 						
 						comment
 						  If handle is blank or URL contains WordPress domain, extract handle from URL
+						  WordPress URL format: https://pachamana.com/article-slug/
+						  Shopify URL format: /blogs/news/article-slug
 						endcomment
 						if next_article_handle == blank or next_article.url contains 'pachamana.com' or next_article.url contains 'http://' or next_article.url contains 'https://'
 						  assign next_url_parts = next_article.url | split: '/'
 						  assign found_blogs = false
+						  
+						  comment
+						    First try to find handle after 'blogs' (for Shopify URLs)
+						  endcomment
 						  for part in next_url_parts
 						    if part == 'blogs'
 						      assign found_blogs = true
@@ -299,14 +317,20 @@
 						  endfor
 						  
 						  comment
-						    If still blank, try to get last non-empty part
+						    If not found (WordPress URL), get the last non-empty part and remove trailing characters
 						  endcomment
 						  if next_article_handle == blank
 						    for part in next_url_parts
-						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles'
+						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:'
 						        assign next_article_handle = part
 						      endif
 						    endfor
+						    comment
+						      Remove trailing slash or query parameters if any
+						    endcomment
+						    if next_article_handle contains '?'
+						      assign next_article_handle = next_article_handle | split: '?' | first
+						    endif
 						  endif
 						endif
 						
