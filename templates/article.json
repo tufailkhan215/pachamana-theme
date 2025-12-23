@@ -6,7 +6,6 @@
       "settings": {}
     }
   },
-  "order": ["main"],
-  "settings": {}
+  "order": ["main"]
 }
 
