@@ -171,6 +171,10 @@
                       if related_article_handle == blank or related_article.url contains 'pachamana.com' or related_article.url contains 'http://' or related_article.url contains 'https://'
                         assign related_url_parts = related_article.url | split: '/'
                         assign found_blogs = false
+                        
+                        comment
+                          First try to find handle after 'blogs' (for Shopify URLs)
+                        endcomment
                         for part in related_url_parts
                           if part == 'blogs'
                             assign found_blogs = true
@@ -180,14 +184,20 @@
                         endfor
                         
                         comment
-                          If still blank, try to get last non-empty part
+                          If not found (WordPress URL), get the last non-empty part and remove trailing characters
                         endcomment
                         if related_article_handle == blank
                           for part in related_url_parts
-                            if part != '' and part != 'blogs' and part != 'news' and part != 'articles'
+                            if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:'
                               assign related_article_handle = part
                             endif
                           endfor
+                          comment
+                            Remove trailing slash or query parameters if any
+                          endcomment
+                          if related_article_handle contains '?'
+                            assign related_article_handle = related_article_handle | split: '?' | first
+                          endif
                         endif
                       endif
                       
