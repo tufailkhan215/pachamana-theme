@@ -95,11 +95,11 @@
 			<div class="elementor-element elementor-element-69e5969 elementor-widget elementor-widget-theme-post-excerpt" data-id="69e5969" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
 				<div class="elementor-widget-container">
 					{%- if article.excerpt != blank -%}
-						{{ article.excerpt | strip_html | truncatewords: 30 }}
+						{{ article.excerpt | strip_html | truncatewords: 20 }}
 					{%- elsif article.summary != blank -%}
-						{{ article.summary | strip_html | truncatewords: 30 }}
+						{{ article.summary | strip_html | truncatewords: 20 }}
 					{%- else -%}
-						{{ article.content | strip_html | truncatewords: 30 }}
+						{{ article.content | strip_html | truncatewords: 20 }}
 					{%- endif -%}
 				</div>
 			</div>
