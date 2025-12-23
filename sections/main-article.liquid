@@ -71,17 +71,9 @@
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
         {%- assign max_related = 3 -%}
         {%- assign related_index = 0 -%}
-        {%- assign has_related_articles = false -%}
         
-        {%- comment -%} Check if we have any related articles first {%- endcomment -%}
-        {%- for check_article in blog.articles -%}
-          {%- if check_article.id != article.id -%}
-            {%- assign has_related_articles = true -%}
-            {%- break -%}
-          {%- endif -%}
-        {%- endfor -%}
-        
-        {%- if has_related_articles -%}
+        {%- comment -%} Display related articles if blog has more than 1 article {%- endcomment -%}
+        {%- if blog.articles.size > 1 -%}
           <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
             <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
             <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
