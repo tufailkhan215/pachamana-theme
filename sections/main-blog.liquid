@@ -65,13 +65,14 @@
 		    assign current_blog = blogs['news']
 		  endif
 		-%}
+		
 		{%- if current_blog -%}
-		{%- assign posts_per_page = section.settings.posts_per_page | default: 6 -%}
+		{%- assign posts_per_page = section.settings.posts_per_page | default: 6 -%} 
 		{%- if posts_per_page < 1 -%}
 		  {%- assign posts_per_page = 6 -%}
 		{%- endif -%}
 		{%- paginate current_blog.articles by posts_per_page -%}
-		{%- for article in paginate.articles -%}
+		{%- for article in current_blog.articles -%}
 		<div data-elementor-type="loop-item" data-elementor-id="596" class="elementor elementor-596 e-loop-item e-loop-item-{{ article.id }} post-{{ article.id }}" data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
 			<div class="elementor-element elementor-element-d026499 e-con-full e-flex e-con e-parent e-lazyloaded" data-id="d026499" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 		<div class="elementor-element elementor-element-1b4df14 e-con-full e-flex e-con e-child" data-id="1b4df14" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
