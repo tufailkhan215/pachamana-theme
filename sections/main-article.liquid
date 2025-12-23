@@ -120,7 +120,7 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
-        {%- if current_blog and current_blog.articles.size > 1 -%}
+        {%- if current_blog -%}
           <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
             <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
             <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
@@ -129,16 +129,26 @@
                 {%- if related_article.id != article.id and related_index < max_related -%}
                   {%- liquid
                     comment
-                      Ensure we use Shopify URL - convert WordPress URLs if present
+                      Always construct Shopify URL from article handle to ensure correct format
                     endcomment
                     assign related_url = related_article.url
-                    if related_url contains 'pachamana.com'
-                      assign url_parts = related_url | split: '/'
-                      assign article_handle = url_parts[url_parts.size | minus: 2]
-                      if current_blog
-                        assign related_url = current_blog.url | append: '/' | append: article_handle
+                    if related_url contains 'pachamana.com' or related_url contains 'https://' or related_url contains 'http://'
+                      comment
+                        WordPress URL detected - construct Shopify URL from handle
+                      endcomment
+                      if current_blog and current_blog.url
+                        assign related_url = current_blog.url | append: '/' | append: related_article.handle
                       else
-                        assign related_url = '/blogs/news/' | append: article_handle
+                        assign related_url = '/blogs/news/' | append: related_article.handle
+                      endif
+                    elsif related_url == blank or related_url == '' or related_url contains '/blogs/' == false
+                      comment
+                        Fallback: construct URL from article handle
+                      endcomment
+                      if current_blog and current_blog.url
+                        assign related_url = current_blog.url | append: '/' | append: related_article.handle
+                      else
+                        assign related_url = '/blogs/news/' | append: related_article.handle
                       endif
                     endif
                   -%}
@@ -176,22 +186,27 @@
 				{%- if prev_article -%}
 					{%- liquid
 						comment
-						  Ensure we use Shopify URL - article.url should be relative like /blogs/news/article-handle
-						  If it contains pachamana.com, it's a WordPress URL and we need to extract the handle
+						  Always construct Shopify URL from article handle to ensure correct format
+						  Use article.handle which is the Shopify article handle
 						endcomment
 						assign prev_url = prev_article.url
-						if prev_url contains 'pachamana.com'
+						if prev_url contains 'pachamana.com' or prev_url contains 'https://' or prev_url contains 'http://'
 						  comment
-						    Extract article handle from WordPress URL and construct Shopify URL
-						    WordPress: https://pachamana.com/health-benefits-ceremonial-cacao/
-						    Shopify: /blogs/news/health-benefits-ceremonial-cacao
+						    WordPress URL detected - construct Shopify URL from handle
 						  endcomment
-						  assign url_parts = prev_url | split: '/'
-						  assign article_handle = url_parts[url_parts.size | minus: 2]
-						  if current_blog
-						    assign prev_url = current_blog.url | append: '/' | append: article_handle
+						  if current_blog and current_blog.url
+						    assign prev_url = current_blog.url | append: '/' | append: prev_article.handle
 						  else
-						    assign prev_url = '/blogs/news/' | append: article_handle
+						    assign prev_url = '/blogs/news/' | append: prev_article.handle
+						  endif
+						elsif prev_url == blank or prev_url == '' or prev_url contains '/blogs/' == false
+						  comment
+						    Fallback: construct URL from article handle
+						  endcomment
+						  if current_blog and current_blog.url
+						    assign prev_url = current_blog.url | append: '/' | append: prev_article.handle
+						  else
+						    assign prev_url = '/blogs/news/' | append: prev_article.handle
 						  endif
 						endif
 					-%}
@@ -205,22 +220,27 @@
 				{%- if next_article -%}
 					{%- liquid
 						comment
-						  Ensure we use Shopify URL - article.url should be relative like /blogs/news/article-handle
-						  If it contains pachamana.com, it's a WordPress URL and we need to extract the handle
+						  Always construct Shopify URL from article handle to ensure correct format
+						  Use article.handle which is the Shopify article handle
 						endcomment
 						assign next_url = next_article.url
-						if next_url contains 'pachamana.com'
+						if next_url contains 'pachamana.com' or next_url contains 'https://' or next_url contains 'http://'
 						  comment
-						    Extract article handle from WordPress URL and construct Shopify URL
-						    WordPress: https://pachamana.com/health-benefits-ceremonial-cacao/
-						    Shopify: /blogs/news/health-benefits-ceremonial-cacao
+						    WordPress URL detected - construct Shopify URL from handle
 						  endcomment
-						  assign url_parts = next_url | split: '/'
-						  assign article_handle = url_parts[url_parts.size | minus: 2]
-						  if current_blog
-						    assign next_url = current_blog.url | append: '/' | append: article_handle
+						  if current_blog and current_blog.url
+						    assign next_url = current_blog.url | append: '/' | append: next_article.handle
 						  else
-						    assign next_url = '/blogs/news/' | append: article_handle
+						    assign next_url = '/blogs/news/' | append: next_article.handle
+						  endif
+						elsif next_url == blank or next_url == '' or next_url contains '/blogs/' == false
+						  comment
+						    Fallback: construct URL from article handle
+						  endcomment
+						  if current_blog and current_blog.url
+						    assign next_url = current_blog.url | append: '/' | append: next_article.handle
+						  else
+						    assign next_url = '/blogs/news/' | append: next_article.handle
 						  endif
 						endif
 					-%}
