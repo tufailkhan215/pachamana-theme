@@ -141,7 +141,7 @@
                       else
                         assign related_url = '/blogs/news/' | append: related_article.handle
                       endif
-                    elsif related_url == blank or related_url == '' or related_url contains '/blogs/' == false
+                    elsif related_url == blank or related_url == ''
                       comment
                         Fallback: construct URL from article handle
                       endcomment
@@ -199,7 +199,7 @@
 						  else
 						    assign prev_url = '/blogs/news/' | append: prev_article.handle
 						  endif
-						elsif prev_url == blank or prev_url == '' or prev_url contains '/blogs/' == false
+						elsif prev_url == blank or prev_url == ''
 						  comment
 						    Fallback: construct URL from article handle
 						  endcomment
@@ -233,7 +233,7 @@
 						  else
 						    assign next_url = '/blogs/news/' | append: next_article.handle
 						  endif
-						elsif next_url == blank or next_url == '' or next_url contains '/blogs/' == false
+						elsif next_url == blank or next_url == ''
 						  comment
 						    Fallback: construct URL from article handle
 						  endcomment
