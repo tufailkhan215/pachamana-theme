@@ -69,45 +69,33 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
-        {%- liquid
-          assign max_related = 3
-          assign related_index = 0
-          assign current_blog = blog
-          
-          comment
-            Try to get blog from article if blog is not directly available
-          endcomment
-          if current_blog == blank and article.blog
-            assign current_blog = article.blog
-          endif
-        -%}
+        {%- assign max_related = 3 -%}
+        {%- assign related_index = 0 -%}
         
-        {%- comment -%} Display related articles if blog exists and has more than 1 article {%- endcomment -%}
-        {%- if current_blog and current_blog.articles.size > 1 -%}
-          <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
-            <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
-            <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
-              {%- for related_article in current_blog.articles -%}
-                {%- if related_article.id != article.id and related_index < max_related -%}
-                  <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
-                    <span class="jp-relatedposts-post-title">
-                      <a class="jp-relatedposts-post-a" href="{{ related_article.url }}" title="{{ related_article.title | escape }}" data-origin="{{ article.id }}" data-position="{{ related_index }}">
-                        {{ related_article.title | escape }}
-                      </a>
-                    </span>
-                    <time class="jp-relatedposts-post-date" datetime="{{ related_article.published_at | date: '%B %d, %Y' }}" style="display: block;">
-                      {{ related_article.published_at | date: '%B %d, %Y' }}
-                    </time>
-                    {%- if related_article.tags.size > 0 -%}
-                      <span class="jp-relatedposts-post-context">In "{{ related_article.tags.first }}"</span>
-                    {%- endif -%}
-                  </p>
-                  {%- assign related_index = related_index | plus: 1 -%}
-                {%- endif -%}
-              {%- endfor -%}
-            </div>
+        {%- comment -%} Display related articles section - blog object should be available like in prev/next navigation {%- endcomment -%}
+        <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
+          <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+          <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
+            {%- for related_article in blog.articles -%}
+              {%- if related_article.id != article.id and related_index < max_related -%}
+                <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
+                  <span class="jp-relatedposts-post-title">
+                    <a class="jp-relatedposts-post-a" href="{{ related_article.url }}" title="{{ related_article.title | escape }}" data-origin="{{ article.id }}" data-position="{{ related_index }}">
+                      {{ related_article.title | escape }}
+                    </a>
+                  </span>
+                  <time class="jp-relatedposts-post-date" datetime="{{ related_article.published_at | date: '%B %d, %Y' }}" style="display: block;">
+                    {{ related_article.published_at | date: '%B %d, %Y' }}
+                  </time>
+                  {%- if related_article.tags.size > 0 -%}
+                    <span class="jp-relatedposts-post-context">In "{{ related_article.tags.first }}"</span>
+                  {%- endif -%}
+                </p>
+                {%- assign related_index = related_index | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
           </div>
-        {%- endif -%}
+        </div>
 				<div class="elementor-element elementor-element-c6a53f7 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="c6a53f7" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
 							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 	'/%3E%3C/svg%3E&quot;);">
