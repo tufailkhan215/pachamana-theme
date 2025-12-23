@@ -50,22 +50,22 @@
 		{%- liquid
 		  comment
 		    Get blog from section settings, or fallback to auto-detection
-		    Priority: 1. Section setting, 2. Context blog object, 3. URL detection, 4. "news" blog, 5. First available blog
+		    Priority: 1. Context blog object (most reliable on blog templates), 2. Section setting, 3. URL detection, 4. "news" blog, 5. First available blog
 		  endcomment
 		  assign current_blog = blank
 		  
 		  comment
-		    First: Use blog from section settings if selected
+		    First: Use blog from context (available on blog templates) - most reliable
 		  endcomment
-		  if section.settings.blog != blank
-		    assign current_blog = blogs[section.settings.blog]
+		  if blog != blank
+		    assign current_blog = blog
 		  endif
 		  
 		  comment
-		    Second: Use blog from context (available on blog templates)
+		    Second: Use blog from section settings if selected (overrides context if set)
 		  endcomment
-		  if current_blog == blank and blog != blank
-		    assign current_blog = blog
+		  if section.settings.blog != blank
+		    assign current_blog = blogs[section.settings.blog]
 		  endif
 		  
 		  comment
@@ -105,8 +105,11 @@
 		  endif
 		-%}
 		{%- if current_blog -%}
-		{%- paginate current_blog.articles by section.settings.posts_per_page -%}
-		{%- if paginate.articles.size > 0 -%}
+		{%- assign posts_per_page = section.settings.posts_per_page | default: 6 -%}
+		{%- if posts_per_page < 1 -%}
+		  {%- assign posts_per_page = 6 -%}
+		{%- endif -%}
+		{%- paginate current_blog.articles by posts_per_page -%}
 		{%- for article in paginate.articles -%}
 		<div data-elementor-type="loop-item" data-elementor-id="596" class="elementor elementor-596 e-loop-item e-loop-item-{{ article.id }} post-{{ article.id }}" data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
 			<div class="elementor-element elementor-element-d026499 e-con-full e-flex e-con e-parent e-lazyloaded" data-id="d026499" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -147,11 +150,6 @@
 	</div>
 </div>
 		{%- endfor -%}
-		{%- else -%}
-		<div class="elementor-widget-container">
-			<p>No articles found in this blog.</p>
-		</div>
-		{%- endif -%}
 		
 						</div>
 				
