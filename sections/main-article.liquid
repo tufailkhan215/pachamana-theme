@@ -257,36 +257,18 @@
 				{%- if prev_article -%}
 					{%- liquid
 						comment
-						  Always construct Shopify URL - extract handle from article URL if needed
+						  Always construct Shopify URL from article handle
 						  Format: /blogs/{blog_handle}/{article_handle}
-						endcomment
-						comment
-						  Always extract handle from URL if it contains WordPress domain
-						  WordPress URL format: https://pachamana.com/article-slug/
-						  Shopify URL format: /blogs/news/article-slug
+						  Use article.handle directly - it's Shopify's native handle
 						endcomment
 						assign prev_article_handle = prev_article.handle
 						
 						comment
-						  If URL contains WordPress domain, ALWAYS extract handle from URL (ignore article.handle)
-						endcomment
-						if prev_article.url contains 'pachamana.com' or prev_article.url contains 'http://' or prev_article.url contains 'https://'
-						  comment
-						    WordPress URL detected - extract handle from URL, ignore prev_article.handle
-						  endcomment
-						  assign prev_article_handle = blank
-						endif
-						
-						comment
-						  If handle is blank, extract handle from URL
+						  If handle is blank, try to extract from article URL (fallback only)
 						endcomment
 						if prev_article_handle == blank
 						  assign prev_url_parts = prev_article.url | split: '/'
 						  assign found_blogs = false
-						  
-						  comment
-						    First try to find handle after 'blogs' (for Shopify URLs like /blogs/news/article-handle)
-						  endcomment
 						  for part in prev_url_parts
 						    if part == 'blogs'
 						      assign found_blogs = true
@@ -294,25 +276,6 @@
 						      assign prev_article_handle = part
 						    endif
 						  endfor
-						  
-						  comment
-						    If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
-						    This will be the article slug after the domain
-						    Iterate through all parts and keep the last valid one
-						  endcomment
-						  if prev_article_handle == blank
-						    for part in prev_url_parts
-						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com'
-						        assign prev_article_handle = part
-						      endif
-						    endfor
-						    comment
-						      Remove trailing slash or query parameters if any
-						    endcomment
-						    if prev_article_handle contains '?'
-						      assign prev_article_handle = prev_article_handle | split: '?' | first
-						    endif
-						  endif
 						endif
 						
 						if current_blog and current_blog.url
@@ -320,12 +283,7 @@
 						else
 						  assign prev_url = '/blogs/news/' | append: prev_article_handle
 						endif
-						
-						comment
-						  DEBUG: Show what URL we're constructing
-						endcomment
 					-%}
-					<!-- DEBUG: prev_article.url={{ prev_article.url }}, prev_article_handle={{ prev_article_handle }}, prev_url={{ prev_url }} -->
 					<a href="{{ prev_url }}" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-left" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">Previous</span><span class="post-navigation__prev--title">{{ prev_article.title | escape }}</span></span></a>
 				{%- endif -%}
 			</div>
