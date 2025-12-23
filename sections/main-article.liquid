@@ -187,7 +187,7 @@
 					{%- liquid
 						comment
 						  Always construct Shopify URL from article handle to ensure correct format
-						  Use article.handle which is the Shopify article handle
+						  Check if article.url is a WordPress URL, if so use handle
 						endcomment
 						assign prev_url = prev_article.url
 						if prev_url contains 'pachamana.com' or prev_url contains 'https://' or prev_url contains 'http://'
@@ -221,7 +221,7 @@
 					{%- liquid
 						comment
 						  Always construct Shopify URL from article handle to ensure correct format
-						  Use article.handle which is the Shopify article handle
+						  Check if article.url is a WordPress URL, if so use handle
 						endcomment
 						assign next_url = next_article.url
 						if next_url contains 'pachamana.com' or next_url contains 'https://' or next_url contains 'http://'
