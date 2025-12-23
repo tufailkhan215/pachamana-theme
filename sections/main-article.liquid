@@ -1,8 +1,29 @@
 {%- liquid
   comment
-    Simple: Get blog from article.blog (Shopify native property)
+    Get blog - try multiple methods since article.blog might not be available in sections
   endcomment
   assign current_blog = article.blog
+  
+  if current_blog == blank
+    comment
+      Try blog object directly (available in article templates)
+    endcomment
+    assign current_blog = blog
+  endif
+  
+  if current_blog == blank
+    comment
+      Extract blog handle from article URL: /blogs/{blog_handle}/{article_handle}
+    endcomment
+    assign article_url_parts = article.url | split: '/'
+    for part in article_url_parts
+      if part == 'blogs'
+        assign blog_handle = article_url_parts[forloop.index]
+        assign current_blog = blogs[blog_handle]
+        break
+      endif
+    endfor
+  endif
   
   comment
     Find current article index and get prev/next articles
