@@ -12,7 +12,8 @@
     "main": {
       "type": "main-blog",
       "settings": {
-        "blog_title": "PACHA MANA BLOG"
+        "blog_title": "PACHA MANA BLOG",
+        "posts_per_page": 3
       }
     }
   },
