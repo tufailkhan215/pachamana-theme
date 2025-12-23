@@ -175,4 +175,23 @@
     background-repeat: no-repeat !important;
     background-size: cover !important;
   }
+
+  /* Ensure related posts section is visible */
+  #jp-relatedposts {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .jp-relatedposts-items {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  @media (max-width: 768px) {
+    .jp-relatedposts-items {
+      grid-template-columns: 1fr !important;
+    }
+  }
 </style>
