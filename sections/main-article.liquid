@@ -17,10 +17,9 @@
     endcomment
     assign article_url_parts = article.url | split: '/'
     for part in article_url_parts
-      if part == 'blogs'
+      if part == 'blogs' and current_blog == blank
         assign blog_handle = article_url_parts[forloop.index]
         assign current_blog = blogs[blog_handle]
-        break
       endif
     endfor
   endif
