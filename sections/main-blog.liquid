@@ -50,47 +50,53 @@
 		{%- liquid
 		  comment
 		    Get blog from section settings, or fallback to auto-detection
+		    Priority: 1. Section setting, 2. Context blog object, 3. URL detection, 4. "news" blog, 5. First available blog
 		  endcomment
 		  assign current_blog = blank
 		  
+		  comment
+		    First: Use blog from section settings if selected
+		  endcomment
 		  if section.settings.blog != blank
-		    comment
-		      Use the blog selected in theme editor
-		    endcomment
 		    assign current_blog = blogs[section.settings.blog]
 		  endif
 		  
-		  if current_blog == blank
-		    comment
-		      Fallback: try to get blog from context
-		    endcomment
+		  comment
+		    Second: Use blog from context (available on blog templates)
+		  endcomment
+		  if current_blog == blank and blog != blank
 		    assign current_blog = blog
 		  endif
 		  
-		  if current_blog == blank
-		    comment
-		      Fallback: try to get blog from URL path: /blogs/{handle}/
-		    endcomment
+		  comment
+		    Third: Detect blog from URL path: /blogs/{handle}/
+		  endcomment
+		  if current_blog == blank and request.path contains '/blogs/'
 		    assign path_parts = request.path | split: '/'
 		    for part in path_parts
-		      if part == 'blogs' and forloop.index < path_parts.size
-		        assign blog_handle = path_parts[forloop.index]
-		        assign current_blog = blogs[blog_handle]
+		      if part == 'blogs' and current_blog == blank
+		        assign blog_index = forloop.index0 | plus: 1
+		        if blog_index < path_parts.size
+		          assign blog_handle = path_parts[blog_index]
+		          if blog_handle != blank and blog_handle != ''
+		            assign current_blog = blogs[blog_handle]
+		          endif
+		        endif
 		      endif
 		    endfor
 		  endif
 		  
+		  comment
+		    Fourth: Try "news" blog as default
+		  endcomment
 		  if current_blog == blank
-		    comment
-		      Fallback: try default "news" blog
-		    endcomment
 		    assign current_blog = blogs['news']
 		  endif
 		  
+		  comment
+		    Fifth: Use first available blog with articles
+		  endcomment
 		  if current_blog == blank
-		    comment
-		      Final fallback: use first blog with articles
-		    endcomment
 		    for blog_item in blogs
 		      if blog_item.articles.size > 0 and current_blog == blank
 		        assign current_blog = blog_item
@@ -100,6 +106,7 @@
 		-%}
 		{%- if current_blog -%}
 		{%- paginate current_blog.articles by section.settings.posts_per_page -%}
+		{%- if paginate.articles.size > 0 -%}
 		{%- for article in paginate.articles -%}
 		<div data-elementor-type="loop-item" data-elementor-id="596" class="elementor elementor-596 e-loop-item e-loop-item-{{ article.id }} post-{{ article.id }}" data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
 			<div class="elementor-element elementor-element-d026499 e-con-full e-flex e-con e-parent e-lazyloaded" data-id="d026499" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -140,6 +147,11 @@
 	</div>
 </div>
 		{%- endfor -%}
+		{%- else -%}
+		<div class="elementor-widget-container">
+			<p>No articles found in this blog.</p>
+		</div>
+		{%- endif -%}
 		
 						</div>
 				
@@ -305,8 +317,7 @@
       "type": "blog",
       "id": "blog",
       "label": "Blog",
-      "default": "news",
-      "info": "Select which blog to display. Defaults to 'news' if not selected."
+      "info": "Select which blog to display. If not selected, it will auto-detect from URL or use 'news' as fallback."
     },
     {
       "type": "text",
