@@ -174,9 +174,8 @@
                         for part in related_url_parts
                           if part == 'blogs'
                             assign found_blogs = true
-                          elsif found_blogs and part != '' and part != 'news' and part != 'articles'
+                          elsif found_blogs and part != '' and part != 'news' and part != 'articles' and related_article_handle == blank
                             assign related_article_handle = part
-                            break
                           endif
                         endfor
                         
@@ -247,9 +246,8 @@
 						  for part in prev_url_parts
 						    if part == 'blogs'
 						      assign found_blogs = true
-						    elsif found_blogs and part != '' and part != 'news' and part != 'articles'
+						    elsif found_blogs and part != '' and part != 'news' and part != 'articles' and prev_article_handle == blank
 						      assign prev_article_handle = part
-						      break
 						    endif
 						  endfor
 						  
@@ -295,9 +293,8 @@
 						  for part in next_url_parts
 						    if part == 'blogs'
 						      assign found_blogs = true
-						    elsif found_blogs and part != '' and part != 'news' and part != 'articles'
+						    elsif found_blogs and part != '' and part != 'news' and part != 'articles' and next_article_handle == blank
 						      assign next_article_handle = part
-						      break
 						    endif
 						  endfor
 						  
