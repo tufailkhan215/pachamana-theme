@@ -94,7 +94,13 @@
 			</div>
 			<div class="elementor-element elementor-element-69e5969 elementor-widget elementor-widget-theme-post-excerpt" data-id="69e5969" data-element_type="widget" data-widget_type="theme-post-excerpt.default">
 				<div class="elementor-widget-container">
-					{{ article.excerpt | default: article.summary | strip_html | truncatewords: 30 }}
+					{%- if article.excerpt != blank -%}
+						{{ article.excerpt | strip_html | truncatewords: 30 }}
+					{%- elsif article.summary != blank -%}
+						{{ article.summary | strip_html | truncatewords: 30 }}
+					{%- else -%}
+						{{ article.content | strip_html | truncatewords: 30 }}
+					{%- endif -%}
 				</div>
 			</div>
 			<div class="elementor-element elementor-element-db9c9e9 elementor-mobile-align-justify elementor-widget elementor-widget-button" data-id="db9c9e9" data-element_type="widget" data-widget_type="button.default">
