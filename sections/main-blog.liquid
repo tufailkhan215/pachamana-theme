@@ -49,59 +49,20 @@
 		<style id="loop-596">.elementor-596 .elementor-element.elementor-element-d026499{--display:flex;--min-height:250px;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:center;--gap:0px 0px;--row-gap:0px;--column-gap:0px;--overflow:hidden;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-596 .elementor-element.elementor-element-d026499:not(.elementor-motion-effects-element-type-background), .elementor-596 .elementor-element.elementor-element-d026499 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-size:contain;}.elementor-596 .elementor-element.elementor-element-1b4df14{--display:flex;--overflow:hidden;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-596 .elementor-element.elementor-element-a069e0b{--display:flex;--justify-content:space-between;--gap:10px 10px;--row-gap:10px;--column-gap:10px;--overflow:hidden;--padding-top:20px;--padding-bottom:20px;--padding-left:20px;--padding-right:20px;}.elementor-596 .elementor-element.elementor-element-a069e0b:not(.elementor-motion-effects-element-type-background), .elementor-596 .elementor-element.elementor-element-a069e0b > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:var( --e-global-color-5abf1e8 );background-image:url("{{ 'light-gold-fabric.png' | asset_url }}");}.elementor-596 .elementor-element.elementor-element-a069e0b.e-con{--flex-grow:0;--flex-shrink:0;}.elementor-596 .elementor-element.elementor-element-ae397c6 .elementor-heading-title{font-family:"OAXACA", Sans-serif;font-size:30px;color:var( --e-global-color-secondary );}.elementor-596 .elementor-element.elementor-element-69e5969 .elementor-widget-container{font-family:"Barlow", Sans-serif;color:var( --e-global-color-secondary );}.elementor-596 .elementor-element.elementor-element-db9c9e9 .elementor-button{background-color:var( --e-global-color-secondary );fill:var( --e-global-color-5abf1e8 );color:var( --e-global-color-5abf1e8 );border-style:solid;border-width:1px 1px 1px 1px;border-color:var( --e-global-color-5abf1e8 );border-radius:40px 40px 40px 40px;}@media(max-width:879px){.elementor-596 .elementor-element.elementor-element-d026499{--width:100%;--border-radius:20px 20px 20px 20px;}.elementor-596 .elementor-element.elementor-element-1b4df14{--width:100%;--min-height:194px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-596 .elementor-element.elementor-element-b128fd8 img{max-width:100%;}.elementor-596 .elementor-element.elementor-element-a069e0b{--gap:10px 10px;--row-gap:10px;--column-gap:10px;--border-radius:0px 0px 20px 20px;}.elementor-596 .elementor-element.elementor-element-ae397c6 .elementor-heading-title{font-size:24px;}.elementor-596 .elementor-element.elementor-element-69e5969 .elementor-widget-container{font-size:16px;line-height:16px;}}@media(min-width:880px){.elementor-596 .elementor-element.elementor-element-d026499{--width:100%;}.elementor-596 .elementor-element.elementor-element-1b4df14{--width:30%;}.elementor-596 .elementor-element.elementor-element-a069e0b{--width:70%;}}</style>
 		{%- liquid
 		  comment
-		    Get blog from section settings, or fallback to auto-detection
-		    Priority: 1. Context blog object (most reliable on blog templates), 2. Section setting, 3. URL detection, 4. "news" blog, 5. First available blog
+		    Get blog - prioritize section setting, then use context blog object
 		  endcomment
 		  assign current_blog = blank
 		  
-		  comment
-		    First: Use blog from context (available on blog templates) - most reliable
-		  endcomment
-		  if blog != blank
-		    assign current_blog = blog
-		  endif
-		  
-		  comment
-		    Second: Use blog from section settings if selected (overrides context if set)
-		  endcomment
 		  if section.settings.blog != blank
 		    assign current_blog = blogs[section.settings.blog]
 		  endif
 		  
-		  comment
-		    Third: Detect blog from URL path: /blogs/{handle}/
-		  endcomment
-		  if current_blog == blank and request.path contains '/blogs/'
-		    assign path_parts = request.path | split: '/'
-		    for part in path_parts
-		      if part == 'blogs' and current_blog == blank
-		        assign blog_index = forloop.index0 | plus: 1
-		        if blog_index < path_parts.size
-		          assign blog_handle = path_parts[blog_index]
-		          if blog_handle != blank and blog_handle != ''
-		            assign current_blog = blogs[blog_handle]
-		          endif
-		        endif
-		      endif
-		    endfor
+		  if current_blog == blank and blog != blank
+		    assign current_blog = blog
 		  endif
 		  
-		  comment
-		    Fourth: Try "news" blog as default
-		  endcomment
-		  if current_blog == blank
+		  if current_blog == blank and blogs['news'] != blank
 		    assign current_blog = blogs['news']
-		  endif
-		  
-		  comment
-		    Fifth: Use first available blog with articles
-		  endcomment
-		  if current_blog == blank
-		    for blog_item in blogs
-		      if blog_item.articles.size > 0 and current_blog == blank
-		        assign current_blog = blog_item
-		      endif
-		    endfor
 		  endif
 		-%}
 		{%- if current_blog -%}
@@ -201,7 +162,11 @@
 				{%- endpaginate -%}
 				{%- else -%}
 				<div class="elementor-widget-container">
-					<p>No blog articles found.</p>
+					{%- if current_blog == blank -%}
+						<p>No blog found. Please select a blog in the theme editor settings.</p>
+					{%- else -%}
+						<p>No articles found in this blog.</p>
+					{%- endif -%}
 				</div>
 				{%- endif -%}
 				</div>
