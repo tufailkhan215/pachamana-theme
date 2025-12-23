@@ -47,7 +47,8 @@
 				<div class="elementor-widget-container">
 							<div class="elementor-loop-container elementor-grid" role="list">
 		<style id="loop-596">.elementor-596 .elementor-element.elementor-element-d026499{--display:flex;--min-height:250px;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:center;--gap:0px 0px;--row-gap:0px;--column-gap:0px;--overflow:hidden;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-596 .elementor-element.elementor-element-d026499:not(.elementor-motion-effects-element-type-background), .elementor-596 .elementor-element.elementor-element-d026499 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-size:contain;}.elementor-596 .elementor-element.elementor-element-1b4df14{--display:flex;--overflow:hidden;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-596 .elementor-element.elementor-element-a069e0b{--display:flex;--justify-content:space-between;--gap:10px 10px;--row-gap:10px;--column-gap:10px;--overflow:hidden;--padding-top:20px;--padding-bottom:20px;--padding-left:20px;--padding-right:20px;}.elementor-596 .elementor-element.elementor-element-a069e0b:not(.elementor-motion-effects-element-type-background), .elementor-596 .elementor-element.elementor-element-a069e0b > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:var( --e-global-color-5abf1e8 );background-image:url("{{ 'light-gold-fabric.png' | asset_url }}");}.elementor-596 .elementor-element.elementor-element-a069e0b.e-con{--flex-grow:0;--flex-shrink:0;}.elementor-596 .elementor-element.elementor-element-ae397c6 .elementor-heading-title{font-family:"OAXACA", Sans-serif;font-size:30px;color:var( --e-global-color-secondary );}.elementor-596 .elementor-element.elementor-element-69e5969 .elementor-widget-container{font-family:"Barlow", Sans-serif;color:var( --e-global-color-secondary );}.elementor-596 .elementor-element.elementor-element-db9c9e9 .elementor-button{background-color:var( --e-global-color-secondary );fill:var( --e-global-color-5abf1e8 );color:var( --e-global-color-5abf1e8 );border-style:solid;border-width:1px 1px 1px 1px;border-color:var( --e-global-color-5abf1e8 );border-radius:40px 40px 40px 40px;}@media(max-width:879px){.elementor-596 .elementor-element.elementor-element-d026499{--width:100%;--border-radius:20px 20px 20px 20px;}.elementor-596 .elementor-element.elementor-element-1b4df14{--width:100%;--min-height:194px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-596 .elementor-element.elementor-element-b128fd8 img{max-width:100%;}.elementor-596 .elementor-element.elementor-element-a069e0b{--gap:10px 10px;--row-gap:10px;--column-gap:10px;--border-radius:0px 0px 20px 20px;}.elementor-596 .elementor-element.elementor-element-ae397c6 .elementor-heading-title{font-size:24px;}.elementor-596 .elementor-element.elementor-element-69e5969 .elementor-widget-container{font-size:16px;line-height:16px;}}@media(min-width:880px){.elementor-596 .elementor-element.elementor-element-d026499{--width:100%;}.elementor-596 .elementor-element.elementor-element-1b4df14{--width:30%;}.elementor-596 .elementor-element.elementor-element-a069e0b{--width:70%;}}</style>
-		{%- for article in blog.articles -%}
+		{%- paginate blog.articles by section.settings.posts_per_page -%}
+		{%- for article in paginate.articles -%}
 		<div data-elementor-type="loop-item" data-elementor-id="596" class="elementor elementor-596 e-loop-item e-loop-item-{{ article.id }} post-{{ article.id }}" data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
 			<div class="elementor-element elementor-element-d026499 e-con-full e-flex e-con e-parent e-lazyloaded" data-id="d026499" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 		<div class="elementor-element elementor-element-1b4df14 e-con-full e-flex e-con e-child" data-id="1b4df14" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -91,6 +92,52 @@
 						</div>
 				</div>
 				</div>
+				
+				{%- if paginate.pages > 1 -%}
+				<div class="elementor-element elementor-element-blog-pagination elementor-widget elementor-widget-text-editor" data-id="blog-pagination" data-element_type="widget" data-widget_type="text-editor.default">
+					<div class="elementor-widget-container">
+						<nav class="blog-pagination" role="navigation" aria-label="Blog pagination">
+							<ul class="pagination-list">
+								{%- if paginate.previous -%}
+								<li class="pagination-item pagination-item--prev">
+									<a href="{{ paginate.previous.url }}" class="pagination-link pagination-link--prev" aria-label="Previous page">
+										<span class="pagination-link-text">Previous</span>
+									</a>
+								</li>
+								{%- endif -%}
+								
+								{%- for part in paginate.parts -%}
+									{%- if part.is_link -%}
+									<li class="pagination-item">
+										<a href="{{ part.url }}" class="pagination-link" aria-label="Page {{ part.title }}">{{ part.title }}</a>
+									</li>
+									{%- else -%}
+										{%- if part.title == paginate.current_page -%}
+										<li class="pagination-item pagination-item--current">
+											<span class="pagination-link pagination-link--current" aria-current="page" aria-label="Page {{ part.title }}, current page">{{ part.title }}</span>
+										</li>
+										{%- else -%}
+										<li class="pagination-item pagination-item--ellipsis">
+											<span class="pagination-ellipsis">...</span>
+										</li>
+										{%- endif -%}
+									{%- endif -%}
+								{%- endfor -%}
+								
+								{%- if paginate.next -%}
+								<li class="pagination-item pagination-item--next">
+									<a href="{{ paginate.next.url }}" class="pagination-link pagination-link--next" aria-label="Next page">
+										<span class="pagination-link-text">Next</span>
+									</a>
+								</li>
+								{%- endif -%}
+							</ul>
+						</nav>
+					</div>
+				</div>
+				{%- endif -%}
+				
+				{%- endpaginate -%}
 				<div class="elementor-element elementor-element-3a9853b elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="3a9853b" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
 							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 	'/%3E%3C/svg%3E&quot;);">
@@ -115,6 +162,78 @@
   .elementor-274 .elementor-element.elementor-element-71214ba5 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-image: url("{{ 'gold-fabric.png' | asset_url }}") !important;
   }
+
+  /* Blog Pagination Styles */
+  .blog-pagination {
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .pagination-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .pagination-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .pagination-link,
+  .pagination-link--current,
+  .pagination-ellipsis {
+    display: inline-block;
+    padding: 10px 16px;
+    min-width: 44px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    color: var(--e-global-color-secondary, #333);
+    font-family: "Barlow", Sans-serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .pagination-link:hover {
+    background-color: var(--e-global-color-5abf1e8, #f5f5f5);
+    border-color: var(--e-global-color-5abf1e8, #d4a574);
+  }
+
+  .pagination-link--current {
+    background-color: var(--e-global-color-secondary, #333);
+    color: var(--e-global-color-5abf1e8, #fff);
+    border-color: var(--e-global-color-secondary, #333);
+    font-weight: 600;
+    cursor: default;
+  }
+
+  .pagination-ellipsis {
+    border: none;
+    cursor: default;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .pagination-link--prev,
+  .pagination-link--next {
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .pagination-link,
+    .pagination-link--current,
+    .pagination-ellipsis {
+      padding: 8px 12px;
+      min-width: 40px;
+      font-size: 14px;
+    }
+  }
 </style>
 				</div>
 
@@ -129,6 +248,15 @@
       "id": "blog_title",
       "label": "Blog Title",
       "default": "Blog title"
+    },
+    {
+      "type": "range",
+      "id": "posts_per_page",
+      "label": "Posts per page",
+      "min": 3,
+      "max": 24,
+      "step": 1,
+      "default": 6
     }
   ],
   "presets": [
