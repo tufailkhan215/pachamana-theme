@@ -247,14 +247,27 @@
 						  Always construct Shopify URL - extract handle from article URL if needed
 						  Format: /blogs/{blog_handle}/{article_handle}
 						endcomment
-						assign prev_article_handle = prev_article.handle
-						
 						comment
-						  If handle is blank or URL contains WordPress domain, extract handle from URL
+						  Always extract handle from URL if it contains WordPress domain
 						  WordPress URL format: https://pachamana.com/article-slug/
 						  Shopify URL format: /blogs/news/article-slug
 						endcomment
-						if prev_article_handle == blank or prev_article.url contains 'pachamana.com' or prev_article.url contains 'http://' or prev_article.url contains 'https://'
+						assign prev_article_handle = prev_article.handle
+						
+						comment
+						  If URL contains WordPress domain, ALWAYS extract handle from URL (ignore article.handle)
+						endcomment
+						if prev_article.url contains 'pachamana.com' or prev_article.url contains 'http://' or prev_article.url contains 'https://'
+						  comment
+						    WordPress URL detected - extract handle from URL, ignore prev_article.handle
+						  endcomment
+						  assign prev_article_handle = blank
+						endif
+						
+						comment
+						  If handle is blank, extract handle from URL
+						endcomment
+						if prev_article_handle == blank
 						  assign prev_url_parts = prev_article.url | split: '/'
 						  assign found_blogs = false
 						  
@@ -313,14 +326,25 @@
 						  Always construct Shopify URL - extract handle from article URL if needed
 						  Format: /blogs/{blog_handle}/{article_handle}
 						endcomment
+						comment
+						  Always extract handle from URL if it contains WordPress domain
+						endcomment
 						assign next_article_handle = next_article.handle
 						
 						comment
-						  If handle is blank or URL contains WordPress domain, extract handle from URL
-						  WordPress URL format: https://pachamana.com/article-slug/
-						  Shopify URL format: /blogs/news/article-slug
+						  If URL contains WordPress domain, ALWAYS extract handle from URL (ignore article.handle)
 						endcomment
-						if next_article_handle == blank or next_article.url contains 'pachamana.com' or next_article.url contains 'http://' or next_article.url contains 'https://'
+						if next_article.url contains 'pachamana.com' or next_article.url contains 'http://' or next_article.url contains 'https://'
+						  comment
+						    WordPress URL detected - extract handle from URL, ignore next_article.handle
+						  endcomment
+						  assign next_article_handle = blank
+						endif
+						
+						comment
+						  If handle is blank, extract handle from URL
+						endcomment
+						if next_article_handle == blank
 						  assign next_url_parts = next_article.url | split: '/'
 						  assign found_blogs = false
 						  
