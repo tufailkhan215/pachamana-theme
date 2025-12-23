@@ -6,32 +6,24 @@
   assign current_blog = blog
   
   comment
-    Fallback: If blog is not available, try to get it from article URL or article.blog
+    Fallback: If blog is not available, try to get it from article URL
     Article URL format: /blogs/{blog_handle}/articles/{article_handle}
   endcomment
   if current_blog == blank
     comment
-      Try article.blog first (if available in Shopify)
+      Extract blog handle from article URL
+      URL format: /blogs/{blog_handle}/articles/{article_handle}
     endcomment
-    if article.blog
-      assign current_blog = article.blog
-    else
-      comment
-        Extract blog handle from article URL
-        URL format: /blogs/{blog_handle}/articles/{article_handle}
-      endcomment
-      assign article_url_parts = article.url | split: '/'
-      assign blog_handle_index = -1
-      for part in article_url_parts
-        if part == 'blogs'
-          assign blog_handle_index = forloop.index0
-          break
-        endif
-      endfor
-      if blog_handle_index >= 0 and blog_handle_index < article_url_parts.size | minus: 1
-        assign blog_handle = article_url_parts[blog_handle_index | plus: 1]
-        assign current_blog = blogs[blog_handle]
+    assign article_url_parts = article.url | split: '/'
+    assign blog_handle_index = -1
+    for part in article_url_parts
+      if part == 'blogs' and blog_handle_index == -1
+        assign blog_handle_index = forloop.index0
       endif
+    endfor
+    if blog_handle_index >= 0 and blog_handle_index < article_url_parts.size | minus: 1
+      assign blog_handle = article_url_parts[blog_handle_index | plus: 1]
+      assign current_blog = blogs[blog_handle]
     endif
   endif
   
