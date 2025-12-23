@@ -163,12 +163,25 @@
                         Always construct Shopify URL - extract handle from article URL if needed
                         Format: /blogs/{blog_handle}/{article_handle}
                       endcomment
+                      comment
+                        Always extract handle from URL if it contains WordPress domain
+                      endcomment
                       assign related_article_handle = related_article.handle
                       
                       comment
-                        If handle is blank or URL contains WordPress domain, extract handle from URL
+                        If URL contains WordPress domain, ALWAYS extract handle from URL (ignore article.handle)
                       endcomment
-                      if related_article_handle == blank or related_article.url contains 'pachamana.com' or related_article.url contains 'http://' or related_article.url contains 'https://'
+                      if related_article.url contains 'pachamana.com' or related_article.url contains 'http://' or related_article.url contains 'https://'
+                        comment
+                          WordPress URL detected - extract handle from URL, ignore related_article.handle
+                        endcomment
+                        assign related_article_handle = blank
+                      endif
+                      
+                      comment
+                        If handle is blank, extract handle from URL
+                      endcomment
+                      if related_article_handle == blank
                         assign related_url_parts = related_article.url | split: '/'
                         assign found_blogs = false
                         
