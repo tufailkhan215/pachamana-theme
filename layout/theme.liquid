@@ -151,6 +151,9 @@
   {%- if template.name == 'blog' -%}
     {{ 'post-274.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
+  {%- if template.name == 'page' -%}
+    {{ 'post-82.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
   {{ 'custom-pro-widget-nav-menu.min.css' | asset_url | stylesheet_tag }}
   {{ 'custom-pro-widget-woocommerce-menu-cart.min.css' | asset_url | stylesheet_tag }}
   {{ 'custom-pro-widget-woocommerce-product-add-to-cart.min.css' | asset_url | stylesheet_tag }}
@@ -273,9 +276,9 @@
       </div>
     </div>
   {%- else -%}
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
   {%- endif -%}
 
   {%- section 'section-footer' -%}

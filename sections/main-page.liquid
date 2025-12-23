@@ -135,5 +135,34 @@
 					</div>
 				</div>
 				</div>
-  
- 
+
+<style>
+  /* Override WordPress URLs in post-82.css with Shopify asset URLs */
+  .elementor-82 .elementor-element.elementor-element-56401c2:not(.elementor-motion-effects-element-type-background),
+  .elementor-82 .elementor-element.elementor-element-56401c2 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("{{ 'light-gold-fabric.png' | asset_url }}") !important;
+  }
+
+  .elementor-82 .elementor-element.elementor-element-9e3f199:not(.elementor-motion-effects-element-type-background),
+  .elementor-82 .elementor-element.elementor-element-9e3f199 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("{{ 'gold-fabric.png' | asset_url }}") !important;
+  }
+
+  .elementor-82 .elementor-element.elementor-element-58f9f7f:not(.elementor-motion-effects-element-type-background),
+  .elementor-82 .elementor-element.elementor-element-58f9f7f > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("{{ 'gold-fabric.png' | asset_url }}") !important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Main Page",
+  "tag": "section",
+  "class": "section",
+  "presets": [
+    {
+      "name": "Main Page"
+    }
+  ]
+}
+{% endschema %}
