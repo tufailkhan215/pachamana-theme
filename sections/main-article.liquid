@@ -186,10 +186,13 @@
                         comment
                           If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
                           This will be the article slug after the domain
+                          Iterate backwards through array indices
                         endcomment
                         if related_article_handle == blank
-                          assign related_url_parts_reversed = related_url_parts | reverse
-                          for part in related_url_parts_reversed
+                          assign related_url_parts_size = related_url_parts.size | minus: 1
+                          for i in (0..related_url_parts_size)
+                            assign part_index = related_url_parts_size | minus: i
+                            assign part = related_url_parts[part_index]
                             if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com' and related_article_handle == blank
                               assign related_article_handle = part
                             endif
@@ -272,14 +275,17 @@
 						  comment
 						    If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
 						    This will be the article slug after the domain
+						    Iterate backwards through array indices
 						  endcomment
 						  if prev_article_handle == blank
-						    assign prev_url_parts_reversed = prev_url_parts | reverse
-						    for part in prev_url_parts_reversed
-						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com' and prev_article_handle == blank
-						        assign prev_article_handle = part
-						      endif
-						    endfor
+						    assign prev_url_parts_size = prev_url_parts.size | minus: 1
+						    for i in (0..prev_url_parts_size)
+							      assign part_index = prev_url_parts_size | minus: i
+							      assign part = prev_url_parts[part_index]
+							      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com' and prev_article_handle == blank
+							        assign prev_article_handle = part
+							      endif
+							    endfor
 						    comment
 						      Remove trailing slash or query parameters if any
 						    endcomment
@@ -333,14 +339,17 @@
 						  comment
 						    If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
 						    This will be the article slug after the domain
+						    Iterate backwards through array indices
 						  endcomment
 						  if next_article_handle == blank
-						    assign next_url_parts_reversed = next_url_parts | reverse
-						    for part in next_url_parts_reversed
-						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com' and next_article_handle == blank
-						        assign next_article_handle = part
-						      endif
-						    endfor
+						    assign next_url_parts_size = next_url_parts.size | minus: 1
+						    for i in (0..next_url_parts_size)
+							      assign part_index = next_url_parts_size | minus: i
+							      assign part = next_url_parts[part_index]
+							      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com' and next_article_handle == blank
+							        assign next_article_handle = part
+							      endif
+							    endfor
 						    comment
 						      Remove trailing slash or query parameters if any
 						    endcomment
