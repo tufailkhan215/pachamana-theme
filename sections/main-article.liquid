@@ -211,10 +211,23 @@
     }
   }
 
-  /* Ensure related posts section is visible */
+  /* Ensure related posts section is visible and not affected by overlay-opacity */
   #jp-relatedposts {
     display: block !important;
     visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  /* Prevent overlay-opacity from element-2651d288 from affecting related posts */
+  .elementor-906 .elementor-element.elementor-element-2651d288 #jp-relatedposts,
+  .elementor-906 .elementor-element.elementor-element-2651d288 .e-con-inner #jp-relatedposts {
+    opacity: 1 !important;
+  }
+  
+  .elementor-906 .elementor-element.elementor-element-2651d288::before ~ #jp-relatedposts,
+  .elementor-906 .elementor-element.elementor-element-2651d288 > *::before ~ #jp-relatedposts {
     opacity: 1 !important;
   }
   
