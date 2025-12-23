@@ -160,34 +160,18 @@
                   {%- if related_article.id != article.id and related_index < max_related -%}
                     {%- liquid
                       comment
-                        Always construct Shopify URL - extract handle from article URL if needed
+                        Always construct Shopify URL from article handle
                         Format: /blogs/{blog_handle}/{article_handle}
-                      endcomment
-                      comment
-                        Always extract handle from URL if it contains WordPress domain
+                        Use article.handle directly - it's Shopify's native handle
                       endcomment
                       assign related_article_handle = related_article.handle
                       
                       comment
-                        If URL contains WordPress domain, ALWAYS extract handle from URL (ignore article.handle)
-                      endcomment
-                      if related_article.url contains 'pachamana.com' or related_article.url contains 'http://' or related_article.url contains 'https://'
-                        comment
-                          WordPress URL detected - extract handle from URL, ignore related_article.handle
-                        endcomment
-                        assign related_article_handle = blank
-                      endif
-                      
-                      comment
-                        If handle is blank, extract handle from URL
+                        If handle is blank, try to extract from article URL (fallback only)
                       endcomment
                       if related_article_handle == blank
                         assign related_url_parts = related_article.url | split: '/'
                         assign found_blogs = false
-                        
-                        comment
-                          First try to find handle after 'blogs' (for Shopify URLs like /blogs/news/article-handle)
-                        endcomment
                         for part in related_url_parts
                           if part == 'blogs'
                             assign found_blogs = true
@@ -195,25 +179,6 @@
                             assign related_article_handle = part
                           endif
                         endfor
-                        
-                        comment
-                          If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
-                          This will be the article slug after the domain
-                          Iterate through all parts and keep the last valid one
-                        endcomment
-                        if related_article_handle == blank
-                          for part in related_url_parts
-                            if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com'
-                              assign related_article_handle = part
-                            endif
-                          endfor
-                          comment
-                            Remove trailing slash or query parameters if any
-                          endcomment
-                          if related_article_handle contains '?'
-                            assign related_article_handle = related_article_handle | split: '?' | first
-                          endif
-                        endif
                       endif
                       
                       if current_blog and current_blog.url
@@ -294,34 +259,18 @@
 				{%- if next_article -%}
 					{%- liquid
 						comment
-						  Always construct Shopify URL - extract handle from article URL if needed
+						  Always construct Shopify URL from article handle
 						  Format: /blogs/{blog_handle}/{article_handle}
-						endcomment
-						comment
-						  Always extract handle from URL if it contains WordPress domain
+						  Use article.handle directly - it's Shopify's native handle
 						endcomment
 						assign next_article_handle = next_article.handle
 						
 						comment
-						  If URL contains WordPress domain, ALWAYS extract handle from URL (ignore article.handle)
-						endcomment
-						if next_article.url contains 'pachamana.com' or next_article.url contains 'http://' or next_article.url contains 'https://'
-						  comment
-						    WordPress URL detected - extract handle from URL, ignore next_article.handle
-						  endcomment
-						  assign next_article_handle = blank
-						endif
-						
-						comment
-						  If handle is blank, extract handle from URL
+						  If handle is blank, try to extract from article URL (fallback only)
 						endcomment
 						if next_article_handle == blank
 						  assign next_url_parts = next_article.url | split: '/'
 						  assign found_blogs = false
-						  
-						  comment
-						    First try to find handle after 'blogs' (for Shopify URLs like /blogs/news/article-handle)
-						  endcomment
 						  for part in next_url_parts
 						    if part == 'blogs'
 						      assign found_blogs = true
@@ -329,25 +278,6 @@
 						      assign next_article_handle = part
 						    endif
 						  endfor
-						  
-						  comment
-						    If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
-						    This will be the article slug after the domain
-						    Iterate through all parts and keep the last valid one
-						  endcomment
-						  if next_article_handle == blank
-						    for part in next_url_parts
-						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com'
-						        assign next_article_handle = part
-						      endif
-						    endfor
-						    comment
-						      Remove trailing slash or query parameters if any
-						    endcomment
-						    if next_article_handle contains '?'
-						      assign next_article_handle = next_article_handle | split: '?' | first
-						    endif
-						  endif
 						endif
 						
 						if current_blog and current_blog.url
@@ -355,12 +285,7 @@
 						else
 						  assign next_url = '/blogs/news/' | append: next_article_handle
 						endif
-						
-						comment
-						  DEBUG: Show what URL we're constructing
-						endcomment
 					-%}
-					<!-- DEBUG: next_article.url={{ next_article.url }}, next_article_handle={{ next_article_handle }}, next_url={{ next_url }} -->
 					<a href="{{ next_url }}" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Next</span><span class="post-navigation__next--title">{{ next_article.title | escape }}</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-right" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><span class="elementor-screen-only">Next</span></span></a>
 				{%- endif -%}
 			</div>
