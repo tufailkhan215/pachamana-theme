@@ -69,51 +69,44 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
-        {%- if blog.articles.size > 1 -%}
-          {%- liquid
-            assign related_articles = blank
-            assign related_count = 0
-            assign max_related = 3
-            
-            for related_article in blog.articles
-              if related_article.id != article.id and related_count < max_related
-                if related_articles == blank
-                  assign related_articles = related_article
-                else
-                  assign related_articles = related_articles | append: ',' | append: related_article.id
-                endif
-                assign related_count = related_count | plus: 1
-              endif
-            endfor
-          -%}
+        {%- liquid
+          assign related_count = 0
+          assign max_related = 3
+          assign has_related = false
           
-          {%- if related_count > 0 -%}
-            <div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
-              <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
-              <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
-                {%- assign related_article_ids = related_articles | split: ',' -%}
-                {%- assign related_index = 0 -%}
-                {%- for related_article in blog.articles -%}
-                  {%- if related_article.id != article.id and related_index < max_related -%}
-                    <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
-                      <span class="jp-relatedposts-post-title">
-                        <a class="jp-relatedposts-post-a" href="{{ related_article.url }}" title="{{ related_article.title | escape }}" data-origin="{{ article.id }}" data-position="{{ related_index }}">
-                          {{ related_article.title | escape }}
-                        </a>
-                      </span>
-                      <time class="jp-relatedposts-post-date" datetime="{{ related_article.published_at | date: '%B %d, %Y' }}" style="display: block;">
-                        {{ related_article.published_at | date: '%B %d, %Y' }}
-                      </time>
-                      {%- if related_article.tags.size > 0 -%}
-                        <span class="jp-relatedposts-post-context">In "{{ related_article.tags.first }}"</span>
-                      {%- endif -%}
-                    </p>
-                    {%- assign related_index = related_index | plus: 1 -%}
-                  {%- endif -%}
-                {%- endfor -%}
-              </div>
+          for related_article in blog.articles
+            if related_article.id != article.id
+              assign has_related = true
+              break
+            endif
+          endfor
+        -%}
+        
+        {%- if has_related -%}
+          <div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+            <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+            <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
+              {%- assign related_index = 0 -%}
+              {%- for related_article in blog.articles -%}
+                {%- if related_article.id != article.id and related_index < max_related -%}
+                  <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
+                    <span class="jp-relatedposts-post-title">
+                      <a class="jp-relatedposts-post-a" href="{{ related_article.url }}" title="{{ related_article.title | escape }}" data-origin="{{ article.id }}" data-position="{{ related_index }}">
+                        {{ related_article.title | escape }}
+                      </a>
+                    </span>
+                    <time class="jp-relatedposts-post-date" datetime="{{ related_article.published_at | date: '%B %d, %Y' }}" style="display: block;">
+                      {{ related_article.published_at | date: '%B %d, %Y' }}
+                    </time>
+                    {%- if related_article.tags.size > 0 -%}
+                      <span class="jp-relatedposts-post-context">In "{{ related_article.tags.first }}"</span>
+                    {%- endif -%}
+                  </p>
+                  {%- assign related_index = related_index | plus: 1 -%}
+                {%- endif -%}
+              {%- endfor -%}
             </div>
-          {%- endif -%}
+          </div>
         {%- endif -%}
 				<div class="elementor-element elementor-element-c6a53f7 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="c6a53f7" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
