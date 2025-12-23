@@ -69,27 +69,22 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
-        {%- liquid
-          assign related_count = 0
-          assign max_related = 3
-          
-          comment
-            Count how many related articles exist (excluding current article)
-          endcomment
-          if blog and blog.articles.size > 1
-            for related_article in blog.articles
-              if related_article.id != article.id
-                assign related_count = related_count | plus: 1
-              endif
-            endfor
-          endif
-        -%}
+        {%- assign max_related = 3 -%}
+        {%- assign related_index = 0 -%}
+        {%- assign has_related_articles = false -%}
         
-        {%- if related_count > 0 -%}
+        {%- comment -%} Check if we have any related articles first {%- endcomment -%}
+        {%- for check_article in blog.articles -%}
+          {%- if check_article.id != article.id -%}
+            {%- assign has_related_articles = true -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+        
+        {%- if has_related_articles -%}
           <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
             <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
             <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
-              {%- assign related_index = 0 -%}
               {%- for related_article in blog.articles -%}
                 {%- if related_article.id != article.id and related_index < max_related -%}
                   <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
