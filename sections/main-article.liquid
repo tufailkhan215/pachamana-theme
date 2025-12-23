@@ -91,10 +91,17 @@
     background-image: url("{{ 'gold-fabric.png' | asset_url }}") !important;
   }
 
-  /* Background image for element 8304717 - from elementor-frontend-inline-css */
+  /* Background image for element 8304717 - use article featured image if available, otherwise default */
+  {%- liquid
+    if article.image
+      assign background_image_url = article.image | image_url: width: 2048
+    else
+      assign background_image_url = 'cacao-sheny-leon-photography-maui-55.jpg' | asset_url
+    endif
+  -%}
   .elementor-906 .elementor-element.elementor-element-8304717:not(.elementor-motion-effects-element-type-background),
   .elementor-906 .elementor-element.elementor-element-8304717 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
-    background-image: url("{{ 'cacao-sheny-leon-photography-maui-55.jpg' | asset_url }}") !important;
+    background-image: url("{{ background_image_url }}") !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
