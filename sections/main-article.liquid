@@ -173,7 +173,7 @@
                         assign found_blogs = false
                         
                         comment
-                          First try to find handle after 'blogs' (for Shopify URLs)
+                          First try to find handle after 'blogs' (for Shopify URLs like /blogs/news/article-handle)
                         endcomment
                         for part in related_url_parts
                           if part == 'blogs'
@@ -184,11 +184,13 @@
                         endfor
                         
                         comment
-                          If not found (WordPress URL), get the last non-empty part and remove trailing characters
+                          If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
+                          This will be the article slug after the domain
                         endcomment
                         if related_article_handle == blank
-                          for part in related_url_parts
-                            if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:'
+                          assign related_url_parts_reversed = related_url_parts | reverse
+                          for part in related_url_parts_reversed
+                            if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com' and related_article_handle == blank
                               assign related_article_handle = part
                             endif
                           endfor
@@ -257,7 +259,7 @@
 						  assign found_blogs = false
 						  
 						  comment
-						    First try to find handle after 'blogs' (for Shopify URLs)
+						    First try to find handle after 'blogs' (for Shopify URLs like /blogs/news/article-handle)
 						  endcomment
 						  for part in prev_url_parts
 						    if part == 'blogs'
@@ -268,11 +270,13 @@
 						  endfor
 						  
 						  comment
-						    If not found (WordPress URL), get the last non-empty part and remove trailing characters
+						    If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
+						    This will be the article slug after the domain
 						  endcomment
 						  if prev_article_handle == blank
-						    for part in prev_url_parts
-						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:'
+						    assign prev_url_parts_reversed = prev_url_parts | reverse
+						    for part in prev_url_parts_reversed
+						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com' and prev_article_handle == blank
 						        assign prev_article_handle = part
 						      endif
 						    endfor
@@ -316,7 +320,7 @@
 						  assign found_blogs = false
 						  
 						  comment
-						    First try to find handle after 'blogs' (for Shopify URLs)
+						    First try to find handle after 'blogs' (for Shopify URLs like /blogs/news/article-handle)
 						  endcomment
 						  for part in next_url_parts
 						    if part == 'blogs'
@@ -327,11 +331,13 @@
 						  endfor
 						  
 						  comment
-						    If not found (WordPress URL), get the last non-empty part and remove trailing characters
+						    If not found (WordPress URL like https://pachamana.com/article-slug/), get the LAST non-empty part
+						    This will be the article slug after the domain
 						  endcomment
 						  if next_article_handle == blank
-						    for part in next_url_parts
-						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:'
+						    assign next_url_parts_reversed = next_url_parts | reverse
+						    for part in next_url_parts_reversed
+						      if part != '' and part != 'blogs' and part != 'news' and part != 'articles' and part != 'pachamana.com' and part != 'www.pachamana.com' and part != 'http:' and part != 'https:' and part != 'com' and next_article_handle == blank
 						        assign next_article_handle = part
 						      endif
 						    endfor
