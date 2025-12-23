@@ -72,18 +72,21 @@
         {%- liquid
           assign related_count = 0
           assign max_related = 3
-          assign has_related = false
           
-          for related_article in blog.articles
-            if related_article.id != article.id
-              assign has_related = true
-              break
-            endif
-          endfor
+          comment
+            Count how many related articles exist (excluding current article)
+          endcomment
+          if blog and blog.articles.size > 1
+            for related_article in blog.articles
+              if related_article.id != article.id
+                assign related_count = related_count | plus: 1
+              endif
+            endfor
+          endif
         -%}
         
-        {%- if has_related -%}
-          <div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+        {%- if related_count > 0 -%}
+          <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
             <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
             <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
               {%- assign related_index = 0 -%}
