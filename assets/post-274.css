@@ -10,3 +10,243 @@
     --overlay-opacity: 0.39;
 }
 
+.elementor-274 .elementor-element.elementor-element-04f124a::before,
+.elementor-274 .elementor-element.elementor-element-04f124a > .elementor-background-video-container::before,
+.elementor-274 .elementor-element.elementor-element-04f124a > .e-con-inner > .elementor-background-video-container::before,
+.elementor-274 .elementor-element.elementor-element-04f124a > .elementor-background-slideshow::before,
+.elementor-274 .elementor-element.elementor-element-04f124a > .e-con-inner > .elementor-background-slideshow::before,
+.elementor-274 .elementor-element.elementor-element-04f124a > .elementor-motion-effects-container > .elementor-motion-effects-layer::before {
+    background-color: var(--e-global-color-secondary);
+    --background-overlay: '';
+}
+
+.elementor-274 .elementor-element.elementor-element-04f124a .elementor-background-slideshow__slide__image {
+    background-size: cover;
+    background-position: center center;
+}
+
+.elementor-274 .elementor-element.elementor-element-04f124a > .elementor-shape-bottom .elementor-shape-fill,
+.elementor-274 .elementor-element.elementor-element-04f124a > .e-con-inner > .elementor-shape-bottom .elementor-shape-fill {
+    fill: var(--e-global-color-secondary);
+}
+
+.elementor-274 .elementor-element.elementor-element-04f124a > .elementor-shape-bottom svg,
+.elementor-274 .elementor-element.elementor-element-04f124a > .e-con-inner > .elementor-shape-bottom svg {
+    width: calc(256% + 1.3px);
+    height: 95px;
+}
+
+.elementor-274 .elementor-element.elementor-element-42a627e7 {
+    --display: flex;
+    --min-height: 58vh;
+    --flex-direction: column;
+    --container-widget-width: 100%;
+    --container-widget-height: initial;
+    --container-widget-flex-grow: 0;
+    --container-widget-align-self: initial;
+    --flex-wrap-mobile: wrap;
+    --padding-top: 0px;
+    --padding-bottom: 80px;
+    --padding-left: 0px;
+    --padding-right: 0px;
+}
+
+.elementor-274 .elementor-element.elementor-element-42a627e7:not(.elementor-motion-effects-element-type-background),
+.elementor-274 .elementor-element.elementor-element-42a627e7 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("https://i0.wp.com/pachamana.com/wp-content/uploads/2024/02/light-gold-fabric.png?fit=400%2C400&ssl=1");
+}
+
+.elementor-274 .elementor-element.elementor-element-42a627e7 > .elementor-shape-top .elementor-shape-fill,
+.elementor-274 .elementor-element.elementor-element-42a627e7 > .e-con-inner > .elementor-shape-top .elementor-shape-fill {
+    fill: var(--e-global-color-secondary);
+}
+
+.elementor-274 .elementor-element.elementor-element-42a627e7 > .elementor-shape-top svg,
+.elementor-274 .elementor-element.elementor-element-42a627e7 > .e-con-inner > .elementor-shape-top svg {
+    width: calc(129% + 1.3px);
+    height: 116px;
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+.elementor-274 .elementor-element.elementor-element-71214ba5 {
+    --display: flex;
+    --min-height: 536px;
+    --gap: 0px 0px;
+    --row-gap: 0px;
+    --column-gap: 0px;
+    --border-radius: 35px 35px 35px 35px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    --margin-top: -700px;
+    --margin-bottom: 0px;
+    --margin-left: 0px;
+    --margin-right: 0px;
+    --padding-top: 25px;
+    --padding-bottom: 25px;
+    --padding-left: 25px;
+    --padding-right: 25px;
+}
+
+.elementor-274 .elementor-element.elementor-element-71214ba5:not(.elementor-motion-effects-element-type-background),
+.elementor-274 .elementor-element.elementor-element-71214ba5 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url("https://i0.wp.com/pachamana.com/wp-content/uploads/2024/01/gold-fabric.png?fit=400%2C400&ssl=1");
+}
+
+.elementor-274 .elementor-element.elementor-element-01529e7 {
+    text-align: center;
+}
+
+.elementor-274 .elementor-element.elementor-element-01529e7 .elementor-heading-title {
+    font-family: "OAXACA", Sans-serif;
+    font-size: 49px;
+    color: var(--e-global-color-secondary);
+}
+
+.elementor-274 .elementor-element.elementor-element-03cc578 {
+    --divider-border-style: zigzag_tribal;
+    --divider-color: var(--e-global-color-secondary);
+    --divider-pattern-height: 15px;
+}
+
+.elementor-274 .elementor-element.elementor-element-03cc578 .elementor-divider-separator {
+    width: 100%;
+    margin: 0 auto;
+    margin-center: 0;
+}
+
+.elementor-274 .elementor-element.elementor-element-03cc578 .elementor-divider {
+    text-align: center;
+    padding-block-start: 11px;
+    padding-block-end: 11px;
+}
+
+.elementor-274 .elementor-element.elementor-element-451d4ba6 {
+    --grid-columns: 1;
+}
+
+.elementor-274 .elementor-element.elementor-element-451d4ba6 > .elementor-widget-container {
+    padding: 10px 0px 10px 0px;
+}
+
+.elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination {
+    text-align: center;
+}
+
+body:not(.rtl) .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination .page-numbers:not(:first-child) {
+    margin-left: calc(10px / 2);
+}
+
+body:not(.rtl) .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination .page-numbers:not(:last-child) {
+    margin-right: calc(10px / 2);
+}
+
+body.rtl .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination .page-numbers:not(:first-child) {
+    margin-right: calc(10px / 2);
+}
+
+body.rtl .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination .page-numbers:not(:last-child) {
+    margin-left: calc(10px / 2);
+}
+
+.elementor-274 .elementor-element.elementor-element-3a9853b {
+    --divider-border-style: zigzag_tribal;
+    --divider-color: var(--e-global-color-secondary);
+    --divider-pattern-height: 15px;
+}
+
+.elementor-274 .elementor-element.elementor-element-3a9853b .elementor-divider-separator {
+    width: 100%;
+    margin: 0 auto;
+    margin-center: 0;
+}
+
+.elementor-274 .elementor-element.elementor-element-3a9853b .elementor-divider {
+    text-align: center;
+    padding-block-start: 11px;
+    padding-block-end: 11px;
+}
+
+@media (max-width: 1024px) {
+    .elementor-274 .elementor-element.elementor-element-451d4ba6 {
+        --grid-columns: 2;
+    }
+}
+
+@media (max-width: 879px) {
+    .elementor-274 .elementor-element.elementor-element-04f124a {
+        --min-height: 500px;
+        --margin-top: 0px;
+        --margin-bottom: 0px;
+        --margin-left: 0px;
+        --margin-right: 0px;
+        --padding-top: 0px;
+        --padding-bottom: 0px;
+        --padding-left: 0px;
+        --padding-right: 0px;
+    }
+
+    .elementor-274 .elementor-element.elementor-element-42a627e7 {
+        --gap: 10px 10px;
+        --row-gap: 10px;
+        --column-gap: 10px;
+        --padding-top: 50px;
+        --padding-bottom: 50px;
+        --padding-left: 10px;
+        --padding-right: 10px;
+    }
+
+    .elementor-274 .elementor-element.elementor-element-71214ba5 {
+        --gap: 2px 2px;
+        --row-gap: 2px;
+        --column-gap: 2px;
+        --border-radius: 20px 20px 20px 20px;
+        --margin-top: -500px;
+        --margin-bottom: 0px;
+        --margin-left: 0px;
+        --margin-right: 0px;
+        --padding-top: 15px;
+        --padding-bottom: 15px;
+        --padding-left: 15px;
+        --padding-right: 15px;
+    }
+
+    .elementor-274 .elementor-element.elementor-element-01529e7 .elementor-heading-title {
+        font-size: 22px;
+        letter-spacing: -0.9px;
+    }
+
+    .elementor-274 .elementor-element.elementor-element-03cc578 .elementor-divider {
+        padding-block-start: 5px;
+        padding-block-end: 5px;
+    }
+
+    .elementor-274 .elementor-element.elementor-element-451d4ba6 {
+        --grid-columns: 1;
+        --grid-row-gap: 20px;
+        --grid-column-gap: 10px;
+    }
+
+    body:not(.rtl) .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination .page-numbers:not(:first-child) {
+        margin-left: calc(10px / 2);
+    }
+
+    body:not(.rtl) .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination .page-numbers:not(:last-child) {
+        margin-right: calc(10px / 2);
+    }
+
+    body.rtl .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination .page-numbers:not(:first-child) {
+        margin-right: calc(10px / 2);
+    }
+
+    body.rtl .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination .page-numbers:not(:last-child) {
+        margin-left: calc(10px / 2);
+    }
+
+    .elementor-274 .elementor-element.elementor-element-451d4ba6 .elementor-pagination {
+        margin-top: 10px;
+    }
+
+    .elementor-274 .elementor-element.elementor-element-3a9853b .elementor-divider {
+        padding-block-start: 5px;
+        padding-block-end: 5px;
+    }
+}
