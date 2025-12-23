@@ -7,6 +7,9 @@
     }
   },
   "order": ["main"],
-  "settings": {}
+  "settings": {},
+  "enabled_on": {
+    "groups": ["article"]
+  }
 }
 
