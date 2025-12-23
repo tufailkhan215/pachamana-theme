@@ -24,7 +24,8 @@
       assign prev_article = current_blog.articles[prev_index]
     endif
     
-    if current_article_index >= 0 and current_article_index < current_blog.articles.size | minus: 1
+    assign articles_size_minus_one = current_blog.articles.size | minus: 1
+    if current_article_index >= 0 and current_article_index < articles_size_minus_one
       assign next_index = current_article_index | plus: 1
       assign next_article = current_blog.articles[next_index]
     endif
