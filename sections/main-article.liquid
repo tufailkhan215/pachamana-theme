@@ -7,12 +7,13 @@
   
   comment
     Fallback: If blog is not available, try to get it from article URL
-    Article URL format: /blogs/{blog_handle}/articles/{article_handle}
+    Shopify article URLs can be:
+    - /blogs/{blog_handle}/articles/{article_handle}
+    - /blogs/{blog_handle}/{article_handle}
   endcomment
   if current_blog == blank
     comment
       Extract blog handle from article URL
-      URL format: /blogs/{blog_handle}/articles/{article_handle}
     endcomment
     assign article_url_parts = article.url | split: '/'
     assign blog_handle_index = -1
@@ -25,6 +26,16 @@
       assign blog_handle = article_url_parts[blog_handle_index | plus: 1]
       assign current_blog = blogs[blog_handle]
     endif
+  endif
+  
+  comment
+    Additional fallback: Try common blog handles if still blank
+  endcomment
+  if current_blog == blank
+    assign current_blog = blogs['news']
+  endif
+  if current_blog == blank
+    assign current_blog = blogs['articles']
   endif
   
   comment
@@ -109,7 +120,7 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
-        {%- if has_related_articles and current_blog -%}
+        {%- if current_blog and current_blog.articles.size > 1 -%}
           <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
             <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
             <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
