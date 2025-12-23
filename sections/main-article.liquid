@@ -159,7 +159,28 @@
 							<div class="elementor-post-navigation" role="navigation" aria-label="Post Navigation">
 			<div class="elementor-post-navigation__prev elementor-post-navigation__link">
 				{%- if prev_article -%}
-					<a href="{{ prev_article.url }}" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-left" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">Previous</span><span class="post-navigation__prev--title">{{ prev_article.title | escape }}</span></span></a>
+					{%- liquid
+						comment
+						  Ensure we use Shopify URL - article.url should be relative like /blogs/news/article-handle
+						  If it contains pachamana.com, it's a WordPress URL and we need to extract the handle
+						endcomment
+						assign prev_url = prev_article.url
+						if prev_url contains 'pachamana.com'
+						  comment
+						    Extract article handle from WordPress URL and construct Shopify URL
+						    WordPress: https://pachamana.com/health-benefits-ceremonial-cacao/
+						    Shopify: /blogs/news/health-benefits-ceremonial-cacao
+						  endcomment
+						  assign url_parts = prev_url | split: '/'
+						  assign article_handle = url_parts[url_parts.size | minus: 2]
+						  if current_blog
+						    assign prev_url = current_blog.url | append: '/' | append: article_handle
+						  else
+						    assign prev_url = '/blogs/news/' | append: article_handle
+						  endif
+						endif
+					-%}
+					<a href="{{ prev_url }}" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-left" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">Previous</span><span class="post-navigation__prev--title">{{ prev_article.title | escape }}</span></span></a>
 				{%- endif -%}
 			</div>
 							<div class="elementor-post-navigation__separator-wrapper">
@@ -167,7 +188,28 @@
 				</div>
 						<div class="elementor-post-navigation__next elementor-post-navigation__link">
 				{%- if next_article -%}
-					<a href="{{ next_article.url }}" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Next</span><span class="post-navigation__next--title">{{ next_article.title | escape }}</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-right" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><span class="elementor-screen-only">Next</span></span></a>
+					{%- liquid
+						comment
+						  Ensure we use Shopify URL - article.url should be relative like /blogs/news/article-handle
+						  If it contains pachamana.com, it's a WordPress URL and we need to extract the handle
+						endcomment
+						assign next_url = next_article.url
+						if next_url contains 'pachamana.com'
+						  comment
+						    Extract article handle from WordPress URL and construct Shopify URL
+						    WordPress: https://pachamana.com/health-benefits-ceremonial-cacao/
+						    Shopify: /blogs/news/health-benefits-ceremonial-cacao
+						  endcomment
+						  assign url_parts = next_url | split: '/'
+						  assign article_handle = url_parts[url_parts.size | minus: 2]
+						  if current_blog
+						    assign next_url = current_blog.url | append: '/' | append: article_handle
+						  else
+						    assign next_url = '/blogs/news/' | append: article_handle
+						  endif
+						endif
+					-%}
+					<a href="{{ next_url }}" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Next</span><span class="post-navigation__next--title">{{ next_article.title | escape }}</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-right" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><span class="elementor-screen-only">Next</span></span></a>
 				{%- endif -%}
 			</div>
 		</div>
