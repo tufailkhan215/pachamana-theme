@@ -65,6 +65,7 @@
 		    assign current_blog = blogs['news']
 		  endif
 		-%}
+		{{ current_blog.title }}
 		{{current_blog}}
 		{%- if current_blog -%}
 		{%- assign posts_per_page = section.settings.posts_per_page | default: 6 -%}
