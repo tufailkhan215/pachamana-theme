@@ -148,6 +148,9 @@
     {{ 'post-906.css' | asset_url | stylesheet_tag }}
     {{ 'widget-post-navigation.min.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
+  {%- if template.name == 'blog' -%}
+    {{ 'post-274.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
   {{ 'custom-pro-widget-nav-menu.min.css' | asset_url | stylesheet_tag }}
   {{ 'custom-pro-widget-woocommerce-menu-cart.min.css' | asset_url | stylesheet_tag }}
   {{ 'custom-pro-widget-woocommerce-product-add-to-cart.min.css' | asset_url | stylesheet_tag }}
