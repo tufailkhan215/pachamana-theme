@@ -3,19 +3,13 @@
   assign next_article = null
   assign current_article_index = -1
   assign max_related = 3
-  assign related_articles_count = 0
   
   comment
     Find current article index and get prev/next articles
-    Also count related articles for the related section
   endcomment
   for article_in_blog in blog.articles
     if article_in_blog.id == article.id
       assign current_article_index = forloop.index0
-    else
-      if related_articles_count < max_related
-        assign related_articles_count = related_articles_count | plus: 1
-      endif
     endif
   endfor
   
@@ -25,6 +19,15 @@
   
   if current_article_index >= 0 and current_article_index < blog.articles.size | minus: 1
     assign next_article = blog.articles[current_article_index | plus: 1]
+  endif
+  
+  comment
+    Check if there are related articles (blog has more than 1 article)
+  endcomment
+  if blog.articles.size > 1
+    assign has_related_articles = true
+  else
+    assign has_related_articles = false
   endif
 -%}
 
@@ -79,7 +82,7 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
-        {%- if related_articles_count > 0 -%}
+        {%- if has_related_articles -%}
           <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
             <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
             <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
