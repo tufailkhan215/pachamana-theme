@@ -1,4 +1,24 @@
-<div data-elementor-type="single-post" data-elementor-id="906" class="elementor elementor-906 elementor-location-single post-587 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized tag-agroforestry tag-antioxidants tag-ceremonial-cacao tag-health tag-health-benefits tag-heart-health tag-heavy-metals tag-iron tag-magneisum tag-minerals tag-syntropic-farming tag-theobromine tag-vitamins elementor-motion-effects-parent" data-elementor-post-type="elementor_library">
+{%- liquid
+  assign prev_article = null
+  assign next_article = null
+  assign current_article_index = -1
+  
+  for article_in_blog in blog.articles
+    if article_in_blog.id == article.id
+      assign current_article_index = forloop.index0
+    endif
+  endfor
+  
+  if current_article_index > 0
+    assign prev_article = blog.articles[current_article_index | minus: 1]
+  endif
+  
+  if current_article_index >= 0 and current_article_index < blog.articles.size | minus: 1
+    assign next_article = blog.articles[current_article_index | plus: 1]
+  endif
+-%}
+
+<div data-elementor-type="single-post" data-elementor-id="906" class="elementor elementor-906 elementor-location-single post-{{ article.id }} post type-post status-publish format-standard {% if article.image %}has-post-thumbnail{% endif %} hentry elementor-motion-effects-parent" data-elementor-post-type="elementor_library">
 			<div class="elementor-element elementor-element-8304717 e-flex e-con-boxed e-con e-parent elementor-motion-effects-element elementor-motion-effects-element-type-background e-lazyloaded" data-id="8304717" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile_extra&quot;,&quot;mobile&quot;]}" style="--e-transform-transition-duration: 100ms;"><div class="elementor-motion-effects-container"><div class="elementor-motion-effects-layer" style="width: 100%; height: 140%; --translateY: -45.01455999999999px; transform: translateY(var(--translateY));"></div></div>
 					<div class="e-con-inner">
 				<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
@@ -48,6 +68,9 @@
 					{{ article.content }}
 				</div>
 				</div>
+        <div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid "><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="323" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="/farming-chuncho-cacao-sustainable-heirloom-cacao/?relatedposts_hit=1&amp;relatedposts_origin=584&amp;relatedposts_position=0" title="Farming Heirloom Cacao: Chuncho" data-origin="584" data-position="0">Farming Heirloom Cacao: Chuncho</a></span><time class="jp-relatedposts-post-date" datetime="April 6, 2024" style="display: block;">April 6, 2024</time><span class="jp-relatedposts-post-context">In "agroforestry"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="2840" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="/pacha-mana-redefining-the-future-of-cacao/?relatedposts_hit=1&amp;relatedposts_origin=584&amp;relatedposts_position=1" title="Pacha Mana: Redefining the Future of Cacao" data-origin="584" data-position="1">Pacha Mana: Redefining the Future of Cacao</a></span><time class="jp-relatedposts-post-date" datetime="February 26, 2025" style="display: block;">February 26, 2025</time><span class="jp-relatedposts-post-context">In "ceremonial cacao"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="587" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="/health-benefits-ceremonial-cacao/?relatedposts_hit=1&amp;relatedposts_origin=584&amp;relatedposts_position=2" title="Health Wonders of Ceremonial Cacao" data-origin="584" data-position="2">Health Wonders of Ceremonial Cacao</a></span><time class="jp-relatedposts-post-date" datetime="February 19, 2024" style="display: block;">February 19, 2024</time><span class="jp-relatedposts-post-context">In "agroforestry"</span></p></div></div>
 				<div class="elementor-element elementor-element-c6a53f7 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="c6a53f7" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
 							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 	'/%3E%3C/svg%3E&quot;);">
@@ -60,13 +83,20 @@
 				<div class="elementor-widget-container">
 							<div class="elementor-post-navigation" role="navigation" aria-label="Post Navigation">
 			<div class="elementor-post-navigation__prev elementor-post-navigation__link">
-				<a href="https://pachamana.com/health-benefits-ceremonial-cacao/" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-left" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">Previous</span><span class="post-navigation__prev--title">Health Wonders of Ceremonial Cacao</span></span></a>			</div>
+				{%- if prev_article != null -%}
+					<a href="{{ prev_article.url }}" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-left" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">Previous</span><span class="post-navigation__prev--title">{{ prev_article.title | escape }}</span></span></a>
+				{%- endif -%}
+			</div>
 							<div class="elementor-post-navigation__separator-wrapper">
 					<div class="elementor-post-navigation__separator"></div>
 				</div>
 						<div class="elementor-post-navigation__next elementor-post-navigation__link">
-				<a href="https://pachamana.com/farming-chuncho-cacao-sustainable-heirloom-cacao/" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Next</span><span class="post-navigation__next--title">Farming Heirloom Cacao: Chuncho</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-right" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><span class="elementor-screen-only">Next</span></span></a>			</div>
+				{%- if next_article != null -%}
+					<a href="{{ next_article.url }}" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Next</span><span class="post-navigation__next--title">{{ next_article.title | escape }}</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-right" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><span class="elementor-screen-only">Next</span></span></a>
+				{%- endif -%}
+			</div>
 		</div>
+						</div>
 				</div>
 					</div>
 				</div>
