@@ -129,6 +129,13 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
+        {%- comment -%} Always show debug info to verify code execution {%- endcomment -%}
+        <div style="background: yellow; padding: 10px; margin: 20px 0; border: 3px solid red; font-weight: bold;">
+          DEBUG: current_blog exists: {% if current_blog %}YES{% else %}NO{% endif %}, 
+          Articles count: {% if current_blog %}{{ current_blog.articles.size }}{% else %}0{% endif %}, 
+          Current article ID: {{ article.id }}
+        </div>
+        
         {%- if current_blog and current_blog.articles.size > 0 -%}
           {%- comment -%} Check if there are any articles other than the current one {%- endcomment -%}
           {%- assign has_other_articles = false -%}
@@ -140,9 +147,13 @@
             {%- endif -%}
           {%- endfor -%}
           
+          <div style="background: lightblue; padding: 10px; margin: 20px 0; border: 3px solid blue; font-weight: bold;">
+            DEBUG: has_other_articles={{ has_other_articles }}, related_count={{ related_count }}
+          </div>
+          
           {%- if has_other_articles -%}
-            <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
-            dfere  <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+            <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important; visibility: visible !important; opacity: 1 !important; background-color: #f0f0f0 !important; padding: 20px !important; margin: 20px 0 !important; border: 2px solid red !important;">
+              <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
               <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
                 {%- assign related_index = 0 -%}
                 {%- for related_article in current_blog.articles -%}
