@@ -1,56 +1,18 @@
 {%- liquid
-  assign prev_article = blank
-  assign next_article = blank
-  assign current_article_index = -1
-  assign max_related = 3
-  
   comment
-    Get blog object - try multiple methods since blog might not be available in sections
-    1. Try blog object directly
-    2. Try article.blog (if available)
-    3. Extract from article URL
-    4. Fallback to blogs['news']
+    Simple: Get blog from article.blog (Shopify native property)
   endcomment
-  assign current_blog = blog
-  
-  if current_blog == blank
-    comment
-      Try article.blog if available
-    endcomment
-    if article.blog
-      assign current_blog = article.blog
-    endif
-  endif
-  
-  if current_blog == blank
-    comment
-      Extract blog handle from article URL
-      URL format: /blogs/{blog_handle}/{article_handle}
-    endcomment
-    assign article_url_parts = article.url | split: '/'
-    assign blog_handle_index = -1
-    for part in article_url_parts
-      if part == 'blogs' and blog_handle_index == -1
-        assign blog_handle_index = forloop.index0
-      endif
-    endfor
-    if blog_handle_index >= 0 and blog_handle_index < article_url_parts.size | minus: 1
-      assign blog_handle = article_url_parts[blog_handle_index | plus: 1]
-      assign current_blog = blogs[blog_handle]
-    endif
-  endif
-  
-  comment
-    Final fallback: Use 'news' blog handle (from URL: /blogs/news/...)
-  endcomment
-  if current_blog == blank
-    assign current_blog = blogs['news']
-  endif
+  assign current_blog = article.blog
   
   comment
     Find current article index and get prev/next articles
   endcomment
+  assign prev_article = blank
+  assign next_article = blank
+  assign max_related = 3
+  
   if current_blog and current_blog.articles.size > 0
+    assign current_article_index = -1
     for article_in_blog in current_blog.articles
       if article_in_blog.id == article.id
         assign current_article_index = forloop.index0
@@ -64,17 +26,6 @@
     if current_article_index >= 0 and current_article_index < current_blog.articles.size | minus: 1
       assign next_article = current_blog.articles[current_article_index | plus: 1]
     endif
-    
-    comment
-      Check if there are related articles (blog has more than 1 article)
-    endcomment
-    if current_blog.articles.size > 1
-      assign has_related_articles = true
-    else
-      assign has_related_articles = false
-    endif
-  else
-    assign has_related_articles = false
   endif
 -%}
 
