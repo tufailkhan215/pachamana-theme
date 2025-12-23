@@ -127,9 +127,24 @@
               {%- assign related_index = 0 -%}
               {%- for related_article in current_blog.articles -%}
                 {%- if related_article.id != article.id and related_index < max_related -%}
+                  {%- liquid
+                    comment
+                      Ensure we use Shopify URL - convert WordPress URLs if present
+                    endcomment
+                    assign related_url = related_article.url
+                    if related_url contains 'pachamana.com'
+                      assign url_parts = related_url | split: '/'
+                      assign article_handle = url_parts[url_parts.size | minus: 2]
+                      if current_blog
+                        assign related_url = current_blog.url | append: '/' | append: article_handle
+                      else
+                        assign related_url = '/blogs/news/' | append: article_handle
+                      endif
+                    endif
+                  -%}
                   <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
                     <span class="jp-relatedposts-post-title">
-                      <a class="jp-relatedposts-post-a" href="{{ related_article.url }}" title="{{ related_article.title | escape }}" data-origin="{{ article.id }}" data-position="{{ related_index }}">
+                      <a class="jp-relatedposts-post-a" href="{{ related_url }}" title="{{ related_article.title | escape }}" data-origin="{{ article.id }}" data-position="{{ related_index }}">
                         {{ related_article.title | escape }}
                       </a>
                     </span>
