@@ -3,17 +3,29 @@
   assign next_article = blank
   assign current_article_index = -1
   assign max_related = 3
-  assign current_blog = blog
   
   comment
-    Fallback: If blog is not available, try to get it from article URL
-    Shopify article URLs can be:
-    - /blogs/{blog_handle}/articles/{article_handle}
-    - /blogs/{blog_handle}/{article_handle}
+    Get blog object - try multiple methods since blog might not be available in sections
+    1. Try blog object directly
+    2. Try article.blog (if available)
+    3. Extract from article URL
+    4. Fallback to blogs['news']
   endcomment
+  assign current_blog = blog
+  
+  if current_blog == blank
+    comment
+      Try article.blog if available
+    endcomment
+    if article.blog
+      assign current_blog = article.blog
+    endif
+  endif
+  
   if current_blog == blank
     comment
       Extract blog handle from article URL
+      URL format: /blogs/{blog_handle}/{article_handle}
     endcomment
     assign article_url_parts = article.url | split: '/'
     assign blog_handle_index = -1
@@ -29,13 +41,10 @@
   endif
   
   comment
-    Additional fallback: Try common blog handles if still blank
+    Final fallback: Use 'news' blog handle (from URL: /blogs/news/...)
   endcomment
   if current_blog == blank
     assign current_blog = blogs['news']
-  endif
-  if current_blog == blank
-    assign current_blog = blogs['articles']
   endif
   
   comment
@@ -120,42 +129,53 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
-        {%- if current_blog -%}
-          <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important;">
-            <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
-            <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
-              {%- assign related_index = 0 -%}
-              {%- for related_article in current_blog.articles -%}
-                {%- if related_article.id != article.id and related_index < max_related -%}
-                  {%- liquid
-                    comment
-                      Always construct Shopify URL from article handle to ensure correct format
-                      This ensures we always get Shopify URLs, not WordPress URLs
-                    endcomment
-                    if current_blog and current_blog.url
-                      assign related_url = current_blog.url | append: '/' | append: related_article.handle
-                    else
-                      assign related_url = '/blogs/news/' | append: related_article.handle
-                    endif
-                  -%}
-                  <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
-                    <span class="jp-relatedposts-post-title">
-                      <a class="jp-relatedposts-post-a" href="{{ related_url }}" title="{{ related_article.title | escape }}" data-origin="{{ article.id }}" data-position="{{ related_index }}">
-                        {{ related_article.title | escape }}
-                      </a>
-                    </span>
-                    <time class="jp-relatedposts-post-date" datetime="{{ related_article.published_at | date: '%B %d, %Y' }}" style="display: block;">
-                      {{ related_article.published_at | date: '%B %d, %Y' }}
-                    </time>
-                    {%- if related_article.tags.size > 0 -%}
-                      <span class="jp-relatedposts-post-context">In "{{ related_article.tags.first }}"</span>
-                    {%- endif -%}
-                  </p>
-                  {%- assign related_index = related_index | plus: 1 -%}
-                {%- endif -%}
-              {%- endfor -%}
+        {%- if current_blog and current_blog.articles.size > 0 -%}
+          {%- comment -%} Check if there are any articles other than the current one {%- endcomment -%}
+          {%- assign has_other_articles = false -%}
+          {%- for check_article in current_blog.articles -%}
+            {%- if check_article.id != article.id -%}
+              {%- assign has_other_articles = true -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          
+          {%- if has_other_articles -%}
+            <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+              <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+              <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
+                {%- assign related_index = 0 -%}
+                {%- for related_article in current_blog.articles -%}
+                  {%- if related_article.id != article.id and related_index < max_related -%}
+                    {%- liquid
+                      comment
+                        Always construct Shopify URL from article handle to ensure correct format
+                        Format: /blogs/{blog_handle}/{article_handle}
+                      endcomment
+                      if current_blog and current_blog.url
+                        assign related_url = current_blog.url | append: '/' | append: related_article.handle
+                      else
+                        assign related_url = '/blogs/news/' | append: related_article.handle
+                      endif
+                    -%}
+                    <p class="jp-relatedposts-post jp-relatedposts-post{{ related_index }}" data-post-id="{{ related_article.id }}" data-post-format="false">
+                      <span class="jp-relatedposts-post-title">
+                        <a class="jp-relatedposts-post-a" href="{{ related_url }}" title="{{ related_article.title | escape }}" data-origin="{{ article.id }}" data-position="{{ related_index }}">
+                          {{ related_article.title | escape }}
+                        </a>
+                      </span>
+                      <time class="jp-relatedposts-post-date" datetime="{{ related_article.published_at | date: '%B %d, %Y' }}" style="display: block;">
+                        {{ related_article.published_at | date: '%B %d, %Y' }}
+                      </time>
+                      {%- if related_article.tags.size > 0 -%}
+                        <span class="jp-relatedposts-post-context">In "{{ related_article.tags.first }}"</span>
+                      {%- endif -%}
+                    </p>
+                    {%- assign related_index = related_index | plus: 1 -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
             </div>
-          </div>
+          {%- endif -%}
         {%- endif -%}
 				<div class="elementor-element elementor-element-c6a53f7 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="c6a53f7" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
