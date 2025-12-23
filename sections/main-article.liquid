@@ -129,8 +129,18 @@
 				</div>
 				</div>
         {%- comment -%} Related Articles Section - Dynamic from Shopify Blog {%- endcomment -%}
-        {%- if current_blog and current_blog.articles.size > 1 -%}
-          {%- comment -%} Only show if there are other articles besides the current one {%- endcomment -%}
+        {%- if current_blog and current_blog.articles.size > 0 -%}
+          {%- comment -%} Check if there are any articles other than the current one {%- endcomment -%}
+          {%- assign has_other_articles = false -%}
+          {%- assign related_count = 0 -%}
+          {%- for check_article in current_blog.articles -%}
+            {%- if check_article.id != article.id -%}
+              {%- assign has_other_articles = true -%}
+              {%- assign related_count = related_count | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
+          
+          {%- if has_other_articles -%}
             <div id="jp-relatedposts" class="jp-relatedposts" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
               <h3 class="jp-relatedposts-headline"><em>Related</em></h3>
               <div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid">
@@ -167,6 +177,7 @@
                 {%- endfor -%}
               </div>
             </div>
+          {%- endif -%}
         {%- endif -%}
 				<div class="elementor-element elementor-element-c6a53f7 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="c6a53f7" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
