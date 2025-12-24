@@ -2197,6 +2197,145 @@
     })();
   </script>
 
+  {%- comment -%} Animated Headline Typing Animation {%- endcomment -%}
+  <script id="animated-headline-typing">
+    (function() {
+      function initAnimatedHeadline() {
+        var headlines = document.querySelectorAll('.elementor-headline-animation-type-typing.elementor-headline-letters');
+        
+        headlines.forEach(function(headline) {
+          var wrapper = headline.querySelector('.elementor-headline-dynamic-wrapper');
+          if (!wrapper) return;
+          
+          var textElements = wrapper.querySelectorAll('.elementor-headline-dynamic-text');
+          if (textElements.length === 0) return;
+          
+          var currentIndex = 0;
+          var isAnimating = false;
+          var animationSpeed = 50; // milliseconds per letter
+          var delayBetweenTexts = 1000; // milliseconds
+          
+          // Get settings from data attribute
+          var widget = headline.closest('[data-settings]');
+          var settings = {};
+          if (widget) {
+            try {
+              var settingsStr = widget.getAttribute('data-settings');
+              settings = JSON.parse(settingsStr.replace(/&quot;/g, '"'));
+            } catch(e) {
+              console.warn('Could not parse animated headline settings');
+            }
+          }
+          
+          if (settings.rotate_iteration_delay) {
+            delayBetweenTexts = parseInt(settings.rotate_iteration_delay);
+          }
+          
+          // Function to split text into letters
+          function splitIntoLetters(text) {
+            var letters = [];
+            for (var i = 0; i < text.length; i++) {
+              var char = text.charAt(i);
+              if (char === ' ') {
+                letters.push('&nbsp;');
+              } else {
+                letters.push(char);
+              }
+            }
+            return letters;
+          }
+          
+          // Function to create letter spans
+          function createLetterSpans(text, isActive) {
+            var letters = splitIntoLetters(text);
+            var html = '';
+            letters.forEach(function(letter, index) {
+              var letterClass = isActive && index === 0 ? 'elementor-headline-animation-in' : '';
+              html += '<span class="elementor-headline-dynamic-letter ' + letterClass + '">' + letter + '</span>';
+            });
+            return html;
+          }
+          
+          // Initialize: split all texts into letters
+          textElements.forEach(function(textEl, index) {
+            var text = textEl.getAttribute('data-text') || textEl.textContent.trim();
+            var isActive = textEl.classList.contains('elementor-headline-text-active');
+            textEl.innerHTML = createLetterSpans(text, isActive);
+            textEl.setAttribute('data-original-text', text);
+          });
+          
+          // Function to show next text with typing animation
+          function showNextText() {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            var currentTextEl = textElements[currentIndex];
+            var nextIndex = (currentIndex + 1) % textElements.length;
+            var nextTextEl = textElements[nextIndex];
+            
+            // Remove active class from current
+            currentTextEl.classList.remove('elementor-headline-text-active');
+            currentTextEl.classList.add('elementor-headline-text-inactive');
+            
+            // Hide current text letters
+            var currentLetters = currentTextEl.querySelectorAll('.elementor-headline-dynamic-letter');
+            currentLetters.forEach(function(letter) {
+              letter.classList.remove('elementor-headline-animation-in');
+            });
+            
+            // Show next text
+            nextTextEl.classList.remove('elementor-headline-text-inactive');
+            nextTextEl.classList.add('elementor-headline-text-active');
+            
+            // Animate typing effect
+            var nextText = nextTextEl.getAttribute('data-original-text') || '';
+            var nextLetters = nextTextEl.querySelectorAll('.elementor-headline-dynamic-letter');
+            
+            // Clear and rebuild if needed
+            if (nextLetters.length === 0 || nextText !== (nextTextEl.getAttribute('data-original-text') || '')) {
+              nextTextEl.innerHTML = createLetterSpans(nextText, false);
+              nextLetters = nextTextEl.querySelectorAll('.elementor-headline-dynamic-letter');
+            }
+            
+            // Animate letters appearing one by one
+            nextLetters.forEach(function(letter, index) {
+              setTimeout(function() {
+                letter.classList.add('elementor-headline-animation-in');
+              }, index * animationSpeed);
+            });
+            
+            // Update current index
+            currentIndex = nextIndex;
+            
+            // Continue animation after delay
+            var totalAnimationTime = nextLetters.length * animationSpeed + delayBetweenTexts;
+            setTimeout(function() {
+              isAnimating = false;
+              if (settings.loop === 'yes' || settings.loop === true) {
+                showNextText();
+              }
+            }, totalAnimationTime);
+          }
+          
+          // Start animation after initial delay
+          setTimeout(function() {
+            showNextText();
+          }, delayBetweenTexts);
+        });
+      }
+      
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAnimatedHeadline);
+      } else {
+        initAnimatedHeadline();
+      }
+      
+      // Also try after a delay for late-loading content
+      setTimeout(initAnimatedHeadline, 500);
+    })();
+  </script>
+
   {%- comment -%} Elementor Frontend Config (duplicate removed - now at top before JS files) {%- endcomment -%}
 
   {%- comment -%} WP i18n Locale Data {%- endcomment -%}

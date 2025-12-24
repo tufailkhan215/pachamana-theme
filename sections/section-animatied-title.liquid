@@ -6,20 +6,20 @@
 				<span class="elementor-headline-dynamic-wrapper elementor-headline-text-wrapper">
 					{%- for block in section.blocks -%}
 						{%- if block.type == 'rotating_text' and block.settings.text != blank -%}
-							<span class="elementor-headline-dynamic-text {% if forloop.first %}elementor-headline-text-active{% endif %}">
+							<span class="elementor-headline-dynamic-text {% if forloop.first %}elementor-headline-text-active{% else %}elementor-headline-text-inactive{% endif %}" data-text="{{ block.settings.text | escape }}">
 								{{ block.settings.text }}
 							</span>
 						{%- endif -%}
 					{%- endfor -%}
 					{%- if section.blocks.size == 0 -%}
-						<span class="elementor-headline-dynamic-text elementor-headline-text-active">CEREMONIAL&nbsp;GRADE</span>
-						<span class="elementor-headline-dynamic-text">Regenerative</span>
-						<span class="elementor-headline-dynamic-text">Heirloom</span>
-						<span class="elementor-headline-dynamic-text">DIRECT&nbsp;TRADE</span>
-						<span class="elementor-headline-dynamic-text">ORGANIC</span>
-						<span class="elementor-headline-dynamic-text">HEAVY&nbsp;METAL&nbsp;TESTED&nbsp;</span>
-						<span class="elementor-headline-dynamic-text">GROWN&nbsp;IN&nbsp;PERU</span>
-						<span class="elementor-headline-dynamic-text"></span>
+						<span class="elementor-headline-dynamic-text elementor-headline-text-active" data-text="CEREMONIAL GRADE">CEREMONIAL&nbsp;GRADE</span>
+						<span class="elementor-headline-dynamic-text elementor-headline-text-inactive" data-text="Regenerative">Regenerative</span>
+						<span class="elementor-headline-dynamic-text elementor-headline-text-inactive" data-text="Heirloom">Heirloom</span>
+						<span class="elementor-headline-dynamic-text elementor-headline-text-inactive" data-text="DIRECT TRADE">DIRECT&nbsp;TRADE</span>
+						<span class="elementor-headline-dynamic-text elementor-headline-text-inactive" data-text="ORGANIC">ORGANIC</span>
+						<span class="elementor-headline-dynamic-text elementor-headline-text-inactive" data-text="HEAVY METAL TESTED">HEAVY&nbsp;METAL&nbsp;TESTED&nbsp;</span>
+						<span class="elementor-headline-dynamic-text elementor-headline-text-inactive" data-text="GROWN IN PERU">GROWN&nbsp;IN&nbsp;PERU</span>
+						<span class="elementor-headline-dynamic-text elementor-headline-text-inactive" data-text=""></span>
 					{%- endif -%}
 						</span>
 				</h3>
