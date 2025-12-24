@@ -1963,8 +1963,8 @@
   {%- comment -%} jquery.ui.touch-punch.js not found in assets/js, skipping {%- endcomment -%}
   
   {%- comment -%} Other JS {%- endcomment -%}
-  {%- comment -%} imagesloaded.pkgd.min.js is corrupted, removed {%- endcomment -%}
-  {%- comment -%} <script src="{{ 'imagesloaded.pkgd.min.js' | asset_url }}" defer></script> {%- endcomment -%}
+  {%- comment -%} ImagesLoaded (using CDN as local .pkgd version is corrupted) {%- endcomment -%}
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js" defer></script>
   <script src="{{ 'sourcebuster.min.js' | asset_url }}" defer></script>
   <script src="{{ 'plus-equal-height.min.js' | asset_url }}" defer></script>
   <script src="{{ 'plus-section-column-link.min.js' | asset_url }}" defer></script>
@@ -1975,8 +1975,8 @@
   {%- comment -%} <script src="{{ 'draggable.min.js' | asset_url }}" defer></script> {%- endcomment -%}
   {%- comment -%} bundle.js and yuko-review-main.js not found in assets/js, skipping {%- endcomment -%}
   
-  {%- comment -%} Isotope Layout (using CDN as local file not found) {%- endcomment -%}
-  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3/dist/isotope.pkgd.min.js" defer></script>
+  {%- comment -%} Isotope Layout (local asset) {%- endcomment -%}
+  <script src="{{ 'isotope.pkgd.min.js' | asset_url }}" defer></script>
   
   {%- comment -%} ThePlus JS (local files - see README for download instructions) {%- endcomment -%}
   {%- comment -%} These files need to be manually downloaded and placed in assets/ {%- endcomment -%}
@@ -2126,6 +2126,91 @@
       } else {
         initAccordion();
       }
+    })();
+  </script>
+
+  {%- comment -%} Gallery Isotope Initialization {%- endcomment -%}
+  <script id="gallery-isotope-init">
+    (function() {
+      function initGallery() {
+        // Wait for Isotope and ImagesLoaded to be available
+        if (typeof Isotope === 'undefined' || typeof imagesLoaded === 'undefined') {
+          setTimeout(initGallery, 100);
+          return;
+        }
+
+        // Initialize all gallery lists with isotope
+        var galleryLists = document.querySelectorAll('.list-isotope-metro[data-enable-isotope="1"]');
+        
+        galleryLists.forEach(function(galleryList) {
+          var container = galleryList.querySelector('.post-inner-loop');
+          if (!container) return;
+
+          var dataId = galleryList.getAttribute('data-id');
+          var layoutType = galleryList.getAttribute('data-layout-type') || 'metro';
+          var metroColumns = parseInt(galleryList.getAttribute('data-metro-columns')) || 6;
+          var metroStyle = galleryList.getAttribute('data-metro-style') || 'style-1';
+
+          // Initialize Isotope after images are loaded
+          var imgLoad = imagesLoaded(container);
+          
+          imgLoad.on('always', function() {
+            // Check if Isotope is already initialized for this container
+            if (container.isotope) {
+              container.isotope('reloadItems');
+              container.isotope('layout');
+              return;
+            }
+
+            // Initialize Isotope
+            var iso = new Isotope(container, {
+              itemSelector: '.grid-item',
+              layoutMode: layoutType,
+              percentPosition: true,
+              masonry: {
+                columnWidth: '.grid-item'
+              },
+              metro: {
+                columnWidth: '.grid-item'
+              }
+            });
+
+            // Store reference
+            container.isotope = iso;
+
+            // Handle window resize
+            var resizeTimer;
+            window.addEventListener('resize', function() {
+              clearTimeout(resizeTimer);
+              resizeTimer = setTimeout(function() {
+                if (container.isotope) {
+                  container.isotope.layout();
+                }
+              }, 250);
+            });
+          });
+
+          // Also trigger layout on window load
+          window.addEventListener('load', function() {
+            if (container.isotope) {
+              container.isotope.layout();
+            }
+          });
+        });
+      }
+
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(initGallery, 500); // Wait a bit for scripts to load
+        });
+      } else {
+        setTimeout(initGallery, 500);
+      }
+
+      // Also try to initialize after a delay to catch late-loading content
+      setTimeout(initGallery, 1000);
+      setTimeout(initGallery, 2000);
     })();
   </script>
 
