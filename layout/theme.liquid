@@ -1894,14 +1894,17 @@
       transition: transform 0.1s ease-out;
     }
     
-    /* Navigation Dropdown Styles */
-    .plus-navigation-menu .menu-item.open > .dropdown-menu,
-    .plus-navigation-menu .menu-item:hover > .dropdown-menu {
+    /* Navigation Dropdown Styles - Only for click-based menus */
+    .plus-navigation-inner.menu-click .plus-navigation-menu .menu-item.open > .dropdown-menu {
       display: block !important;
     }
     
-    .plus-navigation-menu .menu-item.open > .dropdown-toggle,
-    .plus-navigation-menu .menu-item:hover > .dropdown-toggle {
+    /* Hover-based menus (non-click) */
+    .plus-navigation-inner:not(.menu-click) .plus-navigation-menu .menu-item:hover > .dropdown-menu {
+      display: block !important;
+    }
+    
+    .plus-navigation-menu .menu-item.open > .dropdown-toggle {
       position: relative;
     }
     
@@ -1912,6 +1915,16 @@
       left: 0;
       z-index: 1000;
       min-width: 160px;
+      transition: none !important; /* Prevent blinking from transitions */
+    }
+    
+    /* Prevent hover effects on click-based menus to avoid blinking */
+    .plus-navigation-inner.menu-click .plus-navigation-menu .menu-item:hover > .dropdown-menu {
+      display: none !important;
+    }
+    
+    .plus-navigation-inner.menu-click .plus-navigation-menu .menu-item.open:hover > .dropdown-menu {
+      display: block !important;
     }
     
     /* Mobile menu dropdown styles */
@@ -2490,73 +2503,88 @@
           });
         });
         
-        // Mobile menu toggle
-        var mobileToggles = document.querySelectorAll('.mobile-plus-toggle-menu');
-        mobileToggles.forEach(function(mobileToggle) {
-          mobileToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            var targetId = mobileToggle.getAttribute('data-target');
-            var mobileMenu = targetId ? document.querySelector(targetId) : null;
+        // Mobile menu toggle - use event delegation to handle dynamically added elements
+        document.addEventListener('click', function(e) {
+          var mobileToggle = e.target.closest('.mobile-plus-toggle-menu');
+          if (!mobileToggle) return;
+          
+          e.preventDefault();
+          e.stopPropagation();
+          
+          var targetId = mobileToggle.getAttribute('data-target');
+          var mobileMenu = targetId ? document.querySelector(targetId) : null;
+          
+          if (mobileMenu) {
+            // Toggle collapsed class on button
+            mobileToggle.classList.toggle('plus-collapsed');
             
-            if (mobileMenu) {
-              // Toggle collapsed class on button
-              mobileToggle.classList.toggle('plus-collapsed');
-              
-              // Toggle mobile menu visibility
-              if (mobileMenu.classList.contains('in')) {
-                // Close menu
-                mobileMenu.classList.remove('in');
-                mobileMenu.classList.add('collapse');
-                // Force hide with inline style
-                mobileMenu.style.cssText = 'display: none !important;';
-              } else {
-                // Open menu - remove collapse, add in class
-                mobileMenu.classList.remove('collapse');
-                mobileMenu.classList.add('in');
-                // Force show with inline styles matching source site
-                mobileMenu.style.cssText = 'display: flex !important; box-sizing: border-box !important; width: 100% !important; left: 0 !important; flex-direction: column !important; position: absolute !important; top: 100% !important; right: 0 !important; background: #fff !important; z-index: 1000 !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;';
-              }
+            // Toggle mobile menu visibility
+            var isOpen = mobileMenu.classList.contains('in');
+            
+            if (isOpen) {
+              // Close menu
+              mobileMenu.classList.remove('in');
+              mobileMenu.classList.add('collapse');
+              mobileMenu.style.display = 'none';
+              mobileMenu.style.visibility = 'hidden';
+            } else {
+              // Open menu - remove collapse, add in class
+              mobileMenu.classList.remove('collapse');
+              mobileMenu.classList.add('in');
+              // Set all required styles
+              mobileMenu.style.display = 'flex';
+              mobileMenu.style.visibility = 'visible';
+              mobileMenu.style.boxSizing = 'border-box';
+              mobileMenu.style.width = '100%';
+              mobileMenu.style.left = '0';
+              mobileMenu.style.flexDirection = 'column';
+              mobileMenu.style.position = 'absolute';
+              mobileMenu.style.top = '100%';
+              mobileMenu.style.right = '0';
+              mobileMenu.style.background = '#fff';
+              mobileMenu.style.zIndex = '1000';
+              mobileMenu.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
-          });
+          }
         });
         
-        // Mobile dropdown functionality
-        var mobileDropdownToggles = document.querySelectorAll('.plus-mobile-menu .dropdown-toggle, .plus-mobile-menu .menu-item-has-children > a');
-        
-        mobileDropdownToggles.forEach(function(toggle) {
-          toggle.addEventListener('click', function(e) {
-            var menuItem = toggle.closest('.menu-item');
-            var dropdownMenu = menuItem ? menuItem.querySelector('.dropdown-menu') : null;
+        // Mobile dropdown functionality - use event delegation for dynamically loaded content
+        document.addEventListener('click', function(e) {
+          // Check if click is on a mobile dropdown toggle
+          var toggle = e.target.closest('.plus-mobile-menu .dropdown-toggle, .plus-mobile-menu .menu-item-has-children > a');
+          if (!toggle) return;
+          
+          var menuItem = toggle.closest('.menu-item');
+          var dropdownMenu = menuItem ? menuItem.querySelector('.dropdown-menu') : null;
+          
+          if (dropdownMenu) {
+            e.preventDefault();
+            e.stopPropagation();
             
-            if (dropdownMenu) {
-              e.preventDefault();
-              
-              // Toggle current dropdown
-              if (dropdownMenu.style.display === 'block') {
-                dropdownMenu.style.display = 'none';
-                menuItem.classList.remove('open');
-              } else {
-                // Close other open dropdowns at same level
-                var parent = menuItem.parentElement;
-                if (parent) {
-                  var siblings = parent.querySelectorAll('.menu-item');
-                  siblings.forEach(function(sibling) {
-                    if (sibling !== menuItem) {
-                      var siblingDropdown = sibling.querySelector('.dropdown-menu');
-                      if (siblingDropdown) {
-                        siblingDropdown.style.display = 'none';
-                        sibling.classList.remove('open');
-                      }
+            // Toggle current dropdown
+            if (dropdownMenu.style.display === 'block') {
+              dropdownMenu.style.display = 'none';
+              menuItem.classList.remove('open');
+            } else {
+              // Close other open dropdowns at same level
+              var parent = menuItem.parentElement;
+              if (parent) {
+                var siblings = parent.querySelectorAll('.menu-item');
+                siblings.forEach(function(sibling) {
+                  if (sibling !== menuItem) {
+                    var siblingDropdown = sibling.querySelector('.dropdown-menu');
+                    if (siblingDropdown) {
+                      siblingDropdown.style.display = 'none';
+                      sibling.classList.remove('open');
                     }
-                  });
-                }
-                
-                dropdownMenu.style.display = 'block';
-                menuItem.classList.add('open');
+                  }
+                });
               }
+              
+              dropdownMenu.style.display = 'block';
+              menuItem.classList.add('open');
             }
-          });
+          }
         });
         
         // Close dropdowns when clicking outside
@@ -2574,26 +2602,42 @@
         });
         
         // Hover functionality for non-click menus (desktop only)
+        // Only apply hover if NOT a click-based menu
         var navMenus = document.querySelectorAll('.plus-navigation-inner:not(.menu-click) .plus-navigation-menu');
         navMenus.forEach(function(navMenu) {
           var menuItems = navMenu.querySelectorAll('.menu-item-has-children');
           
           menuItems.forEach(function(menuItem) {
-            menuItem.addEventListener('mouseenter', function() {
-              var dropdownMenu = menuItem.querySelector('.dropdown-menu');
+            // Remove any existing listeners first
+            var newMenuItem = menuItem.cloneNode(true);
+            menuItem.parentNode.replaceChild(newMenuItem, menuItem);
+            
+            newMenuItem.addEventListener('mouseenter', function() {
+              var dropdownMenu = newMenuItem.querySelector('.dropdown-menu');
               if (dropdownMenu) {
                 dropdownMenu.style.display = 'block';
-                menuItem.classList.add('open');
+                newMenuItem.classList.add('open');
               }
             });
             
-            menuItem.addEventListener('mouseleave', function() {
-              var dropdownMenu = menuItem.querySelector('.dropdown-menu');
+            newMenuItem.addEventListener('mouseleave', function() {
+              var dropdownMenu = newMenuItem.querySelector('.dropdown-menu');
               if (dropdownMenu) {
                 dropdownMenu.style.display = 'none';
-                menuItem.classList.remove('open');
+                newMenuItem.classList.remove('open');
               }
             });
+          });
+        });
+        
+        // Prevent hover effects on click-based menus
+        var clickMenus = document.querySelectorAll('.plus-navigation-inner.menu-click .plus-navigation-menu .menu-item-has-children');
+        clickMenus.forEach(function(menuItem) {
+          menuItem.addEventListener('mouseenter', function(e) {
+            // Only allow hover if item is already open (user clicked it)
+            if (!menuItem.classList.contains('open')) {
+              e.stopPropagation();
+            }
           });
         });
       }
@@ -2607,6 +2651,8 @@
       
       // Also try after a delay for late-loading content
       setTimeout(initNavigationMenu, 500);
+      setTimeout(initNavigationMenu, 1000);
+      
     })();
   </script>
 
