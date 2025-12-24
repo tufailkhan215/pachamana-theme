@@ -1928,11 +1928,12 @@
     }
     
     /* Mobile menu toggle visibility and functionality */
-    .plus-mobile-menu-content.collapse {
+    .plus-mobile-menu-content.collapse:not(.in) {
       display: none !important;
     }
     
-    .plus-mobile-menu-content.collapse.in {
+    .plus-mobile-menu-content.collapse.in,
+    .plus-mobile-menu-content.in {
       display: flex !important;
       -webkit-flex-direction: column;
       -moz-flex-direction: column;
@@ -2499,21 +2500,22 @@
             var mobileMenu = targetId ? document.querySelector(targetId) : null;
             
             if (mobileMenu) {
-              // Toggle collapsed class
+              // Toggle collapsed class on button
               mobileToggle.classList.toggle('plus-collapsed');
               
-              // Toggle mobile menu visibility using both class and style
+              // Toggle mobile menu visibility
               if (mobileMenu.classList.contains('in')) {
+                // Close menu
                 mobileMenu.classList.remove('in');
-                mobileMenu.style.display = 'none';
+                mobileMenu.classList.add('collapse');
+                // Force hide with inline style
+                mobileMenu.style.cssText = 'display: none !important;';
               } else {
+                // Open menu - remove collapse, add in class
+                mobileMenu.classList.remove('collapse');
                 mobileMenu.classList.add('in');
-                // Set inline styles to match source site behavior
-                mobileMenu.style.display = 'flex';
-                mobileMenu.style.boxSizing = 'border-box';
-                mobileMenu.style.width = '100%';
-                mobileMenu.style.left = '0';
-                mobileMenu.style.flexDirection = 'column';
+                // Force show with inline styles matching source site
+                mobileMenu.style.cssText = 'display: flex !important; box-sizing: border-box !important; width: 100% !important; left: 0 !important; flex-direction: column !important; position: absolute !important; top: 100% !important; right: 0 !important; background: #fff !important; z-index: 1000 !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;';
               }
             }
           });
