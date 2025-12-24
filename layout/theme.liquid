@@ -1963,8 +1963,8 @@
   {%- comment -%} jquery.ui.touch-punch.js not found in assets/js, skipping {%- endcomment -%}
   
   {%- comment -%} Other JS {%- endcomment -%}
-  {%- comment -%} ImagesLoaded (using CDN as local .pkgd version is corrupted) {%- endcomment -%}
-  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js" defer></script>
+  {%- comment -%} ImagesLoaded (local asset) {%- endcomment -%}
+  <script src="{{ 'imagesloaded.pkgd.min.js' | asset_url }}" defer></script>
   <script src="{{ 'sourcebuster.min.js' | asset_url }}" defer></script>
   <script src="{{ 'plus-equal-height.min.js' | asset_url }}" defer></script>
   <script src="{{ 'plus-section-column-link.min.js' | asset_url }}" defer></script>
