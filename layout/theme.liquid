@@ -1942,20 +1942,10 @@
     
     /* Mobile menu toggle visibility and functionality */
     .plus-mobile-menu-content.collapse:not(.in) {
-      display: none !important;
+      display: block !important;
     }
     
-    .plus-mobile-menu-content.collapse.in,
-    .plus-mobile-menu-content.in {
-      display: flex !important;
-      -webkit-flex-direction: column;
-      -moz-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      box-sizing: border-box !important;
-      width: 100% !important;
-      left: 0 !important;
-    }
+    
     
     /* Ensure mobile toggle is visible on mobile */
     @media (max-width: 1090px) {
@@ -2567,7 +2557,6 @@
               mobileMenu.classList.remove('in');
               mobileMenu.classList.add('collapse');
               mobileMenu.style.display = 'none';
-              mobileMenu.style.visibility = 'hidden';
               // Clear calculated styles
               mobileMenu.style.width = '';
               mobileMenu.style.left = '';
