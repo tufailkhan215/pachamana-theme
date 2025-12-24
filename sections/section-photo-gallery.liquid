@@ -1,7 +1,6 @@
 <style>
-  /* Ensure gallery is visible on all screen sizes */
-  .section-photo-gallery,
-  .section-photo-gallery * {
+  /* Ensure gallery container is visible */
+  .section-photo-gallery {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -16,42 +15,44 @@
     opacity: 1 !important;
   }
   
-  /* Gallery grid items - ensure they're visible and have dimensions */
+  /* Gallery grid container - let Isotope handle positioning */
   .list-isotope-metro .post-inner-loop {
-    display: block !important;
-    visibility: visible !important;
-    width: 100% !important;
-  }
-  
-  .list-isotope-metro .post-inner-loop .grid-item {
     position: relative !important;
     display: block !important;
+    width: 100% !important;
+    visibility: visible !important;
+    margin: 0 !important;
+  }
+  
+  /* Grid items - allow Isotope to position them */
+  .list-isotope-metro .post-inner-loop .grid-item {
+    position: relative !important;
     visibility: visible !important;
     opacity: 1 !important;
     min-height: 300px;
+    /* Don't force display - let Isotope handle it */
   }
   
+  /* Inner div structure */
   .list-isotope-metro .post-inner-loop .grid-item > div {
     position: relative !important;
-    display: block !important;
     width: 100% !important;
     height: 100% !important;
   }
   
   .list-isotope-metro .post-inner-loop .grid-item .gallery-list-content {
     position: relative !important;
-    display: block !important;
     width: 100% !important;
     height: 100% !important;
     min-height: 300px;
     visibility: visible !important;
     overflow: hidden;
+    display: block;
   }
   
   /* Ensure background images are visible */
   .gallery-bg-image-metro {
     position: relative !important;
-    display: block !important;
     width: 100% !important;
     height: 100% !important;
     min-height: 300px;
@@ -60,12 +61,13 @@
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    display: block;
   }
   
-  /* Desktop specific styles - let Isotope handle layout but ensure visibility */
+  /* Desktop specific styles - ensure visibility but let Isotope position */
   @media (min-width: 768px) {
     .list-isotope-metro .post-inner-loop {
-      display: block !important;
+      position: relative !important;
       width: 100% !important;
       visibility: visible !important;
     }
@@ -73,12 +75,11 @@
     .list-isotope-metro .post-inner-loop .grid-item {
       min-height: 300px;
       position: relative !important;
-      display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
     }
     
-    /* Metro item specific heights for better layout */
+    /* Metro item specific heights - these help Isotope calculate layout */
     .list-isotope-metro .grid-item.metro-item0,
     .list-isotope-metro .grid-item.metro-item1,
     .list-isotope-metro .grid-item.metro-item2 {

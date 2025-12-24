@@ -1978,9 +1978,8 @@
   {%- comment -%} Isotope Layout (local asset) {%- endcomment -%}
   <script src="{{ 'isotope.pkgd.min.js' | asset_url }}" defer></script>
   
-  {%- comment -%} ThePlus JS (local files - see README for download instructions) {%- endcomment -%}
-  {%- comment -%} These files need to be manually downloaded and placed in assets/ {%- endcomment -%}
-  {%- comment -%} <script src="{{ 'plus-posts-metro-list.min.js' | asset_url }}" defer></script> {%- endcomment -%}
+  {%- comment -%} ThePlus JS (local files) {%- endcomment -%}
+  <script src="{{ 'plus-posts-metro-list.min.js' | asset_url }}" defer></script>
   {%- comment -%} <script src="{{ 'plus-accordion.min.js' | asset_url }}" defer></script> {%- endcomment -%}
   {%- comment -%} <script src="{{ 'gallery-list.min.js' | asset_url }}" defer></script> {%- endcomment -%}
 
@@ -2129,17 +2128,11 @@
     })();
   </script>
 
-  {%- comment -%} Gallery Isotope Initialization {%- endcomment -%}
-  <script id="gallery-isotope-init">
+  {%- comment -%} Gallery Metro Layout Support - Ensure visibility for plus-posts-metro-list script {%- endcomment -%}
+  <script id="gallery-metro-support">
     (function() {
-      function initGallery() {
-        // Wait for Isotope and ImagesLoaded to be available
-        if (typeof Isotope === 'undefined' || typeof imagesLoaded === 'undefined') {
-          setTimeout(initGallery, 100);
-          return;
-        }
-
-        // Initialize all gallery lists with isotope
+      function ensureGalleryVisibility() {
+        // Ensure gallery containers are visible (plus-posts-metro-list.min.js will handle layout)
         var galleryLists = document.querySelectorAll('.list-isotope-metro[data-enable-isotope="1"]');
         
         galleryLists.forEach(function(galleryList) {
@@ -2153,86 +2146,54 @@
           container.style.display = 'block';
           container.style.visibility = 'visible';
 
-          var dataId = galleryList.getAttribute('data-id');
-          var layoutType = galleryList.getAttribute('data-layout-type') || 'masonry';
-          var metroColumns = parseInt(galleryList.getAttribute('data-metro-columns')) || 6;
-          var metroStyle = galleryList.getAttribute('data-metro-style') || 'style-1';
-
           // Make sure all grid items are visible
           var gridItems = container.querySelectorAll('.grid-item');
           gridItems.forEach(function(item) {
-            item.style.display = 'block';
             item.style.visibility = 'visible';
             item.style.opacity = '1';
           });
-
-          // Initialize Isotope after images are loaded
-          var imgLoad = imagesLoaded(container);
-          
-          imgLoad.on('always', function() {
-            // Check if Isotope is already initialized for this container
-            if (container.isotope) {
-              container.isotope('reloadItems');
-              container.isotope('layout');
-              return;
-            }
-
-            // Initialize Isotope with masonry layout (metro is not a standard layout mode)
-            var iso = new Isotope(container, {
-              itemSelector: '.grid-item',
-              layoutMode: 'masonry',
-              percentPosition: true,
-              masonry: {
-                columnWidth: '.grid-item',
-                gutter: 0
-              }
-            });
-
-            // Store reference
-            container.isotope = iso;
-
-            // Ensure visibility after initialization
-            galleryList.style.display = 'block';
-            galleryList.style.visibility = 'visible';
-            galleryList.style.opacity = '1';
-
-            // Handle window resize
-            var resizeTimer;
-            window.addEventListener('resize', function() {
-              clearTimeout(resizeTimer);
-              resizeTimer = setTimeout(function() {
-                if (container.isotope) {
-                  container.isotope.layout();
-                }
-              }, 250);
-            });
-          });
-
-          // Also trigger layout on window load
-          window.addEventListener('load', function() {
-            if (container.isotope) {
-              container.isotope.layout();
-            }
-            // Final visibility check
-            galleryList.style.display = 'block';
-            galleryList.style.visibility = 'visible';
-            galleryList.style.opacity = '1';
-          });
         });
+      }
+
+      // Wait for jQuery and metro script to be ready
+      function waitForMetroScript() {
+        if (typeof jQuery === 'undefined' || typeof theplus_setup_packery_portfolio === 'undefined') {
+          setTimeout(waitForMetroScript, 100);
+          return;
+        }
+
+        // Ensure visibility - the metro script will handle layout
+        ensureGalleryVisibility();
+
+        // The plus-posts-metro-list.min.js automatically initializes on document ready
+        // We just ensure visibility and let it do its work
+        if (typeof jQuery !== 'undefined' && jQuery('.list-isotope-metro').length) {
+          // Wait a bit for the script to initialize, then ensure visibility again
+          setTimeout(function() {
+            ensureGalleryVisibility();
+          }, 500);
+        }
       }
 
       // Initialize when DOM is ready
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
-          setTimeout(initGallery, 500); // Wait a bit for scripts to load
+          ensureGalleryVisibility();
+          setTimeout(waitForMetroScript, 500);
         });
       } else {
-        setTimeout(initGallery, 500);
+        ensureGalleryVisibility();
+        setTimeout(waitForMetroScript, 500);
       }
 
-      // Also try to initialize after a delay to catch late-loading content
-      setTimeout(initGallery, 1000);
-      setTimeout(initGallery, 2000);
+      // Also try after scripts load
+      setTimeout(waitForMetroScript, 1000);
+      setTimeout(waitForMetroScript, 2000);
+
+      // Handle window resize - ensure visibility (metro script handles layout)
+      window.addEventListener('resize', function() {
+        ensureGalleryVisibility();
+      });
     })();
   </script>
 
