@@ -1090,10 +1090,10 @@
             container.className = 'elementor-motion-effects-container';
             container.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;';
             
-            // Create layer
+            // Create layer - use 117% width/height to allow movement without showing edges
             var layer = document.createElement('div');
             layer.className = 'elementor-motion-effects-layer';
-            layer.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat;';
+            layer.style.cssText = 'position: absolute; top: 0; left: 0; width: 117%; height: 117%; background-size: cover; background-position: center center; background-repeat: no-repeat;';
             
             container.appendChild(layer);
             
@@ -1117,6 +1117,13 @@
               layer.style.backgroundSize = computedStyle.backgroundSize || 'cover';
               layer.style.backgroundPosition = computedStyle.backgroundPosition || 'center center';
               layer.style.backgroundRepeat = computedStyle.backgroundRepeat || 'no-repeat';
+            }
+          } else {
+            // Ensure existing layer has 117% size
+            var layer = container.querySelector('.elementor-motion-effects-layer');
+            if (layer) {
+              layer.style.width = '117%';
+              layer.style.height = '117%';
             }
           }
         });
@@ -1142,6 +1149,10 @@
                 var layer = el.querySelector('.elementor-motion-effects-layer');
                 
                 if (container && layer) {
+                  // Ensure layer has 117% size for movement
+                  layer.style.width = '117%';
+                  layer.style.height = '117%';
+                  
                   // Get speed from settings
                   var speed = 1.7; // default
                   if (parsed.background_motion_fx_mouseTrack_speed && 
@@ -1156,16 +1167,23 @@
                     var y = e.clientY - rect.top;
                     
                     // Calculate offset based on mouse position and speed
-                    var offsetX = (x - rect.width / 2) * (speed / 100);
-                    var offsetY = (y - rect.height / 2) * (speed / 100);
+                    // Center the calculation and apply speed multiplier
+                    var centerX = rect.width / 2;
+                    var centerY = rect.height / 2;
+                    var offsetX = (x - centerX) * (speed / 100);
+                    var offsetY = (y - centerY) * (speed / 100);
                     
-                    // Apply transform to layer
-                    layer.style.transform = 'translate3d(' + offsetX + 'px, ' + offsetY + 'px, 0)';
+                    // Use CSS variables for better performance (matching source site)
+                    layer.style.setProperty('--translateX', offsetX + 'px');
+                    layer.style.setProperty('--translateY', offsetY + 'px');
+                    layer.style.transform = 'translateX(var(--translateX)) translateY(var(--translateY))';
                   });
                   
                   // Reset on mouse leave
                   el.addEventListener('mouseleave', function() {
-                    layer.style.transform = 'translate3d(0, 0, 0)';
+                    layer.style.setProperty('--translateX', '0px');
+                    layer.style.setProperty('--translateY', '0px');
+                    layer.style.transform = 'translateX(0) translateY(0)';
                   });
                 }
               }
@@ -1870,11 +1888,12 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 117%;
+      height: 117%;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+      transition: transform 0.1s ease-out;
     }
     
     /* Ensure elements with motion effects have relative positioning */
