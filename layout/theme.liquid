@@ -1974,20 +1974,22 @@
       .plus-mobile-menu-content {
         position: absolute;
         top: 100%;
-        left: 0 !important;
-        right: 0;
-        width: 100% !important;
-        box-sizing: border-box !important;
+        box-sizing: border-box;
         background: #fff;
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        /* Left and width will be calculated by JavaScript dynamically */
       }
       
       .plus-mobile-menu-content.collapse.in {
-        display: flex !important;
-        box-sizing: border-box !important;
-        width: 100% !important;
-        left: 0 !important;
+        /* Display, left, and width will be set by JavaScript */
+        box-sizing: border-box;
+      }
+      
+      /* Ensure JavaScript-calculated values take precedence */
+      .plus-mobile-menu-content.in[style*="left"],
+      .plus-mobile-menu-content.in[style*="width"] {
+        /* JavaScript inline styles will override CSS */
       }
     }
     
@@ -2503,6 +2505,45 @@
           });
         });
         
+        // Function to calculate mobile menu position and width based on screen resolution
+        // Matches source site behavior where left and width are calculated dynamically
+        function calculateMobileMenuPosition(mobileMenu) {
+          if (!mobileMenu) return;
+          
+          var navWrap = mobileMenu.closest('.plus-navigation-wrap');
+          if (!navWrap) return;
+          
+          // Get navigation container position
+          var navWrapRect = navWrap.getBoundingClientRect();
+          var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+          
+          // Calculate left position relative to navigation container
+          // Can be negative if menu extends beyond container's left edge
+          var left = navWrapRect.left;
+          
+          // Calculate width - typically viewport width, but adjust based on positioning
+          // The width should account for the menu extending to the right edge of viewport
+          var width = viewportWidth;
+          
+          // If menu starts before viewport (negative left), adjust
+          if (left < 0) {
+            // Menu extends beyond left edge, width should cover from left edge to right edge
+            width = viewportWidth + Math.abs(left);
+          } else {
+            // Menu starts within viewport, width should cover from menu start to right edge
+            width = viewportWidth - left;
+          }
+          
+          // Ensure minimum width
+          width = Math.max(width, viewportWidth);
+          
+          // Apply calculated styles - only the essential ones as per source site
+          mobileMenu.style.boxSizing = 'border-box';
+          mobileMenu.style.width = width + 'px';
+          mobileMenu.style.left = left + 'px';
+          mobileMenu.style.display = 'block';
+        }
+        
         // Mobile menu toggle - use event delegation to handle dynamically added elements
         document.addEventListener('click', function(e) {
           var mobileToggle = e.target.closest('.mobile-plus-toggle-menu');
@@ -2527,25 +2568,31 @@
               mobileMenu.classList.add('collapse');
               mobileMenu.style.display = 'none';
               mobileMenu.style.visibility = 'hidden';
+              // Clear calculated styles
+              mobileMenu.style.width = '';
+              mobileMenu.style.left = '';
             } else {
               // Open menu - remove collapse, add in class
               mobileMenu.classList.remove('collapse');
               mobileMenu.classList.add('in');
-              // Set all required styles
-              mobileMenu.style.display = 'flex';
-              mobileMenu.style.visibility = 'visible';
-              mobileMenu.style.boxSizing = 'border-box';
-              mobileMenu.style.width = '100%';
-              mobileMenu.style.left = '0';
-              mobileMenu.style.flexDirection = 'column';
-              mobileMenu.style.position = 'absolute';
-              mobileMenu.style.top = '100%';
-              mobileMenu.style.right = '0';
-              mobileMenu.style.background = '#fff';
-              mobileMenu.style.zIndex = '1000';
-              mobileMenu.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+              
+              // Calculate and set dynamic position and width (as per source site)
+              // Only set left, width, and display - other styles come from CSS
+              calculateMobileMenuPosition(mobileMenu);
             }
           }
+        });
+        
+        // Recalculate position on window resize
+        var resizeTimeout;
+        window.addEventListener('resize', function() {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(function() {
+            var openMenus = document.querySelectorAll('.plus-mobile-menu-content.in');
+            openMenus.forEach(function(mobileMenu) {
+              calculateMobileMenuPosition(mobileMenu);
+            });
+          }, 100);
         });
         
         // Mobile dropdown functionality - use event delegation for dynamically loaded content
