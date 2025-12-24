@@ -2146,10 +2146,25 @@
           var container = galleryList.querySelector('.post-inner-loop');
           if (!container) return;
 
+          // Ensure gallery is visible
+          galleryList.style.display = 'block';
+          galleryList.style.visibility = 'visible';
+          galleryList.style.opacity = '1';
+          container.style.display = 'block';
+          container.style.visibility = 'visible';
+
           var dataId = galleryList.getAttribute('data-id');
-          var layoutType = galleryList.getAttribute('data-layout-type') || 'metro';
+          var layoutType = galleryList.getAttribute('data-layout-type') || 'masonry';
           var metroColumns = parseInt(galleryList.getAttribute('data-metro-columns')) || 6;
           var metroStyle = galleryList.getAttribute('data-metro-style') || 'style-1';
+
+          // Make sure all grid items are visible
+          var gridItems = container.querySelectorAll('.grid-item');
+          gridItems.forEach(function(item) {
+            item.style.display = 'block';
+            item.style.visibility = 'visible';
+            item.style.opacity = '1';
+          });
 
           // Initialize Isotope after images are loaded
           var imgLoad = imagesLoaded(container);
@@ -2162,21 +2177,24 @@
               return;
             }
 
-            // Initialize Isotope
+            // Initialize Isotope with masonry layout (metro is not a standard layout mode)
             var iso = new Isotope(container, {
               itemSelector: '.grid-item',
-              layoutMode: layoutType,
+              layoutMode: 'masonry',
               percentPosition: true,
               masonry: {
-                columnWidth: '.grid-item'
-              },
-              metro: {
-                columnWidth: '.grid-item'
+                columnWidth: '.grid-item',
+                gutter: 0
               }
             });
 
             // Store reference
             container.isotope = iso;
+
+            // Ensure visibility after initialization
+            galleryList.style.display = 'block';
+            galleryList.style.visibility = 'visible';
+            galleryList.style.opacity = '1';
 
             // Handle window resize
             var resizeTimer;
@@ -2195,6 +2213,10 @@
             if (container.isotope) {
               container.isotope.layout();
             }
+            // Final visibility check
+            galleryList.style.display = 'block';
+            galleryList.style.visibility = 'visible';
+            galleryList.style.opacity = '1';
           });
         });
       }
