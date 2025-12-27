@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "shop_url": "https://pachamana-2.myshopify.com",
     "sections": {
       "section-header": {
         "type": "section-header",
