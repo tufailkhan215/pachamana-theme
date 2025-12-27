@@ -267,7 +267,7 @@
       ],
       "settings": {
         "heading": "FEATURED PRODUCTS",
-        "collection": "",
+        "collection": "collection-temp",
         "products_to_show": 3
       }
     },
@@ -333,12 +333,8 @@
       "name": "Recent Articles",
       "settings": {
         "heading": "RECENT ARTICLES",
-        "article_1_title": "",
-        "article_1_url": "",
-        "article_2_title": "",
-        "article_2_url": "",
-        "article_3_title": "",
-        "article_3_url": ""
+        "blog_handle": "",
+        "articles_to_show": 3
       }
     },
     "section-photo-gallery": {
