@@ -41,6 +41,7 @@
   "products": {
     "product": {
       "add_to_cart": "Add to cart",
+      "select_options": "Select options",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "value_unavailable": "{value} is unavailable",
@@ -66,6 +67,11 @@
   "cart": {
     "general": {
       "remove": "Remove"
+    }
+  },
+  "collections": {
+    "general": {
+      "no_products": "No products found"
     }
   }
 }
