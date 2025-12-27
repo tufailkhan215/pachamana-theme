@@ -12,9 +12,18 @@
     "main": {
       "type": "main-collection",
       "settings": {}
+    },
+    "section_background_motion_YDLHNq": {
+      "type": "section-background-motion",
+      "name": "Background Motion",
+      "settings": {
+        "image": "shopify://shop_images/87.jpg",
+        "heading": "ceremony starts at the farm"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "section_background_motion_YDLHNq"
   ]
 }
