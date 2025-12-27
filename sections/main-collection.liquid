@@ -73,10 +73,10 @@
 				<div class="elementor-widget-container">
 							<div class="elementor-loop-container elementor-grid" role="list">
 		<style id="loop-292">.elementor-292 .elementor-element.elementor-element-a402c48{--display:flex;--min-height:365px;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:space-between;border-style:solid;--border-style:solid;border-width:1px 1px 1px 1px;--border-top-width:1px;--border-right-width:1px;--border-bottom-width:1px;--border-left-width:1px;border-color:#E2AB4352;--border-color:#E2AB4352;--border-radius:35px 35px 35px 35px;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);--padding-top:15px;--padding-bottom:15px;--padding-left:15px;--padding-right:15px;}.elementor-292 .elementor-element.elementor-element-a402c48:not(.elementor-motion-effects-element-type-background), .elementor-292 .elementor-element.elementor-element-a402c48 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:var( --e-global-color-secondary );background-image:url("{{ "light-gold-fabric.png" | asset_url }}");}.elementor-292 .elementor-element.elementor-element-cdb3783 img{border-style:solid;border-width:1px 1px 1px 1px;border-color:#E2AB4357;border-radius:25px 25px 25px 25px;}.elementor-292 .elementor-element.elementor-element-d32eb26{text-align:center;}.elementor-292 .elementor-element.elementor-element-d32eb26 .elementor-heading-title{font-family:"OAXACA", Sans-serif;font-size:22px;line-height:24px;letter-spacing:0px;color:var( --e-global-color-secondary );}.elementor-292 .elementor-element.elementor-element-87a9ad1{--e-rating-justify-content:center;}.elementor-292 .elementor-element.elementor-element-9ab4583{text-align:center;}.woocommerce .elementor-292 .elementor-element.elementor-element-9ab4583 .price{color:var( --e-global-color-secondary );font-family:"OAXACA", Sans-serif;font-size:18px;letter-spacing:0.9px;}body:not(.rtl) .elementor-292 .elementor-element.elementor-element-9ab4583:not(.elementor-product-price-block-yes) del{margin-right:0px;}body.rtl .elementor-292 .elementor-element.elementor-element-9ab4583:not(.elementor-product-price-block-yes) del{margin-left:0px;}.elementor-292 .elementor-element.elementor-element-9ab4583.elementor-product-price-block-yes del{margin-bottom:0px;}.elementor-292 .elementor-element.elementor-element-3e93f2f .cart button, .elementor-292 .elementor-element.elementor-element-3e93f2f .cart .button{font-family:"OAXACA", Sans-serif;font-size:20px;border-style:solid;border-width:1px 1px 1px 1px;border-radius:100px 100px 100px 100px;color:var( --e-global-color-secondary );background-color:var( --e-global-color-text );border-color:#F9F2EF57;transition:all 0.2s;}.woocommerce .elementor-292 .elementor-element.elementor-element-3e93f2f form.cart table.variations label{color:var( --e-global-color-text );font-family:"OAXACA", Sans-serif;}.elementor-292 .elementor-element.elementor-element-246d04e{--display:flex;}@media(max-width:879px){.elementor-292 .elementor-element.elementor-element-a402c48{--min-height:0px;--gap:10px 10px;--row-gap:10px;--column-gap:10px;--border-radius:20px 20px 20px 20px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:10px;--padding-bottom:10px;--padding-left:10px;--padding-right:10px;}.elementor-292 .elementor-element.elementor-element-cdb3783 img{border-radius:15px 15px 15px 15px;}.elementor-292 .elementor-element.elementor-element-d32eb26 .elementor-heading-title{font-size:18px;line-height:18px;letter-spacing:0.5px;}.elementor-292 .elementor-element.elementor-element-87a9ad1{--e-rating-justify-content:center;--e-rating-icon-font-size:14px;--e-rating-gap:5px;}.woocommerce .elementor-292 .elementor-element.elementor-element-9ab4583 .price{font-size:16px;letter-spacing:0px;}.elementor-292 .elementor-element.elementor-element-3e93f2f .cart button, .elementor-292 .elementor-element.elementor-element-3e93f2f .cart .button{font-size:16px;}}</style>
-		{%- comment -%} Get products per page from URL parameter or use section setting {%- endcomment -%}
+		{%- comment -%} Get products per page from URL parameter or use default of 12 {%- endcomment -%}
 		{%- liquid
 			assign url_limit = request.params.limit | plus: 0
-			assign default_limit = section.settings.products_per_page | default: 12 | plus: 0
+			assign default_limit = 12
 			if url_limit > 0 and url_limit <= 96
 				assign products_per_page = url_limit
 			else
@@ -233,18 +233,7 @@
   "name": "Main Collection",
   "tag": "section",
   "class": "section",
-  "settings": [
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "label": "Products per page",
-      "min": 6,
-      "max": 96,
-      "step": 6,
-      "default": 12,
-      "info": "Number of products to display per page. Users can also change this using the dropdown on the collection page."
-    }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "Main Collection"
