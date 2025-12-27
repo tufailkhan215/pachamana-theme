@@ -154,6 +154,10 @@
   {%- if template.name == 'page' -%}
     {{ 'post-82.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
+  {%- comment -%} Load post-565.css for collection/product archive pages {%- endcomment -%}
+  {%- if template.name == 'collection' or template.name == 'list-collections' -%}
+    {{ 'post-565.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
   {{ 'custom-pro-widget-nav-menu.min.css' | asset_url | stylesheet_tag }}
   {{ 'custom-pro-widget-woocommerce-menu-cart.min.css' | asset_url | stylesheet_tag }}
   {{ 'custom-pro-widget-woocommerce-product-add-to-cart.min.css' | asset_url | stylesheet_tag }}
@@ -612,6 +616,12 @@
   <script src="{{ 'elements-handlers.min.js' | asset_url }}" defer></script>
   <script src="{{ 'frontend.min.js' | asset_url }}" defer></script>
   <script src="{{ 'webpack-pro.runtime.min.js' | asset_url }}" defer></script>
+  {%- comment -%} Elementor Pro bundle files for loop-grid and product functionality {%- endcomment -%}
+  {%- if template.name == 'collection' or template.name == 'list-collections' or template.name == 'product' -%}
+    <script src="{{ 'loop.bundle.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'product-add-to-cart.bundle.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'ajax-pagination.bundle.min.js' | asset_url }}" defer></script>
+  {%- endif -%}
   {%- comment -%} Ensure all sections are inside elementor-63 wrapper - CRITICAL FIX {%- endcomment -%}
   <script>
     (function() {
