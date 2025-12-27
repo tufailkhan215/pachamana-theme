@@ -1,0 +1,175 @@
+{%- comment -%}
+  Product loop item snippet for Elementor loop-grid
+  Usage: {% render 'product-loop-item', product: product %}
+  Matches the exact structure from pachamana.com shop page
+{%- endcomment -%}
+
+{%- liquid
+  assign product_type_class = 'product-type-simple'
+  if product.has_only_default_variant == false
+    assign product_type_class = 'product-type-variable'
+  endif
+  
+  assign stock_class = 'instock'
+  unless product.available
+    assign stock_class = 'outofstock'
+  endunless
+  
+  assign thumbnail_class = ''
+  if product.featured_image
+    assign thumbnail_class = 'has-post-thumbnail'
+  endif
+-%}
+
+<div data-elementor-type="loop-item" data-elementor-id="292" class="elementor elementor-292 e-loop-item e-loop-item-{{ product.id }} post-{{ product.id }} product type-product status-publish {{ thumbnail_class }} {{ stock_class }} taxable shipping-taxable purchasable {{ product_type_class }}" data-elementor-post-type="elementor_library" data-custom-edit-handle="1">
+	<div class="elementor-element elementor-element-a402c48 e-flex e-con-boxed e-con e-parent elementor-invisible" data-id="a402c48" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeIn&quot;}">
+		<div class="e-con-inner">
+			<div class="elementor-element elementor-element-cdb3783 elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image" data-id="cdb3783" data-element_type="widget" data-widget_type="theme-post-featured-image.default">
+				<div class="elementor-widget-container">
+					<a href="{{ product.url }}">
+						{%- if product.featured_image != blank -%}
+							<img 
+								loading="lazy" 
+								width="{{ product.featured_image.width | default: 800 }}" 
+								height="{{ product.featured_image.height | default: 800 }}" 
+								class="attachment-large size-large wp-image-{{ product.id }}" 
+								alt="{{ product.featured_image.alt | default: product.title | escape }}" 
+								src="{{ product.featured_image | image_url: width: 800 }}" 
+								sizes="(max-width: 800px) 100vw, 800px"
+							>
+						{%- else -%}
+							<img 
+								loading="lazy" 
+								width="800" 
+								height="800" 
+								class="attachment-large size-large wp-image-{{ product.id }}" 
+								alt="{{ product.title | escape }}" 
+								src="{{ '2-2.png' | asset_url }}" 
+								sizes="(max-width: 800px) 100vw, 800px"
+								onerror="this.style.display='none'"
+							>
+						{%- endif -%}
+					</a>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-d32eb26 elementor-widget elementor-widget-woocommerce-product-title elementor-page-title elementor-widget-heading" data-id="d32eb26" data-element_type="widget" data-widget_type="woocommerce-product-title.default">
+				<div class="elementor-widget-container">
+					<h2 class="product_title entry-title elementor-heading-title elementor-size-default">
+						<a href="{{ product.url }}">{{ product.title | escape }}</a>
+					</h2>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-87a9ad1 elementor-widget elementor-widget-rating" data-id="87a9ad1" data-element_type="widget" data-widget_type="rating.default">
+				<div class="elementor-widget-container">
+					<div class="e-rating" itemtype="https://schema.org/Rating" itemscope itemprop="reviewRating">
+						<meta itemprop="worstRating" content="0">
+						<meta itemprop="bestRating" content="5">
+						<div class="e-rating-wrapper" itemprop="ratingValue" content="5" role="img" aria-label="Rated 5 out of 5">
+							{%- for i in (1..5) -%}
+								<div class="e-icon">
+									<div class="e-icon-wrapper e-icon-marked">
+										<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>
+									</div>
+									<div class="e-icon-wrapper e-icon-unmarked">
+										<svg aria-hidden="true" class="e-font-icon-svg e-eicon-star" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M450 75L338 312 88 350C46 354 25 417 58 450L238 633 196 896C188 942 238 975 275 954L500 837 725 954C767 975 813 942 804 896L763 633 942 450C975 417 954 358 913 350L663 312 550 75C529 33 471 33 450 75Z"></path></svg>
+									</div>
+								</div>
+							{%- endfor -%}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-9ab4583 elementor-widget elementor-widget-woocommerce-product-price" data-id="9ab4583" data-element_type="widget" data-widget_type="woocommerce-product-price.default">
+				<div class="elementor-widget-container">
+					<p class="price">
+						{%- liquid
+							assign min_price = product.price_min
+							assign max_price = product.price_max
+							assign min_price_formatted = min_price | money
+							assign max_price_formatted = max_price | money
+						-%}
+						{%- if min_price != max_price -%}
+							{%- comment -%} Price range {%- endcomment -%}
+							<span class="woocommerce-Price-amount amount" aria-hidden="true">
+								<bdi>{{ min_price_formatted }}</bdi>
+							</span>
+							<span aria-hidden="true">–</span>
+							<span class="woocommerce-Price-amount amount" aria-hidden="true">
+								<bdi>{{ max_price_formatted }}</bdi>
+							</span>
+							<span class="screen-reader-text">Price range: {{ min_price | money }} through {{ max_price | money }}</span>
+						{%- else -%}
+							{%- comment -%} Single price {%- endcomment -%}
+							{%- if product.compare_at_price > product.price -%}
+								<span class="woocommerce-Price-amount amount" aria-hidden="true">
+									<bdi>{{ product.price | money }}</bdi>
+								</span>
+								<del aria-hidden="true">
+									<span class="woocommerce-Price-amount amount">
+										<bdi>{{ product.compare_at_price | money }}</bdi>
+									</span>
+								</del>
+							{%- else -%}
+								<span class="woocommerce-Price-amount amount">
+									<bdi>{{ product.price | money }}</bdi>
+								</span>
+							{%- endif -%}
+						{%- endif -%}
+						{%- comment -%} Subscription options placeholder (if needed in future) {%- endcomment -%}
+					</p>
+				</div>
+			</div>
+			<div class="elementor-element elementor-element-3e93f2f elementor-add-to-cart--align-justify elementor-add-to-cart--layout-auto elementor-widget elementor-widget-woocommerce-product-add-to-cart" data-id="3e93f2f" data-element_type="widget" data-widget_type="woocommerce-product-add-to-cart.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-add-to-cart elementor-product-{{ product_type_class | replace: 'product-type-', '' }}">
+						<div class="e-loop-add-to-cart-form-container">
+							<form class="cart e-loop-add-to-cart-form">
+								<div class="e-atc-qty-button-holder">
+									{%- if product.has_only_default_variant -%}
+										{%- comment -%} Simple product - Add to cart button {%- endcomment -%}
+										<a 
+											href="{{ product.url }}" 
+											aria-describedby="woocommerce_loop_add_to_cart_link_describedby_{{ product.id }}" 
+											data-quantity="1" 
+											class="button product_type_simple add_to_cart_button" 
+											data-product_id="{{ product.id }}" 
+											data-product_sku="{{ product.selected_or_first_available_variant.sku | default: '' }}" 
+											aria-label="Add to cart: {{ product.title | escape }}" 
+											rel="nofollow"
+											role="button"
+										>
+											{{ 'products.product.add_to_cart' | t | default: 'Add to cart' }}
+										</a>
+										<span id="woocommerce_loop_add_to_cart_link_describedby_{{ product.id }}" class="screen-reader-text"></span>
+									{%- else -%}
+										{%- comment -%} Variable product - Select options button {%- endcomment -%}
+										<a 
+											href="{{ product.url }}" 
+											aria-describedby="woocommerce_loop_add_to_cart_link_describedby_{{ product.id }}" 
+											data-quantity="1" 
+											class="button product_type_variable add_to_cart_button" 
+											data-product_id="{{ product.id }}" 
+											data-product_sku="" 
+											aria-label="Select options for {{ product.title | escape }}" 
+											rel="nofollow"
+										>
+											{{ 'products.product.select_options' | t | default: 'Select options' }}
+										</a>
+										<span id="woocommerce_loop_add_to_cart_link_describedby_{{ product.id }}" class="screen-reader-text">
+											This product has multiple variants. The options may be chosen on the product page
+										</span>
+									{%- endif -%}
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="elementor-element elementor-element-246d04e e-flex e-con-boxed e-con e-parent" data-id="246d04e" data-element_type="container">
+		<div class="e-con-inner">
+		</div>
+	</div>
+</div>
+
