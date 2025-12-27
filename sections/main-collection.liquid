@@ -67,68 +67,55 @@
 			endif
 		-%}
 		{%- comment -%} Paginate collection products based on section setting {%- endcomment -%}
-		{%- comment -%} Use nested if blocks to ensure only one paginate tag exists {%- endcomment -%}
+		{%- comment -%} Use separate if blocks (no else) - only one will execute since products_per_page is a single value {%- endcomment -%}
 		{%- comment -%} Handle values in steps of 6 (6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96) {%- endcomment -%}
 		{%- if products_per_page == 6 -%}
 			{%- paginate collection.products by 6 -%}
-		{%- else -%}
-			{%- if products_per_page == 18 -%}
-				{%- paginate collection.products by 18 -%}
-			{%- else -%}
-				{%- if products_per_page == 24 -%}
-					{%- paginate collection.products by 24 -%}
-				{%- else -%}
-					{%- if products_per_page == 30 -%}
-						{%- paginate collection.products by 30 -%}
-					{%- else -%}
-						{%- if products_per_page == 36 -%}
-							{%- paginate collection.products by 36 -%}
-						{%- else -%}
-							{%- if products_per_page == 42 -%}
-								{%- paginate collection.products by 42 -%}
-							{%- else -%}
-								{%- if products_per_page == 48 -%}
-									{%- paginate collection.products by 48 -%}
-								{%- else -%}
-									{%- if products_per_page == 54 -%}
-										{%- paginate collection.products by 54 -%}
-									{%- else -%}
-										{%- if products_per_page == 60 -%}
-											{%- paginate collection.products by 60 -%}
-										{%- else -%}
-											{%- if products_per_page == 66 -%}
-												{%- paginate collection.products by 66 -%}
-											{%- else -%}
-												{%- if products_per_page == 72 -%}
-													{%- paginate collection.products by 72 -%}
-												{%- else -%}
-													{%- if products_per_page == 78 -%}
-														{%- paginate collection.products by 78 -%}
-													{%- else -%}
-														{%- if products_per_page == 84 -%}
-															{%- paginate collection.products by 84 -%}
-														{%- else -%}
-															{%- if products_per_page == 90 -%}
-																{%- paginate collection.products by 90 -%}
-															{%- else -%}
-																{%- if products_per_page == 96 -%}
-																	{%- paginate collection.products by 96 -%}
-																{%- else -%}
-																	{%- paginate collection.products by 12 -%}
-																{%- endif -%}
-															{%- endif -%}
-														{%- endif -%}
-													{%- endif -%}
-												{%- endif -%}
-											{%- endif -%}
-										{%- endif -%}
-									{%- endif -%}
-								{%- endif -%}
-							{%- endif -%}
-						{%- endif -%}
-					{%- endif -%}
-				{%- endif -%}
-			{%- endif -%}
+		{%- endif -%}
+		{%- if products_per_page == 12 -%}
+			{%- paginate collection.products by 12 -%}
+		{%- endif -%}
+		{%- if products_per_page == 18 -%}
+			{%- paginate collection.products by 18 -%}
+		{%- endif -%}
+		{%- if products_per_page == 24 -%}
+			{%- paginate collection.products by 24 -%}
+		{%- endif -%}
+		{%- if products_per_page == 30 -%}
+			{%- paginate collection.products by 30 -%}
+		{%- endif -%}
+		{%- if products_per_page == 36 -%}
+			{%- paginate collection.products by 36 -%}
+		{%- endif -%}
+		{%- if products_per_page == 42 -%}
+			{%- paginate collection.products by 42 -%}
+		{%- endif -%}
+		{%- if products_per_page == 48 -%}
+			{%- paginate collection.products by 48 -%}
+		{%- endif -%}
+		{%- if products_per_page == 54 -%}
+			{%- paginate collection.products by 54 -%}
+		{%- endif -%}
+		{%- if products_per_page == 60 -%}
+			{%- paginate collection.products by 60 -%}
+		{%- endif -%}
+		{%- if products_per_page == 66 -%}
+			{%- paginate collection.products by 66 -%}
+		{%- endif -%}
+		{%- if products_per_page == 72 -%}
+			{%- paginate collection.products by 72 -%}
+		{%- endif -%}
+		{%- if products_per_page == 78 -%}
+			{%- paginate collection.products by 78 -%}
+		{%- endif -%}
+		{%- if products_per_page == 84 -%}
+			{%- paginate collection.products by 84 -%}
+		{%- endif -%}
+		{%- if products_per_page == 90 -%}
+			{%- paginate collection.products by 90 -%}
+		{%- endif -%}
+		{%- if products_per_page == 96 -%}
+			{%- paginate collection.products by 96 -%}
 		{%- endif -%}
 			{%- comment -%} Loop through collection products {%- endcomment -%}
 			{%- for product in collection.products -%}
