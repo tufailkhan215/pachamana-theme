@@ -77,6 +77,18 @@
 				var select = document.getElementById('products-per-page-select');
 				if (!select) return;
 				
+				// Get the current products per page value from the select
+				var currentValue = select.value;
+				var url = new URL(window.location.href);
+				var urlLimit = url.searchParams.get('limit');
+				
+				// If no limit parameter in URL but section setting is different from default, add it
+				if (!urlLimit && currentValue !== '12') {
+					url.searchParams.set('limit', currentValue);
+					window.location.href = url.toString();
+					return;
+				}
+				
 				select.addEventListener('change', function() {
 					var value = this.value;
 					var url = new URL(window.location.href);
@@ -92,20 +104,9 @@
 				});
 			})();
 		</script>
-		{%- comment -%} Paginate collection products - Use mutually exclusive if blocks {%- endcomment -%}
-		{%- if products_per_page == 24 -%}
-			{%- paginate collection.products by 24 -%}
-		{%- else -%}
-			{%- if products_per_page == 48 -%}
-				{%- paginate collection.products by 48 -%}
-			{%- else -%}
-				{%- if products_per_page == 96 -%}
-					{%- paginate collection.products by 96 -%}
-				{%- else -%}
-					{%- paginate collection.products by 12 -%}
-				{%- endif -%}
-			{%- endif -%}
-		{%- endif -%}
+		{%- comment -%} Paginate collection products {%- endcomment -%}
+		{%- comment -%} Note: The paginate tag requires a literal number. The 'limit' URL parameter set by JavaScript will be respected by Shopify's pagination system {%- endcomment -%}
+		{%- paginate collection.products by 12 -%}
 			{%- comment -%} Loop through collection products {%- endcomment -%}
 			{%- for product in collection.products -%}
 				{%- render 'product-loop-item', product: product -%}
