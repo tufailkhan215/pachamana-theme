@@ -58,7 +58,6 @@
 			if products_per_page < 6
 				assign products_per_page = 6
 			endif
-			comment Round to nearest multiple of 6 if not already a multiple
 			assign remainder = products_per_page | modulo: 6
 			if remainder > 0
 				assign products_per_page = products_per_page | minus: remainder | plus: 6
