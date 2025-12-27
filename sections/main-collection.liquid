@@ -92,17 +92,19 @@
 				});
 			})();
 		</script>
-		{%- comment -%} Paginate collection products - Note: Shopify's paginate tag uses the limit URL parameter automatically {%- endcomment -%}
-		{%- if products_per_page == 12 -%}
-			{%- paginate collection.products by 12 -%}
-		{%- elsif products_per_page == 24 -%}
+		{%- comment -%} Paginate collection products - Use mutually exclusive if blocks {%- endcomment -%}
+		{%- if products_per_page == 24 -%}
 			{%- paginate collection.products by 24 -%}
-		{%- elsif products_per_page == 48 -%}
-			{%- paginate collection.products by 48 -%}
-		{%- elsif products_per_page == 96 -%}
-			{%- paginate collection.products by 96 -%}
 		{%- else -%}
-			{%- paginate collection.products by 12 -%}
+			{%- if products_per_page == 48 -%}
+				{%- paginate collection.products by 48 -%}
+			{%- else -%}
+				{%- if products_per_page == 96 -%}
+					{%- paginate collection.products by 96 -%}
+				{%- else -%}
+					{%- paginate collection.products by 12 -%}
+				{%- endif -%}
+			{%- endif -%}
 		{%- endif -%}
 			{%- comment -%} Loop through collection products {%- endcomment -%}
 			{%- for product in collection.products -%}
