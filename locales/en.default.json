@@ -71,7 +71,8 @@
   },
   "collections": {
     "general": {
-      "no_products": "No products found"
+      "no_products": "No products found",
+      "products_per_page": "Products per page"
     }
   }
 }
