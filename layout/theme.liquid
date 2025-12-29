@@ -179,9 +179,10 @@
   {%- if template.name == 'product' -%}
     {{ 'post-454.css' | asset_url | stylesheet_tag }}
     {{ 'photoswipe.min.css' | asset_url | stylesheet_tag }}
-    {%- comment -%} PhotoSwipe JavaScript - Load from CDN if local files don't exist {%- endcomment -%}
-    <script src="https://c0.wp.com/p/woocommerce/10.3.7/assets/js/photoswipe/photoswipe.min.js" defer></script>
-    <script src="https://c0.wp.com/p/woocommerce/10.3.7/assets/js/photoswipe/photoswipe-ui-default.min.js" defer></script>
+    {%- comment -%} PhotoSwipe JavaScript - Localized assets {%- endcomment -%}
+    {%- comment -%} Note: PhotoSwipe may show passive event listener warnings - this is expected as it needs non-passive listeners for touch/wheel handling {%- endcomment -%}
+    <script src="{{ 'photoswipe.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'photoswipe-ui-default.min.js' | asset_url }}" defer></script>
     <script src="{{ 'photoswipe-init.js' | asset_url }}" defer></script>
     {%- comment -%} Product Gallery JavaScript - Handles slider, thumbnails, and zoom {%- endcomment -%}
     <script src="{{ 'product-gallery.js' | asset_url }}" defer></script>
@@ -209,9 +210,7 @@
 </head>
 
 <body class="template-{{ template.name | handle }} elementor-default elementor-template-full-width elementor-kit-15 elementor-page woocommerce">
-  <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-    {{ "accessibility.skip_to_text" | t | default: "Skip to content" }}
-  </a>
+  
 
   {%- if settings.cart_type == 'notification' -%}
     {%- render 'cart-notification', color_scheme: settings.cart_notification_color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
