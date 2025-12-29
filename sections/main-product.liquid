@@ -309,7 +309,7 @@
 			{%- liquid
 				assign form_id = 'product-form-' | append: product.id
 			-%}
-			{%- form 'product', product, id: form_id, class: cart -%}
+			{%- form 'product', product, id: form_id -%}
 				{%- comment -%} Variant Selection for Variable Products {%- endcomment -%}
 				{%- unless product.has_only_default_variant -%}
 					<div class="product-variants">
