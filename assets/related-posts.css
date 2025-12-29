@@ -1,13 +1,20 @@
-/* Hide Jetpack Related Posts on product pages */
-#jp-relatedposts {
+/* Hide Jetpack Related Posts only if explicitly in short description area */
+.woocommerce-product-details__short-description #jp-relatedposts,
+.woocommerce-product-details__short-description .jp-relatedposts {
     display: none !important;
+}
+
+/* Ensure RELATED PRODUCTS section is visible */
+.elementor-widget-loop-grid {
+    display: block !important;
+}
+
+/* Allow related posts in product description to show if present */
+.elementor-widget-woocommerce-product-content #jp-relatedposts {
+    display: block !important;
     padding-top: 1em;
     margin: 1em 0;
     position: relative;
     clear: both;
-}
-
-.jp-relatedposts {
-    display: none !important;
 }
 
