@@ -180,7 +180,8 @@
     {{ 'post-454.css' | asset_url | stylesheet_tag }}
     {{ 'photoswipe.min.css' | asset_url | stylesheet_tag }}
     {%- comment -%} PhotoSwipe JavaScript - Localized assets {%- endcomment -%}
-    {%- comment -%} Note: PhotoSwipe may show passive event listener warnings - this is expected as it needs non-passive listeners for touch/wheel handling {%- endcomment -%}
+    {%- comment -%} Passive event listener patch - Must load BEFORE PhotoSwipe to intercept event listeners {%- endcomment -%}
+    <script src="{{ 'photoswipe-passive-patch.js' | asset_url }}"></script>
     <script src="{{ 'photoswipe.min.js' | asset_url }}" defer></script>
     <script src="{{ 'photoswipe-ui-default.min.js' | asset_url }}" defer></script>
     <script src="{{ 'photoswipe-init.js' | asset_url }}" defer></script>
