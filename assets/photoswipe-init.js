@@ -156,6 +156,18 @@
               item.innerHTML = '';
             }
           });
+          
+          // Remove PhotoSwipe state classes that should be removed on close
+          if (pswpElement) {
+            pswpElement.classList.remove('pswp--open');
+            pswpElement.classList.remove('pswp--visible');
+            pswpElement.classList.remove('pswp--animated-in');
+            pswpElement.classList.remove('pswp--zoom-allowed');
+            pswpElement.classList.remove('pswp--zoomed-in');
+            pswpElement.classList.remove('pswp--dragging');
+            pswpElement.classList.remove('pswp--has_mouse');
+            // Keep structural classes like pswp--supports-fs, pswp--notouch, pswp--css_animation, pswp--svg
+          }
         }, 400); // Wait for close animation to complete
       });
       
@@ -176,6 +188,19 @@
             item.innerHTML = '';
           }
         });
+        
+        // Remove all state classes on destroy, but keep structural classes
+        if (pswpElement) {
+          pswpElement.classList.remove('pswp--open');
+          pswpElement.classList.remove('pswp--visible');
+          pswpElement.classList.remove('pswp--animated-in');
+          pswpElement.classList.remove('pswp--zoom-allowed');
+          pswpElement.classList.remove('pswp--zoomed-in');
+          pswpElement.classList.remove('pswp--dragging');
+          pswpElement.classList.remove('pswp--has_mouse');
+          // Keep structural classes: pswp--supports-fs, pswp--notouch, pswp--css_animation, pswp--svg
+          // These are feature detection classes that should remain
+        }
       });
       
       gallery.init();
@@ -227,6 +252,18 @@
                 item.innerHTML = '';
               }
             });
+            
+            // Remove PhotoSwipe state classes that should be removed on close
+            if (pswpElement) {
+              pswpElement.classList.remove('pswp--open');
+              pswpElement.classList.remove('pswp--visible');
+              pswpElement.classList.remove('pswp--animated-in');
+              pswpElement.classList.remove('pswp--zoom-allowed');
+              pswpElement.classList.remove('pswp--zoomed-in');
+              pswpElement.classList.remove('pswp--dragging');
+              pswpElement.classList.remove('pswp--has_mouse');
+              // Keep structural classes like pswp--supports-fs, pswp--notouch, pswp--css_animation, pswp--svg
+            }
           }, 400); // Wait for close animation to complete
         });
         
@@ -247,6 +284,19 @@
               item.innerHTML = '';
             }
           });
+          
+          // Remove all state classes on destroy, but keep structural classes
+          if (pswpElement) {
+            pswpElement.classList.remove('pswp--open');
+            pswpElement.classList.remove('pswp--visible');
+            pswpElement.classList.remove('pswp--animated-in');
+            pswpElement.classList.remove('pswp--zoom-allowed');
+            pswpElement.classList.remove('pswp--zoomed-in');
+            pswpElement.classList.remove('pswp--dragging');
+            pswpElement.classList.remove('pswp--has_mouse');
+            // Keep structural classes: pswp--supports-fs, pswp--notouch, pswp--css_animation, pswp--svg
+            // These are feature detection classes that should remain
+          }
         });
         
         gallery.init();
