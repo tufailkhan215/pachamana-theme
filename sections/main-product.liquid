@@ -280,10 +280,7 @@
 						
 						if product.metafields.custom.icon_list != blank
 							assign icon_list_metafield = product.metafields.custom.icon_list
-							comment
-								Check if metafield has actual values (not just exists)
-								For list metafields, check if value array has items
-							endcomment
+							
 							if icon_list_metafield.value.size > 0
 								assign has_metafield_items = true
 							endif
