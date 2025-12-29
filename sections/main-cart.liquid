@@ -1,69 +1,372 @@
 {%- comment -%}
-  Main cart section
+  Main cart section - Styled to match Elementor theme
 {%- endcomment -%}
 
-<div class="cart">
-  {% render 'breadcrumbs' %}
-  
-  <h1 class="cart__title">{{ 'sections.cart.title' | t | default: 'Cart' }}</h1>
-  
-  {%- if cart.item_count > 0 -%}
-    <form action="{{ routes.cart_url }}" method="post" id="cart-form">
-      <div class="cart__items">
-        {%- for item in cart.items -%}
-          <div class="cart__item" data-cart-item-key="{{ item.key }}">
-            <div class="cart__item-image">
-              {%- if item.image -%}
-                <img src="{{ item.image | image_url: width: 150 }}" alt="{{ item.image.alt | escape }}" loading="lazy">
-              {%- endif -%}
+<div class="woocommerce cart-page" data-elementor-type="page">
+  <div class="elementor-element elementor-element-cart-container e-con e-parent" data-element_type="container">
+    <div class="e-con-inner">
+      <div class="elementor-element elementor-element-cart-title elementor-widget elementor-widget-heading" data-element_type="widget" data-widget_type="heading.default">
+        <div class="elementor-widget-container">
+          <h1 class="elementor-heading-title elementor-size-default">{{ 'sections.cart.title' | t | default: 'Shopping Cart' }}</h1>
+        </div>
+      </div>
+      
+      {%- if cart.item_count > 0 -%}
+        <form action="{{ routes.cart_url }}" method="post" id="cart-form" class="woocommerce-cart-form">
+          <div class="cart__items elementor-element elementor-element-cart-items">
+            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+              <thead>
+                <tr>
+                  <th class="product-thumbnail">{{ 'sections.cart.headings.product' | t | default: 'Product' }}</th>
+                  <th class="product-name">{{ 'sections.cart.headings.name' | t | default: 'Name' }}</th>
+                  <th class="product-price">{{ 'sections.cart.headings.price' | t | default: 'Price' }}</th>
+                  <th class="product-quantity">{{ 'sections.cart.headings.quantity' | t | default: 'Quantity' }}</th>
+                  <th class="product-subtotal">{{ 'sections.cart.headings.total' | t | default: 'Total' }}</th>
+                  <th class="product-remove">{{ 'sections.cart.headings.remove' | t | default: 'Remove' }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- for item in cart.items -%}
+                  <tr class="woocommerce-cart-form__cart-item cart_item" data-cart-item-key="{{ item.key }}">
+                    <td class="product-thumbnail">
+                      {%- if item.image -%}
+                        <a href="{{ item.url }}">
+                          <img src="{{ item.image | image_url: width: 150 }}" alt="{{ item.image.alt | default: item.product.title | escape }}" loading="lazy" width="150" height="150">
+                        </a>
+                      {%- else -%}
+                        <img src="{{ 'placeholder.png' | asset_url }}" alt="{{ item.product.title | escape }}" loading="lazy" width="150" height="150">
+                      {%- endif -%}
+                    </td>
+                    
+                    <td class="product-name" data-title="{{ 'sections.cart.headings.name' | t | default: 'Name' }}">
+                      <a href="{{ item.url }}" class="cart-item-title">{{ item.product.title | escape }}</a>
+                      {%- if item.variant.title != 'Default Title' -%}
+                        <dl class="variation">
+                          <dt class="variation-{{ item.variant.title | handle }}">{{ item.variant.title }}</dt>
+                        </dl>
+                      {%- endif -%}
+                      {%- if item.selling_plan_allocation -%}
+                        <p class="cart-item-selling-plan">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                      {%- endif -%}
+                    </td>
+                    
+                    <td class="product-price" data-title="{{ 'sections.cart.headings.price' | t | default: 'Price' }}">
+                      <span class="woocommerce-Price-amount amount">
+                        <bdi>{{ item.final_price | money }}</bdi>
+                      </span>
+                    </td>
+                    
+                    <td class="product-quantity" data-title="{{ 'sections.cart.headings.quantity' | t | default: 'Quantity' }}">
+                      <div class="quantity">
+                        <label class="screen-reader-text" for="quantity-{{ item.key }}">{{ 'products.product.quantity.label' | t | default: 'Quantity' }}</label>
+                        <input
+                          type="number"
+                          id="quantity-{{ item.key }}"
+                          class="input-text qty text"
+                          name="updates[{{ item.key }}]"
+                          value="{{ item.quantity }}"
+                          min="0"
+                          step="1"
+                          data-cart-item-quantity="{{ item.key }}"
+                          aria-label="{{ 'products.product.quantity.label' | t | default: 'Quantity' }}"
+                        >
+                      </div>
+                    </td>
+                    
+                    <td class="product-subtotal" data-title="{{ 'sections.cart.headings.total' | t | default: 'Total' }}">
+                      <span class="woocommerce-Price-amount amount">
+                        <bdi>{{ item.final_line_price | money }}</bdi>
+                      </span>
+                    </td>
+                    
+                    <td class="product-remove">
+                      <button type="button" data-cart-item-remove="{{ item.key }}" class="remove" aria-label="{{ 'cart.general.remove' | t | default: 'Remove this item' }}" title="{{ 'cart.general.remove' | t | default: 'Remove this item' }}">
+                        ×
+                      </button>
+                    </td>
+                  </tr>
+                {%- endfor -%}
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="cart__footer elementor-element elementor-element-cart-footer">
+            <div class="cart__actions">
+              <div class="coupon">
+                <label for="coupon_code" class="screen-reader-text">{{ 'sections.cart.coupon.label' | t | default: 'Coupon:' }}</label>
+                <input type="text" name="discount" id="coupon_code" class="input-text" placeholder="{{ 'sections.cart.coupon.placeholder' | t | default: 'Coupon code' }}" value="">
+                <button type="button" name="apply_coupon" class="button" value="{{ 'sections.cart.coupon.apply' | t | default: 'Apply coupon' }}">{{ 'sections.cart.coupon.apply' | t | default: 'Apply coupon' }}</button>
+              </div>
+              
+              <button type="submit" name="update_cart" class="button" value="{{ 'cart.general.update' | t | default: 'Update cart' }}">{{ 'cart.general.update' | t | default: 'Update cart' }}</button>
             </div>
             
-            <div class="cart__item-details">
-              <h3 class="cart__item-title">
-                <a href="{{ item.url }}">{{ item.product.title | escape }}</a>
-              </h3>
-              {%- if item.variant.title != 'Default Title' -%}
-                <p class="cart__item-variant">{{ item.variant.title }}</p>
-              {%- endif -%}
-              
-              <div class="cart__item-price">{{ item.final_line_price | money }}</div>
-              
-              <div class="cart__item-quantity">
-                <label for="quantity-{{ item.key }}" class="visually-hidden">{{ 'products.product.quantity.label' | t }}</label>
-                <input
-                  type="number"
-                  id="quantity-{{ item.key }}"
-                  name="updates[{{ item.key }}]"
-                  value="{{ item.quantity }}"
-                  min="0"
-                  data-cart-item-quantity="{{ item.key }}"
-                >
-                <button type="button" data-cart-item-remove="{{ item.key }}" class="cart__item-remove">
-                  {{ 'cart.general.remove' | t | default: 'Remove' }}
-                </button>
+            <div class="cart-collaterals">
+              <div class="cart_totals">
+                <h2>{{ 'sections.cart.totals.title' | t | default: 'Cart totals' }}</h2>
+                
+                <table cellspacing="0" class="shop_table shop_table_responsive">
+                  <tbody>
+                    <tr class="cart-subtotal">
+                      <th>{{ 'sections.cart.subtotal' | t | default: 'Subtotal' }}</th>
+                      <td data-title="{{ 'sections.cart.subtotal' | t | default: 'Subtotal' }}">
+                        <span class="woocommerce-Price-amount amount">
+                          <bdi>{{ cart.total_price | money }}</bdi>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="order-total">
+                      <th>{{ 'sections.cart.total' | t | default: 'Total' }}</th>
+                      <td data-title="{{ 'sections.cart.total' | t | default: 'Total' }}">
+                        <strong>
+                          <span class="woocommerce-Price-amount amount">
+                            <bdi>{{ cart.total_price | money }}</bdi>
+                          </span>
+                        </strong>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+                
+                <div class="wc-proceed-to-checkout">
+                  <a href="/checkout" class="checkout-button button alt wc-forward">
+                    {{ 'sections.cart.checkout' | t | default: 'Proceed to checkout' }}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        {%- endfor -%}
-      </div>
-      
-      <div class="cart__footer">
-        <div class="cart__subtotal">
-          <span>{{ 'sections.cart.subtotal' | t | default: 'Subtotal' }}</span>
-          <span>{{ cart.total_price | money }}</span>
+        </form>
+      {%- else -%}
+        <div class="cart__empty elementor-element elementor-element-cart-empty">
+          <div class="elementor-widget-container">
+            <p class="cart-empty woocommerce-info">{{ 'sections.cart.empty' | t | default: 'Your cart is currently empty.' }}</p>
+            <p class="return-to-shop">
+              <a class="button wc-backward" href="{{ routes.all_products_collection_url }}">
+                {{ 'general.continue_shopping' | t | default: 'Return to shop' }}
+              </a>
+            </p>
+          </div>
         </div>
-        
-        <button type="submit" name="update" class="button">{{ 'cart.general.update' | t | default: 'Update cart' }}</button>
-        <button type="submit" name="checkout" class="button button--primary">{{ 'sections.cart.checkout' | t | default: 'Checkout' }}</button>
-      </div>
-    </form>
-  {%- else -%}
-    <div class="cart__empty">
-      <p>{{ 'sections.cart.empty' | t | default: 'Your cart is empty' }}</p>
-      <a href="{{ routes.all_products_collection_url }}" class="button">
-        {{ 'general.continue_shopping' | t | default: 'Continue shopping' }}
-      </a>
+      {%- endif -%}
     </div>
-  {%- endif -%}
+  </div>
 </div>
+
+<style>
+.cart-page {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cart-page .elementor-heading-title {
+  font-family: "OAXACA", Sans-serif;
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.woocommerce-cart-form__contents {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.woocommerce-cart-form__contents thead th {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0;
+  font-weight: 600;
+  font-family: "OAXACA", Sans-serif;
+}
+
+.woocommerce-cart-form__contents tbody td {
+  padding: 20px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+
+.woocommerce-cart-form__contents .product-thumbnail img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.woocommerce-cart-form__contents .product-name a {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.woocommerce-cart-form__contents .product-name a:hover {
+  text-decoration: underline;
+}
+
+.woocommerce-cart-form__contents .quantity input {
+  width: 80px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.woocommerce-cart-form__contents .product-remove .remove {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 5px 10px;
+  line-height: 1;
+}
+
+.woocommerce-cart-form__contents .product-remove .remove:hover {
+  color: #d32f2f;
+}
+
+.cart__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.cart__actions {
+  flex: 1;
+  min-width: 300px;
+}
+
+.cart__actions .coupon {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cart__actions .coupon input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.cart-collaterals {
+  flex: 0 0 350px;
+}
+
+.cart_totals {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.cart_totals h2 {
+  font-family: "OAXACA", Sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cart_totals table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.cart_totals table th,
+.cart_totals table td {
+  padding: 10px 0;
+  text-align: left;
+}
+
+.cart_totals table th {
+  font-weight: 600;
+}
+
+.cart_totals .order-total th,
+.cart_totals .order-total td {
+  border-top: 2px solid #e0e0e0;
+  padding-top: 15px;
+  font-size: 18px;
+}
+
+.wc-proceed-to-checkout {
+  margin-top: 20px;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--e-global-color-text, #333);
+  color: var(--e-global-color-secondary, #fff);
+  border: none;
+  border-radius: 100px;
+  font-family: "OAXACA", Sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.checkout-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.cart__empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cart-empty {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.return-to-shop .button {
+  padding: 12px 30px;
+  background-color: var(--e-global-color-text, #333);
+  color: var(--e-global-color-secondary, #fff);
+  border-radius: 100px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "OAXACA", Sans-serif;
+}
+
+@media (max-width: 768px) {
+  .woocommerce-cart-form__contents thead {
+    display: none;
+  }
+  
+  .woocommerce-cart-form__contents tbody td {
+    display: block;
+    padding: 10px 0;
+    border-bottom: none;
+  }
+  
+  .woocommerce-cart-form__contents tbody td:before {
+    content: attr(data-title) ": ";
+    font-weight: 600;
+    display: inline-block;
+    width: 100px;
+  }
+  
+  .woocommerce-cart-form__contents .product-thumbnail {
+    text-align: center;
+  }
+  
+  .cart__footer {
+    flex-direction: column;
+  }
+  
+  .cart-collaterals {
+    flex: 1;
+  }
+}
+</style>
+
+{%- comment -%} Cart Page JavaScript {%- endcomment -%}
+<script src="{{ 'cart.js' | asset_url }}" defer></script>
+
 
