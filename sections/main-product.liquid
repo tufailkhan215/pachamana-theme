@@ -337,7 +337,49 @@
 				</div>
 				<div class="elementor-element elementor-element-51514396 elementor-widget elementor-widget-woocommerce-product-price" data-id="51514396" data-element_type="widget" data-widget_type="woocommerce-product-price.default">
 				<div class="elementor-widget-container">
-					<p class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>50.00</bdi></span><small class="wcsatt-sub-options"> <span class="wcsatt-dash">—</span> or subscribe and save </small> <span class="wcsatt-sub-discount">15%</span><small></small></p>
+					{%- comment -%} Dynamic Product Price - WooCommerce Style {%- endcomment -%}
+					<p class="price">
+						{%- if product.price_varies -%}
+							{%- comment -%} Variable product - show price range {%- endcomment -%}
+							<span class="woocommerce-Price-amount amount" aria-hidden="true">
+								<bdi>{{ product.price_min | money }}</bdi>
+							</span>
+							<span aria-hidden="true">–</span>
+							<span class="woocommerce-Price-amount amount" aria-hidden="true">
+								<bdi>{{ product.price_max | money }}</bdi>
+							</span>
+							<span class="screen-reader-text">Price range: {{ product.price_min | money }} through {{ product.price_max | money }}</span>
+						{%- else -%}
+							{%- comment -%} Simple product or single variant - show single price {%- endcomment -%}
+							{%- if product.compare_at_price > product.price -%}
+								{%- comment -%} Product is on sale {%- endcomment -%}
+								<del aria-hidden="true">
+									<span class="woocommerce-Price-amount amount">
+										<bdi>{{ product.compare_at_price | money }}</bdi>
+									</span>
+								</del>
+								<ins aria-hidden="true">
+									<span class="woocommerce-Price-amount amount">
+										<bdi>{{ product.price | money }}</bdi>
+									</span>
+								</ins>
+								<span class="screen-reader-text">Original price was: {{ product.compare_at_price | money }}. Current price is: {{ product.price | money }}.</span>
+							{%- else -%}
+								{%- comment -%} Regular price {%- endcomment -%}
+								<span class="woocommerce-Price-amount amount">
+									<bdi>{{ product.price | money }}</bdi>
+								</span>
+							{%- endif -%}
+						{%- endif -%}
+						{%- comment -%} Subscription options - check for subscription metafield or app {%- endcomment -%}
+						{%- if product.metafields.custom.subscription_discount != blank or product.metafields.my_fields.subscription_discount != blank -%}
+							{%- assign subscription_discount = product.metafields.custom.subscription_discount | default: product.metafields.my_fields.subscription_discount -%}
+							<small class="wcsatt-sub-options">
+								<span class="wcsatt-dash">—</span> or subscribe and save
+							</small>
+							<span class="wcsatt-sub-discount">{{ subscription_discount }}{% if subscription_discount contains '%' %}{% else %}%{% endif %}</span>
+						{%- endif -%}
+					</p>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-7db38096 elementor-add-to-cart--layout-auto elementor-add-to-cart--align-justify e-add-to-cart--show-quantity-yes elementor-widget elementor-widget-woocommerce-product-add-to-cart" data-id="7db38096" data-element_type="widget" data-widget_type="woocommerce-product-add-to-cart.default">
