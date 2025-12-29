@@ -231,15 +231,16 @@
 				<div class="elementor-widget-container">
 					{%- comment -%} Product short description - Check metafield first, then extract from description {%- endcomment -%}
 					{%- liquid
-						assign short_description = ''
+						assign short_description_metafield = blank
+						assign short_description_fallback = ''
 						comment
 							Priority 1: Check for short_description metafield (common namespaces: custom, my_fields)
-							You can create this metafield in Shopify Admin: Settings > Custom Data > Products
+							Use metafield_tag filter for rich text metafields to render JSON as HTML
 						endcomment
 						if product.metafields.custom.short_description != blank
-							assign short_description = product.metafields.custom.short_description
+							assign short_description_metafield = product.metafields.custom.short_description
 						elsif product.metafields.my_fields.short_description != blank
-							assign short_description = product.metafields.my_fields.short_description
+							assign short_description_metafield = product.metafields.my_fields.short_description
 						elsif product.description != blank
 							comment
 								Priority 2: Extract first paragraph from description
@@ -252,16 +253,20 @@
 								endcomment
 								assign first_sentence = desc_stripped | split: '.' | first
 								if first_sentence != blank and first_sentence.size > 10
-									assign short_description = first_sentence | append: '.'
+									assign short_description_fallback = first_sentence | append: '.'
 								else
-									assign short_description = desc_stripped | truncate: 150
+									assign short_description_fallback = desc_stripped | truncate: 150
 								endif
 							endif
 						endif
 					-%}
-					{%- if short_description != blank -%}
+					{%- if short_description_metafield != blank -%}
 						<div class="woocommerce-product-details__short-description">
-							<p>{{ short_description }}</p>
+							{{ short_description_metafield | metafield_tag }}
+						</div>
+					{%- elsif short_description_fallback != blank -%}
+						<div class="woocommerce-product-details__short-description">
+							<p>{{ short_description_fallback }}</p>
 						</div>
 					{%- endif -%}
 				</div>
