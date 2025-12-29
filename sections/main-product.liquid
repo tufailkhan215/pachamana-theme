@@ -1,87 +1,6 @@
 {%- comment -%}
   Main product section
 {%- endcomment -%}
-{%- comment -%}
-<div class="product">
-  <div class="product__media">
-    {%- if product.featured_media -%}
-      <div class="product__media-gallery">
-        {%- for media in product.media -%}
-          <div class="product__media-item">
-            {%- case media.media_type -%}
-              {%- when 'image' -%}
-                <img
-                  src="{{ media | image_url: width: 1200 }}"
-                  alt="{{ media.alt | escape }}"
-                  loading="lazy"
-                  width="{{ media.width }}"
-                  height="{{ media.height }}"
-                >
-              {%- when 'video' -%}
-                {{ media | video_tag: controls: true }}
-              {%- when 'external_video' -%}
-                {{ media | external_video_tag }}
-              {%- when 'model' -%}
-                {{ media | model_viewer_tag }}
-            {%- endcase -%}
-          </div>
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
-  </div>
-  
-  <div class="product__info">
-    {% render 'breadcrumbs' %}
-    
-    <h1 class="product__title">{{ product.title | escape }}</h1>
-    
-    <div class="product__price">
-      {% render 'price', product: product %}
-    </div>
-    
-    <div class="product__description">
-      {{ product.description }}
-    </div>
-    
-    {%- form 'product', product, id: 'product-form' -%}
-      {%- unless product.has_only_default_variant -%}
-        <div class="product__variants">
-          {%- for option in product.options_with_values -%}
-            <div class="product__option">
-              <label for="option-{{ forloop.index0 }}">{{ option.name }}</label>
-              <select name="options[{{ option.name | escape }}]" id="option-{{ forloop.index0 }}">
-                {%- for value in option.values -%}
-                  <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>
-                    {{ value }}
-                  </option>
-                {%- endfor -%}
-              </select>
-            </div>
-          {%- endfor -%}
-        </div>
-      {%- endunless -%}
-      
-      <div class="product__quantity">
-        <label for="quantity">{{ 'products.product.quantity.label' | t }}</label>
-        <input type="number" id="quantity" name="quantity" value="1" min="1">
-      </div>
-      
-      <button type="submit" name="add" class="product__add-to-cart button button--primary" {% unless product.available %}disabled{% endunless %}>
-        {%- if product.available -%}
-          {{ 'products.product.add_to_cart' | t | default: 'Add to cart' }}
-        {%- else -%}
-          {{ 'products.product.sold_out' | t | default: 'Sold out' }}
-        {%- endif -%}
-      </button>
-    {%- endform -%}
-    
-    {% render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_image %}
-  </div>
-</div>
-{%- endcomment -%}
-{%- comment -%}
-  Main product tf
-{%- endcomment -%}
 <div data-elementor-type="product" data-elementor-id="454" class="elementor elementor-454 elementor-location-single post-283 product type-product status-publish has-post-thumbnail product_cat-cacao has-subscription-plans first instock taxable shipping-taxable purchasable product-type-simple product elementor-motion-effects-parent" data-elementor-post-type="elementor_library">
 			<div class="elementor-element elementor-element-f6b00ca e-flex e-con-boxed e-con e-parent elementor-motion-effects-element elementor-motion-effects-element-type-background e-lazyloaded" data-id="f6b00ca" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile_extra&quot;,&quot;mobile&quot;]}" style="--e-transform-transition-duration: 100ms;"><div class="elementor-motion-effects-container"><div class="elementor-motion-effects-layer" style="width: 100%; height: 140%; --translateY: -112.66392px; transform: translateY(var(--translateY));"></div></div>
 					<div class="e-con-inner">
@@ -387,7 +306,10 @@
 					
 		<div class="elementor-add-to-cart elementor-product-{% if product.has_only_default_variant %}simple{% else %}variable{% endif %}">
 			{%- comment -%} Shopify Product Form with Quantity and Add to Cart {%- endcomment -%}
-			{%- form 'product', product, id: 'product-form-' | append: product.id -%}
+			{%- liquid
+				assign form_id = 'product-form-' | append: product.id
+			-%}
+			{%- form 'product', product, id: form_id -%}
 				{%- comment -%} Variant Selection for Variable Products {%- endcomment -%}
 				{%- unless product.has_only_default_variant -%}
 					<div class="product-variants">
