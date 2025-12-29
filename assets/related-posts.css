@@ -1,0 +1,13 @@
+/* Hide Jetpack Related Posts on product pages */
+#jp-relatedposts {
+    display: none !important;
+    padding-top: 1em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+
+.jp-relatedposts {
+    display: none !important;
+}
+
