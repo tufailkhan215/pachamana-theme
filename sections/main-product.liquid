@@ -277,18 +277,7 @@
 					{%- liquid
 						assign icon_list_metafield = blank
 						assign has_metafield_items = false
-						comment
-							Check for icon_list metafield in common namespaces
-							Format: Each line/item should be "icon_class|text"
-							Example: "e-fas-flask|Tested for herbicides and Pesticides"
-							Supported icon classes: e-fas-flask, e-fas-radiation, e-fas-leaf, e-fas-seedling, e-fas-handshake
-							
-							Metafield Setup:
-							- Type: List of single line text
-							- Namespace: custom or my_fields
-							- Key: icon_list
-							- Each item format: "icon_class|text"
-						endcomment
+						
 						if product.metafields.custom.icon_list != blank
 							assign icon_list_metafield = product.metafields.custom.icon_list
 							comment
