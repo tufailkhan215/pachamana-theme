@@ -277,9 +277,6 @@
 					{%- liquid
 						assign icon_list_metafield = blank
 						assign has_metafield_items = false
-						assign default_icon_list = 'e-fas-flask|Tested for herbicides and Pesticides' | append: '
-' | append: 'e-fas-radiation|Tested for Heavy Metals' | append: '
-' | append: 'e-fas-leaf|Vegan, Non-Gmo, Keto, Soy-Free, Sugar-Free, Gluten-Free'
 						comment
 							Check for icon_list metafield in common namespaces
 							Format: Each line/item should be "icon_class|text"
@@ -308,31 +305,23 @@
 							endif
 						endif
 					-%}
-					<ul class="elementor-icon-list-items">
-						{%- if has_metafield_items -%}
-							{%- comment -%} Handle list metafield - loop through values {%- endcomment -%}
-							{%- assign rendered_count = 0 -%}
-							{%- for item in icon_list_metafield.value -%}
-								{%- assign item_parts = item | split: '|' -%}
-								{%- if item_parts.size >= 2 -%}
-									{%- assign icon_class = item_parts[0] | strip -%}
-									{%- assign icon_text = item_parts[1] | strip -%}
-									{%- if icon_class != blank and icon_text != blank -%}
-										<li class="elementor-icon-list-item">
-											<span class="elementor-icon-list-icon">
-												{% render 'icon-svg', icon_class: icon_class %}
-											</span>
-											<span class="elementor-icon-list-text">{{ icon_text }}</span>
-										</li>
-										{%- assign rendered_count = rendered_count | plus: 1 -%}
-									{%- endif -%}
+					{%- if has_metafield_items -%}
+						{%- comment -%} Handle list metafield - loop through values {%- endcomment -%}
+						{%- assign rendered_count = 0 -%}
+						{%- for item in icon_list_metafield.value -%}
+							{%- assign item_parts = item | split: '|' -%}
+							{%- if item_parts.size >= 2 -%}
+								{%- assign icon_class = item_parts[0] | strip -%}
+								{%- assign icon_text = item_parts[1] | strip -%}
+								{%- if icon_class != blank and icon_text != blank -%}
+									{%- assign rendered_count = rendered_count | plus: 1 -%}
 								{%- endif -%}
-							{%- endfor -%}
-							{%- comment -%} If no items were rendered from metafield, show defaults {%- endcomment -%}
-							{%- if rendered_count == 0 -%}
-								{%- assign default_items = default_icon_list | split: '
-' -%}
-								{%- for item in default_items -%}
+							{%- endif -%}
+						{%- endfor -%}
+						{%- comment -%} Only show icon list if items were rendered {%- endcomment -%}
+						{%- if rendered_count > 0 -%}
+							<ul class="elementor-icon-list-items">
+								{%- for item in icon_list_metafield.value -%}
 									{%- assign item_parts = item | split: '|' -%}
 									{%- if item_parts.size >= 2 -%}
 										{%- assign icon_class = item_parts[0] | strip -%}
@@ -347,28 +336,9 @@
 										{%- endif -%}
 									{%- endif -%}
 								{%- endfor -%}
-							{%- endif -%}
-						{%- else -%}
-							{%- comment -%} Use default icon list when metafield is not set or empty {%- endcomment -%}
-							{%- assign default_items = default_icon_list | split: '
-' -%}
-							{%- for item in default_items -%}
-								{%- assign item_parts = item | split: '|' -%}
-								{%- if item_parts.size >= 2 -%}
-									{%- assign icon_class = item_parts[0] | strip -%}
-									{%- assign icon_text = item_parts[1] | strip -%}
-									{%- if icon_class != blank and icon_text != blank -%}
-										<li class="elementor-icon-list-item">
-											<span class="elementor-icon-list-icon">
-												{% render 'icon-svg', icon_class: icon_class %}
-											</span>
-											<span class="elementor-icon-list-text">{{ icon_text }}</span>
-										</li>
-									{%- endif -%}
-								{%- endif -%}
-							{%- endfor -%}
+							</ul>
 						{%- endif -%}
-					</ul>
+					{%- endif -%}
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-69c160a elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="69c160a" data-element_type="widget" data-widget_type="divider.default">
