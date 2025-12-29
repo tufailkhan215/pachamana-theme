@@ -319,7 +319,7 @@
 								<select 
 									id="option-{{ product.id }}-{{ forloop.index0 }}" 
 									name="options[{{ option.name | escape }}]"
-									class="product-option-select"
+									class="product-option-select prodselect"
 									data-option-index="{{ forloop.index0 }}"
 								>
 									{%- for value in option.values -%}

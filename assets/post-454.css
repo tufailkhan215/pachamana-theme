@@ -54,6 +54,18 @@ color: #5c402f;
       font-family: 'Oaxaca', sans-serif;
 color: #5c402f;
     
+}
+.prodselect{
+  font-family: var(--e-global-typography-text-font-family), Sans-serif;
+    font-weight: var(--e-global-typography-text-font-weight);
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 5px;
+    color: var(--e-global-color-secondary);
+    background-color: #f9f2ef91;
+    border-color: var(--e-global-color-text);
+    transition: all .2s;
+    margin-bottom: 7px;
 }/* End custom CSS */
 /* Start custom CSS for container, class: .elementor-element-3454e8e1 */#ppc-button-ppcp-gateway {
   margin-top: 10px;}
@@ -79,11 +91,11 @@ color: #5c402f;
 	font-style: normal;
 	font-weight: normal;
 	font-display: auto;
-	src: url('https://pachamana.com/wp-content/uploads/2024/01/OaxacaRegular.eot');
-	src: url('https://pachamana.com/wp-content/uploads/2024/01/OaxacaRegular.eot?#iefix') format('embedded-opentype'),
+	src: url('OaxacaRegular.eot');
+	src: url('OaxacaRegular.eot?#iefix') format('embedded-opentype'),
 		url("OaxacaRegular.woff2") format('woff2'),
-		url('https://pachamana.com/wp-content/uploads/2024/01/Oaxaca-2.woff') format('woff'),
-		url('https://pachamana.com/wp-content/uploads/2024/01/OaxacaRegular.ttf') format('truetype'),
+		url('Oaxaca-2.woff') format('woff'),
+		url('OaxacaRegular.ttf') format('truetype'),
 		url("OaxacaRegular.svg") format('svg');
 }
 /* End Custom Fonts CSS */
