@@ -391,10 +391,11 @@
 					</button>
 				</div>
 			{%- endform -%}
-			{%- comment -%} Add 'cart' class to the form element {%- endcomment -%}
+			{%- comment -%} Add 'cart' class to form {%- endcomment -%}
 			<script>
 				(function() {
-					var form = document.getElementById('{{ form_id }}');
+					var formId = '{{ form_id }}';
+					var form = document.getElementById(formId);
 					if (form && !form.classList.contains('cart')) {
 						form.classList.add('cart');
 					}

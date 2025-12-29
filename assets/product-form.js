@@ -44,20 +44,57 @@
     });
   }
 
-  // Handle product form submission
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize variant selection
-    initializeVariantSelection();
-    // Find all product forms (Shopify forms have action="/cart/add")
-    const productForms = document.querySelectorAll('form[action="/cart/add"], form[action*="/cart/add"]');
+  // Attach form handlers immediately and on DOM ready
+  function attachFormHandlers() {
+    // Find all possible product forms - check multiple selectors
+    let productForms = document.querySelectorAll('form[action*="/cart/add"]');
+    
+    // Also check for forms with product-form ID pattern
+    const productFormById = document.querySelectorAll('form[id^="product-form"]');
+    productFormById.forEach(function(form) {
+      if (!Array.from(productForms).includes(form)) {
+        productForms = Array.from(productForms).concat([form]);
+      }
+    });
+    
+    // Check for forms with cart class
+    const cartForms = document.querySelectorAll('form.cart');
+    cartForms.forEach(function(form) {
+      if (!Array.from(productForms).includes(form)) {
+        productForms = Array.from(productForms).concat([form]);
+      }
+    });
+    
+    // Convert to array if needed
+    if (productForms.length === undefined) {
+      productForms = Array.from(productForms);
+    }
     
     productForms.forEach(function(form) {
       // Skip if form already has a handler
       if (form.dataset.ajaxCart === 'true') return;
+      
+      // Check if this is actually a product form (has add button or quantity input)
+      const hasAddButton = form.querySelector('button[type="submit"][name="add"]');
+      const hasQuantity = form.querySelector('input[name="quantity"]');
+      const hasProductId = form.querySelector('input[name="id"]') || form.querySelector('select[name^="options"]');
+      
+      if (!hasAddButton && !hasQuantity && !hasProductId) {
+        return; // Not a product form
+      }
+      
       form.dataset.ajaxCart = 'true';
       
+      // Override form action to ensure it goes to /cart/add (not /cart/add.js in action, we use that in fetch)
+      if (!form.action || form.action.indexOf('/cart/add') === -1) {
+        form.action = '/cart/add';
+      }
+      
+      // Attach submit handler with capture phase for early interception
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
         
         const formData = new FormData(form);
         const submitButton = form.querySelector('button[type="submit"][name="add"]');
@@ -119,9 +156,33 @@
         }
         
         submitForm(formData, form, submitButton, originalText, originalDisabled);
-      });
+      }, true); // Use capture phase for early interception
     });
-  });
+  }
+
+  // Run immediately if DOM is already loaded, otherwise wait
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeVariantSelection();
+      attachFormHandlers();
+    });
+  } else {
+    // DOM is already loaded
+    initializeVariantSelection();
+    attachFormHandlers();
+  }
+
+  // Also watch for dynamically added forms
+  if (typeof MutationObserver !== 'undefined') {
+    const observer = new MutationObserver(function(mutations) {
+      attachFormHandlers();
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
 
   // Submit form to cart
   function submitForm(formData, form, submitButton, originalText, originalDisabled) {
