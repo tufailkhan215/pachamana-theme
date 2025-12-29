@@ -154,6 +154,10 @@
   {%- if template.name == 'page' -%}
     {{ 'post-82.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
+  {%- comment -%} Load post-454.css for product pages {%- endcomment -%}
+  {%- if template.name == 'product' -%}
+    {{ 'post-454.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
   {%- comment -%} Load post-565.css for collection/product archive pages {%- endcomment -%}
   {%- if template.name == 'collection' or template.name == 'list-collections' -%}
     {{ 'post-565.css' | asset_url | stylesheet_tag }}
