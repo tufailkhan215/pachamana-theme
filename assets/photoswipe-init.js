@@ -101,12 +101,12 @@
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
       
-      // Find which image was clicked (if clicking on an image)
+      // Find current active slide
       var clickedIndex = 0;
-      var clickedImage = e.target.closest('.woocommerce-product-gallery__image');
-      if (clickedImage) {
+      var activeImage = document.querySelector('.woocommerce-product-gallery__image.flex-active-slide');
+      if (activeImage) {
         var allImages = Array.from(document.querySelectorAll('.woocommerce-product-gallery__image'));
-        clickedIndex = allImages.indexOf(clickedImage);
+        clickedIndex = allImages.indexOf(activeImage);
         if (clickedIndex === -1) clickedIndex = 0;
       }
       

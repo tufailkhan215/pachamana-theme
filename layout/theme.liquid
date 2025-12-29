@@ -183,6 +183,8 @@
     <script src="https://c0.wp.com/p/woocommerce/10.3.7/assets/js/photoswipe/photoswipe.min.js" defer></script>
     <script src="https://c0.wp.com/p/woocommerce/10.3.7/assets/js/photoswipe/photoswipe-ui-default.min.js" defer></script>
     <script src="{{ 'photoswipe-init.js' | asset_url }}" defer></script>
+    {%- comment -%} Product Gallery JavaScript - Handles slider, thumbnails, and zoom {%- endcomment -%}
+    <script src="{{ 'product-gallery.js' | asset_url }}" defer></script>
   {%- endif -%}
   {{ 'woocommerce-notices.min.css' | asset_url | stylesheet_tag }}
   {{ 'wc-blocks.css' | asset_url | stylesheet_tag }}
