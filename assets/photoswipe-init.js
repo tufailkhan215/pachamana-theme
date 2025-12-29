@@ -135,6 +135,49 @@
       };
       
       var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+      
+      // Add cleanup handler when PhotoSwipe closes
+      gallery.listen('close', function() {
+        // PhotoSwipe will handle cleanup, but ensure images are removed
+        setTimeout(function() {
+          // Clean up any remaining images in zoom-wraps
+          var zoomWraps = pswpElement.querySelectorAll('.pswp__zoom-wrap');
+          zoomWraps.forEach(function(wrap) {
+            if (wrap) {
+              wrap.innerHTML = '';
+              wrap.removeAttribute('style');
+            }
+          });
+          
+          // Clean up items
+          var items = pswpElement.querySelectorAll('.pswp__item');
+          items.forEach(function(item) {
+            if (item) {
+              item.innerHTML = '';
+            }
+          });
+        }, 400); // Wait for close animation to complete
+      });
+      
+      // Also listen for destroy event for complete cleanup
+      gallery.listen('destroy', function() {
+        // Final cleanup - remove all images and reset styles
+        var zoomWraps = pswpElement.querySelectorAll('.pswp__zoom-wrap');
+        zoomWraps.forEach(function(wrap) {
+          if (wrap) {
+            wrap.innerHTML = '';
+            wrap.removeAttribute('style');
+          }
+        });
+        
+        var items = pswpElement.querySelectorAll('.pswp__item');
+        items.forEach(function(item) {
+          if (item) {
+            item.innerHTML = '';
+          }
+        });
+      });
+      
       gallery.init();
     });
     
@@ -163,6 +206,49 @@
         };
         
         var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        
+        // Add cleanup handler when PhotoSwipe closes
+        gallery.listen('close', function() {
+          // PhotoSwipe will handle cleanup, but ensure images are removed
+          setTimeout(function() {
+            // Clean up any remaining images in zoom-wraps
+            var zoomWraps = pswpElement.querySelectorAll('.pswp__zoom-wrap');
+            zoomWraps.forEach(function(wrap) {
+              if (wrap) {
+                wrap.innerHTML = '';
+                wrap.removeAttribute('style');
+              }
+            });
+            
+            // Clean up items
+            var items = pswpElement.querySelectorAll('.pswp__item');
+            items.forEach(function(item) {
+              if (item) {
+                item.innerHTML = '';
+              }
+            });
+          }, 400); // Wait for close animation to complete
+        });
+        
+        // Also listen for destroy event for complete cleanup
+        gallery.listen('destroy', function() {
+          // Final cleanup - remove all images and reset styles
+          var zoomWraps = pswpElement.querySelectorAll('.pswp__zoom-wrap');
+          zoomWraps.forEach(function(wrap) {
+            if (wrap) {
+              wrap.innerHTML = '';
+              wrap.removeAttribute('style');
+            }
+          });
+          
+          var items = pswpElement.querySelectorAll('.pswp__item');
+          items.forEach(function(item) {
+            if (item) {
+              item.innerHTML = '';
+            }
+          });
+        });
+        
         gallery.init();
       });
     });
