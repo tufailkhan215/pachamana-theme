@@ -277,9 +277,9 @@
 					{%- liquid
 						assign icon_list_metafield = blank
 						assign has_metafield_items = false
-						assign default_icon_list = 'e-fas-flask|Tested for herbicides and Pesticides
-e-fas-radiation|Tested for Heavy Metals
-e-fas-leaf|Vegan, Non-Gmo, Keto, Soy-Free, Sugar-Free, Gluten-Free'
+						assign default_icon_list = 'e-fas-flask|Tested for herbicides and Pesticides' | append: '
+' | append: 'e-fas-radiation|Tested for Heavy Metals' | append: '
+' | append: 'e-fas-leaf|Vegan, Non-Gmo, Keto, Soy-Free, Sugar-Free, Gluten-Free'
 						comment
 							Check for icon_list metafield in common namespaces
 							Format: Each line/item should be "icon_class|text"
