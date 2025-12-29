@@ -179,6 +179,10 @@
   {%- if template.name == 'product' -%}
     {{ 'post-454.css' | asset_url | stylesheet_tag }}
     {{ 'photoswipe.min.css' | asset_url | stylesheet_tag }}
+    {%- comment -%} PhotoSwipe JavaScript - Load from CDN if local files don't exist {%- endcomment -%}
+    <script src="https://c0.wp.com/p/woocommerce/10.3.7/assets/js/photoswipe/photoswipe.min.js" defer></script>
+    <script src="https://c0.wp.com/p/woocommerce/10.3.7/assets/js/photoswipe/photoswipe-ui-default.min.js" defer></script>
+    <script src="{{ 'photoswipe-init.js' | asset_url }}" defer></script>
   {%- endif -%}
   {{ 'woocommerce-notices.min.css' | asset_url | stylesheet_tag }}
   {{ 'wc-blocks.css' | asset_url | stylesheet_tag }}
