@@ -276,6 +276,7 @@
 					{%- comment -%} Dynamic Icon List from Metafield {%- endcomment -%}
 					{%- liquid
 						assign icon_list_metafield = blank
+						assign has_metafield_items = false
 						assign default_icon_list = 'e-fas-flask|Tested for herbicides and Pesticides
 e-fas-radiation|Tested for Heavy Metals
 e-fas-leaf|Vegan, Non-Gmo, Keto, Soy-Free, Sugar-Free, Gluten-Free'
@@ -293,13 +294,24 @@ e-fas-leaf|Vegan, Non-Gmo, Keto, Soy-Free, Sugar-Free, Gluten-Free'
 						endcomment
 						if product.metafields.custom.icon_list != blank
 							assign icon_list_metafield = product.metafields.custom.icon_list
+							comment
+								Check if metafield has actual values (not just exists)
+								For list metafields, check if value array has items
+							endcomment
+							if icon_list_metafield.value.size > 0
+								assign has_metafield_items = true
+							endif
 						elsif product.metafields.my_fields.icon_list != blank
 							assign icon_list_metafield = product.metafields.my_fields.icon_list
+							if icon_list_metafield.value.size > 0
+								assign has_metafield_items = true
+							endif
 						endif
 					-%}
 					<ul class="elementor-icon-list-items">
-						{%- if icon_list_metafield != blank -%}
+						{%- if has_metafield_items -%}
 							{%- comment -%} Handle list metafield - loop through values {%- endcomment -%}
+							{%- assign rendered_count = 0 -%}
 							{%- for item in icon_list_metafield.value -%}
 								{%- assign item_parts = item | split: '|' -%}
 								{%- if item_parts.size >= 2 -%}
@@ -312,11 +324,32 @@ e-fas-leaf|Vegan, Non-Gmo, Keto, Soy-Free, Sugar-Free, Gluten-Free'
 											</span>
 											<span class="elementor-icon-list-text">{{ icon_text }}</span>
 										</li>
+										{%- assign rendered_count = rendered_count | plus: 1 -%}
 									{%- endif -%}
 								{%- endif -%}
 							{%- endfor -%}
+							{%- comment -%} If no items were rendered from metafield, show defaults {%- endcomment -%}
+							{%- if rendered_count == 0 -%}
+								{%- assign default_items = default_icon_list | split: '
+' -%}
+								{%- for item in default_items -%}
+									{%- assign item_parts = item | split: '|' -%}
+									{%- if item_parts.size >= 2 -%}
+										{%- assign icon_class = item_parts[0] | strip -%}
+										{%- assign icon_text = item_parts[1] | strip -%}
+										{%- if icon_class != blank and icon_text != blank -%}
+											<li class="elementor-icon-list-item">
+												<span class="elementor-icon-list-icon">
+													{% render 'icon-svg', icon_class: icon_class %}
+												</span>
+												<span class="elementor-icon-list-text">{{ icon_text }}</span>
+											</li>
+										{%- endif -%}
+									{%- endif -%}
+								{%- endfor -%}
+							{%- endif -%}
 						{%- else -%}
-							{%- comment -%} Use default icon list when metafield is not set {%- endcomment -%}
+							{%- comment -%} Use default icon list when metafield is not set or empty {%- endcomment -%}
 							{%- assign default_items = default_icon_list | split: '
 ' -%}
 							{%- for item in default_items -%}
