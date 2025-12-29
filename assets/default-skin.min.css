@@ -45,11 +45,8 @@
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.1),(-webkit-min-device-pixel-ratio:1.09375),(min-resolution:105dpi),(min-resolution:1.1dppx) {
-    /* PhotoSwipe 4.1.3 uses inline SVG data URIs in photoswipe.min.css, so SVG file not needed */
-    /* Icons are already embedded in the main CSS file */
     .pswp--svg .pswp__button,.pswp--svg .pswp__button--arrow--left:before,.pswp--svg .pswp__button--arrow--right:before {
-        /* Icons are handled by photoswipe.min.css with data URIs */
-        background-image: none;
+        background-image:url(default-skin.svg);
     }
 
     .pswp--svg .pswp__button--arrow--left,.pswp--svg .pswp__button--arrow--right {
