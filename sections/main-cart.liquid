@@ -432,7 +432,6 @@
 
 .woocommerce-cart-form__contents .product-name {
   min-width: 280px;
-  max-width: 400px;
   
 }
 
@@ -816,10 +815,10 @@
   
   /* Product Name - Full width with better spacing */
   .woocommerce-cart-form__contents .product-name {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 10px;
-    padding: 15px 0;
+    padding: 15px;
   }
 
   .woocommerce-cart-form__contents .product-name:before {
@@ -857,8 +856,8 @@
 
   /* Quantity - Full width with better controls */
   .woocommerce-cart-form__contents .product-quantity {
-    width: 100%;
-    padding: 15px 0;
+    width: 100% !important;
+    padding: 15px;
   }
 
   .woocommerce-cart-form__contents .product-quantity:before {
