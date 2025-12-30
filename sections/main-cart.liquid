@@ -61,7 +61,7 @@
       {%- if cart.item_count > 0 -%}
         <form action="{{ routes.cart_url }}" method="post" id="cart-form" class="woocommerce-cart-form">
           <div class="cart__items elementor-element elementor-element-cart-items">
-            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+            <table class=" cart woocommerce-cart-form__contents" cellspacing="0">
               <thead>
                 <tr>
                   <th class="product-thumbnail">{{ 'sections.cart.headings.product' | t | default: 'Product' }}</th>
