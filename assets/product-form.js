@@ -237,9 +237,7 @@
         submitButton.textContent = originalText;
       }
     });
-  });
-    });
-  });
+  }
 
   // Update cart count in header/navigation
   function updateCartCount() {
