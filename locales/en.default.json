@@ -33,14 +33,35 @@
     },
     "share": {
       "success_message": "Link copied to clipboard"
-    }
+    },
+    "continue_shopping": "Return to shop"
   },
   "sections": {
     "cart": {
       "title": "Cart",
       "cart_error": "There was an error while updating your cart. Please try again.",
       "cart_quantity_error_html": "You can only add [quantity] of this item to your cart.",
-      "cart_quantity_error": "You can only add {quantity} of this item to your cart."
+      "cart_quantity_error": "You can only add {quantity} of this item to your cart.",
+      "headings": {
+        "product": "Product",
+        "name": "Name",
+        "price": "Price",
+        "quantity": "Quantity",
+        "total": "Total",
+        "remove": "Remove"
+      },
+      "coupon": {
+        "label": "Coupon:",
+        "placeholder": "Coupon code",
+        "apply": "Apply coupon"
+      },
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "checkout": "Proceed to checkout",
+      "empty": "Your cart is currently empty.",
+      "totals": {
+        "title": "Cart totals"
+      }
     },
     "slideshow": {
       "pause_slideshow": "Pause slideshow",
@@ -54,6 +75,9 @@
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "value_unavailable": "{value} is unavailable",
+      "quantity": {
+        "label": "Quantity"
+      },
       "media": {
         "image_available": "Image {index}"
       },
@@ -75,7 +99,8 @@
   },
   "cart": {
     "general": {
-      "remove": "Remove"
+      "remove": "Remove",
+      "update": "Update cart"
     }
   },
   "collections": {
