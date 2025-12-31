@@ -267,7 +267,7 @@
       ],
       "settings": {
         "heading": "FEATURED PRODUCTS",
-        "collection": "frontpage",
+        "collection": "collection-temp",
         "products_to_show": 3
       }
     },
