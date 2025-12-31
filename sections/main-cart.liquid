@@ -570,28 +570,27 @@
 
 .woocommerce-cart-form__contents .product-remove .remove {
   background: #fff;
-  border: 2px solid #e8e8e8;
-  font-size: 22px;
-  color: #999;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 300;
-  margin: 0 auto;
+    border: 2px solid #e8e8e8;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: block;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: bold;
+    margin: auto;
+    vertical-align: middle;
 }
 
 .woocommerce-cart-form__contents .product-remove .remove:hover {
   color: #fff;
   background-color: #d32f2f;
   border-color: #d32f2f;
-  transform: rotate(90deg) scale(1.15);
+  transform: rotate(90deg) scale(1);
   box-shadow: 0 6px 16px rgba(211, 47, 47, 0.4);
 }
 
@@ -785,7 +784,7 @@
     justify-content: space-between;
     padding: 7px !important;
     border-bottom: none;
-    width: 100%;
+   background-color: transparent !important;
   }
 
   .woocommerce-cart-form__contents tbody td:last-child {
@@ -842,7 +841,7 @@
     gap: 6px;
     padding: 0;
     width: 40%;
-    min-width: 0;
+   min-width: 40%;
   }
 
   .woocommerce-cart-form__contents .product-name:before {
@@ -896,6 +895,7 @@
   /* Quantity - Compact controls */
   .woocommerce-cart-form__contents .product-quantity {
     padding: 6px 0;
+    width: 30% !important;
   }
 
   .woocommerce-cart-form__contents .product-quantity:before {
@@ -920,9 +920,8 @@
   .woocommerce-cart-form__contents .product-subtotal {
     font-size: 15px;
     justify-content: flex-end;
-    padding: 8px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    margin-top: 4px;
+   margin-top: 14px;
+        width: 40% !important;
   }
 
   .woocommerce-cart-form__contents .product-subtotal:before {
@@ -938,11 +937,8 @@
 
   /* Remove Button - Full width button */
   .woocommerce-cart-form__contents .product-remove {
-    width: 100%;
+    width: 30% !important;
     justify-content: center;
-    padding: 15px 0 0 0;
-    border-top: 1px solid #f5f5f5;
-    margin-top: 10px;
   }
 
   .woocommerce-cart-form__contents .product-remove:before {
