@@ -240,31 +240,6 @@
     },
     "section-featured-products": {
       "type": "section-featured-products",
-      "blocks": {
-        "product_xFakwx": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        },
-        "product_YmkLhP": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        },
-        "product_cAGBkd": {
-          "type": "product",
-          "settings": {
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_xFakwx",
-        "product_YmkLhP",
-        "product_cAGBkd"
-      ],
       "settings": {
         "heading": "FEATURED PRODUCTS",
         "collection": "collection-temp",
