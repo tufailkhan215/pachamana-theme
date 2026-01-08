@@ -1,6 +1,657 @@
+{% doc %}
+  @prompt
+    ADD A "NEW TO CACAO?" SECTION 
+    
+    NEW TO CEREMONIAL CACAO? 
+    What it is: Pure cacao in its whole form - nothing added or removed. Used for centuries by 
+    indigenous communities for heart-opening ceremony and daily wellness. 
+    Why Chuncho: Rare heirloom variety from Peru with complex fruit and nut notes. Higher in 
+    cacao butter. Smoother taste. More sustainable. 
+    How to choose: 
+    ● New to cacao? → Start with Maple Sweetened or Pure Ground 
+    ● Want convenience? → Try Single-Serve Packets 
+    ● Love wellness blends? → Explore Mushroom Vitality or Rose Vanilla 
+    [Shop All] or [Take Our Quiz] 
+    Why it works: Educates new visitors immediately and guides them to the right product. 
+    , background image or color for section
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-cacao-intro-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+    position: relative;
+    {% if block.settings.background_image %}
+      background-image: url('{{ block.settings.background_image | image_url: width: 2000 }}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    {% else %}
+      background-color: {{ block.settings.background_color }};
+    {% endif %}
+  }
+
+  .ai-cacao-intro__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity }};
+    pointer-events: none;
+  }
+
+  .ai-cacao-intro__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-cacao-intro__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ai-cacao-intro__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-cacao-intro__content-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .ai-cacao-intro__card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    padding: 32px;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    border: 1px solid {{ block.settings.card_border_color }};
+  }
+
+  .ai-cacao-intro__card-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+
+  .ai-cacao-intro__card-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-cacao-intro__guide-{{ ai_gen_id }} {
+    background-color: {{ block.settings.guide_background }};
+    padding: 32px;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    border: 1px solid {{ block.settings.card_border_color }};
+  }
+
+  .ai-cacao-intro__guide-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 20px;
+    font-weight: 600;
+  }
+
+  .ai-cacao-intro__guide-list-{{ ai_gen_id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-cacao-intro__guide-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+  }
+
+  .ai-cacao-intro__guide-bullet-{{ ai_gen_id }} {
+    width: 6px;
+    height: 6px;
+    background-color: {{ block.settings.bullet_color }};
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .ai-cacao-intro__guide-text-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-cacao-intro__guide-label-{{ ai_gen_id }} {
+    font-weight: 600;
+  }
+
+  .ai-cacao-intro__cta-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .ai-cacao-intro__button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .ai-cacao-intro__button--primary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.primary_button_bg }};
+    color: {{ block.settings.primary_button_text_color }};
+    border-color: {{ block.settings.primary_button_bg }};
+  }
+
+  .ai-cacao-intro__button--primary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.primary_button_hover_bg }};
+    border-color: {{ block.settings.primary_button_hover_bg }};
+  }
+
+  .ai-cacao-intro__button--secondary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.secondary_button_bg }};
+    color: {{ block.settings.secondary_button_text_color }};
+    border-color: {{ block.settings.secondary_button_border }};
+  }
+
+  .ai-cacao-intro__button--secondary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.secondary_button_hover_bg }};
+    border-color: {{ block.settings.secondary_button_hover_border }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-cacao-intro__content-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .ai-cacao-intro-{{ ai_gen_id }} {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .ai-cacao-intro__content-{{ ai_gen_id }} {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+{% endstyle %}
+
+<cacao-intro-{{ ai_gen_id }} class="ai-cacao-intro-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.background_image and block.settings.overlay_opacity > 0 %}
+    <div class="ai-cacao-intro__overlay-{{ ai_gen_id }}"></div>
+  {% endif %}
+  
+  <div class="ai-cacao-intro__container-{{ ai_gen_id }}">
+    <div class="ai-cacao-intro__header-{{ ai_gen_id }}">
+      {% if block.settings.title != blank %}
+        <h2 class="ai-cacao-intro__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+      {% endif %}
+    </div>
+
+    <div class="ai-cacao-intro__content-{{ ai_gen_id }}">
+      <div class="ai-cacao-intro__card-{{ ai_gen_id }}">
+        <h3 class="ai-cacao-intro__card-title-{{ ai_gen_id }}">{{ block.settings.what_title }}</h3>
+        <p class="ai-cacao-intro__card-text-{{ ai_gen_id }}">{{ block.settings.what_text }}</p>
+      </div>
+
+      <div class="ai-cacao-intro__card-{{ ai_gen_id }}">
+        <h3 class="ai-cacao-intro__card-title-{{ ai_gen_id }}">{{ block.settings.why_title }}</h3>
+        <p class="ai-cacao-intro__card-text-{{ ai_gen_id }}">{{ block.settings.why_text }}</p>
+      </div>
+
+      <div class="ai-cacao-intro__guide-{{ ai_gen_id }}">
+        <h3 class="ai-cacao-intro__guide-title-{{ ai_gen_id }}">{{ block.settings.guide_title }}</h3>
+        <ul class="ai-cacao-intro__guide-list-{{ ai_gen_id }}">
+          {% if block.settings.guide_item_1 != blank %}
+            <li class="ai-cacao-intro__guide-item-{{ ai_gen_id }}">
+              <span class="ai-cacao-intro__guide-bullet-{{ ai_gen_id }}"></span>
+              <span class="ai-cacao-intro__guide-text-{{ ai_gen_id }}">
+                <span class="ai-cacao-intro__guide-label-{{ ai_gen_id }}">{{ block.settings.guide_label_1 }}</span> {{ block.settings.guide_item_1 }}
+              </span>
+            </li>
+          {% endif %}
+          {% if block.settings.guide_item_2 != blank %}
+            <li class="ai-cacao-intro__guide-item-{{ ai_gen_id }}">
+              <span class="ai-cacao-intro__guide-bullet-{{ ai_gen_id }}"></span>
+              <span class="ai-cacao-intro__guide-text-{{ ai_gen_id }}">
+                <span class="ai-cacao-intro__guide-label-{{ ai_gen_id }}">{{ block.settings.guide_label_2 }}</span> {{ block.settings.guide_item_2 }}
+              </span>
+            </li>
+          {% endif %}
+          {% if block.settings.guide_item_3 != blank %}
+            <li class="ai-cacao-intro__guide-item-{{ ai_gen_id }}">
+              <span class="ai-cacao-intro__guide-bullet-{{ ai_gen_id }}"></span>
+              <span class="ai-cacao-intro__guide-text-{{ ai_gen_id }}">
+                <span class="ai-cacao-intro__guide-label-{{ ai_gen_id }}">{{ block.settings.guide_label_3 }}</span> {{ block.settings.guide_item_3 }}
+              </span>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="ai-cacao-intro__cta-{{ ai_gen_id }}">
+      {% if block.settings.primary_btn_text != blank %}
+        <a href="{{ block.settings.primary_btn_link }}" class="ai-cacao-intro__button-{{ ai_gen_id }} ai-cacao-intro__button--primary-{{ ai_gen_id }}">
+          {{ block.settings.primary_btn_text }}
+        </a>
+      {% endif %}
+      {% if block.settings.secondary_btn_text != blank %}
+        <a href="{{ block.settings.secondary_btn_link }}" class="ai-cacao-intro__button-{{ ai_gen_id }} ai-cacao-intro__button--secondary-{{ ai_gen_id }}">
+          {{ block.settings.secondary_btn_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</cacao-intro-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CacaoIntro{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        const buttons = this.querySelectorAll('.ai-cacao-intro__button-{{ ai_gen_id }}');
+        buttons.forEach(button => {
+          if (!button.getAttribute('href') || button.getAttribute('href') === '') {
+            button.setAttribute('aria-disabled', 'true');
+            button.style.pointerEvents = 'none';
+            button.style.opacity = '0.5';
+          }
+        });
+      }
+    }
+
+    customElements.define('cacao-intro-{{ ai_gen_id }}', CacaoIntro{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "New to cacao",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main title",
+      "default": "NEW TO CEREMONIAL CACAO?"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Image overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Image overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "What it is"
+    },
+    {
+      "type": "text",
+      "id": "what_title",
+      "label": "Title",
+      "default": "What it is"
+    },
+    {
+      "type": "textarea",
+      "id": "what_text",
+      "label": "Description",
+      "default": "Pure cacao in its whole form - nothing added or removed. Used for centuries by indigenous communities for heart-opening ceremony and daily wellness."
+    },
+    {
+      "type": "header",
+      "content": "Why Chuncho"
+    },
+    {
+      "type": "text",
+      "id": "why_title",
+      "label": "Title",
+      "default": "Why Chuncho"
+    },
+    {
+      "type": "textarea",
+      "id": "why_text",
+      "label": "Description",
+      "default": "Rare heirloom variety from Peru with complex fruit and nut notes. Higher in cacao butter. Smoother taste. More sustainable."
+    },
+    {
+      "type": "header",
+      "content": "How to choose"
+    },
+    {
+      "type": "text",
+      "id": "guide_title",
+      "label": "Title",
+      "default": "How to choose"
+    },
+    {
+      "type": "text",
+      "id": "guide_label_1",
+      "label": "Item 1 label",
+      "default": "New to cacao?"
+    },
+    {
+      "type": "text",
+      "id": "guide_item_1",
+      "label": "Item 1 text",
+      "default": "Start with Maple Sweetened or Pure Ground"
+    },
+    {
+      "type": "text",
+      "id": "guide_label_2",
+      "label": "Item 2 label",
+      "default": "Want convenience?"
+    },
+    {
+      "type": "text",
+      "id": "guide_item_2",
+      "label": "Item 2 text",
+      "default": "Try Single-Serve Packets"
+    },
+    {
+      "type": "text",
+      "id": "guide_label_3",
+      "label": "Item 3 label",
+      "default": "Love wellness blends?"
+    },
+    {
+      "type": "text",
+      "id": "guide_item_3",
+      "label": "Item 3 text",
+      "default": "Explore Mushroom Vitality or Rose Vanilla"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "primary_btn_text",
+      "label": "Primary button text",
+      "default": "Shop All"
+    },
+    {
+      "type": "url",
+      "id": "primary_btn_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_btn_text",
+      "label": "Secondary button text",
+      "default": "Take Our Quiz"
+    },
+    {
+      "type": "url",
+      "id": "secondary_btn_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Main title size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Main title color",
+      "default": "#5C402F"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Card title size",
+      "min": 14,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "guide_background",
+      "label": "Guide background",
+      "default": "#F5F1EB"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#E8E3DB"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Bullet color",
+      "default": "#E2AB43"
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_bg",
+      "label": "Background",
+      "default": "#5C402F"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_hover_bg",
+      "label": "Hover background",
+      "default": "#4A3325"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_bg",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_text_color",
+      "label": "Text color",
+      "default": "#5C402F"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_border",
+      "label": "Border color",
+      "default": "#5C402F"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_hover_bg",
+      "label": "Hover background",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_hover_border",
+      "label": "Hover border",
+      "default": "#4A3325"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "New to cacao"
+    }
+  ]
+}
 {% endschema %}
