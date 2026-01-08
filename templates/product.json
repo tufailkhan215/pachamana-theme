@@ -17,6 +17,10 @@
         "related_posts_count": 3
       }
     },
+    "format-comparison": {
+      "type": "section-format-comparison",
+      "settings": {}
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {}
@@ -24,6 +28,7 @@
   },
   "order": [
     "main",
+    "format-comparison",
     "product-recommendations"
   ]
 }

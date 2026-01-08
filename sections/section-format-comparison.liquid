@@ -1,0 +1,391 @@
+<div class="plus_row_scroll_overflow elementor-element elementor-element-format-comparison e-flex e-con-boxed e-con e-parent section-format-comparison" data-id="format-comparison" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+  <div class="e-con-inner">
+    <div class="elementor-element elementor-element-format-comparison-heading text-center elementor-widget elementor-widget-heading" data-id="format-comparison-heading" data-element_type="widget" data-widget_type="heading.default">
+      <div class="elementor-widget-container">
+        <h2 class="elementor-heading-title elementor-size-default">{{ section.settings.heading | default: "WHICH FORMAT IS RIGHT FOR YOU?" }}</h2>
+      </div>
+    </div>
+
+    <div class="format-comparison-grid">
+      <div class="format-comparison-item">
+        <div class="format-comparison-header">
+          <h3 class="format-comparison-title">{{ section.settings.paste_title | default: "CEREMONIAL PASTE (Block Form)" }}</h3>
+        </div>
+        <div class="format-comparison-content">
+          <ul class="format-comparison-list">
+            <li>{{ section.settings.paste_feature_1 | default: "Traditional ceremony format" }}</li>
+            <li>{{ section.settings.paste_feature_2 | default: "Chunk and melt on stovetop" }}</li>
+            <li>{{ section.settings.paste_feature_3 | default: "Full-fat (58% cacao butter)" }}</li>
+            <li>{{ section.settings.paste_feature_4 | default: "Richest, most authentic experience" }}</li>
+            <li><strong>{{ section.settings.paste_best_for | default: "Best for: Traditional ceremonies, purists" }}</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="format-comparison-item format-comparison-featured">
+        <div class="format-comparison-header">
+          <h3 class="format-comparison-title">{{ section.settings.powder_title | default: "GROUND CACAO (Powder Form)" }}</h3>
+        </div>
+        <div class="format-comparison-content">
+          <ul class="format-comparison-list">
+            <li>{{ section.settings.powder_feature_1 | default: "Convenient daily use" }}</li>
+            <li>{{ section.settings.powder_feature_2 | default: "Mixes easily with hot water" }}</li>
+            <li><strong>{{ section.settings.powder_feature_3 | default: "Full-fat (same 58% as paste!)" }}</strong></li>
+            <li>{{ section.settings.powder_feature_4 | default: "Same benefits, easier prep" }}</li>
+            <li><strong>{{ section.settings.powder_best_for | default: "Best for: Daily ritual, smoothies, busy mornings" }}</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="format-comparison-item">
+        <div class="format-comparison-header">
+          <h3 class="format-comparison-title">{{ section.settings.packets_title | default: "SINGLE-SERVE PACKETS (1oz)" }}</h3>
+        </div>
+        <div class="format-comparison-content">
+          <ul class="format-comparison-list">
+            <li>{{ section.settings.packets_feature_1 | default: "Pre-measured portions" }}</li>
+            <li>{{ section.settings.packets_feature_2 | default: "Perfect for travel or gifts" }}</li>
+            <li>{{ section.settings.packets_feature_3 | default: "No measuring needed" }}</li>
+            <li>{{ section.settings.packets_feature_4 | default: "Available in 5, 10, 15, or 20 packs" }}</li>
+            <li><strong>{{ section.settings.packets_best_for | default: "Best for: Beginners, gift-giving, on-the-go" }}</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.show_note -%}
+      <div class="format-comparison-note">
+        <p>{{ section.settings.note_text | default: "Why it works: Directly addresses the #1 confusion point and emphasizes that ground cacao is still full-fat (not defatted powder)." }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .section-format-comparison {
+    padding: 60px 20px;
+    background-color: var(--e-global-color-secondary, #f9f2ef);
+  }
+
+  .format-comparison-heading {
+    margin-bottom: 40px;
+  }
+
+  .format-comparison-heading .elementor-heading-title {
+    font-family: "OAXACA", Sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--e-global-color-text, #2c2c2c);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .format-comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .format-comparison-item {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .format-comparison-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .format-comparison-featured {
+    border-color: #d4a574;
+    position: relative;
+  }
+
+  .format-comparison-featured::before {
+    content: "POPULAR";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4a574;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .format-comparison-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2ab43;
+  }
+
+  .format-comparison-title {
+    font-family: "OAXACA", Sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--e-global-color-text, #2c2c2c);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .format-comparison-content {
+    min-height: 250px;
+  }
+
+  .format-comparison-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .format-comparison-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--e-global-color-text, #2c2c2c);
+  }
+
+  .format-comparison-list li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    color: #d4a574;
+    font-size: 18px;
+  }
+
+  .format-comparison-list li strong {
+    color: #d4a574;
+    font-weight: 600;
+  }
+
+  .format-comparison-note {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 20px;
+    background: rgba(212, 165, 116, 0.1);
+    border-left: 4px solid #d4a574;
+    border-radius: 5px;
+  }
+
+  .format-comparison-note p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--e-global-color-text, #2c2c2c);
+    font-style: italic;
+  }
+
+  @media (max-width: 1024px) {
+    .format-comparison-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .format-comparison-item:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section-format-comparison {
+      padding: 40px 15px;
+    }
+
+    .format-comparison-heading .elementor-heading-title {
+      font-size: 24px;
+    }
+
+    .format-comparison-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .format-comparison-item {
+      padding: 25px 20px;
+    }
+
+    .format-comparison-title {
+      font-size: 18px;
+    }
+
+    .format-comparison-content {
+      min-height: auto;
+    }
+
+    .format-comparison-list li {
+      font-size: 15px;
+      padding: 8px 0;
+      padding-left: 25px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Format Comparison",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "WHICH FORMAT IS RIGHT FOR YOU?"
+    },
+    {
+      "type": "header",
+      "content": "Ceremonial Paste Settings"
+    },
+    {
+      "type": "text",
+      "id": "paste_title",
+      "label": "Paste Title",
+      "default": "CEREMONIAL PASTE (Block Form)"
+    },
+    {
+      "type": "text",
+      "id": "paste_feature_1",
+      "label": "Paste Feature 1",
+      "default": "Traditional ceremony format"
+    },
+    {
+      "type": "text",
+      "id": "paste_feature_2",
+      "label": "Paste Feature 2",
+      "default": "Chunk and melt on stovetop"
+    },
+    {
+      "type": "text",
+      "id": "paste_feature_3",
+      "label": "Paste Feature 3",
+      "default": "Full-fat (58% cacao butter)"
+    },
+    {
+      "type": "text",
+      "id": "paste_feature_4",
+      "label": "Paste Feature 4",
+      "default": "Richest, most authentic experience"
+    },
+    {
+      "type": "text",
+      "id": "paste_best_for",
+      "label": "Paste Best For",
+      "default": "Best for: Traditional ceremonies, purists"
+    },
+    {
+      "type": "header",
+      "content": "Ground Cacao Settings"
+    },
+    {
+      "type": "text",
+      "id": "powder_title",
+      "label": "Powder Title",
+      "default": "GROUND CACAO (Powder Form)"
+    },
+    {
+      "type": "text",
+      "id": "powder_feature_1",
+      "label": "Powder Feature 1",
+      "default": "Convenient daily use"
+    },
+    {
+      "type": "text",
+      "id": "powder_feature_2",
+      "label": "Powder Feature 2",
+      "default": "Mixes easily with hot water"
+    },
+    {
+      "type": "text",
+      "id": "powder_feature_3",
+      "label": "Powder Feature 3",
+      "default": "Full-fat (same 58% as paste!)"
+    },
+    {
+      "type": "text",
+      "id": "powder_feature_4",
+      "label": "Powder Feature 4",
+      "default": "Same benefits, easier prep"
+    },
+    {
+      "type": "text",
+      "id": "powder_best_for",
+      "label": "Powder Best For",
+      "default": "Best for: Daily ritual, smoothies, busy mornings"
+    },
+    {
+      "type": "header",
+      "content": "Single-Serve Packets Settings"
+    },
+    {
+      "type": "text",
+      "id": "packets_title",
+      "label": "Packets Title",
+      "default": "SINGLE-SERVE PACKETS (1oz)"
+    },
+    {
+      "type": "text",
+      "id": "packets_feature_1",
+      "label": "Packets Feature 1",
+      "default": "Pre-measured portions"
+    },
+    {
+      "type": "text",
+      "id": "packets_feature_2",
+      "label": "Packets Feature 2",
+      "default": "Perfect for travel or gifts"
+    },
+    {
+      "type": "text",
+      "id": "packets_feature_3",
+      "label": "Packets Feature 3",
+      "default": "No measuring needed"
+    },
+    {
+      "type": "text",
+      "id": "packets_feature_4",
+      "label": "Packets Feature 4",
+      "default": "Available in 5, 10, 15, or 20 packs"
+    },
+    {
+      "type": "text",
+      "id": "packets_best_for",
+      "label": "Packets Best For",
+      "default": "Best for: Beginners, gift-giving, on-the-go"
+    },
+    {
+      "type": "header",
+      "content": "Note Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_note",
+      "label": "Show Note",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "note_text",
+      "label": "Note Text",
+      "default": "Why it works: Directly addresses the #1 confusion point and emphasizes that ground cacao is still full-fat (not defatted powder)."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Format Comparison"
+    }
+  ]
+}
+{% endschema %}

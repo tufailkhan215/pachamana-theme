@@ -14,9 +14,14 @@
       "settings": {
         "products_per_page": 24
       }
+    },
+    "format-comparison": {
+      "type": "section-format-comparison",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "format-comparison"
   ]
 }
