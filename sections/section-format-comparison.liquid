@@ -9,7 +9,7 @@
     <div class="format-comparison-grid">
       <div class="format-comparison-item">
         <div class="format-comparison-header">
-          <h3 class="format-comparison-title">{{ section.settings.paste_title | default: "CEREMONIAL PASTE (Block Form)" }}</h3>
+          <h2 class="heading-title ">{{ section.settings.paste_title | default: "CEREMONIAL PASTE (Block Form)" }}</h3>
         </div>
         <div class="format-comparison-content">
           <ul class="format-comparison-list">
@@ -30,7 +30,7 @@
           <ul class="format-comparison-list">
             <li>{{ section.settings.powder_feature_1 | default: "Convenient daily use" }}</li>
             <li>{{ section.settings.powder_feature_2 | default: "Mixes easily with hot water" }}</li>
-            <li><strong>{{ section.settings.powder_feature_3 | default: "Full-fat (same 58% as paste!)" }}</strong></li>
+            <li>{{ section.settings.powder_feature_3 | default: "Full-fat (same 58% as paste!)" }}</li>
             <li>{{ section.settings.powder_feature_4 | default: "Same benefits, easier prep" }}</li>
             <li><strong>{{ section.settings.powder_best_for | default: "Best for: Daily ritual, smoothies, busy mornings" }}</strong></li>
           </ul>
@@ -63,7 +63,6 @@
 
 <style>
   .section-format-comparison {
-    padding: 60px 20px;
     background-color: var(--e-global-color-secondary, #f9f2ef);
   }
 
