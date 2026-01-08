@@ -25,18 +25,18 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "I was skeptical about the price but it's worth every penny",
-            "customer_name": "Sarah M.",
-            "customer_location": "California"
+            "review_text": "I've tried other brands and this is so much smoother",
+            "customer_name": "David.",
+            "customer_location": "DC"
           }
         },
         "review_c9taEx": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "I was skeptical about the price but it's worth every penny",
-            "customer_name": "Sarah M.",
-            "customer_location": "California"
+            "review_text": "The single-serve packets are perfect for my busy mornings",
+            "customer_name": "Tom M.",
+            "customer_location": "LA"
           }
         }
       },
