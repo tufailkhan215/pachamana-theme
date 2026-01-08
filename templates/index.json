@@ -549,6 +549,64 @@
         "ai_gen_block_ee5b3bf_pcknzQ"
       ],
       "settings": {}
+    },
+    "17678675109a1f6d0a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9be76af_Ahciif": {
+          "type": "ai_gen_block_9be76af",
+          "settings": {
+            "title": "NEW TO CEREMONIAL CACAO?",
+            "max_width": 1200,
+            "background_color": "#E2AB43",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60,
+            "what_title": "What it is",
+            "what_text": "Pure cacao in its whole form - nothing added or removed. Used for centuries by indigenous communities for heart-opening ceremony and daily wellness.",
+            "why_title": "Why Chuncho",
+            "why_text": "Rare heirloom variety from Peru with complex fruit and nut notes. Higher in cacao butter. Smoother taste. More sustainable.",
+            "guide_title": "How to choose",
+            "guide_label_1": "New to cacao?",
+            "guide_item_1": "Start with Maple Sweetened or Pure Ground",
+            "guide_label_2": "Want convenience?",
+            "guide_item_2": "Try Single-Serve Packets",
+            "guide_label_3": "Love wellness blends?",
+            "guide_item_3": "Explore Mushroom Vitality or Rose Vanilla",
+            "primary_btn_text": "Shop All",
+            "primary_btn_link": "",
+            "secondary_btn_text": "Take Our Quiz",
+            "secondary_btn_link": "",
+            "title_size": 32,
+            "title_color": "#5C402F",
+            "card_title_size": 20,
+            "text_size": 15,
+            "text_color": "#333333",
+            "card_background": "#FAF8F5",
+            "guide_background": "#F5F1EB",
+            "card_border_color": "#E8E3DB",
+            "card_border_radius": 8,
+            "bullet_color": "#E2AB43",
+            "primary_button_bg": "#5C402F",
+            "primary_button_text_color": "#ffffff",
+            "primary_button_hover_bg": "#4A3325",
+            "secondary_button_bg": "#FFFFFF",
+            "secondary_button_text_color": "#5C402F",
+            "secondary_button_border": "#5C402F",
+            "secondary_button_hover_bg": "#FAF8F5",
+            "secondary_button_hover_border": "#4A3325",
+            "button_text_size": 15,
+            "button_border_radius": 6,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9be76af_Ahciif"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -563,6 +621,7 @@
     "section-photo-gallery",
     "section-faq",
     "blocks_z9iG74",
-    "17678601152aabe9e8"
+    "17678601152aabe9e8",
+    "17678675109a1f6d0a"
   ]
 }
