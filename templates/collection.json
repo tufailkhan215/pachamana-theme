@@ -15,13 +15,36 @@
         "products_per_page": 24
       }
     },
-    "format-comparison": {
+    "section_format_comparison_emHDLW": {
       "type": "section-format-comparison",
-      "settings": {}
+      "name": "Format Comparison",
+      "settings": {
+        "heading": "WHICH FORMAT IS RIGHT FOR YOU?",
+        "paste_title": "CEREMONIAL PASTE (Block Form)",
+        "paste_feature_1": "Traditional ceremony format",
+        "paste_feature_2": "Chunk and melt on stovetop",
+        "paste_feature_3": "Full-fat (58% cacao butter)",
+        "paste_feature_4": "Richest, most authentic experience",
+        "paste_best_for": "Best for: Traditional ceremonies, purists",
+        "powder_title": "GROUND CACAO (Powder Form)",
+        "powder_feature_1": "Convenient daily use",
+        "powder_feature_2": "Mixes easily with hot water",
+        "powder_feature_3": "Full-fat (same 58% as paste!)",
+        "powder_feature_4": "Same benefits, easier prep",
+        "powder_best_for": "Best for: Daily ritual, smoothies, busy mornings",
+        "packets_title": "SINGLE-SERVE PACKETS (1oz)",
+        "packets_feature_1": "Pre-measured portions",
+        "packets_feature_2": "Perfect for travel or gifts",
+        "packets_feature_3": "No measuring needed",
+        "packets_feature_4": "Available in 5, 10, 15, or 20 packs",
+        "packets_best_for": "Best for: Beginners, gift-giving, on-the-go",
+        "show_note": false,
+        "note_text": "Why it works: Directly addresses the #1 confusion point and emphasizes that ground cacao is still full-fat (not defatted powder)."
+      }
     }
   },
   "order": [
     "main",
-    "format-comparison"
+    "section_format_comparison_emHDLW"
   ]
 }
