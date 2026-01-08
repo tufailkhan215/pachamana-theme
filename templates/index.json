@@ -451,7 +451,7 @@
           "type": "ai_gen_block_ee5b3bf",
           "settings": {
             "background_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg",
-            "enable_parallax": true,
+            "enable_parallax": false,
             "parallax_speed": 0.2,
             "overlay_color": "#000000",
             "overlay_opacity": 0.3,
