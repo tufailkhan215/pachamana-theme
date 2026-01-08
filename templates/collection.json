@@ -38,7 +38,7 @@
         "packets_feature_3": "No measuring needed",
         "packets_feature_4": "Available in 5, 10, 15, or 20 packs",
         "packets_best_for": "Best for: Beginners, gift-giving, on-the-go",
-        "show_note": false,
+        "show_note": true,
         "note_text": "Why it works: Directly addresses the #1 confusion point and emphasizes that ground cacao is still full-fat (not defatted powder)."
       }
     }
