@@ -89,6 +89,14 @@
         "button_url": "#"
       }
     },
+    "section-featured-products": {
+      "type": "section-featured-products",
+      "settings": {
+        "heading": "FEATURED PRODUCTS",
+        "collection": "collection-temp",
+        "products_to_show": 3
+      }
+    },
     "section-health-benifits": {
       "type": "section-health-benifits",
       "blocks": {
@@ -237,14 +245,6 @@
         "pregnant_subheading": "For Pregnant Women",
         "postpartum_heading": "HEALTH BENEFITS",
         "postpartum_subheading": "For Postpartum Women"
-      }
-    },
-    "section-featured-products": {
-      "type": "section-featured-products",
-      "settings": {
-        "heading": "FEATURED PRODUCTS",
-        "collection": "collection-temp",
-        "products_to_show": 3
       }
     },
     "section-text-images-grid": {
@@ -613,8 +613,8 @@
     "section_background_motion_MLrtBM",
     "section_animatied_title_9PRf4W",
     "section_image_with_text_button_kijTgn",
-    "section-health-benifits",
     "section-featured-products",
+    "section-health-benifits",
     "section-text-images-grid",
     "section-image-text-dynamicbg",
     "section_rescent_articles_LArLB4",
