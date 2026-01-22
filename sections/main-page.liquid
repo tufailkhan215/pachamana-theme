@@ -189,14 +189,13 @@
         }
       }
       
-      // Fallback: Manual Swiper initialization
-      function initManualSwiper() {
-        // Check if Swiper library is available (from Elementor or CDN)
-        if (typeof Swiper === 'undefined') {
-          // Wait for Swiper to load (Elementor includes it)
-          setTimeout(initMainPageSwiper, 200);
-          return;
-        }
+      // Manual Swiper initialization (fallback if Elementor doesn't handle it)
+      // Check if Swiper library is available (from Elementor)
+      if (typeof Swiper === 'undefined') {
+        // Wait for Swiper to load (Elementor includes it)
+        setTimeout(initMainPageSwiper, 200);
+        return;
+      }
       
       // Initialize Swiper manually
       var swiperConfig = {
@@ -218,41 +217,35 @@
         rtl: true
       };
       
-        var swiperInstance = new Swiper(slideshow, swiperConfig);
-        
-        // Apply Ken Burns effect if enabled
-        if (settings.background_slideshow_ken_burns !== false) {
-          var activeSlide = slideshow.querySelector('.swiper-slide-active');
-          if (activeSlide) {
-            var image = activeSlide.querySelector('.elementor-background-slideshow__slide__image');
-            if (image) {
-              image.classList.add('elementor-ken-burns--active');
-            }
+      var swiperInstance = new Swiper(slideshow, swiperConfig);
+      
+      // Apply Ken Burns effect if enabled
+      if (settings.background_slideshow_ken_burns !== false) {
+        var activeSlide = slideshow.querySelector('.swiper-slide-active');
+        if (activeSlide) {
+          var image = activeSlide.querySelector('.elementor-background-slideshow__slide__image');
+          if (image) {
+            image.classList.add('elementor-ken-burns--active');
           }
-          
-          swiperInstance.on('slideChange', function() {
-            var slides = slideshow.querySelectorAll('.swiper-slide');
-            slides.forEach(function(slide) {
-              var img = slide.querySelector('.elementor-background-slideshow__slide__image');
-              if (img) {
-                img.classList.remove('elementor-ken-burns--active');
-              }
-            });
-            
-            var currentSlide = slideshow.querySelector('.swiper-slide-active');
-            if (currentSlide) {
-              var currentImg = currentSlide.querySelector('.elementor-background-slideshow__slide__image');
-              if (currentImg) {
-                currentImg.classList.add('elementor-ken-burns--active');
-              }
+        }
+        
+        swiperInstance.on('slideChange', function() {
+          var slides = slideshow.querySelectorAll('.swiper-slide');
+          slides.forEach(function(slide) {
+            var img = slide.querySelector('.elementor-background-slideshow__slide__image');
+            if (img) {
+              img.classList.remove('elementor-ken-burns--active');
             }
           });
-        }
-      }
-      
-      // If Elementor didn't initialize it, use manual init
-      if (!slideshow.swiper) {
-        initManualSwiper();
+          
+          var currentSlide = slideshow.querySelector('.swiper-slide-active');
+          if (currentSlide) {
+            var currentImg = currentSlide.querySelector('.elementor-background-slideshow__slide__image');
+            if (currentImg) {
+              currentImg.classList.add('elementor-ken-burns--active');
+            }
+          }
+        });
       }
       
     } catch(e) {
