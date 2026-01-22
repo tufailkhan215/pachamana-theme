@@ -192,25 +192,40 @@
           allImages.forEach(function(img) {
             img.classList.remove('elementor-ken-burns--active');
           });
+          
+          // Force reflow to restart animation
+          void image.offsetWidth;
+          
           // Add active class to current image
           image.classList.add('elementor-ken-burns--active');
         }
       }
       
-      // Activate Ken Burns on initial slide
+      // Activate Ken Burns on initial slide - works for any number of slides
       var activeSlide = slideshow.querySelector('.swiper-slide-active') || slides[0];
-      activateKenBurns(activeSlide);
       
-      // For single slide, ensure animation starts immediately
+      // For single slide, ensure Swiper initializes it properly
       if (slides.length === 1) {
-        // Force animation to start by toggling the class
+        // Make sure the slide is marked as active
+        if (!activeSlide.classList.contains('swiper-slide-active')) {
+          activeSlide.classList.add('swiper-slide-active');
+        }
+        // Activate Ken Burns immediately
+        activateKenBurns(activeSlide);
+        // Force restart animation after a brief delay to ensure it triggers
         setTimeout(function() {
-          activateKenBurns(activeSlide);
-        }, 100);
-      }
-      
-      // Listen for slide changes (only relevant if more than one slide)
-      if (slides.length > 1) {
+          var img = activeSlide.querySelector('.elementor-background-slideshow__slide__image');
+          if (img) {
+            img.classList.remove('elementor-ken-burns--active');
+            void img.offsetWidth; // Force reflow
+            img.classList.add('elementor-ken-burns--active');
+          }
+        }, 50);
+      } else {
+        // Multiple slides - activate on initial slide
+        activateKenBurns(activeSlide);
+        
+        // Listen for slide changes
         swiperInstance.on('slideChange', function() {
           var currentSlide = slideshow.querySelector('.swiper-slide-active');
           activateKenBurns(currentSlide);
