@@ -8,10 +8,16 @@
     if block.settings.image != blank
       assign image_url = block.settings.image | image_url: width: 1920
       assign image_id = block.settings.image.id | default: forloop.index
+      comment
+        Escape special characters in URL for JSON: backslashes first, then quotes, then newlines
+      endcomment
+      assign image_url_escaped = image_url | replace: '\', '\\' | replace: '"', '\"' | replace: '
+', '' | replace: '
+', ''
       if gallery_items != ''
         assign gallery_items = gallery_items | append: ','
       endif
-      assign gallery_items = gallery_items | append: '{"id":' | append: image_id | append: ',"url":"' | append: image_url | append: '"}'
+      assign gallery_items = gallery_items | append: '{"id":' | append: image_id | append: ',"url":"' | append: image_url_escaped | append: '"}'
       assign slide_count = slide_count | plus: 1
     endif
   endfor
