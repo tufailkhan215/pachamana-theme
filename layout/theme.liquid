@@ -153,6 +153,8 @@
   {%- endif -%}
   {%- if template.name == 'page' -%}
     {{ 'post-82.css' | asset_url | stylesheet_tag }}
+    {{ 'background-slider.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'background-slider.js' | asset_url }}" defer></script>
   {%- endif -%}
   {%- comment -%} Load post-565.css for collection/product archive pages {%- endcomment -%}
   {%- if template.name == 'collection' or template.name == 'list-collections' -%}
