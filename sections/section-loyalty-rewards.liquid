@@ -29,6 +29,7 @@
   assign enable_hover_effect = section.settings.enable_hover_effect | default: true
   assign card_shadow = section.settings.card_shadow | default: 0
   assign icon_size = section.settings.icon_size | default: 52
+  assign iconfont_size = section.settings.iconfont_size | default: 26
   
   assign heading_size = section.settings.heading_size | default: 24
   assign body_size = section.settings.body_size | default: 16
@@ -66,7 +67,7 @@
                 {%- if block.settings.icon_type != 'none' -%}
                   <div class="reward-icon-container" style="margin-bottom: 15px;">
                     {%- if block.settings.icon_type == 'icon' and block.settings.icon_class != blank -%}
-                      <i class="{{ block.settings.icon_class }} reward-icon" style="color: {{ theme_color }}; width: {{ icon_size }}px; height: {{ icon_size }}px; display: inline-block; font-size: {{ icon_size }}px; line-height: 1;"></i>
+                      <i class="{{ block.settings.icon_class }} reward-icon" style="color: {{ theme_color }}; width: {{ icon_size }}px; height: {{ icon_size }}px; display: inline-block; font-size: {{ iconfont_size }}px; line-height: 1;"></i>
                     {%- elsif block.settings.icon_type == 'image' and block.settings.icon_image != blank -%}
                       {%- assign icon_image_url = block.settings.icon_image | image_url: width: icon_size | times: 2 -%}
                       <img src="{{ icon_image_url }}" alt="{{ block.settings.title }}" class="reward-icon-image" style="width: {{ icon_size }}px; height: {{ icon_size }}px; object-fit: contain;">
@@ -129,7 +130,7 @@
                 {%- if block.settings.icon_type != 'none' -%}
                   <div class="reward-icon-container" style="margin-bottom: 15px;">
                     {%- if block.settings.icon_type == 'icon' and block.settings.icon_class != blank -%}
-                      <i class="{{ block.settings.icon_class }} reward-icon" style="color: {{ theme_color }}; width: {{ icon_size }}px; height: {{ icon_size }}px; display: inline-block; font-size: {{ icon_size }}px; line-height: 1;"></i>
+                      <i class="{{ block.settings.icon_class }} reward-icon" style="color: {{ theme_color }}; width: {{ icon_size }}px; height: {{ icon_size }}px; display: inline-block; font-size: {{ iconfont_size }}px; line-height: 1;"></i>
                     {%- elsif block.settings.icon_type == 'image' and block.settings.icon_image != blank -%}
                       {%- assign icon_image_url = block.settings.icon_image | image_url: width: icon_size | times: 2 -%}
                       <img src="{{ icon_image_url }}" alt="{{ block.settings.title }}" class="reward-icon-image" style="width: {{ icon_size }}px; height: {{ icon_size }}px; object-fit: contain;">
@@ -504,6 +505,16 @@
       "step": 4,
       "unit": "px",
       "default": 52
+    },
+       {
+      "type": "range",
+      "id": "iconfont_size",
+      "label": "Icon font Size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 26
     },
     {
       "type": "header",
