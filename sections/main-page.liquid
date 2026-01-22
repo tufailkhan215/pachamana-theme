@@ -25,10 +25,24 @@
   assign loop_enabled = section.settings.loop | default: true
   assign ken_burns_enabled = section.settings.ken_burns | default: true
   assign ken_burns_dir = section.settings.ken_burns_direction | default: 'in'
+  
+  comment
+    Convert boolean values to JSON format (true/false without quotes)
+  endcomment
+  if loop_enabled
+    assign loop_json = 'true'
+  else
+    assign loop_json = 'false'
+  endif
+  if ken_burns_enabled
+    assign ken_burns_json = 'true'
+  else
+    assign ken_burns_json = 'false'
+  endif
 -%}
 
 <div data-elementor-type="wp-page" data-elementor-id="82" class="elementor elementor-82" data-elementor-post-type="page">
-				<div class="elementor-element elementor-element-e3c6f55 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="e3c6f55" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;,&quot;background_slideshow_gallery&quot;:[{{ gallery_items }}],&quot;background_slideshow_ken_burns&quot;:&quot;{{ ken_burns_enabled }}&quot;,&quot;background_motion_fx_scale_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_range&quot;:&quot;viewport&quot;,&quot;background_slideshow_loop&quot;:&quot;{{ loop_enabled }}&quot;,&quot;background_slideshow_slide_duration&quot;:{{ slide_duration }},&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:{{ transition_duration }},&quot;background_slideshow_ken_burns_zoom_direction&quot;:&quot;{{ ken_burns_dir }}&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_scale_direction&quot;:&quot;out-in&quot;,&quot;background_motion_fx_scale_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_scale_range&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:20,&quot;end&quot;:80}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile_extra&quot;,&quot;mobile&quot;]}">
+				<div class="elementor-element elementor-element-e3c6f55 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="e3c6f55" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;shape_divider_bottom&quot;:&quot;wave-brush&quot;,&quot;background_slideshow_gallery&quot;:[{{ gallery_items }}],&quot;background_slideshow_ken_burns&quot;:{{ ken_burns_json }},&quot;background_motion_fx_scale_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_range&quot;:&quot;viewport&quot;,&quot;background_slideshow_loop&quot;:{{ loop_json }},&quot;background_slideshow_slide_duration&quot;:{{ slide_duration }},&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:{{ transition_duration }},&quot;background_slideshow_ken_burns_zoom_direction&quot;:&quot;{{ ken_burns_dir }}&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_scale_direction&quot;:&quot;out-in&quot;,&quot;background_motion_fx_scale_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_scale_range&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:20,&quot;end&quot;:80}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile_extra&quot;,&quot;mobile&quot;]}">
 					{%- if slide_count > 0 -%}
 						<div class="elementor-background-slideshow swiper swiper-fade swiper-horizontal swiper-pointer-events swiper-rtl swiper-watch-progress" dir="rtl">
 							<div class="swiper-wrapper" id="swiper-wrapper-main-page-{{ section.id }}" aria-live="off">
@@ -150,7 +164,9 @@
     if (!dataSettings) return;
     
     try {
-      var settings = JSON.parse(dataSettings.replace(/&quot;/g, '"'));
+      // Decode HTML entities and parse JSON
+      var decodedSettings = dataSettings.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+      var settings = JSON.parse(decodedSettings);
       var gallery = settings.background_slideshow_gallery || [];
       
       if (gallery.length === 0) return;
