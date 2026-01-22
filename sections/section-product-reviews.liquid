@@ -1,4 +1,3 @@
-{%- if section.settings.show_reviews -%}
 <div class="product-reviews-section elementor-element elementor-element-product-reviews e-flex e-con-boxed e-con e-child" data-id="product-reviews" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
   <div class="e-con-inner">
     <div class="product-reviews-container">
@@ -16,7 +15,7 @@
               <div class="review-author">
                 <span class="review-name">{{ block.settings.customer_name }}</span>
                 {%- if block.settings.customer_location != blank -%}
-                  <span class="review-location"> ★ {{ block.settings.customer_location }}</span>
+                  <span class="review-location"> • {{ block.settings.customer_location }}</span>
                 {%- endif -%}
               </div>
             </div>
