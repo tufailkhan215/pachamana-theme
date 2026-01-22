@@ -87,14 +87,6 @@
 				</div>
 				
           {{ page.content }}
-          
-          {%- comment -%} Placeholder for loyalty rewards blocks - will be populated by JavaScript {%- endcomment -%}
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'loyalty_rewards' and block.settings.enable -%}
-              <div class="loyalty-rewards-block-placeholder" data-loyalty-section-id="{{ block.settings.section_id }}" {{ block.shopify_attributes }}></div>
-            {%- endif -%}
-          {%- endfor -%}
-          
 				<div class="elementor-element elementor-element-d496f51 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d496f51" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
 							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 	'/%3E%3C/svg%3E&quot;);">
@@ -278,122 +270,6 @@
 </script>
 {%- endif -%}
 
-{%- comment -%} JavaScript to render loyalty rewards sections {%- endcomment -%}
-<script>
-(function() {
-  'use strict';
-  
-  function renderLoyaltyRewardsBlocks() {
-    var placeholders = document.querySelectorAll('.loyalty-rewards-block-placeholder');
-    
-    if (placeholders.length === 0) {
-      return; // No placeholders found
-    }
-    
-    placeholders.forEach(function(placeholder) {
-      // Skip if already processed
-      if (placeholder.classList.contains('loyalty-rewards-processed')) {
-        return;
-      }
-      
-      var sectionId = placeholder.getAttribute('data-loyalty-section-id');
-      var sectionWrapper = null;
-      
-      // If section_id is provided, find that specific section
-      if (sectionId && sectionId.trim() !== '') {
-        // Try multiple selectors to find the section
-        sectionWrapper = document.querySelector('#' + sectionId + '.shopify-section') ||
-                        document.querySelector('[id*="' + sectionId + '"].shopify-section') ||
-                        document.querySelector('.shopify-section[id*="' + sectionId + '"]');
-      }
-      
-      // If no section_id or not found, find the first loyalty rewards section on the page
-      if (!sectionWrapper) {
-        // Try multiple selectors to find loyalty rewards sections
-        var loyaltySections = document.querySelectorAll(
-          '.shopify-section .loyalty-rewards-section, ' +
-          '.shopify-section[class*="loyalty"], ' +
-          '.shopify-section[id*="loyalty"], ' +
-          '.shopify-section[id*="section-loyalty-rewards"], ' +
-          '[data-section-type="section-loyalty-rewards"], ' +
-          '.loyalty-rewards-section'
-        );
-        
-        // Filter to find the actual section wrapper
-        for (var i = 0; i < loyaltySections.length; i++) {
-          var element = loyaltySections[i];
-          var wrapper = element.closest('.shopify-section');
-          if (wrapper && !wrapper.classList.contains('loyalty-rewards-moved')) {
-            sectionWrapper = wrapper;
-            break;
-          }
-        }
-      }
-      
-      if (sectionWrapper && !sectionWrapper.classList.contains('loyalty-rewards-moved')) {
-        // Clone the section content
-        var clonedContent = sectionWrapper.cloneNode(true);
-        clonedContent.style.display = '';
-        clonedContent.classList.add('loyalty-rewards-moved');
-        clonedContent.classList.remove('loyalty-rewards-moved'); // Remove from clone, add to original
-        
-        // Insert after placeholder
-        if (placeholder.nextSibling) {
-          placeholder.parentNode.insertBefore(clonedContent, placeholder.nextSibling);
-        } else {
-          placeholder.parentNode.appendChild(clonedContent);
-        }
-        
-        // Hide original section
-        sectionWrapper.style.display = 'none';
-        sectionWrapper.classList.add('loyalty-rewards-moved');
-        
-        // Mark placeholder as processed
-        placeholder.classList.add('loyalty-rewards-processed');
-      } else if (!sectionWrapper) {
-        // Section not found - show a helpful message in development
-        if (typeof Shopify !== 'undefined' && Shopify.designMode) {
-          console.warn('Loyalty Rewards Section not found on page. Please add the "Loyalty & Rewards" section to your page template.');
-        }
-      }
-    });
-  }
-  
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(renderLoyaltyRewardsBlocks, 500);
-    });
-  } else {
-    setTimeout(renderLoyaltyRewardsBlocks, 500);
-  }
-  
-  // Re-render on section load (for Shopify theme editor)
-  if (typeof Shopify !== 'undefined' && Shopify.designMode) {
-    document.addEventListener('shopify:section:load', function(e) {
-      // Reset processed flags when a section loads
-      var placeholders = document.querySelectorAll('.loyalty-rewards-block-placeholder');
-      placeholders.forEach(function(p) {
-        p.classList.remove('loyalty-rewards-processed');
-      });
-      setTimeout(renderLoyaltyRewardsBlocks, 500);
-    });
-    
-    document.addEventListener('shopify:section:unload', function() {
-      setTimeout(renderLoyaltyRewardsBlocks, 500);
-    });
-  }
-  
-  // Also try after window load
-  window.addEventListener('load', function() {
-    setTimeout(renderLoyaltyRewardsBlocks, 1000);
-  });
-  
-  // Try again after a longer delay to catch late-loading sections
-  setTimeout(renderLoyaltyRewardsBlocks, 2000);
-})();
-</script>
-
 {% schema %}
 {
   "name": "Main Page",
@@ -465,25 +341,6 @@
           "label": "Slide Image",
           "info": "Recommended size: 1920x1080px or larger"
         }
-      ]
-    },
-    {
-      "type": "loyalty_rewards",
-      "name": "Loyalty Rewards Section",
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "enable",
-          "label": "Enable Loyalty Rewards Section",
-          "default": false,
-          "info": "Show the loyalty rewards section after page content"
-        },
-        {
-          "type": "text",
-          "id": "section_id",
-          "label": "Section Instance ID (Optional)",
-          "info": "Enter the specific section instance ID if you have multiple loyalty rewards sections. Leave blank to use the first one found on the page. You can find the section ID in the theme editor."
-        },
       ]
     }
   ],
