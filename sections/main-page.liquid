@@ -128,6 +128,148 @@
   }
 </style>
 
+{%- if slide_count > 0 -%}
+<script>
+(function() {
+  'use strict';
+  
+  function initMainPageSwiper() {
+    var container = document.querySelector('.elementor-element-e3c6f55[data-settings*="background_slideshow_gallery"]');
+    if (!container) return;
+    
+    var slideshow = container.querySelector('.elementor-background-slideshow');
+    if (!slideshow) return;
+    
+    // Check if Swiper is already initialized
+    if (slideshow.swiper) return;
+    
+    // Parse data-settings to get configuration
+    var dataSettings = container.getAttribute('data-settings');
+    if (!dataSettings) return;
+    
+    try {
+      var settings = JSON.parse(dataSettings.replace(/&quot;/g, '"'));
+      var gallery = settings.background_slideshow_gallery || [];
+      
+      if (gallery.length === 0) return;
+      
+      // Try to use Elementor's Swiper initialization if available
+      if (typeof window.elementorFrontend !== 'undefined' && window.elementorFrontend.hooks) {
+        // Trigger Elementor's background slideshow handler
+        var element = container;
+        if (element && typeof jQuery !== 'undefined') {
+          jQuery(element).trigger('elementor/populate/settings');
+          // Force Elementor to initialize background slideshow
+          if (window.elementorFrontend.modules && window.elementorFrontend.modules.backgroundSlideshow) {
+            var handler = new window.elementorFrontend.modules.backgroundSlideshow({
+              $element: jQuery(element)
+            });
+            handler.onInit();
+            return;
+          }
+        }
+      }
+      
+      // Fallback: Manual Swiper initialization if Elementor doesn't handle it
+      // Check if Swiper library is available (from Elementor or CDN)
+      if (typeof Swiper === 'undefined') {
+        // Wait for Swiper to load (Elementor includes it)
+        setTimeout(initMainPageSwiper, 200);
+        return;
+      }
+      
+      // Initialize Swiper manually
+      var swiperConfig = {
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        loop: settings.background_slideshow_loop !== false && gallery.length > 1,
+        autoplay: {
+          delay: settings.background_slideshow_slide_duration || 5000,
+          disableOnInteraction: false
+        },
+        speed: settings.background_slideshow_transition_duration || 500,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        watchSlidesProgress: true,
+        allowTouchMove: false,
+        direction: 'horizontal',
+        rtl: true
+      };
+      
+      var swiperInstance = new Swiper(slideshow, swiperConfig);
+      
+      // Apply Ken Burns effect if enabled
+      if (settings.background_slideshow_ken_burns !== false) {
+        var activeSlide = slideshow.querySelector('.swiper-slide-active');
+        if (activeSlide) {
+          var image = activeSlide.querySelector('.elementor-background-slideshow__slide__image');
+          if (image) {
+            image.classList.add('elementor-ken-burns--active');
+          }
+        }
+        
+        swiperInstance.on('slideChange', function() {
+          var slides = slideshow.querySelectorAll('.swiper-slide');
+          slides.forEach(function(slide) {
+            var img = slide.querySelector('.elementor-background-slideshow__slide__image');
+            if (img) {
+              img.classList.remove('elementor-ken-burns--active');
+            }
+          });
+          
+          var currentSlide = slideshow.querySelector('.swiper-slide-active');
+          if (currentSlide) {
+            var currentImg = currentSlide.querySelector('.elementor-background-slideshow__slide__image');
+            if (currentImg) {
+              currentImg.classList.add('elementor-ken-burns--active');
+            }
+          }
+        });
+      }
+      
+    } catch(e) {
+      console.error('Error initializing main page Swiper:', e);
+    }
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(initMainPageSwiper, 800);
+    });
+  } else {
+    setTimeout(initMainPageSwiper, 800);
+  }
+  
+  // Re-initialize after Elementor frontend loads
+  if (typeof window.elementorFrontend !== 'undefined') {
+    setTimeout(initMainPageSwiper, 1500);
+    
+    // Also listen for Elementor init event
+    if (typeof jQuery !== 'undefined') {
+      jQuery(document).on('elementor/frontend/init', function() {
+        setTimeout(initMainPageSwiper, 500);
+      });
+    }
+  }
+  
+  // Re-initialize on section load (for Shopify theme editor)
+  if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+    document.addEventListener('shopify:section:load', function() {
+      setTimeout(initMainPageSwiper, 500);
+    });
+  }
+  
+  // Also try after window load
+  window.addEventListener('load', function() {
+    setTimeout(initMainPageSwiper, 1000);
+  });
+})();
+</script>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Main Page",
