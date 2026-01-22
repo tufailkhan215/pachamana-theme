@@ -12,6 +12,10 @@
     "main": {
       "type": "main-page",
       "blocks": {
+        "slide_jE3d6e": {
+          "type": "slide",
+          "settings": {}
+        },
         "slide_bVe7Ta": {
           "type": "slide",
           "settings": {
@@ -20,6 +24,7 @@
         }
       },
       "block_order": [
+        "slide_jE3d6e",
         "slide_bVe7Ta"
       ],
       "settings": {
