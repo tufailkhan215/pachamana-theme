@@ -444,7 +444,7 @@
 											<div class="review-stars">
 												{%- assign rating = block.settings.rating | default: 5 -%}
 												{%- for i in (1..5) -%}
-													<span class="star {% if i <= rating %}filled{% endif %}">Γÿà</span>
+													<span class="star {% if i <= rating %}filled{% endif %}">★</span>
 												{%- endfor -%}
 											</div>
 											<p class="review-text">{{ block.settings.review_text }}</p>
