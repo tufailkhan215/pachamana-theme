@@ -285,40 +285,75 @@
   
   function renderLoyaltyRewardsBlocks() {
     var placeholders = document.querySelectorAll('.loyalty-rewards-block-placeholder');
+    
+    if (placeholders.length === 0) {
+      return; // No placeholders found
+    }
+    
     placeholders.forEach(function(placeholder) {
+      // Skip if already processed
+      if (placeholder.classList.contains('loyalty-rewards-processed')) {
+        return;
+      }
+      
       var sectionId = placeholder.getAttribute('data-loyalty-section-id');
+      var sectionWrapper = null;
       
       // If section_id is provided, find that specific section
-      if (sectionId) {
-        var targetSection = document.querySelector('[data-section-id="' + sectionId + '"]');
-        if (targetSection) {
-          var sectionWrapper = targetSection.closest('.shopify-section');
-          if (sectionWrapper) {
-            // Clone the section content
-            var clonedContent = sectionWrapper.cloneNode(true);
-            clonedContent.style.display = '';
-            // Insert after placeholder
-            placeholder.parentNode.insertBefore(clonedContent, placeholder.nextSibling);
-            // Hide original section
-            sectionWrapper.style.display = 'none';
+      if (sectionId && sectionId.trim() !== '') {
+        // Try multiple selectors to find the section
+        sectionWrapper = document.querySelector('#' + sectionId + '.shopify-section') ||
+                        document.querySelector('[id*="' + sectionId + '"].shopify-section') ||
+                        document.querySelector('.shopify-section[id*="' + sectionId + '"]');
+      }
+      
+      // If no section_id or not found, find the first loyalty rewards section on the page
+      if (!sectionWrapper) {
+        // Try multiple selectors to find loyalty rewards sections
+        var loyaltySections = document.querySelectorAll(
+          '.shopify-section .loyalty-rewards-section, ' +
+          '.shopify-section[class*="loyalty"], ' +
+          '.shopify-section[id*="loyalty"], ' +
+          '.shopify-section[id*="section-loyalty-rewards"], ' +
+          '[data-section-type="section-loyalty-rewards"], ' +
+          '.loyalty-rewards-section'
+        );
+        
+        // Filter to find the actual section wrapper
+        for (var i = 0; i < loyaltySections.length; i++) {
+          var element = loyaltySections[i];
+          var wrapper = element.closest('.shopify-section');
+          if (wrapper && !wrapper.classList.contains('loyalty-rewards-moved')) {
+            sectionWrapper = wrapper;
+            break;
           }
         }
-      } else {
-        // If no section_id, find the first loyalty rewards section on the page
-        var loyaltySections = document.querySelectorAll('[data-section-type="section-loyalty-rewards"]');
-        if (loyaltySections.length > 0) {
-          var firstSection = loyaltySections[0];
-          var sectionWrapper = firstSection.closest('.shopify-section');
-          if (sectionWrapper && !sectionWrapper.classList.contains('loyalty-rewards-moved')) {
-            // Clone the section content
-            var clonedContent = sectionWrapper.cloneNode(true);
-            clonedContent.style.display = '';
-            clonedContent.classList.add('loyalty-rewards-moved');
-            // Insert after placeholder
-            placeholder.parentNode.insertBefore(clonedContent, placeholder.nextSibling);
-            // Hide original section
-            sectionWrapper.style.display = 'none';
-          }
+      }
+      
+      if (sectionWrapper && !sectionWrapper.classList.contains('loyalty-rewards-moved')) {
+        // Clone the section content
+        var clonedContent = sectionWrapper.cloneNode(true);
+        clonedContent.style.display = '';
+        clonedContent.classList.add('loyalty-rewards-moved');
+        clonedContent.classList.remove('loyalty-rewards-moved'); // Remove from clone, add to original
+        
+        // Insert after placeholder
+        if (placeholder.nextSibling) {
+          placeholder.parentNode.insertBefore(clonedContent, placeholder.nextSibling);
+        } else {
+          placeholder.parentNode.appendChild(clonedContent);
+        }
+        
+        // Hide original section
+        sectionWrapper.style.display = 'none';
+        sectionWrapper.classList.add('loyalty-rewards-moved');
+        
+        // Mark placeholder as processed
+        placeholder.classList.add('loyalty-rewards-processed');
+      } else if (!sectionWrapper) {
+        // Section not found - show a helpful message in development
+        if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+          console.warn('Loyalty Rewards Section not found on page. Please add the "Loyalty & Rewards" section to your page template.');
         }
       }
     });
@@ -335,7 +370,12 @@
   
   // Re-render on section load (for Shopify theme editor)
   if (typeof Shopify !== 'undefined' && Shopify.designMode) {
-    document.addEventListener('shopify:section:load', function() {
+    document.addEventListener('shopify:section:load', function(e) {
+      // Reset processed flags when a section loads
+      var placeholders = document.querySelectorAll('.loyalty-rewards-block-placeholder');
+      placeholders.forEach(function(p) {
+        p.classList.remove('loyalty-rewards-processed');
+      });
       setTimeout(renderLoyaltyRewardsBlocks, 500);
     });
     
@@ -348,6 +388,9 @@
   window.addEventListener('load', function() {
     setTimeout(renderLoyaltyRewardsBlocks, 1000);
   });
+  
+  // Try again after a longer delay to catch late-loading sections
+  setTimeout(renderLoyaltyRewardsBlocks, 2000);
 })();
 </script>
 
