@@ -19,44 +19,95 @@
         "ken_burns_direction": "in"
       }
     },
-    "section_faq_kCKYQR": {
-      "type": "section-faq",
+    "section_loyalty_rewards_zQ4YJ7": {
+      "type": "section-loyalty-rewards",
       "blocks": {
-        "faq_item_ryMdwb": {
-          "type": "faq_item",
+        "earning_method_xitHWz": {
+          "type": "earning_method",
           "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-point_for_purchase",
+            "title": "Earn Points for Purchase",
+            "points_text": "2 Points for each $1.00 spent",
+            "description": "Spend $1 → Earn 2 Points. That's 2% back in store credit!",
+            "link_url": "",
+            "link_text": "Learn More"
           }
         },
-        "faq_item_KEdGqy": {
-          "type": "faq_item",
+        "earning_method_Lzc8Lk": {
+          "type": "earning_method",
           "settings": {
-            "question": "Is your Cacao Organic?",
-            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides. The beauty of working with native genetics.</p>"
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-referral",
+            "title": "Referral",
+            "points_text": "You get Points : 20%<br>Your friend gets Points : 10%",
+            "description": "You earn 20% from their order and your friend gets 10% off their order! Win win!",
+            "link_url": "",
+            "link_text": "Learn More"
           }
         },
-        "faq_item_hPcMrm": {
-          "type": "faq_item",
+        "earning_method_PYjRGz": {
+          "type": "earning_method",
           "settings": {
-            "question": "Is your cacao tested for heavy metals?",
-            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with an absence of all of them according to EU standards and compliant with FDA laws. We are happy to say we have incredible results and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing.</p>"
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-product_review",
+            "title": "Leave a review get $3!",
+            "points_text": "+300 Points",
+            "description": "Leave a review & get $3 off your next order in store credit!",
+            "link_url": "",
+            "link_text": "Learn More"
+          }
+        },
+        "reward_opportunity_HdDf6p": {
+          "type": "reward_opportunity",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-points_conversion",
+            "title": "Point Conversion",
+            "points_text": "N/A",
+            "description": "Click my rewards to claim: 100 points = $1",
+            "link_url": "",
+            "link_text": "Learn More"
           }
         }
       },
       "block_order": [
-        "faq_item_ryMdwb",
-        "faq_item_KEdGqy",
-        "faq_item_hPcMrm"
+        "earning_method_xitHWz",
+        "earning_method_Lzc8Lk",
+        "earning_method_PYjRGz",
+        "reward_opportunity_HdDf6p"
       ],
-      "name": "FAQ",
+      "name": "Loyalty & Rewards",
       "settings": {
-        "heading": "Frequently asked questions"
+        "theme_color": "#e2ab43",
+        "text_color": "#1D2327",
+        "border_color": "#CFCFCF",
+        "background_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "full_width": false,
+        "section_max_width": 1200,
+        "section_padding_top": 40,
+        "section_padding_bottom": 40,
+        "cards_per_row_desktop": 2,
+        "cards_per_row_tablet": 2,
+        "cards_per_row_mobile": 1,
+        "card_spacing": 20,
+        "card_border_width": 1,
+        "card_border_radius": 8,
+        "card_background": "transparent",
+        "enable_hover_effect": true,
+        "card_shadow": 0,
+        "icon_size": 52,
+        "heading_size": 24,
+        "body_size": 16,
+        "card_title_size": 20,
+        "earning_section_title": "Ways to earn rewards",
+        "opportunities_section_title": "rewards opportunities"
       }
     }
   },
   "order": [
     "main",
-    "section_faq_kCKYQR"
+    "section_loyalty_rewards_zQ4YJ7"
   ]
 }
