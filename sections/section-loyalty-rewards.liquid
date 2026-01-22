@@ -78,7 +78,7 @@
                   {{ block.settings.title }}
                 </h3>
                 
-                {%- if block.settings.points_text != blank -%}
+                {%- if block.settings.points_text != blank and block.settings.points_text != 'N/A' and block.settings.points_text != ' ' -%}
                   <div class="reward-points" style="color: {{ text_color }}; font-weight: 600; margin-bottom: 12px; font-size: {{ body_size }}px;">
                     {{ block.settings.points_text }}
                   </div>
@@ -141,7 +141,7 @@
                   {{ block.settings.title }}
                 </h3>
                 
-                {%- if block.settings.points_text != blank -%}
+                {%- if block.settings.points_text != blank and block.settings.points_text != 'N/A' and block.settings.points_text != ' ' -%}
                   <div class="reward-points" style="color: {{ text_color }}; font-weight: 600; margin-bottom: 12px; font-size: {{ body_size }}px;">
                     {{ block.settings.points_text }}
                   </div>
@@ -557,8 +557,8 @@
           "type": "text",
           "id": "points_text",
           "label": "Points/Reward Text (Optional)",
-          "default": " ",
-          "info": "Supports HTML for currency symbols and line breaks. Leave as space if not needed."
+          "default": "N/A",
+          "info": "Supports HTML for currency symbols and line breaks. Leave as 'N/A' if not needed."
         },
         {
           "type": "textarea",
