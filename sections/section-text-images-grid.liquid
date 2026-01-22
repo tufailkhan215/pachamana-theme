@@ -1,5 +1,36 @@
 <div class="plus_row_scroll_overflow elementor-element elementor-element-cd87555 e-flex e-con-boxed e-con e-parent section-text-images-grid" data-id="cd87555" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="e-con-inner">
+					{%- comment -%} Dynamic CSS for block images - each block can have different width values from post-63.css {%- endcomment -%}
+					{%- comment -%} 
+						Original post-63.css values:
+						- ee6e8ca: max-width: 46%
+						- e20b978: max-width: 52%
+						- 0671162: max-width: 45%
+						- 07c7826: max-width: 40%
+						All become width: 29% on mobile (max-width: 879px)
+					{%- endcomment -%}
+					<style>
+						{%- for block in section.blocks -%}
+							{%- if block.type == 'grid_item' -%}
+								{%- assign image_width = block.settings.image_width | default: 52 -%}
+								{%- assign mobile_width = block.settings.mobile_width | default: 29 -%}
+								.elementor-63 .elementor-element.elementor-element-{{ block.id }}-img img,
+								.elementor.elementor-63 .elementor-element.elementor-element-{{ block.id }}-img img,
+								[data-elementor-id="63"] .elementor-element.elementor-element-{{ block.id }}-img img {
+									max-width: {{ image_width }}% !important;
+								}
+								
+								@media (max-width: 879px) {
+									.elementor-63 .elementor-element.elementor-element-{{ block.id }}-img img,
+									.elementor.elementor-63 .elementor-element.elementor-element-{{ block.id }}-img img,
+									[data-elementor-id="63"] .elementor-element.elementor-element-{{ block.id }}-img img {
+										width: {{ mobile_width }}% !important;
+										max-width: {{ mobile_width }}% !important;
+									}
+								}
+							{%- endif -%}
+						{%- endfor -%}
+					</style>
             {% comment %}
 				<div class="elementor-element elementor-element-7669d6e elementor-widget elementor-widget-shortcode" data-id="7669d6e" data-element_type="widget" data-widget_type="shortcode.default">
 				<div class="elementor-widget-container">
@@ -140,6 +171,28 @@
           "id": "description",
           "label": "Description",
           "default": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image Width (Desktop)",
+          "min": 20,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 52,
+          "info": "Desktop max-width percentage. Original values: 46%, 52%, 45%, 40%"
+        },
+        {
+          "type": "range",
+          "id": "mobile_width",
+          "label": "Image Width (Mobile)",
+          "min": 20,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 29,
+          "info": "Mobile width percentage (screens < 880px). Default: 29%"
         }
       ]
     }
