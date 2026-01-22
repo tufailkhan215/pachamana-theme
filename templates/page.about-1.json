@@ -30,8 +30,8 @@
         "slide_qq4W7q"
       ],
       "settings": {
-        "slide_duration": 5000,
-        "transition_duration": 500,
+        "slide_duration": 8000,
+        "transition_duration": 1000,
         "loop": true,
         "ken_burns": true,
         "ken_burns_direction": "in"
