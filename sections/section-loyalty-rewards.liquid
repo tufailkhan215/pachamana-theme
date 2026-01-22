@@ -130,7 +130,7 @@
                 {%- if block.settings.icon_type != 'none' -%}
                   <div class="reward-icon-container" style="margin-bottom: 15px;">
                     {%- if block.settings.icon_type == 'icon' and block.settings.icon_class != blank -%}
-                      <i class="{{ block.settings.icon_class }} reward-icon" style="color: {{ theme_color }}; width: {{ icon_size }}px; height: {{ icon_size }}px; display: inline-block; font-size: {{ icon_size }}px; line-height: 1;"></i>
+                      <i class="{{ block.settings.icon_class }} reward-icon" style="color: {{ theme_color }}; width: {{ icon_size }}px; height: {{ icon_size }}px; display: inline-block; font-size: {{ iconfont_size }}px; line-height: 1;"></i>
                     {%- elsif block.settings.icon_type == 'image' and block.settings.icon_image != blank -%}
                       {%- assign icon_image_url = block.settings.icon_image | image_url: width: icon_size | times: 2 -%}
                       <img src="{{ icon_image_url }}" alt="{{ block.settings.title }}" class="reward-icon-image" style="width: {{ icon_size }}px; height: {{ icon_size }}px; object-fit: contain;">
