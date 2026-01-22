@@ -300,9 +300,7 @@
     {{ content_for_layout }}
   </main>
   {%- endif -%}
-
   {%- section 'section-footer' -%}
-
   <ul hidden>
     <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t | default: 'Selecting a new language or country will refresh the page' }}</li>
     <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t | default: 'Opens in a new window' }}</li>
