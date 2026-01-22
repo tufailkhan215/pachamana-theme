@@ -174,8 +174,11 @@
   /* Loyalty Rewards Icon Font - Based on wlr-fonts.min.css */
   @font-face {
     font-family: 'loyalty';
-    src: url('https://pachamana.com/wp-content/plugins/wp-loyalty-rules/Assets/Site/Css/fonts/loyalty.woff?16cf3') format('woff'),
-         url('https://pachamana.com/wp-content/plugins/wp-loyalty-rules/Assets/Site/Css/fonts/loyalty.ttf?16cf3') format('truetype');
+    src: url('{{ "loyalty.eot" | asset_url }}?16cf3');
+    src: url('{{ "loyalty.eot" | asset_url }}?16cf3#iefix') format('embedded-opentype'),
+         url('{{ "loyalty.ttf" | asset_url }}?16cf3') format('truetype'),
+         url('{{ "loyalty.woff" | asset_url }}?16cf3') format('woff'),
+         url('{{ "loyalty.svg" | asset_url }}?16cf3#loyalty') format('svg');
     font-weight: 400;
     font-style: normal;
     font-display: block;
