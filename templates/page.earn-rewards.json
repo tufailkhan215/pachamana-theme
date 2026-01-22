@@ -17,18 +17,10 @@
           "settings": {
             "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
           }
-        },
-        "loyalty_rewards_rdmxfE": {
-          "type": "loyalty_rewards",
-          "settings": {
-            "enable": true,
-            "section_id": ""
-          }
         }
       },
       "block_order": [
-        "slide_6MwxNG",
-        "loyalty_rewards_rdmxfE"
+        "slide_6MwxNG"
       ],
       "settings": {
         "slide_duration": 8000,
