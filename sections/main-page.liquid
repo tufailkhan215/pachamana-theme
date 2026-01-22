@@ -158,17 +158,17 @@
     var kenBurnsEnabled = container.getAttribute('data-ken-burns') !== 'false';
     var kenBurnsDirection = container.getAttribute('data-ken-burns-direction') || 'in';
     
-    // Initialize Swiper
+    // Initialize Swiper - always initialize even with one slide
     var swiperConfig = {
       effect: 'fade',
       fadeEffect: {
         crossFade: true
       },
-      loop: loopEnabled && slides.length > 1,
-      autoplay: {
+      loop: loopEnabled && slides.length > 1, // Only loop if more than one slide
+      autoplay: slides.length > 1 ? {
         delay: slideDuration,
         disableOnInteraction: false
-      },
+      } : false, // Disable autoplay for single slide
       speed: transitionDuration,
       slidesPerView: 1,
       spaceBetween: 0,
@@ -180,33 +180,42 @@
     
     var swiperInstance = new Swiper(slideshow, swiperConfig);
     
-    // Apply Ken Burns effect if enabled
+    // Apply Ken Burns effect if enabled - works for any number of slides
     if (kenBurnsEnabled) {
-      var activeSlide = slideshow.querySelector('.swiper-slide-active');
-      if (activeSlide) {
-        var image = activeSlide.querySelector('.elementor-background-slideshow__slide__image');
+      // Function to activate Ken Burns on a slide
+      function activateKenBurns(slide) {
+        if (!slide) return;
+        var image = slide.querySelector('.elementor-background-slideshow__slide__image');
         if (image) {
+          // Remove active class from all images first
+          var allImages = slideshow.querySelectorAll('.elementor-background-slideshow__slide__image');
+          allImages.forEach(function(img) {
+            img.classList.remove('elementor-ken-burns--active');
+          });
+          // Add active class to current image
           image.classList.add('elementor-ken-burns--active');
         }
       }
       
-      swiperInstance.on('slideChange', function() {
-        var allSlides = slideshow.querySelectorAll('.swiper-slide');
-        allSlides.forEach(function(slide) {
-          var img = slide.querySelector('.elementor-background-slideshow__slide__image');
-          if (img) {
-            img.classList.remove('elementor-ken-burns--active');
-          }
+      // Activate Ken Burns on initial slide
+      var activeSlide = slideshow.querySelector('.swiper-slide-active') || slides[0];
+      activateKenBurns(activeSlide);
+      
+      // For single slide, ensure animation starts immediately
+      if (slides.length === 1) {
+        // Force animation to start by toggling the class
+        setTimeout(function() {
+          activateKenBurns(activeSlide);
+        }, 100);
+      }
+      
+      // Listen for slide changes (only relevant if more than one slide)
+      if (slides.length > 1) {
+        swiperInstance.on('slideChange', function() {
+          var currentSlide = slideshow.querySelector('.swiper-slide-active');
+          activateKenBurns(currentSlide);
         });
-        
-        var currentSlide = slideshow.querySelector('.swiper-slide-active');
-        if (currentSlide) {
-          var currentImg = currentSlide.querySelector('.elementor-background-slideshow__slide__image');
-          if (currentImg) {
-            currentImg.classList.add('elementor-ken-burns--active');
-          }
-        }
-      });
+      }
     }
   }
   
