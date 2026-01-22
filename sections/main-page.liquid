@@ -166,10 +166,17 @@
     try {
       // Decode HTML entities and parse JSON
       var decodedSettings = dataSettings.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+      
+      // Log the JSON for debugging (remove in production if needed)
+      // console.log('Parsing JSON:', decodedSettings.substring(0, 200));
+      
       var settings = JSON.parse(decodedSettings);
       var gallery = settings.background_slideshow_gallery || [];
       
-      if (gallery.length === 0) return;
+      if (gallery.length === 0) {
+        console.warn('No slideshow images found');
+        return;
+      }
       
       // Check if Swiper library is available
       if (typeof Swiper === 'undefined') {
