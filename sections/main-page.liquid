@@ -171,12 +171,18 @@
       // Decode HTML entities and parse JSON
       var decodedSettings = dataSettings.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
       
+      // Debug: log the raw JSON before any fixes
+      console.log('Raw JSON (first 250 chars):', decodedSettings.substring(0, 250));
+      console.log('JSON around position 153:', decodedSettings.substring(140, 180));
+      
       // Fix JSON escaping issues - properly escape special characters in URLs
-      // This handles backslashes, quotes, newlines, and tabs that could break JSON
-      decodedSettings = decodedSettings.replace(/"url":"([^"]*)"/g, function(match, url) {
-        // Escape backslashes first, then quotes, then remove newlines and tabs
-        var escapedUrl = url
-          .replace(/\\/g, '\\\\')  // Escape backslashes
+      // Use a more robust approach: find all URL values and escape them
+      decodedSettings = decodedSettings.replace(/"url"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/g, function(match, url) {
+        // Unescape any already-escaped characters first
+        var unescapedUrl = url.replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+        // Then properly escape: backslashes first, then quotes
+        var escapedUrl = unescapedUrl
+          .replace(/\\/g, '\\\\')  // Escape backslashes (must be first)
           .replace(/"/g, '\\"')     // Escape quotes
           .replace(/\n/g, '')       // Remove newlines
           .replace(/\r/g, '')       // Remove carriage returns
@@ -184,13 +190,22 @@
         return '"url":"' + escapedUrl + '"';
       });
       
-      // Debug: log JSON to identify parsing issues
-      console.log('Parsing JSON (first 200 chars):', decodedSettings.substring(0, 200));
-      console.log('JSON around position 153:', decodedSettings.substring(140, 170));
-      
       // Try to find and fix common JSON issues
-      // Fix trailing commas (though shouldn't be needed)
+      // Fix trailing commas
       decodedSettings = decodedSettings.replace(/,(\s*[}\]])/g, '$1');
+      // Fix unescaped quotes in string values (not in URLs)
+      decodedSettings = decodedSettings.replace(/:\s*"([^"]*)"([^,}\]]*)/g, function(match, value, rest) {
+        // Only fix if it's not already properly escaped and not a URL field
+        if (!match.includes('"url"') && value.includes('"') && !value.includes('\\"')) {
+          var fixedValue = value.replace(/"/g, '\\"');
+          return ':"' + fixedValue + '"' + rest;
+        }
+        return match;
+      });
+      
+      // Debug: log the fixed JSON
+      console.log('Fixed JSON (first 250 chars):', decodedSettings.substring(0, 250));
+      console.log('Fixed JSON around position 153:', decodedSettings.substring(140, 180));
       
       var settings = JSON.parse(decodedSettings);
       var gallery = settings.background_slideshow_gallery || [];
