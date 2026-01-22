@@ -10,9 +10,9 @@
       assign image_id = block.settings.image.id | default: forloop.index
       comment
         Escape special characters in URL for JSON
-        Note: Liquid replace handles these in order - escape backslash first, then quotes
+        Use double quotes for replace patterns to avoid quote conflicts
       endcomment
-      assign image_url_escaped = image_url | replace: '\\', '\\\\' | replace: '"', '\\"' | replace: '
+      assign image_url_escaped = image_url | replace: '\', '\\' | replace: '"', '\"' | replace: '
 ', '' | replace: '
 ', '' | replace: '	', ''
       if gallery_items != ''
