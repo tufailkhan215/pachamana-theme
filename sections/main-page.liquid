@@ -9,16 +9,16 @@
       assign image_url = block.settings.image | image_url: width: 1920
       assign image_id = block.settings.image.id | default: forloop.index
       comment
-        Escape special characters in URL for JSON
-        Use double quotes for replace patterns to avoid quote conflicts
+        Build gallery item - JavaScript will handle JSON escaping
+        Just remove newlines and tabs that could break the structure
       endcomment
-      assign image_url_escaped = image_url | replace: '\', '\\' | replace: '"', '\"' | replace: '
+      assign image_url_clean = image_url | replace: '
 ', '' | replace: '
 ', '' | replace: '	', ''
       if gallery_items != ''
         assign gallery_items = gallery_items | append: ','
       endif
-      assign gallery_items = gallery_items | append: '{"id":' | append: image_id | append: ',"url":"' | append: image_url_escaped | append: '"}'
+      assign gallery_items = gallery_items | append: '{"id":' | append: image_id | append: ',"url":"' | append: image_url_clean | append: '"}'
       assign slide_count = slide_count | plus: 1
     endif
   endfor
@@ -173,6 +173,14 @@
     try {
       // Decode HTML entities and parse JSON
       var decodedSettings = dataSettings.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+      
+      // Fix JSON escaping issues - properly escape backslashes and quotes in URLs
+      // This handles cases where Liquid couldn't escape properly
+      decodedSettings = decodedSettings.replace(/"url":"([^"]*)"/g, function(match, url) {
+        // Escape backslashes and quotes in URL
+        var escapedUrl = url.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+        return '"url":"' + escapedUrl + '"';
+      });
       
       // Debug: log JSON to identify parsing issues
       console.log('Parsing JSON (first 200 chars):', decodedSettings.substring(0, 200));
