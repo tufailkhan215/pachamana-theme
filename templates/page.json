@@ -27,7 +27,7 @@
         "transition_duration": 500,
         "loop": true,
         "ken_burns": true,
-        "ken_burns_direction": "out"
+        "ken_burns_direction": "in"
       }
     }
   },
