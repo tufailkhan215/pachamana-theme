@@ -12,6 +12,12 @@
     "main": {
       "type": "main-page",
       "blocks": {
+        "slide_DfJ3HM": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-10.jpg"
+          }
+        },
         "slide_qq4W7q": {
           "type": "slide",
           "settings": {
@@ -20,6 +26,7 @@
         }
       },
       "block_order": [
+        "slide_DfJ3HM",
         "slide_qq4W7q"
       ],
       "settings": {
