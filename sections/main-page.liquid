@@ -173,8 +173,9 @@
       // Decode HTML entities and parse JSON
       var decodedSettings = dataSettings.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
       
-      // Log the JSON for debugging (remove in production if needed)
-      // console.log('Parsing JSON:', decodedSettings.substring(0, 200));
+      // Debug: log JSON to identify parsing issues
+      console.log('Parsing JSON (first 200 chars):', decodedSettings.substring(0, 200));
+      console.log('JSON around position 153:', decodedSettings.substring(140, 170));
       
       var settings = JSON.parse(decodedSettings);
       var gallery = settings.background_slideshow_gallery || [];
