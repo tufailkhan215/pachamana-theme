@@ -1,0 +1,631 @@
+{%- liquid
+  comment
+    Separate blocks into earning methods and reward opportunities
+  endcomment
+  assign earning_methods = section.blocks | where: 'type', 'earning_method'
+  assign reward_opportunities = section.blocks | where: 'type', 'reward_opportunity'
+  
+  comment
+    Get settings with defaults
+  endcomment
+  assign theme_color = section.settings.theme_color | default: '#e2ab43'
+  assign text_color = section.settings.text_color | default: '#1D2327'
+  assign border_color = section.settings.border_color | default: '#CFCFCF'
+  assign background_color = section.settings.background_color | default: '#ffffff'
+  assign button_text_color = section.settings.button_text_color | default: '#ffffff'
+  
+  assign cards_per_row_desktop = section.settings.cards_per_row_desktop | default: 3
+  assign cards_per_row_tablet = section.settings.cards_per_row_tablet | default: 2
+  assign cards_per_row_mobile = section.settings.cards_per_row_mobile | default: 1
+  assign card_spacing = section.settings.card_spacing | default: 20
+  assign section_padding_top = section.settings.section_padding_top | default: 40
+  assign section_padding_bottom = section.settings.section_padding_bottom | default: 40
+  assign section_max_width = section.settings.section_max_width | default: 1200
+  assign full_width = section.settings.full_width | default: false
+  
+  assign card_border_width = section.settings.card_border_width | default: 1
+  assign card_border_radius = section.settings.card_border_radius | default: 8
+  assign card_background = section.settings.card_background | default: 'transparent'
+  assign enable_hover_effect = section.settings.enable_hover_effect | default: true
+  assign card_shadow = section.settings.card_shadow | default: 0
+  assign icon_size = section.settings.icon_size | default: 52
+  
+  assign heading_size = section.settings.heading_size | default: 24
+  assign body_size = section.settings.body_size | default: 16
+  assign card_title_size = section.settings.card_title_size | default: 20
+  
+  assign earning_section_title = section.settings.earning_section_title | default: 'Ways to earn rewards'
+  assign opportunities_section_title = section.settings.opportunities_section_title | default: 'rewards opportunities'
+-%}
+
+<div class="loyalty-rewards-section" style="background-color: {{ background_color }}; padding-top: {{ section_padding_top }}px; padding-bottom: {{ section_padding_bottom }}px;">
+  <div class="loyalty-rewards-container" style="max-width: {% if full_width %}100%{% else %}{{ section_max_width }}px{% endif %}; margin: 0 auto; padding: 0 20px;">
+    
+    {%- comment -%} Ways to Earn Rewards Section {%- endcomment -%}
+    {%- if earning_methods.size > 0 -%}
+      <div class="earning-methods-section" style="margin-bottom: 60px;">
+        <div class="section-heading-container">
+          <h2 class="section-heading" style="border-left: 3px solid {{ theme_color }}; color: {{ text_color }}; font-size: {{ heading_size }}px; padding-left: 15px; margin-bottom: 30px;">
+            {{ earning_section_title }}
+          </h2>
+        </div>
+        <div class="rewards-grid earning-methods-grid" style="display: grid; grid-template-columns: repeat({{ cards_per_row_desktop }}, 1fr); gap: {{ card_spacing }}px;">
+          {%- for block in earning_methods -%}
+            {%- liquid
+              assign card_tag = 'div'
+              assign card_href = ''
+              if block.settings.link_url != blank
+                assign card_tag = 'a'
+                assign card_href = block.settings.link_url
+              endif
+            -%}
+            <{{ card_tag }}{% if card_href != blank %} href="{{ card_href }}"{% endif %} class="reward-card earning-method-card" 
+              style="border: {{ card_border_width }}px solid {{ border_color }}; border-radius: {{ card_border_radius }}px; background: {{ card_background }}; padding: 20px; {% if enable_hover_effect %}transition: transform 0.2s ease, box-shadow 0.2s ease;{% endif %} box-shadow: 0 {{ card_shadow }}px {{ card_shadow | times: 1.5 }}px rgba(0,0,0,0.1); {% if card_href != blank %}text-decoration: none; display: block;{% endif %}"
+              {% if card_href != blank %}aria-label="{{ block.settings.title }}"{% endif %}>
+              <div class="reward-card-container">
+                {%- if block.settings.icon_type != 'none' -%}
+                  <div class="reward-icon-container" style="margin-bottom: 15px;">
+                    {%- if block.settings.icon_type == 'icon' and block.settings.icon_class != blank -%}
+                      <i class="{{ block.settings.icon_class }} reward-icon" style="color: {{ theme_color }}; width: {{ icon_size }}px; height: {{ icon_size }}px; display: inline-block; font-size: {{ icon_size }}px; line-height: 1;"></i>
+                    {%- elsif block.settings.icon_type == 'image' and block.settings.icon_image != blank -%}
+                      {%- assign icon_image_url = block.settings.icon_image | image_url: width: icon_size | times: 2 -%}
+                      <img src="{{ icon_image_url }}" alt="{{ block.settings.title }}" class="reward-icon-image" style="width: {{ icon_size }}px; height: {{ icon_size }}px; object-fit: contain;">
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+                
+                <h3 class="reward-title" style="color: {{ text_color }}; font-size: {{ card_title_size }}px; margin: 0 0 12px 0; font-weight: 600;">
+                  {{ block.settings.title }}
+                </h3>
+                
+                {%- if block.settings.points_text != blank -%}
+                  <div class="reward-points" style="color: {{ text_color }}; font-weight: 600; margin-bottom: 12px; font-size: {{ body_size }}px;">
+                    {{ block.settings.points_text }}
+                  </div>
+                {%- endif -%}
+                
+                {%- if block.settings.description != blank -%}
+                  <p class="reward-description" style="color: {{ text_color }}; font-size: {{ body_size }}px; line-height: 1.6; margin: 0;">
+                    {{ block.settings.description }}
+                  </p>
+                {%- endif -%}
+                
+                {%- if block.settings.link_url != blank and block.settings.link_text != blank -%}
+                  <div class="reward-link" style="margin-top: 15px;">
+                    <span class="reward-link-text" style="color: {{ theme_color }}; font-weight: 600; text-decoration: underline;">
+                      {{ block.settings.link_text }}
+                    </span>
+                  </div>
+                {%- endif -%}
+              </div>
+            </{{ card_tag }}>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+    
+    {%- comment -%} Rewards Opportunities Section {%- endcomment -%}
+    {%- if reward_opportunities.size > 0 -%}
+      <div class="reward-opportunities-section">
+        <div class="section-heading-container">
+          <h2 class="section-heading" style="border-left: 3px solid {{ theme_color }}; color: {{ text_color }}; font-size: {{ heading_size }}px; padding-left: 15px; margin-bottom: 30px;">
+            {{ opportunities_section_title }}
+          </h2>
+        </div>
+        <div class="rewards-grid opportunities-grid" style="display: grid; grid-template-columns: repeat({{ cards_per_row_desktop }}, 1fr); gap: {{ card_spacing }}px;">
+          {%- for block in reward_opportunities -%}
+            {%- liquid
+              assign card_tag = 'div'
+              assign card_href = ''
+              if block.settings.link_url != blank
+                assign card_tag = 'a'
+                assign card_href = block.settings.link_url
+              endif
+            -%}
+            <{{ card_tag }}{% if card_href != blank %} href="{{ card_href }}"{% endif %} class="reward-card reward-opportunity-card" 
+              style="border: {{ card_border_width }}px solid {{ border_color }}; border-radius: {{ card_border_radius }}px; background: {{ card_background }}; padding: 20px; {% if enable_hover_effect %}transition: transform 0.2s ease, box-shadow 0.2s ease;{% endif %} box-shadow: 0 {{ card_shadow }}px {{ card_shadow | times: 1.5 }}px rgba(0,0,0,0.1); {% if card_href != blank %}text-decoration: none; display: block;{% endif %}"
+              {% if card_href != blank %}aria-label="{{ block.settings.title }}"{% endif %}>
+              <div class="reward-card-container">
+                {%- if block.settings.icon_type != 'none' -%}
+                  <div class="reward-icon-container" style="margin-bottom: 15px;">
+                    {%- if block.settings.icon_type == 'icon' and block.settings.icon_class != blank -%}
+                      <i class="{{ block.settings.icon_class }} reward-icon" style="color: {{ theme_color }}; width: {{ icon_size }}px; height: {{ icon_size }}px; display: inline-block; font-size: {{ icon_size }}px; line-height: 1;"></i>
+                    {%- elsif block.settings.icon_type == 'image' and block.settings.icon_image != blank -%}
+                      {%- assign icon_image_url = block.settings.icon_image | image_url: width: icon_size | times: 2 -%}
+                      <img src="{{ icon_image_url }}" alt="{{ block.settings.title }}" class="reward-icon-image" style="width: {{ icon_size }}px; height: {{ icon_size }}px; object-fit: contain;">
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+                
+                <h3 class="reward-title" style="color: {{ text_color }}; font-size: {{ card_title_size }}px; margin: 0 0 12px 0; font-weight: 600;">
+                  {{ block.settings.title }}
+                </h3>
+                
+                {%- if block.settings.points_text != blank -%}
+                  <div class="reward-points" style="color: {{ text_color }}; font-weight: 600; margin-bottom: 12px; font-size: {{ body_size }}px;">
+                    {{ block.settings.points_text }}
+                  </div>
+                {%- endif -%}
+                
+                {%- if block.settings.description != blank -%}
+                  <p class="reward-description" style="color: {{ text_color }}; font-size: {{ body_size }}px; line-height: 1.6; margin: 0;">
+                    {{ block.settings.description }}
+                  </p>
+                {%- endif -%}
+                
+                {%- if block.settings.link_url != blank and block.settings.link_text != blank -%}
+                  <div class="reward-link" style="margin-top: 15px;">
+                    <span class="reward-link-text" style="color: {{ theme_color }}; font-weight: 600; text-decoration: underline;">
+                      {{ block.settings.link_text }}
+                    </span>
+                  </div>
+                {%- endif -%}
+              </div>
+            </{{ card_tag }}>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+    
+  </div>
+</div>
+
+<style>
+  .loyalty-rewards-section .reward-card:hover {
+    {%- if enable_hover_effect -%}
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    {%- endif -%}
+  }
+  
+  .loyalty-rewards-section .reward-card a {
+    color: inherit;
+  }
+  
+  .loyalty-rewards-section .reward-card a:hover {
+    color: inherit;
+  }
+  
+  @media (max-width: 1024px) {
+    .loyalty-rewards-section .rewards-grid {
+      grid-template-columns: repeat({{ cards_per_row_tablet }}, 1fr) !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .loyalty-rewards-section .rewards-grid {
+      grid-template-columns: repeat({{ cards_per_row_mobile }}, 1fr) !important;
+    }
+    
+    .loyalty-rewards-section .section-heading {
+      font-size: {{ heading_size | times: 0.85 }}px !important;
+    }
+    
+    .loyalty-rewards-section .reward-card {
+      padding: 15px !important;
+    }
+    
+    .loyalty-rewards-section .earning-methods-section {
+      margin-bottom: 40px !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Loyalty & Rewards",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "theme_color",
+      "label": "Theme Color",
+      "default": "#e2ab43"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1D2327"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#CFCFCF"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width",
+      "default": false,
+      "info": "If enabled, section will span the full width of the page"
+    },
+    {
+      "type": "range",
+      "id": "section_max_width",
+      "label": "Section Max Width",
+      "min": 800,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1200,
+      "info": "Only applies if Full Width is disabled"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "cards_per_row_desktop",
+      "label": "Cards Per Row (Desktop)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "cards_per_row_tablet",
+      "label": "Cards Per Row (Tablet)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "cards_per_row_mobile",
+      "label": "Cards Per Row (Mobile)",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_spacing",
+      "label": "Card Spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Card Styling"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Card Border Width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card Border Radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card Background",
+      "default": "transparent"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover_effect",
+      "label": "Enable Hover Effect",
+      "default": true,
+      "info": "Adds transform and shadow on card hover"
+    },
+    {
+      "type": "range",
+      "id": "card_shadow",
+      "label": "Card Shadow",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "info": "Box shadow depth"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon Size",
+      "min": 32,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "min": 14,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body Text Size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Card Title Size",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Section Headings"
+    },
+    {
+      "type": "text",
+      "id": "earning_section_title",
+      "label": "Ways to Earn Section Title",
+      "default": "Ways to earn rewards"
+    },
+    {
+      "type": "text",
+      "id": "opportunities_section_title",
+      "label": "Rewards Opportunities Section Title",
+      "default": "rewards opportunities"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "earning_method",
+      "name": "Earning Method",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {
+              "value": "icon",
+              "label": "Icon Class"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "icon"
+        },
+        {
+          "type": "text",
+          "id": "icon_class",
+          "label": "Icon Class",
+          "info": "CSS class for icon (e.g., 'wlr wlrf-point_for_purchase')",
+          "default": ""
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon Image",
+          "info": "Upload an image icon (recommended: 52x52px or larger)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Earn Points for Purchase"
+        },
+        {
+          "type": "text",
+          "id": "points_text",
+          "label": "Points/Reward Text",
+          "default": "2 Points for each $1.00 spent",
+          "info": "Supports HTML for currency symbols and line breaks"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Spend $1 → Earn 2 Points. That's 2% back in store credit!"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL (Optional)",
+          "info": "Make the card clickable"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text (Optional)",
+          "default": "Learn More"
+        }
+      ]
+    },
+    {
+      "type": "reward_opportunity",
+      "name": "Reward Opportunity",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {
+              "value": "icon",
+              "label": "Icon Class"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "icon"
+        },
+        {
+          "type": "text",
+          "id": "icon_class",
+          "label": "Icon Class",
+          "info": "CSS class for icon (e.g., 'wlr wlrf-points_conversion')",
+          "default": ""
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon Image",
+          "info": "Upload an image icon (recommended: 52x52px or larger)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Point Conversion"
+        },
+        {
+          "type": "text",
+          "id": "points_text",
+          "label": "Points/Reward Text (Optional)",
+          "default": "",
+          "info": "Supports HTML for currency symbols and line breaks"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Click my rewards to claim: 100 points = $1"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL (Optional)",
+          "info": "Make the card clickable"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text (Optional)",
+          "default": "Learn More"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loyalty & Rewards",
+      "blocks": [
+        {
+          "type": "earning_method",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-point_for_purchase",
+            "title": "Earn Points for Purchase",
+            "points_text": "2 Points for each $1.00 spent",
+            "description": "Spend $1 → Earn 2 Points. That's 2% back in store credit!"
+          }
+        },
+        {
+          "type": "earning_method",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-referral",
+            "title": "Referral",
+            "points_text": "You get Points : 20%<br>Your friend gets Points : 10%",
+            "description": "You earn 20% from their order and your friend gets 10% off their order! Win win!"
+          }
+        },
+        {
+          "type": "earning_method",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-product_review",
+            "title": "Leave a review get $3!",
+            "points_text": "+300 Points",
+            "description": "Leave a review & get $3 off your next order in store credit!"
+          }
+        },
+        {
+          "type": "reward_opportunity",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-points_conversion",
+            "title": "Point Conversion",
+            "description": "Click my rewards to claim: 100 points = $1"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
