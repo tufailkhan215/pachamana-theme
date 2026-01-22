@@ -88,12 +88,10 @@
 				
           {{ page.content }}
           
-          {%- comment -%} Render loyalty rewards blocks after page content {%- endcomment -%}
+          {%- comment -%} Placeholder for loyalty rewards blocks - will be populated by JavaScript {%- endcomment -%}
           {%- for block in section.blocks -%}
             {%- if block.type == 'loyalty_rewards' and block.settings.enable -%}
-              <div class="loyalty-rewards-block-wrapper" {{ block.shopify_attributes }}>
-                {%- section 'section-loyalty-rewards' -%}
-              </div>
+              <div class="loyalty-rewards-block-placeholder" data-loyalty-section-id="{{ block.settings.section_id }}" {{ block.shopify_attributes }}></div>
             {%- endif -%}
           {%- endfor -%}
           
@@ -280,6 +278,79 @@
 </script>
 {%- endif -%}
 
+{%- comment -%} JavaScript to render loyalty rewards sections {%- endcomment -%}
+<script>
+(function() {
+  'use strict';
+  
+  function renderLoyaltyRewardsBlocks() {
+    var placeholders = document.querySelectorAll('.loyalty-rewards-block-placeholder');
+    placeholders.forEach(function(placeholder) {
+      var sectionId = placeholder.getAttribute('data-loyalty-section-id');
+      
+      // If section_id is provided, find that specific section
+      if (sectionId) {
+        var targetSection = document.querySelector('[data-section-id="' + sectionId + '"]');
+        if (targetSection) {
+          var sectionWrapper = targetSection.closest('.shopify-section');
+          if (sectionWrapper) {
+            // Clone the section content
+            var clonedContent = sectionWrapper.cloneNode(true);
+            clonedContent.style.display = '';
+            // Insert after placeholder
+            placeholder.parentNode.insertBefore(clonedContent, placeholder.nextSibling);
+            // Hide original section
+            sectionWrapper.style.display = 'none';
+          }
+        }
+      } else {
+        // If no section_id, find the first loyalty rewards section on the page
+        var loyaltySections = document.querySelectorAll('[data-section-type="section-loyalty-rewards"]');
+        if (loyaltySections.length > 0) {
+          var firstSection = loyaltySections[0];
+          var sectionWrapper = firstSection.closest('.shopify-section');
+          if (sectionWrapper && !sectionWrapper.classList.contains('loyalty-rewards-moved')) {
+            // Clone the section content
+            var clonedContent = sectionWrapper.cloneNode(true);
+            clonedContent.style.display = '';
+            clonedContent.classList.add('loyalty-rewards-moved');
+            // Insert after placeholder
+            placeholder.parentNode.insertBefore(clonedContent, placeholder.nextSibling);
+            // Hide original section
+            sectionWrapper.style.display = 'none';
+          }
+        }
+      }
+    });
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(renderLoyaltyRewardsBlocks, 500);
+    });
+  } else {
+    setTimeout(renderLoyaltyRewardsBlocks, 500);
+  }
+  
+  // Re-render on section load (for Shopify theme editor)
+  if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+    document.addEventListener('shopify:section:load', function() {
+      setTimeout(renderLoyaltyRewardsBlocks, 500);
+    });
+    
+    document.addEventListener('shopify:section:unload', function() {
+      setTimeout(renderLoyaltyRewardsBlocks, 500);
+    });
+  }
+  
+  // Also try after window load
+  window.addEventListener('load', function() {
+    setTimeout(renderLoyaltyRewardsBlocks, 1000);
+  });
+})();
+</script>
+
 {% schema %}
 {
   "name": "Main Page",
@@ -363,6 +434,12 @@
           "label": "Enable Loyalty Rewards Section",
           "default": false,
           "info": "Show the loyalty rewards section after page content"
+        },
+        {
+          "type": "text",
+          "id": "section_id",
+          "label": "Section Instance ID (Optional)",
+          "info": "Enter the specific section instance ID if you have multiple loyalty rewards sections. Leave blank to use the first one found on the page. You can find the section ID in the theme editor."
         },
       ]
     }
