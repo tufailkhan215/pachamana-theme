@@ -129,6 +129,8 @@
 </style>
 
 {%- if slide_count > 0 -%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 (function() {
   'use strict';
@@ -153,51 +155,14 @@
       
       if (gallery.length === 0) return;
       
-      // Try to use Elementor's background slideshow handler first
-      if (typeof window.elementorFrontend !== 'undefined' && typeof jQuery !== 'undefined') {
-        var $element = jQuery(container);
-        
-        // Trigger Elementor's background slideshow initialization
-        if (window.elementorFrontend.modules && window.elementorFrontend.modules.backgroundSlideshow) {
-          try {
-            var handler = new window.elementorFrontend.modules.backgroundSlideshow({
-              $element: $element,
-              settings: settings
-            });
-            handler.onInit();
-            return; // Successfully initialized via Elementor
-          } catch(e) {
-            console.warn('Elementor background slideshow handler failed, using fallback:', e);
-          }
-        }
-        
-        // Alternative: Trigger Elementor's runReadyTrigger
-        if (window.elementorFrontend.hooks) {
-          try {
-            window.elementorFrontend.hooks.doAction('frontend/element_ready/global', $element);
-            // Wait a bit to see if Elementor initialized it
-            setTimeout(function() {
-              if (!slideshow.swiper) {
-                // Elementor didn't initialize it, use manual init
-                initManualSwiper();
-              }
-            }, 500);
-            return;
-          } catch(e) {
-            console.warn('Elementor hooks failed, using manual init:', e);
-          }
-        }
-      }
-      
-      // Manual Swiper initialization (fallback if Elementor doesn't handle it)
-      // Check if Swiper library is available (from Elementor)
+      // Check if Swiper library is available
       if (typeof Swiper === 'undefined') {
-        // Wait for Swiper to load (Elementor includes it)
+        // Wait for Swiper to load
         setTimeout(initMainPageSwiper, 200);
         return;
       }
       
-      // Initialize Swiper manually
+      // Initialize Swiper
       var swiperConfig = {
         effect: 'fade',
         fadeEffect: {
@@ -256,20 +221,20 @@
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(initMainPageSwiper, 800);
+      setTimeout(initMainPageSwiper, 1000);
     });
   } else {
-    setTimeout(initMainPageSwiper, 800);
+    setTimeout(initMainPageSwiper, 1000);
   }
   
   // Re-initialize after Elementor frontend loads
   if (typeof window.elementorFrontend !== 'undefined') {
-    setTimeout(initMainPageSwiper, 1500);
+    setTimeout(initMainPageSwiper, 2000);
     
     // Also listen for Elementor init event
     if (typeof jQuery !== 'undefined') {
       jQuery(document).on('elementor/frontend/init', function() {
-        setTimeout(initMainPageSwiper, 500);
+        setTimeout(initMainPageSwiper, 1000);
       });
     }
   }
@@ -283,7 +248,7 @@
   
   // Also try after window load
   window.addEventListener('load', function() {
-    setTimeout(initMainPageSwiper, 1000);
+    setTimeout(initMainPageSwiper, 1500);
   });
 })();
 </script>
