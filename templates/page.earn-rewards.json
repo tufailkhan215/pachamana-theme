@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
+      "type": "main-container-page",
       "blocks": {
         "slide_6MwxNG": {
           "type": "slide",
