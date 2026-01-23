@@ -255,7 +255,9 @@
           "settings": {
             "image": "shopify://shop_images/chuncho.png",
             "title": "CHUNCHO",
-            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>",
+            "image_width": 46,
+            "mobile_width": 29
           }
         },
         "grid_item_PJTtjd": {
@@ -263,7 +265,9 @@
           "settings": {
             "image": "shopify://shop_images/nacional.png",
             "title": "FORASTERO",
-            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>",
+            "image_width": 52,
+            "mobile_width": 29
           }
         },
         "grid_item_h6FtQV": {
@@ -271,7 +275,9 @@
           "settings": {
             "image": "shopify://shop_images/criollo.png",
             "title": "CRIOLLO",
-            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>",
+            "image_width": 45,
+            "mobile_width": 29
           }
         },
         "grid_item_97BDfA": {
@@ -279,7 +285,9 @@
           "settings": {
             "image": "shopify://shop_images/trinitario.png",
             "title": "TRINITARIO",
-            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>"
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>",
+            "image_width": 40,
+            "mobile_width": 29
           }
         }
       },
