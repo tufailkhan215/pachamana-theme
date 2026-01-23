@@ -106,7 +106,10 @@
                data-element_type="widget" 
                data-widget_type="form.default">
             <div class="elementor-widget-container">
-              {%- form 'contact', id: 'contact-popup-form-' | append: section.id, class: 'elementor-form' -%}
+              {%- liquid
+                assign form_id = 'contact-popup-form-' | append: section.id
+              -%}
+              {%- form 'contact', id: form_id, class: 'elementor-form' -%}
                 
                 {%- comment -%} Shopify automatically handles form validation and messages {%- endcomment -%}
                 {%- if form.posted_successfully? -%}
