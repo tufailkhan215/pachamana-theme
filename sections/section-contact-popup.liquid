@@ -1,0 +1,246 @@
+{%- comment -%}
+  Contact Popup Modal Section
+  Uses Elementor CSS classes from post-1197.css to match source site exactly
+  Enabled/disabled via theme settings: settings.contact_popup_enabled
+{%- endcomment -%}
+
+{%- if settings.contact_popup_enabled -%}
+<div id="elementor-popup-modal-1197" 
+     class="elementor-popup-modal dialog-type-lightbox dialog-type-buttons dialog-lightbox-widget" 
+     role="document" 
+     aria-modal="true" 
+     aria-hidden="true"
+     tabindex="0">
+  
+  <div class="dialog-widget-content dialog-lightbox-widget-content animated">
+    <a role="button" 
+       tabindex="0" 
+       aria-label="Close" 
+       href="#" 
+       class="dialog-close-button dialog-lightbox-close-button"
+       data-close-popup>
+      <svg aria-hidden="true" class="e-font-icon-svg e-eicon-close eicon-close" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" fill="none"/>
+      </svg>
+    </a>
+    
+    <div class="dialog-header dialog-lightbox-header"></div>
+    
+    <div class="dialog-message dialog-lightbox-message">
+      <div data-elementor-type="popup" 
+           data-elementor-id="1197" 
+           class="elementor elementor-1197 elementor-location-popup">
+        
+        <div class="elementor-element elementor-element-429e1a33 e-con-full e-flex e-con e-parent" 
+             data-id="429e1a33" 
+             data-element_type="container">
+          
+          {%- comment -%} Logo Image {%- endcomment -%}
+          {%- if settings.contact_popup_logo != blank -%}
+            <div class="elementor-element elementor-element-b3689c1 elementor-widget elementor-widget-image" 
+                 data-id="b3689c1" 
+                 data-element_type="widget" 
+                 data-widget_type="image.default">
+              <div class="elementor-widget-container">
+                <img loading="lazy" 
+                     width="800" 
+                     height="502" 
+                     src="{{ settings.contact_popup_logo | image_url: width: 800 }}" 
+                     alt="{{ shop.name }}" 
+                     class="attachment-large size-large">
+              </div>
+            </div>
+          {%- endif -%}
+          
+          {%- comment -%} Heading {%- endcomment -%}
+          <div class="elementor-element elementor-element-5caef557 elementor-widget elementor-widget-heading" 
+               data-id="5caef557" 
+               data-element_type="widget" 
+               data-widget_type="heading.default">
+            <div class="elementor-widget-container">
+              <h3 id="contact-popup-heading-{{ section.id }}" 
+                  class="elementor-heading-title elementor-size-default">
+                {{ settings.contact_popup_heading | default: 'Contact us' }}
+              </h3>
+            </div>
+          </div>
+          
+          {%- comment -%} Text Content {%- endcomment -%}
+          <div class="elementor-element elementor-element-3dbc3b91 elementor-widget elementor-widget-text-editor" 
+               data-id="3dbc3b91" 
+               data-element_type="widget" 
+               data-widget_type="text-editor.default">
+            <div class="elementor-widget-container">
+              {{ settings.contact_popup_text }}
+              {%- if settings.contact_popup_display_email != blank -%}
+                <p>Email us directly at <strong><em>{{ settings.contact_popup_display_email }}</em></strong> for urgent questions</p>
+              {%- endif -%}
+            </div>
+          </div>
+          
+          {%- comment -%} Contact Form - Using Shopify Native Form {%- endcomment -%}
+          <div class="elementor-element elementor-element-ea8e73c elementor-button-align-stretch elementor-widget elementor-widget-form" 
+               data-id="ea8e73c" 
+               data-element_type="widget" 
+               data-widget_type="form.default">
+            <div class="elementor-widget-container">
+              {%- form 'contact', id: 'contact-popup-form-' | append: section.id, class: 'elementor-form', name: 'New Form', 'aria-label': 'New Form' -%}
+                
+                {%- comment -%} Shopify automatically handles form validation and messages {%- endcomment -%}
+                {%- if form.posted_successfully? -%}
+                  <div class="elementor-message elementor-message-success" role="alert">
+                    {{ settings.contact_popup_success_message | default: 'Thank you! We will be in touch shortly.' }}
+                  </div>
+                {%- endif -%}
+                
+                {%- if form.errors -%}
+                  <div class="elementor-message elementor-message-danger" role="alert">
+                    <ul>
+                      {%- for field in form.errors -%}
+                        <li>{{ field }}: {{ form.errors[field] }}</li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                {%- endif -%}
+                
+                <div class="elementor-form-fields-wrapper elementor-labels-above">
+                  
+                  {%- comment -%} Form Field 1: Name (Text Input) {%- endcomment -%}
+                  <div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100">
+                    <label for="form-field-name-{{ section.id }}" class="elementor-field-label">
+                      Name
+                    </label>
+                    <input size="1" 
+                           type="text" 
+                           name="contact[name]" 
+                           id="form-field-name-{{ section.id }}" 
+                           class="elementor-field elementor-size-sm elementor-field-textual" 
+                           placeholder="Name"
+                           required>
+                  </div>
+                  
+                  {%- comment -%} Form Field 2: Email (Email Input, Required) {%- endcomment -%}
+                  <div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
+                    <label for="form-field-email-{{ section.id }}" class="elementor-field-label">
+                      Email
+                    </label>
+                    <input size="1" 
+                           type="email" 
+                           name="contact[email]" 
+                           id="form-field-email-{{ section.id }}" 
+                           class="elementor-field elementor-size-sm elementor-field-textual" 
+                           placeholder="Email" 
+                           required="required">
+                  </div>
+                  
+                  {%- comment -%} Form Field 3: Message (Textarea) {%- endcomment -%}
+                  <div class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100">
+                    <label for="form-field-message-{{ section.id }}" class="elementor-field-label">
+                      Message
+                    </label>
+                    <textarea class="elementor-field-textual elementor-field elementor-size-sm" 
+                              name="contact[body]" 
+                              id="form-field-message-{{ section.id }}" 
+                              rows="4" 
+                              placeholder="Message"
+                              required></textarea>
+                  </div>
+                  
+                  {%- comment -%} Submit Button {%- endcomment -%}
+                  <div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+                    <button class="elementor-button elementor-size-md" type="submit">
+                      <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-text">{{ settings.contact_popup_button_text | default: 'Send' }}</span>
+                      </span>
+                    </button>
+                  </div>
+                  
+                </div>
+              {%- endform -%}
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="dialog-buttons-wrapper dialog-lightbox-buttons-wrapper"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  
+  function initContactPopup() {
+    var popup = document.getElementById('elementor-popup-modal-1197');
+    if (!popup) return;
+    
+    // Open popup function
+    function openPopup() {
+      popup.setAttribute('aria-hidden', 'false');
+      popup.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    // Close popup function
+    function closePopup() {
+      popup.setAttribute('aria-hidden', 'true');
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    
+    // Close button handlers
+    var closeButtons = popup.querySelectorAll('[data-close-popup]');
+    closeButtons.forEach(function(button) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        closePopup();
+      });
+    });
+    
+    // Close on overlay click
+    var overlay = popup.querySelector('.dialog-widget-content');
+    if (overlay) {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+          closePopup();
+        }
+      });
+    }
+    
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && popup.getAttribute('aria-hidden') === 'false') {
+        closePopup();
+      }
+    });
+    
+    // Expose open function globally for trigger links
+    window.openContactPopup = function() {
+      {%- if settings.contact_popup_enabled -%}
+        openPopup();
+      {%- else -%}
+        console.warn('Contact popup is disabled in theme settings');
+      {%- endif -%}
+    };
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactPopup);
+  } else {
+    initContactPopup();
+  }
+})();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Contact Popup",
+  "tag": "section",
+  "class": "section",
+  "settings": []
+}
+{% endschema %}

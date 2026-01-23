@@ -162,6 +162,55 @@
         "label": "Announcement link"
       }
     ]
+  },
+  {
+    "name": "Contact Popup",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "contact_popup_enabled",
+        "label": "Enable Contact Popup",
+        "default": false,
+        "info": "Show contact popup modal on the site"
+      },
+      {
+        "type": "image_picker",
+        "id": "contact_popup_logo",
+        "label": "Popup Logo Image",
+        "info": "Recommended: 400px width, transparent background"
+      },
+      {
+        "type": "text",
+        "id": "contact_popup_heading",
+        "label": "Popup Heading",
+        "default": "Contact us"
+      },
+      {
+        "type": "richtext",
+        "id": "contact_popup_text",
+        "label": "Popup Text Content",
+        "default": "<p>Fill out the form below, and we will be in touch shortly or,</p>"
+      },
+      {
+        "type": "text",
+        "id": "contact_popup_display_email",
+        "label": "Display Email Address",
+        "default": "pachamanacacao@gmail.com",
+        "info": "Email address displayed in popup text (for urgent questions)"
+      },
+      {
+        "type": "text",
+        "id": "contact_popup_button_text",
+        "label": "Submit Button Text",
+        "default": "Send"
+      },
+      {
+        "type": "text",
+        "id": "contact_popup_success_message",
+        "label": "Success Message",
+        "default": "Thank you! We will be in touch shortly."
+      }
+    ]
   }
 ]
 
