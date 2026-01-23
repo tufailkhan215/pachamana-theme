@@ -18,7 +18,7 @@
   assign ken_burns_enabled = section.settings.ken_burns | default: true
   assign ken_burns_dir = section.settings.ken_burns_direction | default: 'in'
 -%}
-
+{{ "Here" }}
 <div data-elementor-type="wp-page" data-elementor-id="82" class="elementor elementor-82" data-elementor-post-type="page">
 				<div class="elementor-element elementor-element-e3c6f55 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="e3c6f55" data-element_type="container" data-slide-duration="{{ slide_duration }}" data-transition-duration="{{ transition_duration }}" data-loop="{{ loop_enabled }}" data-ken-burns="{{ ken_burns_enabled }}" data-ken-burns-direction="{{ ken_burns_dir }}">
 					{%- if slide_count > 0 -%}
