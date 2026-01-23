@@ -9,6 +9,31 @@
  */
 {
   "sections": {
+    "main_container_page_T7HGkp": {
+      "type": "main-container-page",
+      "blocks": {
+        "slide_TRWeK3": {
+          "type": "slide",
+          "settings": {}
+        },
+        "slide_Dcpnk9": {
+          "type": "slide",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "slide_TRWeK3",
+        "slide_Dcpnk9"
+      ],
+      "name": "Main container Page",
+      "settings": {
+        "slide_duration": 5000,
+        "transition_duration": 500,
+        "loop": true,
+        "ken_burns": true,
+        "ken_burns_direction": "in"
+      }
+    },
     "section_loyalty_rewards_9LhgjB": {
       "type": "section-loyalty-rewards",
       "blocks": {
@@ -98,6 +123,7 @@
     }
   },
   "order": [
+    "main_container_page_T7HGkp",
     "section_loyalty_rewards_9LhgjB"
   ]
 }
