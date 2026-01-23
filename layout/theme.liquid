@@ -2742,5 +2742,10 @@
   </script>
 
   {%- comment -%} global.js already loaded in head, skipping duplicate {%- endcomment -%}
+  
+  {%- comment -%} Contact Popup - Only renders if enabled in theme settings - Must be before closing body tag {%- endcomment -%}
+  {%- if settings.contact_popup_enabled -%}
+    {%- section 'section-contact-popup' -%}
+  {%- endif -%}
 </body>
 </html>
