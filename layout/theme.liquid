@@ -229,7 +229,6 @@
   {%- liquid
     assign is_index = false
     assign is_article = false
-    assign is_earn_rewards = false
     
     comment
       Check multiple ways to detect index template:
@@ -258,10 +257,6 @@
       assign is_article = true
     elsif request.page_type == 'article'
       assign is_article = true
-    endif
-
-    if template == 'page.earn-rewards'
-      assign is_index = true
     endif
   -%}
   {%- if is_index -%}
@@ -300,18 +295,8 @@
         </div>
       </div>
     </div>
-  {%- elsif is_earn_rewards -%}
-    {%- comment -%} 
-      is_earn_rewards TEMPLATE DETECTED: 
-      is_earn_rewards pages use the same Elementor
-      
-    {%- endcomment -%}
-     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1"> {{ "here" }}
-      {{ content_for_layout }} 
-     </main>
-            
   {%- else -%}
-  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1"> 
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
     {{ content_for_layout }}
   </main>
   {%- endif -%}
