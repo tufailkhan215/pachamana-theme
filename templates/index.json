@@ -317,7 +317,7 @@
       "name": "Recent Articles",
       "settings": {
         "heading": "RECENT ARTICLES",
-        "blog_handle": "",
+        "blog_handle": "news",
         "articles_to_show": 3
       }
     },
