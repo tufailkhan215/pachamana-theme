@@ -76,20 +76,7 @@
 		 
 		<style>@media (min-width:1091px){.plus-navigation-wrap.nav-menu6943cf4a1aa93 #theplus-navigation-normal-menu{display: block!important;}.plus-navigation-wrap.nav-menu6943cf4a1aa93 #plus-mobile-nav-toggle-nav-menu6943cf4a1aa93.collapse.in{display:none;}}@media (max-width:1090px){.plus-navigation-wrap.nav-menu6943cf4a1aa93 #theplus-navigation-normal-menu{display:none !important;}.plus-navigation-wrap.nav-menu6943cf4a1aa93 .plus-mobile-nav-toggle.mobile-toggle{display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: flex;-webkit-align-items: center;-moz-align-items: center;-ms-align-items: center;align-items: center;-webkit-justify-content: flex-end;-moz-justify-content: flex-end;-ms-justify-content: flex-end;justify-content: flex-end;}}</style>				</div>
 				</div>
-				{%- comment -%} Account Link {%- endcomment -%}
-				<div class="elementor-element elementor-element-account-link elementor-widget elementor-widget-heading" data-id="account-link" data-element_type="widget" data-widget_type="heading.default">
-					<div class="elementor-widget-container">
-						{%- if customer -%}
-							<a href="{{ routes.account_url }}" class="elementor-heading-title elementor-size-default" style="text-decoration: none; color: inherit;">
-								My Account{% if customer.first_name %} ({{ customer.first_name }}){% endif %}
-							</a>
-						{%- else -%}
-							<a href="{{ routes.account_login_url }}" class="elementor-heading-title elementor-size-default" style="text-decoration: none; color: inherit;">
-								Login
-							</a>
-						{%- endif -%}
-					</div>
-				</div>
+				
 				
 				<div class="elementor-element elementor-element-ca83ede elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="ca83ede" data-element_type="widget" data-widget_type="social-icons.default">
 				<div class="elementor-widget-container">
