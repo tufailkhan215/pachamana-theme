@@ -438,6 +438,13 @@
             "question": "Does it have caffeine?",
             "answer": "<p>In short yes, but not what you are used to with coffee or tea. It is about half the amount of mg per serving than that of coffee and tea. It has around 40mg of caffeine per serving and 250 mg of theobromine.The active component called Theobromine, adds a stimulating and heart opening effect to the cacao as it is a vasodilator and a heart stimulant vs. caffeine being a nervous system stimulant . In combination these two molecules work together to make a unique experience which is ceremonial cacao.</p>"
           }
+        },
+        "faq_item_pzzV9e": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is your cacao fair trade?",
+            "answer": "<p>Yes our cacao is fair trade, and we actually believe it’s better than fair trade models to this day. Our direct trade model ensures economic opportunity for the farmers and those processing the cacao at origin, and keeps most of the money in their hands in Peru!</p>"
+          }
         }
       },
       "block_order": [
@@ -446,7 +453,8 @@
         "faq_item_TDFFJk",
         "faq_item_Hm73Y3",
         "faq_item_rHcCRp",
-        "faq_item_MH7nPb"
+        "faq_item_MH7nPb",
+        "faq_item_pzzV9e"
       ],
       "settings": {
         "heading": "Frequently asked questions"
