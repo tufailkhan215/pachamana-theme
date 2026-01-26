@@ -452,6 +452,13 @@
             "question": "Is it safe for pregnant and breastfeeding women?",
             "answer": "<p>Yes in small amounts. We argue that it is actually incredibly beneficial for prenatal and postpartum mothers. We honor the feminine force and are grateful to give discounts to people working with mothers as we feel cacao is such an essential source of vitamins, minerals, and mood enhancement which mothers so desperately need and crave! Reach out to learn more</p>"
           }
+        },
+        "faq_item_X7L7Nk": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes cacao “ceremonial” ?",
+            "answer": "<p>Ceremonial cacao is a large discussion on what it means, but for us we have one value.<strong>Ceremony Starts at the farm …</strong>The seed is planted by Indigenous farmers with the intention to help people connect with the lineage of chuncho cacao and is tended in a way that is in harmony with the Earth. This is the most crucial first step and skipping this is a huge mistake in the ceremonial cacao industry. After the cacao is grown and collected our origin makes sure to pick the finest beans for cacao processing, making sure that it’s not processed to heavily remove the nutritional and medicinal benefits that cacao has. After receiving it in the US, we make sure to spread awareness of cacao’s medicinal benefits so the lineage is never broken. Together we are creating ceremonial cacao.</p>"
+          }
         }
       },
       "block_order": [
@@ -462,7 +469,8 @@
         "faq_item_rHcCRp",
         "faq_item_MH7nPb",
         "faq_item_pzzV9e",
-        "faq_item_Nqmqyy"
+        "faq_item_Nqmqyy",
+        "faq_item_X7L7Nk"
       ],
       "settings": {
         "heading": "Frequently asked questions"
