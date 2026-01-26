@@ -16,7 +16,9 @@
           <ul role="menu" class="dropdown-menu">
             {%- for child_link in link.links -%}
               <li class="menu-item {% if child_link.links.size > 0 %}menu-item-has-children dropdown-submenu{% endif %} {% if child_link.active %}active{% endif %}">
-                <a href="{{ child_link.url }}" data-text="{{ child_link.title }}">
+                <a href="{{ child_link.url }}" 
+                   {% if child_link.links.size > 0 %}class="dropdown-toggle" aria-haspopup="true"{% endif %}
+                   data-text="{{ child_link.title }}">
                   {{ child_link.title }}
                 </a>
                 {%- if child_link.links.size > 0 -%}
