@@ -324,6 +324,42 @@
     "section-photo-gallery": {
       "type": "section-photo-gallery",
       "blocks": {
+        "gallery_image_njpXme": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0666_30f0cb0c-703c-43c3-b7cc-7010d7e68b4c.jpg"
+          }
+        },
+        "gallery_image_rYNPjQ": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-9993-scaled.jpg"
+          }
+        },
+        "gallery_image_ETtCTT": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/fa364e32-f4fa-403d-b62c-e783ddc48268-1.jpg"
+          }
+        },
+        "gallery_image_EHBmXe": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-0061-scaled.jpg"
+          }
+        },
+        "gallery_image_bqTqkt": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_5519.jpg"
+          }
+        },
+        "gallery_image_Jx69ii": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-9995-2-scaled.jpg"
+          }
+        },
         "gallery_image_UmUewb": {
           "type": "gallery_image",
           "settings": {
@@ -542,6 +578,12 @@
         }
       },
       "block_order": [
+        "gallery_image_njpXme",
+        "gallery_image_rYNPjQ",
+        "gallery_image_ETtCTT",
+        "gallery_image_EHBmXe",
+        "gallery_image_bqTqkt",
+        "gallery_image_Jx69ii",
         "gallery_image_UmUewb",
         "gallery_image_QRwnYt",
         "gallery_image_jdCB6P",
