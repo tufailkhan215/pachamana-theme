@@ -324,6 +324,78 @@
     "section-photo-gallery": {
       "type": "section-photo-gallery",
       "blocks": {
+        "gallery_image_K8zRfJ": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0667.jpg"
+          }
+        },
+        "gallery_image_ffDHt7": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-93-1.jpg"
+          }
+        },
+        "gallery_image_R4GPP9": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-64.jpg"
+          }
+        },
+        "gallery_image_GGDXft": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-50.jpg"
+          }
+        },
+        "gallery_image_kPkyck": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-61.jpg"
+          }
+        },
+        "gallery_image_dgzx9d": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-9951-scaled.jpg"
+          }
+        },
+        "gallery_image_ixMHmE": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-24_f8b44a64-6bfa-4af7-851f-34b462065653.jpg"
+          }
+        },
+        "gallery_image_arrzkU": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/4699805a-8079-478a-a772-49c547ecef60.jpg"
+          }
+        },
+        "gallery_image_3tbday": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-12.jpg"
+          }
+        },
+        "gallery_image_twGiRw": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0668.jpg"
+          }
+        },
+        "gallery_image_J4KnMD": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-174-scaled.jpg"
+          }
+        },
+        "gallery_image_AzfQNp": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-108-scaled.jpg"
+          }
+        },
         "gallery_image_nJTCam": {
           "type": "gallery_image",
           "settings": {
@@ -362,6 +434,18 @@
         }
       },
       "block_order": [
+        "gallery_image_K8zRfJ",
+        "gallery_image_ffDHt7",
+        "gallery_image_R4GPP9",
+        "gallery_image_GGDXft",
+        "gallery_image_kPkyck",
+        "gallery_image_dgzx9d",
+        "gallery_image_ixMHmE",
+        "gallery_image_arrzkU",
+        "gallery_image_3tbday",
+        "gallery_image_twGiRw",
+        "gallery_image_J4KnMD",
+        "gallery_image_AzfQNp",
         "gallery_image_nJTCam",
         "gallery_image_KAmxMi",
         "gallery_image_6DFCnx",
