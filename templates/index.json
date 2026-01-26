@@ -459,6 +459,41 @@
             "question": "What makes cacao “ceremonial” ?",
             "answer": "<p>Ceremonial cacao is a large discussion on what it means, but for us we have one value.<strong>Ceremony Starts at the farm …</strong>The seed is planted by Indigenous farmers with the intention to help people connect with the lineage of chuncho cacao and is tended in a way that is in harmony with the Earth. This is the most crucial first step and skipping this is a huge mistake in the ceremonial cacao industry. After the cacao is grown and collected our origin makes sure to pick the finest beans for cacao processing, making sure that it’s not processed to heavily remove the nutritional and medicinal benefits that cacao has. After receiving it in the US, we make sure to spread awareness of cacao’s medicinal benefits so the lineage is never broken. Together we are creating ceremonial cacao.</p>"
           }
+        },
+        "faq_item_UtXAU7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I properly store my cacao?",
+            "answer": "<p>Cacao is incredibly shelf stable in its pure form so it doesn’t really “go bad” for at least 2 years. We recommend keeping it in a dark and cool place, at room temperature in your cupboard or pantry to ensure the taste stays wonderful. We also recommend if you purchase our block of cacao to store it in a sealed container of some sort to ensure its freshness.</p>"
+          }
+        },
+        "faq_item_NRJBEg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "My cacao arrived melted, what’s the protocol here?",
+            "answer": "<p>If your cacao is melted, please contact us atpachamanacacao@gmail.comto receive a new shipment of fresh cacao, and we will add an ice pack to make sure it arrives safely! We appreciate your support.</p>"
+          }
+        },
+        "faq_item_VVMBdf": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is your cacao “raw”?",
+            "answer": "<p>In our opinions raw cacao is a myth, as it involves toasting before it’s processed, and also the fermentation process of the beans at the farm needs to get above raw temperatures of 110 degrees. Although cacao is marketed as raw, we believe that using fire in the responsible way as the indigenous communities who use cacao do, is part of its tradition and should not be taken away from the process because it also takes away from the flavor we enjoy in ceremonial cacao. We do however, roast our cacao at lower temperatures to not over roast the flavors away like traditional chocolate manufacturing does to cacao. We like to ensure all the vitalizing principles and medicinal properties ceremonial grade cacao has within by not roasting them away.<br/><br/></p>"
+          }
+        },
+        "faq_item_HL7TzH": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can cacao be used while on SSRI medications?",
+            "answer": "<p>Ceremonial cacao, celebrated for its antidepressant qualities, interacts intricately with our brain’s serotonin pathways. When combined with SSRI-based antidepressants, which enhance serotonin levels by impeding its reabsorption, ceremonial cacao can potentially overwhelm serotonin receptors. This delicate balance within our neural circuitry can lead to adverse effects, such as headaches, signaling an excess of serotonin stimulation. It’s essential to recognize that not all antidepressants operate via SSRIs; various medications, including certain anti-psychotics, also impact serotonin and dopamine pathways, posing similar contraindications with ceremonial cacao.</p><p>In group settings where ceremonial cacao is shared, it’s crucial to educate participants about potential interactions, particularly with antidepressant medications. Each individual’s medication regimen and physiological responses vary, necessitating informed decision-making. </p><p>The importance of mindfulness and responsible facilitation when incorporating ceremonial cacao into wellness practices, especially alongside antidepressant treatments. By fostering an environment of informed consent and cautious consumption, individuals can harness the therapeutic potential of cacao while mitigating potential risks.</p><p>If you feel you’ve taken too much, you may result in a headache. We recommend drinking water and resting.</p>"
+          }
+        },
+        "faq_item_AbFw7P": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is cacao a drug?",
+            "answer": "<p>Not at all. At Pacha Mana we see cacao as a medicine, as something that allows for healing and connecting with ourselves if used in the right context and the right dose. It is no different than chocolate, just increased in dosage. </p>"
+          }
         }
       },
       "block_order": [
@@ -470,7 +505,12 @@
         "faq_item_MH7nPb",
         "faq_item_pzzV9e",
         "faq_item_Nqmqyy",
-        "faq_item_X7L7Nk"
+        "faq_item_X7L7Nk",
+        "faq_item_UtXAU7",
+        "faq_item_NRJBEg",
+        "faq_item_VVMBdf",
+        "faq_item_HL7TzH",
+        "faq_item_AbFw7P"
       ],
       "settings": {
         "heading": "Frequently asked questions"
