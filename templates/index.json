@@ -243,7 +243,7 @@
       "type": "section-featured-products",
       "settings": {
         "heading": "FEATURED PRODUCTS",
-        "collection": "collection-temp",
+        "collection": "frontpage",
         "products_to_show": 3
       }
     },
