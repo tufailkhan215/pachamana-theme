@@ -324,6 +324,42 @@
     "section-photo-gallery": {
       "type": "section-photo-gallery",
       "blocks": {
+        "gallery_image_ttddeV": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-76.jpg"
+          }
+        },
+        "gallery_image_rxDUyz": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-37.jpg"
+          }
+        },
+        "gallery_image_db9EYy": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27_8af2445d-3fdc-4e2e-a35b-2d6fba804b4e.jpg"
+          }
+        },
+        "gallery_image_fn6ad4": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-57.jpg"
+          }
+        },
+        "gallery_image_LWtmwk": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-26.jpg"
+          }
+        },
+        "gallery_image_V9yzjf": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/Mark-photo.jpg"
+          }
+        },
         "gallery_image_63EHBz": {
           "type": "gallery_image",
           "settings": {
@@ -470,6 +506,12 @@
         }
       },
       "block_order": [
+        "gallery_image_ttddeV",
+        "gallery_image_rxDUyz",
+        "gallery_image_db9EYy",
+        "gallery_image_fn6ad4",
+        "gallery_image_LWtmwk",
+        "gallery_image_V9yzjf",
         "gallery_image_63EHBz",
         "gallery_image_aVPRwV",
         "gallery_image_8dKXTJ",
