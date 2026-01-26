@@ -1,10 +1,25 @@
+{%- liquid
+  comment
+    Get blog from section settings
+  endcomment
+  assign selected_blog = blank
+  
+  if section.settings.blog_handle != blank
+    assign selected_blog = blogs[section.settings.blog_handle]
+  endif
+  
+  if selected_blog == blank and blogs.first != blank
+    assign selected_blog = blogs.first
+  endif
+-%}
+
 <div class="plus_row_scroll_overflow elementor-element elementor-element-217fad0 e-flex e-con-boxed e-con e-parent section-rescent-articles" data-id="217fad0" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
   <div class="e-con-inner">
     <div class="elementor-element elementor-element-e494d6d elementor-invisible e-flex e-con-boxed e-con e-child" data-id="e494d6d" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;zoomIn&quot;}">
       <div class="e-con-inner">
         <div class="elementor-element elementor-element-e340354 elementor-widget elementor-widget-heading" data-id="e340354" data-element_type="widget" data-widget_type="heading.default">
           <div class="elementor-widget-container">
-            <h2 class="elementor-heading-title elementor-size-default"><a href="{% if selected_blog %}{{ selected_blog.url }}{% else %}{{ routes.blogs_url }}{% endif %}">Recent Articles</a></h2>
+            <h2 class="elementor-heading-title elementor-size-default"><a href="{% if selected_blog %}{{ selected_blog.url }}{% else %}{{ routes.blogs_url }}{% endif %}">{{ section.settings.heading | default: 'Recent Articles' }}</a></h2>
           </div>
         </div>
         <div class="elementor-element elementor-element-794ed23 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="794ed23" data-element_type="widget" data-widget_type="divider.default">
