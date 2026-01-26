@@ -86,7 +86,8 @@
 									   href="{{ block.settings.url }}" 
 									   target="_blank" 
 									   rel="noopener"
-									   aria-label="{{ block.settings.icon | capitalize }}">
+									   aria-label="{{ block.settings.icon | capitalize }}"
+										{%- if block.settings.icon == 'email' -%} onclick="if(typeof window.openContactPopup === 'function') { window.openContactPopup(); } return false;" {%- endif -%}>
 										<span class="elementor-screen-only">{{ block.settings.icon | capitalize }}</span>
 										{%- case block.settings.icon -%}
 											{%- when 'instagram' -%}
