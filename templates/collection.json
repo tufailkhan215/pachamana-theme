@@ -11,8 +11,38 @@
   "sections": {
     "main": {
       "type": "main-collection",
+      "blocks": {
+        "slide_8dkm6A": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-64.webp"
+          }
+        },
+        "slide_paGrqP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27-1_f5823dd4-a39d-4add-a142-1ed1dcb9f43d.webp"
+          }
+        },
+        "slide_y73Tmg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/7-1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8dkm6A",
+        "slide_paGrqP",
+        "slide_y73Tmg"
+      ],
       "settings": {
-        "products_per_page": 24
+        "products_per_page": 24,
+        "slide_duration": 5000,
+        "transition_duration": 500,
+        "loop": true,
+        "ken_burns": true,
+        "ken_burns_direction": "in"
       }
     },
     "section_format_comparison_emHDLW": {

@@ -92,7 +92,7 @@
 						{%- assign image_count = product.media.size -%}
 						<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out;">
 							<a href="#" role="button" class="woocommerce-product-gallery__trigger" aria-haspopup="dialog" aria-controls="photoswipe-fullscreen-dialog" aria-label="View full-screen image gallery">
-								<span aria-hidden="true"><img draggable="false" role="img" class="emoji" alt="≡ƒöì" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f50d.svg"></span>
+								<span aria-hidden="true"><img draggable="false" role="img" class="emoji" alt="≡🔍" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f50d.svg"></span>
 							</a>
 							<div class="flex-viewport" style="overflow: hidden; position: relative; transition: none;">
 								<div class="woocommerce-product-gallery__wrapper" style="transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
@@ -285,7 +285,7 @@
 							<span class="woocommerce-Price-amount amount" aria-hidden="true">
 								<bdi>{{ product.price_min | money }}</bdi>
 							</span>
-							<span aria-hidden="true">ΓÇô</span>
+							<span aria-hidden="true">–</span>
 							<span class="woocommerce-Price-amount amount" aria-hidden="true">
 								<bdi>{{ product.price_max | money }}</bdi>
 							</span>
@@ -316,7 +316,7 @@
 						{%- if product.metafields.custom.subscription_discount != blank or product.metafields.my_fields.subscription_discount != blank -%}
 							{%- assign subscription_discount = product.metafields.custom.subscription_discount | default: product.metafields.my_fields.subscription_discount -%}
 							<small class="wcsatt-sub-options">
-								<span class="wcsatt-dash">ΓÇö</span> or subscribe and save
+								<span class="wcsatt-dash">–</span> or subscribe and save
 							</small>
 							<span class="wcsatt-sub-discount">{{ subscription_discount }}{% if subscription_discount contains '%' %}{% else %}%{% endif %}</span>
 						{%- endif -%}
@@ -703,7 +703,7 @@
 												<span class="woocommerce-Price-amount amount" aria-hidden="true">
 													<bdi>{{ related_product.price_min | money }}</bdi>
 												</span>
-												<span aria-hidden="true">ΓÇô</span>
+												<span aria-hidden="true">–</span>
 												<span class="woocommerce-Price-amount amount" aria-hidden="true">
 													<bdi>{{ related_product.price_max | money }}</bdi>
 												</span>
@@ -729,7 +729,7 @@
 											{%- if related_product.metafields.custom.subscription_discount != blank or related_product.metafields.my_fields.subscription_discount != blank -%}
 												{%- assign subscription_discount = related_product.metafields.custom.subscription_discount | default: related_product.metafields.my_fields.subscription_discount -%}
 												<small class="wcsatt-sub-options">
-													<span class="wcsatt-dash">ΓÇö</span> or subscribe and save
+													<span class="wcsatt-dash">–</span> or subscribe and save
 												</small>
 												<span class="wcsatt-sub-discount">{{ subscription_discount }}{% if subscription_discount contains '%' %}{% else %}%{% endif %}</span>
 											{%- endif -%}
