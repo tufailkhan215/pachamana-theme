@@ -1,0 +1,170 @@
+{%- comment -%}
+  Customer Order Details Page
+  Displays detailed information about a specific order
+{%- endcomment -%}
+
+<div class="elementor elementor-account-page" data-elementor-type="wp-page">
+  <div class="elementor-element elementor-element-order-details e-flex e-con-boxed e-con e-parent" data-id="order-details" data-element_type="container">
+    <div class="e-con-inner">
+      
+      <div class="elementor-element elementor-element-order-heading elementor-widget elementor-widget-heading" data-id="order-heading" data-element_type="widget" data-widget_type="heading.default">
+        <div class="elementor-widget-container">
+          <h1 class="elementor-heading-title elementor-size-default">Order #{{ order.order_number }}</h1>
+        </div>
+      </div>
+      
+      <div class="order-info-section" style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+          <div>
+            <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Order Information</h3>
+            <p style="margin: 5px 0; color: #666;"><strong>Order Date:</strong> {{ order.created_at | date: "%B %d, %Y at %I:%M %p" }}</p>
+            <p style="margin: 5px 0; color: #666;"><strong>Order Number:</strong> {{ order.order_number }}</p>
+            <p style="margin: 5px 0; color: #666;">
+              <strong>Status:</strong> 
+              {%- if order.fulfillment_status == 'fulfilled' -%}
+                <span style="color: #28a745;">Fulfilled</span>
+              {%- elsif order.fulfillment_status == 'unfulfilled' -%}
+                <span style="color: #ffc107;">Processing</span>
+              {%- else -%}
+                <span>{{ order.fulfillment_status | capitalize }}</span>
+              {%- endif -%}
+            </p>
+            <p style="margin: 5px 0; color: #666;">
+              <strong>Payment Status:</strong> {{ order.financial_status | capitalize }}
+            </p>
+          </div>
+          
+          {%- if order.shipping_address -%}
+            <div>
+              <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Shipping Address</h3>
+              <p style="margin: 5px 0; color: #666;">
+                {{ order.shipping_address.first_name }} {{ order.shipping_address.last_name }}<br>
+                {%- if order.shipping_address.company -%}{{ order.shipping_address.company }}<br>{%- endif -%}
+                {{ order.shipping_address.address1 }}<br>
+                {%- if order.shipping_address.address2 -%}{{ order.shipping_address.address2 }}<br>{%- endif -%}
+                {{ order.shipping_address.city }}, {{ order.shipping_address.province_code }} {{ order.shipping_address.zip }}<br>
+                {{ order.shipping_address.country }}
+              </p>
+            </div>
+          {%- endif -%}
+          
+          {%- if order.billing_address -%}
+            <div>
+              <h3 style="margin: 0 0 10px 0; font-size: 1.1em;">Billing Address</h3>
+              <p style="margin: 5px 0; color: #666;">
+                {{ order.billing_address.first_name }} {{ order.billing_address.last_name }}<br>
+                {%- if order.billing_address.company -%}{{ order.billing_address.company }}<br>{%- endif -%}
+                {{ order.billing_address.address1 }}<br>
+                {%- if order.billing_address.address2 -%}{{ order.billing_address.address2 }}<br>{%- endif -%}
+                {{ order.billing_address.city }}, {{ order.billing_address.province_code }} {{ order.billing_address.zip }}<br>
+                {{ order.billing_address.country }}
+              </p>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      
+      {%- comment -%} Order Items {%- endcomment -%}
+      <div class="order-items-section" style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+        <h2 style="margin: 0 0 20px 0; font-size: 1.3em;">Order Items</h2>
+        <div class="order-items-list">
+          {%- for line_item in order.line_items -%}
+            <div class="order-item-row" style="display: flex; gap: 20px; padding: 15px 0; border-bottom: 1px solid #eee; align-items: center;">
+              {%- if line_item.image -%}
+                <div style="flex-shrink: 0;">
+                  <img src="{{ line_item.image | image_url: width: 100 }}" 
+                       alt="{{ line_item.title | escape }}" 
+                       style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">
+                </div>
+              {%- endif -%}
+              <div style="flex: 1;">
+                <h4 style="margin: 0 0 5px 0;">
+                  <a href="{{ line_item.product.url }}" style="color: #333; text-decoration: none;">
+                    {{ line_item.title }}
+                  </a>
+                </h4>
+                {%- if line_item.variant.title != 'Default Title' -%}
+                  <p style="margin: 5px 0; color: #666; font-size: 0.9em;">{{ line_item.variant.title }}</p>
+                {%- endif -%}
+                <p style="margin: 5px 0; color: #666; font-size: 0.9em;">
+                  Quantity: {{ line_item.quantity }} × {{ line_item.price | money }}
+                </p>
+              </div>
+              <div style="text-align: right; min-width: 100px;">
+                <p style="margin: 0; font-weight: bold; font-size: 1.1em;">
+                  {{ line_item.final_line_price | money }}
+                </p>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+      
+      {%- comment -%} Order Summary {%- endcomment -%}
+      <div class="order-summary-section" style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+        <h2 style="margin: 0 0 20px 0; font-size: 1.3em;">Order Summary</h2>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; justify-content: space-between;">
+            <span>Subtotal:</span>
+            <span>{{ order.subtotal_price | money }}</span>
+          </div>
+          {%- if order.total_discounts > 0 -%}
+            <div style="display: flex; justify-content: space-between; color: #28a745;">
+              <span>Discount:</span>
+              <span>-{{ order.total_discounts | money }}</span>
+            </div>
+          {%- endif -%}
+          {%- if order.shipping_price > 0 -%}
+            <div style="display: flex; justify-content: space-between;">
+              <span>Shipping:</span>
+              <span>{{ order.shipping_price | money }}</span>
+            </div>
+          {%- endif -%}
+          {%- if order.tax_price > 0 -%}
+            <div style="display: flex; justify-content: space-between;">
+              <span>Tax:</span>
+              <span>{{ order.tax_price | money }}</span>
+            </div>
+          {%- endif -%}
+          <div style="display: flex; justify-content: space-between; font-size: 1.2em; font-weight: bold; padding-top: 10px; border-top: 2px solid #333;">
+            <span>Total:</span>
+            <span>{{ order.total_price | money }}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 30px;">
+        <a href="{{ routes.account_orders_url }}" class="elementor-button elementor-size-md" style="background-color: #666;">
+          <span class="elementor-button-content-wrapper">
+            <span class="elementor-button-text">← Back to Orders</span>
+          </span>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  .elementor-account-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .order-item-row:last-child {
+    border-bottom: none;
+  }
+  
+  @media (max-width: 768px) {
+    .order-item-row {
+      flex-direction: column;
+      align-items: flex-start !important;
+    }
+    
+    .order-item-row > div:last-child {
+      text-align: left !important;
+      width: 100%;
+    }
+  }
+</style>

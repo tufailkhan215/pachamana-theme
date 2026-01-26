@@ -1,0 +1,174 @@
+{%- comment -%}
+  Customer Account Dashboard
+  Displays customer info, order history, and quick links
+{%- endcomment -%}
+
+<div class="elementor elementor-account-page" data-elementor-type="wp-page">
+  <div class="elementor-element elementor-element-account-dashboard e-flex e-con-boxed e-con e-parent" data-id="account-dashboard" data-element_type="container">
+    <div class="e-con-inner">
+      
+      {%- comment -%} Welcome Section {%- endcomment -%}
+      <div class="elementor-element elementor-element-account-welcome elementor-widget elementor-widget-heading" data-id="account-welcome" data-element_type="widget" data-widget_type="heading.default">
+        <div class="elementor-widget-container">
+          <h1 class="elementor-heading-title elementor-size-default">
+            Welcome{% if customer.first_name %}, {{ customer.first_name }}{% endif %}!
+          </h1>
+        </div>
+      </div>
+      
+      {%- comment -%} Account Info Section {%- endcomment -%}
+      <div class="account-info-section elementor-element elementor-element-account-info e-flex e-con-boxed e-con e-child" data-id="account-info" data-element_type="container">
+        <div class="e-con-inner">
+          <div class="elementor-element elementor-element-account-details elementor-widget elementor-widget-text-editor" data-id="account-details" data-element_type="widget" data-widget_type="text-editor.default">
+            <div class="elementor-widget-container">
+              <p><strong>Email:</strong> {{ customer.email }}</p>
+              {%- if customer.orders_count > 0 -%}
+                <p><strong>Total Orders:</strong> {{ customer.orders_count }}</p>
+                <p><strong>Total Spent:</strong> {{ customer.total_spent | money }}</p>
+              {%- endif -%}
+              <p><strong>Member Since:</strong> {{ customer.created_at | date: "%B %Y" }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {%- comment -%} Quick Links {%- endcomment -%}
+      <div class="account-links-section elementor-element elementor-element-account-links e-flex e-con-boxed e-con e-child" data-id="account-links" data-element_type="container">
+        <div class="e-con-inner">
+          <div class="elementor-element elementor-element-account-links-heading elementor-widget elementor-widget-heading" data-id="account-links-heading" data-element_type="widget" data-widget_type="heading.default">
+            <div class="elementor-widget-container">
+              <h2 class="elementor-heading-title elementor-size-default">Account</h2>
+            </div>
+          </div>
+          
+          <div class="account-links-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="{{ routes.account_orders_url }}" class="elementor-button elementor-size-md" style="text-align: left; display: block; padding: 12px 20px;">
+              <span class="elementor-button-content-wrapper">
+                <span class="elementor-button-text">View Orders</span>
+              </span>
+            </a>
+            
+            <a href="{{ routes.account_addresses_url }}" class="elementor-button elementor-size-md" style="text-align: left; display: block; padding: 12px 20px;">
+              <span class="elementor-button-content-wrapper">
+                <span class="elementor-button-text">Manage Addresses</span>
+              </span>
+            </a>
+            
+            <a href="{{ routes.account_logout_url }}" class="elementor-button elementor-size-md" style="text-align: left; display: block; padding: 12px 20px; background-color: #d32f2f;">
+              <span class="elementor-button-content-wrapper">
+                <span class="elementor-button-text">Logout</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      {%- comment -%} Recent Orders {%- endcomment -%}
+      {%- if customer.orders.size > 0 -%}
+        <div class="orders-section elementor-element elementor-element-account-orders e-flex e-con-boxed e-con e-child" data-id="account-orders" data-element_type="container">
+          <div class="e-con-inner">
+            <div class="elementor-element elementor-element-orders-heading elementor-widget elementor-widget-heading" data-id="orders-heading" data-element_type="widget" data-widget_type="heading.default">
+              <div class="elementor-widget-container">
+                <h2 class="elementor-heading-title elementor-size-default">Recent Orders</h2>
+              </div>
+            </div>
+            
+            <div class="orders-list" style="margin-top: 20px;">
+              {%- for order in customer.orders limit: 5 -%}
+                <div class="order-item" style="border: 1px solid #ddd; border-radius: 4px; padding: 15px; margin-bottom: 15px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                      <p style="margin: 0; font-weight: bold;">
+                        <a href="{{ order.customer_url }}" style="color: #333; text-decoration: none;">
+                          Order #{{ order.order_number }}
+                        </a>
+                      </p>
+                      <p style="margin: 5px 0 0 0; color: #666; font-size: 0.9em;">
+                        {{ order.created_at | date: "%B %d, %Y" }}
+                      </p>
+                    </div>
+                    <div style="text-align: right;">
+                      <p style="margin: 0; font-weight: bold;">{{ order.total_price | money }}</p>
+                      <p style="margin: 5px 0 0 0; color: #666; font-size: 0.9em;">
+                        {%- if order.fulfillment_status == 'fulfilled' -%}
+                          Fulfilled
+                        {%- elsif order.fulfillment_status == 'unfulfilled' -%}
+                          Processing
+                        {%- else -%}
+                          {{ order.fulfillment_status | capitalize }}
+                        {%- endif -%}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              {%- endfor -%}
+              
+              {%- if customer.orders.size > 5 -%}
+                <div style="margin-top: 20px; text-align: center;">
+                  <a href="{{ routes.account_orders_url }}" class="elementor-button elementor-size-md">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">View All Orders</span>
+                    </span>
+                  </a>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="no-orders-section elementor-element elementor-element-no-orders e-flex e-con-boxed e-con e-child" data-id="no-orders" data-element_type="container">
+          <div class="e-con-inner">
+            <div class="elementor-element elementor-element-no-orders-text elementor-widget elementor-widget-text-editor" data-id="no-orders-text" data-element_type="widget" data-widget_type="text-editor.default">
+              <div class="elementor-widget-container">
+                <p>You haven't placed any orders yet.</p>
+                <p><a href="{{ routes.collections_url }}" class="elementor-button elementor-size-md" style="display: inline-block; margin-top: 10px;">
+                  <span class="elementor-button-content-wrapper">
+                    <span class="elementor-button-text">Start Shopping</span>
+                  </span>
+                </a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  .elementor-account-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .account-info-section,
+  .account-links-section,
+  .orders-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
+  
+  .order-item {
+    transition: box-shadow 0.3s;
+  }
+  
+  .order-item:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .order-item > div {
+      flex-direction: column;
+      align-items: flex-start !important;
+    }
+    
+    .order-item > div > div:last-child {
+      text-align: left !important;
+    }
+  }
+</style>

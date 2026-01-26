@@ -1,0 +1,431 @@
+{%- comment -%}
+  Customer Addresses Management Page
+  Allows customers to add, edit, and delete addresses
+{%- endcomment -%}
+
+<div class="elementor elementor-account-page" data-elementor-type="wp-page">
+  <div class="elementor-element elementor-element-addresses-page e-flex e-con-boxed e-con e-parent" data-id="addresses-page" data-element_type="container">
+    <div class="e-con-inner">
+      
+      <div class="elementor-element elementor-element-addresses-heading elementor-widget elementor-widget-heading" data-id="addresses-heading" data-element_type="widget" data-widget_type="heading.default">
+        <div class="elementor-widget-container">
+          <h1 class="elementor-heading-title elementor-size-default">Addresses</h1>
+        </div>
+      </div>
+      
+      {%- comment -%} Add New Address Form {%- endcomment -%}
+      <div class="add-address-section" style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+        <h2 style="margin: 0 0 20px 0; font-size: 1.3em;">Add New Address</h2>
+        {%- form 'customer_address', customer.new_address, class: 'elementor-form' -%}
+          {%- if form.posted_successfully? -%}
+            <div class="elementor-message elementor-message-success" role="alert">
+              Address added successfully!
+            </div>
+          {%- endif -%}
+          
+          {%- if form.errors -%}
+            <div class="elementor-message elementor-message-danger" role="alert">
+              <ul>
+                {%- for field in form.errors -%}
+                  <li>{{ field }}: {{ form.errors[field] }}</li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+          
+          <div class="elementor-form-fields-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_first_name_new" class="elementor-field-label">First name</label>
+              <input type="text" 
+                     name="address[first_name]" 
+                     id="address_first_name_new" 
+                     value="{{ form.first_name }}" 
+                     class="elementor-field elementor-size-sm elementor-field-textual"
+                     placeholder="First name">
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_last_name_new" class="elementor-field-label">Last name</label>
+              <input type="text" 
+                     name="address[last_name]" 
+                     id="address_last_name_new" 
+                     value="{{ form.last_name }}" 
+                     class="elementor-field elementor-size-sm elementor-field-textual"
+                     placeholder="Last name">
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_company_new" class="elementor-field-label">Company</label>
+              <input type="text" 
+                     name="address[company]" 
+                     id="address_company_new" 
+                     value="{{ form.company }}" 
+                     class="elementor-field elementor-size-sm elementor-field-textual"
+                     placeholder="Company">
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_address1_new" class="elementor-field-label">Address</label>
+              <input type="text" 
+                     name="address[address1]" 
+                     id="address_address1_new" 
+                     value="{{ form.address1 }}" 
+                     class="elementor-field elementor-size-sm elementor-field-textual"
+                     placeholder="Address line 1">
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_address2_new" class="elementor-field-label">Apartment, suite, etc.</label>
+              <input type="text" 
+                     name="address[address2]" 
+                     id="address_address2_new" 
+                     value="{{ form.address2 }}" 
+                     class="elementor-field elementor-size-sm elementor-field-textual"
+                     placeholder="Address line 2">
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_city_new" class="elementor-field-label">City</label>
+              <input type="text" 
+                     name="address[city]" 
+                     id="address_city_new" 
+                     value="{{ form.city }}" 
+                     class="elementor-field elementor-size-sm elementor-field-textual"
+                     placeholder="City">
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_country_new" class="elementor-field-label">Country</label>
+              <select name="address[country]" 
+                      id="address_country_new" 
+                      class="elementor-field elementor-size-sm"
+                      data-default="{{ form.country }}">
+                {{ country_option_tags }}
+              </select>
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100" id="address_province_container_new" style="display: none;">
+              <label for="address_province_new" class="elementor-field-label">Province</label>
+              <select name="address[province]" 
+                      id="address_province_new" 
+                      class="elementor-field elementor-size-sm"
+                      data-default="{{ form.province }}">
+              </select>
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_zip_new" class="elementor-field-label">ZIP code</label>
+              <input type="text" 
+                     name="address[zip]" 
+                     id="address_zip_new" 
+                     value="{{ form.zip }}" 
+                     class="elementor-field elementor-size-sm elementor-field-textual"
+                     placeholder="ZIP code">
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label for="address_phone_new" class="elementor-field-label">Phone</label>
+              <input type="tel" 
+                     name="address[phone]" 
+                     id="address_phone_new" 
+                     value="{{ form.phone }}" 
+                     class="elementor-field elementor-size-sm elementor-field-textual"
+                     placeholder="Phone">
+            </div>
+            
+            <div class="elementor-field-group elementor-col-100">
+              <label class="elementor-field-label">
+                <input type="checkbox" name="address[default]" value="1">
+                Set as default address
+              </label>
+            </div>
+          </div>
+          
+          <div style="margin-top: 20px;">
+            <button type="submit" class="elementor-button elementor-size-md">
+              <span class="elementor-button-content-wrapper">
+                <span class="elementor-button-text">Add Address</span>
+              </span>
+            </button>
+          </div>
+        {%- endform -%}
+      </div>
+      
+      {%- comment -%} Existing Addresses {%- endcomment -%}
+      {%- if customer.addresses.size > 0 -%}
+        <div class="addresses-list-section">
+          <h2 style="margin: 0 0 20px 0; font-size: 1.3em;">Saved Addresses</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+            {%- for address in customer.addresses -%}
+              <div class="address-item" style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative;">
+                {%- if address == customer.default_address -%}
+                  <span style="position: absolute; top: 10px; right: 10px; background: #28a745; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8em;">Default</span>
+                {%- endif -%}
+                
+                <div style="margin-bottom: 15px;">
+                  <p style="margin: 0 0 5px 0; font-weight: bold;">
+                    {{ address.first_name }} {{ address.last_name }}
+                  </p>
+                  {%- if address.company -%}
+                    <p style="margin: 5px 0; color: #666;">{{ address.company }}</p>
+                  {%- endif -%}
+                  <p style="margin: 5px 0; color: #666;">
+                    {{ address.address1 }}<br>
+                    {%- if address.address2 -%}{{ address.address2 }}<br>{%- endif -%}
+                    {{ address.city }}, {{ address.province_code }} {{ address.zip }}<br>
+                    {{ address.country }}
+                  </p>
+                  {%- if address.phone -%}
+                    <p style="margin: 5px 0; color: #666;">{{ address.phone }}</p>
+                  {%- endif -%}
+                </div>
+                
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <button type="button" 
+                          class="edit-address elementor-button elementor-size-sm" 
+                          data-address-id="{{ address.id }}"
+                          style="flex: 1; min-width: 100px;">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">Edit</span>
+                    </span>
+                  </button>
+                  
+                  <form method="post" action="{{ address.url }}" style="flex: 1; min-width: 100px;">
+                    <input type="hidden" name="_method" value="delete">
+                    <button type="submit" 
+                            class="elementor-button elementor-size-sm" 
+                            style="background-color: #d32f2f; width: 100%;"
+                            onclick="return confirm('Are you sure you want to delete this address?');">
+                      <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-text">Delete</span>
+                      </span>
+                    </button>
+                  </form>
+                </div>
+                
+                {%- comment -%} Edit Address Form (Hidden by default) {%- endcomment -%}
+                <div id="edit-address-{{ address.id }}" class="edit-address-form" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+                  {%- form 'customer_address', address, class: 'elementor-form' -%}
+                    {%- if form.posted_successfully? -%}
+                      <div class="elementor-message elementor-message-success" role="alert">
+                        Address updated successfully!
+                      </div>
+                    {%- endif -%}
+                    
+                    {%- if form.errors -%}
+                      <div class="elementor-message elementor-message-danger" role="alert">
+                        <ul>
+                          {%- for field in form.errors -%}
+                            <li>{{ field }}: {{ form.errors[field] }}</li>
+                          {%- endfor -%}
+                        </ul>
+                      </div>
+                    {%- endif -%}
+                    
+                    <div class="elementor-form-fields-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_first_name_{{ address.id }}" class="elementor-field-label">First name</label>
+                        <input type="text" 
+                               name="address[first_name]" 
+                               id="address_first_name_{{ address.id }}" 
+                               value="{{ address.first_name }}" 
+                               class="elementor-field elementor-size-sm elementor-field-textual">
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_last_name_{{ address.id }}" class="elementor-field-label">Last name</label>
+                        <input type="text" 
+                               name="address[last_name]" 
+                               id="address_last_name_{{ address.id }}" 
+                               value="{{ address.last_name }}" 
+                               class="elementor-field elementor-size-sm elementor-field-textual">
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_company_{{ address.id }}" class="elementor-field-label">Company</label>
+                        <input type="text" 
+                               name="address[company]" 
+                               id="address_company_{{ address.id }}" 
+                               value="{{ address.company }}" 
+                               class="elementor-field elementor-size-sm elementor-field-textual">
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_address1_{{ address.id }}" class="elementor-field-label">Address</label>
+                        <input type="text" 
+                               name="address[address1]" 
+                               id="address_address1_{{ address.id }}" 
+                               value="{{ address.address1 }}" 
+                               class="elementor-field elementor-size-sm elementor-field-textual">
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_address2_{{ address.id }}" class="elementor-field-label">Apartment, suite, etc.</label>
+                        <input type="text" 
+                               name="address[address2]" 
+                               id="address_address2_{{ address.id }}" 
+                               value="{{ address.address2 }}" 
+                               class="elementor-field elementor-size-sm elementor-field-textual">
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_city_{{ address.id }}" class="elementor-field-label">City</label>
+                        <input type="text" 
+                               name="address[city]" 
+                               id="address_city_{{ address.id }}" 
+                               value="{{ address.city }}" 
+                               class="elementor-field elementor-size-sm elementor-field-textual">
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_country_{{ address.id }}" class="elementor-field-label">Country</label>
+                        <select name="address[country]" 
+                                id="address_country_{{ address.id }}" 
+                                class="elementor-field elementor-size-sm"
+                                data-default="{{ address.country }}">
+                          {{ country_option_tags }}
+                        </select>
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100" id="address_province_container_{{ address.id }}" style="display: none;">
+                        <label for="address_province_{{ address.id }}" class="elementor-field-label">Province</label>
+                        <select name="address[province]" 
+                                id="address_province_{{ address.id }}" 
+                                class="elementor-field elementor-size-sm"
+                                data-default="{{ address.province }}">
+                        </select>
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_zip_{{ address.id }}" class="elementor-field-label">ZIP code</label>
+                        <input type="text" 
+                               name="address[zip]" 
+                               id="address_zip_{{ address.id }}" 
+                               value="{{ address.zip }}" 
+                               class="elementor-field elementor-size-sm elementor-field-textual">
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label for="address_phone_{{ address.id }}" class="elementor-field-label">Phone</label>
+                        <input type="tel" 
+                               name="address[phone]" 
+                               id="address_phone_{{ address.id }}" 
+                               value="{{ address.phone }}" 
+                               class="elementor-field elementor-size-sm elementor-field-textual">
+                      </div>
+                      
+                      <div class="elementor-field-group elementor-col-100">
+                        <label class="elementor-field-label">
+                          <input type="checkbox" name="address[default]" value="1" {% if address == customer.default_address %}checked{% endif %}>
+                          Set as default address
+                        </label>
+                      </div>
+                    </div>
+                    
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                      <button type="submit" class="elementor-button elementor-size-sm">
+                        <span class="elementor-button-content-wrapper">
+                          <span class="elementor-button-text">Update Address</span>
+                        </span>
+                      </button>
+                      <button type="button" 
+                              class="cancel-edit elementor-button elementor-size-sm" 
+                              data-address-id="{{ address.id }}"
+                              style="background-color: #666;">
+                        <span class="elementor-button-content-wrapper">
+                          <span class="elementor-button-text">Cancel</span>
+                        </span>
+                      </button>
+                    </div>
+                  {%- endform -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+      
+      <div style="margin-top: 30px;">
+        <a href="{{ routes.account_url }}" class="elementor-button elementor-size-md" style="background-color: #666;">
+          <span class="elementor-button-content-wrapper">
+            <span class="elementor-button-text">← Back to Account</span>
+          </span>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  .elementor-account-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .elementor-field {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .elementor-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  
+  .elementor-message-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .elementor-message-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+</style>
+
+<script>
+  // Handle edit address toggle
+  (function() {
+    var editButtons = document.querySelectorAll('.edit-address');
+    editButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var addressId = this.getAttribute('data-address-id');
+        var editForm = document.getElementById('edit-address-' + addressId);
+        if (editForm) {
+          editForm.style.display = editForm.style.display === 'none' ? 'block' : 'none';
+        }
+      });
+    });
+    
+    var cancelButtons = document.querySelectorAll('.cancel-edit');
+    cancelButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var addressId = this.getAttribute('data-address-id');
+        var editForm = document.getElementById('edit-address-' + addressId);
+        if (editForm) {
+          editForm.style.display = 'none';
+        }
+      });
+    });
+    
+    // Handle country/province selectors
+    var countrySelects = document.querySelectorAll('select[name="address[country]"]');
+    countrySelects.forEach(function(select) {
+      select.addEventListener('change', function() {
+        var provinceContainer = this.closest('.elementor-form-fields-wrapper').querySelector('[id^="address_province_container"]');
+        if (provinceContainer) {
+          // Shopify will handle province population via its own scripts
+          provinceContainer.style.display = 'block';
+        }
+      });
+    });
+  })();
+</script>

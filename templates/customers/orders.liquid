@@ -1,0 +1,107 @@
+{%- comment -%}
+  Customer Orders List Page
+  Displays all customer orders
+{%- endcomment -%}
+
+<div class="elementor elementor-account-page" data-elementor-type="wp-page">
+  <div class="elementor-element elementor-element-orders-page e-flex e-con-boxed e-con e-parent" data-id="orders-page" data-element_type="container">
+    <div class="e-con-inner">
+      
+      <div class="elementor-element elementor-element-orders-heading elementor-widget elementor-widget-heading" data-id="orders-heading" data-element_type="widget" data-widget_type="heading.default">
+        <div class="elementor-widget-container">
+          <h1 class="elementor-heading-title elementor-size-default">Order History</h1>
+        </div>
+      </div>
+      
+      {%- if customer.orders.size > 0 -%}
+        <div class="orders-list" style="margin-top: 30px;">
+          {%- for order in customer.orders -%}
+            <div class="order-item" style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+                <div style="flex: 1; min-width: 200px;">
+                  <h3 style="margin: 0 0 10px 0;">
+                    <a href="{{ order.customer_url }}" style="color: #333; text-decoration: none; font-size: 1.2em;">
+                      Order #{{ order.order_number }}
+                    </a>
+                  </h3>
+                  <p style="margin: 5px 0; color: #666;">
+                    <strong>Date:</strong> {{ order.created_at | date: "%B %d, %Y at %I:%M %p" }}
+                  </p>
+                  <p style="margin: 5px 0; color: #666;">
+                    <strong>Items:</strong> {{ order.line_items.size }} item{% if order.line_items.size != 1 %}s{% endif %}
+                  </p>
+                  <p style="margin: 5px 0; color: #666;">
+                    <strong>Status:</strong> 
+                    {%- if order.fulfillment_status == 'fulfilled' -%}
+                      <span style="color: #28a745;">Fulfilled</span>
+                    {%- elsif order.fulfillment_status == 'unfulfilled' -%}
+                      <span style="color: #ffc107;">Processing</span>
+                    {%- else -%}
+                      <span>{{ order.fulfillment_status | capitalize }}</span>
+                    {%- endif -%}
+                  </p>
+                </div>
+                <div style="text-align: right; min-width: 150px;">
+                  <p style="margin: 0; font-size: 1.3em; font-weight: bold; color: #333;">
+                    {{ order.total_price | money }}
+                  </p>
+                  <a href="{{ order.customer_url }}" class="elementor-button elementor-size-sm" style="margin-top: 10px; display: inline-block;">
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">View Details</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="no-orders-section" style="text-align: center; padding: 60px 20px;">
+          <p style="font-size: 1.2em; color: #666; margin-bottom: 20px;">You haven't placed any orders yet.</p>
+          <a href="{{ routes.collections_url }}" class="elementor-button elementor-size-md">
+            <span class="elementor-button-content-wrapper">
+              <span class="elementor-button-text">Start Shopping</span>
+            </span>
+          </a>
+        </div>
+      {%- endif -%}
+      
+      <div style="margin-top: 30px;">
+        <a href="{{ routes.account_url }}" class="elementor-button elementor-size-md" style="background-color: #666;">
+          <span class="elementor-button-content-wrapper">
+            <span class="elementor-button-text">← Back to Account</span>
+          </span>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  .elementor-account-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .order-item {
+    transition: box-shadow 0.3s, transform 0.2s;
+  }
+  
+  .order-item:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .order-item > div {
+      flex-direction: column;
+    }
+    
+    .order-item > div > div:last-child {
+      text-align: left !important;
+      width: 100%;
+    }
+  }
+</style>
