@@ -46,12 +46,22 @@
         "settings": {
           "logo": "shopify://shop_images/PACHA-MANA-STACKED-LOCKUP.svg",
           "menu": "main-menu",
-          "show_cart_icon": true
+          "show_cart_icon": true,
+          "background_image": "shopify://shop_images/COLOR_Pattern_Website_1.png",
+          "background_color": "rgba(0,0,0,0)",
+          "background_size": "cover",
+          "background_position": "center center",
+          "background_repeat": "repeat-x"
         }
       },
       "section-footer": {
         "type": "section-footer",
-        "settings": {}
+        "settings": {
+          "background_color": "rgba(0,0,0,0)",
+          "background_size": "cover",
+          "background_position": "center center",
+          "background_repeat": "no-repeat"
+        }
       },
       "section-contact-popup": {
         "type": "section-contact-popup",
