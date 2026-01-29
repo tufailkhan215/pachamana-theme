@@ -1,3 +1,32 @@
+{%- liquid
+  assign header_bg_image_url = blank
+  if section.settings.background_image != blank
+    assign header_bg_image_url = section.settings.background_image | image_url: width: 2400
+  else
+    comment
+      Fallback to current hardcoded default (theme asset)
+    endcomment
+    assign header_bg_image_url = 'peruvian_geometric_textile_pattern_3.png' | asset_url
+  endif
+
+  assign header_bg_color = section.settings.background_color | default: 'transparent'
+  assign header_bg_size = section.settings.background_size | default: 'cover'
+  assign header_bg_position = section.settings.background_position | default: 'center center'
+  assign header_bg_repeat = section.settings.background_repeat | default: 'no-repeat'
+-%}
+
+<style>
+  /* Header background (Theme Editor configurable) */
+  .section-header .elementor-element[data-id="f74e63a"]:not(.elementor-motion-effects-element-type-background),
+  .section-header .elementor-element[data-id="f74e63a"] > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-color: {{ header_bg_color }} !important;
+    background-image: url("{{ header_bg_image_url }}") !important;
+    background-size: {{ header_bg_size }} !important;
+    background-position: {{ header_bg_position }} !important;
+    background-repeat: {{ header_bg_repeat }} !important;
+  }
+</style>
+
 <header data-elementor-type="header" data-elementor-id="57" class="elementor elementor-57 elementor-location-header section-header">
 			<div class="elementor-element elementor-element-f74e63a e-con-full e-flex e-con e-parent" data-id="f74e63a" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile_extra&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
 		<div class="elementor-element elementor-element-5d815ed e-flex e-con-boxed e-con e-child" data-id="5d815ed" data-element_type="container">
@@ -178,6 +207,62 @@
       "id": "show_cart_icon",
       "label": "Show cart icon",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "info": "If not set, defaults to peruvian_geometric_textile_pattern_3.png"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color (fallback)",
+      "default": "#00000000"
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background size",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" },
+        { "value": "auto", "label": "Auto" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background position",
+      "default": "center center",
+      "options": [
+        { "value": "left top", "label": "Left top" },
+        { "value": "left center", "label": "Left center" },
+        { "value": "left bottom", "label": "Left bottom" },
+        { "value": "center top", "label": "Center top" },
+        { "value": "center center", "label": "Center center" },
+        { "value": "center bottom", "label": "Center bottom" },
+        { "value": "right top", "label": "Right top" },
+        { "value": "right center", "label": "Right center" },
+        { "value": "right bottom", "label": "Right bottom" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_repeat",
+      "label": "Background repeat",
+      "default": "no-repeat",
+      "options": [
+        { "value": "no-repeat", "label": "No repeat" },
+        { "value": "repeat", "label": "Repeat" },
+        { "value": "repeat-x", "label": "Repeat X" },
+        { "value": "repeat-y", "label": "Repeat Y" }
+      ]
     }
   ],
   "blocks": [
