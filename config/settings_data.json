@@ -59,7 +59,7 @@
         "settings": {
           "background_image": "shopify://shop_images/Pattern_Website.png",
           "background_color": "rgba(0,0,0,0)",
-          "background_size": "cover",
+          "background_size": "contain",
           "background_position": "center center",
           "background_repeat": "repeat-x"
         }
