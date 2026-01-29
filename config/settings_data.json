@@ -27,7 +27,7 @@
             "type": "social_icon",
             "settings": {
               "icon": "account",
-              "url": "#"
+              "url": "/account"
             }
           },
           "social_icon_cpRHMV": {
