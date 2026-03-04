@@ -78,10 +78,10 @@
         "prefix_text": "OUR CACAO IS"
       }
     },
-    "blocks_z9iG74": {
+    "blocks_eaPtDX": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_ee5b3bf_bmRwg8": {
+        "ai_gen_block_ee5b3bf_pUeLnk": {
           "type": "ai_gen_block_ee5b3bf",
           "settings": {
             "background_image": "shopify://shop_images/PACHAMANA-0179.jpg",
@@ -127,7 +127,7 @@
         }
       },
       "block_order": [
-        "ai_gen_block_ee5b3bf_bmRwg8"
+        "ai_gen_block_ee5b3bf_pUeLnk"
       ],
       "settings": {}
     },
@@ -985,7 +985,7 @@
   "order": [
     "section_background_motion_MLrtBM",
     "section_animatied_title_9PRf4W",
-    "blocks_z9iG74",
+    "blocks_eaPtDX",
     "section-featured-products",
     "section_image_with_text_button_kijTgn",
     "section-health-benifits",
