@@ -131,6 +131,14 @@
       ],
       "settings": {}
     },
+    "section-featured-products": {
+      "type": "section-featured-products",
+      "settings": {
+        "heading": "FEATURED PRODUCTS",
+        "collection": "frontpage",
+        "products_to_show": 3
+      }
+    },
     "section_image_with_text_button_kijTgn": {
       "type": "section-image-with-text-button",
       "name": "Image With Text Button",
@@ -344,14 +352,6 @@
         "ai_gen_block_ee5b3bf_pcknzQ"
       ],
       "settings": {}
-    },
-    "section-featured-products": {
-      "type": "section-featured-products",
-      "settings": {
-        "heading": "FEATURED PRODUCTS",
-        "collection": "frontpage",
-        "products_to_show": 3
-      }
     },
     "section-text-images-grid": {
       "type": "section-text-images-grid",
@@ -986,10 +986,10 @@
     "section_background_motion_MLrtBM",
     "section_animatied_title_9PRf4W",
     "blocks_z9iG74",
+    "section-featured-products",
     "section_image_with_text_button_kijTgn",
     "section-health-benifits",
     "17678601152aabe9e8",
-    "section-featured-products",
     "section-text-images-grid",
     "section-image-text-dynamicbg",
     "section_rescent_articles_LArLB4",
