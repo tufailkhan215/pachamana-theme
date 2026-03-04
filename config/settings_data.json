@@ -96,6 +96,11 @@
           "start_date": "",
           "end_date": ""
         }
+      },
+      "8049395639865136331": {
+        "type": "shopify://apps/yuko-loyalty-reviews/blocks/reviews-yuko-embed-assets/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+        "disabled": false,
+        "settings": {}
       }
     }
   }
