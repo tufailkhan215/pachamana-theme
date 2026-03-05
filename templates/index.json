@@ -18,7 +18,7 @@
         "heading1": "Pure Peruvian Ceremonial Cacao Heirloom Chuncho for Daily Ritual & Heart-Opening Ceremony"
       }
     },
-    "section_ceremonial_grade": {
+"section_ceremonial_grade": {
       "type": "section-image-text-banner",
       "name": "Ceremonial grade means",
       "settings": {
@@ -192,7 +192,65 @@
       "block_order": [
         "ai_gen_block_ee5b3bf_pUeLnk"
       ],
-      "settings": {}
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
+    "17678601152aabe9e8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ee5b3bf_pcknzQ": {
+          "type": "ai_gen_block_ee5b3bf",
+          "settings": {
+            "background_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg",
+            "enable_parallax": false,
+            "parallax_speed": 0.2,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.3,
+            "heading": "Perfect for Gifting",
+            "subheading": "1oz Single-Serve Packets",
+            "description": "<p>Pre-measured. Portable. Perfect for stockings, travel, and sharing cacao with friends.</p>",
+            "show_features": true,
+            "feature_1": "Available in 5, 10, 15 & 20 packs",
+            "feature_2": "Pre-measured and portable",
+            "feature_3": "Perfect for sharing",
+            "variants_text": "Choose from Pure, Maple Sweetened, Mushroom Vitality, Rose Vanilla, or Golden Milk",
+            "button_text": "Shop Single-Serve Packets",
+            "button_link": "",
+            "button_text_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 4,
+            "background_color": "#f9f5f0",
+            "heading_color": "#ffffff",
+            "subheading_color": "#ffffff",
+            "text_color": "#ffffff",
+            "accent_color": "#e2ab43",
+            "button_color": "#e2ab43",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#e2ab43",
+            "button_hover_text_color": "#5c402f",
+            "heading_size": 36,
+            "subheading_size": 24,
+            "text_size": 16,
+            "container_width": 1200,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "heading_spacing": 16,
+            "content_spacing": 24,
+            "button_spacing": 30,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ee5b3bf_pcknzQ"
+      ],
+      "name": "Perfect for Gifting",
+      "settings": {
+        "section_label": "Content block"
+      }
     },
     "section-health-benifits": {
       "type": "section-health-benifits",
@@ -353,7 +411,7 @@
         "postpartum_subheading": "For Postpartum Women"
       }
     },
-    "section_perfect_gifting": {
+"section_perfect_gifting": {
       "type": "section-image-text-banner",
       "name": "Perfect for Gifting",
       "settings": {
@@ -967,7 +1025,7 @@
         "heading": "Frequently asked questions"
       }
     },
-    "section_new_to_cacao": {
+"section_new_to_cacao": {
       "type": "section-new-to-cacao",
       "name": "New to Ceremonial Cacao",
       "settings": {
