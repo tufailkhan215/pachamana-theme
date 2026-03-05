@@ -145,14 +145,15 @@ customElements.define('predictive-search', PredictiveSearch);
 
 // Cart functionality
 document.addEventListener('DOMContentLoaded', () => {
-  // Open cart drawer
+  // Open cart drawer (only prevent link if drawer exists, so cart link works as fallback)
   document.querySelectorAll('[data-cart-drawer-open]').forEach(button => {
     button.addEventListener('click', (e) => {
-      e.preventDefault();
       const cartDrawer = document.getElementById('cart-drawer');
       if (cartDrawer) {
+        e.preventDefault();
         cartDrawer.open();
       }
+      // else: let default action go to cart page (href="{{ routes.cart_url }}")
     });
   });
   

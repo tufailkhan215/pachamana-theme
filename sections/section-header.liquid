@@ -159,7 +159,7 @@
 								   href="{{ routes.cart_url }}" 
 								   class="elementor-menu-cart__toggle_button elementor-button elementor-size-sm" 
 								   aria-expanded="false"
-								   data-cart-drawer-open>
+								   {% if section.settings.cart_icon_action == 'drawer' %}data-cart-drawer-open{% endif %}>
 									<span class="elementor-button-text">
 										<span class="woocommerce-Price-amount amount">
 											<bdi>{{ cart.total_price | money }}</bdi>
@@ -207,6 +207,17 @@
       "id": "show_cart_icon",
       "label": "Show cart icon",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "cart_icon_action",
+      "label": "Cart icon action",
+      "options": [
+        { "value": "drawer", "label": "Open cart drawer" },
+        { "value": "page", "label": "Go to cart page" }
+      ],
+      "default": "drawer",
+      "info": "If drawer doesn't open, the link will go to the cart page."
     },
     {
       "type": "header",
