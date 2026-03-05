@@ -59,6 +59,9 @@
   .ora-banner-{{ bid }} .ora-banner__box {
     max-width: {{ section.settings.box_max_width }}px;
     width: 100%;
+    background-color: {% if section.settings.show_box_bg %}{{ section.settings.box_bg }}{% else %}transparent{% endif %};
+    padding: {{ section.settings.box_padding }}rem;
+    border-radius: {{ section.settings.box_radius }}px;
   }
 
   .ora-banner-{{ bid }} .ora-banner__heading {
@@ -341,6 +344,39 @@
       "step": 50,
       "unit": "px",
       "default": 600
+    },
+    {
+      "type": "checkbox",
+      "id": "show_box_bg",
+      "label": "Show content box background",
+      "default": true,
+      "info": "Solid card behind text (like screenshot); turn off for text-only over image"
+    },
+    {
+      "type": "color",
+      "id": "box_bg",
+      "label": "Content box background",
+      "default": "#A0826D"
+    },
+    {
+      "type": "range",
+      "id": "box_padding",
+      "label": "Content box padding",
+      "min": 1.5,
+      "max": 5,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "box_radius",
+      "label": "Content box corner radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
     },
     {
       "type": "checkbox",
