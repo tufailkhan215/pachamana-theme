@@ -18,50 +18,6 @@
         "heading1": "Pure Peruvian Ceremonial Cacao Heirloom Chuncho for Daily Ritual & Heart-Opening Ceremony"
       }
     },
-"section_ceremonial_grade": {
-      "type": "section-image-text-banner",
-      "name": "Ceremonial grade means",
-      "settings": {
-        "background_image": "shopify://shop_images/PACHAMANA-0179.jpg",
-        "enable_parallax": false,
-        "parallax_speed": 0.2,
-        "overlay_color": "#000000",
-        "overlay_opacity": 0.3,
-        "heading": "Ceremonial grade means",
-        "subheading": "Grown with intention by indigenous farmers, minimally processed to preserve nutrients, and suitable for traditional ceremony or daily wellness ritual..",
-        "description": "",
-        "show_features": false,
-        "feature_1": "",
-        "feature_2": "",
-        "feature_3": "",
-        "variants_text": "",
-        "button_text": "Shop Single-Serve Packets",
-        "button_link": "",
-        "button_text_size": 16,
-        "button_padding_vertical": 14,
-        "button_padding_horizontal": 32,
-        "button_border_radius": 4,
-        "background_color": "#f9f5f0",
-        "heading_color": "#ffffff",
-        "subheading_color": "#ffffff",
-        "text_color": "#ffffff",
-        "accent_color": "#e2ab43",
-        "button_color": "#e2ab43",
-        "button_text_color": "#ffffff",
-        "button_hover_color": "#e2ab43",
-        "button_hover_text_color": "#5c402f",
-        "heading_size": 36,
-        "subheading_size": 24,
-        "text_size": 16,
-        "container_width": 1200,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "heading_spacing": 16,
-        "content_spacing": 24,
-        "button_spacing": 30,
-        "desktop_width_percent": 100
-      }
-    },
     "section_animatied_title_9PRf4W": {
       "type": "section-animatied-title",
       "blocks": {
@@ -139,6 +95,94 @@
         "text": "Rich, creamy, and deeply nourishing. Our ceremonial cacao is 100% pure, minimally processed, and packed with mood-boosting compounds to energize your body, open your heart, and elevate your life. Crafted with care by small-scale farmers in Peru who honor the land and the spirit of cacao.",
         "button_text": "SHOP cacao",
         "button_url": "#"
+      }
+    },
+    "section_ceremonial_grade": {
+      "type": "section-image-text-banner",
+      "name": "Ceremonial grade means",
+      "settings": {
+        "background_image": "shopify://shop_images/PACHAMANA-0179.jpg",
+        "enable_parallax": false,
+        "parallax_speed": 0.2,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0.3,
+        "heading": "Ceremonial grade means",
+        "subheading": "Grown with intention by indigenous farmers, minimally processed to preserve nutrients, and suitable for traditional ceremony or daily wellness ritual..",
+        "description": "",
+        "show_features": false,
+        "feature_1": "",
+        "feature_2": "",
+        "feature_3": "",
+        "variants_text": "",
+        "button_text": "Shop Single-Serve Packets",
+        "button_link": "",
+        "button_text_size": 16,
+        "button_padding_vertical": 14,
+        "button_padding_horizontal": 32,
+        "button_border_radius": 4,
+        "background_color": "#f9f5f0",
+        "heading_color": "#ffffff",
+        "subheading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "accent_color": "#e2ab43",
+        "button_color": "#e2ab43",
+        "button_text_color": "#ffffff",
+        "button_hover_color": "#e2ab43",
+        "button_hover_text_color": "#5c402f",
+        "heading_size": 36,
+        "subheading_size": 24,
+        "text_size": 16,
+        "container_width": 1200,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "heading_spacing": 16,
+        "content_spacing": 24,
+        "button_spacing": 30,
+        "desktop_width_percent": 100
+      }
+    },
+    "section_perfect_gifting": {
+      "type": "section-image-text-banner",
+      "name": "Perfect for Gifting",
+      "settings": {
+        "background_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg",
+        "enable_parallax": false,
+        "parallax_speed": 0.2,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0.3,
+        "heading": "Perfect for Gifting",
+        "subheading": "1oz Single-Serve Packets",
+        "description": "<p>Pre-measured. Portable. Perfect for stockings, travel, and sharing cacao with friends.</p>",
+        "show_features": true,
+        "feature_1": "Available in 5, 10, 15 & 20 packs",
+        "feature_2": "Pre-measured and portable",
+        "feature_3": "Perfect for sharing",
+        "variants_text": "Choose from Pure, Maple Sweetened, Mushroom Vitality, Rose Vanilla, or Golden Milk",
+        "button_text": "Shop Single-Serve Packets",
+        "button_link": "",
+        "button_text_size": 16,
+        "button_padding_vertical": 14,
+        "button_padding_horizontal": 32,
+        "button_border_radius": 4,
+        "background_color": "#f9f5f0",
+        "heading_color": "#ffffff",
+        "subheading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "accent_color": "#e2ab43",
+        "button_color": "#e2ab43",
+        "button_text_color": "#ffffff",
+        "button_hover_color": "#e2ab43",
+        "button_hover_text_color": "#5c402f",
+        "heading_size": 36,
+        "subheading_size": 24,
+        "text_size": 16,
+        "container_width": 1200,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "heading_spacing": 16,
+        "content_spacing": 24,
+        "button_spacing": 30,
+        "desktop_width_percent": 100
       }
     },
     "section-health-benifits": {
@@ -300,50 +344,6 @@
         "postpartum_subheading": "For Postpartum Women"
       }
     },
-"section_perfect_gifting": {
-      "type": "section-image-text-banner",
-      "name": "Perfect for Gifting",
-      "settings": {
-        "background_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27.jpg",
-        "enable_parallax": false,
-        "parallax_speed": 0.2,
-        "overlay_color": "#000000",
-        "overlay_opacity": 0.3,
-        "heading": "Perfect for Gifting",
-        "subheading": "1oz Single-Serve Packets",
-        "description": "<p>Pre-measured. Portable. Perfect for stockings, travel, and sharing cacao with friends.</p>",
-        "show_features": true,
-        "feature_1": "Available in 5, 10, 15 & 20 packs",
-        "feature_2": "Pre-measured and portable",
-        "feature_3": "Perfect for sharing",
-        "variants_text": "Choose from Pure, Maple Sweetened, Mushroom Vitality, Rose Vanilla, or Golden Milk",
-        "button_text": "Shop Single-Serve Packets",
-        "button_link": "",
-        "button_text_size": 16,
-        "button_padding_vertical": 14,
-        "button_padding_horizontal": 32,
-        "button_border_radius": 4,
-        "background_color": "#f9f5f0",
-        "heading_color": "#ffffff",
-        "subheading_color": "#ffffff",
-        "text_color": "#ffffff",
-        "accent_color": "#e2ab43",
-        "button_color": "#e2ab43",
-        "button_text_color": "#ffffff",
-        "button_hover_color": "#e2ab43",
-        "button_hover_text_color": "#5c402f",
-        "heading_size": 36,
-        "subheading_size": 24,
-        "text_size": 16,
-        "container_width": 1200,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "heading_spacing": 16,
-        "content_spacing": 24,
-        "button_spacing": 30,
-        "desktop_width_percent": 100
-      }
-    },
     "section-text-images-grid": {
       "type": "section-text-images-grid",
       "blocks": {
@@ -352,6 +352,7 @@
           "settings": {
             "image": "shopify://shop_images/chuncho.png",
             "title": "CHUNCHO",
+            "link": "shopify://products/chuncho-cocoa-butter",
             "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>",
             "image_width": 46,
             "mobile_width": 29
@@ -362,6 +363,7 @@
           "settings": {
             "image": "shopify://shop_images/nacional.png",
             "title": "FORASTERO",
+            "link": "",
             "description": "<p>Forastero cacao, prevalent in Africa and essential for mass-produced chocolate, faces challenges related to labor and sustainablity practices, and provides a more uniform and less complex flavor than the rich and varied profiles of premium varieties like Chuncho</p>",
             "image_width": 52,
             "mobile_width": 29
@@ -372,6 +374,7 @@
           "settings": {
             "image": "shopify://shop_images/criollo.png",
             "title": "CRIOLLO",
+            "link": "",
             "description": "<p>Criollo cacao, celebrated for its complex flavors and one of the worlds best cacao varieties, faces sustainability challenges due to its limited genetic diversity from cloning. Generally it is thought to be prestigious of all the varieties of cacao for its rich flavors and high health benefits </p>",
             "image_width": 45,
             "mobile_width": 29
@@ -382,6 +385,7 @@
           "settings": {
             "image": "shopify://shop_images/trinitario.png",
             "title": "TRINITARIO",
+            "link": "",
             "description": "<p>Trinitario cacao, a non-heirloom hybrid developed from Criollo and Forastero varieties, combines the robustness of Forastero with the refined flavors of Criollo, offering a balanced and complex flavor profile that is highly valued in chocolate production.</p>",
             "image_width": 40,
             "mobile_width": 29
@@ -914,7 +918,7 @@
         "heading": "Frequently asked questions"
       }
     },
-"section_new_to_cacao": {
+    "section_new_to_cacao": {
       "type": "section-new-to-cacao",
       "name": "New to Ceremonial Cacao",
       "settings": {
