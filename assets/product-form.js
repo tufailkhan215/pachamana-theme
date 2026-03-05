@@ -5,15 +5,15 @@
 (function() {
   'use strict';
 
-  // Initialize variant selection on page load
+  // Initialize variant selection on page load (set variant id + price only; do not change gallery - keep featured image)
   function initializeVariantSelection() {
     const productForms = document.querySelectorAll('form[action="/cart/add"], form[action*="/cart/add"]');
     
     productForms.forEach(function(form) {
       const optionSelects = form.querySelectorAll('select[name^="options"]');
       if (optionSelects.length > 0) {
-        // Variable product - initialize variant selection
-        updateVariantSelection(form);
+        // Variable product - initialize variant id and price only (updateGallery: false so featured image stays)
+        updateVariantSelection(form, { updateGallery: false });
       } else {
         // Simple product - ensure variant ID is set
         const variantInput = form.querySelector('input[name="id"]');
@@ -329,18 +329,19 @@
     }, 3000);
   }
 
-  // Handle variant selection for variable products
+  // Handle variant selection when user changes size/option (update gallery to variant image)
   document.addEventListener('change', function(e) {
     if (e.target.matches('.product-option-select, select[name^="options"]')) {
       const form = e.target.closest('form[action*="/cart/add"]');
       if (form) {
-        updateVariantSelection(form);
+        updateVariantSelection(form, { updateGallery: true });
       }
     }
   });
 
-  // Update variant selection when options change
-  function updateVariantSelection(form) {
+  // Update variant selection when options change. options.updateGallery = true only when user changed the select (so featured image on load stays).
+  function updateVariantSelection(form, options) {
+    var updateGallery = options && options.updateGallery === true;
     const optionSelects = form.querySelectorAll('select[name^="options"]');
     if (optionSelects.length === 0) return;
     
@@ -376,8 +377,8 @@
           }
           variantInput.value = variant.id;
           
-          // Update main product image to variant's featured image (if any)
-          if (window.updateProductGalleryForVariant && typeof window.updateProductGalleryForVariant === 'function') {
+          // Update main product image to variant's image only when user changed the variant (not on initial page load)
+          if (updateGallery && window.updateProductGalleryForVariant && typeof window.updateProductGalleryForVariant === 'function') {
             window.updateProductGalleryForVariant(variant.id);
           }
           
