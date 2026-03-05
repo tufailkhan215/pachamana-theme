@@ -47,6 +47,7 @@
           "logo": "shopify://shop_images/PACHA-MANA-STACKED-LOCKUP.svg",
           "menu": "main-menu",
           "show_cart_icon": true,
+          "cart_icon_action": "page",
           "background_image": "shopify://shop_images/COLOR_Pattern_Website_3.png",
           "background_color": "rgba(0,0,0,0)",
           "background_size": "contain",
