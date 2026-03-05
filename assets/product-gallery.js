@@ -4,9 +4,27 @@
  */
 (function() {
   'use strict';
-  
+
+  // Global: switch main image to variant's image. Defined early so product-form can call it when variant changes.
+  window.updateProductGalleryForVariant = function(variantId) {
+    var map = window.PRODUCT_VARIANT_IMAGES;
+    if (!map) return;
+    var mediaId = map[variantId] !== undefined ? map[variantId] : map[String(variantId)];
+    if (mediaId === undefined) return;
+    var gallery = document.querySelector('.woocommerce-product-gallery');
+    if (!gallery || typeof gallery.goToSlide !== 'function') return;
+    var slides = gallery.querySelectorAll('.woocommerce-product-gallery__image');
+    var mediaIdStr = String(mediaId);
+    for (var i = 0; i < slides.length; i++) {
+      if (slides[i].getAttribute('data-media-id') === mediaIdStr) {
+        gallery.goToSlide(i);
+        return;
+      }
+    }
+  };
+
   var galleryInitialized = false;
-  
+
   function initProductGallery() {
     if (galleryInitialized) return;
     
@@ -186,25 +204,9 @@
       });
     });
     
-    // Expose goToSlide so variant change can switch main image
+    // Expose goToSlide so updateProductGalleryForVariant (and thumbnails) can switch slides
     gallery.goToSlide = goToSlide;
-    
-    // Global: update main gallery image when variant changes (find slide by media ID, then goToSlide)
-    window.updateProductGalleryForVariant = function(variantId) {
-      var map = window.PRODUCT_VARIANT_IMAGES;
-      if (!map) return;
-      var mediaId = map[variantId] !== undefined ? map[variantId] : map[String(variantId)];
-      if (mediaId === undefined) return;
-      var slides = gallery.querySelectorAll('.woocommerce-product-gallery__image');
-      var mediaIdStr = String(mediaId);
-      for (var i = 0; i < slides.length; i++) {
-        if (slides[i].getAttribute('data-media-id') === mediaIdStr) {
-          if (gallery.goToSlide) gallery.goToSlide(i);
-          return;
-        }
-      }
-    };
-    
+
     // On load: show featured image (first slide). On variant change: updateProductGalleryForVariant switches to variant image.
     goToSlide(0);
     

@@ -172,15 +172,27 @@
     attachFormHandlers();
   }
 
-  // Also watch for dynamically added forms
-  if (typeof MutationObserver !== 'undefined') {
-    const observer = new MutationObserver(function(mutations) {
+  // Watch for dynamically added forms - debounced so the page doesn't hang (observer would fire on every DOM change otherwise)
+  function scheduleFormHandlerAttach() {
+    if (scheduleFormHandlerAttach._timer) clearTimeout(scheduleFormHandlerAttach._timer);
+    scheduleFormHandlerAttach._timer = setTimeout(function() {
+      scheduleFormHandlerAttach._timer = null;
       attachFormHandlers();
+    }, 400);
+  }
+  if (typeof MutationObserver !== 'undefined' && document.body && document.body.nodeType === 1) {
+    var observer = new MutationObserver(function() {
+      scheduleFormHandlerAttach();
     });
-    
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
+    observer.observe(document.body, { childList: true, subtree: true });
+  } else if (typeof MutationObserver !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.body) {
+        var observer = new MutationObserver(function() {
+          scheduleFormHandlerAttach();
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      }
     });
   }
 
