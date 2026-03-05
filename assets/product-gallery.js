@@ -205,10 +205,14 @@
       }
     };
     
-    // Initialize first slide
-    goToSlide(0);
+    // Initialize to the slide for the selected/default variant (matches Liquid initial slide)
+    var initialIndex = 0;
+    if (typeof window.PRODUCT_INITIAL_GALLERY_INDEX === 'number' && window.PRODUCT_INITIAL_GALLERY_INDEX >= 0) {
+      initialIndex = Math.min(window.PRODUCT_INITIAL_GALLERY_INDEX, totalImages - 1);
+    }
+    goToSlide(initialIndex);
     
-    // Sync to currently selected variant (e.g. page load with variant in URL)
+    // If form already has variant id (e.g. set by product-form.js), sync gallery to it
     var form = document.querySelector('form[data-product-handle]');
     if (form) {
       var idInput = form.querySelector('input[name="id"]');
