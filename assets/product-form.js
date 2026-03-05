@@ -426,17 +426,25 @@
     if (!priceElement) {
       priceElement = document.querySelector('.elementor-widget-woocommerce-product-price .price');
     }
-    if (!priceElement) return;
 
     var price = (variant.price / 100).toFixed(2);
     var currencySymbol = (window.Shopify && window.Shopify.currency && window.Shopify.currency.active) ? window.Shopify.currency.active : '$';
+    var formattedPrice = currencySymbol + price;
 
-    if (variant.compare_at_price && variant.compare_at_price > variant.price) {
-      var comparePrice = (variant.compare_at_price / 100).toFixed(2);
-      priceElement.innerHTML = '<del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + comparePrice + '</bdi></span></del> <ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + price + '</bdi></span></ins>';
-    } else {
-      priceElement.innerHTML = '<span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + price + '</bdi></span>';
+    if (priceElement) {
+      if (variant.compare_at_price && variant.compare_at_price > variant.price) {
+        var comparePrice = (variant.compare_at_price / 100).toFixed(2);
+        priceElement.innerHTML = '<del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + comparePrice + '</bdi></span></del> <ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + price + '</bdi></span></ins>';
+      } else {
+        priceElement.innerHTML = '<span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + price + '</bdi></span>';
+      }
     }
+
+    // RecurPay subscription widget: update selling price when variant changes (app block does not update on its own)
+    var recurpayPrices = productScope.querySelectorAll('.recurpay__group_selling_price .money, .recurpay__group_price_wrapper .money');
+    recurpayPrices.forEach(function (el) {
+      el.textContent = formattedPrice;
+    });
   }
 })();
 
