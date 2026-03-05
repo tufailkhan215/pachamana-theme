@@ -396,10 +396,9 @@
 									class="product-option-select prodselect"
 									data-option-index="{{ forloop.index0 }}"
 								>
+									<option value="" selected>{{ 'products.product.select_option' | t | default: 'Select an option' }}</option>
 									{%- for value in option.values -%}
-										<option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>
-											{{ value }}
-										</option>
+										<option value="{{ value | escape }}">{{ value }}</option>
 									{%- endfor -%}
 								</select>
 							</div>
@@ -455,7 +454,9 @@
 						type="submit" 
 						name="add" 
 						class="single_add_to_cart_button button alt "
-						{% unless product.available %}disabled{% endunless %}
+						{% if product.has_only_default_variant %}{% unless product.available %}disabled{% endunless %}{% else %}disabled{% endif %}
+						data-add-text="{{ 'products.product.add_to_cart' | t | default: 'Add to cart' }}"
+						data-select-option-text="{{ 'products.product.select_option' | t | default: 'Select an option' }}"
 					>
 						{%- if product.available -%}
 							{{ 'products.product.add_to_cart' | t | default: 'Add to cart' }}

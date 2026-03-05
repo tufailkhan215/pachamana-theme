@@ -5,15 +5,31 @@
 (function() {
   'use strict';
 
-  // Initialize variant selection on page load (set variant id + price only; do not change gallery - keep featured image)
+  // Initialize variant selection on page load - variable products start with "Select an option", no variant selected
   function initializeVariantSelection() {
     const productForms = document.querySelectorAll('form[action="/cart/add"], form[action*="/cart/add"]');
     
     productForms.forEach(function(form) {
       const optionSelects = form.querySelectorAll('select[name^="options"]');
       if (optionSelects.length > 0) {
-        // Variable product - initialize variant id and price only (updateGallery: false so featured image stays)
-        updateVariantSelection(form, { updateGallery: false });
+        // Variable product - do not select a variant; keep "Select an option". Save initial price range for later restore.
+        var productScope = form.closest('.elementor-location-single') || form.closest('[data-elementor-type="product"]') || document.body;
+        var priceWidget = productScope.querySelector('.elementor-widget-woocommerce-product-price');
+        if (!priceWidget) {
+          priceWidget = form.closest('[data-id="7db38096"]') && form.closest('[data-id="7db38096"]').previousElementSibling;
+        }
+        var priceEl = priceWidget ? priceWidget.querySelector('.price') : null;
+        if (priceEl && priceEl.innerHTML) {
+          form.dataset.initialPriceHtml = priceEl.innerHTML;
+        }
+        // Ensure no hidden variant id is present (placeholder is selected)
+        var variantInput = form.querySelector('input[name="id"]');
+        if (variantInput) variantInput.remove();
+        var addBtn = form.querySelector('button[type="submit"][name="add"]');
+        if (addBtn) {
+          addBtn.disabled = true;
+          addBtn.textContent = addBtn.dataset.selectOptionText || 'Select an option';
+        }
       } else {
         // Simple product - ensure variant ID is set
         const variantInput = form.querySelector('input[name="id"]');
@@ -361,6 +377,25 @@
     const selectedOptions = Array.from(optionSelects).map(function(select) {
       return select.value;
     });
+    
+    // If any option is still "Select an option" (empty value), clear variant and disable add to cart
+    if (selectedOptions.some(function(v) { return v === ''; })) {
+      var variantInput = form.querySelector('input[name="id"]');
+      if (variantInput) variantInput.remove();
+      var submitBtn = form.querySelector('button[type="submit"][name="add"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = submitBtn.dataset.selectOptionText || 'Select an option';
+      }
+      var productScope = form.closest('.elementor-location-single') || form.closest('[data-elementor-type="product"]') || document.body;
+      var priceWidget = productScope.querySelector('.elementor-widget-woocommerce-product-price');
+      if (!priceWidget) priceWidget = form.closest('[data-id="7db38096"]') && form.closest('[data-id="7db38096"]').previousElementSibling;
+      var priceEl = priceWidget ? priceWidget.querySelector('.price') : null;
+      if (priceEl && form.dataset.initialPriceHtml) {
+        priceEl.innerHTML = form.dataset.initialPriceHtml;
+      }
+      return;
+    }
     
     // Find matching variant
     const productHandle = form.dataset.productHandle;

@@ -71,6 +71,7 @@
   "products": {
     "product": {
       "add_to_cart": "Add to cart",
+      "select_option": "Select an option",
       "select_options": "Select options",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
