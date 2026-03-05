@@ -34,7 +34,7 @@
             "type": "social_icon",
             "settings": {
               "icon": "email",
-              "url": "#"
+              "url": "shopify://pages/contact"
             }
           }
         },
