@@ -18,59 +18,6 @@
         "heading1": "Pure Peruvian Ceremonial Cacao Heirloom Chuncho for Daily Ritual & Heart-Opening Ceremony"
       }
     },
-    "blocks_eaPtDX": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_ee5b3bf_pUeLnk": {
-          "type": "ai_gen_block_ee5b3bf",
-          "settings": {
-            "background_image": "shopify://shop_images/PACHAMANA-0179.jpg",
-            "enable_parallax": false,
-            "parallax_speed": 0.2,
-            "overlay_color": "#000000",
-            "overlay_opacity": 0.3,
-            "heading": "Ceremonial grade means",
-            "subheading": "Grown with intention by indigenous farmers, minimally processed to preserve nutrients, and suitable for traditional ceremony or daily wellness ritual..",
-            "description": "",
-            "show_features": false,
-            "feature_1": "",
-            "feature_2": "",
-            "feature_3": "",
-            "variants_text": "",
-            "button_text": "Shop Single-Serve Packets",
-            "button_link": "",
-            "button_text_size": 16,
-            "button_padding_vertical": 14,
-            "button_padding_horizontal": 32,
-            "button_border_radius": 4,
-            "background_color": "#f9f5f0",
-            "heading_color": "#ffffff",
-            "subheading_color": "#ffffff",
-            "text_color": "#ffffff",
-            "accent_color": "#e2ab43",
-            "button_color": "#e2ab43",
-            "button_text_color": "#ffffff",
-            "button_hover_color": "#e2ab43",
-            "button_hover_text_color": "#5c402f",
-            "heading_size": 36,
-            "subheading_size": 24,
-            "text_size": 16,
-            "container_width": 1200,
-            "padding_top": 60,
-            "padding_bottom": 60,
-            "heading_spacing": 16,
-            "content_spacing": 24,
-            "button_spacing": 30,
-            "desktop_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_ee5b3bf_pUeLnk"
-      ],
-      "settings": {}
-    },
     "section_animatied_title_9PRf4W": {
       "type": "section-animatied-title",
       "blocks": {
@@ -149,6 +96,59 @@
         "button_text": "SHOP cacao",
         "button_url": "#"
       }
+    },
+    "blocks_eaPtDX": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ee5b3bf_pUeLnk": {
+          "type": "ai_gen_block_ee5b3bf",
+          "settings": {
+            "background_image": "shopify://shop_images/PACHAMANA-0179.jpg",
+            "enable_parallax": false,
+            "parallax_speed": 0.2,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.3,
+            "heading": "Ceremonial grade means",
+            "subheading": "Grown with intention by indigenous farmers, minimally processed to preserve nutrients, and suitable for traditional ceremony or daily wellness ritual..",
+            "description": "",
+            "show_features": false,
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": "",
+            "variants_text": "",
+            "button_text": "Shop Single-Serve Packets",
+            "button_link": "",
+            "button_text_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 4,
+            "background_color": "#f9f5f0",
+            "heading_color": "#ffffff",
+            "subheading_color": "#ffffff",
+            "text_color": "#ffffff",
+            "accent_color": "#e2ab43",
+            "button_color": "#e2ab43",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#e2ab43",
+            "button_hover_text_color": "#5c402f",
+            "heading_size": 36,
+            "subheading_size": 24,
+            "text_size": 16,
+            "container_width": 1200,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "heading_spacing": 16,
+            "content_spacing": 24,
+            "button_spacing": 30,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ee5b3bf_pUeLnk"
+      ],
+      "settings": {}
     },
     "section-health-benifits": {
       "type": "section-health-benifits",
@@ -997,8 +997,8 @@
     "section-featured-products",
     "section_image_with_text_button_kijTgn",
     "blocks_eaPtDX",
-    "section-health-benifits",
     "17678601152aabe9e8",
+    "section-health-benifits",
     "section-text-images-grid",
     "section-image-text-dynamicbg",
     "section_rescent_articles_LArLB4",
