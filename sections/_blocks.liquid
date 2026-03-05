@@ -1,20 +1,9 @@
 {%- comment -%}
-  Dynamic blocks section: renders theme blocks (ai_gen_block_*) so they appear in the theme editor
-  and can be reordered with other home page sections.
+  Dynamic blocks section: uses content_for 'blocks' so theme blocks (ai_gen_block_*) render
+  and the section can be reordered on the home page.
 {%- endcomment -%}
 <div class="shopify-section-blocks section-blocks-{{ section.id }}" id="shopify-section-{{ section.id }}" data-section-id="{{ section.id }}">
-  {%- for block in section.blocks -%}
-    <div class="section-block-wrapper" {{ block.shopify_attributes }}>
-      {%- case block.type -%}
-        {%- when 'ai_gen_block_ee5b3bf' -%}
-          {%- render 'ai_gen_block_ee5b3bf', block: block -%}
-        {%- when 'ai_gen_block_9be76af' -%}
-          {%- render 'ai_gen_block_9be76af', block: block -%}
-        {%- else -%}
-          {%- render block.type, block: block -%}
-      {%- endcase -%}
-    </div>
-  {%- endfor -%}
+  {% content_for 'blocks' %}
 </div>
 
 {% schema %}
@@ -32,12 +21,10 @@
   ],
   "blocks": [
     {
-      "type": "ai_gen_block_ee5b3bf",
-      "name": "Image & text banner"
+      "type": "@theme"
     },
     {
-      "type": "ai_gen_block_9be76af",
-      "name": "New to cacao"
+      "type": "@app"
     }
   ],
   "presets": [
