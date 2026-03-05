@@ -89,31 +89,7 @@
 				<div class="elementor-element elementor-element-736e7e50 elementor-widget__width-inherit elementor-widget elementor-widget-woocommerce-product-images" data-id="736e7e50" data-element_type="widget" data-widget_type="woocommerce-product-images.default">
 				<div class="elementor-widget-container">
 					{%- if product.media.size > 0 -%}
-						{%- comment -%} Initial slide = selected/default variant's image (so main image matches selected size on load) {%- endcomment -%}
-						{%- liquid
-							assign selected_variant = product.selected_or_first_available_variant
-							assign initial_media_id = nil
-							if selected_variant.featured_media != blank
-								assign initial_media_id = selected_variant.featured_media.id
-							elsif selected_variant.featured_image != blank
-								for m in product.media
-									if m.media_type == 'image'
-										if m.preview_image.id == selected_variant.featured_image.id or m.id == selected_variant.featured_image.id
-											assign initial_media_id = m.id
-											break
-										endif
-									endif
-								endfor
-							endif
-							if initial_media_id == nil
-								for m in product.media
-									if m.media_type == 'image'
-										assign initial_media_id = m.id
-										break
-									endif
-								endfor
-							endif
-						-%}
+						{%- comment -%} On load: show featured image (first image). On variant change: JS switches to variant image. {%- endcomment -%}
 						{%- assign image_count = product.media.size -%}
 						<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out;">
 							<a href="#" role="button" class="woocommerce-product-gallery__trigger" aria-haspopup="dialog" aria-controls="photoswipe-fullscreen-dialog" aria-label="View full-screen image gallery">
@@ -123,14 +99,7 @@
 								<div class="woocommerce-product-gallery__wrapper" style="transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
 									{%- for media in product.media -%}
 										{%- if media.media_type == 'image' -%}
-											{%- if initial_media_id != nil -%}
-												{%- assign is_first = false -%}
-												{%- if media.id == initial_media_id -%}
-													{%- assign is_first = true -%}
-												{%- endif -%}
-											{%- else -%}
-												{%- assign is_first = forloop.first -%}
-											{%- endif -%}
+											{%- assign is_first = forloop.first -%}
 											{%- assign image_alt = media.alt | default: product.title | escape -%}
 											{%- if forloop.index > 1 -%}
 												{%- assign image_alt = image_alt | append: ' - Image ' | append: forloop.index -%}
@@ -162,14 +131,7 @@
 							<ol class="flex-control-nav flex-control-thumbs">
 								{%- for media in product.media -%}
 									{%- if media.media_type == 'image' -%}
-										{%- if initial_media_id != nil -%}
-											{%- assign is_first_thumb = false -%}
-											{%- if media.id == initial_media_id -%}
-												{%- assign is_first_thumb = true -%}
-											{%- endif -%}
-										{%- else -%}
-											{%- assign is_first_thumb = forloop.first -%}
-										{%- endif -%}
+										{%- assign is_first_thumb = forloop.first -%}
 										{%- assign image_alt = media.alt | default: product.title | escape -%}
 										{%- if forloop.index > 1 -%}
 											{%- assign image_alt = image_alt | append: ' - Image ' | append: forloop.index -%}
@@ -226,22 +188,6 @@
 								endif
 							endfor
 						-%}
-						{%- comment -%} Initial gallery slide index for JS (same as active slide we set above) {%- endcomment -%}
-						{%- liquid
-							assign initial_gallery_index = 0
-							if initial_media_id != nil
-								assign idx = 0
-								for media in product.media
-									if media.media_type == 'image'
-										if media.id == initial_media_id
-											assign initial_gallery_index = idx
-											break
-										endif
-										assign idx = idx | plus: 1
-									endif
-								endfor
-							endif
-						-%}
 						<script type="application/json" id="product-variant-images-{{ product.id }}">{"{{ product.id }}":{ {{ variant_image_pairs }} }}</script>
 						<script>
 							(function() {
@@ -254,7 +200,6 @@
 										window.PRODUCT_VARIANT_IMAGES = {};
 									}
 								}
-								window.PRODUCT_INITIAL_GALLERY_INDEX = {{ initial_gallery_index }};
 							})();
 						</script>
 					{%- endif -%}

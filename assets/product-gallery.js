@@ -205,21 +205,8 @@
       }
     };
     
-    // Initialize to the slide for the selected/default variant (matches Liquid initial slide)
-    var initialIndex = 0;
-    if (typeof window.PRODUCT_INITIAL_GALLERY_INDEX === 'number' && window.PRODUCT_INITIAL_GALLERY_INDEX >= 0) {
-      initialIndex = Math.min(window.PRODUCT_INITIAL_GALLERY_INDEX, totalImages - 1);
-    }
-    goToSlide(initialIndex);
-    
-    // If form already has variant id (e.g. set by product-form.js), sync gallery to it
-    var form = document.querySelector('form[data-product-handle]');
-    if (form) {
-      var idInput = form.querySelector('input[name="id"]');
-      if (idInput && idInput.value && window.updateProductGalleryForVariant) {
-        window.updateProductGalleryForVariant(idInput.value);
-      }
-    }
+    // On load: show featured image (first slide). On variant change: updateProductGalleryForVariant switches to variant image.
+    goToSlide(0);
     
     // Update viewport height on window resize
     var resizeTimer;
