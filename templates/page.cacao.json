@@ -1,0 +1,126 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "slide_6MwxNG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slide_6MwxNG"
+      ],
+      "disabled": true,
+      "settings": {
+        "slide_duration": 8000,
+        "transition_duration": 1000,
+        "loop": true,
+        "ken_burns": true,
+        "ken_burns_direction": "in"
+      }
+    },
+    "section_loyalty_rewards_9LhgjB": {
+      "type": "section-loyalty-rewards",
+      "blocks": {
+        "earning_method_TyQFNm": {
+          "type": "earning_method",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-point_for_purchase",
+            "title": "Earn Points for Purchase",
+            "points_text": "2 Points for each $1.00 spent",
+            "description": "Spend $1 → Earn 2 Points. That's 2% back in store credit!",
+            "link_url": "",
+            "link_text": "Learn More"
+          }
+        },
+        "earning_method_Axqkt9": {
+          "type": "earning_method",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-referral",
+            "title": "Referral",
+            "points_text": "You get Points : 20%<br>Your friend gets Points : 10%",
+            "description": "You earn 20% from their order and your friend gets 10% off their order! Win win!",
+            "link_url": "",
+            "link_text": "Learn More"
+          }
+        },
+        "earning_method_pm9NNz": {
+          "type": "earning_method",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-product_review",
+            "title": "Leave a review get $3!",
+            "points_text": "+300 Points",
+            "description": "Leave a review & get $3 off your next order in store credit!",
+            "link_url": "",
+            "link_text": "Learn More"
+          }
+        },
+        "reward_opportunity_zdbLFx": {
+          "type": "reward_opportunity",
+          "settings": {
+            "icon_type": "icon",
+            "icon_class": "wlr wlrf-points_conversion",
+            "title": "Point Conversion",
+            "points_text": "N/A",
+            "description": "Click my rewards to claim: 100 points = $1",
+            "link_url": "",
+            "link_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "earning_method_TyQFNm",
+        "earning_method_Axqkt9",
+        "earning_method_pm9NNz",
+        "reward_opportunity_zdbLFx"
+      ],
+      "name": "Loyalty & Rewards",
+      "settings": {
+        "theme_color": "#e2ab43",
+        "text_color": "#1d2327",
+        "border_color": "#cfcfcf",
+        "background_color": "#ffffff",
+        "button_text_color": "#ffffff",
+        "full_width": false,
+        "section_max_width": 1200,
+        "section_padding_top": 40,
+        "section_padding_bottom": 40,
+        "cards_per_row_desktop": 2,
+        "cards_per_row_tablet": 2,
+        "cards_per_row_mobile": 1,
+        "card_spacing": 20,
+        "card_border_width": 1,
+        "card_border_radius": 8,
+        "card_background": "rgba(0,0,0,0)",
+        "enable_hover_effect": true,
+        "card_shadow": 0,
+        "icon_size": 52,
+        "iconfont_size": 26,
+        "heading_size": 24,
+        "body_size": 16,
+        "card_title_size": 20,
+        "earning_section_title": "Ways to earn rewards",
+        "opportunities_section_title": "rewards opportunities"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_loyalty_rewards_9LhgjB"
+  ]
+}
