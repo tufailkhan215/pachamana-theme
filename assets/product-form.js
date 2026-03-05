@@ -376,6 +376,11 @@
           }
           variantInput.value = variant.id;
           
+          // Update main product image to variant's featured image (if any)
+          if (window.updateProductGalleryForVariant && typeof window.updateProductGalleryForVariant === 'function') {
+            window.updateProductGalleryForVariant(variant.id);
+          }
+          
           // Update price display
           updateVariantPriceDisplay(form, variant);
           

@@ -186,6 +186,19 @@
       });
     });
     
+    // Expose goToSlide so variant change can switch main image
+    gallery.goToSlide = goToSlide;
+    
+    // Global: update main gallery image when variant changes (variant has featured image)
+    window.updateProductGalleryForVariant = function(variantId) {
+      var map = window.PRODUCT_VARIANT_IMAGES;
+      if (!map || typeof map[variantId] === 'undefined') return;
+      var index = parseInt(map[variantId], 10);
+      if (!isNaN(index) && index >= 0 && gallery.goToSlide) {
+        gallery.goToSlide(index);
+      }
+    };
+    
     // Initialize first slide
     goToSlide(0);
     

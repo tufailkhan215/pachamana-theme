@@ -150,6 +150,47 @@
 								{%- endfor -%}
 							</ol>
 						</div>
+						{%- comment -%} Variant → gallery image index mapping (for switching main image when variant changes) {%- endcomment -%}
+						{%- liquid
+							assign variant_image_pairs = ''
+							assign pair_count = 0
+							for variant in product.variants
+								if variant.featured_image != blank
+									assign img_index = -1
+									assign current_img_index = 0
+									for media in product.media
+										if media.media_type == 'image'
+											if media.preview_image.id == variant.featured_image.id or media.id == variant.featured_image.id
+												assign img_index = current_img_index
+												break
+											endif
+											assign current_img_index = current_img_index | plus: 1
+										endif
+									endfor
+									if img_index >= 0
+										if pair_count > 0
+											assign variant_image_pairs = variant_image_pairs | append: ','
+										endif
+										assign variant_image_pairs = variant_image_pairs | append: '"' | append: variant.id | append: '":' | append: img_index
+										assign pair_count = pair_count | plus: 1
+									endif
+								endif
+							endfor
+						-%}
+						<script type="application/json" id="product-variant-images-{{ product.id }}">{"{{ product.id }}":{ {{ variant_image_pairs }} }}</script>
+						<script>
+							(function() {
+								var el = document.getElementById('product-variant-images-{{ product.id }}');
+								if (el) {
+									try {
+										var data = JSON.parse(el.textContent || '{}');
+										window.PRODUCT_VARIANT_IMAGES = data["{{ product.id }}"] || {};
+									} catch (e) {
+										window.PRODUCT_VARIANT_IMAGES = {};
+									}
+								}
+							})();
+						</script>
 					{%- endif -%}
 				</div>
 				</div>
