@@ -415,20 +415,24 @@
       });
   }
 
-  // Update variant price display
+  // Update variant price display (price is in a sibling widget .elementor-widget-woocommerce-product-price, not inside the form)
   function updateVariantPriceDisplay(form, variant) {
-    const priceContainer = form.closest('.elementor-widget-container');
-    if (!priceContainer) return;
-    
-    const priceElement = priceContainer.querySelector('.price, .woocommerce-Price-amount');
+    var productScope = form.closest('.elementor-location-single') || form.closest('[data-elementor-type="product"]') || document.body;
+    var priceWidget = productScope.querySelector('.elementor-widget-woocommerce-product-price');
+    if (!priceWidget) {
+      priceWidget = form.closest('[data-id="7db38096"]') && form.closest('[data-id="7db38096"]').previousElementSibling;
+    }
+    var priceElement = priceWidget ? priceWidget.querySelector('.price') : null;
+    if (!priceElement) {
+      priceElement = document.querySelector('.elementor-widget-woocommerce-product-price .price');
+    }
     if (!priceElement) return;
-    
-    // Format price
-    const price = (variant.price / 100).toFixed(2);
-    const currencySymbol = window.Shopify && window.Shopify.currency ? window.Shopify.currency.active : '$';
-    
+
+    var price = (variant.price / 100).toFixed(2);
+    var currencySymbol = (window.Shopify && window.Shopify.currency && window.Shopify.currency.active) ? window.Shopify.currency.active : '$';
+
     if (variant.compare_at_price && variant.compare_at_price > variant.price) {
-      const comparePrice = (variant.compare_at_price / 100).toFixed(2);
+      var comparePrice = (variant.compare_at_price / 100).toFixed(2);
       priceElement.innerHTML = '<del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + comparePrice + '</bdi></span></del> <ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + price + '</bdi></span></ins>';
     } else {
       priceElement.innerHTML = '<span class="woocommerce-Price-amount amount"><bdi>' + currencySymbol + price + '</bdi></span>';
