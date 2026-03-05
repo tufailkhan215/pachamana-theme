@@ -20,6 +20,7 @@
     },
     "blocks_eaPtDX": {
       "type": "_blocks",
+      "name": "Ceremonial grade means",
       "blocks": {
         "ai_gen_block_ee5b3bf_pUeLnk": {
           "type": "ai_gen_block_ee5b3bf",
@@ -311,6 +312,7 @@
     },
     "17678601152aabe9e8": {
       "type": "_blocks",
+      "name": "Perfect for Gifting",
       "blocks": {
         "ai_gen_block_ee5b3bf_pcknzQ": {
           "type": "ai_gen_block_ee5b3bf",
@@ -934,6 +936,7 @@
     },
     "17678675109a1f6d0a": {
       "type": "_blocks",
+      "name": "New to Ceremonial Cacao",
       "blocks": {
         "ai_gen_block_9be76af_Ahciif": {
           "type": "ai_gen_block_9be76af",

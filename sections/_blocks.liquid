@@ -1,0 +1,54 @@
+{%- comment -%}
+  Dynamic blocks section: renders theme blocks (ai_gen_block_*) so they appear in the theme editor
+  and can be reordered with other home page sections.
+{%- endcomment -%}
+<div class="shopify-section-blocks section-blocks-{{ section.id }}" id="shopify-section-{{ section.id }}" data-section-id="{{ section.id }}">
+  {%- for block in section.blocks -%}
+    <div class="section-block-wrapper" {{ block.shopify_attributes }}>
+      {%- case block.type -%}
+        {%- when 'ai_gen_block_ee5b3bf' -%}
+          {%- render 'ai_gen_block_ee5b3bf', block: block -%}
+        {%- when 'ai_gen_block_9be76af' -%}
+          {%- render 'ai_gen_block_9be76af', block: block -%}
+        {%- else -%}
+          {%- render block.type, block: block -%}
+      {%- endcase -%}
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Content block",
+  "tag": "div",
+  "class": "section-dynamic-blocks",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section label (for theme editor)",
+      "default": "Content block"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ai_gen_block_ee5b3bf",
+      "name": "Image & text banner"
+    },
+    {
+      "type": "ai_gen_block_9be76af",
+      "name": "New to cacao"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content block",
+      "blocks": [
+        {
+          "type": "ai_gen_block_ee5b3bf"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
