@@ -196,20 +196,24 @@
       attachFormHandlers();
     }, 400);
   }
-  if (typeof MutationObserver !== 'undefined' && document.body && document.body.nodeType === 1) {
-    var observer = new MutationObserver(function() {
-      scheduleFormHandlerAttach();
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-  } else if (typeof MutationObserver !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', function() {
-      if (document.body) {
-        var observer = new MutationObserver(function() {
-          scheduleFormHandlerAttach();
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-      }
-    });
+  function observeBodyForForms() {
+    var target = document.body;
+    if (!target || typeof target.nodeType === 'undefined' || target.nodeType !== 1) return;
+    try {
+      var observer = new MutationObserver(function() {
+        scheduleFormHandlerAttach();
+      });
+      observer.observe(target, { childList: true, subtree: true });
+    } catch (e) {
+      // Ignore observe errors (e.g. target not a Node in some contexts)
+    }
+  }
+  if (typeof MutationObserver !== 'undefined') {
+    if (document.body && document.body.nodeType === 1) {
+      observeBodyForForms();
+    } else {
+      document.addEventListener('DOMContentLoaded', observeBodyForForms);
+    }
   }
 
   // Submit form to cart
