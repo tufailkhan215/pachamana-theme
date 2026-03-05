@@ -103,7 +103,7 @@
 											{%- if forloop.index > 1 -%}
 												{%- assign image_alt = image_alt | append: ' - Image ' | append: forloop.index -%}
 											{%- endif -%}
-											<div data-thumb="{{ media | image_url: width: 100 }}" data-thumb-alt="{{ image_alt }}" class="woocommerce-product-gallery__image{% if is_first %} flex-active-slide{% endif %}" style="width: 33.3333%; margin-right: 0px; float: left; display: block; position: relative; overflow: hidden;">
+											<div data-media-id="{{ media.id }}" data-thumb="{{ media | image_url: width: 100 }}" data-thumb-alt="{{ image_alt }}" class="woocommerce-product-gallery__image{% if is_first %} flex-active-slide{% endif %}" style="width: 33.3333%; margin-right: 0px; float: left; display: block; position: relative; overflow: hidden;">
 												<a href="{{ media | image_url: width: 2048 }}">
 													<img
 														{% if is_first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
@@ -150,30 +150,40 @@
 								{%- endfor -%}
 							</ol>
 						</div>
-						{%- comment -%} Variant → gallery image index mapping (for switching main image when variant changes) {%- endcomment -%}
+						{%- comment -%} Variant → media ID mapping (for switching main image when variant changes) {%- endcomment -%}
 						{%- liquid
 							assign variant_image_pairs = ''
 							assign pair_count = 0
+							assign first_image_media_id = nil
+							for media in product.media
+								if media.media_type == 'image' and first_image_media_id == nil
+									assign first_image_media_id = media.id
+									break
+								endif
+							endfor
 							for variant in product.variants
-								if variant.featured_image != blank
-									assign img_index = -1
-									assign current_img_index = 0
+								assign media_id = nil
+								if variant.featured_media != blank
+									assign media_id = variant.featured_media.id
+								elsif variant.featured_image != blank
 									for media in product.media
 										if media.media_type == 'image'
 											if media.preview_image.id == variant.featured_image.id or media.id == variant.featured_image.id
-												assign img_index = current_img_index
+												assign media_id = media.id
 												break
 											endif
-											assign current_img_index = current_img_index | plus: 1
 										endif
 									endfor
-									if img_index >= 0
-										if pair_count > 0
-											assign variant_image_pairs = variant_image_pairs | append: ','
-										endif
-										assign variant_image_pairs = variant_image_pairs | append: '"' | append: variant.id | append: '":' | append: img_index
-										assign pair_count = pair_count | plus: 1
+								endif
+								if media_id == nil and first_image_media_id != nil
+									assign media_id = first_image_media_id
+								endif
+								if media_id != nil
+									if pair_count > 0
+										assign variant_image_pairs = variant_image_pairs | append: ','
 									endif
+									assign variant_image_pairs = variant_image_pairs | append: '"' | append: variant.id | append: '":' | append: media_id
+									assign pair_count = pair_count | plus: 1
 								endif
 							endfor
 						-%}

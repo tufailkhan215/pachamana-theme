@@ -1,3 +1,42 @@
+<style>
+  /* Photo gallery: mobile-only carousel (horizontal scroll with snap) */
+  @media (max-width: 768px) {
+    .section-photo-gallery #pt-plus-gallery-list {
+      overflow: hidden;
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .section-photo-gallery .gallery-list .tp-row.post-inner-loop {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 12px;
+      margin: 0;
+      padding: 8px 4px 16px;
+      scrollbar-width: none;
+    }
+    .section-photo-gallery .gallery-list .tp-row.post-inner-loop::-webkit-scrollbar {
+      display: none;
+    }
+    .section-photo-gallery .gallery-list .tp-row.post-inner-loop .grid-item {
+      flex: 0 0 auto;
+      width: 82vw;
+      max-width: 320px;
+      min-height: 220px;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
+    .section-photo-gallery .gallery-list.list-isotope-metro .post-inner-loop .grid-item .gallery-list-content,
+    .section-photo-gallery .gallery-list.list-isotope-metro .post-inner-loop .grid-item .gallery-bg-image-metro {
+      min-height: 220px;
+    }
+  }
+</style>
 <div class="plus_row_scroll_overflow elementor-element elementor-element-5a356ac e-flex e-con-boxed e-con e-parent section-photo-gallery" data-id="5a356ac" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="e-con-inner">
 		<div class="plus_row_scroll_overflow elementor-element elementor-element-f317467 e-flex e-con-boxed e-con e-child" data-id="f317467" data-element_type="container">

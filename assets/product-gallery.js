@@ -189,18 +189,33 @@
     // Expose goToSlide so variant change can switch main image
     gallery.goToSlide = goToSlide;
     
-    // Global: update main gallery image when variant changes (variant has featured image)
+    // Global: update main gallery image when variant changes (find slide by media ID, then goToSlide)
     window.updateProductGalleryForVariant = function(variantId) {
       var map = window.PRODUCT_VARIANT_IMAGES;
-      if (!map || typeof map[variantId] === 'undefined') return;
-      var index = parseInt(map[variantId], 10);
-      if (!isNaN(index) && index >= 0 && gallery.goToSlide) {
-        gallery.goToSlide(index);
+      if (!map) return;
+      var mediaId = map[variantId] !== undefined ? map[variantId] : map[String(variantId)];
+      if (mediaId === undefined) return;
+      var slides = gallery.querySelectorAll('.woocommerce-product-gallery__image');
+      var mediaIdStr = String(mediaId);
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].getAttribute('data-media-id') === mediaIdStr) {
+          if (gallery.goToSlide) gallery.goToSlide(i);
+          return;
+        }
       }
     };
     
     // Initialize first slide
     goToSlide(0);
+    
+    // Sync to currently selected variant (e.g. page load with variant in URL)
+    var form = document.querySelector('form[data-product-handle]');
+    if (form) {
+      var idInput = form.querySelector('input[name="id"]');
+      if (idInput && idInput.value && window.updateProductGalleryForVariant) {
+        window.updateProductGalleryForVariant(idInput.value);
+      }
+    }
     
     // Update viewport height on window resize
     var resizeTimer;
