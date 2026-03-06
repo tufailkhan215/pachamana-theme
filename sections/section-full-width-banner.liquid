@@ -99,6 +99,7 @@
     padding: {{ section.settings.button_padding_y }}px {{ section.settings.button_padding_x }}px;
     background-color: {{ section.settings.button_bg }};
     color: {{ section.settings.button_text_color }};
+    margin: {{ section.settings.button_margin_top }}px {{ section.settings.button_margin_right }}px {{ section.settings.button_margin_bottom }}px {{ section.settings.button_margin_left }}px;
     text-decoration: none;
     font-weight: 600;
     font-size: {{ section.settings.button_font_size }}px;
@@ -117,7 +118,7 @@
   .ora-banner-{{ bid }} .ora-banner__buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1rem;
+    gap: {{ section.settings.buttons_gap }}rem;
     margin-top: 0;
   }
 
@@ -646,6 +647,56 @@
       "step": 2,
       "unit": "px",
       "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Button margin top",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_margin_right",
+      "label": "Button margin right",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_margin_bottom",
+      "label": "Button margin bottom",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_margin_left",
+      "label": "Button margin left",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "buttons_gap",
+      "label": "Gap between buttons",
+      "min": 0,
+      "max": 2,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 1
     }
   ],
   "presets": [

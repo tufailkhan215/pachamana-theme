@@ -24,6 +24,9 @@
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
+    {% if section.settings.sliding_strip_image != blank %}
+    padding-top: calc(3rem + {{ section.settings.sliding_strip_height }}px);
+    {% endif %}
   }
 
   .reviews-carousel-{{ sid }} .reviews-carousel__strip-wrap {
@@ -60,7 +63,7 @@
 
   .reviews-carousel-{{ sid }} .reviews-carousel__title-wrap {
     text-align: center;
-    margin: 24rem 2rem 4rem;
+    margin: 2rem 2rem 4rem;
     display: flex;
     justify-content: center;
     position: relative;
@@ -69,7 +72,7 @@
 
   @media screen and (min-width: 750px) {
     .reviews-carousel-{{ sid }} .reviews-carousel__title-wrap {
-      margin-top: 20rem;
+      margin-top: 3rem;
     }
   }
 
