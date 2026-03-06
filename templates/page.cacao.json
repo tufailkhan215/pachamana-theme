@@ -239,6 +239,7 @@
         "column_p9ywL7": {
           "type": "column",
           "settings": {
+            "icon": "shopify://shop_images/Icon_PureCacao.svg",
             "title": "Pure Organic Cacao",
             "text": "Made from minimally processed organic cacao beans and nothing else. Just combine our cacao discs with hot liquid for an easy-to-make, decadent cup of cacao.",
             "button_label": "Shop Now",
@@ -248,6 +249,7 @@
         "column_qfUzge": {
           "type": "column",
           "settings": {
+            "icon": "shopify://shop_images/Icon_EnhancedCacao.svg",
             "title": "Botanical Organic Cacao",
             "text": "We grind the highest quality superfoods into our pure cacaos. Cacao is the optimal delivery mechanism for superfoods because it boosts circulation and is vasodilating.",
             "button_label": "Shop Now",
@@ -257,6 +259,7 @@
         "column_fpKVNG": {
           "type": "column",
           "settings": {
+            "icon": "shopify://shop_images/Icon_MushroomPowder.svg",
             "title": "Mystic Mushrooms",
             "text": "Discover the benefit of multiple mushrooms acting in synergy on unique biochemical pathways to effect positive health outcomes. Comes as 1:1 water extract powders.",
             "button_label": "SHOP NOW",
