@@ -1,0 +1,449 @@
+{% comment %}
+  Icon text columns: 3 columns (1 on mobile), each with optional icon, title, description, CTA.
+  Ora-style collection-icons layout.
+{% endcomment %}
+{% assign sid = section.id | replace: '-', '' | replace: '_', '' | slice: 0, 12 %}
+
+{% style %}
+  .icon-cols-{{ sid }} {
+    margin: 0;
+    padding: {{ section.settings.padding_top }}rem 0 {{ section.settings.padding_bottom }}rem;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__inner {
+    max-width: {{ section.settings.page_width }}px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__title-wrap {
+    text-align: center;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__title {
+    font-family: var(--font-heading-family), serif;
+    font-size: {{ section.settings.title_size }}px;
+    color: {{ section.settings.title_color }};
+    margin: 0;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: {{ section.settings.column_gap }}rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .icon-cols-{{ sid }} .icon-cols__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: {{ section.settings.column_gap_desktop }}rem;
+    }
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__item {
+    text-align: center;
+    padding: 2em 0;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__icon-wrap {
+    margin-bottom: 1.5rem;
+    min-height: {{ section.settings.icon_min_height }}px;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__icon {
+    max-width: {{ section.settings.icon_size }}px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__item-title {
+    font-family: var(--font-heading-family), serif;
+    font-size: {{ section.settings.heading_size }}px;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    line-height: 1.3;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__text {
+    font-size: {{ section.settings.text_size }}px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__btn {
+    display: inline-block;
+    padding: {{ section.settings.button_padding_y }}px {{ section.settings.button_padding_x }}px;
+    background-color: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text_color }};
+    text-decoration: none;
+    font-weight: 600;
+    font-size: {{ section.settings.button_font_size }}px;
+    border-radius: {{ section.settings.button_radius }}px;
+    border: 2px solid {{ section.settings.button_bg }};
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .icon-cols-{{ sid }} .icon-cols__btn:hover {
+    background-color: {{ section.settings.button_hover_bg }};
+    color: {{ section.settings.button_hover_text }};
+    border-color: {{ section.settings.button_hover_bg }};
+    transform: translateY(-2px);
+  }
+{% endstyle %}
+
+<section class="shopify-section icon-cols-section icon-cols-{{ sid }}" {{ section.shopify_attributes }}>
+  <div class="icon-cols__inner">
+    {% if section.settings.heading != blank %}
+      <div class="icon-cols__title-wrap">
+        <h2 class="icon-cols__title">{{ section.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <ul class="icon-cols__grid" role="list">
+        {% for block in section.blocks %}
+          <li class="icon-cols__item" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <div class="icon-cols__icon-wrap">
+                {% if block.settings.link != blank %}
+                  <a href="{{ block.settings.link }}" class="icon-cols__link" aria-label="{{ block.settings.title | escape }}">
+                {% endif %}
+                <img
+                  class="icon-cols__icon"
+                  src="{{ block.settings.icon | image_url: width: 200 }}"
+                  alt="{{ block.settings.title | default: block.settings.icon.alt | escape }}"
+                  width="{{ block.settings.icon.width }}"
+                  height="{{ block.settings.icon.height }}"
+                  loading="lazy"
+                >
+                {% if block.settings.link != blank %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="icon-cols__link">
+            {% endif %}
+            <h3 class="icon-cols__item-title">{{ block.settings.title }}</h3>
+            {% if block.settings.text != blank %}
+              <div class="icon-cols__text">{{ block.settings.text }}</div>
+            {% endif %}
+            {% if block.settings.link != blank %}
+              </a>
+            {% endif %}
+            {% if block.settings.button_label != blank and block.settings.link != blank %}
+              <div class="icon-cols__btn-wrap" style="text-align: center;">
+                <a href="{{ block.settings.link }}" class="icon-cols__btn">{{ block.settings.button_label }}</a>
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Icon text columns",
+  "tag": "section",
+  "class": "section section--full-width",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Heading size",
+      "min": 18,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "page_width",
+      "label": "Content max width",
+      "min": 800,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 2,
+      "max": 6,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 2,
+      "max": 6,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap (mobile)",
+      "min": 1,
+      "max": 4,
+      "step": 0.25,
+      "unit": "rem",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Column gap (desktop)",
+      "min": 1,
+      "max": 5,
+      "step": 0.25,
+      "unit": "rem",
+      "default": 2.5
+    },
+    {
+      "type": "header",
+      "content": "Column content"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Column title size",
+      "min": 18,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Column text size",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon max size",
+      "min": 60,
+      "max": 180,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "icon_min_height",
+      "label": "Icon area min height",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Column title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Column text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_y",
+      "label": "Button padding (vertical)",
+      "min": 10,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Button padding (horizontal)",
+      "min": 20,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#3d3334"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Button hover background",
+      "default": "#5C402F"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Button hover text",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon / image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Pure Organic Cacao"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Made from minimally processed organic cacao beans and nothing else. Just combine our cacao discs with hot liquid for an easy-to-make, decadent cup of cacao."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon text columns",
+      "blocks": [
+        {
+          "type": "column",
+          "settings": {
+            "title": "Pure Organic Cacao",
+            "text": "Made from minimally processed organic cacao beans and nothing else. Just combine our cacao discs with hot liquid for an easy-to-make, decadent cup of cacao.",
+            "button_label": "Shop Now"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "Botanical Organic Cacao",
+            "text": "We grind the highest quality superfoods into our pure cacaos. Cacao is the optimal delivery mechanism for superfoods because it boosts circulation and is vasodilating.",
+            "button_label": "Shop Now"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "Mystic Mushrooms",
+            "text": "Discover the benefit of multiple mushrooms acting in synergy on unique biochemical pathways to effect positive health outcomes. Comes as 1:1 water extract powders.",
+            "button_label": "SHOP NOW"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
