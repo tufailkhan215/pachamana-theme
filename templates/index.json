@@ -419,8 +419,8 @@
       "settings": {
         "heading": "RECENT ARTICLES",
         "blog_handle": "news",
-        "articles_to_show": 3,
-        "articles_to_fetch": 4
+        "articles_to_show": 4,
+        "articles_to_fetch": 6
       }
     },
     "section-photo-gallery": {
