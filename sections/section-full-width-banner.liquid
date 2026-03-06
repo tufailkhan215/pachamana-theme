@@ -59,9 +59,16 @@
   .ora-banner-{{ bid }} .ora-banner__box {
     max-width: {{ section.settings.box_max_width }}px;
     width: 100%;
-    background-color: {% if section.settings.show_box_bg %}{{ section.settings.box_bg }}{% else %}transparent{% endif %};
+    background-color: {% if section.settings.box_background_image != blank %}transparent{% elsif section.settings.show_box_bg %}{{ section.settings.box_bg }}{% else %}transparent{% endif %};
+    {% if section.settings.box_background_image != blank %}
+    background-image: url({{ section.settings.box_background_image | image_url: width: 800 }});
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    {% endif %}
     padding: {{ section.settings.box_padding }}rem;
     border-radius: {{ section.settings.box_radius }}px;
+    text-align: {{ section.settings.content_text_align }};
   }
 
   .ora-banner-{{ bid }} .ora-banner__heading {
@@ -104,6 +111,13 @@
     color: {{ section.settings.button_hover_text }};
     border-color: {{ section.settings.button_hover_bg }};
     transform: translateY(-2px);
+  }
+
+  .ora-banner-{{ bid }} .ora-banner__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 0;
   }
 
   @media screen and (min-width: 750px) {
@@ -211,8 +225,15 @@
       {% if section.settings.text_line_2 != blank %}
         <div class="ora-banner__text">{{ section.settings.text_line_2 }}</div>
       {% endif %}
-      {% if section.settings.button_label != blank %}
-        <a href="{{ section.settings.button_link | default: '#' }}" class="ora-banner__btn">{{ section.settings.button_label }}</a>
+      {% if section.settings.button_label != blank or section.settings.button_2_label != blank %}
+        <div class="ora-banner__buttons">
+          {% if section.settings.button_label != blank %}
+            <a href="{{ section.settings.button_link | default: '#' }}" class="ora-banner__btn">{{ section.settings.button_label }}</a>
+          {% endif %}
+          {% if section.settings.button_2_label != blank %}
+            <a href="{{ section.settings.button_2_link | default: '#' }}" class="ora-banner__btn">{{ section.settings.button_2_label }}</a>
+          {% endif %}
+        </div>
       {% endif %}
     </div>
   </div>
@@ -288,6 +309,16 @@
       "type": "url",
       "id": "button_link",
       "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_label",
+      "label": "Second button label"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Second button link"
     },
     {
       "type": "header",
@@ -403,6 +434,22 @@
       "step": 2,
       "unit": "px",
       "default": 8
+    },
+    {
+      "type": "image_picker",
+      "id": "box_background_image",
+      "label": "Content box background image",
+      "info": "Optional bean-shaped or decorative image behind content"
+    },
+    {
+      "type": "select",
+      "id": "content_text_align",
+      "label": "Content text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "center"
     },
     {
       "type": "checkbox",
@@ -628,6 +675,29 @@
         "heading_size_mobile": 26,
         "text_size": 24,
         "text_size_mobile": 18,
+        "hero_priority": false,
+        "mobile_stack": true
+      }
+    },
+    {
+      "name": "Full width banner v2",
+      "settings": {
+        "heading": "ENERGY MATTERS",
+        "heading_tag": "h2",
+        "text_line_1": "Cacao is medicine, not candy. When we treat it as such, we give back to the Earth and the communities that we source from. We are committed to a business model that stewards the Earth and brings abundant wellness and prosperity to all we work with.",
+        "text_line_2": "",
+        "button_label": "About US",
+        "button_2_label": "Our Mission",
+        "content_vertical": "center",
+        "content_horizontal": "flex-end",
+        "content_text_align": "left",
+        "aspect_ratio": 50,
+        "heading_size": 32,
+        "heading_size_mobile": 26,
+        "text_size": 22,
+        "text_size_mobile": 18,
+        "show_box_bg": true,
+        "box_bg": "#F5F0EB",
         "hero_priority": false,
         "mobile_stack": true
       }

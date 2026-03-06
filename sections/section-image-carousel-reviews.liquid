@@ -1,0 +1,471 @@
+{% comment %}
+  Image carousel reviews: sliding customer-photo strip at top, then heading,
+  rating number + optional star image + label, and CTA button.
+  Gradient/background image supported.
+{% endcomment %}
+{% assign sid = section.id | replace: '-', '' | replace: '_', '' | slice: 0, 12 %}
+
+{% style %}
+  .reviews-carousel-{{ sid }} {
+    position: relative;
+    margin: 0;
+    padding: 3rem 0 5rem;
+    background-color: {{ section.settings.background_color }};
+    {% if section.settings.background_image != blank %}
+    background-image: url({{ section.settings.background_image | image_url: width: 2048 }});
+    background-size: cover;
+    background-position: center;
+    {% endif %}
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__strip-wrap {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__strip {
+    display: block;
+    width: 200%;
+    height: {{ section.settings.sliding_strip_height }}px;
+    background-repeat: repeat-x;
+    background-size: auto {{ section.settings.sliding_strip_height }}px;
+    background-position: 0 0;
+    animation: reviews-carousel-slide-{{ sid }} {{ section.settings.slide_duration }}s linear infinite;
+  }
+
+  {% if section.settings.sliding_strip_image != blank %}
+  .reviews-carousel-{{ sid }} .reviews-carousel__strip {
+    background-image: url({{ section.settings.sliding_strip_image | image_url: width: 1600 }});
+  }
+  {% endif %}
+
+  @keyframes reviews-carousel-slide-{{ sid }} {
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__title-wrap {
+    text-align: center;
+    margin: 24rem 2rem 4rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .reviews-carousel-{{ sid }} .reviews-carousel__title-wrap {
+      margin-top: 20rem;
+    }
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__title {
+    font-family: var(--font-heading-family), serif;
+    font-size: {{ section.settings.heading_size_mobile }}px;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.3;
+  }
+
+  @media screen and (min-width: 750px) {
+    .reviews-carousel-{{ sid }} .reviews-carousel__title {
+      font-size: {{ section.settings.heading_size }}px;
+    }
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__rating {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__rating-number {
+    font-family: var(--font-heading-family), serif;
+    font-size: {{ section.settings.rating_size_mobile }}px;
+    font-weight: 700;
+    color: {{ section.settings.rating_color }};
+    margin: 0 0 0.5rem;
+    position: relative;
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__rating-number.has-star {
+    padding-bottom: 4rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .reviews-carousel-{{ sid }} .reviews-carousel__rating-number {
+      font-size: {{ section.settings.rating_size }}px;
+    }
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__rating-number::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4rem;
+    width: 14rem;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  {% if section.settings.star_rating_image != blank %}
+  .reviews-carousel-{{ sid }} .reviews-carousel__rating-number::after {
+    background-image: url({{ section.settings.star_rating_image | image_url: width: 256 }});
+  }
+  {% endif %}
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__rating-label {
+    font-family: var(--font-body-family), sans-serif;
+    font-size: {{ section.settings.label_size_mobile }}px;
+    color: {{ section.settings.label_color }};
+    text-transform: uppercase;
+    letter-spacing: {{ section.settings.label_letter_spacing }}px;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media screen and (min-width: 750px) {
+    .reviews-carousel-{{ sid }} .reviews-carousel__rating-label {
+      font-size: {{ section.settings.label_size }}px;
+    }
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__btn-wrap {
+    text-align: center;
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__btn {
+    display: inline-block;
+    padding: {{ section.settings.button_padding_y }}px {{ section.settings.button_padding_x }}px;
+    background-color: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text_color }};
+    text-decoration: none;
+    font-weight: 600;
+    font-size: {{ section.settings.button_font_size }}px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: {{ section.settings.button_radius }}px;
+    border: 2px solid {{ section.settings.button_bg }};
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .reviews-carousel-{{ sid }} .reviews-carousel__btn:hover {
+    background-color: {{ section.settings.button_hover_bg }};
+    color: {{ section.settings.button_hover_text }};
+    border-color: {{ section.settings.button_hover_bg }};
+    transform: translateY(-2px);
+  }
+{% endstyle %}
+
+<section class="shopify-section reviews-carousel-section reviews-carousel-{{ sid }}" {{ section.shopify_attributes }}>
+  <div class="reviews-carousel__inner">
+    {% if section.settings.sliding_strip_image != blank %}
+      <div class="reviews-carousel__strip-wrap">
+        <div class="reviews-carousel__strip" aria-hidden="true"></div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <div class="reviews-carousel__title-wrap">
+        <h2 class="reviews-carousel__title">{{ section.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="reviews-carousel__rating">
+      {% if section.settings.rating_number != blank %}
+        <h3 class="reviews-carousel__rating-number{% if section.settings.star_rating_image != blank %} has-star{% endif %}">{{ section.settings.rating_number }}</h3>
+      {% endif %}
+      {% if section.settings.rating_label != blank %}
+        <p class="reviews-carousel__rating-label">{{ section.settings.rating_label }}</p>
+      {% endif %}
+    </div>
+
+    {% if section.settings.button_label != blank %}
+      <div class="reviews-carousel__btn-wrap">
+        <a href="{{ section.settings.button_link | default: '#' }}" class="reviews-carousel__btn">{{ section.settings.button_label }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image carousel reviews",
+  "tag": "section",
+  "class": "section section--full-width",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sliding strip (top)"
+    },
+    {
+      "type": "image_picker",
+      "id": "sliding_strip_image",
+      "label": "Sliding strip image",
+      "info": "Wide image of customer photos; repeats and scrolls horizontally"
+    },
+    {
+      "type": "range",
+      "id": "sliding_strip_height",
+      "label": "Strip height",
+      "min": 120,
+      "max": 320,
+      "step": 10,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "slide_duration",
+      "label": "Slide animation duration",
+      "min": 60,
+      "max": 240,
+      "step": 10,
+      "unit": "s",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "1 million cups of Ora Cacao are sipped each year..."
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size (desktop)",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 18,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "text",
+      "id": "rating_number",
+      "label": "Rating number",
+      "default": "4.9"
+    },
+    {
+      "type": "image_picker",
+      "id": "star_rating_image",
+      "label": "Star rating image",
+      "info": "Gold stars or rating graphic below the number"
+    },
+    {
+      "type": "textarea",
+      "id": "rating_label",
+      "label": "Rating label",
+      "default": "Average based on over 5000 reviews"
+    },
+    {
+      "type": "range",
+      "id": "rating_size",
+      "label": "Rating number size (desktop)",
+      "min": 36,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "rating_size_mobile",
+      "label": "Rating number size (mobile)",
+      "min": 32,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "color",
+      "id": "rating_color",
+      "label": "Rating number color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size (desktop)",
+      "min": 14,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "label_size_mobile",
+      "label": "Label size (mobile)",
+      "min": 12,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "label_letter_spacing",
+      "label": "Label letter spacing",
+      "min": 0,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_y",
+      "label": "Button padding (vertical)",
+      "min": 10,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Button padding (horizontal)",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 14,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button corner radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#3d3334"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Button hover background",
+      "default": "#5a4f50"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Button hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f0eb"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "info": "Optional gradient or texture; used as cover"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image carousel reviews",
+      "settings": {
+        "heading": "1 million cups of Ora Cacao are sipped each year...",
+        "rating_number": "4.9",
+        "rating_label": "Average based on over 5000 reviews",
+        "button_label": "Shop Now",
+        "slide_duration": 120,
+        "sliding_strip_height": 200
+      }
+    }
+  ]
+}
+{% endschema %}

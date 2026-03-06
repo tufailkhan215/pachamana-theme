@@ -1,0 +1,359 @@
+{% comment %}
+  Newsletter / giveaway signup section: heading, form (first name, email, phone optional), button, disclaimer.
+  Form posts to configurable URL (e.g. Klaviyo list signup) or use embed block for Klaviyo embed code.
+{% endcomment %}
+{% assign nid = section.id | replace: '-', '' | replace: '_', '' | slice: 0, 12 %}
+
+{% style %}
+  .newsletter-page-{{ nid }} {
+    background-color: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding_top }}rem 1.5rem {{ section.settings.padding_bottom }};
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__heading {
+    font-family: var(--font-heading-family), Georgia, serif;
+    font-size: {{ section.settings.heading_size }}px;
+    color: {{ section.settings.heading_color }};
+    text-align: center;
+    margin: 0 0 {{ section.settings.heading_spacing }}rem;
+    font-weight: 400;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__form-wrap {
+    margin-bottom: 1.5rem;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__field-wrap {
+    flex: 1 1 140px;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__field-wrap--phone {
+    flex: 1 1 180px;
+    min-width: 160px;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__field-wrap--submit {
+    flex: 0 1 auto;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 38px;
+    padding: 0 0 0 16px;
+    border-radius: 2px;
+    border: 1px solid {{ section.settings.input_border }};
+    background-color: {{ section.settings.input_bg }};
+    color: {{ section.settings.input_color }};
+    font-family: var(--font-body-family), Courier, monospace;
+    font-size: 16px;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__input::placeholder {
+    color: {{ section.settings.input_placeholder }};
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__btn {
+    display: inline-block;
+    height: auto;
+    padding: 11px 24px;
+    border-radius: 20px;
+    border: 4px solid {{ section.settings.button_bg }};
+    background-color: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text_color }};
+    font-family: var(--font-body-family), Courier, monospace;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1;
+    transition: background-color 0.2s, border-color 0.2s, opacity 0.2s;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__btn:hover {
+    opacity: 0.9;
+  }
+
+  .newsletter-page-{{ nid }} .newsletter-page__disclaimer {
+    font-size: 10px;
+    color: {{ section.settings.disclaimer_color }};
+    font-family: var(--font-body-family), Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .newsletter-page-{{ nid }} .newsletter-page__form {
+      flex-direction: column;
+    }
+    .newsletter-page-{{ nid }} .newsletter-page__field-wrap,
+    .newsletter-page-{{ nid }} .newsletter-page__field-wrap--phone {
+      min-width: 100%;
+      flex: 1 1 auto;
+    }
+  }
+{% endstyle %}
+
+<section class="shopify-section newsletter-page-section newsletter-page-{{ nid }}" {{ section.shopify_attributes }}>
+  <div class="newsletter-page__inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="newsletter-page__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {% assign has_embed = false %}
+    {% for block in section.blocks %}
+      {% if block.type == 'embed' and block.settings.code != blank %}
+        {% assign has_embed = true %}
+      {% endif %}
+    {% endfor %}
+    {% if has_embed %}
+      {% for block in section.blocks %}
+        {% if block.type == 'embed' and block.settings.code != blank %}
+          <div class="newsletter-page__embed" {{ block.shopify_attributes }}>
+            {{ block.settings.code }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% elsif section.settings.form_action_url != blank %}
+      <div class="newsletter-page__form-wrap">
+        <form class="newsletter-page__form" action="{{ section.settings.form_action_url }}" method="post" target="_blank" rel="noopener">
+          {% if section.settings.form_accepts_first_name %}
+            <div class="newsletter-page__field-wrap">
+              <input type="text" name="first_name" id="newsletter-first-name-{{ nid }}" class="newsletter-page__input" placeholder="{{ section.settings.placeholder_first_name }}" aria-label="{{ section.settings.placeholder_first_name }}" autocomplete="given-name">
+            </div>
+          {% endif %}
+          <div class="newsletter-page__field-wrap">
+            <input type="email" name="email" id="newsletter-email-{{ nid }}" class="newsletter-page__input" placeholder="{{ section.settings.placeholder_email }}" aria-label="{{ section.settings.placeholder_email }}" required autocomplete="email">
+          </div>
+          {% if section.settings.show_phone %}
+            <div class="newsletter-page__field-wrap newsletter-page__field-wrap--phone">
+              <input type="tel" name="phone" id="newsletter-phone-{{ nid }}" class="newsletter-page__input" placeholder="{{ section.settings.placeholder_phone }}" aria-label="{{ section.settings.placeholder_phone }}" autocomplete="tel">
+            </div>
+          {% endif %}
+          <div class="newsletter-page__field-wrap newsletter-page__field-wrap--submit">
+            <button type="submit" class="newsletter-page__btn">{{ section.settings.button_label }}</button>
+          </div>
+        </form>
+      </div>
+    {% endif %}
+
+    {% assign disclaimer_stripped = section.settings.disclaimer | strip %}
+    {% if disclaimer_stripped != blank %}
+      <p class="newsletter-page__disclaimer">{{ section.settings.disclaimer }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Enter Our Monthly Cacao Ceremony Kit Giveaway"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Spacing below heading",
+      "min": 1,
+      "max": 3,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 1.5
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#222222"
+    },
+    {
+      "type": "header",
+      "content": "Form"
+    },
+    {
+      "type": "url",
+      "id": "form_action_url",
+      "label": "Form action URL",
+      "info": "Where the form submits (e.g. Klaviyo list signup). Leave blank if using embed block."
+    },
+    {
+      "type": "checkbox",
+      "id": "form_accepts_first_name",
+      "label": "Show First Name field",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "Show Phone (optional) field",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "placeholder_first_name",
+      "label": "First Name placeholder",
+      "default": "First Name"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_email",
+      "label": "Email placeholder",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_phone",
+      "label": "Phone placeholder",
+      "default": "Phone (optional)"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Receive Updates"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Disclaimer text",
+      "default": "By clicking \"Receive Updates\", you agree to receive marketing text messages from Ora Cacao at the number provided, including messages sent by autodialer. You may also receive marketing emails. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#F0ECE3"
+    },
+    {
+      "type": "color",
+      "id": "input_border",
+      "label": "Input border",
+      "default": "#949596"
+    },
+    {
+      "type": "color",
+      "id": "input_bg",
+      "label": "Input background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "input_color",
+      "label": "Input text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "input_placeholder",
+      "label": "Input placeholder",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#BB9237"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "disclaimer_color",
+      "label": "Disclaimer text",
+      "default": "#606A72"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 2,
+      "max": 6,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 2,
+      "max": 6,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "embed",
+      "name": "Form embed",
+      "limit": 1,
+      "settings": [
+{
+      "type": "liquid",
+          "id": "code",
+          "label": "Embed code",
+          "info": "Paste Klaviyo or other form embed (Liquid/HTML). If set, the native form is hidden."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter page",
+      "settings": {
+        "heading": "Enter Our Monthly Cacao Ceremony Kit Giveaway",
+        "button_label": "Receive Updates"
+      }
+    }
+  ]
+}
+{% endschema %}
