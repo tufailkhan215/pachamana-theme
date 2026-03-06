@@ -285,7 +285,7 @@
         "heading_size": 26,
         "text_size": 18,
         "icon_size": 60,
-        "icon_min_height": 60,
+        "icon_min_height": 30,
         "heading_color": "#000000",
         "text_color": "#000000",
         "background_color": "#ffffff",
