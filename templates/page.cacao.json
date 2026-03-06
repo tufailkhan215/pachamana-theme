@@ -382,7 +382,7 @@
         "button_padding_y": 14,
         "button_padding_x": 32,
         "button_radius": 4,
-        "button_alignment": "flex-start",
+        "button_alignment": "center",
         "buttons_gap": 1
       }
     },
