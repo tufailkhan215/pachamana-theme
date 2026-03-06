@@ -212,7 +212,7 @@
   </div>
 
   <div class="ora-banner__content" style="align-items: {{ section.settings.content_vertical }}; justify-content: {{ section.settings.content_horizontal }};">
-    <div class="ora-banner__box">
+    <div class="ora-banner__box" style="background-color: {% if section.settings.box_background_image != blank %}transparent{% elsif section.settings.show_box_bg %}{{ section.settings.box_bg }}{% else %}transparent{% endif %}; text-align: {{ section.settings.content_text_align }};{% if section.settings.box_background_image != blank %} background-image: url({{ section.settings.box_background_image | image_url: width: 800 }}); background-repeat: no-repeat; background-size: contain; background-position: center;{% endif %}">
       {% if section.settings.heading != blank %}
         {% if section.settings.heading_tag == 'h2' %}
           <h2 class="ora-banner__heading">{{ section.settings.heading }}</h2>
