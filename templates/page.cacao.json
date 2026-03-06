@@ -73,14 +73,15 @@
         "button_spacing": 24,
         "heading_color": "#000000",
         "text_color": "#000000",
-        "button_bg": "#5C402F",
+        "button_bg": "#5c402f",
         "button_text_color": "#ffffff",
-        "button_hover_bg": "#B99135",
+        "button_hover_bg": "#b99135",
         "button_hover_text": "#ffffff",
         "button_font_size": 16,
         "button_padding_y": 14,
         "button_padding_x": 32,
-        "button_radius": 4
+        "button_radius": 4,
+        "buttons_gap": 1
       }
     },
     "section_spaced_multicolumn_xpmgW7": {
@@ -90,14 +91,14 @@
           "type": "item",
           "settings": {
             "title": "Ethical",
-            "link": ""
+            "link": "#"
           }
         },
         "item_KeQGYL": {
           "type": "item",
           "settings": {
             "title": "Regenerative",
-            "link": ""
+            "link": "#"
           }
         },
         "item_Y4A8QC": {
@@ -230,7 +231,8 @@
         "button_font_size": 16,
         "button_padding_y": 14,
         "button_padding_x": 32,
-        "button_radius": 4
+        "button_radius": 4,
+        "buttons_gap": 1
       }
     },
     "section_icon_text_columns_jYbfwz": {
@@ -377,7 +379,8 @@
         "button_font_size": 16,
         "button_padding_y": 14,
         "button_padding_x": 32,
-        "button_radius": 4
+        "button_radius": 4,
+        "buttons_gap": 1
       }
     },
     "section_image_carousel_reviews_khDAFn": {
