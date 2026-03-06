@@ -15,9 +15,9 @@
 <style>
   .section-rescent-articles .recent-articles-carousel-viewport { overflow: hidden; width: 100%; }
   .section-rescent-articles .recent-articles-carousel-track { display: flex; transition: transform 0.35s ease-out; will-change: transform; }
-  .section-rescent-articles .recent-articles-carousel-track .e-loop-item { flex: 0 0 33.333%; min-width: 0; box-sizing: border-box; }
-  @media (max-width: 1024px) { .section-rescent-articles .recent-articles-carousel-track .e-loop-item { flex: 0 0 50%; } }
-  @media (max-width: 768px) { .section-rescent-articles .recent-articles-carousel-track .e-loop-item { flex: 0 0 100%; } }
+  .section-rescent-articles .recent-articles-carousel-track .e-loop-item { width: 33.333%; min-width: 0; box-sizing: border-box; }
+  @media (max-width: 1024px) { .section-rescent-articles .recent-articles-carousel-track .e-loop-item { width: 50%; } }
+  @media (max-width: 768px) { .section-rescent-articles .recent-articles-carousel-track .e-loop-item { width: 100%; } }
   .section-rescent-articles .elementor-pagination { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
   .section-rescent-articles .elementor-pagination .page-numbers { padding: 0.5rem 1rem; cursor: pointer; text-decoration: none; border: 1px solid currentColor; border-radius: 4px; }
   .section-rescent-articles .elementor-pagination .page-numbers.prev.disabled,
