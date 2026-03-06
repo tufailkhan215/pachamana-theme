@@ -323,8 +323,8 @@
         "button_bg": "#BB9237",
         "button_text_color": "#ffffff",
         "disclaimer_color": "#606A72",
-        "padding_top": 4,
-        "padding_bottom": 4
+        "padding_top": 6,
+        "padding_bottom": 6
       }
     },
     "section_full_width_banner_raNqM6": {
@@ -383,6 +383,7 @@
       "type": "section-image-carousel-reviews",
       "name": "Image carousel reviews",
       "settings": {
+        "sliding_strip_image": "shopify://shop_images/ora-cacao-customer-slider-image-2_1600x_abe177df-b124-47b2-8154-fa215e234425.jpg",
         "sliding_strip_height": 200,
         "slide_duration": 120,
         "heading": "1 million cups of Ora Cacao are sipped each year...",
@@ -390,6 +391,7 @@
         "heading_size_mobile": 26,
         "heading_color": "#000000",
         "rating_number": "4.9",
+        "star_rating_image": "shopify://shop_images/Stars_Reviews_Section_256x256_crop_center_437ff2b9-f9fc-4025-b272-161ac67144c3.png",
         "rating_label": "Average based on over 5000 reviews",
         "rating_size": 50,
         "rating_size_mobile": 42,
