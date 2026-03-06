@@ -58,7 +58,8 @@
 
   .ora-banner-{{ bid }} .ora-banner__box {
     max-width: {{ section.settings.box_max_width }}px;
-    width: 100%;
+    width: fit-content;
+    min-width: min(100%, {{ section.settings.box_max_width }}px);
     background-color: {% if section.settings.box_background_image != blank %}transparent{% elsif section.settings.show_box_bg %}{{ section.settings.box_bg }}{% else %}transparent{% endif %};
     {% if section.settings.box_background_image != blank %}
     background-image: url({{ section.settings.box_background_image | image_url: width: 800 }});
@@ -210,7 +211,7 @@
     {% endif %}
   </div>
 
-  <div class="ora-banner__content">
+  <div class="ora-banner__content" style="align-items: {{ section.settings.content_vertical }}; justify-content: {{ section.settings.content_horizontal }};">
     <div class="ora-banner__box">
       {% if section.settings.heading != blank %}
         {% if section.settings.heading_tag == 'h2' %}
