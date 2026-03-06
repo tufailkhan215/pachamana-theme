@@ -39,21 +39,26 @@
         "image_alt": "",
         "hero_priority": true,
         "heading": "CEREMONIAL CACAO",
+        "heading_tag": "h1",
         "text_line_1": "Sustained energy. Uplifted mood. Nourished body.",
         "text_line_2": "A magical drinking chocolate made from 100% pure, organic cacao.",
         "button_label": "Shop CACAO",
         "button_link": "",
+        "button_2_label": "",
+        "button_2_link": "",
         "show_overlay": false,
         "overlay_color": "#000000",
         "overlay_opacity": 30,
         "content_vertical": "flex-end",
+        "content_horizontal": "center",
         "aspect_ratio": 52,
         "min_height_desktop": 0,
         "box_max_width": 600,
         "show_box_bg": true,
-        "box_bg": "#A0826D",
+        "box_bg": "#a0826d",
         "box_padding": 3,
         "box_radius": 8,
+        "content_text_align": "center",
         "mobile_stack": true,
         "mobile_aspect_ratio": 60,
         "mobile_box_bg": "#ffffff",
@@ -68,6 +73,156 @@
         "button_spacing": 24,
         "heading_color": "#000000",
         "text_color": "#000000",
+        "button_bg": "#5c402f",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#b99135",
+        "button_hover_text": "#ffffff",
+        "button_font_size": 16,
+        "button_padding_y": 14,
+        "button_padding_x": 32,
+        "button_radius": 4
+      }
+    },
+    "section_spaced_multicolumn_xpmgW7": {
+      "type": "section-spaced-multicolumn",
+      "blocks": {
+        "item_UyjWqY": {
+          "type": "item",
+          "settings": {
+            "title": "Ethical",
+            "link": ""
+          }
+        },
+        "item_KeQGYL": {
+          "type": "item",
+          "settings": {
+            "title": "Regenerative",
+            "link": ""
+          }
+        },
+        "item_Y4A8QC": {
+          "type": "item",
+          "settings": {
+            "title": "Organic",
+            "link": ""
+          }
+        },
+        "item_9zRqHd": {
+          "type": "item",
+          "settings": {
+            "title": "Unsweetened",
+            "link": ""
+          }
+        },
+        "item_k6xkzV": {
+          "type": "item",
+          "settings": {
+            "title": "Metals Safe",
+            "link": ""
+          }
+        },
+        "item_YVPGWM": {
+          "type": "item",
+          "settings": {
+            "title": "High Flavonoid",
+            "link": ""
+          }
+        },
+        "item_GrLCCD": {
+          "type": "item",
+          "settings": {
+            "title": "Vegan & Keto",
+            "link": ""
+          }
+        },
+        "item_fn9rV7": {
+          "type": "item",
+          "settings": {
+            "title": "GMO Free",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_UyjWqY",
+        "item_KeQGYL",
+        "item_Y4A8QC",
+        "item_9zRqHd",
+        "item_k6xkzV",
+        "item_YVPGWM",
+        "item_GrLCCD",
+        "item_fn9rV7"
+      ],
+      "name": "Spaced multicolumn",
+      "settings": {
+        "heading": "Directly Traded with Small Organic Family Farms",
+        "title_size": 36,
+        "title_size_mobile": 28,
+        "title_color": "#000000",
+        "button_label": "SHOP CACAO",
+        "button_link": "",
+        "button_spacing": 32,
+        "button_font_size": 14,
+        "button_padding_y": 14,
+        "button_padding_x": 32,
+        "button_radius": 4,
+        "button_bg": "#3d3334",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#5C402F",
+        "button_hover_text": "#ffffff",
+        "background_color": "#F5F0EB",
+        "background_image": "shopify://shop_images/ora_ceremonial_cacao_bean_to_disc_2x_2048x_3d57b12c-a703-4da1-9923-ccdbe192b0f4.webp",
+        "page_width": 900,
+        "grid_gap": 1.5,
+        "grid_gap_desktop": 2,
+        "item_size": 18,
+        "item_size_mobile": 16,
+        "item_color": "#000000",
+        "item_hover_color": "#5C402F"
+      }
+    },
+    "section_full_width_banner_kGiByx": {
+      "type": "section-full-width-banner",
+      "name": "Full width banner v1",
+      "settings": {
+        "image": "shopify://shop_images/Cacao_Ceremony_Bundle_8oz.webp",
+        "image_alt": "",
+        "hero_priority": false,
+        "heading": "NEW TO CEREMONIAL CACAO?",
+        "heading_tag": "h2",
+        "text_line_1": "It boosts your mood. It provides gentle energy. It enhances creativity. It helps you meditate.",
+        "text_line_2": "Taste gratitude with our starter kit.",
+        "button_label": "SHOP CACAO CEREMONY KITS",
+        "button_link": "",
+        "button_2_label": "",
+        "button_2_link": "",
+        "show_overlay": false,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "content_vertical": "flex-start",
+        "content_horizontal": "flex-end",
+        "aspect_ratio": 67,
+        "min_height_desktop": 0,
+        "box_max_width": 600,
+        "show_box_bg": true,
+        "box_bg": "#A0826D",
+        "box_padding": 3,
+        "box_radius": 8,
+        "content_text_align": "center",
+        "mobile_stack": true,
+        "mobile_aspect_ratio": 60,
+        "mobile_box_bg": "#ffffff",
+        "placeholder_bg": "#f5f0eb",
+        "heading_size": 34,
+        "heading_size_mobile": 26,
+        "heading_letter_spacing": 3,
+        "heading_spacing": 16,
+        "text_size": 24,
+        "text_size_mobile": 18,
+        "text_spacing": 8,
+        "button_spacing": 24,
+        "heading_color": "#000000",
+        "text_color": "#000000",
         "button_bg": "#5C402F",
         "button_text_color": "#ffffff",
         "button_hover_bg": "#B99135",
@@ -77,10 +232,194 @@
         "button_padding_x": 32,
         "button_radius": 4
       }
+    },
+    "section_icon_text_columns_jYbfwz": {
+      "type": "section-icon-text-columns",
+      "blocks": {
+        "column_p9ywL7": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Icon_PureCacao.svg",
+            "title": "Pure Organic Cacao",
+            "text": "Made from minimally processed organic cacao beans and nothing else. Just combine our cacao discs with hot liquid for an easy-to-make, decadent cup of cacao.",
+            "button_label": "Shop Now",
+            "link": ""
+          }
+        },
+        "column_qfUzge": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Icon_EnhancedCacao.svg",
+            "title": "Botanical Organic Cacao",
+            "text": "We grind the highest quality superfoods into our pure cacaos. Cacao is the optimal delivery mechanism for superfoods because it boosts circulation and is vasodilating.",
+            "button_label": "Shop Now",
+            "link": ""
+          }
+        },
+        "column_fpKVNG": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Icon_MushroomPowder.svg",
+            "title": "Mystic Mushrooms",
+            "text": "Discover the benefit of multiple mushrooms acting in synergy on unique biochemical pathways to effect positive health outcomes. Comes as 1:1 water extract powders.",
+            "button_label": "SHOP NOW",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_p9ywL7",
+        "column_qfUzge",
+        "column_fpKVNG"
+      ],
+      "name": "Icon text columns",
+      "settings": {
+        "heading": "",
+        "title_size": 24,
+        "title_color": "#000000",
+        "page_width": 1200,
+        "padding_top": 4,
+        "padding_bottom": 4,
+        "column_gap": 2,
+        "column_gap_desktop": 2.5,
+        "heading_size": 26,
+        "text_size": 18,
+        "icon_size": 60,
+        "icon_min_height": 60,
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "button_font_size": 14,
+        "button_padding_y": 12,
+        "button_padding_x": 28,
+        "button_radius": 4,
+        "button_bg": "#3d3334",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#5C402F",
+        "button_hover_text": "#ffffff"
+      }
+    },
+    "section_newsletter_page_LkfL6L": {
+      "type": "section-newsletter-page",
+      "name": "Newsletter page",
+      "settings": {
+        "heading": "Enter Our Monthly Cacao Ceremony Kit Giveaway",
+        "heading_size": 32,
+        "heading_spacing": 1.5,
+        "heading_color": "#222222",
+        "form_action_url": "#",
+        "form_accepts_first_name": true,
+        "show_phone": true,
+        "placeholder_first_name": "First Name",
+        "placeholder_email": "Email",
+        "placeholder_phone": "Phone (optional)",
+        "button_label": "Receive Updates",
+        "disclaimer": "By clicking \"Receive Updates\", you agree to receive marketing text messages from Ora Cacao at the number provided, including messages sent by autodialer. You may also receive marketing emails. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel.",
+        "background_color": "#F0ECE3",
+        "input_border": "#949596",
+        "input_bg": "#ffffff",
+        "input_color": "#000000",
+        "input_placeholder": "#999999",
+        "button_bg": "#BB9237",
+        "button_text_color": "#ffffff",
+        "disclaimer_color": "#606A72",
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "section_full_width_banner_raNqM6": {
+      "type": "section-full-width-banner",
+      "name": "Full width banner v2",
+      "settings": {
+        "image": "shopify://shop_images/Jonas_Ketterle_Founder_Ora_Cacao.webp",
+        "image_alt": "",
+        "hero_priority": false,
+        "heading": "ENERGY MATTERS",
+        "heading_tag": "h2",
+        "text_line_1": "Cacao is medicine, not candy. When we treat it as such, we give back to the Earth and the communities that we source from. We are committed to a business model that stewards the Earth and brings abundant wellness and prosperity to all we work with.",
+        "text_line_2": "A magical drinking chocolate made from 100% pure, organic cacao.",
+        "button_label": "About US",
+        "button_link": "",
+        "button_2_label": "Our Mission",
+        "button_2_link": "",
+        "show_overlay": false,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "content_vertical": "center",
+        "content_horizontal": "flex-end",
+        "aspect_ratio": 50,
+        "min_height_desktop": 0,
+        "box_max_width": 600,
+        "show_box_bg": true,
+        "box_bg": "#f5f0eb",
+        "box_padding": 3,
+        "box_radius": 8,
+        "content_text_align": "left",
+        "mobile_stack": true,
+        "mobile_aspect_ratio": 60,
+        "mobile_box_bg": "#ffffff",
+        "placeholder_bg": "#f5f0eb",
+        "heading_size": 32,
+        "heading_size_mobile": 26,
+        "heading_letter_spacing": 3,
+        "heading_spacing": 16,
+        "text_size": 22,
+        "text_size_mobile": 18,
+        "text_spacing": 8,
+        "button_spacing": 24,
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "button_bg": "#5C402F",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#B99135",
+        "button_hover_text": "#ffffff",
+        "button_font_size": 16,
+        "button_padding_y": 14,
+        "button_padding_x": 32,
+        "button_radius": 4
+      }
+    },
+    "section_image_carousel_reviews_khDAFn": {
+      "type": "section-image-carousel-reviews",
+      "name": "Image carousel reviews",
+      "settings": {
+        "sliding_strip_height": 200,
+        "slide_duration": 120,
+        "heading": "1 million cups of Ora Cacao are sipped each year...",
+        "heading_size": 34,
+        "heading_size_mobile": 26,
+        "heading_color": "#000000",
+        "rating_number": "4.9",
+        "rating_label": "Average based on over 5000 reviews",
+        "rating_size": 50,
+        "rating_size_mobile": 42,
+        "rating_color": "#000000",
+        "label_size": 18,
+        "label_size_mobile": 16,
+        "label_letter_spacing": 2,
+        "label_color": "#000000",
+        "button_label": "Shop Now",
+        "button_link": "",
+        "button_padding_y": 14,
+        "button_padding_x": 32,
+        "button_font_size": 16,
+        "button_radius": 4,
+        "button_bg": "#3d3334",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#5a4f50",
+        "button_hover_text": "#ffffff",
+        "background_color": "#f5f0eb"
+      }
     }
   },
   "order": [
     "main",
-    "section_full_width_banner_ztCk9j"
+    "section_full_width_banner_ztCk9j",
+    "section_spaced_multicolumn_xpmgW7",
+    "section_full_width_banner_kGiByx",
+    "section_icon_text_columns_jYbfwz",
+    "section_newsletter_page_LkfL6L",
+    "section_full_width_banner_raNqM6",
+    "section_image_carousel_reviews_khDAFn"
   ]
 }
