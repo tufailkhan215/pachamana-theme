@@ -6,9 +6,23 @@
 
   assign blog_handle = section.settings.blog_handle | default: 'news'
   assign articles_to_show = section.settings.articles_to_show | default: 3
+  assign articles_carousel_limit = 12
   assign selected_blog = blogs[blog_handle]
+  assign carousel_id = 'recent-articles-carousel-' | append: section.id | replace: '-', '' | replace: '_', ''
 
 -%}
+
+<style>
+  .section-rescent-articles .recent-articles-carousel-viewport { overflow: hidden; width: 100%; }
+  .section-rescent-articles .recent-articles-carousel-track { display: flex; transition: transform 0.35s ease-out; will-change: transform; }
+  .section-rescent-articles .recent-articles-carousel-track .e-loop-item { flex: 0 0 33.333%; min-width: 0; box-sizing: border-box; }
+  @media (max-width: 1024px) { .section-rescent-articles .recent-articles-carousel-track .e-loop-item { flex: 0 0 50%; } }
+  @media (max-width: 768px) { .section-rescent-articles .recent-articles-carousel-track .e-loop-item { flex: 0 0 100%; } }
+  .section-rescent-articles .elementor-pagination { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .section-rescent-articles .elementor-pagination .page-numbers { padding: 0.5rem 1rem; cursor: pointer; text-decoration: none; border: 1px solid currentColor; border-radius: 4px; }
+  .section-rescent-articles .elementor-pagination .page-numbers.prev.disabled,
+  .section-rescent-articles .elementor-pagination .page-numbers.next.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+</style>
 
 <div class="plus_row_scroll_overflow elementor-element elementor-element-217fad0 e-flex e-con-boxed e-con e-parent section-rescent-articles" data-id="217fad0" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
   <div class="e-con-inner">
@@ -26,15 +40,16 @@
             </div>
           </div>
         </div>
-        <div class="elementor-element elementor-element-bf4df4d elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="bf4df4d" data-element_type="widget" data-settings="{&quot;template_id&quot;:1058,&quot;pagination_type&quot;:&quot;prev_next&quot;,&quot;_skin&quot;:&quot;post&quot;,&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;2&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;pagination_load_type&quot;:&quot;page_reload&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
+        <div class="elementor-element elementor-element-bf4df4d elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="bf4df4d" data-element_type="widget" data-widget_type="loop-grid.post">
       <div class="elementor-widget-container">
-        <div class="elementor-loop-container elementor-grid" role="list">
+        <div id="{{ carousel_id }}" class="recent-articles-carousel-viewport" data-per-page="{{ articles_to_show }}" aria-label="Articles carousel">
+        <div class="elementor-loop-container elementor-grid recent-articles-carousel-track" role="list">
           <style id="loop-1058">.elementor-1058 .elementor-element.elementor-element-2f1ec59{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:space-between;--border-radius:15px 15px 15px 15px;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);--padding-top:20px;--padding-bottom:20px;--padding-left:20px;--padding-right:20px;}.elementor-1058 .elementor-element.elementor-element-2f1ec59:not(.elementor-motion-effects-element-type-background), .elementor-1058 .elementor-element.elementor-element-2f1ec59 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-image:url("{{ "light-gold-fabric.png" | asset_url }}");}.elementor-1058 .elementor-element.elementor-element-97712f6{text-align:center;}.elementor-1058 .elementor-element.elementor-element-97712f6 .elementor-heading-title{font-family:"OAXACA", Sans-serif;font-size:23px;color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{text-align:center;font-family:var( --e-global-typography-ad91809-font-family ), Sans-serif;font-size:var( --e-global-typography-ad91809-font-size );font-weight:var( --e-global-typography-ad91809-font-weight );color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button{background-color:var( --e-global-color-secondary );fill:var( --e-global-color-5abf1e8 );color:var( --e-global-color-5abf1e8 );border-radius:35px 35px 35px 35px;}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:hover, .elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:focus{background-color:var( --e-global-color-text );color:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:hover svg, .elementor-1058 .elementor-element.elementor-element-1033908 .elementor-button:focus svg{fill:var( --e-global-color-secondary );}.elementor-1058 .elementor-element.elementor-element-efde82b{--display:flex;}@media(max-width:1024px){.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{font-size:var( --e-global-typography-ad91809-font-size );}}@media(max-width:879px){.elementor-1058 .elementor-element.elementor-element-e508ee5 .elementor-widget-container{font-size:var( --e-global-typography-ad91809-font-size );}}</style>
           
           {%- if selected_blog and selected_blog.articles.size > 0 -%}
             {%- assign article_count = 0 -%}
-            {%- for article in selected_blog.articles limit: articles_to_show -%}
-              {%- if article_count < articles_to_show -%}
+            {%- for article in selected_blog.articles limit: articles_carousel_limit -%}
+              {%- if article_count < articles_carousel_limit -%}
                 <div data-elementor-type="loop-item" data-elementor-id="1058" class="elementor elementor-1058 e-loop-item e-loop-item-{{ article.id }} post-{{ article.id }} post type-post status-publish format-standard {% if article.image %}has-post-thumbnail{% endif %} hentry" data-custom-edit-handle="1">
                   <div class="elementor-element elementor-element-2f1ec59 elementor-invisible e-flex e-con-boxed e-con e-parent" data-id="2f1ec59" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomInDown&quot;,&quot;animation_delay&quot;:{{ article_count | times: 200 }}}">
                     <div class="e-con-inner">
@@ -92,10 +107,66 @@
             </div>
           {%- endif -%}
         </div>
+        </div>
       </div>
-      <nav class="elementor-pagination" aria-label="Pagination">
-			<span class="page-numbers prev">Previous</span>
-<a class="page-numbers next" href="#">Next</a>		</nav>
+      <nav class="elementor-pagination" aria-label="Pagination" data-carousel-id="{{ carousel_id }}">
+			<button type="button" class="page-numbers prev" aria-label="Previous articles" data-direction="prev">Previous</button>
+			<button type="button" class="page-numbers next" aria-label="Next articles" data-direction="next">Next</button>
+		</nav>
+<script>
+(function() {
+  var viewport = document.getElementById('{{ carousel_id }}');
+  if (!viewport) return;
+  var nav = document.querySelector('[data-carousel-id="' + viewport.id + '"]');
+  var track = viewport.querySelector('.recent-articles-carousel-track');
+  var perPage = parseInt(viewport.getAttribute('data-per-page') || '3', 10);
+  var prevBtn = nav ? nav.querySelector('.page-numbers.prev') : null;
+  var nextBtn = nav ? nav.querySelector('.page-numbers.next') : null;
+  if (!track || !prevBtn || !nextBtn) return;
+  var items = track.querySelectorAll('.e-loop-item');
+  var total = items.length;
+  if (total <= 0) { if (nav) nav.style.display = 'none'; return; }
+  function getPerPage() {
+    var w = window.innerWidth;
+    if (w <= 768) return 1;
+    if (w <= 1024) return 2;
+    return perPage;
+  }
+  var totalPages = Math.ceil(total / getPerPage());
+  if (totalPages <= 1) {
+    prevBtn.classList.add('disabled');
+    nextBtn.classList.add('disabled');
+    return;
+  }
+  var currentPage = 0;
+  function updateUI() {
+    var p = getPerPage();
+    var totalP = Math.ceil(total / p);
+    var percent = totalP > 0 ? (currentPage * 100 / totalP) : 0;
+    track.style.transform = 'translate3d(-' + percent + '%, 0, 0)';
+    prevBtn.classList.toggle('disabled', currentPage === 0);
+    nextBtn.classList.toggle('disabled', currentPage >= totalP - 1);
+  }
+  function go(direction) {
+    var p = getPerPage();
+    var totalP = Math.ceil(total / p);
+    if (direction === 'next') currentPage = Math.min(currentPage + 1, totalP - 1);
+    else currentPage = Math.max(0, currentPage - 1);
+    updateUI();
+  }
+  track.style.width = (total * (100 / getPerPage())) + '%';
+  prevBtn.classList.add('disabled');
+  updateUI();
+  prevBtn.addEventListener('click', function() { if (!prevBtn.classList.contains('disabled')) go('prev'); });
+  nextBtn.addEventListener('click', function() { if (!nextBtn.classList.contains('disabled')) go('next'); });
+  window.addEventListener('resize', function() {
+    track.style.width = (total * (100 / getPerPage())) + '%';
+    var totalP = Math.ceil(total / getPerPage());
+    currentPage = Math.min(currentPage, Math.max(0, totalP - 1));
+    updateUI();
+  });
+})();
+</script>
     </div>
     <div class="elementor-element elementor-element-d8305e8 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d8305e8" data-element_type="widget" data-widget_type="divider.default">
       <div class="elementor-widget-container">
