@@ -323,8 +323,8 @@
         "button_bg": "#BB9237",
         "button_text_color": "#ffffff",
         "disclaimer_color": "#606A72",
-        "padding_top": 4,
-        "padding_bottom": 4
+        "padding_top": 6,
+        "padding_bottom": 6
       }
     },
     "section_full_width_banner_raNqM6": {
