@@ -65,7 +65,7 @@
   .icon-cols-{{ sid }} .icon-cols__icon {
     max-width: {{ section.settings.icon_size }}px;
     width: 100%;
-    height: auto;
+    height: {% if section.settings.icon_height > 0 %}{{ section.settings.icon_height }}px{% else %}auto{% endif %};
     margin: 0 auto;
     display: block;
     object-fit: contain;
@@ -275,12 +275,23 @@
     {
       "type": "range",
       "id": "icon_size",
-      "label": "Icon max size",
+      "label": "Icon max width",
       "min": 60,
       "max": 180,
       "step": 10,
       "unit": "px",
       "default": 120
+    },
+    {
+      "type": "range",
+      "id": "icon_height",
+      "label": "Icon height",
+      "info": "Set to 0 for auto (keep aspect ratio)",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "range",
