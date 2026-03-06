@@ -45,7 +45,7 @@
   .ora-banner-{{ bid }} .ora-banner__content {
     display: flex;
     align-items: {{ section.settings.content_vertical }};
-    justify-content: center;
+    justify-content: {{ section.settings.content_horizontal }};
     text-align: center;
     position: absolute;
     top: 0;
@@ -199,7 +199,11 @@
   <div class="ora-banner__content">
     <div class="ora-banner__box">
       {% if section.settings.heading != blank %}
-        <h1 class="ora-banner__heading">{{ section.settings.heading }}</h1>
+        {% if section.settings.heading_tag == 'h2' %}
+          <h2 class="ora-banner__heading">{{ section.settings.heading }}</h2>
+        {% else %}
+          <h1 class="ora-banner__heading">{{ section.settings.heading }}</h1>
+        {% endif %}
       {% endif %}
       {% if section.settings.text_line_1 != blank %}
         <div class="ora-banner__text">{{ section.settings.text_line_1 }}</div>
@@ -250,6 +254,17 @@
       "id": "heading",
       "label": "Heading",
       "default": "CEREMONIAL CACAO"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" }
+      ],
+      "default": "h1",
+      "info": "Use H2 for secondary banners (e.g. v1 layout)"
     },
     {
       "type": "textarea",
@@ -307,13 +322,24 @@
     {
       "type": "select",
       "id": "content_vertical",
-      "label": "Content position",
+      "label": "Content vertical",
       "options": [
         { "value": "flex-start", "label": "Top" },
         { "value": "center", "label": "Center" },
         { "value": "flex-end", "label": "Bottom" }
       ],
       "default": "flex-end"
+    },
+    {
+      "type": "select",
+      "id": "content_horizontal",
+      "label": "Content horizontal",
+      "options": [
+        { "value": "flex-start", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Right" }
+      ],
+      "default": "center"
     },
     {
       "type": "range",
@@ -583,6 +609,26 @@
         "text_line_2": "A magical drinking chocolate made from 100% pure, organic cacao.",
         "button_label": "Shop CACAO",
         "content_vertical": "flex-end",
+        "content_horizontal": "center",
+        "mobile_stack": true
+      }
+    },
+    {
+      "name": "Full width banner v1",
+      "settings": {
+        "heading": "NEW TO CEREMONIAL CACAO?",
+        "heading_tag": "h2",
+        "text_line_1": "It boosts your mood. It provides gentle energy. It enhances creativity. It helps you meditate.",
+        "text_line_2": "Taste gratitude with our starter kit.",
+        "button_label": "SHOP CACAO CEREMONY KITS",
+        "content_vertical": "flex-start",
+        "content_horizontal": "flex-end",
+        "aspect_ratio": 67,
+        "heading_size": 34,
+        "heading_size_mobile": 27,
+        "text_size": 24,
+        "text_size_mobile": 18,
+        "hero_priority": false,
         "mobile_stack": true
       }
     }

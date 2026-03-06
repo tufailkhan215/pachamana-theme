@@ -1,0 +1,422 @@
+{% comment %}
+  Ora-style spaced multicolumn: centered title, grid of descriptor items (2x4),
+  optional background image, CTA button. No card backgrounds (background-none).
+{% endcomment %}
+{% assign sid = section.id | replace: '-', '' | replace: '_', '' | slice: 0, 12 %}
+
+{% style %}
+  .spaced-multi-{{ sid }} {
+    margin: 0;
+    padding: 5rem 0;
+    background-color: {{ section.settings.background_color }};
+    {% if section.settings.background_image != blank %}
+    background-image: url({{ section.settings.background_image | image_url: width: 2048 }});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    {% endif %}
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__inner {
+    max-width: {{ section.settings.page_width }}px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__title-wrap {
+    text-align: center;
+    padding: 1rem 3rem;
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .spaced-multi-{{ sid }} .spaced-multi__title-wrap {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__title {
+    font-family: var(--font-heading-family), serif;
+    font-size: {{ section.settings.title_size_mobile }}px;
+    color: {{ section.settings.title_color }};
+    margin: 0;
+    padding: 2rem 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .spaced-multi-{{ sid }} .spaced-multi__title {
+      font-size: {{ section.settings.title_size }}px;
+      padding: 3rem 0;
+    }
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ section.settings.grid_gap }}rem;
+    list-style: none;
+    margin: 0 0 {{ section.settings.button_spacing }}px;
+    padding: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: {{ section.settings.button_spacing }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .spaced-multi-{{ sid }} .spaced-multi__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: {{ section.settings.grid_gap_desktop }}rem;
+    }
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__item {
+    text-align: center;
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__link {
+    text-decoration: none;
+    color: {{ section.settings.item_color }};
+    font-family: var(--font-body-family), sans-serif;
+    font-size: {{ section.settings.item_size_mobile }}px;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__link:hover {
+    color: {{ section.settings.item_hover_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .spaced-multi-{{ sid }} .spaced-multi__link {
+      font-size: {{ section.settings.item_size }}px;
+    }
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__item-title {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__btn-wrap {
+    text-align: center;
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__btn {
+    display: inline-block;
+    padding: {{ section.settings.button_padding_y }}px {{ section.settings.button_padding_x }}px;
+    background-color: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text_color }};
+    text-decoration: none;
+    font-weight: 600;
+    font-size: {{ section.settings.button_font_size }}px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: {{ section.settings.button_radius }}px;
+    border: 2px solid {{ section.settings.button_bg }};
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .spaced-multi-{{ sid }} .spaced-multi__btn:hover {
+    background-color: {{ section.settings.button_hover_bg }};
+    color: {{ section.settings.button_hover_text }};
+    border-color: {{ section.settings.button_hover_bg }};
+    transform: translateY(-2px);
+  }
+{% endstyle %}
+
+<section class="shopify-section spaced-multi-section spaced-multi-{{ sid }}" {{ section.shopify_attributes }}>
+  <div class="spaced-multi__inner">
+    {% if section.settings.heading != blank %}
+      <div class="spaced-multi__title-wrap">
+        <h2 class="spaced-multi__title">{{ section.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <ul class="spaced-multi__grid" role="list">
+        {% for block in section.blocks %}
+          <li class="spaced-multi__item" {{ block.shopify_attributes }}>
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="spaced-multi__link">
+                <span class="spaced-multi__item-title">{{ block.settings.title }}</span>
+              </a>
+            {% else %}
+              <span class="spaced-multi__link" style="cursor: default;">
+                <span class="spaced-multi__item-title">{{ block.settings.title }}</span>
+              </span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if section.settings.button_label != blank %}
+      <div class="spaced-multi__btn-wrap">
+        <a href="{{ section.settings.button_link | default: '#' }}" class="spaced-multi__btn">{{ section.settings.button_label }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Spaced multicolumn",
+  "tag": "section",
+  "class": "section section--full-width",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Title",
+      "default": "Directly Traded with Small Organic Family Farms"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size (desktop)",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title size (mobile)",
+      "min": 20,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "SHOP CACAO"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_spacing",
+      "label": "Spacing above button",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_y",
+      "label": "Button padding (vertical)",
+      "min": 10,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Button padding (horizontal)",
+      "min": 20,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#3d3334"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Button hover background",
+      "default": "#5C402F"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Button hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F5F0EB"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "info": "Optional (e.g. bean-to-disc graphic). Shown centered, contain."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "page_width",
+      "label": "Content max width",
+      "min": 600,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap (mobile)",
+      "min": 0.5,
+      "max": 3,
+      "step": 0.25,
+      "unit": "rem",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_desktop",
+      "label": "Grid gap (desktop)",
+      "min": 0.5,
+      "max": 4,
+      "step": 0.25,
+      "unit": "rem",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Grid items"
+    },
+    {
+      "type": "range",
+      "id": "item_size",
+      "label": "Item text size (desktop)",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "item_size_mobile",
+      "label": "Item text size (mobile)",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "item_color",
+      "label": "Item text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "item_hover_color",
+      "label": "Item hover color",
+      "default": "#5C402F"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Descriptor",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Text",
+          "default": "Ethical"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Spaced multicolumn",
+      "settings": {
+        "heading": "Directly Traded with Small Organic Family Farms",
+        "button_label": "SHOP CACAO"
+      },
+      "blocks": [
+        { "type": "item", "settings": { "title": "Ethical" } },
+        { "type": "item", "settings": { "title": "Regenerative" } },
+        { "type": "item", "settings": { "title": "Organic" } },
+        { "type": "item", "settings": { "title": "Unsweetened" } },
+        { "type": "item", "settings": { "title": "Metals Safe" } },
+        { "type": "item", "settings": { "title": "High Flavonoid" } },
+        { "type": "item", "settings": { "title": "Vegan & Keto" } },
+        { "type": "item", "settings": { "title": "GMO Free" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
