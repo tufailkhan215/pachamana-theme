@@ -31,7 +31,7 @@
         "ken_burns_direction": "in"
       }
     },
-    "section_full_width_banner_ztCk9j": {
+    "section_full_width_banner_q4QJWE": {
       "type": "section-full-width-banner",
       "name": "Full width banner",
       "settings": {
@@ -73,9 +73,9 @@
         "button_spacing": 24,
         "heading_color": "#000000",
         "text_color": "#000000",
-        "button_bg": "#5c402f",
+        "button_bg": "#5C402F",
         "button_text_color": "#ffffff",
-        "button_hover_bg": "#b99135",
+        "button_hover_bg": "#B99135",
         "button_hover_text": "#ffffff",
         "button_font_size": 16,
         "button_padding_y": 14,
@@ -417,7 +417,7 @@
   },
   "order": [
     "main",
-    "section_full_width_banner_ztCk9j",
+    "section_full_width_banner_q4QJWE",
     "section_spaced_multicolumn_xpmgW7",
     "section_full_width_banner_kGiByx",
     "section_icon_text_columns_jYbfwz",
