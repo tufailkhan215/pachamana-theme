@@ -39,21 +39,26 @@
         "image_alt": "",
         "hero_priority": true,
         "heading": "CEREMONIAL CACAO",
+        "heading_tag": "h1",
         "text_line_1": "Sustained energy. Uplifted mood. Nourished body.",
         "text_line_2": "A magical drinking chocolate made from 100% pure, organic cacao.",
         "button_label": "Shop CACAO",
         "button_link": "",
+        "button_2_label": "",
+        "button_2_link": "",
         "show_overlay": false,
         "overlay_color": "#000000",
         "overlay_opacity": 30,
         "content_vertical": "flex-end",
+        "content_horizontal": "center",
         "aspect_ratio": 52,
         "min_height_desktop": 0,
         "box_max_width": 600,
         "show_box_bg": true,
-        "box_bg": "#A0826D",
+        "box_bg": "#a0826d",
         "box_padding": 3,
         "box_radius": 8,
+        "content_text_align": "center",
         "mobile_stack": true,
         "mobile_aspect_ratio": 60,
         "mobile_box_bg": "#ffffff",
@@ -68,19 +73,118 @@
         "button_spacing": 24,
         "heading_color": "#000000",
         "text_color": "#000000",
-        "button_bg": "#5C402F",
+        "button_bg": "#5c402f",
         "button_text_color": "#ffffff",
-        "button_hover_bg": "#B99135",
+        "button_hover_bg": "#b99135",
         "button_hover_text": "#ffffff",
         "button_font_size": 16,
         "button_padding_y": 14,
         "button_padding_x": 32,
         "button_radius": 4
       }
+    },
+    "section_spaced_multicolumn_xpmgW7": {
+      "type": "section-spaced-multicolumn",
+      "blocks": {
+        "item_UyjWqY": {
+          "type": "item",
+          "settings": {
+            "title": "Ethical",
+            "link": ""
+          }
+        },
+        "item_KeQGYL": {
+          "type": "item",
+          "settings": {
+            "title": "Regenerative",
+            "link": ""
+          }
+        },
+        "item_Y4A8QC": {
+          "type": "item",
+          "settings": {
+            "title": "Organic",
+            "link": ""
+          }
+        },
+        "item_9zRqHd": {
+          "type": "item",
+          "settings": {
+            "title": "Unsweetened",
+            "link": ""
+          }
+        },
+        "item_k6xkzV": {
+          "type": "item",
+          "settings": {
+            "title": "Metals Safe",
+            "link": ""
+          }
+        },
+        "item_YVPGWM": {
+          "type": "item",
+          "settings": {
+            "title": "High Flavonoid",
+            "link": ""
+          }
+        },
+        "item_GrLCCD": {
+          "type": "item",
+          "settings": {
+            "title": "Vegan & Keto",
+            "link": ""
+          }
+        },
+        "item_fn9rV7": {
+          "type": "item",
+          "settings": {
+            "title": "GMO Free",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_UyjWqY",
+        "item_KeQGYL",
+        "item_Y4A8QC",
+        "item_9zRqHd",
+        "item_k6xkzV",
+        "item_YVPGWM",
+        "item_GrLCCD",
+        "item_fn9rV7"
+      ],
+      "name": "Spaced multicolumn",
+      "settings": {
+        "heading": "Directly Traded with Small Organic Family Farms",
+        "title_size": 36,
+        "title_size_mobile": 28,
+        "title_color": "#000000",
+        "button_label": "SHOP CACAO",
+        "button_link": "",
+        "button_spacing": 32,
+        "button_font_size": 14,
+        "button_padding_y": 14,
+        "button_padding_x": 32,
+        "button_radius": 4,
+        "button_bg": "#3d3334",
+        "button_text_color": "#ffffff",
+        "button_hover_bg": "#5C402F",
+        "button_hover_text": "#ffffff",
+        "background_color": "#F5F0EB",
+        "background_image": "shopify://shop_images/ora_ceremonial_cacao_bean_to_disc_2x_2048x_3d57b12c-a703-4da1-9923-ccdbe192b0f4.webp",
+        "page_width": 900,
+        "grid_gap": 1.5,
+        "grid_gap_desktop": 2,
+        "item_size": 18,
+        "item_size_mobile": 16,
+        "item_color": "#000000",
+        "item_hover_color": "#5C402F"
+      }
     }
   },
   "order": [
     "main",
-    "section_full_width_banner_ztCk9j"
+    "section_full_width_banner_ztCk9j",
+    "section_spaced_multicolumn_xpmgW7"
   ]
 }
