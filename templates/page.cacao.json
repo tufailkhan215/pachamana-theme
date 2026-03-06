@@ -81,6 +81,7 @@
         "button_padding_y": 14,
         "button_padding_x": 32,
         "button_radius": 4,
+        "button_alignment": "center",
         "buttons_gap": 1
       }
     },
@@ -91,14 +92,14 @@
           "type": "item",
           "settings": {
             "title": "Ethical",
-            "link": "#"
+            "link": ""
           }
         },
         "item_KeQGYL": {
           "type": "item",
           "settings": {
             "title": "Regenerative",
-            "link": "#"
+            "link": ""
           }
         },
         "item_Y4A8QC": {
@@ -232,6 +233,7 @@
         "button_padding_y": 14,
         "button_padding_x": 32,
         "button_radius": 4,
+        "button_alignment": "center",
         "buttons_gap": 1
       }
     },
@@ -380,6 +382,7 @@
         "button_padding_y": 14,
         "button_padding_x": 32,
         "button_radius": 4,
+        "button_alignment": "flex-start",
         "buttons_gap": 1
       }
     },
