@@ -383,6 +383,7 @@
       "type": "section-image-carousel-reviews",
       "name": "Image carousel reviews",
       "settings": {
+        "sliding_strip_image": "shopify://shop_images/ora-cacao-customer-slider-image-2_1600x_abe177df-b124-47b2-8154-fa215e234425.jpg",
         "sliding_strip_height": 200,
         "slide_duration": 120,
         "heading": "1 million cups of Ora Cacao are sipped each year...",
