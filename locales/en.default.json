@@ -109,6 +109,11 @@
       "no_products": "No products found",
       "products_per_page": "Products per page"
     }
+  },
+  "newsletter": {
+    "popup": {
+      "success": "Thanks! Check your email for your discount."
+    }
   }
 }
 

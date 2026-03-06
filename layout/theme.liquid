@@ -2800,5 +2800,9 @@
   {%- if settings.contact_popup_enabled -%}
     {%- section 'section-contact-popup' -%}
   {%- endif -%}
+  {%- comment -%} Newsletter Popup - Discount signup, auto-shows on first visit (theme settings) {%- endcomment -%}
+  {%- if settings.newsletter_popup_enabled -%}
+    {%- section 'section-newsletter-popup' -%}
+  {%- endif -%}
 </body>
 </html>

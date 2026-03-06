@@ -211,6 +211,99 @@
         "default": "Thank you! We will be in touch shortly."
       }
     ]
+  },
+  {
+    "name": "Newsletter Popup",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "newsletter_popup_enabled",
+        "label": "Enable Newsletter Popup",
+        "default": true,
+        "info": "Shows a discount signup popup on first visit (separate from Contact popup)"
+      },
+      {
+        "type": "image_picker",
+        "id": "newsletter_popup_logo",
+        "label": "Popup logo",
+        "info": "Sun/bean logo at top of popup"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_popup_headline",
+        "label": "Headline",
+        "default": "New to ceremonial cacao?"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_popup_offer",
+        "label": "Offer text (bold)",
+        "default": "Take 10% OFF",
+        "info": "Main offer line, e.g. Take 10% OFF"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_popup_offer_suffix",
+        "label": "Offer suffix",
+        "default": "your first order"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_popup_placeholder",
+        "label": "Email placeholder",
+        "default": "Email Here"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_popup_button",
+        "label": "Button text",
+        "default": "START MY JOURNEY"
+      },
+      {
+        "type": "image_picker",
+        "id": "newsletter_popup_background",
+        "label": "Background image",
+        "info": "Blurred image behind the popup (e.g. hands with cacao)"
+      },
+      {
+        "type": "color",
+        "id": "newsletter_popup_bg",
+        "label": "Popup background",
+        "default": "#F5F0EB"
+      },
+      {
+        "type": "color",
+        "id": "newsletter_popup_button_bg",
+        "label": "Button background",
+        "default": "#B99135"
+      },
+      {
+        "type": "color",
+        "id": "newsletter_popup_button_text",
+        "label": "Button text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "newsletter_popup_delay",
+        "label": "Show after delay (seconds)",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "default": 3,
+        "unit": "s"
+      },
+      {
+        "type": "range",
+        "id": "newsletter_popup_hide_days",
+        "label": "Don't show again for (days)",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "default": 7,
+        "unit": "days"
+      }
+    ]
   }
 ]
 
