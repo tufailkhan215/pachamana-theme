@@ -2,7 +2,7 @@
   Ora-style full-width banner: one image, content at bottom center (H1 + 2 lines + CTA).
   Optional overlay; mobile can stack content below image.
 {% endcomment %}
-{% assign bid = section.id | replace: '-', '' | replace: '_', '' | slice: 0, 12 %}
+{% assign bid = section.id | replace: '-', '' | replace: '_', '' %}
 
 {% style %}
   .ora-banner-{{ bid }} {
