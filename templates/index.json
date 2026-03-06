@@ -419,7 +419,7 @@
       "settings": {
         "heading": "RECENT ARTICLES",
         "blog_handle": "news",
-        "articles_to_show": 4
+        "articles_to_show": 3
       }
     },
     "section-photo-gallery": {
