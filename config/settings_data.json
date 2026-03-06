@@ -12,6 +12,7 @@
     "shop_url": "https://pachamana-2.myshopify.com",
     "contact_popup_enabled": true,
     "contact_popup_logo": "shopify://shop_images/PachaMana_Logos_CMYK_MarkOnly_White-416x261.png",
+    "newsletter_popup_enabled": true,
     "newsletter_popup_logo": "shopify://shop_images/PachaMana_Logos_CMYK_MarkOnly_SunshineGold.png",
     "newsletter_popup_background": "shopify://shop_images/661a99c9a9aec810040bd940.jpg",
     "sections": {
