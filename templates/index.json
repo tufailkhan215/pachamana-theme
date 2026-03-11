@@ -27,16 +27,10 @@
             "text": "Ceremonial Grade"
           }
         },
-        "rotating_text_fUEWFG": {
-          "type": "rotating_text",
-          "settings": {
-            "text": "Regeneratively Grown in Peru"
-          }
-        },
         "rotating_text_Agzyax": {
           "type": "rotating_text",
           "settings": {
-            "text": "Heirloom"
+            "text": "Heirloom Genetics"
           }
         },
         "rotating_text_qwwmCp": {
@@ -54,7 +48,7 @@
         "rotating_text_qiQKHW": {
           "type": "rotating_text",
           "settings": {
-            "text": "Heavy Metal Tested (EU Standards)"
+            "text": "tested for heavy metals"
           }
         },
         "rotating_text_AkiJTc": {
@@ -66,7 +60,6 @@
       },
       "block_order": [
         "rotating_text_YBHtiD",
-        "rotating_text_fUEWFG",
         "rotating_text_Agzyax",
         "rotating_text_qwwmCp",
         "rotating_text_tz9peU",
