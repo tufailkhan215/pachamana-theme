@@ -15,7 +15,7 @@
       "settings": {
         "image": "shopify://shop_images/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png",
         "heading": "ceremony starts at the farm",
-        "heading1": "Pure Peruvian Ceremonial Cacao Heirloom Chuncho for Daily Ritual & Heart-Opening Ceremony"
+        "heading1": "Pure Peruvian Heirloom Chuncho Ceremonial Cacao"
       }
     },
     "section_animatied_title_9PRf4W": {
@@ -360,7 +360,7 @@
         "background_image": "shopify://shop_images/Pattern_Website.png",
         "enable_parallax": false,
         "parallax_speed": 0.2,
-        "overlay_color": "#5C402F",
+        "overlay_color": "#5c402f",
         "overlay_opacity": 0.7,
         "heading": "Perfect for Gifting",
         "subheading": "1oz Single-Serve Packets",
