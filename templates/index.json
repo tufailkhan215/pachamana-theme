@@ -89,6 +89,12 @@
         "prefix_text": "OUR CACAO IS"
       }
     },
+    "1773427545bf2d6130": {
+      "type": "_blocks",
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
     "section-featured-products": {
       "type": "section-featured-products",
       "settings": {
@@ -368,7 +374,7 @@
       "settings": {
         "heading": "TYPES OF CACAO",
         "bottom_heading": "WHY CHUNCHO?",
-        "bottom_description": "<p>Ceremonial Chuncho cacao from Peru embodies the essence of ancient traditions, cultivated by indigenous farmers with reverence for their land.  Mainly wild harvested, this exquisite cacao variety boasts a rich cocoa butter content from being grown at higher elevation. It gives subtle notes of Andean fruit, offering a sensory journey steeped with history and authenticity. </p><p>Its origins date back centuries, when it was grown by the Machiguenga indigenous communities in the Amazon basin since pre Inca civilization periods Wild harvested Chuncho cacao ensures the preservation of the biodiverse species of plants in the forests and jungles of Peru.</p>"
+        "bottom_description": "<p>• Grown by indigenous farmers in the Amazon basin<br/><br/>• Often wild harvested from biodiverse forests<br/><br/>• Naturally rich in cocoa butter from high-elevation growing conditions<br/><br/>• Subtle notes of Andean fruit and complex flavor</p><p>Its origins trace back to the Machiguenga peoples long before the Inca civilization, where cacao was cultivated in harmony with the surrounding forest.</p>"
       }
     },
     "section_perfect_gifting": {
@@ -986,6 +992,7 @@
     "177342703909a1b024",
     "1773427000d25eabf5",
     "section_animatied_title_9PRf4W",
+    "1773427545bf2d6130",
     "section-featured-products",
     "section_image_with_text_button_kijTgn",
     "section_ceremonial_grade",
