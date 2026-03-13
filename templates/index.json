@@ -14,8 +14,56 @@
       "name": "Background Motion",
       "settings": {
         "image": "shopify://shop_images/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png",
-        "heading": "Pure Peruvian Ceremonial Cacao",
-        "heading1": "Heirloom Chuncho Cacao for Daily Ritual & Heart-Opening Ceremony"
+        "heading": "Ceremony Starts at the farm",
+        "heading1": "Pure Peruvian Ceremonial Cacao"
+      }
+    },
+    "177342703909a1b024": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_40e87fc_8Pi6bV": {
+          "type": "ai_gen_block_40e87fc",
+          "settings": {
+            "eyebrow": "Our Story",
+            "heading": "Ceremonial Cacao from the Heart of Ecuador",
+            "description": "<p>Ethically sourced, traditionally crafted cacao to nourish your body and spirit.</p>",
+            "desktop_width_percent": 100,
+            "max_width": 800,
+            "text_alignment": "center",
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20,
+            "eyebrow_font": "assistant_n4",
+            "eyebrow_size": 14,
+            "eyebrow_transform": "uppercase",
+            "eyebrow_spacing": 1.5,
+            "eyebrow_color": "#E2AB43",
+            "eyebrow_margin": 12,
+            "heading_font": "assistant_n4",
+            "heading_size": 48,
+            "heading_line_height": 1.2,
+            "heading_color": "#5C402F",
+            "heading_margin": 16,
+            "description_font": "assistant_n4",
+            "description_size": 18,
+            "description_line_height": 1.6,
+            "description_color": "#5C402F",
+            "background_color": "#E2AB43"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_40e87fc_8Pi6bV"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
+    "1773427000d25eabf5": {
+      "type": "_blocks",
+      "settings": {
+        "section_label": "Content block"
       }
     },
     "section_animatied_title_9PRf4W": {
@@ -964,6 +1012,8 @@
   },
   "order": [
     "section_background_motion_MLrtBM",
+    "177342703909a1b024",
+    "1773427000d25eabf5",
     "section_animatied_title_9PRf4W",
     "section-featured-products",
     "section_image_with_text_button_kijTgn",
