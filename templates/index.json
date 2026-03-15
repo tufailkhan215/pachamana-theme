@@ -132,7 +132,7 @@
         "feature_3": "",
         "variants_text": "",
         "button_text": "Shop Single-Serve Packets",
-        "button_link": "",
+        "button_link": "shopify://collections/single_serve",
         "button_text_size": 16,
         "button_padding_vertical": 14,
         "button_padding_horizontal": 32,
