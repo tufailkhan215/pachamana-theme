@@ -479,11 +479,6 @@
 						{%- endif -%}
 					</button>
 				</div>
-			{%- if settings.product_enable_payment_button -%}
-				<div class="shopify-payment-button-wrapper" style="margin-top: 10px;">
-					{{ form | payment_button }}
-				</div>
-			{%- endif -%}
 			{%- endform -%}
 			{%- comment -%} Add 'cart' class to form {%- endcomment -%}
 			<script>
