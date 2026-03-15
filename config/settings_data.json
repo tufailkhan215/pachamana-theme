@@ -62,6 +62,9 @@
       "section-footer": {
         "type": "section-footer",
         "settings": {
+          "footer_menu": "footer",
+          "instagram_url": "https://www.instagram.com/pachamanacacao/",
+          "copyright_text": "copyright pachamana.com 2024",
           "background_image": "shopify://shop_images/Pattern_Website.png",
           "background_color": "rgba(0,0,0,0)",
           "background_size": "contain",
