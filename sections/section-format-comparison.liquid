@@ -7,7 +7,7 @@
     </div>
 
     <div class="format-comparison-grid">
-      <div class="format-comparison-item">
+      <a href="{{ section.settings.paste_url | default: '/collections/shop-page' }}" class="format-comparison-item format-comparison-link">
         <div class="format-comparison-header">
           <h3 class="format-comparison-title">{{ section.settings.paste_title | default: "CEREMONIAL PASTE (Block Form)" }}</h3>
         </div>
@@ -20,12 +20,10 @@
             <li><strong>{{ section.settings.paste_best_for | default: "Best for: Traditional ceremonies, purists" }}</strong></li>
           </ul>
         </div>
-        {%- if section.settings.paste_url != blank -%}
-          <a href="{{ section.settings.paste_url }}" class="format-comparison-btn">Shop Paste</a>
-        {%- endif -%}
-      </div>
+        <span class="format-comparison-btn">Shop Paste →</span>
+      </a>
 
-      <div class="format-comparison-item format-comparison-featured">
+      <a href="{{ section.settings.powder_url | default: '/collections/shop-page' }}" class="format-comparison-item format-comparison-featured format-comparison-link">
         <div class="format-comparison-header">
           <h3 class="format-comparison-title">{{ section.settings.powder_title | default: "GROUND CACAO (Powder Form)" }}</h3>
         </div>
@@ -38,12 +36,10 @@
             <li><strong>{{ section.settings.powder_best_for | default: "Best for: Daily ritual, smoothies, busy mornings" }}</strong></li>
           </ul>
         </div>
-        {%- if section.settings.powder_url != blank -%}
-          <a href="{{ section.settings.powder_url }}" class="format-comparison-btn">Shop Ground</a>
-        {%- endif -%}
-      </div>
+        <span class="format-comparison-btn">Shop Ground →</span>
+      </a>
 
-      <div class="format-comparison-item">
+      <a href="{{ section.settings.packets_url | default: '/collections/shop-page' }}" class="format-comparison-item format-comparison-link">
         <div class="format-comparison-header">
           <h3 class="format-comparison-title">{{ section.settings.packets_title | default: "SINGLE-SERVE PACKETS (1oz)" }}</h3>
         </div>
@@ -56,10 +52,8 @@
             <li><strong>{{ section.settings.packets_best_for | default: "Best for: Beginners, gift-giving, on-the-go" }}</strong></li>
           </ul>
         </div>
-        {%- if section.settings.packets_url != blank -%}
-          <a href="{{ section.settings.packets_url }}" class="format-comparison-btn">Shop Packets</a>
-        {%- endif -%}
-      </div>
+        <span class="format-comparison-btn">Shop Single-Serve →</span>
+      </a>
     </div>
 
     {%- if section.settings.show_note -%}
@@ -107,6 +101,14 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid transparent;
+  }
+
+  .format-comparison-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
   }
 
   .format-comparison-item:hover {
