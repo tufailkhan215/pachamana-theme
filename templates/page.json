@@ -27,6 +27,7 @@
         "slide_jE3d6e",
         "slide_bVe7Ta"
       ],
+      "disabled": true,
       "settings": {
         "slide_duration": 5000,
         "transition_duration": 500,
@@ -34,9 +35,28 @@
         "ken_burns": true,
         "ken_burns_direction": "in"
       }
+    },
+    "cs_contact_form_VEQPm7": {
+      "type": "cs-contact-form",
+      "name": "Contact Form",
+      "settings": {
+        "logo_height": 72,
+        "heading": "Contact Us",
+        "subtext": "Fill out the form below, and we will be in touch shortly or,",
+        "contact_email": "support@pachamana.com",
+        "button_label": "Send",
+        "color_page_bg": "#8B5E3C",
+        "color_card_bg": "#D4A043",
+        "color_field_bg": "#E8C47A",
+        "color_text": "#2C1A0E",
+        "color_text_light": "#5C3D1E",
+        "color_button_bg": "#2C1A0E",
+        "color_button_text": "#F5E6C8"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "cs_contact_form_VEQPm7"
   ]
 }
