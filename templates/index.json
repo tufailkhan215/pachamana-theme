@@ -374,7 +374,7 @@
       "settings": {
         "heading": "TYPES OF CACAO",
         "bottom_heading": "WHY CHUNCHO?",
-        "bottom_description": "<p>• Grown by indigenous farmers in the High Amazon basin<br/><br/>• Often wild harvested from biodiverse forests, and intermixed with other fruits and native species</p><p><br/>• Chuncho genetics are preserving a long heritage that live in the seeds<br/><br/>• Naturally rich in cocoa butter from high-elevation growing conditions<br/><br/>• Subtle notes of Andean fruit & flowers and global prize winning flavors</p><p>Its origins trace back to the Machiguenga peoples long before the Inca civilization, where cacao was cultivated in harmony with the surrounding forest.</p>"
+        "bottom_description": "<p>• Grown by indigenous farmers in the High Amazon basin<br/><br/>• Often wild harvested from biodiverse forests, and intermixed with other fruits and native species</p><p><br/>• Chuncho genetics are preserving a long heritage that live in the seeds<br/><br/>• Naturally rich in cocoa butter from high-elevation growing conditions<br/><br/>• Subtle notes of Andean fruit and global prize winning, complex flavors</p><p>Its origins trace back to the Machiguenga peoples long before the Inca civilization, where cacao was cultivated in harmony with the surrounding forest.</p>"
       }
     },
     "section_perfect_gifting": {
@@ -443,16 +443,28 @@
     "section-photo-gallery": {
       "type": "section-photo-gallery",
       "blocks": {
+        "gallery_image_qhxUMf": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0664.jpg"
+          }
+        },
+        "gallery_image_N9ih7A": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-75.jpg"
+          }
+        },
         "gallery_image_LDw8hF": {
           "type": "gallery_image",
           "settings": {
             "image": "shopify://shop_images/767072ec-9882-46ae-b0fd-7476d959988d.jpg"
           }
         },
-        "gallery_image_wmqEEi": {
+        "gallery_image_njpXme": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/b6938d2a-a239-419c-a51c-1d895ad1a796.jpg"
+            "image": "shopify://shop_images/IMG_0666_30f0cb0c-703c-43c3-b7cc-7010d7e68b4c.jpg"
           }
         },
         "gallery_image_athVCK": {
@@ -461,19 +473,19 @@
             "image": "shopify://shop_images/IMG_5331.jpg"
           }
         },
-        "gallery_image_qhxUMf": {
+        "gallery_image_rnbYnF": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0664.jpg"
+            "image": "shopify://shop_images/336328779_1402675783869629_1061681589902579924_n.jpg"
+          }
+        },
+        "gallery_image_UmUewb": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-25_8f677828-e7bc-4f5c-98dd-85e354841f0f.jpg"
           }
         },
         "gallery_image_96FMy4": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/IMG_0669.jpg"
-          }
-        },
-        "gallery_image_xERCXJ": {
           "type": "gallery_image",
           "settings": {
             "image": "shopify://shop_images/IMG_0669.jpg"
@@ -491,28 +503,22 @@
             "image": "shopify://shop_images/28702a16-1077-41d0-ac55-ce59fceeae3c.jpg"
           }
         },
-        "gallery_image_BJ6hdx": {
+        "gallery_image_wmqEEi": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/c1cb271a-d426-4863-ba43-974ed78e3ec4.jpg"
-          }
-        },
-        "gallery_image_N9ih7A": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-75.jpg"
-          }
-        },
-        "gallery_image_njpXme": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/IMG_0666_30f0cb0c-703c-43c3-b7cc-7010d7e68b4c.jpg"
+            "image": "shopify://shop_images/b6938d2a-a239-419c-a51c-1d895ad1a796.jpg"
           }
         },
         "gallery_image_rYNPjQ": {
           "type": "gallery_image",
           "settings": {
             "image": "shopify://shop_images/PACHAMANA-9993-scaled.jpg"
+          }
+        },
+        "gallery_image_QRwnYt": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0661.jpg"
           }
         },
         "gallery_image_ETtCTT": {
@@ -539,18 +545,6 @@
             "image": "shopify://shop_images/PACHAMANA-9995-2-scaled.jpg"
           }
         },
-        "gallery_image_UmUewb": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-25_8f677828-e7bc-4f5c-98dd-85e354841f0f.jpg"
-          }
-        },
-        "gallery_image_QRwnYt": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/IMG_0661.jpg"
-          }
-        },
         "gallery_image_jdCB6P": {
           "type": "gallery_image",
           "settings": {
@@ -561,12 +555,6 @@
           "type": "gallery_image",
           "settings": {
             "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-80.jpg"
-          }
-        },
-        "gallery_image_rnbYnF": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/336328779_1402675783869629_1061681589902579924_n.jpg"
           }
         },
         "gallery_image_aiVMKf": {
@@ -701,12 +689,6 @@
             "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-12.jpg"
           }
         },
-        "gallery_image_twGiRw": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/IMG_0668.jpg"
-          }
-        },
         "gallery_image_J4KnMD": {
           "type": "gallery_image",
           "settings": {
@@ -748,36 +730,28 @@
           "settings": {
             "image": "shopify://shop_images/PACHAMANA-62-scaled.jpg"
           }
-        },
-        "gallery_image_fnqgt3": {
-          "type": "gallery_image",
-          "settings": {
-            "image": "shopify://shop_images/28702a16-1077-41d0-ac55-ce59fceeae3c.jpg"
-          }
         }
       },
       "block_order": [
-        "gallery_image_LDw8hF",
-        "gallery_image_wmqEEi",
-        "gallery_image_athVCK",
         "gallery_image_qhxUMf",
+        "gallery_image_N9ih7A",
+        "gallery_image_LDw8hF",
+        "gallery_image_njpXme",
+        "gallery_image_athVCK",
+        "gallery_image_rnbYnF",
+        "gallery_image_UmUewb",
         "gallery_image_96FMy4",
-        "gallery_image_xERCXJ",
         "gallery_image_twcykF",
         "gallery_image_a4EfcA",
-        "gallery_image_BJ6hdx",
-        "gallery_image_N9ih7A",
-        "gallery_image_njpXme",
+        "gallery_image_wmqEEi",
         "gallery_image_rYNPjQ",
+        "gallery_image_QRwnYt",
         "gallery_image_ETtCTT",
         "gallery_image_EHBmXe",
         "gallery_image_bqTqkt",
         "gallery_image_Jx69ii",
-        "gallery_image_UmUewb",
-        "gallery_image_QRwnYt",
         "gallery_image_jdCB6P",
         "gallery_image_imkCxw",
-        "gallery_image_rnbYnF",
         "gallery_image_aiVMKf",
         "gallery_image_ttddeV",
         "gallery_image_rxDUyz",
@@ -800,15 +774,13 @@
         "gallery_image_ixMHmE",
         "gallery_image_arrzkU",
         "gallery_image_3tbday",
-        "gallery_image_twGiRw",
         "gallery_image_J4KnMD",
         "gallery_image_AzfQNp",
         "gallery_image_nJTCam",
         "gallery_image_KAmxMi",
         "gallery_image_6DFCnx",
         "gallery_image_FgyDi4",
-        "gallery_image_8jMcF9",
-        "gallery_image_fnqgt3"
+        "gallery_image_8jMcF9"
       ],
       "settings": {
         "heading": "PHOTO GALLERY"
