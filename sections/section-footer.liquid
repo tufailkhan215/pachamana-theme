@@ -52,7 +52,7 @@
 				<div class="elementor-widget-container">
 							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
 							<span class="elementor-grid-item" role="listitem">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-pulse-grow elementor-repeater-item-92f4159" href="https://www.instagram.com/pachamanacacao/" target="_blank">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-pulse-grow elementor-repeater-item-92f4159" href="{{ section.settings.instagram_url | default: 'https://www.instagram.com/pachamanacacao/' }}" target="_blank" rel="noopener noreferrer">
 						<span class="elementor-screen-only">Instagram</span>
 						<svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>					</a>
 				</span>
@@ -97,39 +97,32 @@
 		</div>
 						</div>
 				</div>
-				<div class="elementor-element elementor-element-7d8ba8c elementor-nav-menu__align-center elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-mobile elementor-widget elementor-widget-nav-menu" data-id="7d8ba8c" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;e-font-icon-svg e-fas-chevron-right\&quot; viewBox=\&quot;0 0 320 512\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot;&gt;&lt;path d=\&quot;M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z\&quot;&gt;&lt;\/path&gt;&lt;\/svg&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}" data-widget_type="nav-menu.default">
+				<div class="elementor-element elementor-element-7d8ba8c elementor-nav-menu__align-center elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-mobile elementor-widget elementor-widget-nav-menu" data-id="7d8ba8c" data-element_type="widget" data-widget_type="nav-menu.default">
 				<div class="elementor-widget-container">
-								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
-				<ul id="menu-1-7d8ba8c" class="elementor-nav-menu sm-vertical"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-354"><a href="{{ settings.shop_url }}/about/" class="elementor-item">About</a></li>
-
-
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-347"><a href="{{ settings.shop_url }}/articles/" class="elementor-item">ARTICLES</a>
-<ul class="sub-menu elementor-nav-menu--dropdown">
-	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1428"><a href="{{ settings.shop_url }}/pacha-mana-ceremonial-chuncho-cacao/" class="elementor-sub-item">Ceremonial Cacao: What is it?</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1427"><a href="{{ settings.shop_url }}/farming-chuncho-cacao-sustainable-heirloom-cacao/" class="elementor-sub-item">Farming Heirloom Cacao: Chuncho</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1429"><a href="{{ settings.shop_url }}/health-benefits-ceremonial-cacao/" class="elementor-sub-item">Health Wonders of Ceremonial Cacao</a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-358"><a href="{{ settings.shop_url }}/shop-pacha-mana-ceremonial-cacao/" class="elementor-item">Shop</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-357"><a href="{{ settings.shop_url }}/cart/" class="elementor-item">Cart</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-356"><a href="{{ settings.shop_url }}/checkout/" class="elementor-item">Checkout</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-355"><a href="{{ settings.shop_url }}/my-account/" class="elementor-item">My account</a></li>
-</ul>			</nav>
-						<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
-				<ul id="menu-2-7d8ba8c" class="elementor-nav-menu sm-vertical"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-354"><a href="{{ settings.shop_url }}/about/" class="elementor-item" tabindex="-1">About</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-347"><a href="{{ settings.shop_url }}/articles/" class="elementor-item" tabindex="-1">ARTICLES</a>
-<ul class="sub-menu elementor-nav-menu--dropdown">
-	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1428"><a href="{{ settings.shop_url }}/pacha-mana-ceremonial-chuncho-cacao/" class="elementor-sub-item" tabindex="-1">Ceremonial Cacao: What is it?</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1427"><a href="{{ settings.shop_url }}/farming-chuncho-cacao-sustainable-heirloom-cacao/" class="elementor-sub-item" tabindex="-1">Farming Heirloom Cacao: Chuncho</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1429"><a href="{{ settings.shop_url }}/health-benefits-ceremonial-cacao/" class="elementor-sub-item" tabindex="-1">Health Wonders of Ceremonial Cacao</a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-358"><a href="{{ settings.shop_url }}/shop-pacha-mana-ceremonial-cacao/" class="elementor-item" tabindex="-1">Shop</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-357"><a href="{{ settings.shop_url }}/cart/" class="elementor-item" tabindex="-1">Cart</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-356"><a href="{{ settings.shop_url }}/checkout/" class="elementor-item" tabindex="-1">Checkout</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-355"><a href="{{ settings.shop_url }}/my-account/" class="elementor-item" tabindex="-1">My account</a></li>
-</ul>			</nav>
-						</div>
+				  {%- assign footer_menu = linklists[section.settings.footer_menu] -%}
+				  {%- if footer_menu.links.size > 0 -%}
+				    <nav aria-label="Footer navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
+				      <ul class="elementor-nav-menu sm-vertical">
+				        {%- for link in footer_menu.links -%}
+				          <li class="menu-item{% if link.links.size > 0 %} menu-item-has-children{% endif %}{% if link.active %} current-menu-item{% endif %}">
+				            <a href="{{ link.url }}" class="elementor-item"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+				            {%- if link.links.size > 0 -%}
+				              <ul class="sub-menu elementor-nav-menu--dropdown">
+				                {%- for child_link in link.links -%}
+				                  <li class="menu-item{% if child_link.active %} current-menu-item{% endif %}">
+				                    <a href="{{ child_link.url }}" class="elementor-sub-item"{% if child_link.active %} aria-current="page"{% endif %}>{{ child_link.title }}</a>
+				                  </li>
+				                {%- endfor -%}
+				              </ul>
+				            {%- endif -%}
+				          </li>
+				        {%- endfor -%}
+				      </ul>
+				    </nav>
+				  {%- else -%}
+				    <p style="font-size:0.8rem;opacity:0.6;">Select a menu in Theme Editor → Footer → Navigation Menu</p>
+				  {%- endif -%}
+				</div>
 				</div>
 				<div class="elementor-element elementor-element-6048345 elementor-hidden-tablet elementor-hidden-mobile elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6048345" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
@@ -199,7 +192,7 @@
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-6057096 elementor-widget elementor-widget-text-editor" data-id="6057096" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-									copyright pachamana.com 2024								</div>
+									{{ section.settings.copyright_text | default: 'copyright pachamana.com 2024' }}								</div>
 				</div>
 					</div>
 				</div>
@@ -211,6 +204,36 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Navigation menu",
+      "default": "footer",
+      "info": "Create a menu in Online Store → Navigation, then select it here"
+    },
+    {
+      "type": "header",
+      "content": "Social Links"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "header",
+      "content": "Copyright"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "copyright pachamana.com 2024"
+    },
     {
       "type": "header",
       "content": "Background"
