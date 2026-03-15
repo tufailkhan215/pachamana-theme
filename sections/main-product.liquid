@@ -332,17 +332,14 @@
 				{%- comment -%} AT A GLANCE block {%- endcomment -%}
 				{%- if section.settings.show_at_a_glance -%}
 					{%- liquid
-						assign glance_weight = product.metafields.custom.weight_info | default: product.metafields.my_fields.weight_info | default: "—"
-						assign glance_makes = product.metafields.custom.makes_info | default: product.metafields.my_fields.makes_info | default: "—"
-						assign glance_price_per_cup = product.metafields.custom.price_per_cup | default: product.metafields.my_fields.price_per_cup | default: "—"
-						assign glance_best_for = product.metafields.custom.best_for | default: product.metafields.my_fields.best_for | default: "—"
+						assign glance_best_for = product.metafields.custom.best_for | default: product.metafields.my_fields.best_for | default: "Morning ritual"
 					-%}
 					<div class="product-at-a-glance" style="background: rgba(226,171,67,0.1); border: 1px solid #E2AB43; border-radius: 8px; padding: 16px 20px; margin: 16px 0;">
 						<p style="font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; color: #5C402F; margin: 0 0 10px;">AT A GLANCE</p>
 						<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px;">
-							<li style="font-size: 0.875rem; color: #5C402F;"><strong>Weight:</strong> {{ glance_weight }}</li>
-							<li style="font-size: 0.875rem; color: #5C402F;"><strong>Makes:</strong> {{ glance_makes }}</li>
-							<li style="font-size: 0.875rem; color: #5C402F;"><strong>Price per cup:</strong> {{ glance_price_per_cup }}</li>
+							<li style="font-size: 0.875rem; color: #5C402F;"><strong>Weight:</strong> 8 oz (227g)</li>
+							<li style="font-size: 0.875rem; color: #5C402F;"><strong>Makes:</strong> ~11 cups (using 22g per serving)</li>
+							<li style="font-size: 0.875rem; color: #5C402F;"><strong>Price per cup:</strong> ~$2.45</li>
 							<li style="font-size: 0.875rem; color: #5C402F;"><strong>Best for:</strong> {{ glance_best_for }}</li>
 						</ul>
 					</div>
@@ -384,11 +381,7 @@
 								</span>
 							{%- endif -%}
 						{%- endif -%}
-						{%- comment -%} Subscription options - always show 15% discount {%- endcomment -%}
-						<small class="wcsatt-sub-options">
-							<span class="wcsatt-dash">–</span> or subscribe and save
-						</small>
-						<span class="wcsatt-sub-discount">15%</span>
+
 					</p>
 				</div>
 				</div>
@@ -423,28 +416,6 @@
 					</div>
 				{%- endunless -%}
 				
-				{%- comment -%} Subscription Options (if metafield exists) {%- endcomment -%}
-				<div class="wcsatt-options-wrapper wcsatt-options-wrapper-grouped wcsatt-options-wrapper-radio closed" data-sign_up_text="Subscribe and Save">
-					<div class="wcsatt-options-product-prompt wcsatt-options-product-prompt-grouped wcsatt-options-product-prompt-radio wcsatt-options-product-prompt--visible" data-prompt_type="radio">
-						<div class="wcsatt-options-prompt-text">
-							<span class="wcsatt-options-prompt-text-label">Subscribe and Save</span>
-						</div>
-						<ul class="wcsatt-options-prompt-radios">
-							<li class="wcsatt-options-prompt-radio">
-								<label class="wcsatt-options-prompt-label wcsatt-options-prompt-label-one-time">
-									<input class="wcsatt-options-prompt-action-input" type="radio" name="subscribe-to-action-input-{{ product.id }}" value="no" checked>
-									<span class="wcsatt-options-prompt-action">Purchase one time</span>
-								</label>
-							</li>
-							<li class="wcsatt-options-prompt-radio">
-								<label class="wcsatt-options-prompt-label wcsatt-options-prompt-label-subscription">
-									<input class="wcsatt-options-prompt-action-input" type="radio" name="subscribe-to-action-input-{{ product.id }}" value="yes">
-									<span class="wcsatt-options-prompt-action">Subscribe and save <span class="wcsatt-sub-discount">15%</span></span>
-								</label>
-							</li>
-						</ul>
-					</div>
-				</div>
 				
 				{%- comment -%} Quantity and Add to Cart Button {%- endcomment -%}
 				<div class="e-atc-qty-button-holder">
@@ -793,13 +764,7 @@
 													</span>
 												{%- endif -%}
 											{%- endif -%}
-											{%- if related_product.metafields.custom.subscription_discount != blank or related_product.metafields.my_fields.subscription_discount != blank -%}
-												{%- assign subscription_discount = related_product.metafields.custom.subscription_discount | default: related_product.metafields.my_fields.subscription_discount -%}
-												<small class="wcsatt-sub-options">
-													<span class="wcsatt-dash">–</span> or subscribe and save
-												</small>
-												<span class="wcsatt-sub-discount">{{ subscription_discount }}{% if subscription_discount contains '%' %}{% else %}%{% endif %}</span>
-											{%- endif -%}
+
 										</p>
 									</div>
 								</div>
