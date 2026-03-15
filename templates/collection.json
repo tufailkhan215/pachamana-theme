@@ -55,6 +55,66 @@
         "filter_packets_tag": "single-serve"
       }
     },
+    "section_animatied_title_h4WqwM": {
+      "type": "section-animatied-title",
+      "blocks": {
+        "rotating_text_ALXMzD": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "CEREMONIAL GRADE"
+          }
+        },
+        "rotating_text_7mwRqH": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "Regenerative"
+          }
+        },
+        "rotating_text_PMNtJC": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "Heirloom"
+          }
+        },
+        "rotating_text_f9dLLJ": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "DIRECT TRADE"
+          }
+        },
+        "rotating_text_6YE9Ud": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "ORGANIC"
+          }
+        },
+        "rotating_text_EQVxnb": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "HEAVY METAL TESTED"
+          }
+        },
+        "rotating_text_Dp8eRp": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "GROWN IN PERU"
+          }
+        }
+      },
+      "block_order": [
+        "rotating_text_ALXMzD",
+        "rotating_text_7mwRqH",
+        "rotating_text_PMNtJC",
+        "rotating_text_f9dLLJ",
+        "rotating_text_6YE9Ud",
+        "rotating_text_EQVxnb",
+        "rotating_text_Dp8eRp"
+      ],
+      "name": "Animated Title",
+      "settings": {
+        "prefix_text": "OUR CACAO IS"
+      }
+    },
     "section_format_comparison_emHDLW": {
       "type": "section-format-comparison",
       "name": "Format Comparison",
@@ -88,6 +148,7 @@
   },
   "order": [
     "main",
+    "section_animatied_title_h4WqwM",
     "section_format_comparison_emHDLW"
   ]
 }

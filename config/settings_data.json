@@ -20,6 +20,13 @@
       "section-header": {
         "type": "section-header",
         "blocks": {
+          "social_icon_qt7LKj": {
+            "type": "social_icon",
+            "settings": {
+              "icon": "instagram",
+              "url": ""
+            }
+          },
           "social_icon_jKqP9p": {
             "type": "social_icon",
             "settings": {
@@ -43,6 +50,7 @@
           }
         },
         "block_order": [
+          "social_icon_qt7LKj",
           "social_icon_jKqP9p",
           "social_icon_rVbADt",
           "social_icon_cpRHMV"
