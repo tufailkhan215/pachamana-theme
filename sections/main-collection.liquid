@@ -85,8 +85,12 @@
 				{%- comment -%} Format Filter Bar {%- endcomment -%}
 				{%- if section.settings.show_format_filters -%}
 				<div class="collection-format-filters" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:20px 0 10px;">
-					<a href="{{ collection.url }}" class="format-filter-btn{% unless current_tags.size > 0 %} active{% endunless %}">All</a>
-					{%- if section.settings.filter_paste_url != blank -%}
+				
+          {% comment %} <a href="{{ collection.url }}" class="format-filter-btn{% unless current_tags.size > 0 %} active{% endunless %}">All</a> {% endcomment %}
+				<a href="/collections/shop-page" class="format-filter-btn{% unless current_tags.size > 0 %} active{% endunless %}">All</a>
+
+
+          {%- if section.settings.filter_paste_url != blank -%}
 						<a href="{{ section.settings.filter_paste_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_paste_tag %} active{% endif %}">{{ section.settings.filter_paste_label | default: "Paste" }}</a>
 					{%- endif -%}
 					{%- if section.settings.filter_ground_url != blank -%}
@@ -95,6 +99,10 @@
 					{%- if section.settings.filter_packets_url != blank -%}
 						<a href="{{ section.settings.filter_packets_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_packets_tag %} active{% endif %}">{{ section.settings.filter_packets_label | default: "Single-Serve" }}</a>
 					{%- endif -%}
+
+
+
+
 				</div>
 				<style>
 					.format-filter-btn {
