@@ -1,391 +1,90 @@
-{% comment %} cs-contact-form.liquid — Pacha Mana Contact Section v2 {% endcomment %}
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Cormorant+Garamond:ital,wght@0,300;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
   #cs-{{ section.id }} {
-    --csc-card:        #CC8E2E;
-    --csc-card-edge:   #B57A22;
-    --csc-field:       #DBA84E;
-    --csc-field-focus: #E6BA68;
-    --csc-dark:        #1E0F05;
-    --csc-muted:       rgba(30,15,5,0.55);
-    --csc-btn-text:    #F2E0C0;
-    --csc-ease:        cubic-bezier(.165,.84,.44,1);
+    --csc-card:        #CC8E2E; /* [cite: 2] */
+    --csc-card-edge:   #B57A22; /* [cite: 2] */
+    --csc-field:       #D4A24B; /* Slightly deeper gold for contrast */
+    --csc-field-focus: #E2B666; /* [cite: 41] */
+    --csc-dark:        #1E0F05; /* [cite: 3] */
+    --csc-muted:       rgba(30,15,5,0.65); /* Increased opacity for readability [cite: 3] */
+    --csc-btn-text:    #F2E0C0; /* [cite: 4] */
+    --csc-ease:        cubic-bezier(0.25, 1, 0.5, 1);
 
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
+    display: flex; /* [cite: 5] */
     align-items: center;
     justify-content: center;
-    padding: 64px 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-    font-family: 'Nunito Sans', sans-serif;
+    padding: 80px 20px;
+    font-family: 'Nunito Sans', sans-serif; /* [cite: 5] */
   }
 
-  /* BG */
-  #cs-{{ section.id }} .csc-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: {{ section.settings.color_page_bg | default: '#7A5230' }};
-  }
-
-  #cs-{{ section.id }} .csc-bg img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.55;
-    mix-blend-mode: multiply;
-    display: block;
-  }
-
-  #cs-{{ section.id }} .csc-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 18px,
-      rgba(0,0,0,0.025) 18px,
-      rgba(0,0,0,0.025) 19px
-    );
-  }
-
-  /* Card */
+  /* Enhanced Card Design */
   #cs-{{ section.id }} .csc-card {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 520px;
+    max-width: 540px; /* [cite: 12] */
     background: var(--csc-card);
-    border-radius: 24px;
-    padding: 48px 44px 44px;
-    box-sizing: border-box;
-    box-shadow:
-      0 2px 0 var(--csc-card-edge),
-      0 6px 0 rgba(0,0,0,0.15),
-      0 28px 72px rgba(0,0,0,0.42),
-      inset 0 1px 0 rgba(255,255,255,0.2),
-      inset 0 -1px 0 rgba(0,0,0,0.08);
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E"),
-      linear-gradient(160deg, rgba(255,255,255,0.1) 0%, transparent 55%);
-    background-color: var(--csc-card);
-    background-blend-mode: overlay, normal, normal;
-    opacity: 0;
-    transform: translateY(28px) scale(0.98);
-    transition: opacity 0.6s var(--csc-ease), transform 0.6s var(--csc-ease);
+    border-radius: 16px; /* Slightly tighter corners for a modern feel [cite: 12] */
+    padding: 60px 50px;
+    box-shadow: 
+      0 10px 30px rgba(0,0,0,0.2),
+      inset 0 1px 1px rgba(255,255,255,0.3); /*  */
+    background-image: 
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"); /* Grain texture [cite: 14] */
   }
 
-  #cs-{{ section.id }} .csc-card.rv { opacity: 1; transform: translateY(0) scale(1); }
-
-  @media (prefers-reduced-motion: reduce) {
-    #cs-{{ section.id }} .csc-card { opacity:1; transform:none; transition:none; }
-  }
-
-  /* Logo */
-  #cs-{{ section.id }} .csc-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  #cs-{{ section.id }} .csc-logo img {
-    height: {{ section.settings.logo_height | default: 68 }}px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    display: block;
-  }
-
-  /* Heading — Cinzel serif */
+  /* Typography Refinements */
   #cs-{{ section.id }} .csc-heading {
-    font-family: 'Cinzel', 'Times New Roman', serif;
-    font-weight: 900;
-    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--csc-dark);
-    text-align: center;
-    margin: 0 0 4px;
-    line-height: 1.1;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.18), 0 -1px 0 rgba(0,0,0,0.08);
-  }
-
-  /* Decorative rule */
-  #cs-{{ section.id }} .csc-rule {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 14px auto 18px;
-    max-width: 220px;
-  }
-
-  #cs-{{ section.id }} .csc-rule span {
-    flex: 1;
-    height: 1px;
-    background: rgba(30,15,5,0.22);
-  }
-
-  #cs-{{ section.id }} .csc-rule svg {
-    width: 16px; height: 16px;
-    opacity: 0.4;
-    color: var(--csc-dark);
-  }
-
-  /* Subtext — Cormorant Garamond (elegant serif body) */
-  #cs-{{ section.id }} .csc-sub {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 300;
-    font-size: clamp(1.05rem, 2.2vw, 1.2rem);
-    line-height: 1.75;
-    color: var(--csc-muted);
-    text-align: center;
-    margin: 0 0 24px;
-  }
-
-  #cs-{{ section.id }} .csc-sub a {
-    font-weight: 400;
-    font-style: italic;
-    color: var(--csc-dark);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(30,15,5,0.3);
-    transition: border-color 0.2s;
-  }
-
-  #cs-{{ section.id }} .csc-sub a:hover { border-color: var(--csc-dark); }
-
-  /* Divider */
-  #cs-{{ section.id }} .csc-divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(30,15,5,0.18) 30%, rgba(30,15,5,0.18) 70%, transparent);
-    margin: 0 0 24px;
-  }
-
-  /* Form */
-  #cs-{{ section.id }} .csc-form { display: flex; flex-direction: column; gap: 16px; }
-
-  #cs-{{ section.id }} .csc-field { display: flex; flex-direction: column; gap: 5px; }
-
-  #cs-{{ section.id }} .csc-label {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.72rem;
+    font-family: 'Cinzel', serif; /* [cite: 21] */
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(30,15,5,0.6);
+    letter-spacing: 0.2em;
+    font-size: 2.2rem; /* [cite: 21] */
+    color: var(--csc-dark);
+    margin-bottom: 8px;
+  }
+
+  #cs-{{ section.id }} .csc-sub {
+    font-family: 'Cormorant Garamond', serif; /* [cite: 27] */
+    font-size: 1.15rem;
+    color: var(--csc-muted);
+    margin-bottom: 32px;
+  }
+
+  /* Form Field Refinement */
+  #cs-{{ section.id }} .csc-label {
+    font-size: 0.75rem;
+    font-weight: 800; /* Bolder for professional hierarchy  */
+    margin-bottom: 8px;
+    color: var(--csc-dark);
+    opacity: 0.8;
   }
 
   #cs-{{ section.id }} .csc-input,
   #cs-{{ section.id }} .csc-textarea {
-    width: 100%;
-    background: var(--csc-field);
-    border: 1.5px solid transparent;
-    border-radius: 10px;
-    padding: 13px 16px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 400;
-    color: var(--csc-dark);
-    box-sizing: border-box;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.18);
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    transition: border-color 0.22s var(--csc-ease), background 0.22s var(--csc-ease), box-shadow 0.22s var(--csc-ease);
-  }
-
-  #cs-{{ section.id }} .csc-input::placeholder,
-  #cs-{{ section.id }} .csc-textarea::placeholder {
-    color: rgba(30,15,5,0.32);
-    font-weight: 300;
-    font-style: italic;
+    background: rgba(30,15,5,0.05); /* Subtle inset look */
+    border: 1px solid rgba(30,15,5,0.15); /*  */
+    border-radius: 4px; /* Professional square-ish radius */
+    padding: 14px;
+    transition: all 0.3s ease;
   }
 
   #cs-{{ section.id }} .csc-input:focus,
   #cs-{{ section.id }} .csc-textarea:focus {
-    background: var(--csc-field-focus);
-    border-color: rgba(30,15,5,0.28);
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.07), 0 0 0 3px rgba(30,15,5,0.1);
+    background: transparent;
+    border-color: var(--csc-dark); /* [cite: 41] */
+    box-shadow: 0 4px 12px rgba(30,15,5,0.05);
   }
 
-  #cs-{{ section.id }} .csc-textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
-
-  /* Button */
+  /* Button Upgrade */
   #cs-{{ section.id }} .csc-btn {
-    width: 100%;
-    background: var(--csc-dark);
-    color: var(--csc-btn-text);
-    font-family: 'Cinzel', Georgia, serif;
-    font-weight: 700;
-    font-size: 0.825rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    padding: 17px 24px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 6px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 2px 0 rgba(0,0,0,0.45), 0 8px 24px rgba(0,0,0,0.3);
-    transition: transform 0.2s var(--csc-ease), box-shadow 0.2s var(--csc-ease);
-  }
-
-  #cs-{{ section.id }} .csc-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, transparent 55%);
-    pointer-events: none;
+    background: var(--csc-dark); /* [cite: 44] */
+    color: var(--csc-btn-text); /* [cite: 44] */
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.3em;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(30,15,5,0.3); /* [cite: 46] */
+    transition: transform 0.2s, background 0.2s;
   }
 
   #cs-{{ section.id }} .csc-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 0 rgba(0,0,0,0.4), 0 14px 36px rgba(0,0,0,0.35);
-  }
-
-  #cs-{{ section.id }} .csc-btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.4), 0 3px 10px rgba(0,0,0,0.25);
-  }
-
-  /* Messages */
-  #cs-{{ section.id }} .csc-msg {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.875rem;
-    text-align: center;
-    padding: 12px 16px;
-    border-radius: 10px;
-  }
-
-  #cs-{{ section.id }} .csc-msg--ok {
-    background: rgba(30,15,5,0.1);
-    color: var(--csc-dark);
-    border: 1px solid rgba(30,15,5,0.2);
-  }
-
-  #cs-{{ section.id }} .csc-msg--err {
-    background: rgba(150,30,10,0.1);
-    color: #6b1a0a;
-    border: 1px solid rgba(150,30,10,0.22);
-  }
-
-  /* Mobile */
-  @media (max-width: 580px) {
-    #cs-{{ section.id }} { padding: 48px 16px 56px; align-items: flex-start; }
-    #cs-{{ section.id }} .csc-card { padding: 36px 22px 36px; border-radius: 20px; }
-    #cs-{{ section.id }} .csc-input,
-    #cs-{{ section.id }} .csc-textarea { font-size: 16px; }
+    background: #2D1A0E; 
+    transform: translateY(-2px); /* [cite: 49] */
   }
 </style>
-
-<section id="cs-{{ section.id }}">
-
-  <div class="csc-bg">
-    {%- if section.settings.bg_image != blank -%}
-      <img src="{{ section.settings.bg_image | img_url: '1400x' }}" alt="" loading="lazy" aria-hidden="true">
-    {%- endif -%}
-  </div>
-
-  <div class="csc-card">
-
-    {%- if section.settings.logo != blank -%}
-      <div class="csc-logo">
-        <img
-          src="{{ section.settings.logo | img_url: '300x' }}"
-          alt="{{ shop.name }}"
-          loading="lazy"
-          height="{{ section.settings.logo_height | default: 68 }}"
-        >
-      </div>
-    {%- endif -%}
-
-    <h1 class="csc-heading">{{ section.settings.heading | default: 'Contact Us' }}</h1>
-
-    <div class="csc-rule" aria-hidden="true">
-      <span></span>
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="3" fill="currentColor"/>
-        <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.2"/>
-      </svg>
-      <span></span>
-    </div>
-
-    {%- if section.settings.subtext != blank or section.settings.contact_email != blank -%}
-      <p class="csc-sub">
-        {{ section.settings.subtext | default: 'Fill out the form below, and we will be in touch shortly or,' }}
-        {%- if section.settings.contact_email != blank -%}
-          <br>Email us directly at&nbsp;<a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>&nbsp;for urgent questions
-        {%- endif -%}
-      </p>
-    {%- endif -%}
-
-    <div class="csc-divider"></div>
-
-    {%- form 'contact', id: 'csc-form-{{ section.id }}', class: 'csc-form' -%}
-
-      <div class="csc-field">
-        <label class="csc-label" for="csc-name-{{ section.id }}">Name</label>
-        <input id="csc-name-{{ section.id }}" class="csc-input" type="text" name="contact[name]" placeholder="Your full name" autocomplete="name" required>
-      </div>
-
-      <div class="csc-field">
-        <label class="csc-label" for="csc-email-{{ section.id }}">Email</label>
-        <input id="csc-email-{{ section.id }}" class="csc-input" type="email" name="contact[email]" placeholder="your@email.com" autocomplete="email" required>
-      </div>
-
-      <div class="csc-field">
-        <label class="csc-label" for="csc-msg-{{ section.id }}">Message</label>
-        <textarea id="csc-msg-{{ section.id }}" class="csc-textarea" name="contact[body]" placeholder="How can we help you?" required></textarea>
-      </div>
-
-      {%- if form.posted_successfully? -%}
-        <div class="csc-msg csc-msg--ok" role="alert">✓ Thank you! We'll be in touch shortly.</div>
-      {%- elsif form.errors -%}
-        <div class="csc-msg csc-msg--err" role="alert">{{ form.errors | default_errors }}</div>
-      {%- endif -%}
-
-      <button type="submit" class="csc-btn">{{ section.settings.button_label | default: 'Send Message' }}</button>
-
-    {%- endform -%}
-
-  </div>
-</section>
-
-<script>
-(function () {
-  var card = document.querySelector('#cs-{{ section.id }} .csc-card');
-  if (!card) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { card.classList.add('rv'); return; }
-  var obs = new IntersectionObserver(function (e) {
-    e.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('rv'); obs.unobserve(x.target); } });
-  }, { threshold: 0.1 });
-  obs.observe(card);
-})();
-</script>
-
-{% schema %}
-{
-  "name": "Contact Form",
-  "tag": "div",
-  "settings": [
-    { "type": "header", "content": "Content" },
-    { "type": "image_picker", "id": "logo", "label": "Logo image" },
-    { "type": "range", "id": "logo_height", "label": "Logo height (px)", "min": 40, "max": 120, "step": 4, "default": 68, "unit": "px" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Contact Us" },
-    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Fill out the form below, and we will be in touch shortly or," },
-    { "type": "text", "id": "contact_email", "label": "Contact email", "default": "support@pachamana.com" },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Send Message" },
-    { "type": "header", "content": "Background" },
-    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
-    { "type": "color", "id": "color_page_bg", "label": "Page background fallback", "default": "#7A5230" }
-  ],
-  "presets": [{ "name": "Contact Form" }]
-}
-{% endschema %}
