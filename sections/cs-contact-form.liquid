@@ -1,22 +1,19 @@
-{% comment %} cs-contact-form.liquid — Pacha Mana Contact Section {% endcomment %}
+{% comment %} cs-contact-form.liquid — Pacha Mana Contact Section v2 {% endcomment %}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Cormorant+Garamond:ital,wght@0,300;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  /* ── Scoped to section ─────────────────────────────────────────── */
   #cs-{{ section.id }} {
-    --cs-gold:        {{ section.settings.color_primary | default: '#C8922A' }};
-    --cs-gold-light:  {{ section.settings.color_card_bg | default: '#D4A043' }};
-    --cs-field-bg:    {{ section.settings.color_field_bg | default: '#E8C47A' }};
-    --cs-dark:        {{ section.settings.color_button_bg | default: '#2C1A0E' }};
-    --cs-text:        {{ section.settings.color_text | default: '#2C1A0E' }};
-    --cs-text-light:  {{ section.settings.color_text_light | default: '#5C3D1E' }};
-    --cs-btn-text:    {{ section.settings.color_button_text | default: '#F5E6C8' }};
-    --cs-radius:      16px;
-    --cs-radius-sm:   10px;
-    --cs-transition:  cubic-bezier(.165, .84, .44, 1);
+    --csc-card:        #CC8E2E;
+    --csc-card-edge:   #B57A22;
+    --csc-field:       #DBA84E;
+    --csc-field-focus: #E6BA68;
+    --csc-dark:        #1E0F05;
+    --csc-muted:       rgba(30,15,5,0.55);
+    --csc-btn-text:    #F2E0C0;
+    --csc-ease:        cubic-bezier(.165,.84,.44,1);
 
     position: relative;
     width: 100%;
@@ -24,386 +21,337 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
+    padding: 64px 20px;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: {{ section.settings.color_page_bg | default: '#8B5E3C' }};
+    font-family: 'Nunito Sans', sans-serif;
   }
 
-  /* ── Background image / overlay ───────────────────────────────── */
-  #cs-{{ section.id }} .cs-bg {
+  /* BG */
+  #cs-{{ section.id }} .csc-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
+    background: {{ section.settings.color_page_bg | default: '#7A5230' }};
   }
 
-  #cs-{{ section.id }} .cs-bg img {
-    width: 100%;
-    height: 100%;
+  #cs-{{ section.id }} .csc-bg img {
+    width: 100%; height: 100%;
     object-fit: cover;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
     display: block;
   }
 
-  #cs-{{ section.id }} .cs-bg-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
-  }
-
-  /* ── Noise texture overlay ─────────────────────────────────────── */
-  #cs-{{ section.id }}::before {
+  #cs-{{ section.id }} .csc-bg::after {
     content: '';
     position: absolute;
     inset: 0;
-    z-index: 1;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    pointer-events: none;
-    opacity: 0.5;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(0,0,0,0.025) 18px,
+      rgba(0,0,0,0.025) 19px
+    );
   }
 
-  /* ── Card ──────────────────────────────────────────────────────── */
-  #cs-{{ section.id }} .cs-card {
+  /* Card */
+  #cs-{{ section.id }} .csc-card {
     position: relative;
     z-index: 2;
-    background: var(--cs-gold-light);
-    border-radius: 28px;
-    padding: 52px 48px 48px;
     width: 100%;
-    max-width: 560px;
+    max-width: 520px;
+    background: var(--csc-card);
+    border-radius: 24px;
+    padding: 48px 44px 44px;
+    box-sizing: border-box;
     box-shadow:
-      0 4px 6px rgba(0,0,0,0.08),
-      0 20px 60px rgba(44, 26, 14, 0.35),
-      inset 0 1px 0 rgba(255,255,255,0.15);
-    /* subtle paper texture on card */
+      0 2px 0 var(--csc-card-edge),
+      0 6px 0 rgba(0,0,0,0.15),
+      0 28px 72px rgba(0,0,0,0.42),
+      inset 0 1px 0 rgba(255,255,255,0.2),
+      inset 0 -1px 0 rgba(0,0,0,0.08);
     background-image:
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"),
-      linear-gradient(160deg, rgba(255,255,255,0.08) 0%, transparent 60%);
-    background-blend-mode: overlay;
-
-    /* scroll reveal default */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E"),
+      linear-gradient(160deg, rgba(255,255,255,0.1) 0%, transparent 55%);
+    background-color: var(--csc-card);
+    background-blend-mode: overlay, normal, normal;
     opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.65s var(--cs-transition), transform 0.65s var(--cs-transition);
+    transform: translateY(28px) scale(0.98);
+    transition: opacity 0.6s var(--csc-ease), transform 0.6s var(--csc-ease);
   }
 
-  #cs-{{ section.id }} .cs-card.rv {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  #cs-{{ section.id }} .csc-card.rv { opacity: 1; transform: translateY(0) scale(1); }
 
   @media (prefers-reduced-motion: reduce) {
-    #cs-{{ section.id }} .cs-card {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
+    #cs-{{ section.id }} .csc-card { opacity:1; transform:none; transition:none; }
   }
 
-  /* ── Logo ──────────────────────────────────────────────────────── */
-  #cs-{{ section.id }} .cs-logo {
+  /* Logo */
+  #cs-{{ section.id }} .csc-logo {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
   }
 
-  #cs-{{ section.id }} .cs-logo img {
+  #cs-{{ section.id }} .csc-logo img {
+    height: {{ section.settings.logo_height | default: 68 }}px;
     width: auto;
-    height: {{ section.settings.logo_height | default: 72 }}px;
     object-fit: contain;
     filter: brightness(0) invert(1);
     display: block;
   }
 
-  /* ── Heading ───────────────────────────────────────────────────── */
-  #cs-{{ section.id }} .cs-heading {
-    font-family: 'Playfair Display', Georgia, serif;
+  /* Heading — Cinzel serif */
+  #cs-{{ section.id }} .csc-heading {
+    font-family: 'Cinzel', 'Times New Roman', serif;
     font-weight: 900;
-    font-size: clamp(2rem, 5vw, 2.75rem);
-    letter-spacing: 0.12em;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--cs-dark);
+    color: var(--csc-dark);
     text-align: center;
-    margin: 0 0 14px;
+    margin: 0 0 4px;
     line-height: 1.1;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.18), 0 -1px 0 rgba(0,0,0,0.08);
   }
 
-  /* ── Subtext ───────────────────────────────────────────────────── */
-  #cs-{{ section.id }} .cs-subtext {
-    font-family: 'Lato', sans-serif;
+  /* Decorative rule */
+  #cs-{{ section.id }} .csc-rule {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px auto 18px;
+    max-width: 220px;
+  }
+
+  #cs-{{ section.id }} .csc-rule span {
+    flex: 1;
+    height: 1px;
+    background: rgba(30,15,5,0.22);
+  }
+
+  #cs-{{ section.id }} .csc-rule svg {
+    width: 16px; height: 16px;
+    opacity: 0.4;
+    color: var(--csc-dark);
+  }
+
+  /* Subtext — Cormorant Garamond (elegant serif body) */
+  #cs-{{ section.id }} .csc-sub {
+    font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 300;
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    color: var(--cs-text-light);
+    font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+    line-height: 1.75;
+    color: var(--csc-muted);
     text-align: center;
-    line-height: 1.65;
-    margin: 0 0 32px;
+    margin: 0 0 24px;
   }
 
-  #cs-{{ section.id }} .cs-subtext a {
-    font-weight: 700;
+  #cs-{{ section.id }} .csc-sub a {
+    font-weight: 400;
     font-style: italic;
-    color: var(--cs-text);
+    color: var(--csc-dark);
     text-decoration: none;
-    border-bottom: 1px solid rgba(44,26,14,0.3);
+    border-bottom: 1px solid rgba(30,15,5,0.3);
     transition: border-color 0.2s;
   }
 
-  #cs-{{ section.id }} .cs-subtext a:hover {
-    border-color: var(--cs-text);
+  #cs-{{ section.id }} .csc-sub a:hover { border-color: var(--csc-dark); }
+
+  /* Divider */
+  #cs-{{ section.id }} .csc-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(30,15,5,0.18) 30%, rgba(30,15,5,0.18) 70%, transparent);
+    margin: 0 0 24px;
   }
 
-  /* ── Form fields ───────────────────────────────────────────────── */
-  #cs-{{ section.id }} .cs-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  /* Form */
+  #cs-{{ section.id }} .csc-form { display: flex; flex-direction: column; gap: 16px; }
+
+  #cs-{{ section.id }} .csc-field { display: flex; flex-direction: column; gap: 5px; }
+
+  #cs-{{ section.id }} .csc-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(30,15,5,0.6);
   }
 
-  #cs-{{ section.id }} .cs-field-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  #cs-{{ section.id }} .cs-label {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--cs-text);
-    letter-spacing: 0.02em;
-  }
-
-  #cs-{{ section.id }} .cs-input,
-  #cs-{{ section.id }} .cs-textarea {
+  #cs-{{ section.id }} .csc-input,
+  #cs-{{ section.id }} .csc-textarea {
     width: 100%;
-    background: var(--cs-field-bg);
-    border: 1.5px solid rgba(44, 26, 14, 0.12);
-    border-radius: var(--cs-radius-sm);
-    padding: 14px 16px;
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    color: var(--cs-text);
+    background: var(--csc-field);
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--csc-dark);
     box-sizing: border-box;
-    transition:
-      border-color 0.25s var(--cs-transition),
-      box-shadow 0.25s var(--cs-transition),
-      background 0.25s var(--cs-transition);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.18);
     outline: none;
     -webkit-appearance: none;
     appearance: none;
+    transition: border-color 0.22s var(--csc-ease), background 0.22s var(--csc-ease), box-shadow 0.22s var(--csc-ease);
   }
 
-  #cs-{{ section.id }} .cs-input::placeholder,
-  #cs-{{ section.id }} .cs-textarea::placeholder {
-    color: rgba(44, 26, 14, 0.4);
+  #cs-{{ section.id }} .csc-input::placeholder,
+  #cs-{{ section.id }} .csc-textarea::placeholder {
+    color: rgba(30,15,5,0.32);
     font-weight: 300;
+    font-style: italic;
   }
 
-  #cs-{{ section.id }} .cs-input:focus,
-  #cs-{{ section.id }} .cs-textarea:focus {
-    border-color: var(--cs-dark);
-    background: rgba(232, 196, 122, 0.85);
-    box-shadow: 0 0 0 3px rgba(44, 26, 14, 0.1);
+  #cs-{{ section.id }} .csc-input:focus,
+  #cs-{{ section.id }} .csc-textarea:focus {
+    background: var(--csc-field-focus);
+    border-color: rgba(30,15,5,0.28);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.07), 0 0 0 3px rgba(30,15,5,0.1);
   }
 
-  #cs-{{ section.id }} .cs-textarea {
-    resize: vertical;
-    min-height: 130px;
-  }
+  #cs-{{ section.id }} .csc-textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
 
-  /* ── Submit button ─────────────────────────────────────────────── */
-  #cs-{{ section.id }} .cs-btn {
+  /* Button */
+  #cs-{{ section.id }} .csc-btn {
     width: 100%;
-    background: var(--cs-dark);
-    color: var(--cs-btn-text);
-    font-family: 'Lato', sans-serif;
+    background: var(--csc-dark);
+    color: var(--csc-btn-text);
+    font-family: 'Cinzel', Georgia, serif;
     font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.18em;
+    font-size: 0.825rem;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     padding: 17px 24px;
     border: none;
-    border-radius: var(--cs-radius-sm);
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 6px;
     position: relative;
     overflow: hidden;
-    transition:
-      transform 0.2s var(--cs-transition),
-      box-shadow 0.2s var(--cs-transition),
-      background 0.2s;
-    box-shadow: 0 4px 16px rgba(44, 26, 14, 0.28);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.45), 0 8px 24px rgba(0,0,0,0.3);
+    transition: transform 0.2s var(--csc-ease), box-shadow 0.2s var(--csc-ease);
   }
 
-  #cs-{{ section.id }} .cs-btn::after {
+  #cs-{{ section.id }} .csc-btn::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255,255,255,0);
-    transition: background 0.2s;
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, transparent 55%);
+    pointer-events: none;
   }
 
-  #cs-{{ section.id }} .cs-btn:hover {
+  #cs-{{ section.id }} .csc-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(44, 26, 14, 0.35);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.4), 0 14px 36px rgba(0,0,0,0.35);
   }
 
-  #cs-{{ section.id }} .cs-btn:hover::after {
-    background: rgba(255,255,255,0.06);
+  #cs-{{ section.id }} .csc-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.4), 0 3px 10px rgba(0,0,0,0.25);
   }
 
-  #cs-{{ section.id }} .cs-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(44, 26, 14, 0.2);
-  }
-
-  #cs-{{ section.id }} .cs-btn:disabled {
-    opacity: 0.65;
-    cursor: not-allowed;
-    transform: none;
-  }
-
-  /* ── Success / error states ────────────────────────────────────── */
-  #cs-{{ section.id }} .cs-msg {
-    display: none;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.9rem;
+  /* Messages */
+  #cs-{{ section.id }} .csc-msg {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.875rem;
     text-align: center;
     padding: 12px 16px;
-    border-radius: var(--cs-radius-sm);
-    margin-top: 4px;
+    border-radius: 10px;
   }
 
-  #cs-{{ section.id }} .cs-msg.cs-success {
-    display: block;
-    background: rgba(44, 26, 14, 0.1);
-    color: var(--cs-text);
-    border: 1px solid rgba(44, 26, 14, 0.25);
+  #cs-{{ section.id }} .csc-msg--ok {
+    background: rgba(30,15,5,0.1);
+    color: var(--csc-dark);
+    border: 1px solid rgba(30,15,5,0.2);
   }
 
-  #cs-{{ section.id }} .cs-msg.cs-error {
-    display: block;
-    background: rgba(180, 50, 30, 0.1);
-    color: #7a1a0e;
-    border: 1px solid rgba(180, 50, 30, 0.25);
+  #cs-{{ section.id }} .csc-msg--err {
+    background: rgba(150,30,10,0.1);
+    color: #6b1a0a;
+    border: 1px solid rgba(150,30,10,0.22);
   }
 
-  /* ── Mobile ────────────────────────────────────────────────────── */
-  @media (max-width: 600px) {
-    #cs-{{ section.id }} {
-      padding: 40px 16px;
-      align-items: flex-start;
-      padding-top: 60px;
-    }
-
-    #cs-{{ section.id }} .cs-card {
-      padding: 36px 24px 36px;
-      border-radius: 20px;
-    }
-
-    #cs-{{ section.id }} .cs-input,
-    #cs-{{ section.id }} .cs-textarea {
-      font-size: 16px; /* prevents iOS zoom */
-    }
+  /* Mobile */
+  @media (max-width: 580px) {
+    #cs-{{ section.id }} { padding: 48px 16px 56px; align-items: flex-start; }
+    #cs-{{ section.id }} .csc-card { padding: 36px 22px 36px; border-radius: 20px; }
+    #cs-{{ section.id }} .csc-input,
+    #cs-{{ section.id }} .csc-textarea { font-size: 16px; }
   }
 </style>
 
 <section id="cs-{{ section.id }}">
 
-  {%- if section.settings.bg_image != blank -%}
-    <div class="cs-bg">
-      <img
-        src="{{ section.settings.bg_image | img_url: '1400x' }}"
-        alt=""
-        loading="lazy"
-        width="1400"
-        height="900"
-        aria-hidden="true"
-      >
-      <div class="cs-bg-overlay"></div>
-    </div>
-  {%- endif -%}
+  <div class="csc-bg">
+    {%- if section.settings.bg_image != blank -%}
+      <img src="{{ section.settings.bg_image | img_url: '1400x' }}" alt="" loading="lazy" aria-hidden="true">
+    {%- endif -%}
+  </div>
 
-  <div class="cs-card" role="main">
+  <div class="csc-card">
 
     {%- if section.settings.logo != blank -%}
-      <div class="cs-logo">
+      <div class="csc-logo">
         <img
           src="{{ section.settings.logo | img_url: '300x' }}"
           alt="{{ shop.name }}"
           loading="lazy"
-          width="150"
-          height="{{ section.settings.logo_height | default: 72 }}"
+          height="{{ section.settings.logo_height | default: 68 }}"
         >
       </div>
     {%- endif -%}
 
-    <h2 class="cs-heading">{{ section.settings.heading | default: 'Contact Us' }}</h2>
+    <h1 class="csc-heading">{{ section.settings.heading | default: 'Contact Us' }}</h1>
 
-    {%- if section.settings.subtext != blank -%}
-      <p class="cs-subtext">
-        {{ section.settings.subtext }}
+    <div class="csc-rule" aria-hidden="true">
+      <span></span>
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <span></span>
+    </div>
+
+    {%- if section.settings.subtext != blank or section.settings.contact_email != blank -%}
+      <p class="csc-sub">
+        {{ section.settings.subtext | default: 'Fill out the form below, and we will be in touch shortly or,' }}
         {%- if section.settings.contact_email != blank -%}
-          <br><br>
-          Email us directly at
-          <a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>
-          for urgent questions
+          <br>Email us directly at&nbsp;<a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a>&nbsp;for urgent questions
         {%- endif -%}
       </p>
     {%- endif -%}
 
-    {%- form 'contact', id: 'cs-form-{{ section.id }}', class: 'cs-form' -%}
+    <div class="csc-divider"></div>
 
-      <div class="cs-field-wrap">
-        <label class="cs-label" for="cs-name-{{ section.id }}">Name</label>
-        <input
-          id="cs-name-{{ section.id }}"
-          class="cs-input"
-          type="text"
-          name="contact[name]"
-          placeholder="Name"
-          autocomplete="name"
-          required
-        >
+    {%- form 'contact', id: 'csc-form-{{ section.id }}', class: 'csc-form' -%}
+
+      <div class="csc-field">
+        <label class="csc-label" for="csc-name-{{ section.id }}">Name</label>
+        <input id="csc-name-{{ section.id }}" class="csc-input" type="text" name="contact[name]" placeholder="Your full name" autocomplete="name" required>
       </div>
 
-      <div class="cs-field-wrap">
-        <label class="cs-label" for="cs-email-{{ section.id }}">Email</label>
-        <input
-          id="cs-email-{{ section.id }}"
-          class="cs-input"
-          type="email"
-          name="contact[email]"
-          placeholder="Email"
-          autocomplete="email"
-          required
-        >
+      <div class="csc-field">
+        <label class="csc-label" for="csc-email-{{ section.id }}">Email</label>
+        <input id="csc-email-{{ section.id }}" class="csc-input" type="email" name="contact[email]" placeholder="your@email.com" autocomplete="email" required>
       </div>
 
-      <div class="cs-field-wrap">
-        <label class="cs-label" for="cs-msg-{{ section.id }}">Message</label>
-        <textarea
-          id="cs-msg-{{ section.id }}"
-          class="cs-textarea"
-          name="contact[body]"
-          placeholder="Message"
-          required
-        ></textarea>
+      <div class="csc-field">
+        <label class="csc-label" for="csc-msg-{{ section.id }}">Message</label>
+        <textarea id="csc-msg-{{ section.id }}" class="csc-textarea" name="contact[body]" placeholder="How can we help you?" required></textarea>
       </div>
 
       {%- if form.posted_successfully? -%}
-        <div class="cs-msg cs-success" role="alert">
-          ✓ Thank you! We'll be in touch shortly.
-        </div>
+        <div class="csc-msg csc-msg--ok" role="alert">✓ Thank you! We'll be in touch shortly.</div>
       {%- elsif form.errors -%}
-        <div class="cs-msg cs-error" role="alert">
-          {{ form.errors | default_errors }}
-        </div>
+        <div class="csc-msg csc-msg--err" role="alert">{{ form.errors | default_errors }}</div>
       {%- endif -%}
 
-      <button type="submit" class="cs-btn">
-        {{ section.settings.button_label | default: 'Send' }}
-      </button>
+      <button type="submit" class="csc-btn">{{ section.settings.button_label | default: 'Send Message' }}</button>
 
     {%- endform -%}
 
@@ -412,21 +360,12 @@
 
 <script>
 (function () {
-  var card = document.querySelector('#cs-{{ section.id }} .cs-card');
+  var card = document.querySelector('#cs-{{ section.id }} .csc-card');
   if (!card) return;
-
-  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (mq.matches) { card.classList.add('rv'); return; }
-
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('rv');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { card.classList.add('rv'); return; }
+  var obs = new IntersectionObserver(function (e) {
+    e.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('rv'); obs.unobserve(x.target); } });
+  }, { threshold: 0.1 });
   obs.observe(card);
 })();
 </script>
@@ -435,111 +374,18 @@
 {
   "name": "Contact Form",
   "tag": "div",
-  "class": "cs-contact-section",
   "settings": [
-    {
-      "type": "header",
-      "content": "Content"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo image"
-    },
-    {
-      "type": "range",
-      "id": "logo_height",
-      "label": "Logo height (px)",
-      "min": 40,
-      "max": 120,
-      "step": 4,
-      "default": 72,
-      "unit": "px"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Contact Us"
-    },
-    {
-      "type": "textarea",
-      "id": "subtext",
-      "label": "Subtext",
-      "default": "Fill out the form below, and we will be in touch shortly or,"
-    },
-    {
-      "type": "text",
-      "id": "contact_email",
-      "label": "Contact email address",
-      "default": "support@pachamana.com"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button label",
-      "default": "Send"
-    },
-    {
-      "type": "header",
-      "content": "Background"
-    },
-    {
-      "type": "image_picker",
-      "id": "bg_image",
-      "label": "Background image"
-    },
-    {
-      "type": "header",
-      "content": "Colors"
-    },
-    {
-      "type": "color",
-      "id": "color_page_bg",
-      "label": "Page background",
-      "default": "#8B5E3C"
-    },
-    {
-      "type": "color",
-      "id": "color_card_bg",
-      "label": "Card background",
-      "default": "#D4A043"
-    },
-    {
-      "type": "color",
-      "id": "color_field_bg",
-      "label": "Field background",
-      "default": "#E8C47A"
-    },
-    {
-      "type": "color",
-      "id": "color_text",
-      "label": "Primary text",
-      "default": "#2C1A0E"
-    },
-    {
-      "type": "color",
-      "id": "color_text_light",
-      "label": "Muted text",
-      "default": "#5C3D1E"
-    },
-    {
-      "type": "color",
-      "id": "color_button_bg",
-      "label": "Button background",
-      "default": "#2C1A0E"
-    },
-    {
-      "type": "color",
-      "id": "color_button_text",
-      "label": "Button text",
-      "default": "#F5E6C8"
-    }
+    { "type": "header", "content": "Content" },
+    { "type": "image_picker", "id": "logo", "label": "Logo image" },
+    { "type": "range", "id": "logo_height", "label": "Logo height (px)", "min": 40, "max": 120, "step": 4, "default": 68, "unit": "px" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Contact Us" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Fill out the form below, and we will be in touch shortly or," },
+    { "type": "text", "id": "contact_email", "label": "Contact email", "default": "support@pachamana.com" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Send Message" },
+    { "type": "header", "content": "Background" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "color", "id": "color_page_bg", "label": "Page background fallback", "default": "#7A5230" }
   ],
-  "presets": [
-    {
-      "name": "Contact Form"
-    }
-  ]
+  "presets": [{ "name": "Contact Form" }]
 }
 {% endschema %}
