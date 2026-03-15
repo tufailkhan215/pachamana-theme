@@ -45,13 +45,13 @@
         "ken_burns_direction": "in",
         "show_format_filters": true,
         "filter_paste_label": "Paste",
-        "filter_paste_url": "",
+        "filter_paste_url": "/collections/paste",
         "filter_paste_tag": "paste",
         "filter_ground_label": "Ground",
-        "filter_ground_url": "",
+        "filter_ground_url": "shopify://collections/shop-ground",
         "filter_ground_tag": "ground",
         "filter_packets_label": "Single-Serve",
-        "filter_packets_url": "",
+        "filter_packets_url": "shopify://collections/single_serve",
         "filter_packets_tag": "single-serve"
       }
     },
