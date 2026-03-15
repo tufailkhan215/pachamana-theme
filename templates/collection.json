@@ -42,7 +42,17 @@
         "transition_duration": 500,
         "loop": true,
         "ken_burns": true,
-        "ken_burns_direction": "in"
+        "ken_burns_direction": "in",
+        "show_format_filters": true,
+        "filter_paste_label": "Paste",
+        "filter_paste_url": "",
+        "filter_paste_tag": "paste",
+        "filter_ground_label": "Ground",
+        "filter_ground_url": "",
+        "filter_ground_tag": "ground",
+        "filter_packets_label": "Single-Serve",
+        "filter_packets_url": "",
+        "filter_packets_tag": "single-serve"
       }
     },
     "section_format_comparison_emHDLW": {
@@ -56,20 +66,23 @@
         "paste_feature_3": "Full-fat (58% cacao butter)",
         "paste_feature_4": "Richest, most authentic experience",
         "paste_best_for": "Best for: Traditional ceremonies, purists",
+        "paste_url": "",
         "powder_title": "GROUND CACAO (Powder Form)",
         "powder_feature_1": "Convenient daily use",
         "powder_feature_2": "Mixes easily with hot water",
         "powder_feature_3": "Full-fat (same 58% as paste!)",
         "powder_feature_4": "Same benefits, easier prep",
         "powder_best_for": "Best for: Daily ritual, smoothies, busy mornings",
+        "powder_url": "",
         "packets_title": "SINGLE-SERVE PACKETS (1oz)",
         "packets_feature_1": "Pre-measured portions",
         "packets_feature_2": "Perfect for travel or gifts",
         "packets_feature_3": "No measuring needed",
         "packets_feature_4": "Available in 5, 10, 15, or 20 packs",
         "packets_best_for": "Best for: Beginners, gift-giving, on-the-go",
+        "packets_url": "",
         "show_note": true,
-        "note_text": "Why it works: Directly addresses the #1 confusion point and emphasizes that ground cacao is still full-fat (not defatted powder)."
+        "note_text": "Ground Cacao & Cacao Paste (Full-Fat)\nCeremonial cacao has traditionally been prepared as cacao paste—whole beans ground with their natural cacao butter intact. At Pacha Mana, we honor this tradition by never defatting our cacao, preserving the full character, richness, and quality that ceremonial cacao is meant to offer."
       }
     }
   },
