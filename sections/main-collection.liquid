@@ -81,6 +81,43 @@
 		</div>
 						</div>
 				</div>
+
+				{%- comment -%} Format Filter Bar {%- endcomment -%}
+				{%- if section.settings.show_format_filters -%}
+				<div class="collection-format-filters" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:20px 0 10px;">
+					<a href="{{ collection.url }}" class="format-filter-btn{% unless current_tags.size > 0 %} active{% endunless %}">All</a>
+					{%- if section.settings.filter_paste_url != blank -%}
+						<a href="{{ section.settings.filter_paste_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_paste_tag %} active{% endif %}">{{ section.settings.filter_paste_label | default: "Paste" }}</a>
+					{%- endif -%}
+					{%- if section.settings.filter_ground_url != blank -%}
+						<a href="{{ section.settings.filter_ground_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_ground_tag %} active{% endif %}">{{ section.settings.filter_ground_label | default: "Ground" }}</a>
+					{%- endif -%}
+					{%- if section.settings.filter_packets_url != blank -%}
+						<a href="{{ section.settings.filter_packets_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_packets_tag %} active{% endif %}">{{ section.settings.filter_packets_label | default: "Single-Serve" }}</a>
+					{%- endif -%}
+				</div>
+				<style>
+					.format-filter-btn {
+						display: inline-block;
+						padding: 10px 24px;
+						border: 2px solid #E2AB43;
+						border-radius: 100px;
+						color: #5C402F;
+						text-decoration: none;
+						font-weight: 600;
+						font-size: 0.9rem;
+						text-transform: uppercase;
+						letter-spacing: 0.05em;
+						transition: background 0.2s, color 0.2s;
+					}
+					.format-filter-btn:hover,
+					.format-filter-btn.active {
+						background: #E2AB43;
+						color: #fff;
+					}
+				</style>
+				{%- endif -%}
+
 				<div class="woocommerce elementor-element elementor-element-4981104 elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="4981104" data-element_type="widget" data-settings="{&quot;_skin&quot;:&quot;product&quot;,&quot;template_id&quot;:292,&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;2&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.product">
 				<div class="elementor-widget-container">
 							<div class="elementor-loop-container elementor-grid" role="list">
@@ -386,6 +423,68 @@
         }
       ],
       "default": "in"
+    }
+,
+    {
+      "type": "header",
+      "content": "Format Filter Bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_format_filters",
+      "label": "Show Format Filter Buttons",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "filter_paste_label",
+      "label": "Paste Button Label",
+      "default": "Paste"
+    },
+    {
+      "type": "url",
+      "id": "filter_paste_url",
+      "label": "Paste Filter URL"
+    },
+    {
+      "type": "text",
+      "id": "filter_paste_tag",
+      "label": "Paste Tag",
+      "default": "paste"
+    },
+    {
+      "type": "text",
+      "id": "filter_ground_label",
+      "label": "Ground Button Label",
+      "default": "Ground"
+    },
+    {
+      "type": "url",
+      "id": "filter_ground_url",
+      "label": "Ground Filter URL"
+    },
+    {
+      "type": "text",
+      "id": "filter_ground_tag",
+      "label": "Ground Tag",
+      "default": "ground"
+    },
+    {
+      "type": "text",
+      "id": "filter_packets_label",
+      "label": "Single-Serve Button Label",
+      "default": "Single-Serve"
+    },
+    {
+      "type": "url",
+      "id": "filter_packets_url",
+      "label": "Single-Serve Filter URL"
+    },
+    {
+      "type": "text",
+      "id": "filter_packets_tag",
+      "label": "Single-Serve Tag",
+      "default": "single-serve"
     }
   ],
   "blocks": [

@@ -63,6 +63,22 @@
         </div>
       </div>
       
+      {%- comment -%} Loyalty Rewards Section {%- endcomment -%}
+      <div class="rewards-section elementor-element e-flex e-con-boxed e-con e-child" style="background: linear-gradient(135deg, #5C402F 0%, #3a2920 100%); border-radius: 8px; padding: 30px; margin-bottom: 30px; color: #fff; text-align: center;">
+        <div class="e-con-inner" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+          <h2 style="font-family: 'OAXACA', sans-serif; color: #E2AB43; margin: 0; font-size: 1.6rem; letter-spacing: 0.05em;">LOYALTY REWARDS</h2>
+          <p style="color: #f5e6c8; margin: 0; font-size: 1rem; max-width: 480px;">Earn points with every purchase, referral, and review. Redeem for store credit.</p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; font-size: 0.9rem; color: #f5e6c8;">
+            <li>⭐ 2 points per $1 spent</li>
+            <li>🎁 +300 pts for a review</li>
+            <li>👥 20% referral bonus</li>
+          </ul>
+          <a href="/pages/earn-rewards" style="display: inline-block; background: #E2AB43; color: #fff; font-weight: 700; text-decoration: none; padding: 12px 32px; border-radius: 6px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px;">
+            View My Rewards
+          </a>
+        </div>
+      </div>
+
       {%- comment -%} Recent Orders {%- endcomment -%}
       {%- if customer.orders.size > 0 -%}
         <div class="orders-section elementor-element elementor-element-account-orders e-flex e-con-boxed e-con e-child" data-id="account-orders" data-element_type="container">

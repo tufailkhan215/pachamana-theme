@@ -20,6 +20,9 @@
             <li><strong>{{ section.settings.paste_best_for | default: "Best for: Traditional ceremonies, purists" }}</strong></li>
           </ul>
         </div>
+        {%- if section.settings.paste_url != blank -%}
+          <a href="{{ section.settings.paste_url }}" class="format-comparison-btn">Shop Paste</a>
+        {%- endif -%}
       </div>
 
       <div class="format-comparison-item format-comparison-featured">
@@ -35,6 +38,9 @@
             <li><strong>{{ section.settings.powder_best_for | default: "Best for: Daily ritual, smoothies, busy mornings" }}</strong></li>
           </ul>
         </div>
+        {%- if section.settings.powder_url != blank -%}
+          <a href="{{ section.settings.powder_url }}" class="format-comparison-btn">Shop Ground</a>
+        {%- endif -%}
       </div>
 
       <div class="format-comparison-item">
@@ -50,6 +56,9 @@
             <li><strong>{{ section.settings.packets_best_for | default: "Best for: Beginners, gift-giving, on-the-go" }}</strong></li>
           </ul>
         </div>
+        {%- if section.settings.packets_url != blank -%}
+          <a href="{{ section.settings.packets_url }}" class="format-comparison-btn">Shop Packets</a>
+        {%- endif -%}
       </div>
     </div>
 
@@ -191,6 +200,27 @@
     font-style: italic;
   }
 
+  .format-comparison-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #E2AB43;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.2s ease;
+  }
+
+  .format-comparison-btn:hover {
+    background: #5C402F;
+    color: #fff;
+  }
+
   @media (max-width: 1024px) {
     .format-comparison-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -289,6 +319,12 @@
       "default": "Best for: Traditional ceremonies, purists"
     },
     {
+      "type": "url",
+      "id": "paste_url",
+      "label": "Paste Product/Collection URL",
+      "info": "Link the 'Shop Paste' button to a product or collection page"
+    },
+    {
       "type": "header",
       "content": "Ground Cacao Settings"
     },
@@ -329,6 +365,12 @@
       "default": "Best for: Daily ritual, smoothies, busy mornings"
     },
     {
+      "type": "url",
+      "id": "powder_url",
+      "label": "Ground Cacao Product/Collection URL",
+      "info": "Link the 'Shop Ground' button to a product or collection page"
+    },
+    {
       "type": "header",
       "content": "Single-Serve Packets Settings"
     },
@@ -367,6 +409,12 @@
       "id": "packets_best_for",
       "label": "Packets Best For",
       "default": "Best for: Beginners, gift-giving, on-the-go"
+    },
+    {
+      "type": "url",
+      "id": "packets_url",
+      "label": "Packets Product/Collection URL",
+      "info": "Link the 'Shop Packets' button to a product or collection page"
     },
     {
       "type": "header",
