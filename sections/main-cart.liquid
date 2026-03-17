@@ -127,9 +127,7 @@
                     </td>
                     
                     <td class="product-remove">
-                      <button type="button" data-cart-item-remove="{{ item.key }}" class="remove" aria-label="{{ 'cart.general.remove' | t | default: 'Remove this item' }}" title="{{ 'cart.general.remove' | t | default: 'Remove this item' }}">
-                        ├ù
-                      </button>
+                      <button type="button" data-cart-item-remove="{{ item.key }}" class="remove" aria-label="{{ 'cart.general.remove' | t | default: 'Remove this item' }}" title="{{ 'cart.general.remove' | t | default: 'Remove this item' }}">X</button>
                     </td>
                   </tr>
                 {%- endfor -%}
@@ -785,6 +783,7 @@
     padding: 7px !important;
     border-bottom: none;
    background-color: transparent !important;
+   width: 100% !important;
   }
 
   .woocommerce-cart-form__contents tbody td:last-child {
