@@ -890,14 +890,18 @@
 	</div>
 </div>
  <script>
-  window.addEventListener('load', function() {
-    // Check for both possible Yuko initialization functions
-    if (window.Yuko && typeof window.Yuko.initBadge === 'function') {
-      window.Yuko.initBadge();
-    } else if (window.Yuko && typeof window.Yuko.init === 'function') {
-      window.Yuko.init();
+ (function() {
+    function initYuko() {
+      if (window.Yuko && typeof window.Yuko.init === 'function') {
+        window.Yuko.init();
+      } else if (window.YukoReviews && typeof window.YukoReviews.init === 'function') {
+        window.YukoReviews.init();
+      }
     }
-  });
+    // Run immediately and again after 2 seconds
+    initYuko();
+    setTimeout(initYuko, 2000);
+  })();
 </script>
 <style>
   .product-reviews-container {
