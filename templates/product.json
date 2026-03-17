@@ -105,14 +105,12 @@
       "blocks": {
         "yuko_loyalty_reviews_reviews_rating_widget_FdHK7U": {
           "type": "shopify://apps/yuko-loyalty-reviews/blocks/reviews-rating-widget/5cda428c-b39d-45e5-80d9-bad790f2bb50",
-          "disabled": true,
           "settings": {}
         }
       },
       "block_order": [
         "yuko_loyalty_reviews_reviews_rating_widget_FdHK7U"
       ],
-      "disabled": true,
       "settings": {}
     }
   },
