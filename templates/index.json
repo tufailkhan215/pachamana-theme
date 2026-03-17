@@ -45,16 +45,10 @@
             "text": "Ceremonial Grade"
           }
         },
-        "rotating_text_Agzyax": {
-          "type": "rotating_text",
-          "settings": {
-            "text": "Heirloom Genetics"
-          }
-        },
         "rotating_text_qwwmCp": {
           "type": "rotating_text",
           "settings": {
-            "text": "Direct Trade from Family Farms"
+            "text": "Direct Traded from Family Farms"
           }
         },
         "rotating_text_tz9peU": {
@@ -74,15 +68,21 @@
           "settings": {
             "text": "GROWN IN PERU"
           }
+        },
+        "rotating_text_Agzyax": {
+          "type": "rotating_text",
+          "settings": {
+            "text": "Ancient Genetics"
+          }
         }
       },
       "block_order": [
         "rotating_text_YBHtiD",
-        "rotating_text_Agzyax",
         "rotating_text_qwwmCp",
         "rotating_text_tz9peU",
         "rotating_text_qiQKHW",
-        "rotating_text_AkiJTc"
+        "rotating_text_AkiJTc",
+        "rotating_text_Agzyax"
       ],
       "name": "Animated Title",
       "settings": {
@@ -131,8 +131,8 @@
         "feature_2": "",
         "feature_3": "",
         "variants_text": "",
-        "button_text": "Shop Single-Serve Packets",
-        "button_link": "shopify://products/single-serving-1oz-packets",
+        "button_text": "Shop Ceremonial Chuncho Cacao",
+        "button_link": "shopify://products/ceremonial-cacao-paste",
         "button_text_size": 16,
         "button_padding_vertical": 14,
         "button_padding_horizontal": 32,
@@ -395,7 +395,7 @@
         "feature_3": "<strong>Perfect for sharing</strong>",
         "variants_text": "<strong>Choose from Pure, Maple Sweetened, Mushroom Vitality, Rose Vanilla, or Golden Milk</strong>",
         "button_text": "Shop Single-Serve Packets",
-        "button_link": "shopify://products/single-serving-1oz-packets",
+        "button_link": "",
         "button_text_size": 16,
         "button_padding_vertical": 14,
         "button_padding_horizontal": 32,
