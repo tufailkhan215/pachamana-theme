@@ -31,7 +31,7 @@
             "type": "social_icon",
             "settings": {
               "icon": "account",
-              "url": "shopify://pages/my-account"
+              "url": "/account/login"
             }
           },
           "social_icon_cpRHMV": {

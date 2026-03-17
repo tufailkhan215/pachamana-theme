@@ -83,10 +83,6 @@
         "note_text": "Why it works: Ground cacao isn’t stripped or processed into a lean powder. It still contains all of its natural cocoa butter, making it fully full fat."
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {}
-    },
     "177266672852689cf3": {
       "type": "apps",
       "blocks": {
@@ -98,6 +94,10 @@
       "block_order": [
         "yuko_loyalty_reviews_reviews_product_widget_9L4ejX"
       ],
+      "settings": {}
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
       "settings": {}
     },
     "17726667575ffd5e2e": {
@@ -116,9 +116,9 @@
   },
   "order": [
     "main",
+    "177266672852689cf3",
     "format-comparison",
     "product-recommendations",
-    "177266672852689cf3",
     "17726667575ffd5e2e"
   ]
 }
