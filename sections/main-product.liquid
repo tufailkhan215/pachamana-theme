@@ -893,17 +893,16 @@
 	</div>
 </div>
  <script>
- (function() {
-    function initYuko() {
+  (function() {
+    var checkCount = 0;
+    var yukoInterval = setInterval(function() {
+      checkCount++;
       if (window.Yuko && typeof window.Yuko.init === 'function') {
         window.Yuko.init();
-      } else if (window.YukoReviews && typeof window.YukoReviews.init === 'function') {
-        window.YukoReviews.init();
+        clearInterval(yukoInterval);
       }
-    }
-    // Run immediately and again after 2 seconds
-    initYuko();
-    setTimeout(initYuko, 2000);
+      if (checkCount > 5) clearInterval(yukoInterval); // Stop after 5 tries
+    }, 1000);
   })();
 </script>
 <style>
