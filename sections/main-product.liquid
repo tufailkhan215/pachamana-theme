@@ -333,29 +333,22 @@
 				{%- if section.settings.show_at_a_glance -%}
 					{%- liquid
 						assign at_a_glance_heading = section.settings.at_a_glance_heading | default: 'AT A GLANCE'
-						assign at_a_glance_text = product.metafields.custom.at_a_glance | default: product.metafields.my_fields.at_a_glance
+						assign at_a_glance_mf = product.metafields.custom.at_a_glance | default: product.metafields.my_fields.at_a_glance
 					-%}
-					{%- if at_a_glance_text != blank -%}
-						{%- assign at_a_glance_lines = at_a_glance_text | split: '\n' -%}
-					{%- else -%}
-						{%- assign at_a_glance_lines = '' | split: '\n' -%}
-						{%- assign at_a_glance_lines = at_a_glance_lines
-							| push: 'Weight: 8 oz (227g)'
-							| push: 'Makes: ~11 cups (using 22g per serving)'
-							| push: 'Price per cup: ~$2.45'
-							| push: 'Best for: Morning ritual'
-						-%}
-					{%- endif -%}
 					<div class="product-at-a-glance" style="background: rgba(226,171,67,0.1); border: 1px solid #E2AB43; border-radius: 8px; padding: 16px 20px; margin: 16px 0;">
 						<p style="font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; color: #5C402F; margin: 0 0 10px;">{{ at_a_glance_heading }}</p>
-						<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px;">
-							{%- for line in at_a_glance_lines -%}
-								{%- assign trimmed = line | strip -%}
-								{%- if trimmed != blank -%}
-									<li style="font-size: 0.875rem; color: #5C402F;">{{ trimmed }}</li>
-								{%- endif -%}
-							{%- endfor -%}
-						</ul>
+						<div style="font-size: 0.875rem; color: #5C402F;">
+							{%- if at_a_glance_mf != blank -%}
+								{{ at_a_glance_mf | metafield_tag }}
+							{%- else -%}
+								<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px;">
+									<li><strong>Weight:</strong> 8 oz (227g)</li>
+									<li><strong>Makes:</strong> ~11 cups (using 22g per serving)</li>
+									<li><strong>Price per cup:</strong> ~$2.45</li>
+									<li><strong>Best for:</strong> Morning ritual</li>
+								</ul>
+							{%- endif -%}
+						</div>
 					</div>
 				{%- endif -%}
 
@@ -1019,7 +1012,7 @@
       "id": "show_at_a_glance",
       "label": "Show 'At a Glance' Summary",
       "default": true,
-      "info": "Displays a short summary box, driven by the product metafield custom.at_a_glance (multi-line text)"
+      "info": "Displays a short summary box, driven by the product metafield custom.at_a_glance (rich text)"
     },
     {
       "type": "text",
