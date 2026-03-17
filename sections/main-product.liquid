@@ -891,17 +891,12 @@
 </div>
  <script>
   window.addEventListener('load', function() {
-    // Attempt to trigger Yuko's initialization 
-    if (window.Yuko && typeof window.Yuko.init === 'function') {
+    // Check for both possible Yuko initialization functions
+    if (window.Yuko && typeof window.Yuko.initBadge === 'function') {
+      window.Yuko.initBadge();
+    } else if (window.Yuko && typeof window.Yuko.init === 'function') {
       window.Yuko.init();
     }
-    // Check if the div is still empty and force a retry
-    setTimeout(function() {
-      const badge = document.querySelector('.yuko-star-rating-widget');
-      if (badge && badge.innerHTML === '' && window.Yuko) {
-        window.Yuko.init();
-      }
-    }, 1500);
   });
 </script>
 <style>
