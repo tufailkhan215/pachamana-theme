@@ -887,12 +887,19 @@
 		</div>
 	</div>
 </div>
- <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    if (window.Yuko && typeof window.Yuko.initWidgets === 'function') {
-      window.Yuko.initWidgets();
-    }
-  });
+<script>
+  (function() {
+    const initYuko = () => {
+      if (window.Yuko && typeof window.Yuko.init === 'function') {
+        window.Yuko.init();
+      } else if (window.YukoReviews && typeof window.YukoReviews.init === 'function') {
+        window.YukoReviews.init();
+      }
+    };
+    // Try to init immediately and again after 2 seconds to be safe
+    initYuko();
+    setTimeout(initYuko, 2000);
+  })();
 </script>
 <style>
   .product-reviews-container {
