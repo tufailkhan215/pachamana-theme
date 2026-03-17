@@ -49,6 +49,8 @@
         "related_posts_heading": "Related",
         "related_posts_blog": "news",
         "related_posts_count": 3,
+        "show_at_a_glance": true,
+        "at_a_glance_heading": "",
         "show_reviews": true
       }
     },
@@ -62,18 +64,21 @@
         "paste_feature_3": "Full-fat (58% cacao butter)",
         "paste_feature_4": "Richest, most authentic experience",
         "paste_best_for": "Best for: Traditional ceremonies, purists",
+        "paste_url": "",
         "powder_title": "GROUND CACAO (Powder Form)",
         "powder_feature_1": "Convenient daily use",
         "powder_feature_2": "Mixes easily with hot water",
         "powder_feature_3": "Full-fat (same 58% as paste!)",
         "powder_feature_4": "Same benefits, easier prep",
         "powder_best_for": "Best for: Daily ritual, smoothies, busy mornings",
+        "powder_url": "",
         "packets_title": "SINGLE-SERVE PACKETS (1oz)",
         "packets_feature_1": "Pre-measured portions",
         "packets_feature_2": "Perfect for travel or gifts",
         "packets_feature_3": "No measuring needed",
         "packets_feature_4": "Available in 5, 10, 15, or 20 packs",
         "packets_best_for": "Best for: Beginners, gift-giving, on-the-go",
+        "packets_url": "",
         "show_note": true,
         "note_text": "Why it works: Ground cacao isn’t stripped or processed into a lean powder. It still contains all of its natural cocoa butter, making it fully full fat."
       }
