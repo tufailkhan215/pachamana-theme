@@ -2804,5 +2804,12 @@
   {%- if settings.newsletter_popup_enabled -%}
     {%- section 'section-newsletter-popup' -%}
   {%- endif -%}
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.Yuko && typeof window.Yuko.initWidgets === 'function') {
+      window.Yuko.initWidgets();
+    }
+  });
+</script>
 </body>
 </html>
