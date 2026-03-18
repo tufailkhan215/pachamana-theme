@@ -213,9 +213,12 @@
 					<h1 class="product_title entry-title elementor-heading-title elementor-size-default">{{ product.title | escape }}</h1>				</div>
 				</div>
 				 <script>
-		  window.addEventListener('load', function() {
-    if (window.Yuko && typeof window.Yuko.init === 'function') {
-      window.Yuko.init(); 
+	window.addEventListener('load', function() {
+    // Check for both possible Yuko initialization functions
+    if (window.Yuko && typeof window.Yuko.initBadge === 'function') {
+      window.Yuko.initBadge();
+    } else if (window.Yuko && typeof window.Yuko.init === 'function') {
+      window.Yuko.init();
     }
   });
 					</script>
