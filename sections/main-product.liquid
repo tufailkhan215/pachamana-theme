@@ -213,33 +213,21 @@
 					<h1 class="product_title entry-title elementor-heading-title elementor-size-default">{{ product.title | escape }}</h1>				</div>
 				</div>
 			
-				<div class="yuko-rating-widget" data-id="{{ product.id }}" data-yuko-widget="rating"></div>
+				<div class="yuko-rating-widget" id="yuko-manual-stars" data-id="{{ product.id }}" data-yuko-widget="rating"></div>
 				<script>
   (function() {
-    const targetDiv = document.getElementById('yuko-custom-rating');
-    
-    const loadYukoData = () => {
-      // Try multiple known Yuko initialization commands
+    const refreshYuko = () => {
+      // Check if the Yuko library is loaded
       if (window.Yuko && typeof window.Yuko.init === 'function') {
-        window.Yuko.init();
-      } else if (window.Yuko && typeof window.Yuko.rating_widget === 'function') {
-        window.Yuko.rating_widget();
+        window.Yuko.init(); 
+      } else if (typeof window.initYukoWidgets === 'function') {
+        window.initYukoWidgets();
       }
     };
 
-    // Use Observer to trigger when the div is ready
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          loadYukoData();
-          // Optional: Retry after 1 second if still showing 0
-          setTimeout(loadYukoData, 1500);
-          observer.unobserve(targetDiv);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    if (targetDiv) observer.observe(targetDiv);
+    // Run once on load, and once after a short delay to catch late data
+    refreshYuko();
+    setTimeout(refreshYuko, 1500);
   })();
 </script>
 				<div class="elementor-element elementor-element-d8aec73 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d8aec73" data-element_type="widget" data-widget_type="divider.default">
