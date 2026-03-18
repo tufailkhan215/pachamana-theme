@@ -115,6 +115,21 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {}
+    },
+    "17738659696917f371": {
+      "type": "_blocks",
+      "blocks": {
+        "yuko_loyalty_reviews_reviews_rating_widget_mYqEa6": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/reviews-rating-widget/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "yuko_loyalty_reviews_reviews_rating_widget_mYqEa6"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
     }
   },
   "order": [
@@ -122,6 +137,7 @@
     "main",
     "177266672852689cf3",
     "format-comparison",
-    "product-recommendations"
+    "product-recommendations",
+    "17738659696917f371"
   ]
 }
