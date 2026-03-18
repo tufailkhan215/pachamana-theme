@@ -212,26 +212,6 @@
 				<div class="elementor-widget-container">
 					<h1 class="product_title entry-title elementor-heading-title elementor-size-default">{{ product.title | escape }}</h1>				</div>
 				</div>
-			
-				<div class="yuko-rating-widget" id="yuko-manual-stars" data-id="{{ product.id }}" data-yuko-widget="rating"></div>
-				<script>
-  (function() {
-    const initYuko = () => {
-      // Safely attempt initialization if the object exists
-      window.Yuko?.init?.();
-
-      // Fallback if the app uses a different internal function
-      if (typeof window.initYukoWidgets === 'function') {
-        window.initYukoWidgets();
-      }
-    };
-
-    // Run immediately, then again on window load to ensure data sync
-    initYuko();
-    window.addEventListener('load', initYuko);
-    setTimeout(initYuko, 2000); // Final safety delay
-  })();
-</script>
 				<div class="elementor-element elementor-element-d8aec73 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d8aec73" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
 							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 	'/%3E%3C/svg%3E&quot;);">
