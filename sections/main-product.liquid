@@ -515,7 +515,7 @@
 				</div>
 				{% for metafield in product.metafields %}
   {% if metafield[0] contains 'app--' %}
-    <p>App ID: {{ metafield[0] }}</p>
+    <p>App ID: {{ metafield[0] }}</p> 
   {% endif %}
 {% endfor %}
 				{% assign r = product.metafields['app--195190554625'].yuko_review_info.value %}
