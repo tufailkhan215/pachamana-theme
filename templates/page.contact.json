@@ -34,9 +34,58 @@
         "ken_burns": true,
         "ken_burns_direction": "in"
       }
+    },
+    "cs_contact_form_DCegfG": {
+      "type": "cs-contact-form",
+      "name": "Contact Form",
+      "settings": {
+        "logo_height": 68,
+        "heading": "Contact Us",
+        "subtext": "Fill out the form below, and we will be in touch shortly or,",
+        "contact_email": "support@pachamana.com",
+        "button_label": "Send Message",
+        "color_page_bg": "#7A5230"
+      }
+    },
+    "section_faq_HKxXML": {
+      "type": "section-faq",
+      "blocks": {
+        "faq_item_QUTwrH": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is a serving size?",
+            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
+          }
+        },
+        "faq_item_YTVFmJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is your Cacao Organic?",
+            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides. The beauty of working with native genetics.</p>"
+          }
+        },
+        "faq_item_xCAgAV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is your cacao tested for heavy metals?",
+            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with an absence of all of them according to EU standards and compliant with FDA laws. We are happy to say we have incredible results and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_QUTwrH",
+        "faq_item_YTVFmJ",
+        "faq_item_xCAgAV"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "heading": "Frequently asked questions"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "cs_contact_form_DCegfG",
+    "section_faq_HKxXML"
   ]
 }
