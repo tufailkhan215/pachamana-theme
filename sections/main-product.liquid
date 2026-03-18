@@ -890,17 +890,7 @@
 	</div>
 </div>
  <script>
-  (function() {
-    var checkCount = 0;
-    var yukoInterval = setInterval(function() {
-      checkCount++;
-      if (window.Yuko && typeof window.Yuko.init === 'function') {
-        window.Yuko.init();
-        clearInterval(yukoInterval);
-      }
-      if (checkCount > 5) clearInterval(yukoInterval); // Stop after 5 tries
-    }, 1000);
-  })();
+
 </script>
 <style>
   .product-reviews-container {
