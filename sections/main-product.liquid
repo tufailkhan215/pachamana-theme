@@ -890,7 +890,13 @@
 	</div>
 </div>
  <script>
-
+window.addEventListener('load', function() {
+    if (window.Yuko && typeof window.Yuko.initBadge === 'function') {
+      window.Yuko.initBadge();
+    } else if (window.Yuko && typeof window.Yuko.init === 'function') {
+      window.Yuko.init();
+    }
+  });
 </script>
 <style>
   .product-reviews-container {
