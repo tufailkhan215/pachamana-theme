@@ -218,13 +218,8 @@
   (function() {
     const triggerYuko = () => {
       // Calls the primary init function for all Yuko widgets
-      if (window.Yuko && typeof window.Yuko.init === 'function') {
-        window.Yuko.init();
-      } 
-      // Alternative call used in some versions
-      else if (window.yukoInit) {
-        window.yukoInit();
-      }
+      Yuko.init();
+      
     };
 
     // Try immediately
