@@ -215,19 +215,19 @@
 			
 				<div class="yuko-rating-widget" id="yuko-manual-stars" data-id="{{ product.id }}" data-yuko-widget="rating"></div>
 				<script>
-  (function() {
-    const refreshYuko = () => {
-      // Check if the Yuko library is loaded
+   (function() {
+    const initYuko = () => {
+      // Check for the specific Yuko initialization function
       if (window.Yuko && typeof window.Yuko.init === 'function') {
-        window.Yuko.init(); 
-      } else if (typeof window.initYukoWidgets === 'function') {
+        window.Yuko.init();
+      } else if (window.initYukoWidgets) {
         window.initYukoWidgets();
       }
     };
-
-    // Run once on load, and once after a short delay to catch late data
-    refreshYuko();
-    setTimeout(refreshYuko, 1500);
+    
+    // Run immediately and again after 2 seconds
+    initYuko();
+    setTimeout(initYuko, 2000);
   })();
 </script>
 				<div class="elementor-element elementor-element-d8aec73 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d8aec73" data-element_type="widget" data-widget_type="divider.default">
