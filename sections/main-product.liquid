@@ -215,13 +215,13 @@
 			
 				<div class="yuko-rating-widget" id="yuko-manual-stars" data-id="{{ product.id }}" data-yuko-widget="rating"></div>
 				<script>
-   (function($) {
+   (function() {
     const initYuko = () => {
       // Check for the specific Yuko initialization function
-      if ($.Yuko && typeof $.Yuko.init === 'function') {
+      if (window.Yuko && typeof window.Yuko.init === 'function') {
         window.Yuko.init();
-      } else if ($.initYukoWidgets) {
-        $.initYukoWidgets();
+      } else if (window.initYukoWidgets) {
+        window.initYukoWidgets();
       }
     };
     
