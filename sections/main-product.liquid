@@ -222,8 +222,8 @@
       // Try multiple known Yuko initialization commands
       if (window.Yuko && typeof window.Yuko.init === 'function') {
         window.Yuko.init();
-      } else if (window.Yuko && typeof window.Yuko.YukoReviews === 'function') {
-        window.Yuko.YukoReviews();
+      } else if (window.Yuko && typeof window.Yuko.rating_widget === 'function') {
+        window.Yuko.rating_widget();
       }
     };
 
