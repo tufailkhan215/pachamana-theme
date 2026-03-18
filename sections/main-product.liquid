@@ -513,7 +513,7 @@
 				<div class="elementor-widget-container">
 					<h2 class="elementor-heading-title elementor-size-default">ABOUT {{ product.title | escape }}</h2>				</div>
 				</div>
-				{% for metafield in product.metafields %}
+				{% for metafield in product.metafields %} {{ metafield[0] }}
   {% if metafield[0] contains 'app--' %}
     <p>App ID: {{ metafield[0] }}</p> 
   {% endif %}
