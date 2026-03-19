@@ -57,6 +57,16 @@
 					<h2 class="product_title entry-title elementor-heading-title elementor-size-default">
 						<a href="{{ product.url }}">{{ product.title | escape }}</a>
 					</h2>
+						{% assign yuko_product = product %}
+										{% if product.metafields.custom.product_slug_for_yuko_widgets != blank %}
+										{% assign yuko_product = all_products[product.metafields.custom.product_slug_for_yuko_widgets] %}
+										{% endif %}
+										{% render 'yuko-star-rating',
+										product: yuko_product,
+										rating_icon_color: "#FBBF24",
+										text_color: "#000000",
+										hide_text_only: false
+										%}	
 				</div>
 			</div>
 			<div class="elementor-element elementor-element-87a9ad1 elementor-widget elementor-widget-rating" data-id="87a9ad1" data-element_type="widget" data-widget_type="rating.default">
