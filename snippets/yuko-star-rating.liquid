@@ -1,0 +1,60 @@
+{% liquid 
+  assign product = product | default: passed_product
+  assign rating_icon_color = rating_icon_color | default: "#000000"
+  assign text_color = text_color | default: "#000000"
+  assign hide_text_block = hide_text_block | default: false
+  assign hide_text_only = hide_text_only | default: false
+
+  
+  if product == blank
+    break
+  endif
+
+  assign ns = 'app--195190554625'
+  assign info = product.metafields[ns].yuko_review_info.value | default: '{}'
+
+  assign review_count = info.total_reviews | default: 0 | plus: 0
+  assign average_rating_raw = info.average_rating | default: 0 | plus: 0 | round: 1
+
+  assign decimal = average_rating_raw | modulo: 1
+  if decimal >= 0.5
+    assign average_rating = average_rating_raw | ceil
+  else
+    assign average_rating = average_rating_raw | floor
+  endif
+%}
+
+{% if review_count > 0 and product %}
+<span class="r_rw_rating_widget_outer_container_wrapper" data-id="{{ product.id }}" style="font-size:1rem;">
+  <span class="r_rw_container_wrapper">
+    <span class="r_rw_direction_wrapper">
+      <!-- STAR ICONS -->
+      <span class="r_rw_rating_icons" style="gap:0.3rem; color:{{ rating_icon_color }} !important">
+        {% for index in (1..5) %}
+          {% if index <= average_rating %}
+            <i class="farp farp-star-sharp"></i>
+          {% else %}
+            <i class="farp farp-star-sharp-outline"></i>
+          {% endif %}
+        {% endfor %}
+      </span>
+      <!-- REVIEW TEXT -->
+      {% unless hide_text_block %}
+        <span
+          class="r_rw_rating_details"
+          data-average-rating="{{ average_rating_raw }}"
+          data-number-of-reviews="{{ review_count }}"
+        >
+          <span class="r_rw_preview_element__text" style="color:{{ text_color }}">
+            {% if hide_text_only %}
+              {{average_rating_raw }} <span class="r_rw_preview_element__text-info">/ {{ review_count }} reviews </span>
+            {% else %}
+              {{average_rating_raw}} based on {{ review_count }} reviews
+            {% endif %}
+          </span>
+        </span>
+      {% endunless %}
+    </span>
+  </span>
+</span>
+{% endif %}
