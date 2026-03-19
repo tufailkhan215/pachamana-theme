@@ -21,6 +21,16 @@
     
     <div class="product-card__info">
       <h3 class="product-card__title">{{ product.title | escape }}</h3>
+      		{% assign yuko_product = product %}
+										{% if product.metafields.custom.product_slug_for_yuko_widgets != blank %}
+										{% assign yuko_product = all_products[product.metafields.custom.product_slug_for_yuko_widgets] %}
+										{% endif %}
+										{% render 'yuko-star-rating',
+										product: yuko_product,
+										rating_icon_color: "#FBBF24",
+										text_color: "#000000",
+										hide_text_only: false
+										%}	
       
       <div class="product-card__price">
         {% render 'price', product: product %}
