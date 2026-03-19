@@ -75,7 +75,18 @@
 		<div class="elementor-element elementor-element-f4d3656 e-con-full e-flex e-con e-child" data-id="f4d3656" data-element_type="container">
 				<div class="elementor-element elementor-element-51e29bc elementor-hidden-desktop elementor-widget elementor-widget-woocommerce-product-title elementor-page-title elementor-widget-heading" data-id="51e29bc" data-element_type="widget" data-widget_type="woocommerce-product-title.default">
 				<div class="elementor-widget-container">
-					<h1 class="product_title entry-title elementor-heading-title elementor-size-default">{{ product.title | escape }}</h1>				</div>
+					<h1 class="product_title entry-title elementor-heading-title elementor-size-default">{{ product.title | escape }}</h1>	
+					{% assign yuko_product = product %}
+							{% if product.metafields.custom.product_slug_for_yuko_widgets != blank %}
+							{% assign yuko_product = all_products[product.metafields.custom.product_slug_for_yuko_widgets] %}
+							{% endif %}
+							{% render 'yuko-star-rating',
+							product: yuko_product,
+							rating_icon_color: "#FBBF24",
+							text_color: "#000000",
+							hide_text_only: false
+							%}
+				</div>
 				</div>
 				<div class="elementor-element elementor-element-9116316 elementor-hidden-desktop elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="9116316" data-element_type="widget" data-widget_type="divider.default">
 				<div class="elementor-widget-container">
