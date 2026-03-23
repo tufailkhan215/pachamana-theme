@@ -14,6 +14,15 @@
     margin: 0 !important;
     padding: 8px 4px 20px !important;
     scrollbar-width: none;
+    cursor: grab;
+  }
+  .section-photo-gallery .gallery-list .tp-row.post-inner-loop.pg-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+  }
+  .section-photo-gallery .gallery-list .tp-row.post-inner-loop.pg-dragging * {
+    pointer-events: none;
   }
   .section-photo-gallery .gallery-list .tp-row.post-inner-loop::-webkit-scrollbar {
     display: none;
@@ -52,14 +61,92 @@
       height: 220px !important;
     }
   }
+  /* Nav arrows */
+  .section-photo-gallery .pg-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .section-photo-gallery .pg-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(100, 70, 30, 0.4);
+    background: rgba(100, 70, 30, 0.1);
+    color: #5c3d1a;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .section-photo-gallery .pg-nav button:hover {
+    background: rgba(100, 70, 30, 0.25);
+    border-color: rgba(100, 70, 30, 0.6);
+  }
+  @media (max-width: 768px) {
+    .section-photo-gallery .pg-nav { display: none; }
+  }
 </style>
 <script>
-  /* Disable Isotope masonry on photo gallery — we use CSS carousel instead */
   document.addEventListener('DOMContentLoaded', function() {
+    /* Disable Isotope masonry on photo gallery — we use CSS carousel instead */
     var galleryEl = document.querySelector('.section-photo-gallery #pt-plus-gallery-list');
     if (galleryEl) {
       galleryEl.removeAttribute('data-enable-isotope');
       galleryEl.setAttribute('data-enable-isotope', '0');
+    }
+
+    /* Drag-to-scroll for mouse users on desktop */
+    var row = document.querySelector('.section-photo-gallery .tp-row.post-inner-loop');
+    if (!row) return;
+
+    var isDown = false, startX, scrollLeft;
+
+    row.addEventListener('mousedown', function(e) {
+      isDown = true;
+      row.classList.add('pg-dragging');
+      startX = e.pageX - row.offsetLeft;
+      scrollLeft = row.scrollLeft;
+      e.preventDefault();
+    });
+    row.addEventListener('mouseleave', function() {
+      isDown = false;
+      row.classList.remove('pg-dragging');
+    });
+    row.addEventListener('mouseup', function() {
+      isDown = false;
+      row.classList.remove('pg-dragging');
+    });
+    row.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
+      var x = e.pageX - row.offsetLeft;
+      row.scrollLeft = scrollLeft - (x - startX);
+    });
+
+    /* Mouse-wheel → horizontal scroll mapping */
+    row.addEventListener('wheel', function(e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        row.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+
+    /* Nav arrows */
+    var nav = document.querySelector('.section-photo-gallery .pg-nav');
+    if (nav) {
+      var prevBtn = nav.querySelector('.pg-prev');
+      var nextBtn = nav.querySelector('.pg-next');
+      var scrollAmt = 340;
+      if (prevBtn) prevBtn.addEventListener('click', function() {
+        row.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+      });
+      if (nextBtn) nextBtn.addEventListener('click', function() {
+        row.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+      });
     }
   });
 </script>
@@ -105,6 +192,10 @@
 								{%- endif -%}
 							{%- endfor -%}
 	</div>
+					</div>
+					<div class="pg-nav">
+						<button class="pg-prev" aria-label="Previous">&#8249;</button>
+						<button class="pg-next" aria-label="Next">&#8250;</button>
 					</div>				</div>
 				</div>
 				<div class="elementor-element elementor-element-afceb1c elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="afceb1c" data-element_type="widget" data-widget_type="divider.default">
