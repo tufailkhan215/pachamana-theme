@@ -46,8 +46,8 @@
             "hero_anonymous_icon": "shopify://shop_images/pachamana_banner.png",
             "hero_anonymous_image_brightness": 100,
             "hero_anonymous_card_background_color": "#FFE6BE",
-            "hero_anonymous_card_heading": "#000000",
-            "hero_anonymous_card_text": "#000000",
+            "hero_anonymous_card_heading": "#5C402F",
+            "hero_anonymous_card_text": "#5C402F",
             "hero_anonymous_card_position": "right",
             "hero_anonymous_card_vertical_position": "center",
             "hero_anonymous_card_text_alignment": "center",
@@ -73,17 +73,20 @@
           "type": "shopify://apps/yuko-loyalty-reviews/blocks/loyalty-page-how-it-works/5cda428c-b39d-45e5-80d9-bad790f2bb50",
           "settings": {
             "how_it_works_background_color": "#FFE6BE",
-            "how_it_works_heading_color": "#000000",
-            "how_it_works_text_color": "#000000",
-            "steps_type": "numbers",
+            "how_it_works_heading_color": "#5c402f",
+            "how_it_works_text_color": "#5c402f",
+            "steps_type": "images",
+            "step_1_image": "shopify://shop_images/image_259b3e48-dfe2-4767-b9e0-a899d5edc650.png",
+            "step_2_image": "shopify://shop_images/image_1.png",
+            "step_3_image": "shopify://shop_images/image_2.png",
             "number_color": "#000000",
-            "step_heading_color": "#000000",
-            "step_text_color": "#000000",
+            "step_heading_color": "#5c402f",
+            "step_text_color": "#5c402f",
             "number_size": 24,
             "step_heading_size": 20,
             "step_text_size": 16,
             "step_image_height": 50,
-            "custom_css": ""
+            "custom_css": ".yuko-step h3,.yuko-step p{\nmargin:0px;\n}\n.yuko-how-it-works-title{\nfont-size: 40px;\n}\n\n.yuko-step-description{\nfont-size: 18px;\n}"
           }
         },
         "yuko_loyalty_reviews_referral_advocate_page_JyXBxH": {
