@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    console.log("calling 222")
     const blocks = Array.from(container_list).map((container) => {
 
         const messageEl = container.querySelector(
