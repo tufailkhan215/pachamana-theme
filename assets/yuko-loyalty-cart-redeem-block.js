@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("calling 222")
     if (window?.Shopify?.yukoApp?.features?.loyalty === false) {
         return;
     }
@@ -9,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
     const container_list = document.querySelectorAll('[data-yuko-cart-redeem-block]');
+    console.log(container_list)
     if (!container_list?.length) {
         return;
     }
 
-    console.log("calling 222")
     const blocks = Array.from(container_list).map((container) => {
 
         const messageEl = container.querySelector(
