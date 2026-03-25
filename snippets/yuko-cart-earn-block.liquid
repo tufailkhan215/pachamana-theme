@@ -1,0 +1,13 @@
+<div class="yuko-cart-earn-block" style="display: none;"></div>
+
+{% unless content_for_header contains 'yuko-loyalty-cart-earn-block.js' %}
+  <link
+    rel="stylesheet"
+    href="{{ 'yuko-loyalty-cart-earn-block.css' | asset_url }}"
+  >
+
+  <script
+    src="{{ 'yuko-loyalty-cart-earn-block.js' | asset_url }}"
+    defer
+  ></script>
+{% endunless %}
