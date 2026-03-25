@@ -45,7 +45,7 @@
             "hero_anonymous_background_color": "#f8f8f8",
             "hero_anonymous_icon": "shopify://shop_images/pachamana_banner.png",
             "hero_anonymous_image_brightness": 100,
-            "hero_anonymous_card_background_color": "#F5F5F5",
+            "hero_anonymous_card_background_color": "#FFE6BE",
             "hero_anonymous_card_heading": "#000000",
             "hero_anonymous_card_text": "#000000",
             "hero_anonymous_card_position": "right",
