@@ -1,10 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-cart",
       "settings": {}
+    },
+    "1774418079a121dc72": {
+      "type": "_blocks",
+      "blocks": {
+        "yuko_loyalty_reviews_cart_earn_message_Mp4ppe": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/cart-earn-message/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {}
+        },
+        "yuko_loyalty_reviews_cart_redeem_message_Hr8br7": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/cart-redeem-message/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "yuko_loyalty_reviews_cart_earn_message_Mp4ppe",
+        "yuko_loyalty_reviews_cart_redeem_message_Hr8br7"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "1774418079a121dc72"
+  ]
 }
-
