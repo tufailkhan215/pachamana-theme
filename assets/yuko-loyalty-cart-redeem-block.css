@@ -1,0 +1,47 @@
+.yuko-cart-redeem-block {
+  display: none;
+}
+
+.yuko-rewards-button:hover {
+  opacity: 0.8;
+}
+
+.yuko-button {
+  white-space: nowrap;
+}
+
+.yuko-cart-redeem-block__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+[data-yuko-cart-redeem-icon] {
+  width: 20px;
+  height: 20px;
+}
+
+.yuko-redeem-message-icon {
+  width: 20px;
+  height: 20px;
+}
+.yuko-reward-modal-vip-icon {
+  width: 40px;
+  height: 40px;
+}
+.yuko-reward-modal-illustrated-block img {
+  width: 40px;
+  height: 40px;
+}
+
+.yuko-reward-modal-existing-reward-discount-icon {
+  width: 40px;
+  height: 40px;
+}
+.yuko-reward-modal-redeem-reward-discount-icon {
+  width: 40px;
+  height: 40px;
+}
+.yuko-reward-modal-vip-benefits-title {
+  font-size: 1rem;
+}
