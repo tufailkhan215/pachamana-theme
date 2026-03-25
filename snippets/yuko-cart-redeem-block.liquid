@@ -1,0 +1,34 @@
+<div
+  class="yuko-cart-redeem-block yuko-loyalty-cart-redeem-msg"
+>
+  <img
+    class="yuko-redeem-message-icon"
+    data-yuko-cart-redeem-icon
+    width="20"
+    height="20"
+    alt="Cart redeem message icon"
+  />
+
+  <span
+    class="yuko-cart-redeem-msg"
+    data-yuko-cart-redeem-message
+  ></span>
+
+  <button
+    type="button"
+    class="yuko-rewards-button yuko-button"
+    data-yuko-cart-redeem-action
+  ></button>
+</div>
+
+{% unless content_for_header contains 'yuko-loyalty-cart-redeem-block.js' %}
+  <link
+    rel="stylesheet"
+    href="{{ 'yuko-loyalty-cart-redeem-block.css' | asset_url }}"
+  >
+
+  <script
+    src="{{ 'yuko-loyalty-cart-redeem-block.js' | asset_url }}"
+    defer
+  ></script>
+{% endunless %}
