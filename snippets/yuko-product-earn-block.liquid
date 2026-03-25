@@ -1,0 +1,28 @@
+
+<div class="yuko-loyalty-product-content"></div>
+
+<script>
+  window.Shopify = window.Shopify || {};
+
+  window.Shopify.yukoProduct = {{ product | json }};
+  window.Shopify.yukoProduct.variant_id = {{ product.selected_or_first_available_variant.id | json }};
+
+  // Add collection IDs (avoid extra API call)
+  window.Shopify.yukoProduct.collection_ids = [
+    {% for collection in product.collections limit: 250 %}
+      {{ collection.id }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+</script>
+
+{% unless content_for_header contains 'yuko-loyalty-product-message.js' %}
+  <link
+    rel="stylesheet"
+    href="{{ 'yuko-loyalty-product-message.css' | asset_url }}"
+  >
+
+  <script
+    src="{{ 'yuko-loyalty-product-message.js' | asset_url }}"
+    defer
+  ></script>
+{% endunless %}
