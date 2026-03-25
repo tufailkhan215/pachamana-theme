@@ -13,7 +13,7 @@
     "contact_popup_enabled": true,
     "contact_popup_logo": "shopify://shop_images/PachaMana_Logos_CMYK_MarkOnly_White-416x261.png",
     "contact_popup_display_email": "support@pachamana.com",
-    "newsletter_popup_enabled": true,
+    "newsletter_popup_enabled": false,
     "newsletter_popup_logo": "shopify://shop_images/PachaMana_Logos_CMYK_MarkOnly_SunshineGold.png",
     "newsletter_popup_background": "shopify://shop_images/661a99c9a9aec810040bd940.jpg",
     "sections": {
@@ -88,11 +88,6 @@
         "disabled": false,
         "settings": {}
       },
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
       "10557767768680663964": {
         "type": "shopify://apps/recurpay-subscriptions-app/blocks/recurpay-widget/c600a513-dad8-4030-8697-de47c18881f2",
         "disabled": false,
@@ -106,6 +101,11 @@
       },
       "8049395639865136331": {
         "type": "shopify://apps/yuko-loyalty-reviews/blocks/reviews-yuko-embed-assets/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+        "disabled": false,
+        "settings": {}
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": true,
         "settings": {}
       }
