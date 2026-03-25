@@ -1,0 +1,175 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "slide_jE3d6e": {
+          "type": "slide",
+          "settings": {}
+        },
+        "slide_bVe7Ta": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-85-1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slide_jE3d6e",
+        "slide_bVe7Ta"
+      ],
+      "disabled": true,
+      "settings": {
+        "slide_duration": 5000,
+        "transition_duration": 500,
+        "loop": true,
+        "ken_burns": true,
+        "ken_burns_direction": "in"
+      }
+    },
+    "177430428325042baf": {
+      "type": "_blocks",
+      "blocks": {
+        "yuko_loyalty_reviews_loyalty_page_hero_banner_DEfLUT": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/loyalty-page-hero-banner/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {
+            "hero_anonymous_background_color": "#f8f8f8",
+            "hero_anonymous_icon": "shopify://shop_images/Untitled-design-7.png",
+            "hero_anonymous_image_brightness": 100,
+            "hero_anonymous_card_background_color": "#F5F5F5",
+            "hero_anonymous_card_heading": "#000000",
+            "hero_anonymous_card_text": "#000000",
+            "hero_anonymous_card_position": "center",
+            "hero_anonymous_card_vertical_position": "center",
+            "hero_anonymous_card_text_alignment": "center",
+            "hero_anonymous_card_spacing": 20,
+            "hero_button_alignment": "center",
+            "hero_primary_button_background_color": "#000000",
+            "hero_primary_button_text_color": "#ffffff",
+            "hero_secondary_button_background_color": "#ffffff",
+            "hero_secondary_button_text_color": "#000000",
+            "section_height": 500,
+            "section_padding": 40,
+            "heading_size": 32,
+            "text_size": 16,
+            "section_height_mobile": 300,
+            "section_padding_mobile": 20,
+            "heading_size_mobile": 24,
+            "text_size_mobile": 14,
+            "hero_anonymous_card_position_mobile": "below_hero_banner",
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "yuko_loyalty_reviews_loyalty_page_hero_banner_DEfLUT"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
+    "1774304300661ffd62": {
+      "type": "_blocks",
+      "blocks": {
+        "yuko_loyalty_reviews_loyalty_page_ways_to_earn_RGjiQ9": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/loyalty-page-ways-to-earn/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {
+            "ordering": "ordering_asc",
+            "ways_to_earn_background_color": "#ffffff",
+            "ways_to_earn_heading_color": "#000000",
+            "ways_to_earn_text_color": "#000000",
+            "campaign_card_background_color": "#ffffff",
+            "campaign_card_border_color": "#f0f0f0",
+            "campaign_card_spacing": 20,
+            "campaign_title_color": "#333333",
+            "campaign_title_size": 16,
+            "campaign_points_color": "#333333",
+            "campaign_points_size": 14,
+            "campaign_icon_color": "#333333",
+            "campaign_icon_size": 56,
+            "join_button_background_color": "#000000",
+            "join_button_text_color": "#ffffff",
+            "custom_css": ""
+          }
+        },
+        "yuko_loyalty_reviews_loyalty_page_ways_to_redeem_BPRwLH": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/loyalty-page-ways-to-redeem/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {
+            "ordering": "ordering_asc",
+            "ways_to_redeem_background_color": "#ffffff",
+            "ways_to_redeem_heading_color": "#000000",
+            "ways_to_redeem_text_color": "#000000",
+            "reward_card_background_color": "#ffffff",
+            "reward_card_border_color": "#f0f0f0",
+            "reward_card_spacing": 20,
+            "reward_title_color": "#333333",
+            "reward_title_size": 16,
+            "reward_points_color": "#333333",
+            "reward_points_size": 14,
+            "reward_icon_color": "#333333",
+            "reward_icon_size": 56,
+            "join_button_background_color": "#000000",
+            "join_button_text_color": "#ffffff",
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "yuko_loyalty_reviews_loyalty_page_ways_to_earn_RGjiQ9",
+        "yuko_loyalty_reviews_loyalty_page_ways_to_redeem_BPRwLH"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
+    "1774304327c9c0f079": {
+      "type": "_blocks",
+      "blocks": {
+        "yuko_loyalty_reviews_loyalty_page_vip_tiers_DLcpMb": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/loyalty-page-vip-tiers/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {
+            "vip_tiers_background_color": "#ffffff",
+            "vip_tiers_heading_color": "#000000",
+            "vip_tiers_text_color": "#000000",
+            "tier_card_background_color": "#ffffff",
+            "current_tier_background_color": "#f8f9fa",
+            "current_tier_border_color": "#007bff",
+            "current_tier_badge_background": "#007bff",
+            "current_tier_badge_text": "#ffffff",
+            "tier_name_color": "#333333",
+            "tier_name_size": 18,
+            "tier_description_color": "#000000",
+            "tier_description_size": 14,
+            "benefit_text_color": "#666666",
+            "benefit_text_size": 14,
+            "benefit_icon_color": "#4CAF50",
+            "benefit_icon_size": 16,
+            "benefit_gap": 8,
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "yuko_loyalty_reviews_loyalty_page_vip_tiers_DLcpMb"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "177430428325042baf",
+    "1774304300661ffd62",
+    "1774304327c9c0f079"
+  ]
+}
