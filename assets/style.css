@@ -737,8 +737,8 @@
 
 /* Yuko: Launcher widget positioning */
 .r_sbw__container {
-  writing-mode: lr;
-  top: 93%;
-  left: 20px;
-  border-radius: 10px;
+  writing-mode: lr !important;
+  top: 93% !important;
+  left: 20px !important;
+  border-radius: 10px !important;
 }
