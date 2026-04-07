@@ -9,36 +9,15 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "blocks": {
-        "slide_DfJ3HM": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-10.jpg"
-          }
-        },
-        "slide_qq4W7q": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
-          }
-        }
-      },
-      "block_order": [
-        "slide_DfJ3HM",
-        "slide_qq4W7q"
-      ],
+    "pm_privacy": {
+      "type": "pm-privacy-policy",
       "settings": {
-        "slide_duration": 8000,
-        "transition_duration": 1000,
-        "loop": true,
-        "ken_burns": true,
-        "ken_burns_direction": "in"
+        "page_title": "Privacy Policy",
+        "last_updated": "April 1, 2026"
       }
     }
   },
   "order": [
-    "main"
+    "pm_privacy"
   ]
 }
