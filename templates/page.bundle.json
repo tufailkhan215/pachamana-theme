@@ -42,7 +42,7 @@
         "heading_tag": "h1",
         "text_line_1": "Explore Pacha Mana ceremonial cacao bundles  pure Chuncho cacao, botanical blends, and mushroom vitality. Curated sets for daily ritual, gifting, and sharing.",
         "text_line_2": "",
-        "button_label": "Shop CACAO",
+        "button_label": "",
         "button_link": "",
         "button_2_label": "",
         "button_2_link": "",
@@ -552,6 +552,32 @@
         "padding_bottom": 6
       }
     },
+    "1776075853535e0b3f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a2d72cd_FGKTfH": {
+          "type": "ai_gen_block_a2d72cd",
+          "settings": {
+            "image_1": "shopify://shop_images/adasdqw4.png",
+            "image_2": "shopify://shop_images/adasdqw3.png",
+            "carousel_height": 600,
+            "slide_interval": 3,
+            "transition_duration": 1.5,
+            "border_radius": 0,
+            "desktop_width_percent": 100,
+            "show_dots": true,
+            "dot_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a2d72cd_FGKTfH"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
     "section_image_carousel_reviews_khDAFn": {
       "type": "section-image-carousel-reviews",
       "name": "Image carousel reviews",
@@ -596,6 +622,7 @@
     "section_icon_text_columns_jYbfwz",
     "section_full_width_banner_kGiByx",
     "section_newsletter_page_LkfL6L",
+    "1776075853535e0b3f",
     "section_image_carousel_reviews_khDAFn"
   ]
 }
