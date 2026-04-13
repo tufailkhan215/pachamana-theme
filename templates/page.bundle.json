@@ -143,7 +143,7 @@
             "section_padding_top": 60,
             "section_padding_bottom": 60,
             "section_padding_sides": 30,
-            "enable_autoplay": true,
+            "enable_autoplay": false,
             "autoplay_speed": 7000,
             "enable_scroll_animation": true,
             "scroll_distance": 50,
