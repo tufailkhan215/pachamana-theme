@@ -523,7 +523,7 @@
         "column_p9ywL7": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/image_259b3e48-dfe2-4767-b9e0-a899d5edc650.png",
+            "icon": "shopify://shop_images/Celestial_and_Nature_Icons_Collection_61332bd2-b562-4460-a877-14ef4bc1867b.png",
             "title": "Ceremonial Cacao Bundles | Pacha Mana",
             "text": "Single‑origin Chuncho cacao from Peru  full‑fat, minimally processed, and made in relationship with the family who grows it. Choose paste (traditional block) or ground cacao (easy daily prep) and whisk into hot water or plant milk for a creamy, honest cup.",
             "button_label": "Shop Now",
@@ -533,7 +533,7 @@
         "column_qfUzge": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/image_1.png",
+            "icon": "shopify://shop_images/Celestial_and_Nature_Icons_Collection_7d239ad8-3d3a-4de0-bb73-7b5d0a4c4c5a.png",
             "title": "Botanical Blends",
             "text": "Ceremonial cacao, elevated with real botanicals and spices  from rose + vanilla to golden milk warmth, Mayan spice fire, or a touch of maple sweetness. These are ritual-ready blends made to meet your mood, your season, and your daily rhythm.",
             "button_label": "Shop Now",
@@ -543,7 +543,7 @@
         "column_fpKVNG": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/image_2.png",
+            "icon": "shopify://shop_images/Celestial_and_Nature_Icons_Collection.png",
             "title": "Mushroom Vitality",
             "text": "Where cacao meets mushrooms. We blend our ceremonial cacao with steam‑extracted, full fruiting‑body mushrooms a grounded, zero‑sugar cup you can keep in your everyday ritual.\nCTA button: Shop Mushroom Vitality",
             "button_label": "SHOP NOW",
@@ -573,7 +573,7 @@
         "icon_min_height": 60,
         "heading_color": "#000000",
         "text_color": "#000000",
-        "background_color": "#ffffff",
+        "background_color": "#f7f2e4",
         "button_font_size": 14,
         "button_padding_y": 12,
         "button_padding_x": 28,
