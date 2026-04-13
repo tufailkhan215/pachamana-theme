@@ -31,8 +31,46 @@
         "ken_burns_direction": "in"
       }
     },
+    "1776076997da32a5ae": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7640211_jdDRC3": {
+          "type": "ai_gen_block_7640211",
+          "settings": {
+            "heading": "CEREMONIAL CACAO BUNDLES",
+            "subtext": "Explore Pacha Mana ceremonial cacao bundles  pure Chuncho cacao, botanical blends, and mushroom vitality. Curated sets for daily ritual, gifting, and sharing.",
+            "background_image_1": "shopify://shop_images/bettahphotosthanthatfam4.png",
+            "background_image_2": "shopify://shop_images/adasdqw12.png",
+            "background_opacity": 0.3,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.3,
+            "heading_font": "assistant_n4",
+            "heading_color": "#FFFFFF",
+            "heading_size_desktop": 60,
+            "heading_size_mobile": 38,
+            "heading_letter_spacing": 2,
+            "heading_spacing": 20,
+            "body_font": "assistant_n4",
+            "subtext_color": "#FFFFFF",
+            "subtext_size_desktop": 18,
+            "subtext_size_mobile": 16,
+            "section_height_desktop": 600,
+            "section_height_mobile": 350,
+            "content_max_width": 800
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7640211_jdDRC3"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
     "section_full_width_banner_q4QJWE": {
       "type": "section-full-width-banner",
+      "disabled": true,
       "name": "Full width banner",
       "settings": {
         "image": "shopify://shop_images/PACHAMANA-108-scaled_58bc5414-98b0-4736-8fa6-3cb291d0e8ba.jpg",
@@ -109,7 +147,7 @@
             "autoplay_speed": 7000,
             "enable_scroll_animation": true,
             "scroll_distance": 50,
-            "show_benefits": true,
+            "show_benefits": false,
             "benefit_1_icon": "💰",
             "benefit_1_text": "Save 20%",
             "benefit_2_icon": "🚚",
@@ -185,7 +223,7 @@
             "autoplay_speed": 7000,
             "enable_scroll_animation": true,
             "scroll_distance": 50,
-            "show_benefits": true,
+            "show_benefits": false,
             "benefit_1_icon": "💰",
             "benefit_1_text": "Save 20%",
             "benefit_2_icon": "🚚",
@@ -630,6 +668,7 @@
   },
   "order": [
     "main",
+    "1776076997da32a5ae",
     "section_full_width_banner_q4QJWE",
     "177607130315aae5f2",
     "section_spaced_multicolumn_xpmgW7",
