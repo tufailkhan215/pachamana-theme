@@ -1,8 +1,19 @@
 @font-face{font-family:'theplus';src:url(theplus.eot?o619t4);src:url('theplus.eot?o619t4#iefix') format('embedded-opentype'),url(theplus.ttf?o619t4) format('truetype'),url(theplus.woff?o619t4) format('woff'),url('theplus.svg?o619t4#theplus') format('svg');font-weight:400;font-style:normal;font-display:block}[class^="theplus-i-"],[class*=" theplus-i-"]{font-family:'theplus'!important;speak:never;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 
+@font-face {
+  font-family: 'Oaxaca';
+  src: url('oaxaca.woff2') format('woff2'),
+       url('oaxaca.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .theplus-i-minimize:before {
   content: "\e976";
 }
+
+
 
 .theplus-i-expand:before {
   content: "\e977";
