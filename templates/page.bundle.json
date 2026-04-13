@@ -211,7 +211,7 @@
             "button_label": "Buy Now",
             "image_layout": "split",
             "image_position": "right",
-            "image_fit": "contain",
+            "image_fit": "cover",
             "split_image_height": 450,
             "full_width_max_height": 500,
             "max_width": 1100,
