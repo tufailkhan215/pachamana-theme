@@ -10,6 +10,7 @@
 {
   "current": {
     "shop_url": "https://pachamana-2.myshopify.com",
+    "announcement_enabled": false,
     "contact_popup_enabled": true,
     "contact_popup_logo": "shopify://shop_images/PachaMana_Logos_CMYK_MarkOnly_White-416x261.png",
     "contact_popup_display_email": "support@pachamana.com",
