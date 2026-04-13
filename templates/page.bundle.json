@@ -105,7 +105,7 @@
             "section_padding_top": 60,
             "section_padding_bottom": 60,
             "section_padding_sides": 30,
-            "enable_autoplay": true,
+            "enable_autoplay": false,
             "autoplay_speed": 7000,
             "enable_scroll_animation": true,
             "scroll_distance": 50,
@@ -523,6 +523,40 @@
         "buttons_gap": 1
       }
     },
+    "17760760320b750fee": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d3a30c5_UzMgPQ": {
+          "type": "ai_gen_block_d3a30c5",
+          "settings": {
+            "carousel_height": 450,
+            "scroll_speed": 0.5,
+            "image_gap": 0,
+            "border_radius": 0,
+            "background_color": "#ffffff",
+            "image_1": "shopify://shop_images/adasdqw6.png",
+            "image_2": "shopify://shop_images/adasdqw20.png",
+            "image_3": "shopify://shop_images/PACHAMANA-0061-scaled.jpg",
+            "image_4": "shopify://shop_images/adasdqw19.png",
+            "image_5": "shopify://shop_images/faa.png",
+            "image_6": "shopify://shop_images/6534245.png",
+            "image_7": "shopify://shop_images/adasdqw13.png",
+            "image_8": "shopify://shop_images/adasdqw7.png",
+            "image_9": "shopify://shop_images/bettahphotosthanthatfam7.png",
+            "image_10": "shopify://shop_images/adasdqw21.png",
+            "image_11": "shopify://shop_images/bettahphotosthanthatfam2.png",
+            "image_12": "shopify://shop_images/adasdqw11.png"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d3a30c5_UzMgPQ"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
     "section_newsletter_page_LkfL6L": {
       "type": "section-newsletter-page",
       "disabled": true,
@@ -554,32 +588,13 @@
     },
     "1776075853535e0b3f": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a2d72cd_FGKTfH": {
-          "type": "ai_gen_block_a2d72cd",
-          "settings": {
-            "image_1": "shopify://shop_images/adasdqw4.png",
-            "image_2": "shopify://shop_images/adasdqw3.png",
-            "carousel_height": 600,
-            "slide_interval": 3,
-            "transition_duration": 1.5,
-            "border_radius": 0,
-            "desktop_width_percent": 100,
-            "show_dots": true,
-            "dot_color": "#ffffff"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a2d72cd_FGKTfH"
-      ],
       "settings": {
         "section_label": "Content block"
       }
     },
     "section_image_carousel_reviews_khDAFn": {
       "type": "section-image-carousel-reviews",
+      "disabled": true,
       "name": "Image carousel reviews",
       "settings": {
         "sliding_strip_image": "shopify://shop_images/ora-cacao-customer-slider-image-2_1600x_abe177df-b124-47b2-8154-fa215e234425.jpg",
@@ -621,6 +636,7 @@
     "section_full_width_banner_raNqM6",
     "section_icon_text_columns_jYbfwz",
     "section_full_width_banner_kGiByx",
+    "17760760320b750fee",
     "section_newsletter_page_LkfL6L",
     "1776075853535e0b3f",
     "section_image_carousel_reviews_khDAFn"
