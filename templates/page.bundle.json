@@ -819,7 +819,7 @@
         "apply_h3": true,
         "apply_h4": false,
         "apply_buttons": true,
-        "apply_body": true,
+        "apply_body": false,
         "custom_selectors": "",
         "font_weight": "inherit",
         "letter_spacing": 0,
