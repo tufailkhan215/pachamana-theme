@@ -59,10 +59,73 @@
             "content_max_width": 800
           },
           "blocks": {}
+        },
+        "ai_gen_block_f9d1188_nGDyhy": {
+          "type": "ai_gen_block_f9d1188",
+          "settings": {
+            "product": "1lb-cacao-chuncho-ceremonial-grade",
+            "max_width": 1200,
+            "grid_gap": 50,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_sides": 30,
+            "image_fit": "cover",
+            "image_height": 500,
+            "image_border_radius": 12,
+            "shadow_opacity": 0.1,
+            "enable_auto_scroll": true,
+            "auto_scroll_speed": 7000,
+            "panel_background": "#FFFFFF",
+            "panel_padding": 40,
+            "panel_border_radius": 12,
+            "show_badge": true,
+            "badge_text": "New",
+            "badge_background": "#A0826D",
+            "badge_text_color": "#FFFFFF",
+            "badge_font_size": 12,
+            "show_rating": true,
+            "rating_value": "5.0",
+            "star_size": 20,
+            "star_color": "#E2AB43",
+            "rating_text_size": 14,
+            "title_size": 36,
+            "title_color": "#000000",
+            "description_size": 16,
+            "description_color": "#666666",
+            "price_size": 28,
+            "price_color": "#5C402F",
+            "show_original_price": false,
+            "original_price": "",
+            "original_price_size": 20,
+            "original_price_color": "#A0A0A0",
+            "show_benefits": true,
+            "benefit_1_text": "Save 20%",
+            "benefit_2_text": "Free Shipping",
+            "benefit_3_text": "Bonus Items",
+            "icon_size": 50,
+            "icon_background": "#F5F7FA",
+            "benefit_text_size": 13,
+            "button_label": "Buy Now",
+            "button_background": "#E2AB43",
+            "button_hover_background": "#FFFFFF",
+            "button_text_color": "#FFFFFF",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 8,
+            "gradient_start": "#F5F7FA",
+            "gradient_end": "#C3CFE2",
+            "bg_image_opacity": 0.3,
+            "fallback_title": "Ultra Comfort Running Shoes",
+            "fallback_description": "Breathable, lightweight shoes designed for maximum comfort during your runs.",
+            "fallback_price": "$150.00"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_7640211_jdDRC3"
+        "ai_gen_block_7640211_jdDRC3",
+        "ai_gen_block_f9d1188_nGDyhy"
       ],
       "settings": {
         "section_label": "Content block"
@@ -147,7 +210,7 @@
             "autoplay_speed": 7000,
             "enable_scroll_animation": true,
             "scroll_distance": 50,
-            "show_benefits": false,
+            "show_benefits": true,
             "benefit_1_icon": "💰",
             "benefit_1_text": "Save 20%",
             "benefit_2_icon": "🚚",
@@ -741,25 +804,6 @@
         "button_hover_text": "#ffffff",
         "background_color": "#f5f0eb"
       }
-    },
-    "pas_custom_font_JYFPkQ": {
-      "type": "pas-custom-font",
-      "name": "Custom Font",
-      "settings": {
-        "font_family": "Oaxaca",
-        "font_file": "Oaxaca.otf",
-        "font_format": "opentype",
-        "apply_h1": true,
-        "apply_h2": true,
-        "apply_h3": true,
-        "apply_h4": true,
-        "apply_buttons": true,
-        "apply_body": true,
-        "custom_selectors": "",
-        "font_weight": "inherit",
-        "letter_spacing": 0,
-        "text_transform": "none"
-      }
     }
   },
   "order": [
@@ -774,7 +818,6 @@
     "17760760320b750fee",
     "section_newsletter_page_LkfL6L",
     "1776075853535e0b3f",
-    "section_image_carousel_reviews_khDAFn",
-    "pas_custom_font_JYFPkQ"
+    "section_image_carousel_reviews_khDAFn"
   ]
 }
