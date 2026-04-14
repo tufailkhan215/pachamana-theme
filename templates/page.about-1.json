@@ -49,22 +49,21 @@
             "image_position": "top"
           }
         },
-        "marks_story": {
-          "type": "story",
-          "disabled": true,
-          "settings": {
-            "heading": "Mark's Story",
-            "content": "<p>Prior to joining the Peace Corps, I wasn't sure what the future held for me. When I was in college, I honestly didn't know what to do with my life. So, I made a decision to major in Finance because I thought making money is what I was supposed to do. I soon discovered this did not fulfill me. Luckily, something called me to join the U.S. Peace Corps. I was fortunate to be sent to Peru for almost three years. This experience completely changed my life. I suddenly realized what real hard work was all about and what were the most important things in life- family and love. Not taking life too seriously also became a personal mantra. After the Peace Corps I got a masters and MBA in International Business and took a big corporate job. I soon discovered that work didn't fulfill me. So, I quit and moved to Maui, Hawaii and began working on farms and became a yoga teacher I started eating healthier I learned where my food came from. I started eating pure food- no additives, cut out sugar and was introduced to cacao about two years ago. I began to enjoy pure ceremonial cacao on a regular basis and felt my heart opening wider and wider. I felt a desire to see if I could source my own ceremonial cacao. While I was in Hawaii Maui, at the foothills of Haleakala, the name Pacha Mana came to me. Pachamama means mother earth in Quechua, the homeland of the Cacao.</p><p>I believe that the whole is greater than the sum and in order to really achieve great heights, I would need a partner in this endeavor. I mediately thought of my good friend Justin as I knew he was dedicated to plants and the healing powers of our hearts. Our intentions were to create beautiful, harmonious ideas. It's been a true honor to share with him this creative energy as we both enjoy Pacha Mana Ceremonial Cacao.</p>",
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-45-1_ede2b6c7-e8b9-431a-9553-704a3e5af5ca.webp",
-            "image_position": "top"
-          }
-        },
         "justins_story": {
           "type": "story",
           "settings": {
             "heading": "Justin's Story",
             "content": "<p>For as long as I can remember, plants have always fascinated me. I have always been curious about the power of plants having immense potential for food, medicine, and beauty. At the age of 18, I decided to leave behind the life I once knew as a kid and take a journey to understand my place in the natural world. I ended up settling in California where I learned everything about farming via experience and study. I studied everything from soil microbiology, anatomy, mycology, genetics, farming techniques, and much more. I spent years dedicating time to studying the effect of chemical fertilizers and pesticides, GMO seeds on the soil and just how connected our health is to the soil itself. This sent me on a path of growing my own food and healing myself through good relations with the Earth, taking me all over the world to learn and commune with plants and the people who interact with them.</p><p>In 2014 at Lake Atitlan, Guatemala I was introduced to the famous \"chocolate shaman\", where I had my first cacao ceremony. I immediately felt the power of cacao, buying up kilos of cacao to bring home to my friends and to share the traditional ceremonial cacao paste of the Mayans who inhabit the area. Years later I chose to travel to Peru to further my studies with plants and culture. I spent time learning about shamanic studies, the Amazon rainforest, and the way of life of the Pre-Columbian Indigenous Peoples. Immense wisdom was garnered from my travels in Peru and I'm honored to support the distribution of a very unique type of cacao only native to Peru, Chuncho.</p><p>Pacha Mana Cacao is the extension of gratitude I have for Peru, and aligns with my value of protecting sacred land globally.</p>",
             "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-45-1_ede2b6c7-e8b9-431a-9553-704a3e5af5ca.webp",
+            "image_position": "top"
+          }
+        },
+        "marks_story": {
+          "type": "story",
+          "settings": {
+            "heading": "Mark's Story",
+            "content": "<p>Prior to joining the Peace Corps, I wasn't sure what the future held for me. When I was in college, I honestly didn't know what to do with my life. So, I made a decision to major in Finance because I thought making money is what I was supposed to do. I soon discovered this did not fulfill me. Luckily, something called me to join the U.S. Peace Corps. I was fortunate to be sent to Peru for almost three years. This experience completely changed my life. I suddenly realized what real hard work was all about and what were the most important things in life- family and love. Not taking life too seriously also became a personal mantra. After the Peace Corps I got a masters and MBA in International Business and took a big corporate job. I soon discovered that work didn't fulfill me. So, I quit and moved to Maui, Hawaii and began working on farms and became a yoga teacher I started eating healthier I learned where my food came from. I started eating pure food- no additives, cut out sugar and was introduced to cacao about two years ago. I began to enjoy pure ceremonial cacao on a regular basis and felt my heart opening wider and wider. I felt a desire to see if I could source my own ceremonial cacao. While I was in Hawaii Maui, at the foothills of Haleakala, the name Pacha Mana came to me. Pachamama means mother earth in Quechua, the homeland of the Cacao.</p><p>I believe that the whole is greater than the sum and in order to really achieve great heights, I would need a partner in this endeavor. I mediately thought of my good friend Justin as I knew he was dedicated to plants and the healing powers of our hearts. Our intentions were to create beautiful, harmonious ideas. It's been a true honor to share with him this creative energy as we both enjoy Pacha Mana Ceremonial Cacao.</p>",
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-47-1_20df20e0-7248-4746-aab6-5da5d808e869.webp",
             "image_position": "top"
           }
         },
@@ -80,8 +79,8 @@
       },
       "block_order": [
         "our_story",
-        "marks_story",
         "justins_story",
+        "marks_story",
         "our_mission"
       ],
       "settings": {
