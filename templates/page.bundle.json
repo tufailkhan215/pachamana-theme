@@ -191,6 +191,7 @@
       "blocks": {
         "ai_gen_block_861668a_TepzKk": {
           "type": "ai_gen_block_861668a",
+          "disabled": true,
           "settings": {
             "product": "ceremonial-cacao-blend-bundle",
             "fallback_title": "Ultra Comfort Running Shoes",
@@ -267,6 +268,7 @@
         },
         "ai_gen_block_861668a_B4zccK": {
           "type": "ai_gen_block_861668a",
+          "disabled": true,
           "settings": {
             "product": "the-purest-bundle",
             "fallback_title": "Ultra Comfort Running Shoes",
@@ -805,7 +807,7 @@
         "background_color": "#f5f0eb"
       }
     },
-    "pas_custom_font_CbMdjJ": {
+    "pas_custom_font_i4jHMY": {
       "type": "pas-custom-font",
       "name": "Custom Font",
       "settings": {
@@ -814,9 +816,9 @@
         "font_format": "opentype",
         "apply_h1": true,
         "apply_h2": true,
-        "apply_h3": false,
+        "apply_h3": true,
         "apply_h4": false,
-        "apply_buttons": false,
+        "apply_buttons": true,
         "apply_body": true,
         "custom_selectors": "",
         "font_weight": "inherit",
@@ -838,6 +840,6 @@
     "section_newsletter_page_LkfL6L",
     "1776075853535e0b3f",
     "section_image_carousel_reviews_khDAFn",
-    "pas_custom_font_CbMdjJ"
+    "pas_custom_font_i4jHMY"
   ]
 }
