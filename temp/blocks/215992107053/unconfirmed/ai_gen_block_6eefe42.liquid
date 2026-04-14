@@ -1,6 +1,1033 @@
+{% doc %}
+  @prompt
+    Featured Product – Split Layout (2 Columns)
+    
+    Layout & Structure
+    Layout: Split (2 columns)
+    Image Position: Left
+    Max Width: 1200px
+    Grid Gap: 50px
+    Padding:
+    Top: 60px
+    Bottom: 60px
+    Sides: 30px
+    Left Column (Image Gallery)
+    Type: Image carousel (multi-image)
+    Image Fit: Contain (show full image)
+    Fixed Height: 500px
+    Enable Auto Scroll: Yes
+    Auto Scroll Speed: 7000ms
+    Enable Scroll Animation: Yes
+    Scroll Distance: 50px
+    Style:
+    Border Radius: 12px
+    Shadow Opacity: 0.1
+    Right Column (Product Info Panel)
+    Product Content
+    Title:
+    Ultimate Ceremonial Cacao Bundle | 6 Premium Blends
+    Description:
+    “The Ultimate Ceremonial Cacao Bundle (now with Mayan Spice Blend). Experience the versatility of ceremonial-grade Peruvian cacao with this thoughtfully curated bundle.”
+    Price: $150.00
+    Remove review count display (no “(5)” text)
+    Badges
+    Show Badge: Yes
+    Badge Type: New
+    Text: New
+    Style:
+    Background: #A0826D
+    Text Color: #FFFFFF
+    Font Size: 12px
+    Rating
+    Show Rating: Yes
+    Rating Value: 5 stars only
+    Hide review count
+    Star Size: 20px
+    Star Color: #E2AB43
+    Empty Star Color: #D0D0D0
+    Rating Text Size: 14px
+    Bundle Benefits (Icon Row)
+    Show Benefits: Yes
+    Layout: Horizontal (3 items centered)
+    💰 Save 20%
+    🚚 Free Shipping
+    🎁 Bonus Items
+    Icon Size: 50px
+    Icon Background: #F5F7FA
+    Icon Color: #5C402F
+    Text Size: 13px
+    CTA Button
+    Label: Buy Now
+    Background: #E2AB43
+    Hover Background: #FFFFFF
+    Text Color: #FFFFFF
+    Font Size: 16px
+    Padding: 14px vertical / 32px horizontal
+    Border Radius: 8px
+    Info Panel Styling
+    Background: #FFFFFF
+    Padding: 40px
+    Border Radius: 12px
+    Typography
+    Title:
+    Size: 36px
+    Color: #000000
+    Description:
+    Size: 16px
+    Color: #666666
+    Price:
+    Size: 28px
+    Color: #5C402F
+    Original Price (optional strikethrough):
+    Size: 20px
+    Color: #A0A0A0
+    Background
+    Type: Gradient + Image Overlay
+    Gradient:
+    Start: #F5F7FA
+    End: #C3CFE2
+    Background Image: faa.png
+    Image Opacity: 0.3
+    Fallback Content (for empty state)
+    Fallback Title: Ultra Comfort Running Shoes
+    Fallback Description:
+    “Breathable, lightweight shoes designed for maximum comfort during your runs.”
+    Key Notes for Builder
+    Maintain clean, premium ecommerce feel
+    Ensure image and info panel are visually balanced
+    Keep icons evenly spaced and centered
+    Remove review count text entirely
+    Prioritize conversion clarity (title → price → benefits → CTA), i need to be able to change the icons via photos i can attach.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-featured-product-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, {{ block.settings.gradient_start }} 0%, {{ block.settings.gradient_end }} 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-featured-product-bg-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .ai-featured-product-bg-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: {{ block.settings.bg_image_opacity }};
+  }
+
+  .ai-featured-product-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_sides }}px {{ block.settings.padding_bottom }}px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-featured-product-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.grid_gap }}px;
+    align-items: center;
+  }
+
+  .ai-featured-product-image-column-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-featured-product-carousel-{{ ai_gen_id }} {
+    position: relative;
+    height: {{ block.settings.image_height }}px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, {{ block.settings.shadow_opacity }});
+  }
+
+  .ai-featured-product-carousel-track-{{ ai_gen_id }} {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .ai-featured-product-carousel-slide-{{ ai_gen_id }} {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+  }
+
+  .ai-featured-product-carousel-slide-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-featured-product-info-panel-{{ ai_gen_id }} {
+    background: {{ block.settings.panel_background }};
+    padding: {{ block.settings.panel_padding }}px;
+    border-radius: {{ block.settings.panel_border_radius }}px;
+  }
+
+  .ai-featured-product-badge-{{ ai_gen_id }} {
+    display: inline-block;
+    background: {{ block.settings.badge_background }};
+    color: {{ block.settings.badge_text_color }};
+    font-size: {{ block.settings.badge_font_size }}px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .ai-featured-product-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .ai-featured-product-rating-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .ai-featured-product-stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 4px;
+  }
+
+  .ai-featured-product-star-{{ ai_gen_id }} {
+    width: {{ block.settings.star_size }}px;
+    height: {{ block.settings.star_size }}px;
+  }
+
+  .ai-featured-product-star-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-featured-product-rating-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.rating_text_size }}px;
+    color: #666;
+  }
+
+  .ai-featured-product-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .ai-featured-product-price-wrapper-{{ ai_gen_id }} {
+    margin-bottom: 24px;
+  }
+
+  .ai-featured-product-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size }}px;
+    color: {{ block.settings.price_color }};
+    font-weight: 700;
+    margin-right: 12px;
+  }
+
+  .ai-featured-product-original-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.original_price_size }}px;
+    color: {{ block.settings.original_price_color }};
+    text-decoration: line-through;
+  }
+
+  .ai-featured-product-benefits-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .ai-featured-product-benefit-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-featured-product-benefit-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    background: {{ block.settings.icon_background }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  .ai-featured-product-benefit-icon-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-featured-product-benefit-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.benefit_text_size }}px;
+    color: #333;
+    text-align: center;
+  }
+
+  .ai-featured-product-cta-{{ ai_gen_id }} {
+    display: inline-block;
+    background: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    font-size: {{ block.settings.button_font_size }}px;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid {{ block.settings.button_background }};
+    cursor: pointer;
+  }
+
+  .ai-featured-product-cta-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_background }};
+    border-color: {{ block.settings.button_background }};
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-featured-product-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .ai-featured-product-carousel-{{ ai_gen_id }} {
+      height: 350px;
+    }
+
+    .ai-featured-product-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.8);
+    }
+
+    .ai-featured-product-benefits-{{ ai_gen_id }} {
+      gap: 16px;
+    }
+
+    .ai-featured-product-benefit-icon-{{ ai_gen_id }} {
+      width: calc({{ block.settings.icon_size }}px * 0.8);
+      height: calc({{ block.settings.icon_size }}px * 0.8);
+    }
+  }
+{% endstyle %}
+
+<featured-product-{{ ai_gen_id }} class="ai-featured-product-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.background_image %}
+    <div class="ai-featured-product-bg-{{ ai_gen_id }}">
+      <img
+        src="{{ block.settings.background_image | image_url: width: 2000 }}"
+        alt=""
+        loading="lazy"
+      >
+    </div>
+  {% endif %}
+
+  <div class="ai-featured-product-container-{{ ai_gen_id }}">
+    <div class="ai-featured-product-grid-{{ ai_gen_id }}">
+      <div class="ai-featured-product-image-column-{{ ai_gen_id }}">
+        <div class="ai-featured-product-carousel-{{ ai_gen_id }}">
+          <div class="ai-featured-product-carousel-track-{{ ai_gen_id }}">
+            {% if block.settings.product %}
+              {% for image in block.settings.product.images limit: 5 %}
+                <div class="ai-featured-product-carousel-slide-{{ ai_gen_id }}">
+                  <img
+                    src="{{ image | image_url: width: 800 }}"
+                    alt="{{ image.alt | escape }}"
+                    loading="lazy"
+                  >
+                </div>
+              {% endfor %}
+            {% else %}
+              {% for i in (1..3) %}
+                <div class="ai-featured-product-carousel-slide-{{ ai_gen_id }}">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-featured-product-info-panel-{{ ai_gen_id }}">
+        {% if block.settings.show_badge %}
+          <div class="ai-featured-product-badge-{{ ai_gen_id }}">
+            {{ block.settings.badge_text }}
+          </div>
+        {% endif %}
+
+        <h2 class="ai-featured-product-title-{{ ai_gen_id }}">
+          {% if block.settings.product %}
+            {{ block.settings.product.title }}
+          {% else %}
+            {{ block.settings.fallback_title }}
+          {% endif %}
+        </h2>
+
+        {% if block.settings.show_rating %}
+          <div class="ai-featured-product-rating-{{ ai_gen_id }}">
+            <div class="ai-featured-product-stars-{{ ai_gen_id }}">
+              {% for i in (1..5) %}
+                <div class="ai-featured-product-star-{{ ai_gen_id }}">
+                  <svg viewBox="0 0 24 24" fill="{{ block.settings.star_color }}" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                  </svg>
+                </div>
+              {% endfor %}
+            </div>
+            <span class="ai-featured-product-rating-text-{{ ai_gen_id }}">{{ block.settings.rating_value }}</span>
+          </div>
+        {% endif %}
+
+        <div class="ai-featured-product-description-{{ ai_gen_id }}">
+          {% if block.settings.product and block.settings.product.description != blank %}
+            {{ block.settings.product.description | strip_html | truncate: 200 }}
+          {% else %}
+            {{ block.settings.fallback_description }}
+          {% endif %}
+        </div>
+
+        <div class="ai-featured-product-price-wrapper-{{ ai_gen_id }}">
+          <span class="ai-featured-product-price-{{ ai_gen_id }}">
+            {% if block.settings.product %}
+              {{ block.settings.product.price | money }}
+            {% else %}
+              {{ block.settings.fallback_price }}
+            {% endif %}
+          </span>
+          {% if block.settings.show_original_price and block.settings.original_price != blank %}
+            <span class="ai-featured-product-original-price-{{ ai_gen_id }}">
+              {{ block.settings.original_price }}
+            </span>
+          {% endif %}
+        </div>
+
+        {% if block.settings.show_benefits %}
+          <div class="ai-featured-product-benefits-{{ ai_gen_id }}">
+            <div class="ai-featured-product-benefit-{{ ai_gen_id }}">
+              <div class="ai-featured-product-benefit-icon-{{ ai_gen_id }}">
+                {% if block.settings.benefit_1_icon %}
+                  <img
+                    src="{{ block.settings.benefit_1_icon | image_url: width: 100 }}"
+                    alt="{{ block.settings.benefit_1_text }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  💰
+                {% endif %}
+              </div>
+              <div class="ai-featured-product-benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_1_text }}</div>
+            </div>
+            <div class="ai-featured-product-benefit-{{ ai_gen_id }}">
+              <div class="ai-featured-product-benefit-icon-{{ ai_gen_id }}">
+                {% if block.settings.benefit_2_icon %}
+                  <img
+                    src="{{ block.settings.benefit_2_icon | image_url: width: 100 }}"
+                    alt="{{ block.settings.benefit_2_text }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  🚚
+                {% endif %}
+              </div>
+              <div class="ai-featured-product-benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_2_text }}</div>
+            </div>
+            <div class="ai-featured-product-benefit-{{ ai_gen_id }}">
+              <div class="ai-featured-product-benefit-icon-{{ ai_gen_id }}">
+                {% if block.settings.benefit_3_icon %}
+                  <img
+                    src="{{ block.settings.benefit_3_icon | image_url: width: 100 }}"
+                    alt="{{ block.settings.benefit_3_text }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  🎁
+                {% endif %}
+              </div>
+              <div class="ai-featured-product-benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_3_text }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        <a
+          href="{% if block.settings.product %}{{ block.settings.product.url }}{% else %}#{% endif %}"
+          class="ai-featured-product-cta-{{ ai_gen_id }}"
+        >
+          {{ block.settings.button_label }}
+        </a>
+      </div>
+    </div>
+  </div>
+</featured-product-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FeaturedProduct{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentSlide = 0;
+        this.autoScrollInterval = null;
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('.ai-featured-product-carousel-track-{{ ai_gen_id }}');
+        this.slides = this.querySelectorAll('.ai-featured-product-carousel-slide-{{ ai_gen_id }}');
+        this.totalSlides = this.slides.length;
+
+        if (this.totalSlides > 1 && {{ block.settings.enable_auto_scroll | json }}) {
+          this.startAutoScroll();
+        }
+      }
+
+      startAutoScroll() {
+        this.autoScrollInterval = setInterval(() => {
+          this.nextSlide();
+        }, {{ block.settings.auto_scroll_speed }});
+      }
+
+      nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateSlidePosition();
+      }
+
+      updateSlidePosition() {
+        const offset = -this.currentSlide * 100;
+        this.track.style.transform = `translateX(${offset}%)`;
+      }
+
+      disconnectedCallback() {
+        if (this.autoScrollInterval) {
+          clearInterval(this.autoScrollInterval);
+        }
+      }
+    }
+
+    customElements.define('featured-product-{{ ai_gen_id }}', FeaturedProduct{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Featured product split",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_sides",
+      "label": "Padding sides",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Image carousel"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Image height",
+      "min": 300,
+      "max": 700,
+      "step": 50,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "label": "Shadow opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.1
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_auto_scroll",
+      "label": "Enable auto scroll",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "auto_scroll_speed",
+      "label": "Auto scroll speed",
+      "min": 3000,
+      "max": 9000,
+      "step": 1000,
+      "unit": "ms",
+      "default": 7000
+    },
+    {
+      "type": "header",
+      "content": "Info panel"
+    },
+    {
+      "type": "color",
+      "id": "panel_background",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "panel_padding",
+      "label": "Padding",
+      "min": 20,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "panel_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "New"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Background",
+      "default": "#A0826D"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "rating_value",
+      "label": "Rating value",
+      "default": "5.0"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "label": "Star size",
+      "min": 12,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#E2AB43"
+    },
+    {
+      "type": "range",
+      "id": "rating_text_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "label": "Price size",
+      "min": 18,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#5C402F"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_original_price",
+      "label": "Show original price",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "original_price",
+      "label": "Original price"
+    },
+    {
+      "type": "range",
+      "id": "original_price_size",
+      "label": "Original price size",
+      "min": 14,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "original_price_color",
+      "label": "Original price color",
+      "default": "#A0A0A0"
+    },
+    {
+      "type": "header",
+      "content": "Benefits"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_benefits",
+      "label": "Show benefits",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_1_icon",
+      "label": "Benefit 1 icon"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_text",
+      "label": "Benefit 1 text",
+      "default": "Save 20%"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_2_icon",
+      "label": "Benefit 2 icon"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_text",
+      "label": "Benefit 2 text",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_3_icon",
+      "label": "Benefit 3 icon"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_text",
+      "label": "Benefit 3 text",
+      "default": "Bonus Items"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Icon background",
+      "default": "#F5F7FA"
+    },
+    {
+      "type": "range",
+      "id": "benefit_text_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Buy Now"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background",
+      "default": "#E2AB43"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Hover background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Padding vertical",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Padding horizontal",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient start",
+      "default": "#F5F7FA"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient end",
+      "default": "#C3CFE2"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "bg_image_opacity",
+      "label": "Image opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "Fallback content"
+    },
+    {
+      "type": "text",
+      "id": "fallback_title",
+      "label": "Fallback title",
+      "default": "Ultra Comfort Running Shoes"
+    },
+    {
+      "type": "textarea",
+      "id": "fallback_description",
+      "label": "Fallback description",
+      "default": "Breathable, lightweight shoes designed for maximum comfort during your runs."
+    },
+    {
+      "type": "text",
+      "id": "fallback_price",
+      "label": "Fallback price",
+      "default": "$150.00"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured product split"
+    }
+  ]
+}
 {% endschema %}
