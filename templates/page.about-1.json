@@ -90,10 +90,30 @@
         "padding_top": 80,
         "padding_bottom": 80
       }
+    },
+    "pas_custom_font_w7kfGj": {
+      "type": "pas-custom-font",
+      "name": "Custom Font",
+      "settings": {
+        "font_family": "Oaxaca",
+        "font_file": "Oaxaca.otf",
+        "font_format": "opentype",
+        "apply_h1": true,
+        "apply_h2": true,
+        "apply_h3": true,
+        "apply_h4": false,
+        "apply_buttons": false,
+        "apply_body": false,
+        "custom_selectors": "",
+        "font_weight": "inherit",
+        "letter_spacing": 0,
+        "text_transform": "none"
+      }
     }
   },
   "order": [
     "main",
-    "about_story"
+    "about_story",
+    "pas_custom_font_w7kfGj"
   ]
 }
