@@ -1,0 +1,197 @@
+{%- liquid
+  assign font_family = section.settings.font_family | default: 'Oaxaca'
+  assign font_file = section.settings.font_file | default: 'Oaxaca.otf'
+  assign font_format = section.settings.font_format | default: 'opentype'
+  assign apply_h1 = section.settings.apply_h1
+  assign apply_h2 = section.settings.apply_h2
+  assign apply_h3 = section.settings.apply_h3
+  assign apply_h4 = section.settings.apply_h4
+  assign apply_buttons = section.settings.apply_buttons
+  assign apply_body = section.settings.apply_body
+  assign custom_selectors = section.settings.custom_selectors
+  assign font_weight = section.settings.font_weight | default: 'bold'
+  assign letter_spacing = section.settings.letter_spacing
+  assign text_transform = section.settings.text_transform
+  assign font_url = font_file | asset_url
+-%}
+
+<style>
+  @font-face {
+    font-family: '{{ font_family }}';
+    src: url('{{ font_url }}') format('{{ font_format }}');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  {%- assign selectors = '' -%}
+  {%- if apply_h1 -%}{%- assign selectors = selectors | append: 'h1,' -%}{%- endif -%}
+  {%- if apply_h2 -%}{%- assign selectors = selectors | append: 'h2,' -%}{%- endif -%}
+  {%- if apply_h3 -%}{%- assign selectors = selectors | append: 'h3,' -%}{%- endif -%}
+  {%- if apply_h4 -%}{%- assign selectors = selectors | append: 'h4, h5, h6,' -%}{%- endif -%}
+  {%- if apply_buttons -%}{%- assign selectors = selectors | append: '.button, button, .btn, [type="submit"], .shopify-payment-button__button,' -%}{%- endif -%}
+  {%- if apply_body -%}{%- assign selectors = selectors | append: 'body,' -%}{%- endif -%}
+  {%- if custom_selectors != blank -%}
+    {%- assign clean_custom = custom_selectors | strip_newlines | strip -%}
+    {%- assign selectors = selectors | append: clean_custom | append: ',' -%}
+  {%- endif -%}
+  {%- assign selectors = selectors | split: ',' | compact -%}
+
+  {%- if selectors.size > 0 -%}
+    {%- for sel in selectors -%}
+      {%- assign trimmed = sel | strip -%}
+      {%- if trimmed != '' -%}
+        {{ trimmed }}{%- unless forloop.last -%},{%- endunless -%}
+      {%- endif -%}
+    {%- endfor %} {
+      font-family: '{{ font_family }}', var(--pcf-fallback, sans-serif) !important;
+      {%- if font_weight != 'inherit' %}
+      font-weight: {{ font_weight }} !important;
+      {%- endif -%}
+      {%- if letter_spacing != 0 %}
+      letter-spacing: {{ letter_spacing }}px !important;
+      {%- endif -%}
+      {%- if text_transform != 'none' %}
+      text-transform: {{ text_transform }} !important;
+      {%- endif %}
+    }
+  {%- endif -%}
+</style>
+
+{% schema %}
+{
+  "name": "Custom Font",
+  "tag": "div",
+  "class": "pcf-loader",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Font Source"
+    },
+    {
+      "type": "paragraph",
+      "content": "Upload the font file to the theme Assets folder first, then enter the filename below."
+    },
+    {
+      "type": "text",
+      "id": "font_family",
+      "label": "Font family name",
+      "default": "Oaxaca",
+      "info": "A friendly name for the font, used in CSS"
+    },
+    {
+      "type": "text",
+      "id": "font_file",
+      "label": "Font file (in Assets)",
+      "default": "Oaxaca.otf",
+      "info": "Exact filename including extension"
+    },
+    {
+      "type": "select",
+      "id": "font_format",
+      "label": "Font format",
+      "options": [
+        { "value": "opentype", "label": "OpenType (.otf)" },
+        { "value": "truetype", "label": "TrueType (.ttf)" },
+        { "value": "woff", "label": "WOFF (.woff)" },
+        { "value": "woff2", "label": "WOFF2 (.woff2)" }
+      ],
+      "default": "opentype"
+    },
+    {
+      "type": "header",
+      "content": "Apply To"
+    },
+    {
+      "type": "checkbox",
+      "id": "apply_h1",
+      "label": "Apply to H1 headings",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "apply_h2",
+      "label": "Apply to H2 headings",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "apply_h3",
+      "label": "Apply to H3 headings",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "apply_h4",
+      "label": "Apply to H4, H5, H6 headings",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "apply_buttons",
+      "label": "Apply to buttons",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "apply_body",
+      "label": "Apply to all body text",
+      "default": false,
+      "info": "Applies site-wide on this page. Use with caution."
+    },
+    {
+      "type": "textarea",
+      "id": "custom_selectors",
+      "label": "Custom CSS selectors",
+      "info": "Comma-separated CSS selectors, e.g. .hero-title, .product-card__title"
+    },
+    {
+      "type": "header",
+      "content": "Typography Overrides"
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        { "value": "inherit", "label": "Inherit (no change)" },
+        { "value": "normal", "label": "Normal" },
+        { "value": "bold", "label": "Bold" },
+        { "value": "300", "label": "300 Light" },
+        { "value": "500", "label": "500 Medium" },
+        { "value": "600", "label": "600 Semibold" },
+        { "value": "700", "label": "700 Bold" },
+        { "value": "900", "label": "900 Black" }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Letter spacing",
+      "min": -2,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text transform",
+      "options": [
+        { "value": "none", "label": "None (inherit)" },
+        { "value": "uppercase", "label": "Uppercase" },
+        { "value": "lowercase", "label": "Lowercase" },
+        { "value": "capitalize", "label": "Capitalize" }
+      ],
+      "default": "none"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Font"
+    }
+  ]
+}
+{% endschema %}
