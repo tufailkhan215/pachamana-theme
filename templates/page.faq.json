@@ -13,7 +13,123 @@
       "type": "cs-faq-page",
       "settings": {
         "heading": "Frequently Asked Questions"
-      }
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is a serving size?",
+            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here’s a guide to finding what’s right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this “Shamanic”  Only for the serious cacao journeyers. Anymore will cause headaches</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is your Cacao Organic?",
+            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides. The beauty of working with native genetics.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is your cacao tested for heavy metals?",
+            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with an absence of all of them according to EU standards and compliant with FDA laws. We are happy to say we have incredible results and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What’s the difference between cacao Powder and cacao paste?",
+            "answer": "<p>Cacao Paste is a whole food, 1 ingredient product that keeps the full fat integrity of cacao that is essential for carrying all the vital health  and medicinal benefits associated with cacao. Our chuncho cacao is very high in fat (58%), and minimally processed from bean to bar keeping all the essentials intact making it “the food of the Gods” as it is revered to be.</p><p>Cacao powder on the other hand is defatted (10-20%), which removes the essential carrier of health and medicinal properties of cacao. It is more convenient for adding to recipes, but lacks the nutrition associated with cacao. We carry ground cacao with full fat for this reason. We grind up fatted cacao to maintain all the health benefits you love. Check out our shop to find out more!</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is chuncho cacao?",
+            "answer": "<p>Ceremonial Chuncho cacao from Peru embodies the essence of ancient traditions, cultivated by indigenous farmers with reverence for their land.  Mainly wild harvested, this exquisite cacao variety boasts a rich cocoa butter content from being grown at higher elevation. It gives subtle notes of Andean fruit, offering a sensory journey steeped with history and authenticity. </p><p>Its origins date back centuries, when it was grown by the Machiguenga indigenous communities in the Amazon basin since pre Inca civilization periods. Wild harvested Chuncho cacao ensures the preservation of the biodiverse species of plants in the forests and jungles of Peru.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it have caffeine?",
+            "answer": "<p>In short yes, but not what you are used to with coffee or tea. It is about half the amount of mg per serving than that of coffee and tea. It has around 40mg of caffeine per serving and 250 mg of theobromine.The active component called Theobromine, adds a stimulating and heart opening effect to the cacao as it is a vasodilator and a heart stimulant vs. caffeine being a nervous system stimulant . In combination these two molecules work together to make a unique experience which is ceremonial cacao.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is your cacao fair trade?",
+            "answer": "<p>Yes our cacao is fair trade, and we actually believe it’s better than fair trade models to this day. Our direct trade model ensures economic opportunity for the farmers and those processing the cacao at origin, and keeps most of the money in their hands in Peru!</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe for pregnant and breastfeeding women?",
+            "answer": "<p>Yes in small amounts. We argue that it is actually incredibly beneficial for prenatal and postpartum mothers. We honor the feminine force and are grateful to give discounts to people working with mothers as we feel cacao is such an essential source of vitamins, minerals, and mood enhancement which mothers so desperately need and crave! Reach out to learn more</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes cacao “ceremonial” ?",
+            "answer": "<p>Ceremonial cacao is a large discussion on what it means, but for us we have one value.<strong>Ceremony Starts at the farm …</strong>The seed is planted by Indigenous farmers with the intention to help people connect with the lineage of chuncho cacao and is tended in a way that is in harmony with the Earth. This is the most crucial first step and skipping this is a huge mistake in the ceremonial cacao industry. After the cacao is grown and collected our origin makes sure to pick the finest beans for cacao processing, making sure that it’s not processed to heavily remove the nutritional and medicinal benefits that cacao has. After receiving it in the US, we make sure to spread awareness of cacao’s medicinal benefits so the lineage is never broken. Together we are creating ceremonial cacao.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I properly store my cacao?",
+            "answer": "<p>Cacao is incredibly shelf stable in its pure form so it doesn’t really “go bad” for at least 2 years. We recommend keeping it in a dark and cool place, at room temperature in your cupboard or pantry to ensure the taste stays wonderful. We also recommend if you purchase our block of cacao to store it in a sealed container of some sort to ensure its freshness.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq_item",
+          "settings": {
+            "question": "My cacao arrived melted, what’s the protocol here?",
+            "answer": "<p>If your cacao is melted, please contact us atpachamanacacao@gmail.comto receive a new shipment of fresh cacao, and we will add an ice pack to make sure it arrives safely! We appreciate your support.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is your cacao “raw”?",
+            "answer": "<p>In our opinions raw cacao is a myth, as it involves toasting before it’s processed, and also the fermentation process of the beans at the farm needs to get above raw temperatures of 110 degrees. Although cacao is marketed as raw, we believe that using fire in the responsible way as the indigenous communities who use cacao do, is part of its tradition and should not be taken away from the process because it also takes away from the flavor we enjoy in ceremonial cacao. We do however, roast our cacao at lower temperatures to not over roast the flavors away like traditional chocolate manufacturing does to cacao. We like to ensure all the vitalizing principles and medicinal properties ceremonial grade cacao has within by not roasting them away.<br/><br/></p>"
+          }
+        },
+        "faq_13": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can cacao be used while on SSRI medications?",
+            "answer": "<p>Ceremonial cacao, celebrated for its antidepressant qualities, interacts intricately with our brain’s serotonin pathways. When combined with SSRI-based antidepressants, which enhance serotonin levels by impeding its reabsorption, ceremonial cacao can potentially overwhelm serotonin receptors. This delicate balance within our neural circuitry can lead to adverse effects, such as headaches, signaling an excess of serotonin stimulation. It’s essential to recognize that not all antidepressants operate via SSRIs; various medications, including certain anti-psychotics, also impact serotonin and dopamine pathways, posing similar contraindications with ceremonial cacao.</p><p>In group settings where ceremonial cacao is shared, it’s crucial to educate participants about potential interactions, particularly with antidepressant medications. Each individual’s medication regimen and physiological responses vary, necessitating informed decision-making. </p><p>The importance of mindfulness and responsible facilitation when incorporating ceremonial cacao into wellness practices, especially alongside antidepressant treatments. By fostering an environment of informed consent and cautious consumption, individuals can harness the therapeutic potential of cacao while mitigating potential risks.</p><p>If you feel you’ve taken too much, you may result in a headache. We recommend drinking water and resting.</p>"
+          }
+        },
+        "faq_14": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is cacao a drug?",
+            "answer": "<p>Not at all. At Pacha Mana we see cacao as a medicine, as something that allows for healing and connecting with ourselves if used in the right context and the right dose. It is no different than chocolate, just increased in dosage. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13",
+        "faq_14"
+      ]
     }
   },
   "order": [
