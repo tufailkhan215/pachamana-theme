@@ -1,56 +1,31 @@
 {%- style -%}
-  /* Force dark background on all containers */
-  #shopify-section-{{ section.id }},
   #shopify-section-{{ section.id }} .section-faq,
-  #shopify-section-{{ section.id }} .section-faq.e-con,
-  #shopify-section-{{ section.id }} .section-faq .e-con,
   #shopify-section-{{ section.id }} .section-faq .e-con-inner,
-  #shopify-section-{{ section.id }} .section-faq .elementor-element,
+  #shopify-section-{{ section.id }} .section-faq .e-con,
   #shopify-section-{{ section.id }} .section-faq .elementor-widget-container,
   #shopify-section-{{ section.id }} .section-faq .theplus-accordion-wrapper,
   #shopify-section-{{ section.id }} .section-faq .theplus-accordion-item,
-  #shopify-section-{{ section.id }} .section-faq .elementor-tab-content,
-  #shopify-section-{{ section.id }} .section-faq .plus-accordion-header,
-  #shopify-section-{{ section.id }} .section-faq .plus-accordion-content {
-    background: {{ section.settings.bg_color }} !important;
-    background-color: {{ section.settings.bg_color }} !important;
-  }
-  /* Strip card shape — no rounded corners, no box-shadow, no border, full width */
-  #shopify-section-{{ section.id }} .section-faq,
-  #shopify-section-{{ section.id }} .section-faq.e-con,
-  #shopify-section-{{ section.id }} .section-faq.e-con-boxed,
-  #shopify-section-{{ section.id }} .section-faq .e-con,
-  #shopify-section-{{ section.id }} .section-faq .e-con-boxed,
-  #shopify-section-{{ section.id }} .section-faq .e-con-inner,
-  #shopify-section-{{ section.id }} .section-faq .elementor-element {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  #shopify-section-{{ section.id }} .section-faq .elementor-tab-content {
+    background: {{ section.settings.bg_color }};
   }
   #shopify-section-{{ section.id }} .section-faq {
-    padding: 60px 0 !important;
+    padding: 60px 0;
   }
-  /* Typography colors */
   #shopify-section-{{ section.id }} .section-faq .heading-title {
-    color: {{ section.settings.heading_color }} !important;
+    color: {{ section.settings.heading_color }};
   }
-  #shopify-section-{{ section.id }} .section-faq .elementor-tab-title,
-  #shopify-section-{{ section.id }} .section-faq .elementor-tab-title span {
-    color: {{ section.settings.text_color }} !important;
+  #shopify-section-{{ section.id }} .section-faq .elementor-tab-title {
+    color: {{ section.settings.text_color }};
   }
   #shopify-section-{{ section.id }} .section-faq .plus-content-editor,
   #shopify-section-{{ section.id }} .section-faq .plus-content-editor p {
-    color: {{ section.settings.answer_color }} !important;
+    color: {{ section.settings.answer_color }};
   }
   #shopify-section-{{ section.id }} .section-faq .elementor-accordion-icon i {
-    color: {{ section.settings.heading_color }} !important;
+    color: {{ section.settings.heading_color }};
   }
   #shopify-section-{{ section.id }} .section-faq .elementor-divider-separator {
-    border-color: {{ section.settings.heading_color }} !important;
+    border-color: {{ section.settings.heading_color }};
   }
 {%- endstyle -%}
 
