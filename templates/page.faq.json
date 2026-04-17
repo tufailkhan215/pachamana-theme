@@ -127,93 +127,16 @@
         "faq_13",
         "faq_14"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Frequently Asked Questions",
-        "bg_color": "#302318",
+        "bg_color": "#9b6802",
         "heading_color": "#e2ab43",
         "text_color": "#e2ab43",
         "answer_color": "#d4c5a9"
       }
-    },
-    "section_faq_ttX8hJ": {
-      "type": "section-faq",
-      "blocks": {
-        "faq_item_nhE4AM": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
-          }
-        },
-        "faq_item_cgcCgT": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
-          }
-        },
-        "faq_item_qfmC3y": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
-          }
-        },
-        "faq_item_pM8exw": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
-          }
-        },
-        "faq_item_BLGxfH": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
-          }
-        },
-        "faq_item_j4ezPX": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
-          }
-        },
-        "faq_item_pwMGXR": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
-          }
-        },
-        "faq_item_W6r6BR": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_item_nhE4AM",
-        "faq_item_cgcCgT",
-        "faq_item_qfmC3y",
-        "faq_item_pM8exw",
-        "faq_item_BLGxfH",
-        "faq_item_j4ezPX",
-        "faq_item_pwMGXR",
-        "faq_item_W6r6BR"
-      ],
-      "name": "FAQ",
-      "settings": {
-        "heading": "Frequently asked questions"
-      }
     }
   },
   "order": [
-    "main",
-    "section_faq_ttX8hJ"
+    "main"
   ]
 }
