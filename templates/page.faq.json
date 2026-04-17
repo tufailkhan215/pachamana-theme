@@ -130,7 +130,10 @@
       "settings": {
         "heading": "Frequently Asked Questions",
         "single_open": true,
+        "bg_image": "shopify://shop_images/maple-cinnamon-ceremonial-cacao-mocktail-a-gentle-recipe-for-everyday-sipping.png",
         "bg_color": "#3d2817",
+        "overlay_color": "#000000",
+        "overlay_opacity": 25,
         "panel_bg_color": "#9b6802",
         "panel_border_color": "#e2ab43",
         "heading_color": "#3d2817",
