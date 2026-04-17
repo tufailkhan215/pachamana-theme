@@ -10,6 +10,8 @@
   data-csf-single-open="{{ section.settings.single_open }}"
   style="
     --csf-bg: {{ section.settings.bg_color }};
+    --csf-overlay-color: {{ section.settings.overlay_color }};
+    --csf-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
     --csf-panel-bg: {{ section.settings.panel_bg_color }};
     --csf-panel-border: {{ section.settings.panel_border_color }};
     --csf-heading: {{ section.settings.heading_color }};
@@ -107,16 +109,28 @@
   #shopify-section-{{ section.id }} .csf-section {
     background-color: var(--csf-bg, #3d2817);
     background-image: var(--csf-bg-image);
-    background-size: auto;
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     padding: var(--csf-pad-top, 80px) 24px var(--csf-pad-bottom, 80px);
     font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     position: relative;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .csf-section::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-color: var(--csf-overlay-color, #000000) !important;
+    opacity: var(--csf-overlay-opacity, 0) !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
   }
 
   #shopify-section-{{ section.id }} .csf-panel {
+    z-index: 1 !important;
     max-width: var(--csf-max-width, 820px) !important;
     margin: 0 auto !important;
     width: 100% !important;
@@ -519,6 +533,22 @@
       "id": "bg_color",
       "label": "Background color",
       "default": "#3d2817"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "%"
     },
     {
       "type": "header",
