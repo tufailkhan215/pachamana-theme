@@ -993,6 +993,27 @@
         "heading": "Frequently asked questions"
       }
     },
+    "1776724953739e6460": {
+      "type": "_blocks",
+      "blocks": {
+        "yuko_loyalty_reviews_all_reviews_product_widget_XACXyt": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/all-reviews-product-widget/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "yuko_loyalty_reviews_all_reviews_product_widget_XACXyt"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
+    "177672493025471699": {
+      "type": "_blocks",
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
     "1773594775afe31f9b": {
       "type": "_blocks",
       "settings": {
@@ -1019,6 +1040,8 @@
     "section-faq",
     "section_new_to_cacao",
     "section_faq_FVrqXP",
+    "1776724953739e6460",
+    "177672493025471699",
     "1773594775afe31f9b"
   ]
 }
