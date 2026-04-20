@@ -130,7 +130,7 @@
           "type": "ai_gen_block_2fb3f7b",
           "settings": {
             "image_position": "right",
-            "image_fit": "cover",
+            "image_fit": "contain",
             "image_border_radius": 12,
             "featured_product": "ceremonial-cacao-blend-bundle",
             "product_title": "Ultimate Ceremonial Cacao Bundle | 6 Premium Blends",
