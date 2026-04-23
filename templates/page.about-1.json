@@ -45,7 +45,7 @@
           "settings": {
             "heading": "Our Story",
             "content": "<p>One day in 2021 while meditating with some ceremonial cacao Mark had a thought, why is there no Peruvian ceremonial cacao? His thought led to an idea which birthed Pacha Mana.</p><p>He quickly reached out to his dear friend Justin to see if this idea had some legs because of his known trust in Justin's time-spent in Peru, his connection to cacao & plants, and his knack for business. Justin was ecstatic around the idea and Pacha Mana was born.</p><p>Sourcing was the next hurdle and Justin and Mark quickly agreed that Mark needed to be boots on the ground in Peru making sure our quality sourcing was in integrity. Mark spent the next 3 months traveling Peru, sending cacao back to California where Justin lives and making sure it was not only quality but the right farmers. After many different farms, Mark found our beloved family farmers who we work with to this day and we immediately fell in love with their cacao.</p><p>Mark had spent a lot of time in Peru with the Peace Corps, and so very fluent in Spanish and Peruvian culture. They made a bond, an agreement was made, the cacao was processed, and the business was born!</p><p>We believe in the spirit of collaboration, as most business owners are one sole person. We value the spirit of cacaos teachings which is one of community, sharing, and collaboration. By honoring the many hands who have helped to create Pacha Mana Cacao we hope you feel our intentions to collaborate and share! Thanks for joining our community!</p>",
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-10.jpg",
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-84-1.webp",
             "image_position": "top"
           }
         },
@@ -54,7 +54,7 @@
           "settings": {
             "heading": "Justin's Story",
             "content": "<p>For as long as I can remember, plants have always fascinated me. I have always been curious about the power of plants having immense potential for food, medicine, and beauty. At the age of 18, I decided to leave behind the life I once knew as a kid and take a journey to understand my place in the natural world. I ended up settling in California where I learned everything about farming via experience and study. I studied everything from soil microbiology, anatomy, mycology, genetics, farming techniques, and much more. I spent years dedicating time to studying the effect of chemical fertilizers and pesticides, GMO seeds on the soil and just how connected our health is to the soil itself. This sent me on a path of growing my own food and healing myself through good relations with the Earth, taking me all over the world to learn and commune with plants and the people who interact with them.</p><p>In 2014 at Lake Atitlan, Guatemala I was introduced to the famous \"chocolate shaman\", where I had my first cacao ceremony. I immediately felt the power of cacao, buying up kilos of cacao to bring home to my friends and to share the traditional ceremonial cacao paste of the Mayans who inhabit the area. Years later I chose to travel to Peru to further my studies with plants and culture. I spent time learning about shamanic studies, the Amazon rainforest, and the way of life of the Pre-Columbian Indigenous Peoples. Immense wisdom was garnered from my travels in Peru and I'm honored to support the distribution of a very unique type of cacao only native to Peru, Chuncho.</p><p>Pacha Mana Cacao is the extension of gratitude I have for Peru, and aligns with my value of protecting sacred land globally.</p>",
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-45-1_ede2b6c7-e8b9-431a-9553-704a3e5af5ca.webp",
+            "image": "shopify://shop_images/IMG_0345-scaled.jpg",
             "image_position": "top"
           }
         },
@@ -74,7 +74,7 @@
             "heading": "Our Mission",
             "content": "<p>Our mission at Pacha Mana Cacao is to be able to bring sustainably grown ceremonial cacao direct to you from the farm. We believe ceremony starts at the farm. At Pacha Mana, we value the connection to the land and the protection of it for generations to come. Our vision is to create more love and prosperity in the world while protecting the Andes mountains, and the jungles of Peru.</p><p>By supporting Pacha Mana and the growing of Ceremonial Chuncho Cacao, you are choosing a more sustainable future for the forests by supporting the people most affected by its disruption.</p><p>Farmers are the last defenders, the people most capable of protecting the forest and we want to make it economically feasible for them to continue their work. Our hope is that by working directly with farmers, as well as consumers, we create a positive example for the cacao industry by eliminating unnecessary \"hands in the cookie jar\" that are historically entrenched in cacao logistics.</p><p>We strive to make our process of delivering delicious heirloom cacao from Peru to the United States become an example of how to better support the true parents of our cacao, the farmers. With more economic stability for the farmers of the highest quality organic products, these defenders will be better equipped to fight the vicious cycle of deforestation that's happening throughout the world and now in Peru.</p>",
             "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-6-e1712435681278_8ac78b8b-a485-4c63-8990-cd54f73ccc6a.webp",
-            "image_position": "top"
+            "image_position": "left"
           }
         }
       },
@@ -86,8 +86,8 @@
       ],
       "settings": {
         "show_title": true,
-        "section_title": "MEET TEAM PACHA MANA",
-        "background_style": "light-gold",
+        "section_title": "MEET PACHA MANA",
+        "background_style": "gold",
         "padding_top": 80,
         "padding_bottom": 80
       }
