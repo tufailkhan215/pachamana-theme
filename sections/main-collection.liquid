@@ -99,8 +99,8 @@
 					{%- if section.settings.filter_packets_url != blank -%}
 						<a href="{{ section.settings.filter_packets_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_packets_tag %} active{% endif %}">{{ section.settings.filter_packets_label | default: "Single-Serve" }}</a>
 					{%- endif -%}
-          {%- if section.settings.filter_packets_url != blank -%}
-						<a href="{{ section.settings.filter_packets_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_packets_tag %} active{% endif %}">{{ section.settings.filter_packets_label | default: "Bundles" }}</a>
+          {%- if section.settings.filter_bundles_url != blank -%}
+						<a href="{{ section.settings.filter_bundles_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_bundles_tag %} active{% endif %}">{{ section.settings.filter_bundles_label | default: "Bundles" }}</a>
 					{%- endif -%}
 
 
@@ -496,7 +496,24 @@
       "id": "filter_packets_tag",
       "label": "Single-Serve Tag",
       "default": "single-serve"
-    }
+    },
+      {
+    "type": "text",
+    "id": "filter_bundles_label",
+    "label": "bundles Button Label",
+    "default": "bundles"
+  },
+  {
+    "type": "url",
+    "id": "filter_bundles_url",
+    "label": "bundles Filter URL"
+  },
+  {
+    "type": "text",
+    "id": "filter_bundles_tag",
+    "label": "bundles Tag",
+    "default": "bundles"
+  }
   ],
   "blocks": [
     {
