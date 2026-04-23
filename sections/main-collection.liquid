@@ -17,290 +17,206 @@
 -%}
 
 <div data-elementor-type="product-archive" data-elementor-id="565" class="elementor elementor-565 elementor-location-archive product" data-elementor-post-type="elementor_library">
-			<div class="elementor-element elementor-element-3f54ab4 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="3f54ab4" data-element_type="container" data-slide-duration="{{ slide_duration }}" data-transition-duration="{{ transition_duration }}" data-loop="{{ loop_enabled }}" data-ken-burns="{{ ken_burns_enabled }}" data-ken-burns-direction="{{ ken_burns_dir }}">
-					{%- if slide_count > 0 -%}
-						<div class="elementor-background-slideshow swiper swiper-fade swiper-horizontal swiper-pointer-events swiper-rtl swiper-watch-progress" dir="rtl">
-							<div class="swiper-wrapper" id="swiper-wrapper-collection-{{ section.id }}" aria-live="off">
-								{%- for block in section.blocks -%}
-									{%- if block.settings.image != blank -%}
-										{%- assign image_url = block.settings.image | image_url: width: 1920 -%}
-										{%- assign slide_index = forloop.index0 -%}
-										<div class="elementor-background-slideshow__slide swiper-slide{% if forloop.first %} swiper-slide-active{% endif %}" 
-										     data-swiper-slide-index="{{ slide_index }}" 
-										     role="group" 
-										     aria-label="{{ forloop.index }} / {{ slide_count }}">
-											<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--{{ ken_burns_dir }}{% if forloop.first %} elementor-ken-burns--active{% endif %}" 
-											     style="background-image: url('{{ image_url }}');"></div>
-										</div>
-									{%- endif -%}
-								{%- endfor -%}
-							</div>
-							<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-						</div>
-					{%- endif -%}
-					<div class="e-con-inner">
-				<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M283.5,9.7c0,0-7.3,4.3-14,4.6c-6.8,0.3-12.6,0-20.9-1.5c-11.3-2-33.1-10.1-44.7-5.7	s-12.1,4.6-18,7.4c-6.6,3.2-20,9.6-36.6,9.3C131.6,23.5,99.5,7.2,86.3,8c-1.4,0.1-6.6,0.8-10.5,2c-3.8,1.2-9.4,3.8-17,4.7	c-3.2,0.4-8.3,1.1-14.2,0.9c-1.5-0.1-6.3-0.4-12-1.6c-5.7-1.2-11-3.1-15.8-3.7C6.5,9.2,0,10.8,0,10.8V0h283.5V9.7z M260.8,11.3	c-0.7-1-2-0.4-4.3-0.4c-2.3,0-6.1-1.2-5.8-1.1c0.3,0.1,3.1,1.5,6,1.9C259.7,12.2,261.4,12.3,260.8,11.3z M242.4,8.6	c0,0-2.4-0.2-5.6-0.9c-3.2-0.8-10.3-2.8-15.1-3.5c-8.2-1.1-15.8,0-15.1,0.1c0.8,0.1,9.6-0.6,17.6,1.1c3.3,0.7,9.3,2.2,12.4,2.7	C239.9,8.7,242.4,8.6,242.4,8.6z M185.2,8.5c1.7-0.7-13.3,4.7-18.5,6.1c-2.1,0.6-6.2,1.6-10,2c-3.9,0.4-8.9,0.4-8.8,0.5	c0,0.2,5.8,0.8,11.2,0c5.4-0.8,5.2-1.1,7.6-1.6C170.5,14.7,183.5,9.2,185.2,8.5z M199.1,6.9c0.2,0-0.8-0.4-4.8,1.1	c-4,1.5-6.7,3.5-6.9,3.7c-0.2,0.1,3.5-1.8,6.6-3C197,7.5,199,6.9,199.1,6.9z M283,6c-0.1,0.1-1.9,1.1-4.8,2.5s-6.9,2.8-6.7,2.7	c0.2,0,3.5-0.6,7.4-2.5C282.8,6.8,283.1,5.9,283,6z M31.3,11.6c0.1-0.2-1.9-0.2-4.5-1.2s-5.4-1.6-7.8-2C15,7.6,7.3,8.5,7.7,8.6	C8,8.7,15.9,8.3,20.2,9.3c2.2,0.5,2.4,0.5,5.7,1.6S31.2,11.9,31.3,11.6z M73,9.2c0.4-0.1,3.5-1.6,8.4-2.6c4.9-1.1,8.9-0.5,8.9-0.8	c0-0.3-1-0.9-6.2-0.3S72.6,9.3,73,9.2z M71.6,6.7C71.8,6.8,75,5.4,77.3,5c2.3-0.3,1.9-0.5,1.9-0.6c0-0.1-1.1-0.2-2.7,0.2	C74.8,5.1,71.4,6.6,71.6,6.7z M93.6,4.4c0.1,0.2,3.5,0.8,5.6,1.8c2.1,1,1.8,0.6,1.9,0.5c0.1-0.1-0.8-0.8-2.4-1.3	C97.1,4.8,93.5,4.2,93.6,4.4z M65.4,11.1c-0.1,0.3,0.3,0.5,1.9-0.2s2.6-1.3,2.2-1.2s-0.9,0.4-2.5,0.8C65.3,10.9,65.5,10.8,65.4,11.1	z M34.5,12.4c-0.2,0,2.1,0.8,3.3,0.9c1.2,0.1,2,0.1,2-0.2c0-0.3-0.1-0.5-1.6-0.4C36.6,12.8,34.7,12.4,34.5,12.4z M152.2,21.1	c-0.1,0.1-2.4-0.3-7.5-0.3c-5,0-13.6-2.4-17.2-3.5c-3.6-1.1,10,3.9,16.5,4.1C150.5,21.6,152.3,21,152.2,21.1z"></path>
-	<path class="elementor-shape-fill" d="M269.6,18c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C267.7,18.8,269.7,18,269.6,18z"></path>
-	<path class="elementor-shape-fill" d="M227.4,9.8c-0.2-0.1-4.5-1-9.5-1.2c-5-0.2-12.7,0.6-12.3,0.5c0.3-0.1,5.9-1.8,13.3-1.2	S227.6,9.9,227.4,9.8z"></path>
-	<path class="elementor-shape-fill" d="M204.5,13.4c-0.1-0.1,2-1,3.2-1.1c1.2-0.1,2,0,2,0.3c0,0.3-0.1,0.5-1.6,0.4	C206.4,12.9,204.6,13.5,204.5,13.4z"></path>
-	<path class="elementor-shape-fill" d="M201,10.6c0-0.1-4.4,1.2-6.3,2.2c-1.9,0.9-6.2,3.1-6.1,3.1c0.1,0.1,4.2-1.6,6.3-2.6	S201,10.7,201,10.6z"></path>
-	<path class="elementor-shape-fill" d="M154.5,26.7c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C152.6,27.5,154.6,26.8,154.5,26.7z"></path>
-	<path class="elementor-shape-fill" d="M41.9,19.3c0,0,1.2-0.3,2.9-0.1c1.7,0.2,5.8,0.9,8.2,0.7c4.2-0.4,7.4-2.7,7-2.6	c-0.4,0-4.3,2.2-8.6,1.9c-1.8-0.1-5.1-0.5-6.7-0.4S41.9,19.3,41.9,19.3z"></path>
-	<path class="elementor-shape-fill" d="M75.5,12.6c0.2,0.1,2-0.8,4.3-1.1c2.3-0.2,2.1-0.3,2.1-0.5c0-0.1-1.8-0.4-3.4,0	C76.9,11.5,75.3,12.5,75.5,12.6z"></path>
-	<path class="elementor-shape-fill" d="M15.6,13.2c0-0.1,4.3,0,6.7,0.5c2.4,0.5,5,1.9,5,2c0,0.1-2.7-0.8-5.1-1.4	C19.9,13.7,15.7,13.3,15.6,13.2z"></path>
-</svg>		</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-00aef23 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="00aef23" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;}">
-					<div class="e-con-inner">
-				<div class="elementor-shape elementor-shape-top" aria-hidden="true" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M283.5,9.7c0,0-7.3,4.3-14,4.6c-6.8,0.3-12.6,0-20.9-1.5c-11.3-2-33.1-10.1-44.7-5.7	s-12.1,4.6-18,7.4c-6.6,3.2-20,9.6-36.6,9.3C131.6,23.5,99.5,7.2,86.3,8c-1.4,0.1-6.6,0.8-10.5,2c-3.8,1.2-9.4,3.8-17,4.7	c-3.2,0.4-8.3,1.1-14.2,0.9c-1.5-0.1-6.3-0.4-12-1.6c-5.7-1.2-11-3.1-15.8-3.7C6.5,9.2,0,10.8,0,10.8V0h283.5V9.7z M260.8,11.3	c-0.7-1-2-0.4-4.3-0.4c-2.3,0-6.1-1.2-5.8-1.1c0.3,0.1,3.1,1.5,6,1.9C259.7,12.2,261.4,12.3,260.8,11.3z M242.4,8.6	c0,0-2.4-0.2-5.6-0.9c-3.2-0.8-10.3-2.8-15.1-3.5c-8.2-1.1-15.8,0-15.1,0.1c0.8,0.1,9.6-0.6,17.6,1.1c3.3,0.7,9.3,2.2,12.4,2.7	C239.9,8.7,242.4,8.6,242.4,8.6z M185.2,8.5c1.7-0.7-13.3,4.7-18.5,6.1c-2.1,0.6-6.2,1.6-10,2c-3.9,0.4-8.9,0.4-8.8,0.5	c0,0.2,5.8,0.8,11.2,0c5.4-0.8,5.2-1.1,7.6-1.6C170.5,14.7,183.5,9.2,185.2,8.5z M199.1,6.9c0.2,0-0.8-0.4-4.8,1.1	c-4,1.5-6.7,3.5-6.9,3.7c-0.2,0.1,3.5-1.8,6.6-3C197,7.5,199,6.9,199.1,6.9z M283,6c-0.1,0.1-1.9,1.1-4.8,2.5s-6.9,2.8-6.7,2.7	c0.2,0,3.5-0.6,7.4-2.5C282.8,6.8,283.1,5.9,283,6z M31.3,11.6c0.1-0.2-1.9-0.2-4.5-1.2s-5.4-1.6-7.8-2C15,7.6,7.3,8.5,7.7,8.6	C8,8.7,15.9,8.3,20.2,9.3c2.2,0.5,2.4,0.5,5.7,1.6S31.2,11.9,31.3,11.6z M73,9.2c0.4-0.1,3.5-1.6,8.4-2.6c4.9-1.1,8.9-0.5,8.9-0.8	c0-0.3-1-0.9-6.2-0.3S72.6,9.3,73,9.2z M71.6,6.7C71.8,6.8,75,5.4,77.3,5c2.3-0.3,1.9-0.5,1.9-0.6c0-0.1-1.1-0.2-2.7,0.2	C74.8,5.1,71.4,6.6,71.6,6.7z M93.6,4.4c0.1,0.2,3.5,0.8,5.6,1.8c2.1,1,1.8,0.6,1.9,0.5c0.1-0.1-0.8-0.8-2.4-1.3	C97.1,4.8,93.5,4.2,93.6,4.4z M65.4,11.1c-0.1,0.3,0.3,0.5,1.9-0.2s2.6-1.3,2.2-1.2s-0.9,0.4-2.5,0.8C65.3,10.9,65.5,10.8,65.4,11.1	z M34.5,12.4c-0.2,0,2.1,0.8,3.3,0.9c1.2,0.1,2,0.1,2-0.2c0-0.3-0.1-0.5-1.6-0.4C36.6,12.8,34.7,12.4,34.5,12.4z M152.2,21.1	c-0.1,0.1-2.4-0.3-7.5-0.3c-5,0-13.6-2.4-17.2-3.5c-3.6-1.1,10,3.9,16.5,4.1C150.5,21.6,152.3,21,152.2,21.1z"></path>
-	<path class="elementor-shape-fill" d="M269.6,18c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C267.7,18.8,269.7,18,269.6,18z"></path>
-	<path class="elementor-shape-fill" d="M227.4,9.8c-0.2-0.1-4.5-1-9.5-1.2c-5-0.2-12.7,0.6-12.3,0.5c0.3-0.1,5.9-1.8,13.3-1.2	S227.6,9.9,227.4,9.8z"></path>
-	<path class="elementor-shape-fill" d="M204.5,13.4c-0.1-0.1,2-1,3.2-1.1c1.2-0.1,2,0,2,0.3c0,0.3-0.1,0.5-1.6,0.4	C206.4,12.9,204.6,13.5,204.5,13.4z"></path>
-	<path class="elementor-shape-fill" d="M201,10.6c0-0.1-4.4,1.2-6.3,2.2c-1.9,0.9-6.2,3.1-6.1,3.1c0.1,0.1,4.2-1.6,6.3-2.6	S201,10.7,201,10.6z"></path>
-	<path class="elementor-shape-fill" d="M154.5,26.7c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C152.6,27.5,154.6,26.8,154.5,26.7z"></path>
-	<path class="elementor-shape-fill" d="M41.9,19.3c0,0,1.2-0.3,2.9-0.1c1.7,0.2,5.8,0.9,8.2,0.7c4.2-0.4,7.4-2.7,7-2.6	c-0.4,0-4.3,2.2-8.6,1.9c-1.8-0.1-5.1-0.5-6.7-0.4S41.9,19.3,41.9,19.3z"></path>
-	<path class="elementor-shape-fill" d="M75.5,12.6c0.2,0.1,2-0.8,4.3-1.1c2.3-0.2,2.1-0.3,2.1-0.5c0-0.1-1.8-0.4-3.4,0	C76.9,11.5,75.3,12.5,75.5,12.6z"></path>
-	<path class="elementor-shape-fill" d="M15.6,13.2c0-0.1,4.3,0,6.7,0.5c2.4,0.5,5,1.9,5,2c0,0.1-2.7-0.8-5.1-1.4	C19.9,13.7,15.7,13.3,15.6,13.2z"></path>
-</svg>		</div>
-		<div class="elementor-element elementor-element-33ee0b1 e-flex e-con-boxed e-con e-child" data-id="33ee0b1" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-6497505 elementor-widget elementor-widget-heading" data-id="6497505" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">{{ collection.title | escape }}</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-6d95656 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6d95656" data-element_type="widget" data-widget_type="divider.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 	'/%3E%3C/svg%3E&quot;);">
-			<span class="elementor-divider-separator">
-						</span>
-		</div>
-						</div>
-				</div>
+  <div class="elementor-element elementor-element-3f54ab4 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="3f54ab4" data-element_type="container" data-slide-duration="{{ slide_duration }}" data-transition-duration="{{ transition_duration }}" data-loop="{{ loop_enabled }}" data-ken-burns="{{ ken_burns_enabled }}" data-ken-burns-direction="{{ ken_burns_dir }}">
+    {%- if slide_count > 0 -%}
+      <div class="elementor-background-slideshow swiper swiper-fade swiper-horizontal swiper-pointer-events swiper-rtl swiper-watch-progress" dir="rtl">
+        <div class="swiper-wrapper" id="swiper-wrapper-collection-{{ section.id }}" aria-live="off">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.image != blank -%}
+              {%- assign image_url = block.settings.image | image_url: width: 1920 -%}
+              {%- assign slide_index = forloop.index0 -%}
+              <div class="elementor-background-slideshow__slide swiper-slide{% if forloop.first %} swiper-slide-active{% endif %}" 
+                   data-swiper-slide-index="{{ slide_index }}" 
+                   role="group" 
+                   aria-label="{{ forloop.index }} / {{ slide_count }}">
+                <div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--{{ ken_burns_dir }}{% if forloop.first %} elementor-ken-burns--active{% endif %}" 
+                     style="background-image: url('{{ image_url }}');"></div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+      </div>
+    {%- endif -%}
+    <div class="e-con-inner">
+      <div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
+          <!-- SVG paths omitted for brevity -->
+        </svg>
+      </div>
+    </div>
+  </div>
 
-				{%- comment -%} Format Filter Bar {%- endcomment -%}
-				{%- if section.settings.show_format_filters -%}
-				<div class="collection-format-filters" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:20px 0 10px;">
-				
-          {% comment %} <a href="{{ collection.url }}" class="format-filter-btn{% unless current_tags.size > 0 %} active{% endunless %}">All</a> {% endcomment %}
-				<a href="/collections/shop-page" class="format-filter-btn{% unless current_tags.size > 0 %} active{% endunless %}">All</a>
+  <div class="elementor-element elementor-element-00aef23 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="00aef23" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;}">
+    <div class="e-con-inner">
+      <div class="elementor-shape elementor-shape-top" aria-hidden="true" data-negative="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
+          <!-- SVG paths omitted for brevity -->
+        </svg>
+      </div>
+      <div class="elementor-element elementor-element-33ee0b1 e-flex e-con-boxed e-con e-child" data-id="33ee0b1" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="e-con-inner">
+          <div class="elementor-element elementor-element-6497505 elementor-widget elementor-widget-heading" data-id="6497505" data-element_type="widget" data-widget_type="heading.default">
+            <div class="elementor-widget-container">
+              <h2 class="elementor-heading-title elementor-size-default">{{ collection.title | escape }}</h2>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-6d95656 elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6d95656" data-element_type="widget" data-widget_type="divider.default">
+            <div class="elementor-widget-container">
+              <div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 	'/%3E%3C/svg%3E&quot;);"></div>
+            </div>
+          </div>
 
+          {%- comment -%} Format Filter Bar {%- endcomment -%}
+          {%- if section.settings.show_format_filters -%}
+          <div class="collection-format-filters" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:20px 0 10px;">
+            <!-- All button -->
+            <a href="/collections/shop-page" class="format-filter-btn{% unless current_tags.size > 0 %} active{% endunless %}">All</a>
 
-          {%- if section.settings.filter_paste_url != blank -%}
-						<a href="{{ section.settings.filter_paste_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_paste_tag %} active{% endif %}">{{ section.settings.filter_paste_label | default: "Paste" }}</a>
-					{%- endif -%}
-					{%- if section.settings.filter_ground_url != blank -%}
-						<a href="{{ section.settings.filter_ground_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_ground_tag %} active{% endif %}">{{ section.settings.filter_ground_label | default: "Ground" }}</a>
-					{%- endif -%}
-					{%- if section.settings.filter_packets_url != blank -%}
-						<a href="{{ section.settings.filter_packets_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_packets_tag %} active{% endif %}">{{ section.settings.filter_packets_label | default: "Single-Serve" }}</a>
-					{%- endif -%}
-          {%- if section.settings.filter_bundles_url != blank -%}
-						<a href="{{ section.settings.filter_bundles_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_bundles_tag %} active{% endif %}">{{ section.settings.filter_bundles_label | default: "Bundles" }}</a>
-					{%- endif -%}
+            {%- if section.settings.filter_paste_url != blank -%}
+              <a href="{{ section.settings.filter_paste_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_paste_tag %} active{% endif %}">{{ section.settings.filter_paste_label | default: "Paste" }}</a>
+            {%- endif -%}
+            {%- if section.settings.filter_ground_url != blank -%}
+              <a href="{{ section.settings.filter_ground_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_ground_tag %} active{% endif %}">{{ section.settings.filter_ground_label | default: "Ground" }}</a>
+            {%- endif -%}
+            {%- if section.settings.filter_packets_url != blank -%}
+              <a href="{{ section.settings.filter_packets_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_packets_tag %} active{% endif %}">{{ section.settings.filter_packets_label | default: "Single-Serve" }}</a>
+            {%- endif -%}
+            {%- if section.settings.filter_bundles_url != blank -%}
+              <a href="{{ section.settings.filter_bundles_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_bundles_tag %} active{% endif %}">{{ section.settings.filter_bundles_label | default: "Bundles" }}</a>
+            {%- endif -%}
+          </div>
 
+          <style>
+            .format-filter-btn {
+              display: inline-block;
+              padding: 10px 24px;
+              border: 2px solid #E2AB43;
+              border-radius: 100px;
+              color: #5C402F;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 0.9rem;
+              text-transform: uppercase;
+              letter-spacing: 0.05em;
+              transition: background 0.2s, color 0.2s;
+            }
+            .format-filter-btn:hover,
+            .format-filter-btn.active {
+              background: #E2AB43;
+              color: #fff;
+            }
+          </style>
+          {%- endif -%}
 
+          <div class="woocommerce elementor-element elementor-element-4981104 elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="4981104" data-element_type="widget" data-settings="{&quot;_skin&quot;:&quot;product&quot;,&quot;template_id&quot;:292,&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;2&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.product">
+            <div class="elementor-widget-container">
+              <div class="elementor-loop-container elementor-grid" role="list">
 
+                {%- comment -%} Get products per page from section setting or default of 12 {%- endcomment -%}
+                {%- liquid
+                  assign section_limit = section.settings.products_per_page | default: 12 | plus: 0
+                  if section_limit > 0 and section_limit <= 96
+                    assign products_per_page = section_limit
+                  else
+                    assign products_per_page = 12
+                  endif
+                  if products_per_page < 6
+                    assign products_per_page = 6
+                  endif
+                  assign remainder = products_per_page | modulo: 6
+                  if remainder > 0
+                    assign products_per_page = products_per_page | minus: remainder | plus: 6
+                    if products_per_page > 96
+                      assign products_per_page = 96
+                    endif
+                  endif
+                -%}
 
-				</div>
-				<style>
-					.format-filter-btn {
-						display: inline-block;
-						padding: 10px 24px;
-						border: 2px solid #E2AB43;
-						border-radius: 100px;
-						color: #5C402F;
-						text-decoration: none;
-						font-weight: 600;
-						font-size: 0.9rem;
-						text-transform: uppercase;
-						letter-spacing: 0.05em;
-						transition: background 0.2s, color 0.2s;
-					}
-					.format-filter-btn:hover,
-					.format-filter-btn.active {
-						background: #E2AB43;
-						color: #fff;
-					}
-				</style>
-				{%- endif -%}
+                {%- comment -%} Paginate collection products {%- endcomment -%}
+                {%- comment -%} Use products_per_page variable (validated to be multiples of 6 between 6 and 96) {%- endcomment -%}
+                {%- paginate collection.products by products_per_page -%}
+                  {%- comment -%} Loop through paginated products {%- endcomment -%}
+                  {%- for product in paginate.items -%}
+                    {%- render 'product-loop-item', product: product -%}
+                  {%- else -%}
+                    {%- comment -%} No products message {%- endcomment -%}
+                    <div class="no-products-message">
+                      <p>{{ 'collections.general.no_products' | t | default: 'No products found' }}</p>
+                    </div>
+                  {%- endfor -%}
 
-				<div class="woocommerce elementor-element elementor-element-4981104 elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="4981104" data-element_type="widget" data-settings="{&quot;_skin&quot;:&quot;product&quot;,&quot;template_id&quot;:292,&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;2&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.product">
-				<div class="elementor-widget-container">
-							<div class="elementor-loop-container elementor-grid" role="list">
-		<style id="loop-292">.elementor-292 .elementor-element.elementor-element-a402c48{--display:flex;--min-height:365px;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:space-between;border-style:solid;--border-style:solid;border-width:1px 1px 1px 1px;--border-top-width:1px;--border-right-width:1px;--border-bottom-width:1px;--border-left-width:1px;border-color:#E2AB4352;--border-color:#E2AB4352;--border-radius:35px 35px 35px 35px;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);--padding-top:15px;--padding-bottom:15px;--padding-left:15px;--padding-right:15px;}.elementor-292 .elementor-element.elementor-element-a402c48:not(.elementor-motion-effects-element-type-background), .elementor-292 .elementor-element.elementor-element-a402c48 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:var( --e-global-color-secondary );background-image:url("{{ "light-gold-fabric.png" | asset_url }}");}.elementor-292 .elementor-element.elementor-element-cdb3783 img{border-style:solid;border-width:1px 1px 1px 1px;border-color:#E2AB4357;border-radius:25px 25px 25px 25px;}.elementor-292 .elementor-element.elementor-element-d32eb26{text-align:center;}.elementor-292 .elementor-element.elementor-element-d32eb26 .elementor-heading-title{font-family:"OAXACA", Sans-serif;font-size:22px;line-height:24px;letter-spacing:0px;color:var( --e-global-color-secondary );}.elementor-292 .elementor-element.elementor-element-87a9ad1{--e-rating-justify-content:center;}.elementor-292 .elementor-element.elementor-element-9ab4583{text-align:center;}.woocommerce .elementor-292 .elementor-element.elementor-element-9ab4583 .price{color:var( --e-global-color-secondary );font-family:"OAXACA", Sans-serif;font-size:18px;letter-spacing:0.9px;}body:not(.rtl) .elementor-292 .elementor-element.elementor-element-9ab4583:not(.elementor-product-price-block-yes) del{margin-right:0px;}body.rtl .elementor-292 .elementor-element.elementor-element-9ab4583:not(.elementor-product-price-block-yes) del{margin-left:0px;}.elementor-292 .elementor-element.elementor-element-9ab4583.elementor-product-price-block-yes del{margin-bottom:0px;}.elementor-292 .elementor-element.elementor-element-3e93f2f .cart button, .elementor-292 .elementor-element.elementor-element-3e93f2f .cart .button{font-family:"OAXACA", Sans-serif;font-size:20px;border-style:solid;border-width:1px 1px 1px 1px;border-radius:100px 100px 100px 100px;color:var( --e-global-color-secondary );background-color:var( --e-global-color-text );border-color:#F9F2EF57;transition:all 0.2s;}.woocommerce .elementor-292 .elementor-element.elementor-element-3e93f2f form.cart table.variations label{color:var( --e-global-color-text );font-family:"OAXACA", Sans-serif;}.elementor-292 .elementor-element.elementor-element-246d04e{--display:flex;}@media(max-width:879px){.elementor-292 .elementor-element.elementor-element-a402c48{--min-height:0px;--gap:10px 10px;--row-gap:10px;--column-gap:10px;--border-radius:20px 20px 20px 20px;--margin-top:0px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;--padding-top:10px;--padding-bottom:10px;--padding-left:10px;--padding-right:10px;}.elementor-292 .elementor-element.elementor-element-cdb3783 img{border-radius:15px 15px 15px 15px;}.elementor-292 .elementor-element.elementor-element-d32eb26 .elementor-heading-title{font-size:18px;line-height:18px;letter-spacing:0.5px;}.elementor-292 .elementor-element.elementor-element-87a9ad1{--e-rating-justify-content:center;--e-rating-icon-font-size:14px;--e-rating-gap:5px;}.woocommerce .elementor-292 .elementor-element.elementor-element-9ab4583 .price{font-size:16px;letter-spacing:0px;}.elementor-292 .elementor-element.elementor-element-3e93f2f .cart button, .elementor-292 .elementor-element.elementor-element-3e93f2f .cart .button{font-size:16px;}}</style>
-		{%- comment -%} Get products per page from section setting or default of 12 {%- endcomment -%}
-		{%- liquid
-			assign section_limit = section.settings.products_per_page | default: 12 | plus: 0
-			if section_limit > 0 and section_limit <= 96
-				assign products_per_page = section_limit
-			else
-				assign products_per_page = 12
-			endif
-			if products_per_page < 6
-				assign products_per_page = 6
-			endif
-			assign remainder = products_per_page | modulo: 6
-			if remainder > 0
-				assign products_per_page = products_per_page | minus: remainder | plus: 6
-				if products_per_page > 96
-					assign products_per_page = 96
-				endif
-			endif
-		-%}
-		{%- comment -%} Paginate collection products {%- endcomment -%}
-		{%- comment -%} Use products_per_page variable (validated to be 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, or 96) {%- endcomment -%}
-		{%- paginate collection.products by products_per_page -%}
-			{%- comment -%} Loop through collection products {%- endcomment -%}
-			{%- for product in collection.products -%}
-				{%- render 'product-loop-item', product: product -%}
-			{%- else -%}
-				{%- comment -%} No products message {%- endcomment -%}
-				<div class="no-products-message">
-					<p>{{ 'collections.general.no_products' | t | default: 'No products found' }}</p>
-				</div>
-			{%- endfor -%}
-				</div>
-			</div>
-			{%- comment -%} Pagination controls {%- endcomment -%}
-			{%- if paginate.pages > 1 -%}
-				<div class="elementor-element elementor-element-collection-pagination elementor-widget elementor-widget-text-editor" data-id="collection-pagination" data-element_type="widget" data-widget_type="text-editor.default">
-					<div class="elementor-widget-container">
-						{% render 'pagination', paginate: paginate %}
-					</div>
-				</div>
-			{%- endif -%}
-		{%- endpaginate -%}
-		{%- comment -%} Collection Pagination Styles {%- endcomment -%}
-		<style>
-			/* Collection Pagination Styles */
-			.elementor-element-collection-pagination .pagination {
-				margin: 40px 0;
-				text-align: center;
-			}
+                {%- comment -%} Pagination controls {%- endcomment -%}
+                {%- if paginate.pages > 1 -%}
+                  <div class="elementor-element elementor-element-collection-pagination elementor-widget elementor-widget-text-editor" data-id="collection-pagination" data-element_type="widget" data-widget_type="text-editor.default">
+                    <div class="elementor-widget-container">
+                      {% render 'pagination', paginate: paginate %}
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- endpaginate -%}
 
-			.elementor-element-collection-pagination .pagination__list {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				list-style: none;
-				padding: 0;
-				margin: 0;
-				gap: 8px;
-				flex-wrap: wrap;
-			}
+              </div>
+            </div>
+          </div>
 
-			.elementor-element-collection-pagination .pagination__item {
-				margin: 0;
-				padding: 0;
-			}
+          <div class="elementor-element elementor-element-8ca775a elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="8ca775a" data-element_type="widget" data-widget_type="divider.default">
+            <div class="elementor-widget-container">
+              <div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 &nbsp;'/%3E%3C/svg%3E&quot;)"></div>
+            </div>
+          </div>
 
-			.elementor-element-collection-pagination .pagination__link {
-				display: inline-block;
-				padding: 10px 16px;
-				min-width: 44px;
-				text-align: center;
-				text-decoration: none;
-				border: 1px solid rgba(0, 0, 0, 0.2);
-				border-radius: 4px;
-				color: var(--e-global-color-secondary, #333);
-				font-family: "Barlow", Sans-serif;
-				font-size: 16px;
-				transition: all 0.3s ease;
-			}
-
-			.elementor-element-collection-pagination .pagination__link:hover {
-				background-color: var(--e-global-color-5abf1e8, #f5f5f5);
-				border-color: var(--e-global-color-5abf1e8, #d4a574);
-			}
-
-			.elementor-element-collection-pagination .pagination__link--current {
-				background-color: var(--e-global-color-secondary, #333);
-				color: var(--e-global-color-5abf1e8, #fff);
-				border-color: var(--e-global-color-secondary, #333);
-				font-weight: 600;
-				cursor: default;
-			}
-
-			.elementor-element-collection-pagination .pagination__link--prev,
-			.elementor-element-collection-pagination .pagination__link--next {
-				font-weight: 500;
-			}
-
-			@media (max-width: 768px) {
-				.elementor-element-collection-pagination .pagination__link {
-					padding: 8px 12px;
-					min-width: 40px;
-					font-size: 14px;
-				}
-			}
-		</style>
-			  <div class="elementor-element elementor-element-8ca775a elementor-widget-divider--separator-type-pattern elementor-widget-divider--no-spacing elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="8ca775a" data-element_type="widget" data-widget_type="divider.default">
-				    <div class="elementor-widget-container">
-							<div class="elementor-divider" style="--divider-pattern-url: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpolygon points='0,14.4 0,21 11.5,12.4 21.3,20 30.4,11.1 40.3,20 51,12.4 60.6,20 69.6,11.1 79.3,20 90.1,12.4 99.6,20 109.7,11.1 120,21 120,14.4 109.7,5 99.6,13 90.1,5 79.3,14.5 71,5.7 60.6,12.4 51,5 40.3,14.5 31.1,5 21.3,13 11.5,5 	'/%3E%3C/svg%3E&quot;);">
-			          <span class="elementor-divider-separator">
-						    </span>
-		          </div>
-						</div>
-				</div>
-					</div>
-				</div>
-					</div>
-				</div>
-				</div>
-				
-				</div>
+        </div>
+      </div>
+    </div>
+</div>
 
 {%- if slide_count > 0 -%}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 (function() {
-  'use strict';
-  
-  function initCollectionSwiper() {
+'use strict';
+
+function initCollectionSwiper() {
     var container = document.querySelector('.elementor-element-3f54ab4');
     if (!container) return;
-    
+
     var slideshow = container.querySelector('.elementor-background-slideshow');
     if (!slideshow) return;
-    
+
     if (slideshow.swiper) return;
-    
+
     var slides = slideshow.querySelectorAll('.swiper-slide');
-    if (slides.length === 0) return;
-    
+    if (slides.length ===0) return;
+
     if (typeof Swiper === 'undefined') {
-      setTimeout(initCollectionSwiper, 200);
+      setTimeout(initCollectionSwiper,200);
       return;
     }
-    
-    var slideDuration = parseInt(container.getAttribute('data-slide-duration')) || 5000;
-    var transitionDuration = parseInt(container.getAttribute('data-transition-duration')) || 500;
+
+    var slideDuration = parseInt(container.getAttribute('data-slide-duration')) ||5000;
+    var transitionDuration = parseInt(container.getAttribute('data-transition-duration')) ||500;
     var loopEnabled = container.getAttribute('data-loop') !== 'false';
     var kenBurnsEnabled = container.getAttribute('data-ken-burns') !== 'false';
     var kenBurnsDirection = container.getAttribute('data-ken-burns-direction') || 'in';
-    
+
     var swiperConfig = {
-      effect: 'fade',
-      fadeEffect: { crossFade: true },
-      loop: loopEnabled && slides.length > 1,
-      autoplay: slides.length > 1 ? { delay: slideDuration, disableOnInteraction: false } : false,
-      speed: transitionDuration,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      watchSlidesProgress: true,
-      allowTouchMove: false,
-      direction: 'horizontal',
-      rtl: true
+      effect:'fade',
+      fadeEffect:{crossFade:true},
+      loop : loopEnabled && slides.length >1,
+      autoplay : slides.length >1 ?{delay : slideDuration , disableOnInteraction:false}: false,
+      speed : transitionDuration,
+      slidesPerView :1,
+      spaceBetween :0,
+      watchSlidesProgress :true,
+      allowTouchMove :false,
+      direction :'horizontal',
+      rtl :true
     };
-    
-    var swiperInstance = new Swiper(slideshow, swiperConfig);
-    
+
+    var swiperInstance = new Swiper(slideshow , swiperConfig);
+
     if (kenBurnsEnabled) {
       function activateKenBurns(slide) {
         if (!slide) return;
@@ -312,9 +228,9 @@
           image.classList.add('elementor-ken-burns--active');
         }
       }
-      
+
       var activeSlide = slideshow.querySelector('.swiper-slide-active') || slides[0];
-      if (slides.length === 1) {
+      if (slides.length ===1) {
         if (!activeSlide.classList.contains('swiper-slide-active')) {
           activeSlide.classList.add('swiper-slide-active');
         }
@@ -326,7 +242,7 @@
             void img.offsetWidth;
             img.classList.add('elementor-ken-burns--active');
           }
-        }, 50);
+        },50);
       } else {
         activateKenBurns(activeSlide);
         swiperInstance.on('slideChange', function() {
@@ -334,216 +250,209 @@
         });
       }
     }
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(initCollectionSwiper, 1000);
-    });
-  } else {
-    setTimeout(initCollectionSwiper, 1000);
-  }
-  
-  if (typeof window.elementorFrontend !== 'undefined') {
-    setTimeout(initCollectionSwiper, 2000);
-    if (typeof jQuery !== 'undefined') {
-      jQuery(document).on('elementor/frontend/init', function() {
-        setTimeout(initCollectionSwiper, 1000);
-      });
-    }
-  }
-  
-  if (typeof Shopify !== 'undefined' && Shopify.designMode) {
-    document.addEventListener('shopify:section:load', function() {
-      setTimeout(initCollectionSwiper, 500);
-    });
-  }
-  
-  window.addEventListener('load', function() {
-    setTimeout(initCollectionSwiper, 1500);
-  });
+}
+
+if (document.readyState === 'loading') {
+ document.addEventListener('DOMContentLoaded', function() {
+   setTimeout(initCollectionSwiper ,1000);
+ });
+} else {
+ setTimeout(initCollectionSwiper ,1000);
+}
+
+if (typeof window.elementorFrontend !== 'undefined') {
+ setTimeout(initCollectionSwiper ,2000);
+ if (typeof jQuery !== 'undefined') {
+   jQuery(document).on('elementor/frontend/init', function() {
+     setTimeout(initCollectionSwiper ,1000);
+   });
+ }
+}
+
+if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+ document.addEventListener('shopify:section:load', function() {
+   setTimeout(initCollectionSwiper ,500);
+ });
+}
+
+window.addEventListener('load', function() {
+ setTimeout(initCollectionSwiper ,1500);
+});
 })();
 </script>
 {%- endif -%}
 
 {% schema %}
 {
-  "name": "Main Collection",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "range",
-      "id": "products_per_page",
-      "label": "Products per page",
-      "min": 6,
-      "max": 96,
-      "step": 6,
-      "default": 12,
-      "info": "Default number of products to display per page. Users can change this using the dropdown on the collection page."
-    },
-    {
-      "type": "header",
-      "content": "Background Slideshow Settings"
-    },
-    {
-      "type": "range",
-      "id": "slide_duration",
-      "label": "Slide Duration (ms)",
-      "min": 2000,
-      "max": 9500,
-      "step": 500,
-      "default": 5000,
-      "info": "How long each slide is displayed"
-    },
-    {
-      "type": "range",
-      "id": "transition_duration",
-      "label": "Transition Duration (ms)",
-      "min": 200,
-      "max": 2000,
-      "step": 100,
-      "default": 500,
-      "info": "Fade transition duration between slides"
-    },
-    {
-      "type": "checkbox",
-      "id": "loop",
-      "label": "Loop Slideshow",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "ken_burns",
-      "label": "Enable Ken Burns Effect",
-      "default": true,
-      "info": "Adds a subtle zoom animation to images"
-    },
-    {
-      "type": "select",
-      "id": "ken_burns_direction",
-      "label": "Ken Burns Direction",
-      "options": [
-        {
-          "value": "in",
-          "label": "Zoom In"
-        },
-        {
-          "value": "out",
-          "label": "Zoom Out"
-        }
-      ],
-      "default": "in"
-    }
-,
-    {
-      "type": "header",
-      "content": "Format Filter Bar"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_format_filters",
-      "label": "Show Format Filter Buttons",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "filter_paste_label",
-      "label": "Paste Button Label",
-      "default": "Paste"
-    },
-    {
-      "type": "url",
-      "id": "filter_paste_url",
-      "label": "Paste Filter URL"
-    },
-    {
-      "type": "text",
-      "id": "filter_paste_tag",
-      "label": "Paste Tag",
-      "default": "paste"
-    },
-    {
-      "type": "text",
-      "id": "filter_ground_label",
-      "label": "Ground Button Label",
-      "default": "Ground"
-    },
-    {
-      "type": "url",
-      "id": "filter_ground_url",
-      "label": "Ground Filter URL"
-    },
-    {
-      "type": "text",
-      "id": "filter_ground_tag",
-      "label": "Ground Tag",
-      "default": "ground"
-    },
-    {
-      "type": "text",
-      "id": "filter_packets_label",
-      "label": "Single-Serve Button Label",
-      "default": "Single-Serve"
-    },
-    {
-      "type": "url",
-      "id": "filter_packets_url",
-      "label": "Single-Serve Filter URL"
-    },
-    {
-      "type": "text",
-      "id": "filter_packets_tag",
-      "label": "Single-Serve Tag",
-      "default": "single-serve"
-    },
-      {
-    "type": "text",
-    "id": "filter_bundles_label",
-    "label": "bundles Button Label",
-    "default": "bundles"
-  },
-  {
-    "type": "url",
-    "id": "filter_bundles_url",
-    "label": "bundles Filter URL"
-  },
-  {
-    "type": "text",
-    "id": "filter_bundles_tag",
-    "label": "bundles Tag",
-    "default": "bundles"
-  }
-  ],
-  "blocks": [
-    {
-      "type": "slide",
-      "name": "Slide",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Slide Image",
-          "info": "Recommended size: 1920x1080px or larger"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Main Collection",
-      "blocks": [
-        {
-          "type": "slide"
-        },
-        {
-          "type": "slide"
-        },
-        {
-          "type": "slide"
-        }
-      ]
-    }
-  ]
+"name": "Main Collection",
+"tag": "section",
+"class": "section",
+"settings": [
+{
+"type": "range",
+"id": "products_per_page",
+"label": "Products per page",
+"min":6,
+"max":96,
+"step":6,
+"default":12,
+"info": "Default number of products to display per page. Users can change this using the dropdown on the collection page."
+},
+{
+"type": "header",
+"content": "Background Slideshow Settings"
+},
+{
+"type": "range",
+"id": "slide_duration",
+"label": "Slide Duration (ms)",
+"min":2000,
+"max":9500,
+"step":500,
+"default":5000,
+"info": "How long each slide is displayed"
+},
+{
+"type": "range",
+"id": "transition_duration",
+"label": "Transition Duration (ms)",
+"min":200,
+"max":2000,
+"step":100,
+"default":500,
+"info": "Fade transition duration between slides"
+},
+{
+"type": "checkbox",
+"id": "loop",
+"label": "Loop Slideshow",
+"default":true
+},
+{
+"type": "checkbox",
+"id": "ken_burns",
+"label": "Enable Ken Burns Effect",
+"default":true,
+"info": "Adds a subtle zoom animation to images"
+},
+{
+"type": "select",
+"id": "ken_burns_direction",
+"label": "Ken Burns Direction",
+"options": [
+{
+"value":"in",
+"label":"Zoom In"
+},
+{
+"value":"out",
+"label":"Zoom Out"
+}
+],
+"default":"in"
+},
+{
+"type": "header",
+"content": "Format Filter Bar"
+},
+{
+"type": "checkbox",
+"id": "show_format_filters",
+"label": "Show Format Filter Buttons",
+"default":true
+},
+{
+"type": "text",
+"id": "filter_paste_label",
+"label": "Paste Button Label",
+"default":"Paste"
+},
+{
+"type": "url",
+"id": "filter_paste_url",
+"label": "Paste Filter URL"
+},
+{
+"type": "text",
+"id": "filter_paste_tag",
+"label": "Paste Tag",
+"default":"paste"
+},
+{
+"type": "text",
+"id": "filter_ground_label",
+"label": "Ground Button Label",
+"default":"Ground"
+},
+{
+"type": "url",
+"id": "filter_ground_url",
+"label": "Ground Filter URL"
+},
+{
+"type": "text",
+"id": "filter_ground_tag",
+"label": "Ground Tag",
+"default":"ground"
+},
+{
+"type": "text",
+"id": "filter_packets_label",
+"label": "Single-Serve Button Label",
+"default":"Single-Serve"
+},
+{
+"type": "url",
+"id": "filter_packets_url",
+"label": "Single-Serve Filter URL"
+},
+{
+"type": "text",
+"id": "filter_packets_tag",
+"label": "Single-Serve Tag",
+"default":"single-serve"
+},
+{
+"type": "text",
+"id": "filter_bundles_label",
+"label": "bundles Button Label",
+"default":"bundles"
+},
+{
+"type": "url",
+"id": "filter_bundles_url",
+"label": "bundles Filter URL"
+},
+{
+"type": "text",
+"id": "filter_bundles_tag",
+"label": "bundles Tag",
+"default":"bundles"
+}
+],
+"blocks":[
+{
+"type":"slide",
+"name":"Slide",
+"settings":[
+{
+"type":"image_picker",
+"id":"image",
+"label":"Slide Image",
+"info":"Recommended size: 1920x1080px or larger"
+}
+]
+}
+],
+"presets":[
+{
+"name":"Main Collection",
+"blocks":[
+{"type":"slide"},
+{"type":"slide"},
+{"type":"slide"}
+]
+}
+]
 }
 {% endschema %}
