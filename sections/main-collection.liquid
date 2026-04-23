@@ -99,6 +99,9 @@
 					{%- if section.settings.filter_packets_url != blank -%}
 						<a href="{{ section.settings.filter_packets_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_packets_tag %} active{% endif %}">{{ section.settings.filter_packets_label | default: "Single-Serve" }}</a>
 					{%- endif -%}
+          {%- if section.settings.filter_packets_url != blank -%}
+						<a href="{{ section.settings.filter_packets_url }}" class="format-filter-btn{% if current_tags contains section.settings.filter_packets_tag %} active{% endif %}">{{ section.settings.filter_packets_label | default: "Bundles" }}</a>
+					{%- endif -%}
 
 
 
