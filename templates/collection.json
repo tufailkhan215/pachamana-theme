@@ -52,7 +52,10 @@
         "filter_ground_tag": "ground",
         "filter_packets_label": "Single-Serve",
         "filter_packets_url": "shopify://collections/single_serve",
-        "filter_packets_tag": "single-serve"
+        "filter_packets_tag": "single-serve",
+        "filter_bundles_label": "bundles",
+        "filter_bundles_url": "shopify://collections/bundles",
+        "filter_bundles_tag": "bundles"
       }
     },
     "section_format_comparison_emHDLW": {
