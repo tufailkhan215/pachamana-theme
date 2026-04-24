@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "type_header_font": "lora_n4",
+    "type_body_font": "lora_n4",
     "shop_url": "https://pachamana-2.myshopify.com",
     "announcement_enabled": false,
     "contact_popup_enabled": true,
