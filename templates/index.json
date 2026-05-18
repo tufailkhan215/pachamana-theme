@@ -1019,6 +1019,43 @@
       "settings": {
         "section_label": "Content block"
       }
+    },
+    "17791404092cb5395f": {
+      "type": "_blocks",
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
+    "177914056064db3561": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7174b8d_EdMkG6": {
+          "type": "ai_gen_block_7174b8d",
+          "settings": {
+            "checkbox_label": "Add an ice pack to my order",
+            "attribute_name": "Ice Pack",
+            "attribute_value": "Ice pack requested",
+            "show_icon": true,
+            "padding": 16,
+            "border_radius": 8,
+            "background_color": "#E2AB43",
+            "checkbox_size": 20,
+            "checkbox_color": "#5C402F",
+            "label_font": "lora_n4",
+            "label_size": 16,
+            "label_color": "#000000",
+            "icon_size": 24,
+            "icon_color": "#5C402F"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7174b8d_EdMkG6"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
     }
   },
   "order": [
@@ -1042,6 +1079,8 @@
     "section_faq_FVrqXP",
     "1776724953739e6460",
     "177672493025471699",
-    "1773594775afe31f9b"
+    "1773594775afe31f9b",
+    "17791404092cb5395f",
+    "177914056064db3561"
   ]
 }
