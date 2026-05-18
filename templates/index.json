@@ -1028,31 +1028,6 @@
     },
     "177914056064db3561": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_7174b8d_EdMkG6": {
-          "type": "ai_gen_block_7174b8d",
-          "settings": {
-            "checkbox_label": "Add an ice pack to my order",
-            "attribute_name": "Ice Pack",
-            "attribute_value": "Ice pack requested",
-            "show_icon": true,
-            "padding": 16,
-            "border_radius": 8,
-            "background_color": "#E2AB43",
-            "checkbox_size": 20,
-            "checkbox_color": "#5C402F",
-            "label_font": "lora_n4",
-            "label_size": 16,
-            "label_color": "#000000",
-            "icon_size": 24,
-            "icon_color": "#5C402F"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_7174b8d_EdMkG6"
-      ],
       "settings": {
         "section_label": "Content block"
       }
