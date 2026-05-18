@@ -1,6 +1,316 @@
+{% doc %}
+  @prompt
+    Add an "Add an ice pack" checkbox to the cart page. When checked, it should pass the selection as an order note or cart attribute so the merchant can see "Ice pack requested" on every order. The checkbox should be styled to match the existing theme and appear near the cart totals or checkout button.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-ice-pack-wrapper-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: {{ block.settings.spacing_top }}px 0 {{ block.settings.spacing_bottom }}px;
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-ice-pack-container-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  .ai-ice-pack-checkbox-{{ ai_gen_id }} {
+    width: {{ block.settings.checkbox_size }}px;
+    height: {{ block.settings.checkbox_size }}px;
+    min-width: {{ block.settings.checkbox_size }}px;
+    cursor: pointer;
+    accent-color: {{ block.settings.checkbox_color }};
+  }
+
+  .ai-ice-pack-label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.label_font.family }}, {{ block.settings.label_font.fallback_families }};
+    font-weight: {{ block.settings.label_font.weight }};
+    font-size: {{ block.settings.label_size }}px;
+    color: {{ block.settings.label_color }};
+    cursor: pointer;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .ai-ice-pack-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    margin: 8px 0 0 {{ block.settings.checkbox_size | plus: 12 }}px;
+    line-height: 1.4;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-ice-pack-wrapper-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<ice-pack-selector-{{ ai_gen_id }}
+  class="ai-ice-pack-wrapper-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <label class="ai-ice-pack-container-{{ ai_gen_id }}" for="ice-pack-checkbox-{{ ai_gen_id }}">
+    <input
+      type="checkbox"
+      id="ice-pack-checkbox-{{ ai_gen_id }}"
+      class="ai-ice-pack-checkbox-{{ ai_gen_id }}"
+      name="attributes[{{ block.settings.attribute_name }}]"
+      value="{{ block.settings.attribute_value }}"
+      {% if cart.attributes[block.settings.attribute_name] == block.settings.attribute_value %}checked{% endif %}
+    >
+    <span class="ai-ice-pack-label-{{ ai_gen_id }}">
+      {{ block.settings.label_text }}
+    </span>
+  </label>
+  {% if block.settings.description_text != blank %}
+    <div class="ai-ice-pack-description-{{ ai_gen_id }}">
+      {{ block.settings.description_text }}
+    </div>
+  {% endif %}
+</ice-pack-selector-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class IcePackSelector{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.checkbox = this.querySelector('.ai-ice-pack-checkbox-{{ ai_gen_id }}');
+        if (this.checkbox) {
+          this.checkbox.addEventListener('change', this.handleCheckboxChange.bind(this));
+        }
+      }
+
+      handleCheckboxChange(event) {
+        const isChecked = event.target.checked;
+        const attributeName = event.target.name;
+        const attributeValue = isChecked ? event.target.value : '';
+
+        fetch('/cart/update.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            attributes: {
+              [attributeName.replace('attributes[', '').replace(']', '')]: attributeValue
+            }
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (window.dispatchEvent) {
+            window.dispatchEvent(new Event('cart:updated'));
+          }
+        })
+        .catch(error => {
+          console.error('Error updating cart attribute:', error);
+        });
+      }
+
+      disconnectedCallback() {
+        if (this.checkbox) {
+          this.checkbox.removeEventListener('change', this.handleCheckboxChange);
+        }
+      }
+    }
+
+    customElements.define('ice-pack-selector-{{ ai_gen_id }}', IcePackSelector{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Ice pack checkbox",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Checkbox label",
+      "default": "Add an ice pack to my order"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Description text",
+      "default": "Recommended for warm weather shipping to keep your cacao fresh"
+    },
+    {
+      "type": "text",
+      "id": "attribute_name",
+      "label": "Cart attribute name",
+      "default": "Ice pack requested",
+      "info": "This will appear in your order details"
+    },
+    {
+      "type": "text",
+      "id": "attribute_value",
+      "label": "Attribute value when checked",
+      "default": "Yes"
+    },
+    {
+      "type": "header",
+      "content": "Checkbox style"
+    },
+    {
+      "type": "range",
+      "id": "checkbox_size",
+      "label": "Checkbox size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "checkbox_color",
+      "label": "Checkbox color",
+      "default": "#5C402F"
+    },
+    {
+      "type": "header",
+      "content": "Label style"
+    },
+    {
+      "type": "font_picker",
+      "id": "label_font",
+      "label": "Label font",
+      "default": "lora_n4"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Container style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F5F0EB"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#E2AB43"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "spacing_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "spacing_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ice pack checkbox"
+    }
+  ]
+}
 {% endschema %}
