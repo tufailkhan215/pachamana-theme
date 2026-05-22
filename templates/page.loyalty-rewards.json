@@ -149,6 +149,29 @@
             "join_button_text_color": "#ffffff",
             "custom_css": ""
           }
+        },
+        "yuko_loyalty_reviews_loyalty_page_vip_tiers_pm4DXd": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/loyalty-page-vip-tiers/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {
+            "vip_tiers_background_color": "#FFE6BE",
+            "vip_tiers_heading_color": "#000000",
+            "vip_tiers_text_color": "#000000",
+            "tier_card_background_color": "#ffe6be",
+            "current_tier_background_color": "#f8f9fa",
+            "current_tier_border_color": "#5C402F",
+            "current_tier_badge_background": "#007bff",
+            "current_tier_badge_text": "#ffffff",
+            "tier_name_color": "#333333",
+            "tier_name_size": 18,
+            "tier_description_color": "#000000",
+            "tier_description_size": 14,
+            "benefit_text_color": "#666666",
+            "benefit_text_size": 14,
+            "benefit_icon_color": "#4CAF50",
+            "benefit_icon_size": 16,
+            "benefit_gap": 8,
+            "custom_css": ".yuko.tier.card{\nborder-color: #5C402F\n}"
+          }
         }
       },
       "block_order": [
@@ -156,7 +179,8 @@
         "yuko_loyalty_reviews_loyalty_page_how_it_works_8TMB6N",
         "yuko_loyalty_reviews_referral_advocate_page_JyXBxH",
         "yuko_loyalty_reviews_loyalty_page_ways_to_earn_xUcwK6",
-        "yuko_loyalty_reviews_loyalty_page_ways_to_redeem_W9WG3h"
+        "yuko_loyalty_reviews_loyalty_page_ways_to_redeem_W9WG3h",
+        "yuko_loyalty_reviews_loyalty_page_vip_tiers_pm4DXd"
       ],
       "settings": {
         "section_label": "Content block"
