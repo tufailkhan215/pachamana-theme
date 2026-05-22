@@ -58,6 +58,21 @@
         "filter_bundles_tag": "bundles"
       }
     },
+    "177941813808792914": {
+      "type": "_blocks",
+      "blocks": {
+        "yuko_loyalty_reviews_all_reviews_product_widget_aaFt3B": {
+          "type": "shopify://apps/yuko-loyalty-reviews/blocks/all-reviews-product-widget/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "yuko_loyalty_reviews_all_reviews_product_widget_aaFt3B"
+      ],
+      "settings": {
+        "section_label": "Content block"
+      }
+    },
     "section_format_comparison_emHDLW": {
       "type": "section-format-comparison",
       "name": "Format Comparison",
@@ -91,6 +106,7 @@
   },
   "order": [
     "main",
-    "section_format_comparison_emHDLW"
+    "section_format_comparison_emHDLW",
+    "177941813808792914"
   ]
 }
