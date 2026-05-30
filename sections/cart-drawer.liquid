@@ -59,11 +59,13 @@
       
       {%- if cart.item_count > 0 -%}
         <div class="cart-drawer__footer">
+          {% render 'cart-ice-pack-toggle', variant: 'drawer' %}
+
           <div class="cart-drawer__subtotal">
             <span>{{ 'sections.cart.subtotal' | t | default: 'Subtotal' }}</span>
             <span>{{ cart.total_price | money }}</span>
           </div>
-          
+
           <a href="{{ routes.cart_url }}" class="button button--primary cart-drawer__checkout">
             {{ 'sections.cart.checkout' | t | default: 'Checkout' }}
           </a>

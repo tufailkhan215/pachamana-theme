@@ -4,8 +4,8 @@
     "theme_name": "Pacha Mana Theme",
     "theme_version": "1.0.0",
     "theme_author": "Pacha Mana",
-    "theme_documentation_url": "https://pachamana.com",
-    "theme_support_url": "https://pachamana.com"
+    "theme_documentation_url": "https:\/\/pachamana.com",
+    "theme_support_url": "https:\/\/pachamana.com"
   },
   {
     "name": "Colors",
@@ -55,7 +55,7 @@
         "type": "text",
         "id": "shop_url",
         "label": "Shop URL",
-        "default": "https://pachamana.com",
+        "default": "https:\/\/pachamana.com",
         "info": "Base URL for the shop"
       }
     ]
@@ -78,25 +78,25 @@
         "type": "text",
         "id": "social_facebook_link",
         "label": "Facebook",
-        "info": "https://www.facebook.com/shopify"
+        "info": "https:\/\/www.facebook.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_instagram_link",
         "label": "Instagram",
-        "info": "https://www.instagram.com/shopify"
+        "info": "https:\/\/www.instagram.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_twitter_link",
         "label": "Twitter",
-        "info": "https://twitter.com/shopify"
+        "info": "https:\/\/twitter.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_pinterest_link",
         "label": "Pinterest",
-        "info": "https://www.pinterest.com/shopify"
+        "info": "https:\/\/www.pinterest.com\/shopify"
       }
     ]
   },
@@ -119,7 +119,7 @@
         "type": "checkbox",
         "id": "product_enable_payment_button",
         "label": "Show dynamic checkout button",
-        "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "info": "Lets customers check out directly using a familiar payment method. [Learn more](https:\/\/help.shopify.com\/manual\/using-themes\/change-the-layout\/dynamic-checkout)",
         "default": true
       }
     ]
@@ -138,6 +138,42 @@
         "id": "cart_continue_shopping_text",
         "label": "Continue shopping button text",
         "default": "Continue shopping"
+      }
+    ]
+  },
+  {
+    "name": "Cart addons",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "ice_pack_enabled",
+        "label": "Show 'Add an Ice Pack' upsell in cart",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "ice_pack_variant_id",
+        "label": "Ice Pack variant ID",
+        "info": "Numeric variant ID of the Ice Pack product. Auto-populated when feature is installed."
+      },
+      {
+        "type": "text",
+        "id": "ice_pack_price_label",
+        "label": "Price label",
+        "default": "$4.99",
+        "info": "Displayed next to the toggle. Update if the product price changes."
+      },
+      {
+        "type": "text",
+        "id": "ice_pack_title",
+        "label": "Toggle title",
+        "default": "Add an Ice Pack"
+      },
+      {
+        "type": "text",
+        "id": "ice_pack_subtitle",
+        "label": "Toggle description",
+        "default": "Recommended for warm-weather shipping"
       }
     ]
   },
@@ -189,7 +225,7 @@
         "type": "richtext",
         "id": "contact_popup_text",
         "label": "Popup Text Content",
-        "default": "<p>Fill out the form below, and we will be in touch shortly or,</p>"
+        "default": "<p>Fill out the form below, and we will be in touch shortly or,<\/p>"
       },
       {
         "type": "text",
@@ -226,7 +262,7 @@
         "type": "image_picker",
         "id": "newsletter_popup_logo",
         "label": "Popup logo",
-        "info": "Sun/bean logo at top of popup"
+        "info": "Sun\/bean logo at top of popup"
       },
       {
         "type": "text",
@@ -306,4 +342,3 @@
     ]
   }
 ]
-

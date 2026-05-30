@@ -1,0 +1,94 @@
+{%- comment -%}
+  Ice Pack upsell toggle.
+  Renders on cart page and cart drawer.
+  Variant: settings.ice_pack_variant_id  -  Toggle state: scans cart.items.
+  Param: variant ('page' or 'drawer') controls layout.
+{%- endcomment -%}
+
+{%- liquid
+  assign ice_pack_id = settings.ice_pack_variant_id | strip
+  assign in_cart = false
+  assign ice_pack_item_key = ''
+  if ice_pack_id != blank
+    for item in cart.items
+      assign vid = item.variant_id | append: ''
+      if vid == ice_pack_id
+        assign in_cart = true
+        assign ice_pack_item_key = item.key
+        break
+      endif
+    endfor
+  endif
+  assign variant = variant | default: 'page'
+-%}
+
+{%- if settings.ice_pack_enabled and ice_pack_id != blank and cart.item_count > 0 -%}
+  <div
+    class="ice-pack-upsell ice-pack-upsell--{{ variant }}"
+    data-ice-pack-upsell
+    data-ice-pack-variant-id="{{ ice_pack_id }}"
+    data-ice-pack-in-cart="{{ in_cart }}"
+    data-ice-pack-item-key="{{ ice_pack_item_key }}"
+  >
+    <label class="ice-pack-upsell__row">
+      <input
+        type="checkbox"
+        class="ice-pack-upsell__checkbox"
+        data-ice-pack-toggle
+        {% if in_cart %}checked{% endif %}
+        aria-label="{{ settings.ice_pack_title | default: 'Add an Ice Pack' }}"
+      >
+      <span class="ice-pack-upsell__icon" aria-hidden="true">&#x1F9CA;</span>
+      <span class="ice-pack-upsell__text">
+        <span class="ice-pack-upsell__title">
+          {{ settings.ice_pack_title | default: 'Add an Ice Pack' }}
+          &mdash;
+          <span class="ice-pack-upsell__price">{{ settings.ice_pack_price_label | default: '$4.99' }}</span>
+        </span>
+        <span class="ice-pack-upsell__subtitle">
+          {{ settings.ice_pack_subtitle | default: 'Recommended for warm-weather shipping' }}
+        </span>
+        <span class="ice-pack-upsell__added" data-ice-pack-added>{{ 'cart.ice_pack.added' | t | default: '✓ Added to your order' }}</span>
+      </span>
+      <span class="ice-pack-upsell__spinner" data-ice-pack-spinner aria-hidden="true"></span>
+    </label>
+  </div>
+
+  <style>
+    .ice-pack-upsell { margin: 16px 0; }
+    .ice-pack-upsell__row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid rgba(92, 64, 47, 0.2);
+      border-radius: 10px;
+      background: rgba(226, 171, 67, 0.08);
+      cursor: pointer;
+      transition: background-color .15s ease, border-color .15s ease;
+      font-family: inherit;
+    }
+    .ice-pack-upsell__row:hover { background: rgba(226, 171, 67, 0.16); border-color: rgba(92, 64, 47, 0.35); }
+    .ice-pack-upsell[data-ice-pack-in-cart="true"] .ice-pack-upsell__row {
+      background: rgba(92, 64, 47, 0.08);
+      border-color: #5C402F;
+    }
+    .ice-pack-upsell__checkbox { width: 20px; height: 20px; flex-shrink: 0; accent-color: #5C402F; cursor: pointer; }
+    .ice-pack-upsell__icon { font-size: 24px; line-height: 1; flex-shrink: 0; }
+    .ice-pack-upsell__text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .ice-pack-upsell__title { font-weight: 600; color: #5C402F; font-size: 15px; }
+    .ice-pack-upsell__price { color: #B99135; }
+    .ice-pack-upsell__subtitle { font-size: 13px; color: #6b5547; opacity: .85; }
+    .ice-pack-upsell__added { display: none; font-size: 12px; color: #2c7a3f; font-weight: 600; margin-top: 2px; }
+    .ice-pack-upsell[data-ice-pack-in-cart="true"] .ice-pack-upsell__added { display: inline; }
+    .ice-pack-upsell__spinner { width: 16px; height: 16px; flex-shrink: 0; display: none; border: 2px solid rgba(92,64,47,.2); border-top-color: #5C402F; border-radius: 50%; animation: ice-pack-spin .8s linear infinite; }
+    .ice-pack-upsell[data-ice-pack-loading="true"] .ice-pack-upsell__spinner { display: inline-block; }
+    .ice-pack-upsell[data-ice-pack-loading="true"] .ice-pack-upsell__row { pointer-events: none; opacity: .7; }
+    @keyframes ice-pack-spin { to { transform: rotate(360deg); } }
+
+    .ice-pack-upsell--drawer { margin: 12px 0; }
+    .ice-pack-upsell--drawer .ice-pack-upsell__row { padding: 10px 12px; }
+    .ice-pack-upsell--drawer .ice-pack-upsell__title { font-size: 14px; }
+    .ice-pack-upsell--drawer .ice-pack-upsell__subtitle { font-size: 12px; }
+  </style>
+{%- endif -%}
