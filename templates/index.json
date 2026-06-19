@@ -97,6 +97,7 @@
     },
     "section-featured-products": {
       "type": "section-featured-products",
+      "name": "Best Sellers",
       "settings": {
         "heading": "Best Sellers",
         "collection": "frontpage",
