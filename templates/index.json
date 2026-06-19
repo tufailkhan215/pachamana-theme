@@ -98,7 +98,7 @@
     "section-featured-products": {
       "type": "section-featured-products",
       "settings": {
-        "heading": "FEATURED PRODUCTS",
+        "heading": "Best Sellers",
         "collection": "frontpage",
         "products_to_show": 3
       }
@@ -997,7 +997,7 @@
       "type": "_blocks",
       "blocks": {
         "yuko_loyalty_reviews_all_reviews_product_widget_XACXyt": {
-          "type": "shopify://apps/yuko-loyalty-reviews/blocks/all-reviews-product-widget/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "type": "shopify://apps/yuko-loyalty-referral/blocks/all-reviews-product-widget/5cda428c-b39d-45e5-80d9-bad790f2bb50",
           "settings": {}
         }
       },
