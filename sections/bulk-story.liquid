@@ -1,0 +1,62 @@
+<section class="pmw pmw-story" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner pmw-story__inner">
+    <div class="pmw-story__media">
+      {%- if section.settings.image != blank -%}
+        {%- assign story_src = section.settings.image | image_url: width: 1200 -%}
+      {%- else -%}
+        {%- assign story_src = 'bulk-story-portrait.jpg' | asset_url -%}
+      {%- endif -%}
+      <img src="{{ story_src }}" alt="{{ section.settings.image_alt | default: section.settings.headline | escape }}" loading="lazy">
+    </div>
+    <div class="pmw-story__text">
+      {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow">{{ section.settings.eyebrow }}</div>{% endif %}
+      <h2 class="pmw-story__title">{{ section.settings.headline }}</h2>
+      <div class="pmw-story__body">{{ section.settings.body }}</div>
+      {% if section.settings.signature != blank %}<p class="pmw-story__sig">{{ section.settings.signature }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-story { padding: 92px 72px; }
+  #pmw-{{ section.id }} .pmw-story__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; max-width: 1180px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-story__media { aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; box-shadow: var(--card-shadow); background: var(--hero-grad); display: flex; align-items: center; justify-content: center; }
+  #pmw-{{ section.id }} .pmw-story__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #pmw-{{ section.id }} .pmw-story__placeholder { font-family: var(--font-display); font-size: 16px; letter-spacing: .12em; text-transform: uppercase; color: var(--pm-cacao-300); }
+  #pmw-{{ section.id }} .pmw-story__title { font-size: 34px; margin: 14px 0 22px; }
+  #pmw-{{ section.id }} .pmw-story__body { font-size: 17px; line-height: 1.75; color: var(--page-muted); }
+  #pmw-{{ section.id }} .pmw-story__body p { margin: 0 0 18px; }
+  #pmw-{{ section.id }} .pmw-story__sig { margin-top: 24px; font-family: var(--font-display); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--pm-gold-600); }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }}.pmw-story { padding: 64px 20px; }
+    #pmw-{{ section.id }} .pmw-story__inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Story",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Image" },
+    { "type": "image_picker", "id": "image", "label": "Story image" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Justin and Joel, Pacha Mana" },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Origin" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Ceremony Starts At The Farm" },
+    { "type": "richtext", "id": "body", "label": "Story body",
+      "default": "<p>Twelve years ago, two cousins started walking the highlands above Quillabamba, drinking cacao with farming families and asking how to do this together — in a way that holds.</p><p>Today every bag, paste block, and shipment can be traced back to a specific grove and harvest week. Your customers don't just drink cacao. They drink a relationship.</p>" },
+    { "type": "text", "id": "signature", "label": "Signature line", "default": "— Justin & Joel" }
+  ],
+  "presets": [{ "name": "Bulk — Story" }]
+}
+{% endschema %}

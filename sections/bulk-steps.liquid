@@ -1,0 +1,68 @@
+<section class="pmw pmw-steps" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner">
+    {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow" style="text-align:center;display:block;">{{ section.settings.eyebrow }}</div>{% endif %}
+    <h2 class="pmw-steps__title">{{ section.settings.headline }}</h2>
+    {% if section.settings.subhead != blank %}<p class="pmw-steps__sub">{{ section.settings.subhead }}</p>{% endif %}
+    <div class="pmw-steps__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'step' %}
+          <div class="pmw-steps__item" {{ block.shopify_attributes }}>
+            <div class="pmw-steps__num">{{ block.settings.number }}</div>
+            <h3 class="pmw-steps__name">{{ block.settings.title }}</h3>
+            <p class="pmw-steps__desc">{{ block.settings.description }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-steps { padding: 92px 72px; }
+  #pmw-{{ section.id }} .pmw-steps__title { text-align: center; font-size: 40px; margin: 14px 0 10px; }
+  #pmw-{{ section.id }} .pmw-steps__sub { text-align: center; max-width: 580px; margin: 0 auto 48px; font-size: 17px; line-height: 1.7; color: var(--page-muted); }
+  #pmw-{{ section.id }} .pmw-steps__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 26px; max-width: 1180px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-steps__item { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 28px 24px; box-shadow: var(--card-shadow); position: relative; }
+  #pmw-{{ section.id }} .pmw-steps__num { font-family: var(--font-display); font-size: 36px; color: var(--pm-sunshine-gold); letter-spacing: .02em; line-height: 1; margin-bottom: 14px; }
+  #pmw-{{ section.id }} .pmw-steps__name { font-size: 17px; letter-spacing: .05em; color: var(--page-text); margin-bottom: 8px; }
+  #pmw-{{ section.id }} .pmw-steps__desc { font-size: 15px; line-height: 1.65; color: var(--page-muted); }
+  @media (max-width: 768px) { #pmw-{{ section.id }}.pmw-steps { padding: 64px 20px; } }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Steps",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How It Works" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Four Simple Steps" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead (optional)" }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Step", "limit": 6, "settings": [
+      { "type": "text", "id": "number", "label": "Number", "default": "01" },
+      { "type": "text", "id": "title", "label": "Title", "default": "Apply" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Send the short form below. We review and reply within 48 hours." }
+    ]}
+  ],
+  "presets": [{
+    "name": "Bulk — Steps",
+    "blocks": [
+      { "type": "step", "settings": { "number": "01", "title": "Apply", "description": "Send the short form below. We review and reply within 48 hours." } },
+      { "type": "step", "settings": { "number": "02", "title": "Get Approved", "description": "Receive your wholesale login and price list, or order instantly on Faire." } },
+      { "type": "step", "settings": { "number": "03", "title": "Place Your Order", "description": "Order online with tier pricing applied, or with your account manager." } },
+      { "type": "step", "settings": { "number": "04", "title": "Share It", "description": "We ship in 2–3 days with shelf cards and brewing guides included." } }
+    ]
+  }]
+}
+{% endschema %}

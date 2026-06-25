@@ -1,0 +1,66 @@
+<section class="pmw pmw-cta" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  {%- if section.settings.mark_image != blank -%}
+    {%- assign cta_mark_src = section.settings.mark_image | image_url: width: 700 -%}
+  {%- else -%}
+    {%- assign cta_mark_src = 'bulk-mark-cream.png' | asset_url -%}
+  {%- endif -%}
+  <img src="{{ cta_mark_src }}" alt="" class="pmw-cta__mark" loading="lazy">
+  <div class="pmw__inner pmw-cta__inner">
+    {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow pmw-cta__eyebrow">{{ section.settings.eyebrow }}</div>{% endif %}
+    <h2 class="pmw-cta__title">{{ section.settings.headline }}</h2>
+    {% if section.settings.subhead != blank %}<p class="pmw-cta__sub">{{ section.settings.subhead }}</p>{% endif %}
+    <div class="pmw-cta__ctas">
+      {% if section.settings.cta1_label != blank %}
+        <a href="{{ section.settings.cta1_link | default: '#' }}" class="pmw-btn pmw-btn--on-dark">{{ section.settings.cta1_label }}</a>
+      {% endif %}
+      {% if section.settings.cta2_label != blank %}
+        <a href="{{ section.settings.cta2_link | default: '#' }}" class="pmw-btn pmw-btn--secondary">{{ section.settings.cta2_label }}</a>
+      {% endif %}
+    </div>
+    {% if section.settings.contact_line != blank %}<p class="pmw-cta__contact">{{ section.settings.contact_line }}</p>{% endif %}
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-cta { padding: 96px 72px; text-align: center; color: var(--band-text); background: var(--band-bg); }
+  #pmw-{{ section.id }} .pmw-cta__mark { position: absolute; right: -80px; top: -60px; width: 360px; opacity: .08; pointer-events: none; z-index: 1; }
+  #pmw-{{ section.id }} .pmw-cta__eyebrow { color: var(--pm-gold-300); display: block; }
+  #pmw-{{ section.id }} .pmw-cta__title { color: var(--band-text); font-size: 46px; margin: 14px 0 0; }
+  #pmw-{{ section.id }} .pmw-cta__sub { margin: 18px auto 32px; max-width: 520px; font-size: 18px; line-height: 1.7; color: var(--pm-cacao-100); }
+  #pmw-{{ section.id }} .pmw-cta__ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  #pmw-{{ section.id }} .pmw-cta__contact { margin-top: 26px; font-size: 14px; color: var(--pm-cacao-200); }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }}.pmw-cta { padding: 72px 20px; }
+    #pmw-{{ section.id }} .pmw-cta__title { font-size: 32px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Closing CTA",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color (blank keeps cacao gradient)" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#38271d" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 35 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Ready When You Are" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Pour The First Cup" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Become a partner, or stock up for your circle. We'll send a sample either way." },
+    { "type": "image_picker", "id": "mark_image", "label": "Decorative mark" },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "cta1_label", "label": "Primary CTA label", "default": "Apply For Wholesale" },
+    { "type": "url", "id": "cta1_link", "label": "Primary CTA link" },
+    { "type": "text", "id": "cta2_label", "label": "Secondary CTA label", "default": "Shop Bulk" },
+    { "type": "url", "id": "cta2_link", "label": "Secondary CTA link" },
+    { "type": "text", "id": "contact_line", "label": "Contact line", "default": "support@pachamana.com · Grass Valley, California" }
+  ],
+  "presets": [{ "name": "Bulk — Closing CTA" }]
+}
+{% endschema %}

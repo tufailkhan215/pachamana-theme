@@ -1,0 +1,66 @@
+<section class="pmw pmw-regions" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner">
+    {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow" style="text-align:center;display:block;">{{ section.settings.eyebrow }}</div>{% endif %}
+    <h2 class="pmw-regions__title">{{ section.settings.headline }}</h2>
+    {% if section.settings.subhead != blank %}<p class="pmw-regions__sub">{{ section.settings.subhead }}</p>{% endif %}
+    <div class="pmw-regions__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'region' %}
+          <div class="pmw-regions__item" {{ block.shopify_attributes }}>
+            <span class="pmw-regions__name">{{ block.settings.region }}</span>
+            <span class="pmw-regions__count">{{ block.settings.count }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-regions { padding: 92px 72px; }
+  #pmw-{{ section.id }} .pmw-regions__title { text-align: center; font-size: 40px; margin: 14px 0 10px; }
+  #pmw-{{ section.id }} .pmw-regions__sub { text-align: center; max-width: 580px; margin: 0 auto 48px; font-size: 17px; line-height: 1.7; color: var(--page-muted); }
+  #pmw-{{ section.id }} .pmw-regions__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; max-width: 1100px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-regions__item { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 26px 24px; box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 8px; }
+  #pmw-{{ section.id }} .pmw-regions__name { font-family: var(--font-display); font-size: 17px; letter-spacing: .05em; text-transform: uppercase; color: var(--page-text); }
+  #pmw-{{ section.id }} .pmw-regions__count { font-size: 14px; color: var(--pm-gold-600); font-weight: 500; }
+  @media (max-width: 768px) { #pmw-{{ section.id }}.pmw-regions { padding: 64px 20px; } }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Regions",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#f9f2ef" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "On Shelves" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Where Our Cacao Lives" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Partners across North America pouring with us today." }
+  ],
+  "blocks": [
+    { "type": "region", "name": "Region", "limit": 10, "settings": [
+      { "type": "text", "id": "region", "label": "Region", "default": "West Coast" },
+      { "type": "text", "id": "count", "label": "Count / sub-line", "default": "68 partners" }
+    ]}
+  ],
+  "presets": [{
+    "name": "Bulk — Regions",
+    "blocks": [
+      { "type": "region", "settings": { "region": "West Coast", "count": "68 partners" } },
+      { "type": "region", "settings": { "region": "Mountain West", "count": "24 partners" } },
+      { "type": "region", "settings": { "region": "Southwest", "count": "19 partners" } },
+      { "type": "region", "settings": { "region": "Midwest", "count": "21 partners" } },
+      { "type": "region", "settings": { "region": "Northeast", "count": "18 partners" } }
+    ]
+  }]
+}
+{% endschema %}

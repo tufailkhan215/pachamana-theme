@@ -1,0 +1,75 @@
+<section class="pmw pmw-faq" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner pmw-faq__inner">
+    {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow" style="text-align:center;display:block;">{{ section.settings.eyebrow }}</div>{% endif %}
+    <h2 class="pmw-faq__title">{{ section.settings.headline }}</h2>
+    <div class="pmw-faq__list">
+      {% for block in section.blocks %}
+        {% if block.type == 'faq' %}
+          <details class="pmw-faq__item" {{ block.shopify_attributes }}>
+            <summary>
+              <span>{{ block.settings.question }}</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="pmw-faq__answer">{{ block.settings.answer }}</div>
+          </details>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-faq { padding: 92px 72px; }
+  #pmw-{{ section.id }} .pmw-faq__inner { max-width: 780px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-faq__title { text-align: center; font-size: 38px; margin: 14px 0 40px; }
+  #pmw-{{ section.id }} .pmw-faq__list { display: flex; flex-direction: column; gap: 12px; }
+  #pmw-{{ section.id }} .pmw-faq__item { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 4px 22px; box-shadow: var(--card-shadow); }
+  #pmw-{{ section.id }} .pmw-faq__item summary { list-style: none; cursor: pointer; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: var(--font-display); font-size: 17px; letter-spacing: .03em; color: var(--page-text); }
+  #pmw-{{ section.id }} .pmw-faq__item summary::-webkit-details-marker { display: none; }
+  #pmw-{{ section.id }} .pmw-faq__item summary svg { transition: transform .2s ease; color: var(--pm-gold-600); flex-shrink: 0; }
+  #pmw-{{ section.id }} .pmw-faq__item[open] summary svg { transform: rotate(180deg); }
+  #pmw-{{ section.id }} .pmw-faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--page-muted); }
+  #pmw-{{ section.id }} .pmw-faq__answer p { margin: 0 0 12px; }
+  @media (max-width: 768px) { #pmw-{{ section.id }}.pmw-faq { padding: 64px 20px; } }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — FAQ",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Questions" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Good To Know" }
+  ],
+  "blocks": [
+    { "type": "faq", "name": "FAQ item", "limit": 12, "settings": [
+      { "type": "text", "id": "question", "label": "Question", "default": "Is there a minimum order?" },
+      { "type": "richtext", "id": "answer", "label": "Answer",
+        "default": "<p>Wholesale partners are approved first, then start at a single case. Bulk price breaks for individuals apply automatically in cart — no minimum, no application.</p>" }
+    ]}
+  ],
+  "presets": [{
+    "name": "Bulk — FAQ",
+    "blocks": [
+      { "type": "faq", "settings": { "question": "Is there a minimum order?",
+        "answer": "<p>Wholesale partners are approved first, then start at a single case. Bulk price breaks for individuals apply automatically in cart — no minimum, no application.</p>" } },
+      { "type": "faq", "settings": { "question": "How does shipping work?",
+        "answer": "<p>Orders ship from Grass Valley, California, typically within 2–3 business days. We don't offer free shipping on bulk orders over 25 lb — those ship at calculated freight so you only pay the real cost. Smaller orders are charged a flat rate shown at checkout.</p>" } },
+      { "type": "faq", "settings": { "question": "How is wholesale pricing shared?",
+        "answer": "<p>Once your application is approved and we confirm we're aligned partners, we send your tier price list. Pricing scales as your volume grows.</p>" } },
+      { "type": "faq", "settings": { "question": "Do you offer marketing support?",
+        "answer": "<p>Yes. Every partner receives shelf cards, origin stories, and brewing guides — plus lifestyle imagery for your channels.</p>" } }
+    ]
+  }]
+}
+{% endschema %}

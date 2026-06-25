@@ -1,0 +1,73 @@
+<section class="pmw pmw-stats" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  {%- if section.settings.mark_image != blank -%}
+    {%- assign stats_mark_src = section.settings.mark_image | image_url: width: 900 -%}
+  {%- else -%}
+    {%- assign stats_mark_src = 'bulk-mark-cream.png' | asset_url -%}
+  {%- endif -%}
+  <img src="{{ stats_mark_src }}" alt="" class="pmw-stats__mark" loading="lazy">
+  <div class="pmw__inner">
+    {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow pmw-stats__eyebrow">{{ section.settings.eyebrow }}</div>{% endif %}
+    <h2 class="pmw-stats__title">{{ section.settings.headline }}</h2>
+    <div class="pmw-stats__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'stat' %}
+          <div class="pmw-stats__item" {{ block.shopify_attributes }}>
+            <div class="pmw-stats__num">{{ block.settings.number }}</div>
+            <div class="pmw-stats__label">{{ block.settings.label }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-stats { padding: 84px 72px; text-align: center; color: var(--band-text); background: var(--band-bg); }
+  #pmw-{{ section.id }} .pmw-stats__mark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 520px; opacity: .06; pointer-events: none; z-index: 1; }
+  #pmw-{{ section.id }} .pmw-stats__eyebrow { color: var(--pm-gold-300); display: block; }
+  #pmw-{{ section.id }} .pmw-stats__title { color: var(--band-text); font-size: 36px; margin: 14px 0 46px; }
+  #pmw-{{ section.id }} .pmw-stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-stats__num { font-family: var(--font-display); font-size: 48px; color: var(--pm-sunshine-gold); margin-bottom: 8px; letter-spacing: .02em; }
+  #pmw-{{ section.id }} .pmw-stats__label { font-size: 14px; color: var(--pm-cacao-100); letter-spacing: .03em; }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }}.pmw-stats { padding: 64px 20px; }
+    #pmw-{{ section.id }} .pmw-stats__num { font-size: 36px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Stats Band",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color (blank keeps cacao gradient default)" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#38271d" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 35 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "By The Numbers" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Rooted In Relationship" },
+    { "type": "image_picker", "id": "mark_image", "label": "Decorative center watermark" }
+  ],
+  "blocks": [
+    { "type": "stat", "name": "Stat", "limit": 8, "settings": [
+      { "type": "text", "id": "number", "label": "Number / value", "default": "40+" },
+      { "type": "text", "id": "label", "label": "Label", "default": "Highland families in our circle" }
+    ]}
+  ],
+  "presets": [{
+    "name": "Bulk — Stats Band",
+    "blocks": [
+      { "type": "stat", "settings": { "number": "40+", "label": "Highland families in our circle" } },
+      { "type": "stat", "settings": { "number": "150+", "label": "Stockists & cafés served" } },
+      { "type": "stat", "settings": { "number": "100%", "label": "Traceable to grove & harvest" } },
+      { "type": "stat", "settings": { "number": "12 yr", "label": "Bean-to-cup relationships" } }
+    ]
+  }]
+}
+{% endschema %}
