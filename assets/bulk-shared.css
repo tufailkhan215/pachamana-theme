@@ -1,0 +1,119 @@
+/* ============================================================
+   Pacha Mana — Bulk page shared tokens + base
+   Loaded once on /pages/bulk via template page.bulk.json
+   All selectors scoped under .pmw to avoid theme collisions.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@font-face {
+  font-family: 'Oaxaca';
+  src: url('bulk-oaxaca.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.pmw {
+  /* ---- Brand core ---- */
+  --pm-sunshine-gold: #e2ab43;
+  --pm-milk-chocolate: #5c402f;
+  --pm-sandy-tan: #fee7be;
+  --pm-pearl-white: #f9f2ef;
+  --pm-soft-black: #2b2521;
+  --pm-teal: #044C4B;
+
+  --pm-gold-50:  #fdf4e2;
+  --pm-gold-100: #f9e6c0;
+  --pm-gold-200: #f2d28c;
+  --pm-gold-300: #ebbd5e;
+  --pm-gold-400: #e2ab43;
+  --pm-gold-500: #cf962f;
+  --pm-gold-600: #ab7820;
+  --pm-gold-700: #835a18;
+
+  --pm-cacao-50:  #f3ece6;
+  --pm-cacao-100: #e4d4c6;
+  --pm-cacao-200: #c4a48a;
+  --pm-cacao-300: #9c7758;
+  --pm-cacao-400: #785741;
+  --pm-cacao-500: #5c402f;
+  --pm-cacao-600: #4a3326;
+  --pm-cacao-700: #38271d;
+  --pm-cacao-800: #2b2521;
+
+  --pm-tan-50:  #fdf8f3;
+  --pm-tan-100: #fef2e0;
+  --pm-tan-200: #fee7be;
+  --pm-tan-300: #f7d79b;
+
+  /* ---- Semantic surfaces ---- */
+  --page-bg: #f9f2ef;
+  --alt-bg: #fdf8f3;
+  --page-text: #2b2521;
+  --page-muted: #5c402f;
+  --card-bg: #ffffff;
+  --card-border: #ece0d3;
+  --card-shadow: 0 10px 30px rgba(92, 64, 47, .10);
+  --hero-grad: linear-gradient(180deg, #fef2e0 0%, #fee7be 48%, #f7d79b 100%);
+  --band-bg: linear-gradient(165deg, #5c402f 0%, #38271d 100%);
+  --band-text: #f9f2ef;
+  --accent: #e2ab43;
+  --border-soft: #ece0d3;
+
+  /* ---- Typography ---- */
+  --font-display: 'Oaxaca', 'Cooper Black', Georgia, serif;
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+
+  /* component base */
+  font-family: var(--font-body);
+  color: var(--page-text);
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+}
+
+.pmw *, .pmw *::before, .pmw *::after { box-sizing: border-box; }
+.pmw h1, .pmw h2, .pmw h3, .pmw h4, .pmw h5 { margin: 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .03em; color: var(--page-text); }
+.pmw p { margin: 0; }
+.pmw a { color: inherit; text-decoration: none; }
+.pmw img { max-width: 100%; height: auto; display: block; }
+.pmw button { font-family: inherit; cursor: pointer; border: none; }
+
+/* ---- Section background layer (rendered by snippet bulk-bg.liquid) ---- */
+.pmw__bg-layer {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+}
+.pmw__bg-overlay {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+}
+.pmw__inner { position: relative; z-index: 2; }
+
+/* ---- Shared button primitives ---- */
+.pmw-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .08em;
+  font-size: 14px; padding: 16px 32px; border-radius: 999px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.pmw-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(92,64,47,.20); }
+.pmw-btn--primary { background: var(--pm-sunshine-gold); color: var(--pm-cacao-700); }
+.pmw-btn--secondary { background: var(--pm-pearl-white); color: var(--pm-cacao-700); border: 1.5px solid var(--pm-tan-200); }
+.pmw-btn--outline { background: transparent; color: var(--pm-cacao-700); border: 1.5px solid var(--pm-cacao-300); }
+.pmw-btn--on-dark { background: var(--pm-sunshine-gold); color: var(--pm-cacao-800); }
+.pmw-btn--full { width: 100%; }
+
+/* ---- Eyebrow / shared label ---- */
+.pmw-eyebrow {
+  font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: .18em; font-size: 12px; color: var(--pm-gold-600);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .pmw { font-size: 15px; }
+  .pmw h1 { font-size: 44px !important; }
+  .pmw h2 { font-size: 28px !important; }
+  .pmw h3 { font-size: 22px !important; }
+}
