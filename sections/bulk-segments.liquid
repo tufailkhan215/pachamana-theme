@@ -1,0 +1,82 @@
+<section class="pmw pmw-segments" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner">
+    {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow" style="text-align:center;display:block;">{{ section.settings.eyebrow }}</div>{% endif %}
+    <h2 class="pmw-segments__title">{{ section.settings.headline }}</h2>
+    {% if section.settings.subhead != blank %}<p class="pmw-segments__sub">{{ section.settings.subhead }}</p>{% endif %}
+    <div class="pmw-segments__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'segment' %}
+          <div class="pmw-segments__card" {{ block.shopify_attributes }}>
+            <div class="pmw-segments__media">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.name | escape }}" loading="lazy">
+              {% else %}
+                <span class="pmw-segments__placeholder">{{ block.settings.placeholder_label }}</span>
+              {% endif %}
+            </div>
+            <div class="pmw-segments__body">
+              <h3 class="pmw-segments__name">{{ block.settings.name }}</h3>
+              <p class="pmw-segments__copy">{{ block.settings.body }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-segments { padding: 92px 72px; }
+  #pmw-{{ section.id }} .pmw-segments__title { text-align: center; font-size: 40px; margin: 14px 0 10px; }
+  #pmw-{{ section.id }} .pmw-segments__sub { text-align: center; max-width: 580px; margin: 0 auto 48px; font-size: 17px; line-height: 1.7; color: var(--page-muted); }
+  #pmw-{{ section.id }} .pmw-segments__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1240px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-segments__card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; box-shadow: var(--card-shadow); }
+  #pmw-{{ section.id }} .pmw-segments__media { position: relative; aspect-ratio: 4 / 3; background: var(--hero-grad); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  #pmw-{{ section.id }} .pmw-segments__media img { width: 100%; height: 100%; object-fit: cover; }
+  #pmw-{{ section.id }} .pmw-segments__placeholder { font-family: var(--font-display); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--pm-cacao-300); padding: 0 20px; text-align: center; }
+  #pmw-{{ section.id }} .pmw-segments__body { padding: 24px 22px 26px; }
+  #pmw-{{ section.id }} .pmw-segments__name { font-size: 17px; letter-spacing: .05em; color: var(--page-text); margin-bottom: 10px; }
+  #pmw-{{ section.id }} .pmw-segments__copy { font-size: 15px; line-height: 1.65; color: var(--page-muted); }
+  @media (max-width: 768px) { #pmw-{{ section.id }}.pmw-segments { padding: 64px 20px; } }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Segments",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Who You Serve" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Made For Your Space" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "A few of the kinds of partners already pouring with us." }
+  ],
+  "blocks": [
+    { "type": "segment", "name": "Segment card", "limit": 12, "settings": [
+      { "type": "image_picker", "id": "image", "label": "Photo (uses placeholder text if empty)" },
+      { "type": "text", "id": "placeholder_label", "label": "Placeholder text (shown when no photo)", "default": "Photo here" },
+      { "type": "text", "id": "name", "label": "Name", "default": "Retail & Wellness" },
+      { "type": "textarea", "id": "body", "label": "Body", "default": "Stock your shelves with a story customers can feel — ceremonial cacao that sells itself." }
+    ]}
+  ],
+  "presets": [{
+    "name": "Bulk — Segments",
+    "blocks": [
+      { "type": "segment", "settings": { "placeholder_label": "Retail shelf photo", "name": "Retail & Wellness", "body": "Stock your shelves with a story customers can feel — ceremonial cacao that sells itself." } },
+      { "type": "segment", "settings": { "placeholder_label": "Café counter photo", "name": "Cafés & Coffee Bars", "body": "A heart-opening coffee alternative — lattes, elixirs, and slow mornings on your menu." } },
+      { "type": "segment", "settings": { "placeholder_label": "Ceremony circle photo", "name": "Ceremony Facilitators", "body": "Full ceremonial-dose cacao your circle can trust, traceable to the grove and harvest." } },
+      { "type": "segment", "settings": { "placeholder_label": "Retreat / event photo", "name": "Retreats & Events", "body": "Hold space with cacao that travels well and opens hearts, batch after batch." } },
+      { "type": "segment", "settings": { "placeholder_label": "Chocolate maker photo", "name": "Chocolate Makers", "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft." } },
+      { "type": "segment", "settings": { "placeholder_label": "Refill / bulk bin photo", "name": "Bulk & Refill Stores", "body": "Package-free cacao for mindful, low-waste shoppers who shop their values." } }
+    ]
+  }]
+}
+{% endschema %}

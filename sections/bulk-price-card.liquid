@@ -1,0 +1,156 @@
+<section class="pmw pmw-pricecard" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner pmw-pricecard__stage">
+    <div class="pmw-pricecard__sheet">
+      <div class="pmw-pricecard__top">
+        {% if section.settings.mark_image != blank %}
+          <img src="{{ section.settings.mark_image | image_url: width: 240 }}" alt="" class="pmw-pricecard__mark" loading="lazy">
+        {% else %}
+          <svg class="pmw-pricecard__mark" width="118" height="74" viewBox="0 0 200 118" fill="none" aria-hidden="true">
+            <g stroke="#e2ab43" stroke-width="6" stroke-linecap="round">
+              <line x1="100" y1="98" x2="38"  y2="98"/><line x1="100" y1="98" x2="44"  y2="74"/>
+              <line x1="100" y1="98" x2="55"  y2="54"/><line x1="100" y1="98" x2="71"  y2="40"/>
+              <line x1="100" y1="98" x2="89"  y2="33"/><line x1="100" y1="98" x2="111" y2="33"/>
+              <line x1="100" y1="98" x2="129" y2="40"/><line x1="100" y1="98" x2="145" y2="54"/>
+              <line x1="100" y1="98" x2="156" y2="74"/><line x1="100" y1="98" x2="162" y2="98"/>
+            </g>
+            <path d="M78 98 a22 22 0 0 1 44 0" fill="none" stroke="#e2ab43" stroke-width="6" stroke-linecap="round"/>
+            <ellipse cx="100" cy="93" rx="8" ry="13" fill="none" stroke="#e2ab43" stroke-width="4"/>
+          </svg>
+        {% endif %}
+        <div class="pmw-pricecard__eyebrow">{{ section.settings.eyebrow }}</div>
+        <h2 class="pmw-pricecard__title">{{ section.settings.headline | newline_to_br }}</h2>
+        <p class="pmw-pricecard__intro">{{ section.settings.intro }}</p>
+      </div>
+
+      <div class="pmw-pricecard__body">
+        {%- assign current_group = '' -%}
+        {%- assign group_opened = false -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'pricing_row' -%}
+            {%- if block.settings.group_label != current_group -%}
+              {%- if group_opened -%}</div>{%- endif -%}
+              <div class="pmw-pricecard__section" {{ block.shopify_attributes }}>
+                <div class="pmw-pricecard__sechead">
+                  <h3>{{ block.settings.group_label }}</h3><span class="pmw-pricecard__rule"></span>
+                </div>
+                {%- if block.settings.group_sub != blank -%}<p class="pmw-pricecard__sub">{{ block.settings.group_sub }}</p>{%- endif -%}
+              {%- assign current_group = block.settings.group_label -%}
+              {%- assign group_opened = true -%}
+            {%- endif -%}
+            <div class="pmw-pricecard__tier">
+              <div class="pmw-pricecard__qty">{{ block.settings.qty_label }}</div>
+              <div class="pmw-pricecard__save"><span class="pmw-pricecard__amt">{{ block.settings.amount }}</span> {{ block.settings.amount_suffix | default: 'off every bag' }}</div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if group_opened -%}</div>{%- endif -%}
+      </div>
+
+      {% if section.settings.order_title != blank or section.settings.order_body != blank %}
+        <div class="pmw-pricecard__order">
+          <h4>{{ section.settings.order_title }}</h4>
+          <p>{{ section.settings.order_body }}</p>
+        </div>
+      {% endif %}
+
+      <div class="pmw-pricecard__foot">
+        {% if section.settings.foot_tag != blank %}<p class="pmw-pricecard__tag">{{ section.settings.foot_tag }}</p>{% endif %}
+        {% if section.settings.foot_sign != blank %}<p class="pmw-pricecard__sign">{{ section.settings.foot_sign }}</p>{% endif %}
+        {% if section.settings.foot_contact != blank %}<p class="pmw-pricecard__contact">{{ section.settings.foot_contact }}</p>{% endif %}
+      </div>
+
+      {% if section.settings.fine_print != blank %}
+        <p class="pmw-pricecard__fine">{{ section.settings.fine_print }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-pricecard { padding: 0; }
+  #pmw-{{ section.id }} .pmw-pricecard__stage { padding: 60px 18px; display: flex; justify-content: center; background: radial-gradient(1200px 500px at 50% -10%, #fff6e6 0%, var(--pm-pearl-white) 55%); color: #333132; }
+  #pmw-{{ section.id }} .pmw-pricecard__sheet { width: 100%; max-width: 720px; background: #fffdfa; border: 1px solid var(--pm-tan-200); border-radius: 18px; box-shadow: 0 18px 50px rgba(92,64,47,.12); overflow: hidden; }
+  #pmw-{{ section.id }} .pmw-pricecard__top { text-align: center; padding: 38px 40px 26px; background: linear-gradient(180deg,#fff8ec 0%,#fffdfa 100%); border-bottom: 1px solid var(--pm-tan-200); }
+  #pmw-{{ section.id }} .pmw-pricecard__mark { margin: 0 auto 14px; display: block; max-width: 120px; }
+  #pmw-{{ section.id }} .pmw-pricecard__eyebrow { font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--pm-teal); font-weight: 600; margin-bottom: 14px; }
+  #pmw-{{ section.id }} .pmw-pricecard__title { font-size: 34px; line-height: 1.08; letter-spacing: 1.5px; color: var(--pm-cacao-500); font-weight: 700; margin: 0 0 16px; }
+  #pmw-{{ section.id }} .pmw-pricecard__intro { font-size: 15.5px; line-height: 1.7; color: #6f5743; font-style: italic; max-width: 520px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-pricecard__body { padding: 30px 40px 8px; }
+  #pmw-{{ section.id }} .pmw-pricecard__section { margin-bottom: 30px; }
+  #pmw-{{ section.id }} .pmw-pricecard__sechead { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+  #pmw-{{ section.id }} .pmw-pricecard__sechead h3 { font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--pm-sunshine-gold); font-weight: 700; margin: 0; white-space: nowrap; }
+  #pmw-{{ section.id }} .pmw-pricecard__rule { height: 1px; background: var(--pm-tan-200); flex: 1; }
+  #pmw-{{ section.id }} .pmw-pricecard__sub { font-size: 13px; color: #9a8a74; font-style: italic; margin: 0 0 10px; }
+  #pmw-{{ section.id }} .pmw-pricecard__tier { display: flex; align-items: center; justify-content: space-between; padding: 14px 4px; border-bottom: 1px solid #f1e7d8; }
+  #pmw-{{ section.id }} .pmw-pricecard__tier:last-child { border-bottom: none; }
+  #pmw-{{ section.id }} .pmw-pricecard__qty { font-size: 16px; color: var(--pm-cacao-500); font-weight: 500; }
+  #pmw-{{ section.id }} .pmw-pricecard__save { font-size: 17px; font-weight: 700; color: var(--pm-teal); white-space: nowrap; padding-left: 18px; }
+  #pmw-{{ section.id }} .pmw-pricecard__amt { color: var(--pm-sunshine-gold); font-size: 20px; }
+  #pmw-{{ section.id }} .pmw-pricecard__order { margin: 6px 40px 0; padding: 22px 26px; background: var(--pm-tan-200); border-radius: 14px; }
+  #pmw-{{ section.id }} .pmw-pricecard__order h4 { font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--pm-cacao-500); font-weight: 700; margin: 0 0 8px; }
+  #pmw-{{ section.id }} .pmw-pricecard__order p { font-size: 14.5px; line-height: 1.65; color: #5c4733; margin: 0; }
+  #pmw-{{ section.id }} .pmw-pricecard__foot { text-align: center; padding: 28px 40px 34px; margin-top: 14px; }
+  #pmw-{{ section.id }} .pmw-pricecard__tag { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--pm-sunshine-gold); font-weight: 700; margin: 0 0 10px; }
+  #pmw-{{ section.id }} .pmw-pricecard__sign { font-size: 15px; color: var(--pm-cacao-500); font-style: italic; margin: 0 0 4px; }
+  #pmw-{{ section.id }} .pmw-pricecard__contact { font-size: 12.5px; color: #9a8a74; margin: 0; }
+  #pmw-{{ section.id }} .pmw-pricecard__fine { font-size: 11px; color: #b3a48d; margin: 18px 40px 24px; text-align: center; font-style: italic; }
+  @media (max-width: 520px) {
+    #pmw-{{ section.id }} .pmw-pricecard__top, #pmw-{{ section.id }} .pmw-pricecard__body { padding-left: 22px; padding-right: 22px; }
+    #pmw-{{ section.id }} .pmw-pricecard__order { margin-left: 22px; margin-right: 22px; }
+    #pmw-{{ section.id }} .pmw-pricecard__title { font-size: 27px; }
+    #pmw-{{ section.id }} .pmw-pricecard__tier { flex-direction: column; align-items: flex-start; gap: 4px; }
+    #pmw-{{ section.id }} .pmw-pricecard__save { padding-left: 0; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Pricing Card",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background (outer)" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#f9f2ef" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Card top" },
+    { "type": "image_picker", "id": "mark_image", "label": "Logo / mark (defaults to inline SVG)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Wholesale & Facilitator Pricing" },
+    { "type": "textarea", "id": "headline", "label": "Headline (line breaks honored)", "default": "Buy a Case,\nShare the Medicine" },
+    { "type": "textarea", "id": "intro", "label": "Intro paragraph", "default": "Cacao was always meant to be shared in circle. The more you carry to your community, the more we give back to you. This is Ayni, the reciprocal energy that runs through everything we do." },
+    { "type": "header", "content": "How to order" },
+    { "type": "text", "id": "order_title", "label": "Order title", "default": "How to Order" },
+    { "type": "textarea", "id": "order_body", "label": "Order body", "default": "Ready to stock your shelves or hold space for your circle? Reach out to Justin directly and we will set you up. No marketplace, no middle layer, just a direct relationship built on trust. Email support@pachamana.com to begin." },
+    { "type": "header", "content": "Footer" },
+    { "type": "text", "id": "foot_tag", "label": "Footer tag", "default": "Ceremony Starts at the Farm" },
+    { "type": "text", "id": "foot_sign", "label": "Signature", "default": "With gratitude, Justin" },
+    { "type": "text", "id": "foot_contact", "label": "Contact line", "default": "Pacha Mana Cacao · From Peru with love" },
+    { "type": "textarea", "id": "fine_print", "label": "Fine print", "default": "Bulk pricing is offered on direct orders and is its own reward, so it is not combined with subscription savings." }
+  ],
+  "blocks": [
+    { "type": "pricing_row", "name": "Pricing row", "limit": 32, "settings": [
+      { "type": "text", "id": "group_label", "label": "Group label (rows sharing a group render under one heading)", "default": "By the Bag" },
+      { "type": "text", "id": "group_sub", "label": "Group sub-line (optional — only shown on first row of group)" },
+      { "type": "text", "id": "qty_label", "label": "Quantity description (HTML allowed for 'or' tag)", "default": "5 bags of 0.5lb" },
+      { "type": "text", "id": "amount", "label": "Discount amount", "default": "$3" },
+      { "type": "text", "id": "amount_suffix", "label": "Amount suffix", "default": "off every bag" }
+    ]}
+  ],
+  "presets": [{
+    "name": "Bulk — Pricing Card",
+    "blocks": [
+      { "type": "pricing_row", "settings": { "group_label": "By the Bag", "group_sub": "Our 0.5lb and 1lb bags, across every blend.", "qty_label": "5 bags of 0.5lb or 3 bags of 1lb", "amount": "$3", "amount_suffix": "off every bag" } },
+      { "type": "pricing_row", "settings": { "group_label": "By the Bag", "qty_label": "7 bags of 0.5lb or 5 bags of 1lb", "amount": "$5", "amount_suffix": "off every bag" } },
+      { "type": "pricing_row", "settings": { "group_label": "By the Bag", "qty_label": "7 bags of 1lb", "amount": "$7", "amount_suffix": "off every bag" } },
+      { "type": "pricing_row", "settings": { "group_label": "By the Case", "group_sub": "Our 5lb bulk bags, for shelves and ceremony spaces.", "qty_label": "2 cases of 5lb", "amount": "$10", "amount_suffix": "off every case" } },
+      { "type": "pricing_row", "settings": { "group_label": "By the Case", "qty_label": "3 cases of 5lb", "amount": "$20", "amount_suffix": "off every case" } },
+      { "type": "pricing_row", "settings": { "group_label": "By the Case", "qty_label": "4 cases of 5lb", "amount": "$30", "amount_suffix": "off every case" } },
+      { "type": "pricing_row", "settings": { "group_label": "By the Case", "qty_label": "5 cases of 5lb", "amount": "$40", "amount_suffix": "off every case" } }
+    ]
+  }]
+}
+{% endschema %}

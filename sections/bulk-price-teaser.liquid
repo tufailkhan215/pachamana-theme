@@ -1,0 +1,72 @@
+<section class="pmw pmw-teaser" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner">
+    {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow" style="text-align:center;display:block;">{{ section.settings.eyebrow }}</div>{% endif %}
+    <h2 class="pmw-teaser__title">{{ section.settings.headline }}</h2>
+    {% if section.settings.subhead != blank %}<p class="pmw-teaser__sub">{{ section.settings.subhead }}</p>{% endif %}
+    <div class="pmw-teaser__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'bag_size' %}
+          <div class="pmw-teaser__card" {{ block.shopify_attributes }}>
+            {% if block.settings.tag != blank %}<span class="pmw-teaser__tag">{{ block.settings.tag }}</span>{% endif %}
+            <h3 class="pmw-teaser__size">{{ block.settings.size }}</h3>
+            <p class="pmw-teaser__desc">{{ block.settings.description }}</p>
+            <p class="pmw-teaser__price">{{ block.settings.price_label }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-teaser { padding: 92px 72px; }
+  #pmw-{{ section.id }} .pmw-teaser__title { text-align: center; font-size: 40px; margin: 14px 0 10px; }
+  #pmw-{{ section.id }} .pmw-teaser__sub { text-align: center; max-width: 580px; margin: 0 auto 48px; font-size: 17px; line-height: 1.7; color: var(--page-muted); }
+  #pmw-{{ section.id }} .pmw-teaser__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; max-width: 1140px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-teaser__card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 32px 28px; box-shadow: var(--card-shadow); position: relative; }
+  #pmw-{{ section.id }} .pmw-teaser__tag { display: inline-block; background: var(--pm-gold-100); color: var(--pm-gold-700); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; margin-bottom: 12px; }
+  #pmw-{{ section.id }} .pmw-teaser__size { font-size: 28px; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-teaser__desc { font-size: 15px; line-height: 1.6; color: var(--page-muted); margin: 10px 0 16px; }
+  #pmw-{{ section.id }} .pmw-teaser__price { font-family: var(--font-display); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--pm-gold-600); }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }}.pmw-teaser { padding: 64px 20px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Price Teaser",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "By the Bag" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Bulk Price Breaks" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Discounts apply automatically in cart — no codes, no application. The more you carry, the more you save." }
+  ],
+  "blocks": [
+    { "type": "bag_size", "name": "Bag size", "limit": 6, "settings": [
+      { "type": "text", "id": "tag", "label": "Tag", "default": "Try It" },
+      { "type": "text", "id": "size", "label": "Size", "default": "8 oz" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "A few weeks of daily cups, or a smaller circle." },
+      { "type": "text", "id": "price_label", "label": "Price label", "default": "Pricing soon" }
+    ]}
+  ],
+  "presets": [{
+    "name": "Bulk — Price Teaser",
+    "blocks": [
+      { "type": "bag_size", "settings": { "tag": "Try It", "size": "8 oz", "description": "A few weeks of daily cups, or a smaller circle.", "price_label": "Pricing soon" } },
+      { "type": "bag_size", "settings": { "tag": "Most Loved", "size": "16 oz", "description": "The everyday ceremonial size — the best balance of value and freshness.", "price_label": "Pricing soon" } },
+      { "type": "bag_size", "settings": { "tag": "Café & Studio", "size": "5 lb", "description": "Bulk ground Chuncho for cafés, studios, and daily drinkers. Already discounted.", "price_label": "Pricing soon" } }
+    ]
+  }]
+}
+{% endschema %}
