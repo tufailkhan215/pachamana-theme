@@ -15,6 +15,8 @@
         "bg_type": "color",
         "bg_color": "#fee7be",
         "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Wholesale & Bulk",
         "headline": "Share The\nCeremony",
         "subhead": "Cacao was always meant to be shared in circle. Buy a case, hold space for your community — and we'll meet you in reciprocity.",
@@ -50,9 +52,16 @@
           }
         }
       },
-      "block_order": ["ch_consumer", "ch_wholesale"],
+      "block_order": [
+        "ch_consumer",
+        "ch_wholesale"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Two Ways To Buy",
         "headline": "Choose Your Channel",
         "subhead": "Whether you're stocking shelves or hosting circles, we have a path for you."
@@ -61,17 +70,92 @@
     "price_card": {
       "type": "bulk-price-card",
       "blocks": {
-        "pc_b1": { "type": "pricing_row", "settings": { "group_label": "By the Bag", "group_sub": "Our 0.5lb and 1lb bags, across every blend.", "qty_label": "5 bags of 0.5lb or 3 bags of 1lb", "amount": "$3", "amount_suffix": "off every bag" } },
-        "pc_b2": { "type": "pricing_row", "settings": { "group_label": "By the Bag", "group_sub": "", "qty_label": "7 bags of 0.5lb or 5 bags of 1lb", "amount": "$5", "amount_suffix": "off every bag" } },
-        "pc_b3": { "type": "pricing_row", "settings": { "group_label": "By the Bag", "group_sub": "", "qty_label": "7 bags of 1lb", "amount": "$7", "amount_suffix": "off every bag" } },
-        "pc_c1": { "type": "pricing_row", "settings": { "group_label": "By the Case", "group_sub": "Our 5lb bulk bags, for shelves and ceremony spaces.", "qty_label": "2 cases of 5lb", "amount": "$10", "amount_suffix": "off every case" } },
-        "pc_c2": { "type": "pricing_row", "settings": { "group_label": "By the Case", "group_sub": "", "qty_label": "3 cases of 5lb", "amount": "$20", "amount_suffix": "off every case" } },
-        "pc_c3": { "type": "pricing_row", "settings": { "group_label": "By the Case", "group_sub": "", "qty_label": "4 cases of 5lb", "amount": "$30", "amount_suffix": "off every case" } },
-        "pc_c4": { "type": "pricing_row", "settings": { "group_label": "By the Case", "group_sub": "", "qty_label": "5 cases of 5lb", "amount": "$40", "amount_suffix": "off every case" } }
+        "pc_b1": {
+          "type": "pricing_row",
+          "settings": {
+            "group_label": "By the Bag",
+            "group_sub": "Our 0.5lb and 1lb bags, across every blend.",
+            "qty_label": "5 bags of 0.5lb or 3 bags of 1lb",
+            "amount": "$3",
+            "amount_suffix": "off every bag"
+          }
+        },
+        "pc_b2": {
+          "type": "pricing_row",
+          "settings": {
+            "group_label": "By the Bag",
+            "group_sub": "",
+            "qty_label": "7 bags of 0.5lb or 5 bags of 1lb",
+            "amount": "$5",
+            "amount_suffix": "off every bag"
+          }
+        },
+        "pc_b3": {
+          "type": "pricing_row",
+          "settings": {
+            "group_label": "By the Bag",
+            "group_sub": "",
+            "qty_label": "7 bags of 1lb",
+            "amount": "$7",
+            "amount_suffix": "off every bag"
+          }
+        },
+        "pc_c1": {
+          "type": "pricing_row",
+          "settings": {
+            "group_label": "By the Case",
+            "group_sub": "Our 5lb bulk bags, for shelves and ceremony spaces.",
+            "qty_label": "2 cases of 5lb",
+            "amount": "$10",
+            "amount_suffix": "off every case"
+          }
+        },
+        "pc_c2": {
+          "type": "pricing_row",
+          "settings": {
+            "group_label": "By the Case",
+            "group_sub": "",
+            "qty_label": "3 cases of 5lb",
+            "amount": "$20",
+            "amount_suffix": "off every case"
+          }
+        },
+        "pc_c3": {
+          "type": "pricing_row",
+          "settings": {
+            "group_label": "By the Case",
+            "group_sub": "",
+            "qty_label": "4 cases of 5lb",
+            "amount": "$30",
+            "amount_suffix": "off every case"
+          }
+        },
+        "pc_c4": {
+          "type": "pricing_row",
+          "settings": {
+            "group_label": "By the Case",
+            "group_sub": "",
+            "qty_label": "5 cases of 5lb",
+            "amount": "$40",
+            "amount_suffix": "off every case"
+          }
+        }
       },
-      "block_order": ["pc_b1", "pc_b2", "pc_b3", "pc_c1", "pc_c2", "pc_c3", "pc_c4"],
+      "block_order": [
+        "pc_b1",
+        "pc_b2",
+        "pc_b3",
+        "pc_c1",
+        "pc_c2",
+        "pc_c3",
+        "pc_c4"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Wholesale & Facilitator Pricing",
         "headline": "Buy a Case,\nShare the Medicine",
         "intro": "Cacao was always meant to be shared in circle. The more you carry to your community, the more we give back to you. This is Ayni, the reciprocal energy that runs through everything we do.",
@@ -86,13 +170,48 @@
     "tiers": {
       "type": "bulk-tiers",
       "blocks": {
-        "t_stockist": { "type": "tier", "settings": { "name": "Stockist", "description": "Independent shops & cafés getting started with cacao.", "min": "Starts at a single case.", "popular": false, "popular_label": "Most Loved" } },
-        "t_partner": { "type": "tier", "settings": { "name": "Partner", "description": "Growing stores ordering on a regular cadence.", "min": "Recurring mid-volume orders.", "popular": true, "popular_label": "Most Loved" } },
-        "t_flagship": { "type": "tier", "settings": { "name": "Flagship", "description": "High-volume retailers, studios & distributors.", "min": "Dedicated account manager & freight pricing.", "popular": false, "popular_label": "Most Loved" } }
+        "t_stockist": {
+          "type": "tier",
+          "settings": {
+            "name": "Stockist",
+            "description": "Independent shops & cafés getting started with cacao.",
+            "min": "Starts at a single case.",
+            "popular": false,
+            "popular_label": "Most Loved"
+          }
+        },
+        "t_partner": {
+          "type": "tier",
+          "settings": {
+            "name": "Partner",
+            "description": "Growing stores ordering on a regular cadence.",
+            "min": "Recurring mid-volume orders.",
+            "popular": true,
+            "popular_label": "Most Loved"
+          }
+        },
+        "t_flagship": {
+          "type": "tier",
+          "settings": {
+            "name": "Flagship",
+            "description": "High-volume retailers, studios & distributors.",
+            "min": "Dedicated account manager & freight pricing.",
+            "popular": false,
+            "popular_label": "Most Loved"
+          }
+        }
       },
-      "block_order": ["t_stockist", "t_partner", "t_flagship"],
+      "block_order": [
+        "t_stockist",
+        "t_partner",
+        "t_flagship"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Approved Partners",
         "headline": "Wholesale Tiers",
         "subhead": "Pricing scales with volume. Pick the tier that fits where you are now — you can grow into the next one."
@@ -101,16 +220,75 @@
     "segments": {
       "type": "bulk-segments",
       "blocks": {
-        "s_retail":       { "type": "segment", "settings": { "placeholder_label": "Retail shelf photo",    "name": "Retail & Wellness",     "body": "Stock your shelves with a story customers can feel — ceremonial cacao that sells itself." } },
-        "s_cafe":         { "type": "segment", "settings": { "placeholder_label": "Café counter photo",     "name": "Cafés & Coffee Bars",   "body": "A heart-opening coffee alternative — lattes, elixirs, and slow mornings on your menu." } },
-        "s_facilitator":  { "type": "segment", "settings": { "placeholder_label": "Ceremony circle photo",  "name": "Ceremony Facilitators", "body": "Full ceremonial-dose cacao your circle can trust, traceable to the grove and harvest." } },
-        "s_retreat":      { "type": "segment", "settings": { "placeholder_label": "Retreat / event photo",  "name": "Retreats & Events",     "body": "Hold space with cacao that travels well and opens hearts, batch after batch." } },
-        "s_maker":        { "type": "segment", "settings": { "placeholder_label": "Chocolate maker photo",  "name": "Chocolate Makers",      "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft." } },
-        "s_bulk":         { "type": "segment", "settings": { "placeholder_label": "Refill / bulk bin photo","name": "Bulk & Refill Stores",  "body": "Package-free cacao for mindful, low-waste shoppers who shop their values." } }
+        "s_retail": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_9117.heic",
+            "placeholder_label": "Retail shelf photo",
+            "name": "Retail & Wellness",
+            "body": "Stock your shelves with a story customers can feel — ceremonial cacao that sells itself."
+          }
+        },
+        "s_cafe": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-44-1.jpg",
+            "placeholder_label": "Café counter photo",
+            "name": "Cafés & Coffee Bars",
+            "body": "A heart-opening coffee alternative — lattes, elixirs, and slow mornings on your menu."
+          }
+        },
+        "s_facilitator": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-93-1.jpg",
+            "placeholder_label": "Ceremony circle photo",
+            "name": "Ceremony Facilitators",
+            "body": "Full ceremonial-dose cacao your circle can trust, traceable to the grove and harvest."
+          }
+        },
+        "s_retreat": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-84-1.webp",
+            "placeholder_label": "Retreat / event photo",
+            "name": "Retreats & Events",
+            "body": "Hold space with cacao that travels well and opens hearts, batch after batch."
+          }
+        },
+        "s_maker": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0378_2.heic",
+            "placeholder_label": "Chocolate maker photo",
+            "name": "Chocolate Makers",
+            "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft."
+          }
+        },
+        "s_bulk": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27-1.webp",
+            "placeholder_label": "Refill / bulk bin photo",
+            "name": "Bulk & Refill Stores",
+            "body": "Package-free cacao for mindful, low-waste shoppers who shop their values."
+          }
+        }
       },
-      "block_order": ["s_retail", "s_cafe", "s_facilitator", "s_retreat", "s_maker", "s_bulk"],
+      "block_order": [
+        "s_retail",
+        "s_cafe",
+        "s_facilitator",
+        "s_retreat",
+        "s_maker",
+        "s_bulk"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Who You Serve",
         "headline": "Made For Your Space",
         "subhead": "A few of the kinds of partners already pouring with us."
@@ -119,14 +297,47 @@
     "stats": {
       "type": "bulk-stats",
       "blocks": {
-        "st_families":  { "type": "stat", "settings": { "number": "40+",  "label": "Highland families in our circle" } },
-        "st_stockists": { "type": "stat", "settings": { "number": "150+", "label": "Stockists & cafés served" } },
-        "st_traceable": { "type": "stat", "settings": { "number": "100%", "label": "Traceable to grove & harvest" } },
-        "st_years":     { "type": "stat", "settings": { "number": "12 yr","label": "Bean-to-cup relationships" } }
+        "st_families": {
+          "type": "stat",
+          "settings": {
+            "number": "150+",
+            "label": "Highland cacao farming families supported each year"
+          }
+        },
+        "st_stockists": {
+          "type": "stat",
+          "settings": {
+            "number": "100+",
+            "label": "Stockists & cafés served"
+          }
+        },
+        "st_traceable": {
+          "type": "stat",
+          "settings": {
+            "number": "100%",
+            "label": "Traceable to grove & harvest"
+          }
+        },
+        "st_years": {
+          "type": "stat",
+          "settings": {
+            "number": "250,000+",
+            "label": "Cups of Pacha Mana enjoyed every year"
+          }
+        }
       },
-      "block_order": ["st_families", "st_stockists", "st_traceable", "st_years"],
+      "block_order": [
+        "st_families",
+        "st_stockists",
+        "st_traceable",
+        "st_years"
+      ],
       "settings": {
-        "bg_type": "color", "bg_opacity": 100, "bg_overlay_opacity": 35,
+        "bg_type": "color",
+        "bg_color": "",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#38271d",
+        "bg_overlay_opacity": 35,
         "eyebrow": "By The Numbers",
         "headline": "Rooted In Relationship"
       }
@@ -134,14 +345,55 @@
     "products": {
       "type": "bulk-products",
       "blocks": {
-        "p_paste":     { "type": "product_card", "settings": { "name": "Chuncho Paste Block", "origin": "Quillabamba, Peru",    "price": "1 lb block", "badge": "Single Origin" } },
-        "p_ground":    { "type": "product_card", "settings": { "name": "Ground Chuncho",      "origin": "Café & Studio",        "price": "5 lb bag",   "badge": "Bulk" } },
-        "p_mushroom":  { "type": "product_card", "settings": { "name": "Mushroom Vitality",   "origin": "Cacao + Adaptogens",   "price": "Ground",     "badge": "Functional" } },
-        "p_rose":      { "type": "product_card", "settings": { "name": "Rose Vanilla",        "origin": "Rose + Vanilla Bean",  "price": "Ground",     "badge": "Botanical" } }
+        "p_paste": {
+          "type": "product_card",
+          "settings": {
+            "name": "Chuncho Paste Block",
+            "origin": "Quillabamba, Peru",
+            "price": "1 lb block",
+            "badge": "Single Origin"
+          }
+        },
+        "p_ground": {
+          "type": "product_card",
+          "settings": {
+            "name": "Ground Chuncho",
+            "origin": "Café & Studio",
+            "price": "5 lb bag",
+            "badge": "Bulk"
+          }
+        },
+        "p_mushroom": {
+          "type": "product_card",
+          "settings": {
+            "name": "Mushroom Vitality",
+            "origin": "Cacao + Adaptogens",
+            "price": "Ground",
+            "badge": "Functional"
+          }
+        },
+        "p_rose": {
+          "type": "product_card",
+          "settings": {
+            "name": "Rose Vanilla",
+            "origin": "Rose + Vanilla Bean",
+            "price": "Ground",
+            "badge": "Botanical"
+          }
+        }
       },
-      "block_order": ["p_paste", "p_ground", "p_mushroom", "p_rose"],
+      "block_order": [
+        "p_paste",
+        "p_ground",
+        "p_mushroom",
+        "p_rose"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "The Lineup",
         "headline": "What You'll Carry",
         "subhead": "Single-origin Chuncho cacao, in every form your customers want."
@@ -150,7 +402,11 @@
     "story": {
       "type": "bulk-story",
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "image_alt": "Justin and Joel, Pacha Mana",
         "eyebrow": "Origin",
         "headline": "Ceremony Starts At The Farm",
@@ -161,15 +417,63 @@
     "regions": {
       "type": "bulk-regions",
       "blocks": {
-        "r_west":     { "type": "region", "settings": { "region": "West Coast",     "count": "68 partners" } },
-        "r_mountain": { "type": "region", "settings": { "region": "Mountain West",  "count": "24 partners" } },
-        "r_southwest":{ "type": "region", "settings": { "region": "Southwest",      "count": "19 partners" } },
-        "r_midwest":  { "type": "region", "settings": { "region": "Midwest",        "count": "21 partners" } },
-        "r_northeast":{ "type": "region", "settings": { "region": "Northeast",      "count": "18 partners" } }
+        "region_xbDKR4": {
+          "type": "region",
+          "settings": {
+            "region": "West Coast",
+            "count": "68 partners"
+          }
+        },
+        "r_west": {
+          "type": "region",
+          "settings": {
+            "region": "West Coast",
+            "count": "68 partners"
+          }
+        },
+        "r_mountain": {
+          "type": "region",
+          "settings": {
+            "region": "Mountain West",
+            "count": "24 partners"
+          }
+        },
+        "r_southwest": {
+          "type": "region",
+          "settings": {
+            "region": "Southwest",
+            "count": "19 partners"
+          }
+        },
+        "r_midwest": {
+          "type": "region",
+          "settings": {
+            "region": "Midwest",
+            "count": "21 partners"
+          }
+        },
+        "r_northeast": {
+          "type": "region",
+          "settings": {
+            "region": "Northeast",
+            "count": "18 partners"
+          }
+        }
       },
-      "block_order": ["r_west", "r_mountain", "r_southwest", "r_midwest", "r_northeast"],
+      "block_order": [
+        "region_xbDKR4",
+        "r_west",
+        "r_mountain",
+        "r_southwest",
+        "r_midwest",
+        "r_northeast"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "On Shelves",
         "headline": "Where Our Cacao Lives",
         "subhead": "Partners across North America pouring with us today."
@@ -178,14 +482,51 @@
     "steps": {
       "type": "bulk-steps",
       "blocks": {
-        "step1": { "type": "step", "settings": { "number": "01", "title": "Apply",            "description": "Send the short form below. We review and reply within 48 hours." } },
-        "step2": { "type": "step", "settings": { "number": "02", "title": "Get Approved",     "description": "Receive your wholesale login and price list, or order instantly on Faire." } },
-        "step3": { "type": "step", "settings": { "number": "03", "title": "Place Your Order", "description": "Order online with tier pricing applied, or with your account manager." } },
-        "step4": { "type": "step", "settings": { "number": "04", "title": "Share It",         "description": "We ship in 2–3 days with shelf cards and brewing guides included." } }
+        "step1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Apply",
+            "description": "Send the short form below. We review and reply within 48 hours."
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Get Approved",
+            "description": "Receive your wholesale login and price list, or order instantly on Faire."
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Place Your Order",
+            "description": "Order online with tier pricing applied, or with your account manager."
+          }
+        },
+        "step4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Share It",
+            "description": "We ship in 2–3 days with shelf cards and brewing guides included."
+          }
+        }
       },
-      "block_order": ["step1", "step2", "step3", "step4"],
+      "block_order": [
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "How It Works",
         "headline": "Four Simple Steps",
         "subhead": ""
@@ -194,21 +535,92 @@
     "apply": {
       "type": "bulk-form",
       "blocks": {
-        "bt_retail":    { "type": "biz_type", "settings": { "value": "Retail / wellness shop" } },
-        "bt_cafe":      { "type": "biz_type", "settings": { "value": "Café / coffee bar" } },
-        "bt_facil":     { "type": "biz_type", "settings": { "value": "Ceremony facilitator" } },
-        "bt_retreat":   { "type": "biz_type", "settings": { "value": "Retreat / events" } },
-        "bt_maker":     { "type": "biz_type", "settings": { "value": "Chocolate maker" } },
-        "bt_refill":    { "type": "biz_type", "settings": { "value": "Bulk / refill store" } },
-        "bt_other":     { "type": "biz_type", "settings": { "value": "Other" } },
-        "vol_small":    { "type": "volume",   "settings": { "value": "1–2 cases / month" } },
-        "vol_mid":      { "type": "volume",   "settings": { "value": "3–6 cases / month" } },
-        "vol_high":     { "type": "volume",   "settings": { "value": "7–15 cases / month" } },
-        "vol_xhigh":    { "type": "volume",   "settings": { "value": "15+ cases / month" } }
+        "bt_retail": {
+          "type": "biz_type",
+          "settings": {
+            "value": "Retail / wellness shop"
+          }
+        },
+        "bt_cafe": {
+          "type": "biz_type",
+          "settings": {
+            "value": "Café / coffee bar"
+          }
+        },
+        "bt_facil": {
+          "type": "biz_type",
+          "settings": {
+            "value": "Ceremony facilitator"
+          }
+        },
+        "bt_retreat": {
+          "type": "biz_type",
+          "settings": {
+            "value": "Retreat / events"
+          }
+        },
+        "bt_maker": {
+          "type": "biz_type",
+          "settings": {
+            "value": "Chocolate maker"
+          }
+        },
+        "bt_refill": {
+          "type": "biz_type",
+          "settings": {
+            "value": "Bulk / refill store"
+          }
+        },
+        "bt_other": {
+          "type": "biz_type",
+          "settings": {
+            "value": "Other"
+          }
+        },
+        "vol_small": {
+          "type": "volume",
+          "settings": {
+            "value": "1–2 cases / month"
+          }
+        },
+        "vol_mid": {
+          "type": "volume",
+          "settings": {
+            "value": "3–6 cases / month"
+          }
+        },
+        "vol_high": {
+          "type": "volume",
+          "settings": {
+            "value": "7–15 cases / month"
+          }
+        },
+        "vol_xhigh": {
+          "type": "volume",
+          "settings": {
+            "value": "15+ cases / month"
+          }
+        }
       },
-      "block_order": ["bt_retail","bt_cafe","bt_facil","bt_retreat","bt_maker","bt_refill","bt_other","vol_small","vol_mid","vol_high","vol_xhigh"],
+      "block_order": [
+        "bt_retail",
+        "bt_cafe",
+        "bt_facil",
+        "bt_retreat",
+        "bt_maker",
+        "bt_refill",
+        "bt_other",
+        "vol_small",
+        "vol_mid",
+        "vol_high",
+        "vol_xhigh"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "",
         "headline": "Apply For Wholesale",
         "subhead": "Tell us about your business and we'll get back to you within 48 hours.",
@@ -222,14 +634,47 @@
     "faq": {
       "type": "bulk-faq",
       "blocks": {
-        "q_min":      { "type": "faq", "settings": { "question": "Is there a minimum order?",         "answer": "<p>Wholesale partners are approved first, then start at a single case. Bulk price breaks for individuals apply automatically in cart — no minimum, no application.</p>" } },
-        "q_shipping": { "type": "faq", "settings": { "question": "How does shipping work?",            "answer": "<p>Orders ship from Grass Valley, California, typically within 2–3 business days. We don't offer free shipping on bulk orders over 25 lb — those ship at calculated freight so you only pay the real cost. Smaller orders are charged a flat rate shown at checkout.</p>" } },
-        "q_pricing":  { "type": "faq", "settings": { "question": "How is wholesale pricing shared?",   "answer": "<p>Once your application is approved and we confirm we're aligned partners, we send your tier price list. Pricing scales as your volume grows.</p>" } },
-        "q_marketing":{ "type": "faq", "settings": { "question": "Do you offer marketing support?",    "answer": "<p>Yes. Every partner receives shelf cards, origin stories, and brewing guides — plus lifestyle imagery for your channels.</p>" } }
+        "q_min": {
+          "type": "faq",
+          "settings": {
+            "question": "Is there a minimum order?",
+            "answer": "<p>Wholesale partners are approved first, then start at a single case. Bulk price breaks for individuals apply automatically in cart — no minimum, no application.</p>"
+          }
+        },
+        "q_shipping": {
+          "type": "faq",
+          "settings": {
+            "question": "How does shipping work?",
+            "answer": "<p>Orders ship from Grass Valley, California, typically within 2–3 business days. We don't offer free shipping on bulk orders over 25 lb — those ship at calculated freight so you only pay the real cost. Smaller orders are charged a flat rate shown at checkout.</p>"
+          }
+        },
+        "q_pricing": {
+          "type": "faq",
+          "settings": {
+            "question": "How is wholesale pricing shared?",
+            "answer": "<p>Once your application is approved and we confirm we're aligned partners, we send your tier price list. Pricing scales as your volume grows.</p>"
+          }
+        },
+        "q_marketing": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer marketing support?",
+            "answer": "<p>Yes. Every partner receives shelf cards, origin stories, and brewing guides — plus lifestyle imagery for your channels.</p>"
+          }
+        }
       },
-      "block_order": ["q_min", "q_shipping", "q_pricing", "q_marketing"],
+      "block_order": [
+        "q_min",
+        "q_shipping",
+        "q_pricing",
+        "q_marketing"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Questions",
         "headline": "Good To Know"
       }
@@ -237,7 +682,11 @@
     "cta": {
       "type": "bulk-cta",
       "settings": {
-        "bg_type": "color", "bg_opacity": 100, "bg_overlay_opacity": 35,
+        "bg_type": "color",
+        "bg_color": "",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#38271d",
+        "bg_overlay_opacity": 35,
         "eyebrow": "Ready When You Are",
         "headline": "Pour The First Cup",
         "subhead": "Become a partner, or stock up for your circle. We'll send a sample either way.",
@@ -249,5 +698,19 @@
       }
     }
   },
-  "order": ["hero", "channels", "price_card", "tiers", "segments", "stats", "products", "story", "regions", "steps", "apply", "faq", "cta"]
+  "order": [
+    "hero",
+    "channels",
+    "price_card",
+    "tiers",
+    "segments",
+    "stats",
+    "products",
+    "story",
+    "regions",
+    "steps",
+    "apply",
+    "faq",
+    "cta"
+  ]
 }
