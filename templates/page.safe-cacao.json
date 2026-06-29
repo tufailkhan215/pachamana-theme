@@ -255,7 +255,7 @@
         "bg_overlay_color": "#223829",
         "bg_overlay_opacity": 35,
         "eyebrow": "A Reality Check",
-        "headline": "How Much Would It\nActually Take?",
+        "headline": "How many cups \nWould It Actually Take \nto reach prop 65 limits?",
         "big_number": "20+",
         "body": "servings of Pacha Mana cacao every single day to even approach Prop 65 limits on lead — an amount no one consumes. Even then, much of it passes through you unabsorbed.",
         "quote": "Lead and cadmium are handled slightly differently by the body, but they are not completely absorbed, so much of what you take passes through you after you consume it.",
@@ -295,6 +295,7 @@
             "list_type": "none",
             "list_items": "",
             "outro": "",
+            "image": "shopify://shop_images/IMG_0177_2.heic",
             "image_placeholder": "High-elevation farm / grove photo"
           }
         }
@@ -361,11 +362,12 @@
     "cta": {
       "type": "safe-cacao-cta",
       "settings": {
-        "bg_type": "color",
+        "bg_type": "image",
         "bg_color": "#fee7be",
+        "bg_image": "shopify://shop_images/IMG_0218.heic",
         "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
+        "bg_overlay_color": "#F9F2EF",
+        "bg_overlay_opacity": 75,
         "headline": "Enjoy Cacao\nWithout The Worry",
         "subhead": "So, can you enjoy Pacha Mana cacao without worrying about heavy metals? Absolutely. Cheers.",
         "cta1_label": "Shop Our Cacao",
