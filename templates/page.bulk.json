@@ -434,13 +434,14 @@
     "cta": {
       "type": "bulk-cta",
       "settings": {
-        "bg_type": "color",
+        "bg_type": "image",
         "bg_color": "",
+        "bg_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-85.jpg",
         "bg_opacity": 100,
-        "bg_overlay_color": "#38271d",
-        "bg_overlay_opacity": 35,
+        "bg_overlay_color": "#5C402F",
+        "bg_overlay_opacity": 80,
         "eyebrow": "All Set?",
-        "headline": "Stock Up On Ceremony",
+        "headline": "Stock Up On cacao",
         "subhead": "Fill your cart, watch the discount climb, and pour with intention all season long.",
         "cta1_label": "Shop Bulk",
         "cta1_link": "/collections/all",
