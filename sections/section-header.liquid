@@ -25,6 +25,22 @@
     background-position: {{ header_bg_position }} !important;
     background-repeat: {{ header_bg_repeat }} !important;
   }
+  /* Nav-squeeze fix: tighten letter-spacing so more menu items fit without overflow.
+     Original Elementor value (post-57.css) was 2.4px; this scaled it down for 6+ items. */
+  .section-header .plus-navigation-menu .navbar-nav > li > a {
+    letter-spacing: 1.4px !important;
+  }
+  .section-header .plus-navigation-menu .navbar-nav > li {
+    padding-right: 10px !important;
+  }
+  @media (max-width: 1280px) {
+    .section-header .plus-navigation-menu .navbar-nav > li > a {
+      letter-spacing: 1.0px !important;
+    }
+    .section-header .plus-navigation-menu .navbar-nav > li {
+      padding-right: 7px !important;
+    }
+  }
 </style>
 
 <header data-elementor-type="header" data-elementor-id="57" class="elementor elementor-57 elementor-location-header section-header">
