@@ -1,0 +1,49 @@
+<section class="pmw pmw-resell" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner pmw-resell__inner">
+    <div class="pmw-resell__card">
+      <div class="pmw-resell__text">
+        <h3 class="pmw-resell__title">{{ section.settings.headline }}</h3>
+        <p class="pmw-resell__copy">{{ section.settings.body }}</p>
+      </div>
+      {% if section.settings.cta_label != blank %}
+        <a href="{{ section.settings.cta_link | default: '/pages/wholesale' }}" class="pmw-btn pmw-btn--outline">{{ section.settings.cta_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-resell { padding: 0; }
+  #pmw-{{ section.id }} .pmw-resell__inner { padding: 64px 64px; max-width: 1040px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-resell__card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; box-shadow: var(--card-shadow); padding: 40px 44px; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+  #pmw-{{ section.id }} .pmw-resell__title { margin: 0 0 8px; font-size: 24px; letter-spacing: .04em; color: var(--page-text); }
+  #pmw-{{ section.id }} .pmw-resell__copy { margin: 0; font-size: 16px; line-height: 1.7; color: var(--page-muted); max-width: 620px; }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }} .pmw-resell__inner { padding: 48px 20px; }
+    #pmw-{{ section.id }} .pmw-resell__card { grid-template-columns: 1fr; gap: 18px; padding: 28px 24px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Reselling Banner",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Reselling Our Cacao?" },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Bulk pricing is for personal and ceremonial use. If you stock a shop, café, or studio, our wholesale program gives you partner pricing, terms, and marketing support." },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Explore Wholesale" },
+    { "type": "url", "id": "cta_link", "label": "CTA link (defaults to /pages/wholesale)" }
+  ],
+  "presets": [{ "name": "Bulk — Reselling Banner" }]
+}
+{% endschema %}

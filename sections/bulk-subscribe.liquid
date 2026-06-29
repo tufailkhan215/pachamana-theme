@@ -1,0 +1,65 @@
+<section class="pmw pmw-sub" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner pmw-sub__inner">
+    <div class="pmw-sub__card">
+      {%- if section.settings.mark_image != blank -%}
+        {%- assign sub_mark = section.settings.mark_image | image_url: width: 500 -%}
+      {%- else -%}
+        {%- assign sub_mark = 'bulk-mark-cream.png' | asset_url -%}
+      {%- endif -%}
+      <img src="{{ sub_mark }}" alt="" class="pmw-sub__mark" loading="lazy">
+      <div class="pmw-sub__text">
+        {% if section.settings.eyebrow != blank %}<span class="pmw-sub__eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+        <h2 class="pmw-sub__title">{{ section.settings.headline }}</h2>
+        <p class="pmw-sub__copy">{{ section.settings.body }}</p>
+      </div>
+      <div class="pmw-sub__cta-wrap">
+        {% if section.settings.cta_label != blank %}
+          <a href="{{ section.settings.cta_link | default: '#' }}" class="pmw-btn pmw-btn--primary">{{ section.settings.cta_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-sub { padding: 0; }
+  #pmw-{{ section.id }} .pmw-sub__inner { padding: 0 64px 90px; max-width: 1120px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-sub__card { position: relative; overflow: hidden; background: linear-gradient(165deg,#5c402f 0%,#38271d 100%); border-radius: 24px; padding: 54px 56px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+  #pmw-{{ section.id }} .pmw-sub__mark { position: absolute; right: -50px; top: -50px; width: 240px; opacity: .16; pointer-events: none; }
+  #pmw-{{ section.id }} .pmw-sub__text { position: relative; }
+  #pmw-{{ section.id }} .pmw-sub__eyebrow { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .18em; font-size: 13px; color: var(--pm-sunshine-gold); }
+  #pmw-{{ section.id }} .pmw-sub__title { margin: 12px 0 12px; font-size: 32px; color: #f9f2ef; }
+  #pmw-{{ section.id }} .pmw-sub__copy { margin: 0; max-width: 520px; font-size: 16px; line-height: 1.7; color: #e4d4c6; }
+  #pmw-{{ section.id }} .pmw-sub__cta-wrap { position: relative; display: flex; justify-content: flex-end; }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }} .pmw-sub__inner { padding: 0 20px 64px; }
+    #pmw-{{ section.id }} .pmw-sub__card { padding: 36px 28px; grid-template-columns: 1fr; gap: 24px; }
+    #pmw-{{ section.id }} .pmw-sub__cta-wrap { justify-content: flex-start; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bulk — Subscribe Upsell",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background (outer)" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#f9f2ef" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Only Need A Bag Or Two?" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Subscribe & Save 15%" },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "You don't have to buy in bulk to get a deal. Take 15% off even a single bag — just commit to a three-month subscription. It's one path or the other, though: subscription savings don't combine with bulk pricing." },
+    { "type": "image_picker", "id": "mark_image", "label": "Decorative mark (defaults to cream)" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Start A Subscription" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" }
+  ],
+  "presets": [{ "name": "Bulk — Subscribe Upsell" }]
+}
+{% endschema %}

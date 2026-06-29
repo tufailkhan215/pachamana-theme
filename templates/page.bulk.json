@@ -12,669 +12,146 @@
     "hero": {
       "type": "bulk-hero",
       "settings": {
-        "bg_type": "color",
-        "bg_color": "#fee7be",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "Wholesale & Bulk",
-        "headline": "Share The\nCeremony",
-        "subhead": "Cacao was always meant to be shared in circle. Buy a case, hold space for your community — and we'll meet you in reciprocity.",
-        "cta1_label": "Apply For Wholesale",
-        "cta1_link": "#apply",
-        "cta2_label": "Shop Bulk",
-        "cta2_link": "/collections/all"
+        "bg_type": "color", "bg_color": "#fee7be", "bg_opacity": 100,
+        "eyebrow": "Bulk Pricing — Automatic",
+        "headline": "Buy More,\nPour More",
+        "subhead": "Heavy cups, deep weeks, full circles. The more cacao you carry, the more we give back — no codes, no applications, no waiting on us.",
+        "cta1_label": "Shop Bulk",
+        "cta1_link": "/collections/all",
+        "cta2_label": "How It Works",
+        "cta2_link": "#how"
       }
     },
-    "channels": {
-      "type": "bulk-channels",
+    "savings": {
+      "type": "bulk-savings-explainer",
       "blocks": {
-        "ch_consumer": {
-          "type": "channel_card",
-          "settings": {
-            "theme": "light",
-            "eyebrow": "For Everyone",
-            "title": "Bulk For Consumers",
-            "body": "Automatic price breaks as your cart grows. No application, no wait — just stock up for your circle.",
-            "cta_label": "Shop Bulk",
-            "cta_link": "/collections/all"
-          }
-        },
-        "ch_wholesale": {
-          "type": "channel_card",
-          "settings": {
-            "theme": "dark",
-            "eyebrow": "Approved Partners",
-            "title": "Wholesale Partners",
-            "body": "Cafés, shops, retreats, facilitators. Tier pricing, account management, freight rates — apply below.",
-            "cta_label": "Apply For Wholesale",
-            "cta_link": "#apply"
-          }
-        }
+        "s1": { "type": "step", "settings": { "number": "01", "title": "Fill Your Cart",      "description": "Mix any sizes you like — half-pound, full-pound, or 5 lb bulk bag. Every gram counts toward your tier." } },
+        "s2": { "type": "step", "settings": { "number": "02", "title": "Hit A Weight Tier",   "description": "About 3 lb saves 5%. 6 lb saves 10%. 10 lb saves 15%. 20 lb saves 20%. The savings appear automatically." } },
+        "s3": { "type": "step", "settings": { "number": "03", "title": "Check Out",           "description": "Your discount applies at checkout. No code to enter, no application, no waiting on us." } }
       },
-      "block_order": [
-        "ch_consumer",
-        "ch_wholesale"
-      ],
+      "block_order": ["s1", "s2", "s3"],
       "settings": {
-        "bg_type": "color",
-        "bg_color": "#f9f2ef",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "Two Ways To Buy",
-        "headline": "Choose Your Channel",
-        "subhead": "Whether you're stocking shelves or hosting circles, we have a path for you."
+        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "eyebrow": "How It Works",
+        "headline": "Saving Is Automatic"
       }
     },
-    "price_card": {
-      "type": "bulk-price-card",
+    "calc": {
+      "type": "bulk-calculator",
       "blocks": {
-        "pc_b1": {
-          "type": "pricing_row",
-          "settings": {
-            "group_label": "By the Bag",
-            "group_sub": "Our 0.5lb and 1lb bags, across every blend.",
-            "qty_label": "5 bags of 0.5lb or 3 bags of 1lb",
-            "amount": "$3",
-            "amount_suffix": "off every bag"
-          }
-        },
-        "pc_b2": {
-          "type": "pricing_row",
-          "settings": {
-            "group_label": "By the Bag",
-            "group_sub": "",
-            "qty_label": "7 bags of 0.5lb or 5 bags of 1lb",
-            "amount": "$5",
-            "amount_suffix": "off every bag"
-          }
-        },
-        "pc_b3": {
-          "type": "pricing_row",
-          "settings": {
-            "group_label": "By the Bag",
-            "group_sub": "",
-            "qty_label": "7 bags of 1lb",
-            "amount": "$7",
-            "amount_suffix": "off every bag"
-          }
-        },
-        "pc_c1": {
-          "type": "pricing_row",
-          "settings": {
-            "group_label": "By the Case",
-            "group_sub": "Our 5lb bulk bags, for shelves and ceremony spaces.",
-            "qty_label": "2 cases of 5lb",
-            "amount": "$10",
-            "amount_suffix": "off every case"
-          }
-        },
-        "pc_c2": {
-          "type": "pricing_row",
-          "settings": {
-            "group_label": "By the Case",
-            "group_sub": "",
-            "qty_label": "3 cases of 5lb",
-            "amount": "$20",
-            "amount_suffix": "off every case"
-          }
-        },
-        "pc_c3": {
-          "type": "pricing_row",
-          "settings": {
-            "group_label": "By the Case",
-            "group_sub": "",
-            "qty_label": "4 cases of 5lb",
-            "amount": "$30",
-            "amount_suffix": "off every case"
-          }
-        },
-        "pc_c4": {
-          "type": "pricing_row",
-          "settings": {
-            "group_label": "By the Case",
-            "group_sub": "",
-            "qty_label": "5 cases of 5lb",
-            "amount": "$40",
-            "amount_suffix": "off every case"
-          }
-        }
+        "t1": { "type": "tier", "settings": { "qty": "About 3 lbs",  "save": "5%",  "note": "6 × 8 oz  ·  or 3 × 1 lb",   "highlight": false } },
+        "t2": { "type": "tier", "settings": { "qty": "About 6 lbs",  "save": "10%", "note": "12 × 8 oz  ·  or 6 × 1 lb",  "highlight": false } },
+        "t3": { "type": "tier", "settings": { "qty": "About 10 lbs", "save": "15%", "note": "20 × 8 oz  ·  or 10 × 1 lb", "highlight": false } },
+        "t4": { "type": "tier", "settings": { "qty": "About 20 lbs", "save": "20%", "note": "40 × 8 oz  ·  or 20 × 1 lb", "highlight": true  } },
+        "c1": { "type": "case_row", "settings": { "order": "1 × 5 lb bag",   "save": "Standing price", "price": "$230" } },
+        "c2": { "type": "case_row", "settings": { "order": "2 × 5 lb bags",  "save": "10% off",        "price": "$207" } },
+        "c3": { "type": "case_row", "settings": { "order": "3 × 5 lb bags",  "save": "15% off",        "price": "$195.50" } },
+        "c4": { "type": "case_row", "settings": { "order": "5 × 5 lb bags",  "save": "20% off",        "price": "$184" } }
       },
-      "block_order": [
-        "pc_b1",
-        "pc_b2",
-        "pc_b3",
-        "pc_c1",
-        "pc_c2",
-        "pc_c3",
-        "pc_c4"
-      ],
+      "block_order": ["t1", "t2", "t3", "t4", "c1", "c2", "c3", "c4"],
       "settings": {
-        "bg_type": "color",
-        "bg_color": "#f9f2ef",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "Wholesale & Facilitator Pricing",
-        "headline": "Buy a Case,\nShare the Medicine",
-        "intro": "Cacao was always meant to be shared in circle. The more you carry to your community, the more we give back to you. This is Ayni, the reciprocal energy that runs through everything we do.",
-        "order_title": "How to Order",
-        "order_body": "Ready to stock your shelves or hold space for your circle? Reach out to Justin directly and we will set you up. No marketplace, no middle layer, just a direct relationship built on trust. Email support@pachamana.com to begin.",
-        "foot_tag": "Ceremony Starts at the Farm",
-        "foot_sign": "With gratitude, Justin",
-        "foot_contact": "Pacha Mana Cacao · From Peru with love",
-        "fine_print": "Bulk pricing is offered on direct orders and is its own reward, so it is not combined with subscription savings."
+        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "eyebrow": "The Pricing Model",
+        "headline": "The More You Buy, The More You Save",
+        "subhead": "Two ways to save, both automatic. Buy by the bag and your discount climbs with total weight — or buy our 5 lb bulk bag for a standing price that drops the more bags you take.",
+        "bag_eyebrow": "By The Bag",
+        "bag_copy": "Nothing to apply for, no code to enter. As you add bags to your cart the price drops on its own — every bag gets cheaper the more total weight you reach. Half-pound or full-pound, the reward meets at the same weight.",
+        "bag_pill": "The discount just appears in your cart — watch every bag get cheaper as the weight adds up. No code, no minimums.",
+        "case_eyebrow": "The 5 lb Bulk Bag",
+        "case_copy": "Our 5 lb bulk bag — available in pure ground or stone-ground paste — for facilitators and daily drinkers who move through a lot of cacao. The standing price drops the more bags you take.",
+        "why_eyebrow": "Why We Do It This Way",
+        "why_copy": "We hear you — price matters when you're choosing your cacao, and we want this to be affordable for you. All we ask is that you carry a little more volume; that's what keeps our fulfillment sustainable. Buy more, and we'll keep meeting you with a better price.",
+        "contact_eyebrow": "Over 25 lb",
+        "contact_title": "Let's Build Your Price",
+        "contact_copy": "Past 25 lb, freight shifts as the price comes down — so we set these orders up with you directly. Reach out and we'll organize a price that works for you.",
+        "contact_cta1": "Contact Sales",
+        "contact_cta1_link": "mailto:support@pachamana.com",
+        "contact_cta2": "Become A Wholesaler",
+        "contact_cta2_link": "/pages/wholesale",
+        "free_ship_text": "Every order over $100 ships free.",
+        "fine_print": "Discounts apply to your order total at checkout — no code needed. Bulk pricing is its own reward and does not combine with subscription savings."
       }
     },
-    "tiers": {
-      "type": "bulk-tiers",
+    "sizes": {
+      "type": "bulk-three-ways",
       "blocks": {
-        "t_stockist": {
-          "type": "tier",
-          "settings": {
-            "name": "Stockist",
-            "description": "Independent shops & cafés getting started with cacao.",
-            "min": "Starts at a single case.",
-            "popular": false,
-            "popular_label": "Most Loved"
-          }
-        },
-        "t_partner": {
-          "type": "tier",
-          "settings": {
-            "name": "Partner",
-            "description": "Growing stores ordering on a regular cadence.",
-            "min": "Recurring mid-volume orders.",
-            "popular": true,
-            "popular_label": "Most Loved"
-          }
-        },
-        "t_flagship": {
-          "type": "tier",
-          "settings": {
-            "name": "Flagship",
-            "description": "High-volume retailers, studios & distributors.",
-            "min": "Dedicated account manager & freight pricing.",
-            "popular": false,
-            "popular_label": "Most Loved"
-          }
-        }
+        "z1": { "type": "size_card", "settings": { "tag": "Half Pound", "size": "8 oz", "description": "A few weeks of daily cups, or a smaller circle. Counts toward your by-the-bag weight.", "price_label": "Sold by the bag" } },
+        "z2": { "type": "size_card", "settings": { "tag": "Most Loved", "size": "1 lb",  "description": "The everyday ceremonial size — the best balance of value and freshness.",                "price_label": "Sold by the bag" } },
+        "z3": { "type": "size_card", "settings": { "tag": "Bulk Bag",   "size": "5 lb",  "description": "For people who move through a lot of cacao — ground or paste, at the deepest standing discount.", "price_label": "$230 / bag" } }
       },
-      "block_order": [
-        "t_stockist",
-        "t_partner",
-        "t_flagship"
-      ],
+      "block_order": ["z1", "z2", "z3"],
       "settings": {
-        "bg_type": "color",
-        "bg_color": "#fdf8f3",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "Approved Partners",
-        "headline": "Wholesale Tiers",
-        "subhead": "Pricing scales with volume. Pick the tier that fits where you are now — you can grow into the next one."
+        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "eyebrow": "Pick Your Size",
+        "headline": "Three Ways To Stock Up",
+        "subhead": "Start small or go all in — every size counts toward your volume discount."
+      }
+    },
+    "subscribe": {
+      "type": "bulk-subscribe",
+      "settings": {
+        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "eyebrow": "Only Need A Bag Or Two?",
+        "headline": "Subscribe & Save 15%",
+        "body": "You don't have to buy in bulk to get a deal. Take 15% off even a single bag — just commit to a three-month subscription. It's one path or the other, though: subscription savings don't combine with bulk pricing.",
+        "cta_label": "Start A Subscription",
+        "cta_link": "/collections/all"
       }
     },
     "segments": {
       "type": "bulk-segments",
       "blocks": {
-        "s_retail": {
-          "type": "segment",
-          "settings": {
-            "image": "shopify://shop_images/IMG_9117.heic",
-            "placeholder_label": "Retail shelf photo",
-            "name": "Retail & Wellness",
-            "body": "Stock your shelves with a story customers can feel — ceremonial cacao that sells itself."
-          }
-        },
-        "s_cafe": {
-          "type": "segment",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-44-1.jpg",
-            "placeholder_label": "Café counter photo",
-            "name": "Cafés & Coffee Bars",
-            "body": "A heart-opening coffee alternative — lattes, elixirs, and slow mornings on your menu."
-          }
-        },
-        "s_facilitator": {
-          "type": "segment",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-93-1.jpg",
-            "placeholder_label": "Ceremony circle photo",
-            "name": "Ceremony Facilitators",
-            "body": "Full ceremonial-dose cacao your circle can trust, traceable to the grove and harvest."
-          }
-        },
-        "s_retreat": {
-          "type": "segment",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-84-1.webp",
-            "placeholder_label": "Retreat / event photo",
-            "name": "Retreats & Events",
-            "body": "Hold space with cacao that travels well and opens hearts, batch after batch."
-          }
-        },
-        "s_maker": {
-          "type": "segment",
-          "settings": {
-            "image": "shopify://shop_images/IMG_0378_2.heic",
-            "placeholder_label": "Chocolate maker photo",
-            "name": "Chocolate Makers",
-            "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft."
-          }
-        },
-        "s_bulk": {
-          "type": "segment",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27-1.webp",
-            "placeholder_label": "Refill / bulk bin photo",
-            "name": "Bulk & Refill Stores",
-            "body": "Package-free cacao for mindful, low-waste shoppers who shop their values."
-          }
-        }
+        "s_daily":   { "type": "segment", "settings": { "placeholder_label": "Morning cup photo",      "name": "Daily Drinkers",         "body": "Cacao in place of coffee, every morning. Buy by the case and never run dry." } },
+        "s_facil":   { "type": "segment", "settings": { "placeholder_label": "Ceremony circle photo",  "name": "Facilitators",           "body": "Full ceremonial-dose cacao for your own circles, traceable to grove and harvest." } },
+        "s_home":    { "type": "segment", "settings": { "placeholder_label": "Family kitchen photo",   "name": "Households & Families",  "body": "One bag rarely lasts. Stock the pantry and share the ritual at home." } },
+        "s_space":   { "type": "segment", "settings": { "placeholder_label": "Studio counter photo",   "name": "Studios & Small Spaces", "body": "Serve guests and members without a wholesale account — bulk pricing, self-serve." } }
       },
-      "block_order": [
-        "s_retail",
-        "s_cafe",
-        "s_facilitator",
-        "s_retreat",
-        "s_maker",
-        "s_bulk"
-      ],
+      "block_order": ["s_daily", "s_facil", "s_home", "s_space"],
       "settings": {
-        "bg_type": "color",
-        "bg_color": "#f9f2ef",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "Who You Serve",
-        "headline": "Made For Your Space",
-        "subhead": "A few of the kinds of partners already pouring with us."
-      }
-    },
-    "stats": {
-      "type": "bulk-stats",
-      "blocks": {
-        "st_families": {
-          "type": "stat",
-          "settings": {
-            "number": "150+",
-            "label": "Highland cacao farming families supported each year"
-          }
-        },
-        "st_stockists": {
-          "type": "stat",
-          "settings": {
-            "number": "100+",
-            "label": "Stockists & cafés served"
-          }
-        },
-        "st_traceable": {
-          "type": "stat",
-          "settings": {
-            "number": "100%",
-            "label": "Traceable to grove & harvest"
-          }
-        },
-        "st_years": {
-          "type": "stat",
-          "settings": {
-            "number": "250,000+",
-            "label": "Cups of Pacha Mana enjoyed every year"
-          }
-        }
-      },
-      "block_order": [
-        "st_families",
-        "st_stockists",
-        "st_traceable",
-        "st_years"
-      ],
-      "settings": {
-        "bg_type": "color",
-        "bg_color": "",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#38271d",
-        "bg_overlay_opacity": 35,
-        "eyebrow": "By The Numbers",
-        "headline": "Rooted In Relationship"
+        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "eyebrow": "Who Buys In Bulk",
+        "headline": "For Anyone Who Pours Often",
+        "subhead": ""
       }
     },
     "products": {
       "type": "bulk-products",
       "blocks": {
-        "p_paste": {
-          "type": "product_card",
-          "settings": {
-            "name": "Chuncho Paste Block",
-            "origin": "Quillabamba, Peru",
-            "price": "1 lb block",
-            "badge": "Single Origin"
-          }
-        },
-        "p_ground": {
-          "type": "product_card",
-          "settings": {
-            "name": "Ground Chuncho",
-            "origin": "Café & Studio",
-            "price": "5 lb bag",
-            "badge": "Bulk"
-          }
-        },
-        "p_mushroom": {
-          "type": "product_card",
-          "settings": {
-            "name": "Mushroom Vitality",
-            "origin": "Cacao + Adaptogens",
-            "price": "Ground",
-            "badge": "Functional"
-          }
-        },
-        "p_rose": {
-          "type": "product_card",
-          "settings": {
-            "name": "Rose Vanilla",
-            "origin": "Rose + Vanilla Bean",
-            "price": "Ground",
-            "badge": "Botanical"
-          }
-        }
+        "p1": { "type": "product_card", "settings": { "name": "Chuncho Paste Block", "origin": "Quillabamba, Peru",   "price": "1 lb block", "badge": "Single Origin" } },
+        "p2": { "type": "product_card", "settings": { "name": "Ground Chuncho",      "origin": "Bulk Bag",            "price": "5 lb bag",   "badge": "Bulk" } },
+        "p3": { "type": "product_card", "settings": { "name": "Mushroom Vitality",   "origin": "Cacao + Adaptogens",  "price": "Ground",     "badge": "Functional" } },
+        "p4": { "type": "product_card", "settings": { "name": "Rose Vanilla",        "origin": "Rose + Vanilla Bean", "price": "Ground",     "badge": "Botanical" } }
       },
-      "block_order": [
-        "p_paste",
-        "p_ground",
-        "p_mushroom",
-        "p_rose"
-      ],
+      "block_order": ["p1", "p2", "p3", "p4"],
       "settings": {
-        "bg_type": "color",
-        "bg_color": "#fdf8f3",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "The Lineup",
-        "headline": "What You'll Carry",
-        "subhead": "Single-origin Chuncho cacao, in every form your customers want."
+        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "eyebrow": "The Range",
+        "headline": "Everything Buys In Bulk",
+        "subhead": "Volume discounts apply across the full range — mix and match to reach the next tier."
       }
     },
-    "story": {
-      "type": "bulk-story",
+    "resell": {
+      "type": "bulk-reselling",
       "settings": {
-        "bg_type": "color",
-        "bg_color": "#f9f2ef",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "image_alt": "Justin and Joel, Pacha Mana",
-        "eyebrow": "Origin",
-        "headline": "Ceremony Starts At The Farm",
-        "body": "<p>Twelve years ago, two cousins started walking the highlands above Quillabamba, drinking cacao with farming families and asking how to do this together — in a way that holds.</p><p>Today every bag, paste block, and shipment can be traced back to a specific grove and harvest week. Your customers don't just drink cacao. They drink a relationship.</p>",
-        "signature": "— Justin & Joel"
-      }
-    },
-    "regions": {
-      "type": "bulk-regions",
-      "blocks": {
-        "region_xbDKR4": {
-          "type": "region",
-          "settings": {
-            "region": "West Coast",
-            "count": "68 partners"
-          }
-        },
-        "r_west": {
-          "type": "region",
-          "settings": {
-            "region": "West Coast",
-            "count": "68 partners"
-          }
-        },
-        "r_mountain": {
-          "type": "region",
-          "settings": {
-            "region": "Mountain West",
-            "count": "24 partners"
-          }
-        },
-        "r_southwest": {
-          "type": "region",
-          "settings": {
-            "region": "Southwest",
-            "count": "19 partners"
-          }
-        },
-        "r_midwest": {
-          "type": "region",
-          "settings": {
-            "region": "Midwest",
-            "count": "21 partners"
-          }
-        },
-        "r_northeast": {
-          "type": "region",
-          "settings": {
-            "region": "Northeast",
-            "count": "18 partners"
-          }
-        }
-      },
-      "block_order": [
-        "region_xbDKR4",
-        "r_west",
-        "r_mountain",
-        "r_southwest",
-        "r_midwest",
-        "r_northeast"
-      ],
-      "settings": {
-        "bg_type": "color",
-        "bg_color": "#fdf8f3",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "On Shelves",
-        "headline": "Where Our Cacao Lives",
-        "subhead": "Partners across North America pouring with us today."
-      }
-    },
-    "steps": {
-      "type": "bulk-steps",
-      "blocks": {
-        "step1": {
-          "type": "step",
-          "settings": {
-            "number": "01",
-            "title": "Apply",
-            "description": "Send the short form below. We review and reply within 48 hours."
-          }
-        },
-        "step2": {
-          "type": "step",
-          "settings": {
-            "number": "02",
-            "title": "Get Approved",
-            "description": "Receive your wholesale login and price list, or order instantly on Faire."
-          }
-        },
-        "step3": {
-          "type": "step",
-          "settings": {
-            "number": "03",
-            "title": "Place Your Order",
-            "description": "Order online with tier pricing applied, or with your account manager."
-          }
-        },
-        "step4": {
-          "type": "step",
-          "settings": {
-            "number": "04",
-            "title": "Share It",
-            "description": "We ship in 2–3 days with shelf cards and brewing guides included."
-          }
-        }
-      },
-      "block_order": [
-        "step1",
-        "step2",
-        "step3",
-        "step4"
-      ],
-      "settings": {
-        "bg_type": "color",
-        "bg_color": "#f9f2ef",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "How It Works",
-        "headline": "Four Simple Steps",
-        "subhead": ""
-      }
-    },
-    "apply": {
-      "type": "bulk-form",
-      "blocks": {
-        "bt_retail": {
-          "type": "biz_type",
-          "settings": {
-            "value": "Retail / wellness shop"
-          }
-        },
-        "bt_cafe": {
-          "type": "biz_type",
-          "settings": {
-            "value": "Café / coffee bar"
-          }
-        },
-        "bt_facil": {
-          "type": "biz_type",
-          "settings": {
-            "value": "Ceremony facilitator"
-          }
-        },
-        "bt_retreat": {
-          "type": "biz_type",
-          "settings": {
-            "value": "Retreat / events"
-          }
-        },
-        "bt_maker": {
-          "type": "biz_type",
-          "settings": {
-            "value": "Chocolate maker"
-          }
-        },
-        "bt_refill": {
-          "type": "biz_type",
-          "settings": {
-            "value": "Bulk / refill store"
-          }
-        },
-        "bt_other": {
-          "type": "biz_type",
-          "settings": {
-            "value": "Other"
-          }
-        },
-        "vol_small": {
-          "type": "volume",
-          "settings": {
-            "value": "1–2 cases / month"
-          }
-        },
-        "vol_mid": {
-          "type": "volume",
-          "settings": {
-            "value": "3–6 cases / month"
-          }
-        },
-        "vol_high": {
-          "type": "volume",
-          "settings": {
-            "value": "7–15 cases / month"
-          }
-        },
-        "vol_xhigh": {
-          "type": "volume",
-          "settings": {
-            "value": "15+ cases / month"
-          }
-        }
-      },
-      "block_order": [
-        "bt_retail",
-        "bt_cafe",
-        "bt_facil",
-        "bt_retreat",
-        "bt_maker",
-        "bt_refill",
-        "bt_other",
-        "vol_small",
-        "vol_mid",
-        "vol_high",
-        "vol_xhigh"
-      ],
-      "settings": {
-        "bg_type": "color",
-        "bg_color": "#fdf8f3",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
-        "eyebrow": "",
-        "headline": "Apply For Wholesale",
-        "subhead": "Tell us about your business and we'll get back to you within 48 hours.",
-        "show_newsletter": true,
-        "newsletter_label": "Send me the monthly cacao letter",
-        "submit_label": "Submit Application",
-        "success_title": "Thank you",
-        "success_body": "We'll review your application and reply within 48 hours."
+        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "headline": "Reselling Our Cacao?",
+        "body": "Bulk pricing is for personal and ceremonial use. If you stock a shop, café, or studio, our wholesale program gives you partner pricing, terms, and marketing support.",
+        "cta_label": "Explore Wholesale",
+        "cta_link": "/pages/wholesale"
       }
     },
     "faq": {
       "type": "bulk-faq",
       "blocks": {
-        "q_min": {
-          "type": "faq",
-          "settings": {
-            "question": "Is there a minimum order?",
-            "answer": "<p>Wholesale partners are approved first, then start at a single case. Bulk price breaks for individuals apply automatically in cart — no minimum, no application.</p>"
-          }
-        },
-        "q_shipping": {
-          "type": "faq",
-          "settings": {
-            "question": "How does shipping work?",
-            "answer": "<p>Orders ship from Grass Valley, California, typically within 2–3 business days. We don't offer free shipping on bulk orders over 25 lb — those ship at calculated freight so you only pay the real cost. Smaller orders are charged a flat rate shown at checkout.</p>"
-          }
-        },
-        "q_pricing": {
-          "type": "faq",
-          "settings": {
-            "question": "How is wholesale pricing shared?",
-            "answer": "<p>Once your application is approved and we confirm we're aligned partners, we send your tier price list. Pricing scales as your volume grows.</p>"
-          }
-        },
-        "q_marketing": {
-          "type": "faq",
-          "settings": {
-            "question": "Do you offer marketing support?",
-            "answer": "<p>Yes. Every partner receives shelf cards, origin stories, and brewing guides — plus lifestyle imagery for your channels.</p>"
-          }
-        }
+        "q1": { "type": "faq", "settings": { "question": "Do I need a license or application?",         "answer": "<p>No. Bulk pricing is open to everyone. Discounts apply automatically in your cart — no reseller license, no application, and no code to enter.</p>" } },
+        "q2": { "type": "faq", "settings": { "question": "How do the discounts work?",                   "answer": "<p>By the bag, your discount climbs with total weight — about 3 lb saves 5%, 6 lb saves 10%, 10 lb saves 15%, and 20 lb saves 20%. Mix half-pound and full-pound bags however you like; the reward meets at the same weight. Our 5 lb bulk bag — offered in both ground and paste — carries a standing price that drops the more bags you take.</p>" } },
+        "q3": { "type": "faq", "settings": { "question": "Can I stack bulk pricing with a subscription?", "answer": "<p>No — they don't combine. Bulk pricing is its own reward. Subscribe &amp; Save is a separate path: if you only need a bag or two, you can still take 15% off by committing to a three-month subscription instead.</p>" } },
+        "q4": { "type": "faq", "settings": { "question": "How does shipping work?",                       "answer": "<p>Orders ship from Grass Valley, California, usually within 2–3 business days, and shipping is free on orders over $100. Past 25 lb, freight changes as the price comes down — so we set those orders up with you directly. Reach out at support@pachamana.com and we'll organize a price that works for you.</p>" } },
+        "q5": { "type": "faq", "settings": { "question": "I want to resell — is bulk for me?",            "answer": "<p>Bulk pricing is for personal and ceremonial use. If you plan to resell or stock a store, our wholesale program gives you partner pricing and support — <a href=\"/pages/wholesale\">apply on the wholesale page</a>.</p>" } }
       },
-      "block_order": [
-        "q_min",
-        "q_shipping",
-        "q_pricing",
-        "q_marketing"
-      ],
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
       "settings": {
-        "bg_type": "color",
-        "bg_color": "#f9f2ef",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
+        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
         "eyebrow": "Questions",
         "headline": "Good To Know"
       }
@@ -682,35 +159,17 @@
     "cta": {
       "type": "bulk-cta",
       "settings": {
-        "bg_type": "color",
-        "bg_color": "",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#38271d",
-        "bg_overlay_opacity": 35,
-        "eyebrow": "Ready When You Are",
-        "headline": "Pour The First Cup",
-        "subhead": "Become a partner, or stock up for your circle. We'll send a sample either way.",
-        "cta1_label": "Apply For Wholesale",
-        "cta1_link": "#apply",
-        "cta2_label": "Shop Bulk",
-        "cta2_link": "/collections/all",
+        "bg_type": "color", "bg_opacity": 100, "bg_overlay_opacity": 35,
+        "eyebrow": "All Set?",
+        "headline": "Stock Up On Ceremony",
+        "subhead": "Fill your cart, watch the discount climb, and pour with intention all season long.",
+        "cta1_label": "Shop Bulk",
+        "cta1_link": "/collections/all",
+        "cta2_label": "I'm A Reseller",
+        "cta2_link": "/pages/wholesale",
         "contact_line": "support@pachamana.com · Grass Valley, California"
       }
     }
   },
-  "order": [
-    "hero",
-    "channels",
-    "price_card",
-    "tiers",
-    "segments",
-    "stats",
-    "products",
-    "story",
-    "regions",
-    "steps",
-    "apply",
-    "faq",
-    "cta"
-  ]
+  "order": ["hero", "savings", "calc", "sizes", "subscribe", "segments", "products", "resell", "faq", "cta"]
 }
