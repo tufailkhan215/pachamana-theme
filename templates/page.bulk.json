@@ -12,9 +12,13 @@
     "hero": {
       "type": "bulk-hero",
       "settings": {
-        "bg_type": "color", "bg_color": "#fee7be", "bg_opacity": 100,
-        "eyebrow": "Bulk Pricing — Automatic",
-        "headline": "Buy More,\nPour More",
+        "bg_type": "color",
+        "bg_color": "#fee7be",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
+        "eyebrow": "Bulk Pricing for Non-Businesses — Automatically Applied at checkout",
+        "headline": "Bulk Cacao",
         "subhead": "Heavy cups, deep weeks, full circles. The more cacao you carry, the more we give back — no codes, no applications, no waiting on us.",
         "cta1_label": "Shop Bulk",
         "cta1_link": "/collections/all",
@@ -25,32 +29,135 @@
     "savings": {
       "type": "bulk-savings-explainer",
       "blocks": {
-        "s1": { "type": "step", "settings": { "number": "01", "title": "Fill Your Cart",      "description": "Mix any sizes you like — half-pound, full-pound, or 5 lb bulk bag. Every gram counts toward your tier." } },
-        "s2": { "type": "step", "settings": { "number": "02", "title": "Hit A Weight Tier",   "description": "About 3 lb saves 5%. 6 lb saves 10%. 10 lb saves 15%. 20 lb saves 20%. The savings appear automatically." } },
-        "s3": { "type": "step", "settings": { "number": "03", "title": "Check Out",           "description": "Your discount applies at checkout. No code to enter, no application, no waiting on us." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Fill Your Cart",
+            "description": "Mix any sizes you like — half-pound, full-pound, or 5 lb bulk bag. Every bag counts toward your tier."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Hit A Weight Tier",
+            "description": "About 3 lb saves 5%. 6 lb saves 10%. 10 lb saves 15%. 20 lb saves 20%. The savings appear automatically."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Check Out",
+            "description": "Your discount applies at checkout. No code to enter, no application, no waiting on us. AND, you get free shipping!"
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "How It Works",
-        "headline": "Saving Is Automatic"
+        "headline": "Saving Is Automatically applied",
+        "subhead": ""
       }
     },
     "calc": {
       "type": "bulk-calculator",
       "blocks": {
-        "t1": { "type": "tier", "settings": { "qty": "About 3 lbs",  "save": "5%",  "note": "6 × 8 oz  ·  or 3 × 1 lb",   "highlight": false } },
-        "t2": { "type": "tier", "settings": { "qty": "About 6 lbs",  "save": "10%", "note": "12 × 8 oz  ·  or 6 × 1 lb",  "highlight": false } },
-        "t3": { "type": "tier", "settings": { "qty": "About 10 lbs", "save": "15%", "note": "20 × 8 oz  ·  or 10 × 1 lb", "highlight": false } },
-        "t4": { "type": "tier", "settings": { "qty": "About 20 lbs", "save": "20%", "note": "40 × 8 oz  ·  or 20 × 1 lb", "highlight": true  } },
-        "c1": { "type": "case_row", "settings": { "order": "1 × 5 lb bag",   "save": "Standing price", "price": "$230" } },
-        "c2": { "type": "case_row", "settings": { "order": "2 × 5 lb bags",  "save": "10% off",        "price": "$207" } },
-        "c3": { "type": "case_row", "settings": { "order": "3 × 5 lb bags",  "save": "15% off",        "price": "$195.50" } },
-        "c4": { "type": "case_row", "settings": { "order": "5 × 5 lb bags",  "save": "20% off",        "price": "$184" } }
+        "t1": {
+          "type": "tier",
+          "settings": {
+            "qty": "About 3 lbs",
+            "save": "5%",
+            "note": "6 × 8 oz  ·  or 3 × 1 lb",
+            "highlight": false
+          }
+        },
+        "t2": {
+          "type": "tier",
+          "settings": {
+            "qty": "About 6 lbs",
+            "save": "10%",
+            "note": "12 × 8 oz  ·  or 6 × 1 lb",
+            "highlight": false
+          }
+        },
+        "t3": {
+          "type": "tier",
+          "settings": {
+            "qty": "About 10 lbs",
+            "save": "15%",
+            "note": "20 × 8 oz  ·  or 10 × 1 lb",
+            "highlight": false
+          }
+        },
+        "t4": {
+          "type": "tier",
+          "settings": {
+            "qty": "About 20 lbs",
+            "save": "20%",
+            "note": "40 × 8 oz  ·  or 20 × 1 lb",
+            "highlight": true
+          }
+        },
+        "c1": {
+          "type": "case_row",
+          "settings": {
+            "order": "1 × 5 lb bag",
+            "save": "Standing price",
+            "price": "$230"
+          }
+        },
+        "c2": {
+          "type": "case_row",
+          "settings": {
+            "order": "2 × 5 lb bags",
+            "save": "10% off",
+            "price": "$207"
+          }
+        },
+        "c3": {
+          "type": "case_row",
+          "settings": {
+            "order": "3 × 5 lb bags",
+            "save": "15% off",
+            "price": "$195.50"
+          }
+        },
+        "c4": {
+          "type": "case_row",
+          "settings": {
+            "order": "5 × 5 lb bags",
+            "save": "20% off",
+            "price": "$184"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4", "c1", "c2", "c3", "c4"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "The Pricing Model",
         "headline": "The More You Buy, The More You Save",
         "subhead": "Two ways to save, both automatic. Buy by the bag and your discount climbs with total weight — or buy our 5 lb bulk bag for a standing price that drops the more bags you take.",
@@ -75,13 +182,45 @@
     "sizes": {
       "type": "bulk-three-ways",
       "blocks": {
-        "z1": { "type": "size_card", "settings": { "tag": "Half Pound", "size": "8 oz", "description": "A few weeks of daily cups, or a smaller circle. Counts toward your by-the-bag weight.", "price_label": "Sold by the bag" } },
-        "z2": { "type": "size_card", "settings": { "tag": "Most Loved", "size": "1 lb",  "description": "The everyday ceremonial size — the best balance of value and freshness.",                "price_label": "Sold by the bag" } },
-        "z3": { "type": "size_card", "settings": { "tag": "Bulk Bag",   "size": "5 lb",  "description": "For people who move through a lot of cacao — ground or paste, at the deepest standing discount.", "price_label": "$230 / bag" } }
+        "z1": {
+          "type": "size_card",
+          "settings": {
+            "tag": "Half Pound",
+            "size": "8 oz",
+            "description": "A few weeks of daily cups, or a smaller circle. Counts toward your by-the-bag weight.",
+            "price_label": "Sold by the bag"
+          }
+        },
+        "z2": {
+          "type": "size_card",
+          "settings": {
+            "tag": "Most Loved",
+            "size": "1 lb",
+            "description": "The everyday ceremonial size — the best balance of value and freshness.",
+            "price_label": "Sold by the bag"
+          }
+        },
+        "z3": {
+          "type": "size_card",
+          "settings": {
+            "tag": "Bulk Bag",
+            "size": "5 lb",
+            "description": "For people who move through a lot of cacao — ground or paste, at the deepest standing discount.",
+            "price_label": "$230 / bag"
+          }
+        }
       },
-      "block_order": ["z1", "z2", "z3"],
+      "block_order": [
+        "z1",
+        "z2",
+        "z3"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Pick Your Size",
         "headline": "Three Ways To Stock Up",
         "subhead": "Start small or go all in — every size counts toward your volume discount."
@@ -90,7 +229,11 @@
     "subscribe": {
       "type": "bulk-subscribe",
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Only Need A Bag Or Two?",
         "headline": "Subscribe & Save 15%",
         "body": "You don't have to buy in bulk to get a deal. Take 15% off even a single bag — just commit to a three-month subscription. It's one path or the other, though: subscription savings don't combine with bulk pricing.",
@@ -101,14 +244,51 @@
     "segments": {
       "type": "bulk-segments",
       "blocks": {
-        "s_daily":   { "type": "segment", "settings": { "placeholder_label": "Morning cup photo",      "name": "Daily Drinkers",         "body": "Cacao in place of coffee, every morning. Buy by the case and never run dry." } },
-        "s_facil":   { "type": "segment", "settings": { "placeholder_label": "Ceremony circle photo",  "name": "Facilitators",           "body": "Full ceremonial-dose cacao for your own circles, traceable to grove and harvest." } },
-        "s_home":    { "type": "segment", "settings": { "placeholder_label": "Family kitchen photo",   "name": "Households & Families",  "body": "One bag rarely lasts. Stock the pantry and share the ritual at home." } },
-        "s_space":   { "type": "segment", "settings": { "placeholder_label": "Studio counter photo",   "name": "Studios & Small Spaces", "body": "Serve guests and members without a wholesale account — bulk pricing, self-serve." } }
+        "s_daily": {
+          "type": "segment",
+          "settings": {
+            "placeholder_label": "Morning cup photo",
+            "name": "Daily Drinkers",
+            "body": "Cacao in place of coffee, every morning. Buy by the case and never run dry."
+          }
+        },
+        "s_facil": {
+          "type": "segment",
+          "settings": {
+            "placeholder_label": "Ceremony circle photo",
+            "name": "Facilitators",
+            "body": "Full ceremonial-dose cacao for your own circles, traceable to grove and harvest."
+          }
+        },
+        "s_home": {
+          "type": "segment",
+          "settings": {
+            "placeholder_label": "Family kitchen photo",
+            "name": "Households & Families",
+            "body": "One bag rarely lasts. Stock the pantry and share the ritual at home."
+          }
+        },
+        "s_space": {
+          "type": "segment",
+          "settings": {
+            "placeholder_label": "Studio counter photo",
+            "name": "Studios & Small Spaces",
+            "body": "Serve guests and members without a wholesale account — bulk pricing, self-serve."
+          }
+        }
       },
-      "block_order": ["s_daily", "s_facil", "s_home", "s_space"],
+      "block_order": [
+        "s_daily",
+        "s_facil",
+        "s_home",
+        "s_space"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Who Buys In Bulk",
         "headline": "For Anyone Who Pours Often",
         "subhead": ""
@@ -117,14 +297,55 @@
     "products": {
       "type": "bulk-products",
       "blocks": {
-        "p1": { "type": "product_card", "settings": { "name": "Chuncho Paste Block", "origin": "Quillabamba, Peru",   "price": "1 lb block", "badge": "Single Origin" } },
-        "p2": { "type": "product_card", "settings": { "name": "Ground Chuncho",      "origin": "Bulk Bag",            "price": "5 lb bag",   "badge": "Bulk" } },
-        "p3": { "type": "product_card", "settings": { "name": "Mushroom Vitality",   "origin": "Cacao + Adaptogens",  "price": "Ground",     "badge": "Functional" } },
-        "p4": { "type": "product_card", "settings": { "name": "Rose Vanilla",        "origin": "Rose + Vanilla Bean", "price": "Ground",     "badge": "Botanical" } }
+        "p1": {
+          "type": "product_card",
+          "settings": {
+            "name": "Chuncho Paste Block",
+            "origin": "Quillabamba, Peru",
+            "price": "1 lb block",
+            "badge": "Single Origin"
+          }
+        },
+        "p2": {
+          "type": "product_card",
+          "settings": {
+            "name": "Ground Chuncho",
+            "origin": "Bulk Bag",
+            "price": "5 lb bag",
+            "badge": "Bulk"
+          }
+        },
+        "p3": {
+          "type": "product_card",
+          "settings": {
+            "name": "Mushroom Vitality",
+            "origin": "Cacao + Adaptogens",
+            "price": "Ground",
+            "badge": "Functional"
+          }
+        },
+        "p4": {
+          "type": "product_card",
+          "settings": {
+            "name": "Rose Vanilla",
+            "origin": "Rose + Vanilla Bean",
+            "price": "Ground",
+            "badge": "Botanical"
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3", "p4"],
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "The Range",
         "headline": "Everything Buys In Bulk",
         "subhead": "Volume discounts apply across the full range — mix and match to reach the next tier."
@@ -133,7 +354,11 @@
     "resell": {
       "type": "bulk-reselling",
       "settings": {
-        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "headline": "Reselling Our Cacao?",
         "body": "Bulk pricing is for personal and ceremonial use. If you stock a shop, café, or studio, our wholesale program gives you partner pricing, terms, and marketing support.",
         "cta_label": "Explore Wholesale",
@@ -143,15 +368,55 @@
     "faq": {
       "type": "bulk-faq",
       "blocks": {
-        "q1": { "type": "faq", "settings": { "question": "Do I need a license or application?",         "answer": "<p>No. Bulk pricing is open to everyone. Discounts apply automatically in your cart — no reseller license, no application, and no code to enter.</p>" } },
-        "q2": { "type": "faq", "settings": { "question": "How do the discounts work?",                   "answer": "<p>By the bag, your discount climbs with total weight — about 3 lb saves 5%, 6 lb saves 10%, 10 lb saves 15%, and 20 lb saves 20%. Mix half-pound and full-pound bags however you like; the reward meets at the same weight. Our 5 lb bulk bag — offered in both ground and paste — carries a standing price that drops the more bags you take.</p>" } },
-        "q3": { "type": "faq", "settings": { "question": "Can I stack bulk pricing with a subscription?", "answer": "<p>No — they don't combine. Bulk pricing is its own reward. Subscribe &amp; Save is a separate path: if you only need a bag or two, you can still take 15% off by committing to a three-month subscription instead.</p>" } },
-        "q4": { "type": "faq", "settings": { "question": "How does shipping work?",                       "answer": "<p>Orders ship from Grass Valley, California, usually within 2–3 business days, and shipping is free on orders over $100. Past 25 lb, freight changes as the price comes down — so we set those orders up with you directly. Reach out at support@pachamana.com and we'll organize a price that works for you.</p>" } },
-        "q5": { "type": "faq", "settings": { "question": "I want to resell — is bulk for me?",            "answer": "<p>Bulk pricing is for personal and ceremonial use. If you plan to resell or stock a store, our wholesale program gives you partner pricing and support — <a href=\"/pages/wholesale\">apply on the wholesale page</a>.</p>" } }
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need a license or application?",
+            "answer": "<p>No. Bulk pricing is open to everyone. Discounts apply automatically in your cart — no reseller license, no application, and no code to enter.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "How do the discounts work?",
+            "answer": "<p>By the bag, your discount climbs with total weight — about 3 lb saves 5%, 6 lb saves 10%, 10 lb saves 15%, and 20 lb saves 20%. Mix half-pound and full-pound bags however you like; the reward meets at the same weight. Our 5 lb bulk bag — offered in both ground and paste — carries a standing price that drops the more bags you take.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I stack bulk pricing with a subscription?",
+            "answer": "<p>No — they don't combine. Bulk pricing is its own reward. Subscribe &amp; Save is a separate path: if you only need a bag or two, you can still take 15% off by committing to a three-month subscription instead.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "How does shipping work?",
+            "answer": "<p>Orders ship from Grass Valley, California, usually within 2–3 business days, and shipping is free on orders over $100. Past 25 lb, freight changes as the price comes down — so we set those orders up with you directly. Reach out at support@pachamana.com and we'll organize a price that works for you.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "I want to resell — is bulk for me?",
+            "answer": "<p>Bulk pricing is for personal and ceremonial use. If you plan to resell or stock a store, our wholesale program gives you partner pricing and support — <a href=\"/pages/wholesale\">apply on the wholesale page</a>.</p>"
+          }
+        }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
       "settings": {
-        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
         "eyebrow": "Questions",
         "headline": "Good To Know"
       }
@@ -159,7 +424,11 @@
     "cta": {
       "type": "bulk-cta",
       "settings": {
-        "bg_type": "color", "bg_opacity": 100, "bg_overlay_opacity": 35,
+        "bg_type": "color",
+        "bg_color": "",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#38271d",
+        "bg_overlay_opacity": 35,
         "eyebrow": "All Set?",
         "headline": "Stock Up On Ceremony",
         "subhead": "Fill your cart, watch the discount climb, and pour with intention all season long.",
@@ -171,5 +440,16 @@
       }
     }
   },
-  "order": ["hero", "savings", "calc", "sizes", "subscribe", "segments", "products", "resell", "faq", "cta"]
+  "order": [
+    "hero",
+    "savings",
+    "calc",
+    "sizes",
+    "subscribe",
+    "segments",
+    "products",
+    "resell",
+    "faq",
+    "cta"
+  ]
 }
