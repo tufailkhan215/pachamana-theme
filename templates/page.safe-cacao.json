@@ -179,6 +179,22 @@
         "subhead": "Three things keep heavy metals out of the cup — long before we ever test for them."
       }
     },
+    "reality": {
+      "type": "safe-cacao-reality",
+      "settings": {
+        "bg_type": "color",
+        "bg_color": "",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#223829",
+        "bg_overlay_opacity": 35,
+        "eyebrow": "A Reality Check",
+        "headline": "How many cups \nWould It Actually Take \nto reach prop 65 limits?",
+        "big_number": "20+",
+        "body": "servings of Pacha Mana cacao every single day to even approach Prop 65 limits on lead — an amount no one consumes. Even then, much of it passes through you unabsorbed.",
+        "quote": "Lead and cadmium are handled slightly differently by the body, but they are not completely absorbed, so much of what you take passes through you after you consume it.",
+        "quote_attribution": "Dr. Stolbach, Medical Toxicologist"
+      }
+    },
     "products": {
       "type": "safe-cacao-products",
       "blocks": {
@@ -245,22 +261,6 @@
         "eyebrow": "Drink With Confidence",
         "headline": "Shop Cacao You\nCan Trust",
         "subhead": "Same lab-tested, high-elevation Chuncho — in whatever form fits your ritual. Subscribe and save 15% on every reorder."
-      }
-    },
-    "reality": {
-      "type": "safe-cacao-reality",
-      "settings": {
-        "bg_type": "color",
-        "bg_color": "",
-        "bg_opacity": 100,
-        "bg_overlay_color": "#223829",
-        "bg_overlay_opacity": 35,
-        "eyebrow": "A Reality Check",
-        "headline": "How many cups \nWould It Actually Take \nto reach prop 65 limits?",
-        "big_number": "20+",
-        "body": "servings of Pacha Mana cacao every single day to even approach Prop 65 limits on lead — an amount no one consumes. Even then, much of it passes through you unabsorbed.",
-        "quote": "Lead and cadmium are handled slightly differently by the body, but they are not completely absorbed, so much of what you take passes through you after you consume it.",
-        "quote_attribution": "Dr. Stolbach, Medical Toxicologist"
       }
     },
     "fullpicture": {
@@ -382,8 +382,8 @@
     "hero",
     "result",
     "why",
-    "products",
     "reality",
+    "products",
     "fullpicture",
     "bottomline",
     "cta"
