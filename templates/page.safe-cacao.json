@@ -147,7 +147,7 @@
           "settings": {
             "number": "02",
             "title": "High Elevation & Soil",
-            "description": "Volcanic highland soil has a mineral makeup that resists excessive metal absorption when there are no pollutants present.",
+            "description": "High Elevation soil has a mineral makeup that resists excessive metal absorption when there are no pollutants present.",
             "image": "shopify://shop_images/IMG_0225.heic",
             "placeholder": "High-elevation grove / volcanic soil photo"
           }
@@ -292,7 +292,7 @@
           "type": "panel",
           "settings": {
             "heading": "Why High-Elevation Chuncho Is Cleaner",
-            "body": "Cacao is a bioaccumulator — it draws metals and minerals from the soil. So where it grows is everything. High-altitude Chuncho grows where cadmium in the soil is naturally lower, in volcanic ground that resists metal absorption, isolated from the industrial pollutants and contaminated water that affect lowland cacao. Heavy metals, by their nature, settle to lower elevations with density and rain runoff.",
+            "body": "Cacao is a bioaccumulator — it draws metals and minerals from the soil. So where it grows is everything. High-altitude Chuncho grows where cadmium in the soil is naturally lower, in the ground that resists metal absorption, isolated from the industrial pollutants and contaminated water that affect lowland cacao. Heavy metals, by their nature, settle to lower elevations with density and rain runoff.",
             "list_type": "none",
             "list_items": "",
             "outro": "",
