@@ -136,8 +136,8 @@
           "type": "factor",
           "settings": {
             "number": "01",
-            "title": "Regenerative Farming",
-            "description": "Living, balanced soil tended by multigenerational families — not chemically loaded monoculture that concentrates metals.",
+            "title": "Regenerative Farming Practices",
+            "description": "Living, balanced soil tended by multigenerational families, not chemically loaded monoculture that concentrates metals. Using regenerative farming practices, not only to grow organically, but encouraging a living soil system.",
             "image": "shopify://shop_images/IMG_0169.jpg",
             "placeholder": "Farming family / regenerative soil photo"
           }
@@ -146,8 +146,8 @@
           "type": "factor",
           "settings": {
             "number": "02",
-            "title": "High Elevation & Soil",
-            "description": "High Elevation soil has a mineral makeup that resists excessive metal absorption when there are no pollutants present.",
+            "title": "High Elevation Soil",
+            "description": "High Elevation soil has a mineral makeup that resists excessive metal absorption when there are no pollutants present. \nHeavy metals, by their nature, settle to lower elevations with density and rain runoff.",
             "image": "shopify://shop_images/IMG_0225.heic",
             "placeholder": "High-elevation grove / volcanic soil photo"
           }
@@ -156,8 +156,8 @@
           "type": "factor",
           "settings": {
             "number": "03",
-            "title": "Clean Post-Harvest",
-            "description": "Lead is a post-harvest contaminant, not absorbed by the soil. Our clean facilities make it a non-issue from grove to package.",
+            "title": "Clean Post-Harvest Drying",
+            "description": "Lead is a post-harvest contaminant, not absorbed by the soil. Our clean facilities make it a non-issue from farm to your package. Drying the beans off the ground increases risk of contaminants.",
             "image": "shopify://shop_images/IMG_0362_2.heic",
             "placeholder": "Clean drying / processing facility photo"
           }
@@ -191,7 +191,8 @@
         "headline": "How many cups \nWould It Actually Take \nto reach prop 65 limits?",
         "big_number": "20+",
         "body": "servings of Pacha Mana cacao every single day to even approach Prop 65 limits on lead — an amount no one consumes. Even then, much of it passes through you unabsorbed.",
-        "quote": "Lead and cadmium are handled slightly differently by the body, but they are not completely absorbed, so much of what you take passes through you after you consume it.",
+        "mark_image": "shopify://shop_images/PachaMana_Logos_CMYK_MarkOnly_SunshineGold_1f0f3772-a772-4737-b76c-12f69042a9c2.png",
+        "quote": "Absorption is a huge factor in this discussion. Here’s what one medical toxicologist says about absorption: \n\n\"Your overall health, diet, genetics, and the type of heavy metal compounds you’re exposed to can influence how you are affected by the exposures to Lead and cadmium are handled slightly differently by the body, but they are not completely absorbed, so much of what you take passes through you after you consume it.\"",
         "quote_attribution": "Dr. Stolbach, Medical Toxicologist"
       }
     },
