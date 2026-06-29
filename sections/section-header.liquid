@@ -25,9 +25,27 @@
     background-position: {{ header_bg_position }} !important;
     background-repeat: {{ header_bg_repeat }} !important;
   }
-  /* Nav spacing v3: with 3 items in the nav, restore breathing room and a bit of brand-display feel.
-     Original Elementor values (post-57.css) were 22px / 2.4px / 15px-right — too cramped at 6+ items,
-     too loud at 3. This sits in between. */
+  /* Nav spacing v4: with 3 items, center the items in the space between logo and icons.
+     The nav widget needs to flex-grow into the available space, then center its contents.
+     Icons + cart are untouched on the right. */
+  .section-header .elementor-element-c185d14 {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .section-header .elementor-element-c185d14 > .elementor-widget-container,
+  .section-header .plus-navigation-wrap,
+  .section-header #theplus-navigation-normal-menu {
+    width: 100% !important;
+  }
+  .section-header #theplus-navigation-normal-menu .navbar-nav,
+  .section-header .plus-navigation-menu .navbar-nav {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    float: none !important;
+    width: auto !important;
+  }
   .section-header .plus-navigation-menu .navbar-nav > li > a {
     font-size: 19px !important;
     letter-spacing: 2.0px !important;
@@ -35,6 +53,7 @@
   }
   .section-header .plus-navigation-menu .navbar-nav > li {
     padding: 0 22px !important;
+    float: none !important;
   }
   @media (max-width: 1280px) {
     .section-header .plus-navigation-menu .navbar-nav > li > a {
