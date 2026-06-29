@@ -22,8 +22,8 @@
         "subhead": "Cacao was always meant to be shared. Apply to become a wholesale partner and carry Pacha Mana in your space. Partner pricing, direct sourcing, and a story worth telling.",
         "cta1_label": "Apply For Wholesale",
         "cta1_link": "#apply",
-        "cta2_label": "Shop Bulk",
-        "cta2_link": "/pages/bulk"
+        "cta2_label": "Order on Faire",
+        "cta2_link": "https://pachamanacacao.faire.com"
       }
     },
     "steps": {
@@ -69,11 +69,12 @@
         "s4"
       ],
       "settings": {
-        "bg_type": "color",
+        "bg_type": "image",
         "bg_color": "#fdf8f3",
+        "bg_image": "shopify://shop_images/09_cacao-heavy-metals-testing-explained.jpg",
         "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
+        "bg_overlay_color": "#F9F2EF",
+        "bg_overlay_opacity": 60,
         "eyebrow": "How It Works",
         "headline": "Four Simple Steps",
         "subhead": ""
@@ -198,7 +199,7 @@
             "theme": "dark",
             "eyebrow": "Approved Partners",
             "title": "Wholesale Partners",
-            "body": "Cafés, shops, retreats, facilitators. Tier pricing, account management, freight rates — apply above.",
+            "body": "Cafés, shops, retreats, facilitators. The best pricing, account management, freight rates — apply above.",
             "cta_label": "Apply For Wholesale",
             "cta_link": "#apply"
           }
@@ -225,22 +226,25 @@
         "s_retail": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/PACHAMANA--30.jpg",
             "placeholder_label": "Retail shelf photo",
-            "name": "Retail & Wellness",
-            "body": "Stock your shelves with a story customers can feel — ceremonial cacao that sells itself."
+            "name": "Health and Wellness Food Stores",
+            "body": "Stock your shelves with something rare and in demand. Our health and wellness retailers have seen it move."
           }
         },
         "s_cafe": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/IMG_0411.heic",
             "placeholder_label": "Café counter photo",
             "name": "Cafés & Coffee Bars",
-            "body": "A heart-opening coffee alternative — lattes, elixirs, and slow mornings on your menu."
+            "body": "A heart-opening coffee alternative — lattes, elixirs, and high quality hot chocolates on your menu."
           }
         },
         "s_facilitator": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-91.jpg",
             "placeholder_label": "Ceremony circle photo",
             "name": "Ceremony Facilitators",
             "body": "Full ceremonial-dose cacao your circle can trust, traceable to the grove and harvest."
@@ -249,6 +253,7 @@
         "s_retreat": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-84_642c9c05-f172-4731-84fa-81e630118c24.jpg",
             "placeholder_label": "Retreat / event photo",
             "name": "Retreats & Events",
             "body": "Hold space with cacao that travels well and opens hearts, batch after batch."
@@ -257,6 +262,7 @@
         "s_maker": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/IMG_0378_2.heic",
             "placeholder_label": "Chocolate maker photo",
             "name": "Chocolate Makers",
             "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft."
@@ -265,6 +271,7 @@
         "s_bulk": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27-1_539fb329-52ae-40f3-932b-f2a7d9c88cad.jpg",
             "placeholder_label": "Refill / bulk bin photo",
             "name": "Bulk & Refill Stores",
             "body": "Package-free cacao for mindful, low-waste shoppers who shop their values."
