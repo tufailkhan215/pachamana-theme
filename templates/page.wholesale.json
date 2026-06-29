@@ -303,29 +303,29 @@
         "st1": {
           "type": "stat",
           "settings": {
-            "number": "40+",
-            "label": "Highland families in our circle"
+            "number": "150+",
+            "label": "Farming Families Supported"
           }
         },
         "st2": {
           "type": "stat",
           "settings": {
-            "number": "150+",
-            "label": "Stockists & cafés served"
+            "number": "100+",
+            "label": "Stockists & Cafés Served"
           }
         },
         "st3": {
           "type": "stat",
           "settings": {
             "number": "100%",
-            "label": "Traceable to grove & harvest"
+            "label": "Traceable from Farm & Harvest"
           }
         },
         "st4": {
           "type": "stat",
           "settings": {
-            "number": "12 yr",
-            "label": "Bean-to-cup relationships"
+            "number": "4X",
+            "label": "Fair Price, Paid to Farmers"
           }
         }
       },
@@ -351,8 +351,9 @@
         "p1": {
           "type": "product_card",
           "settings": {
-            "name": "Chuncho Paste Block",
-            "origin": "Quillabamba, Peru",
+            "image": "shopify://shop_images/PACHAMANA--194.jpg",
+            "name": "Chuncho Cacao PAste",
+            "origin": "Cuzco, Peru",
             "price": "1 lb block",
             "badge": "Single Origin"
           }
@@ -360,27 +361,30 @@
         "p2": {
           "type": "product_card",
           "settings": {
-            "name": "Ground Chuncho",
-            "origin": "Café & Studio",
-            "price": "5 lb bag",
+            "image": "shopify://shop_images/1-2.png",
+            "name": "Ground Cacao Paste",
+            "origin": "Best Seller",
+            "price": "8 & 16 Oz. Bags",
             "badge": "Bulk"
           }
         },
         "p3": {
           "type": "product_card",
           "settings": {
+            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
             "name": "Mushroom Vitality",
             "origin": "Cacao + Adaptogens",
-            "price": "Ground",
+            "price": "8 & 16 Oz. Bags",
             "badge": "Functional"
           }
         },
         "p4": {
           "type": "product_card",
           "settings": {
+            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
             "name": "Rose Vanilla",
-            "origin": "Rose + Vanilla Bean",
-            "price": "Ground",
+            "origin": "Rose + Vanilla Bean Powder",
+            "price": "8 & 16 Oz. Bags",
             "badge": "Botanical"
           }
         }
@@ -413,8 +417,8 @@
         "image_alt": "Justin and Joel, Pacha Mana",
         "eyebrow": "Origin",
         "headline": "Ceremony Starts At The Farm",
-        "body": "<p>Twelve years ago, two cousins started walking the highlands above Quillabamba, drinking cacao with farming families and asking how to do this together — in a way that holds.</p><p>Today every bag, paste block, and shipment can be traced back to a specific grove and harvest week. Your customers don't just drink cacao. They drink a relationship.</p>",
-        "signature": "— Justin & Joel"
+        "body": "<p><em>Pacha Mana is a bridge. Between a family farm in the Peruvian highlands and your shelf. Between the rarest heirloom cacao on earth and the person who drinks it. We source one variety, Chuncho, directly from the families who grow it, pay them 3x the market rate, and make every blend fresh in small batches in California.</em></p><p><em>Carry Pacha Mana and you carry the whole story: traceable, alive, and rooted in reciprocity. That's what your customers are really buying.</em></p>",
+        "signature": "— The Pacha Mana Team"
       }
     },
     "regions": {
