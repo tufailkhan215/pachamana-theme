@@ -25,35 +25,35 @@
     background-position: {{ header_bg_position }} !important;
     background-repeat: {{ header_bg_repeat }} !important;
   }
-  /* Nav spacing v4: with 3 items, center the items in the space between logo and icons.
-     The nav widget needs to flex-grow into the available space, then center its contents.
-     Icons + cart are untouched on the right. */
+  /* Nav spacing v5: stretch the nav widget to fill space between logo and icons, then
+     center the items horizontally via flexbox on the .navbar-nav itself (which is
+     already a flex container by default). No layout flex on the widget — just sizing. */
   .section-header .elementor-element-c185d14 {
     flex: 1 1 auto !important;
-    display: flex !important;
-    align-items: center !important;
   }
   .section-header .elementor-element-c185d14 > .elementor-widget-container,
   .section-header .plus-navigation-wrap,
-  .section-header #theplus-navigation-normal-menu {
+  .section-header #theplus-navigation-normal-menu,
+  .section-header .plus-navigation-menu {
     width: 100% !important;
+    text-align: center !important;
   }
-  .section-header #theplus-navigation-normal-menu .navbar-nav,
-  .section-header .plus-navigation-menu .navbar-nav {
-    display: flex !important;
+  .section-header #theplus-navigation-normal-menu .navbar-nav {
+    display: inline-flex !important;
     justify-content: center !important;
     margin: 0 auto !important;
     float: none !important;
-    width: auto !important;
+  }
+  .section-header .plus-navigation-menu .navbar-nav > li {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0 22px !important;
+    float: none !important;
   }
   .section-header .plus-navigation-menu .navbar-nav > li > a {
     font-size: 19px !important;
     letter-spacing: 2.0px !important;
     padding: 0 !important;
-  }
-  .section-header .plus-navigation-menu .navbar-nav > li {
-    padding: 0 22px !important;
-    float: none !important;
   }
   @media (max-width: 1280px) {
     .section-header .plus-navigation-menu .navbar-nav > li > a {
