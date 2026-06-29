@@ -247,6 +247,7 @@
         "s_daily": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/PACHAMANA-0064.jpg",
             "placeholder_label": "Morning cup photo",
             "name": "Daily Drinkers",
             "body": "Cacao in place of coffee, every morning. Buy by the case and never run dry."
@@ -255,6 +256,7 @@
         "s_facil": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-91.jpg",
             "placeholder_label": "Ceremony circle photo",
             "name": "Facilitators",
             "body": "Full ceremonial-dose cacao for your own circles, traceable to grove and harvest."
@@ -263,6 +265,7 @@
         "s_home": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/PACHAMANA-0506.jpg",
             "placeholder_label": "Family kitchen photo",
             "name": "Households & Families",
             "body": "One bag rarely lasts. Stock the pantry and share the ritual at home."
@@ -271,6 +274,7 @@
         "s_space": {
           "type": "segment",
           "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-31_53e67bde-fad6-455d-9ecc-3bae0939fda1.jpg",
             "placeholder_label": "Studio counter photo",
             "name": "Studios & Small Spaces",
             "body": "Serve guests and members without a wholesale account — bulk pricing, self-serve."
@@ -290,7 +294,7 @@
         "bg_overlay_color": "#000000",
         "bg_overlay_opacity": 0,
         "eyebrow": "Who Buys In Bulk",
-        "headline": "For Anyone Who Pours Often",
+        "headline": "For Anyone Who Sips Often",
         "subhead": ""
       }
     },
@@ -300,8 +304,9 @@
         "p1": {
           "type": "product_card",
           "settings": {
+            "image": "shopify://shop_images/7-1_8acfdfa2-3093-4aff-8ef3-1502ac73c47e.png",
             "name": "Chuncho Paste Block",
-            "origin": "Quillabamba, Peru",
+            "origin": "Cuzco, Peru",
             "price": "1 lb block",
             "badge": "Single Origin"
           }
@@ -309,6 +314,7 @@
         "p2": {
           "type": "product_card",
           "settings": {
+            "image": "shopify://shop_images/5_lb_bag.png",
             "name": "Ground Chuncho",
             "origin": "Bulk Bag",
             "price": "5 lb bag",
@@ -318,6 +324,7 @@
         "p3": {
           "type": "product_card",
           "settings": {
+            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
             "name": "Mushroom Vitality",
             "origin": "Cacao + Adaptogens",
             "price": "Ground",
@@ -327,6 +334,7 @@
         "p4": {
           "type": "product_card",
           "settings": {
+            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
             "name": "Rose Vanilla",
             "origin": "Rose + Vanilla Bean",
             "price": "Ground",
