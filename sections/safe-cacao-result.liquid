@@ -1,0 +1,108 @@
+<section class="pmw pmw-sc-result" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner pmw-sc-result__inner">
+    <div class="pmw-sc-result__head">
+      {% if section.settings.eyebrow != blank %}<span class="pmw-eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+      <h2 class="pmw-sc-result__title">{{ section.settings.headline | newline_to_br }}</h2>
+      {% if section.settings.subhead != blank %}<p class="pmw-sc-result__sub">{{ section.settings.subhead }}</p>{% endif %}
+    </div>
+
+    <div class="pmw-sc-result__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'metal_card' %}
+          <div class="pmw-sc-result__card" {{ block.shopify_attributes }}>
+            <div class="pmw-sc-result__row">
+              <span class="pmw-sc-result__metal">{{ block.settings.metal }}</span>
+              <span class="pmw-sc-result__symbol">{{ block.settings.symbol }}</span>
+            </div>
+            <div class="pmw-sc-result__value">{{ block.settings.value }}<span class="pmw-sc-result__unit">{{ block.settings.unit }}</span></div>
+            <p class="pmw-sc-result__copy">{{ block.settings.body }}</p>
+            <div class="pmw-sc-result__bar"><div class="pmw-sc-result__bar-fill" style="width: {{ block.settings.fill | default: 21 }}%;"></div></div>
+            <div class="pmw-sc-result__bar-labels"><span>{{ block.settings.left_label | default: 'Pacha Mana' }}</span><span>{{ block.settings.right_label | default: 'Safety limit' }}</span></div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.footnote != blank %}
+      <p class="pmw-sc-result__footnote">{{ section.settings.footnote }}</p>
+    {% endif %}
+    {% if section.settings.cta_label != blank %}
+      <div class="pmw-sc-result__cta-row">
+        <a href="{{ section.settings.cta_link | default: '#' }}" target="_blank" rel="noopener" class="pmw-sc-result__cta">
+          <span class="pmw-sc-result__cta-tick">✓</span>{{ section.settings.cta_label }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-sc-result { padding: 0; }
+  #pmw-{{ section.id }} .pmw-sc-result__inner { padding: 96px 64px; max-width: 1080px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-sc-result__head { text-align: center; margin-bottom: 54px; }
+  #pmw-{{ section.id }} .pmw-sc-result__title { margin: 14px 0 16px; font-size: 40px; line-height: 1.05; color: var(--pm-cacao-800); }
+  #pmw-{{ section.id }} .pmw-sc-result__sub { margin: 0 auto; max-width: 560px; font-size: 17px; line-height: 1.6; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-sc-result__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  #pmw-{{ section.id }} .pmw-sc-result__card { background: #ffffff; border: 1px solid var(--card-border); border-radius: 18px; padding: 38px 36px; box-shadow: 0 10px 30px rgba(92,64,47,.08); }
+  #pmw-{{ section.id }} .pmw-sc-result__row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  #pmw-{{ section.id }} .pmw-sc-result__metal { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; font-size: 20px; color: var(--pm-cacao-800); }
+  #pmw-{{ section.id }} .pmw-sc-result__symbol { font-family: var(--font-body); font-size: 13px; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-sc-result__value { margin: 16px 0 4px; font-family: var(--font-display); font-size: 54px; line-height: 1; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-sc-result__unit { font-size: 20px; margin-left: 8px; color: var(--pm-gold-600); }
+  #pmw-{{ section.id }} .pmw-sc-result__copy { margin: 14px 0 22px; font-size: 15px; line-height: 1.6; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-sc-result__bar { height: 9px; border-radius: 99px; background: #f0e3d4; overflow: hidden; }
+  #pmw-{{ section.id }} .pmw-sc-result__bar-fill { height: 100%; background: linear-gradient(90deg, var(--pm-sunshine-gold), #caa23e); }
+  #pmw-{{ section.id }} .pmw-sc-result__bar-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 11px; letter-spacing: .04em; color: #9c8470; }
+  #pmw-{{ section.id }} .pmw-sc-result__footnote { text-align: center; margin: 34px auto 0; max-width: 680px; font-size: 16px; line-height: 1.7; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-sc-result__cta-row { text-align: center; margin-top: 30px; }
+  #pmw-{{ section.id }} .pmw-sc-result__cta { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .08em; font-size: 14px; color: var(--pm-cacao-800); background: #ffffff; border: 1.5px solid var(--pm-sunshine-gold); padding: 15px 30px; border-radius: 99px; box-shadow: 0 6px 16px rgba(226,171,67,.18); }
+  #pmw-{{ section.id }} .pmw-sc-result__cta-tick { width: 18px; height: 18px; border-radius: 50%; background: #5a7a4f; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }} .pmw-sc-result__inner { padding: 64px 20px; }
+    #pmw-{{ section.id }} .pmw-sc-result__grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Safe Cacao — Compare",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Below Every Limit" },
+    { "type": "textarea", "id": "headline", "label": "Headline", "default": "How We Compare To\nGlobal Standards" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "The result: some of the lowest heavy-metal levels in the entire chocolate industry." },
+    { "type": "textarea", "id": "footnote", "label": "Footnote", "default": "This means Pacha Mana's cacao is well within the safety margins for daily consumption — naturally low in heavy metals, and one of the cleanest, safest choices available." },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "View Our Full Lab Results" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" }
+  ],
+  "blocks": [
+    { "type": "metal_card", "name": "Metal card", "limit": 4, "settings": [
+      { "type": "text", "id": "metal", "label": "Metal name", "default": "Cadmium" },
+      { "type": "text", "id": "symbol", "label": "Symbol", "default": "Cd" },
+      { "type": "text", "id": "value", "label": "Value", "default": "0.126" },
+      { "type": "text", "id": "unit", "label": "Unit", "default": "ppm" },
+      { "type": "textarea", "id": "body", "label": "Body", "default": "Meets all EU and Prop 65 safety limits — and sits well below standard." },
+      { "type": "range", "id": "fill", "label": "Bar fill %", "min": 0, "max": 100, "step": 1, "default": 21 },
+      { "type": "text", "id": "left_label", "label": "Bar left label", "default": "Pacha Mana" },
+      { "type": "text", "id": "right_label", "label": "Bar right label", "default": "Safety limit" }
+    ]}
+  ],
+  "presets": [{
+    "name": "Safe Cacao — Compare",
+    "blocks": [
+      { "type": "metal_card", "settings": { "metal": "Cadmium", "symbol": "Cd", "value": "0.126", "unit": "ppm", "body": "Meets all EU and Prop 65 safety limits — and sits well below standard.", "fill": 21 } },
+      { "type": "metal_card", "settings": { "metal": "Lead", "symbol": "Pb", "value": "<0.010", "unit": "ppm", "body": "Lower than EU standards and California Prop 65's strictest threshold. One-thousandth more and it reads non-detectable.", "fill": 20 } }
+    ]
+  }]
+}
+{% endschema %}

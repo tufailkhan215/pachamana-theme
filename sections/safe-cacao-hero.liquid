@@ -1,0 +1,139 @@
+{{ 'bulk-shared.css' | asset_url | stylesheet_tag }}
+
+<section class="pmw pmw-sc-hero" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  {%- if section.settings.mark_image != blank -%}
+    {%- assign mark_src = section.settings.mark_image | image_url: width: 800 -%}
+  {%- else -%}
+    {%- assign mark_src = 'bulk-mark-gold.png' | asset_url -%}
+  {%- endif -%}
+  <img src="{{ mark_src }}" alt="" class="pmw-sc-hero__mark pmw-sc-hero__mark--right" loading="lazy">
+  <img src="{{ mark_src }}" alt="" class="pmw-sc-hero__mark pmw-sc-hero__mark--left" loading="lazy">
+
+  <div class="pmw__inner pmw-sc-hero__inner">
+    {% if section.settings.eyebrow != blank %}
+      <span class="pmw-sc-hero__eyebrow">
+        <span class="pmw-sc-hero__dash"></span>{{ section.settings.eyebrow }}<span class="pmw-sc-hero__dash"></span>
+      </span>
+    {% endif %}
+    <h1 class="pmw-sc-hero__title">{{ section.settings.headline | newline_to_br }}</h1>
+    {% if section.settings.subhead != blank %}
+      <p class="pmw-sc-hero__sub">{{ section.settings.subhead }}</p>
+    {% endif %}
+
+    <div class="pmw-sc-hero__stats">
+      {%- assign stat_blocks = section.blocks | where: 'type', 'metal_card' -%}
+      {% for block in stat_blocks %}
+        <div class="pmw-sc-hero__stat" {{ block.shopify_attributes }}>
+          <div class="pmw-sc-hero__stat-label">{{ block.settings.label }}</div>
+          <div class="pmw-sc-hero__stat-value">{{ block.settings.value }}<span class="pmw-sc-hero__stat-unit">{{ block.settings.unit }}</span></div>
+          {% if block.settings.badge != blank %}
+            <div class="pmw-sc-hero__stat-badge">{{ block.settings.badge }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="pmw-sc-hero__ctas">
+      {% if section.settings.cta1_label != blank %}
+        <a href="{{ section.settings.cta1_link | default: '#' }}" class="pmw-btn pmw-btn--primary">{{ section.settings.cta1_label }}</a>
+      {% endif %}
+      {% if section.settings.cta2_label != blank %}
+        <a href="{{ section.settings.cta2_link | default: '#' }}" target="_blank" rel="noopener" class="pmw-btn pmw-btn--outline">{{ section.settings.cta2_label }}</a>
+      {% endif %}
+    </div>
+    {% if section.settings.proof != blank %}
+      <p class="pmw-sc-hero__proof">{{ section.settings.proof }}</p>
+    {% endif %}
+  </div>
+
+  {% if section.settings.show_proof_strip %}
+    <div class="pmw-sc-hero__strip">
+      {%- assign strip_blocks = section.blocks | where: 'type', 'badge' -%}
+      {% for block in strip_blocks %}
+        <span class="pmw-sc-hero__strip-item" {{ block.shopify_attributes }}>{{ block.settings.label }}</span>
+        {% unless forloop.last %}<span class="pmw-sc-hero__strip-dot">·</span>{% endunless %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-sc-hero { padding: 0; }
+  #pmw-{{ section.id }} .pmw-sc-hero__inner { padding: 84px 56px 72px; text-align: center; max-width: 760px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-sc-hero__eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .2em; font-size: 13px; color: var(--pm-gold-600); }
+  #pmw-{{ section.id }} .pmw-sc-hero__dash { width: 28px; height: 1.5px; background: currentColor; opacity: .6; }
+  #pmw-{{ section.id }} .pmw-sc-hero__title { margin: 20px 0 0; font-size: 66px; line-height: 1.0; color: var(--pm-cacao-800); }
+  #pmw-{{ section.id }} .pmw-sc-hero__sub { margin: 24px auto 0; max-width: 560px; font-size: 19px; line-height: 1.65; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-sc-hero__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 40px auto 0; max-width: 560px; }
+  #pmw-{{ section.id }} .pmw-sc-hero__stat { background: rgba(255,255,255,.72); border: 1px solid rgba(226,171,67,.4); border-radius: 18px; padding: 26px 24px; text-align: left; backdrop-filter: blur(4px); }
+  #pmw-{{ section.id }} .pmw-sc-hero__stat-label { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; font-size: 13px; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-sc-hero__stat-value { margin: 8px 0 0; font-family: var(--font-display); font-size: 42px; line-height: 1; color: var(--pm-cacao-800); }
+  #pmw-{{ section.id }} .pmw-sc-hero__stat-unit { font-size: 16px; color: var(--pm-gold-600); margin-left: 6px; }
+  #pmw-{{ section.id }} .pmw-sc-hero__stat-badge { margin-top: 12px; display: inline-block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; font-size: 10px; color: #5a7a4f; background: #eaf0e4; padding: 5px 10px; border-radius: 99px; }
+  #pmw-{{ section.id }} .pmw-sc-hero__ctas { display: flex; gap: 14px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+  #pmw-{{ section.id }} .pmw-sc-hero__proof { margin-top: 20px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .14em; font-size: 11px; color: var(--pm-cacao-500); opacity: .8; }
+  #pmw-{{ section.id }} .pmw-sc-hero__mark { position: absolute; pointer-events: none; }
+  #pmw-{{ section.id }} .pmw-sc-hero__mark--right { right: -90px; top: -70px; width: 380px; opacity: .14; }
+  #pmw-{{ section.id }} .pmw-sc-hero__mark--left { left: -110px; bottom: -120px; width: 300px; opacity: .10; }
+  #pmw-{{ section.id }} .pmw-sc-hero__strip { background: var(--pm-cacao-800); color: #e9dccd; padding: 16px 56px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; position: relative; z-index: 3; }
+  #pmw-{{ section.id }} .pmw-sc-hero__strip-dot { color: var(--pm-sunshine-gold); }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }} .pmw-sc-hero__inner { padding: 64px 24px; }
+    #pmw-{{ section.id }} .pmw-sc-hero__title { font-size: 44px; }
+    #pmw-{{ section.id }} .pmw-sc-hero__stats { grid-template-columns: 1fr; }
+    #pmw-{{ section.id }} .pmw-sc-hero__mark { display: none; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Safe Cacao — Hero",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color / gradient"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fee7be" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Independently Lab Tested" },
+    { "type": "textarea", "id": "headline", "label": "Headline (line breaks honored)", "default": "Heavy Metal\nSafe Cacao" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Heavy metal fears in chocolate are real — but not all cacao carries the same risk. Ours is part of our daily ritual, and we have the lab results to stand behind it." },
+    { "type": "image_picker", "id": "mark_image", "label": "Decorative brand mark (defaults to bulk-mark-gold.png)" },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "cta1_label", "label": "Primary CTA label", "default": "Shop Safe Cacao" },
+    { "type": "url", "id": "cta1_link", "label": "Primary CTA link" },
+    { "type": "text", "id": "cta2_label", "label": "Secondary CTA label", "default": "See Lab Results" },
+    { "type": "url", "id": "cta2_link", "label": "Secondary CTA link" },
+    { "type": "text", "id": "proof", "label": "Proof line under CTAs", "default": "Well below California Prop 65 & EU safety limits" },
+    { "type": "header", "content": "Proof strip" },
+    { "type": "checkbox", "id": "show_proof_strip", "label": "Show dark proof strip below hero", "default": true }
+  ],
+  "blocks": [
+    { "type": "metal_card", "name": "Metal stat card", "limit": 4, "settings": [
+      { "type": "text", "id": "label", "label": "Label", "default": "Lead (Pb)" },
+      { "type": "text", "id": "value", "label": "Value", "default": "<0.010" },
+      { "type": "text", "id": "unit", "label": "Unit", "default": "ppm" },
+      { "type": "text", "id": "badge", "label": "Badge", "default": "Well Below Prop 65 & EU Limits" }
+    ]},
+    { "type": "badge", "name": "Proof strip badge", "limit": 8, "settings": [
+      { "type": "text", "id": "label", "label": "Badge text", "default": "Below Prop 65" }
+    ]}
+  ],
+  "presets": [{
+    "name": "Safe Cacao — Hero",
+    "blocks": [
+      { "type": "metal_card", "settings": { "label": "Lead (Pb)", "value": "<0.010", "unit": "ppm", "badge": "Well Below Prop 65 & EU Limits" } },
+      { "type": "metal_card", "settings": { "label": "Cadmium (Cd)", "value": "0.126", "unit": "ppm", "badge": "Well Below Prop 65 & EU Limits" } },
+      { "type": "badge", "settings": { "label": "Below Prop 65" } },
+      { "type": "badge", "settings": { "label": "Below EU Limits" } },
+      { "type": "badge", "settings": { "label": "High-Elevation Chuncho" } },
+      { "type": "badge", "settings": { "label": "Full Transparency" } }
+    ]
+  }]
+}
+{% endschema %}

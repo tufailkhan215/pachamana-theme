@@ -1,0 +1,87 @@
+<section class="pmw pmw-sc-why" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner pmw-sc-why__inner">
+    <div class="pmw-sc-why__head">
+      {% if section.settings.eyebrow != blank %}<span class="pmw-eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+      <h2 class="pmw-sc-why__title">{{ section.settings.headline | newline_to_br }}</h2>
+      {% if section.settings.subhead != blank %}<p class="pmw-sc-why__sub">{{ section.settings.subhead }}</p>{% endif %}
+    </div>
+
+    <div class="pmw-sc-why__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'factor' %}
+          <div class="pmw-sc-why__card" {{ block.shopify_attributes }}>
+            <div class="pmw-sc-why__media">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+              {% else %}
+                <span class="pmw-sc-why__placeholder">{{ block.settings.placeholder }}</span>
+              {% endif %}
+              <span class="pmw-sc-why__num">{{ block.settings.number }}</span>
+            </div>
+            <div class="pmw-sc-why__body">
+              <h3 class="pmw-sc-why__name">{{ block.settings.title }}</h3>
+              <p class="pmw-sc-why__copy">{{ block.settings.description }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-sc-why { padding: 0; }
+  #pmw-{{ section.id }} .pmw-sc-why__inner { padding: 96px 64px; max-width: 1080px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-sc-why__head { text-align: center; margin-bottom: 54px; }
+  #pmw-{{ section.id }} .pmw-sc-why__title { margin: 14px 0 14px; font-size: 40px; line-height: 1.05; color: var(--pm-cacao-800); }
+  #pmw-{{ section.id }} .pmw-sc-why__sub { margin: 0 auto; max-width: 600px; font-size: 17px; line-height: 1.7; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-sc-why__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  #pmw-{{ section.id }} .pmw-sc-why__card { background: #ffffff; border: 1px solid var(--card-border); border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(92,64,47,.07); display: flex; flex-direction: column; }
+  #pmw-{{ section.id }} .pmw-sc-why__media { position: relative; aspect-ratio: 4 / 3; background: linear-gradient(160deg, #fef2e0, #f7d79b); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  #pmw-{{ section.id }} .pmw-sc-why__media img { width: 100%; height: 100%; object-fit: cover; }
+  #pmw-{{ section.id }} .pmw-sc-why__placeholder { font-family: var(--font-display); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--pm-cacao-300); padding: 0 20px; text-align: center; }
+  #pmw-{{ section.id }} .pmw-sc-why__num { position: absolute; top: 14px; left: 14px; font-family: var(--font-display); font-size: 22px; color: var(--pm-cacao-800); background: rgba(249,242,239,.92); width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(92,64,47,.18); }
+  #pmw-{{ section.id }} .pmw-sc-why__body { padding: 30px 30px 36px; }
+  #pmw-{{ section.id }} .pmw-sc-why__name { font-size: 19px; letter-spacing: .04em; color: var(--pm-cacao-800); margin-bottom: 12px; }
+  #pmw-{{ section.id }} .pmw-sc-why__copy { font-size: 15px; line-height: 1.65; color: var(--pm-cacao-500); }
+  @media (max-width: 768px) { #pmw-{{ section.id }} .pmw-sc-why__inner { padding: 64px 20px; } }
+</style>
+
+{% schema %}
+{
+  "name": "Safe Cacao — Why Lower",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#f9f2ef" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Clean By Nature" },
+    { "type": "textarea", "id": "headline", "label": "Headline", "default": "Why Our Cacao Is\nNaturally Lower" },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Three things keep heavy metals out of the cup — long before we ever test for them." }
+  ],
+  "blocks": [
+    { "type": "factor", "name": "Factor card", "limit": 6, "settings": [
+      { "type": "text", "id": "number", "label": "Number", "default": "01" },
+      { "type": "text", "id": "title", "label": "Title", "default": "Regenerative Farming" },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Living, balanced soil tended by multigenerational families — not chemically loaded monoculture that concentrates metals." },
+      { "type": "image_picker", "id": "image", "label": "Photo (optional)" },
+      { "type": "text", "id": "placeholder", "label": "Placeholder text (when no photo)", "default": "Farming family / regenerative soil photo" }
+    ]}
+  ],
+  "presets": [{
+    "name": "Safe Cacao — Why Lower",
+    "blocks": [
+      { "type": "factor", "settings": { "number": "01", "title": "Regenerative Farming", "description": "Living, balanced soil tended by multigenerational families — not chemically loaded monoculture that concentrates metals.", "placeholder": "Farming family / regenerative soil photo" } },
+      { "type": "factor", "settings": { "number": "02", "title": "High Elevation & Soil", "description": "Volcanic highland soil has a mineral makeup that resists excessive metal absorption when there are no pollutants present.", "placeholder": "High-elevation grove / volcanic soil photo" } },
+      { "type": "factor", "settings": { "number": "03", "title": "Clean Post-Harvest", "description": "Lead is a post-harvest contaminant, not absorbed by the soil. Our clean facilities make it a non-issue from grove to package.", "placeholder": "Clean drying / processing facility photo" } }
+    ]
+  }]
+}
+{% endschema %}
