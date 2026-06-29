@@ -1,0 +1,68 @@
+<section class="pmw pmw-sc-bottom" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  <div class="pmw__inner pmw-sc-bottom__inner">
+    <div class="pmw-sc-bottom__head">
+      {% if section.settings.eyebrow != blank %}<span class="pmw-eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+      <h2 class="pmw-sc-bottom__title">{{ section.settings.headline }}</h2>
+    </div>
+
+    <div class="pmw-sc-bottom__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'check' %}
+          <div class="pmw-sc-bottom__item" {{ block.shopify_attributes }}>
+            <span class="pmw-sc-bottom__tick">✓</span>
+            <span>{{ block.settings.text }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-sc-bottom { padding: 0; }
+  #pmw-{{ section.id }} .pmw-sc-bottom__inner { padding: 90px 64px; max-width: 900px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-sc-bottom__head { text-align: center; margin-bottom: 44px; }
+  #pmw-{{ section.id }} .pmw-sc-bottom__title { margin: 14px 0 0; font-size: 38px; color: var(--pm-cacao-800); }
+  #pmw-{{ section.id }} .pmw-sc-bottom__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  #pmw-{{ section.id }} .pmw-sc-bottom__item { display: flex; gap: 16px; align-items: flex-start; background: #ffffff; border: 1px solid var(--card-border); border-radius: 14px; padding: 22px 24px; font-size: 16px; line-height: 1.6; color: var(--pm-cacao-800); }
+  #pmw-{{ section.id }} .pmw-sc-bottom__tick { flex: none; width: 26px; height: 26px; border-radius: 50%; background: #5a7a4f; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }} .pmw-sc-bottom__inner { padding: 64px 20px; }
+    #pmw-{{ section.id }} .pmw-sc-bottom__grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Safe Cacao — Bottom Line",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What This Means For You" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "The Bottom Line" }
+  ],
+  "blocks": [
+    { "type": "check", "name": "Check item", "limit": 12, "settings": [
+      { "type": "textarea", "id": "text", "label": "Text", "default": "Pacha Mana cacao has some of the lowest heavy metal levels in the industry." }
+    ]}
+  ],
+  "presets": [{
+    "name": "Safe Cacao — Bottom Line",
+    "blocks": [
+      { "type": "check", "settings": { "text": "Pacha Mana cacao has some of the lowest heavy metal levels in the industry." } },
+      { "type": "check", "settings": { "text": "High-elevation cacao, like Chuncho, is naturally lower in cadmium and lead." } },
+      { "type": "check", "settings": { "text": "You'd have to eat extreme amounts daily for heavy metals to be a concern." } },
+      { "type": "check", "settings": { "text": "Not all brands are transparent — always check test results and sourcing." } }
+    ]
+  }]
+}
+{% endschema %}

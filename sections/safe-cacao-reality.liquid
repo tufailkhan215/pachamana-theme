@@ -1,0 +1,67 @@
+<section class="pmw pmw-sc-reality" id="pmw-{{ section.id }}">
+  {% render 'bulk-bg', section: section %}
+  {%- if section.settings.mark_image != blank -%}
+    {%- assign reality_mark_src = section.settings.mark_image | image_url: width: 700 -%}
+  {%- else -%}
+    {%- assign reality_mark_src = 'bulk-mark-cream.png' | asset_url -%}
+  {%- endif -%}
+  <img src="{{ reality_mark_src }}" alt="" class="pmw-sc-reality__mark" loading="lazy">
+
+  <div class="pmw__inner pmw-sc-reality__inner">
+    {% if section.settings.eyebrow != blank %}<span class="pmw-eyebrow pmw-sc-reality__eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
+    <h2 class="pmw-sc-reality__title">{{ section.settings.headline | newline_to_br }}</h2>
+    <div class="pmw-sc-reality__big">{{ section.settings.big_number }}</div>
+    <p class="pmw-sc-reality__copy">{{ section.settings.body }}</p>
+    {% if section.settings.quote != blank %}
+      <blockquote class="pmw-sc-reality__quote">
+        <p>{{ section.settings.quote }}</p>
+        {% if section.settings.quote_attribution != blank %}<cite>{{ section.settings.quote_attribution }}</cite>{% endif %}
+      </blockquote>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-sc-reality { padding: 0; background: linear-gradient(165deg, #3b5641 0%, #223829 100%); color: #f9f2ef; }
+  #pmw-{{ section.id }} .pmw-sc-reality__inner { padding: 100px 64px; max-width: 980px; margin: 0 auto; text-align: center; }
+  #pmw-{{ section.id }} .pmw-sc-reality__eyebrow { color: var(--pm-sunshine-gold); display: block; }
+  #pmw-{{ section.id }} .pmw-sc-reality__title { margin: 16px 0 36px; font-size: 40px; line-height: 1.05; color: #f9f2ef; }
+  #pmw-{{ section.id }} .pmw-sc-reality__big { font-family: var(--font-display); font-size: 90px; line-height: 1; color: var(--pm-sunshine-gold); }
+  #pmw-{{ section.id }} .pmw-sc-reality__copy { margin: 18px auto 0; max-width: 620px; font-size: 19px; line-height: 1.7; color: #e9dccd; }
+  #pmw-{{ section.id }} .pmw-sc-reality__quote { margin: 48px auto 0; max-width: 760px; border-top: 1px solid rgba(249,242,239,.18); padding-top: 36px; }
+  #pmw-{{ section.id }} .pmw-sc-reality__quote p { margin: 0; font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.65; color: #f9f2ef; }
+  #pmw-{{ section.id }} .pmw-sc-reality__quote cite { display: block; margin-top: 20px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-style: normal; color: var(--pm-sunshine-gold); }
+  #pmw-{{ section.id }} .pmw-sc-reality__mark { position: absolute; right: -80px; top: -60px; width: 340px; opacity: .07; pointer-events: none; z-index: 1; }
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }} .pmw-sc-reality__inner { padding: 72px 20px; }
+    #pmw-{{ section.id }} .pmw-sc-reality__title { font-size: 30px; }
+    #pmw-{{ section.id }} .pmw-sc-reality__big { font-size: 64px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Safe Cacao — Reality",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
+      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
+    { "type": "color", "id": "bg_color", "label": "Background color (blank keeps dark green default)" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#223829" },
+    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 35 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "A Reality Check" },
+    { "type": "textarea", "id": "headline", "label": "Headline", "default": "How Much Would It\nActually Take?" },
+    { "type": "text", "id": "big_number", "label": "Big number", "default": "20+" },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "servings of Pacha Mana cacao every single day to even approach Prop 65 limits on lead — an amount no one consumes. Even then, much of it passes through you unabsorbed." },
+    { "type": "image_picker", "id": "mark_image", "label": "Decorative watermark (defaults to bulk-mark-cream.png)" },
+    { "type": "header", "content": "Pull quote" },
+    { "type": "textarea", "id": "quote", "label": "Quote", "default": "Lead and cadmium are handled slightly differently by the body, but they are not completely absorbed, so much of what you take passes through you after you consume it." },
+    { "type": "text", "id": "quote_attribution", "label": "Quote attribution", "default": "Dr. Stolbach, Medical Toxicologist" }
+  ],
+  "presets": [{ "name": "Safe Cacao — Reality Check" }]
+}
+{% endschema %}

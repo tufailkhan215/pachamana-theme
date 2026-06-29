@@ -1,0 +1,154 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "safe-cacao-hero",
+      "blocks": {
+        "lead":  { "type": "metal_card", "settings": { "label": "Lead (Pb)",     "value": "<0.010", "unit": "ppm", "badge": "Well Below Prop 65 & EU Limits" } },
+        "cad":   { "type": "metal_card", "settings": { "label": "Cadmium (Cd)",  "value": "0.126",  "unit": "ppm", "badge": "Well Below Prop 65 & EU Limits" } },
+        "b1":    { "type": "badge",      "settings": { "label": "Below Prop 65" } },
+        "b2":    { "type": "badge",      "settings": { "label": "Below EU Limits" } },
+        "b3":    { "type": "badge",      "settings": { "label": "High-Elevation Chuncho" } },
+        "b4":    { "type": "badge",      "settings": { "label": "Full Transparency" } }
+      },
+      "block_order": ["lead", "cad", "b1", "b2", "b3", "b4"],
+      "settings": {
+        "bg_type": "color", "bg_color": "#fee7be", "bg_opacity": 100,
+        "eyebrow": "Independently Lab Tested",
+        "headline": "Heavy Metal\nSafe Cacao",
+        "subhead": "Heavy metal fears in chocolate are real — but not all cacao carries the same risk. Ours is part of our daily ritual, and we have the lab results to stand behind it.",
+        "cta1_label": "Shop Safe Cacao",
+        "cta1_link": "/collections/all",
+        "cta2_label": "See Lab Results",
+        "cta2_link": "https://drive.google.com/file/d/1lgG1hi2pW9YR_qBKUJO88lOC7X7Do7Ku/view",
+        "proof": "Well below California Prop 65 & EU safety limits",
+        "show_proof_strip": true
+      }
+    },
+    "result": {
+      "type": "safe-cacao-result",
+      "blocks": {
+        "cad": { "type": "metal_card", "settings": { "metal": "Cadmium", "symbol": "Cd", "value": "0.126", "unit": "ppm", "body": "Meets all EU and Prop 65 safety limits — and sits well below standard.", "fill": 21, "left_label": "Pacha Mana", "right_label": "Safety limit" } },
+        "pb":  { "type": "metal_card", "settings": { "metal": "Lead",    "symbol": "Pb", "value": "<0.010", "unit": "ppm", "body": "Lower than EU standards and California Prop 65's strictest threshold. One-thousandth more and it reads non-detectable.", "fill": 20, "left_label": "Pacha Mana", "right_label": "Safety limit" } }
+      },
+      "block_order": ["cad", "pb"],
+      "settings": {
+        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "eyebrow": "Below Every Limit",
+        "headline": "How We Compare To\nGlobal Standards",
+        "subhead": "The result: some of the lowest heavy-metal levels in the entire chocolate industry.",
+        "footnote": "This means Pacha Mana's cacao is well within the safety margins for daily consumption — naturally low in heavy metals, and one of the cleanest, safest choices available.",
+        "cta_label": "View Our Full Lab Results",
+        "cta_link": "https://drive.google.com/file/d/1lgG1hi2pW9YR_qBKUJO88lOC7X7Do7Ku/view"
+      }
+    },
+    "why": {
+      "type": "safe-cacao-why",
+      "blocks": {
+        "f1": { "type": "factor", "settings": { "number": "01", "title": "Regenerative Farming",   "description": "Living, balanced soil tended by multigenerational families — not chemically loaded monoculture that concentrates metals.", "placeholder": "Farming family / regenerative soil photo" } },
+        "f2": { "type": "factor", "settings": { "number": "02", "title": "High Elevation & Soil",  "description": "Volcanic highland soil has a mineral makeup that resists excessive metal absorption when there are no pollutants present.", "placeholder": "High-elevation grove / volcanic soil photo" } },
+        "f3": { "type": "factor", "settings": { "number": "03", "title": "Clean Post-Harvest",     "description": "Lead is a post-harvest contaminant, not absorbed by the soil. Our clean facilities make it a non-issue from grove to package.", "placeholder": "Clean drying / processing facility photo" } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "eyebrow": "Clean By Nature",
+        "headline": "Why Our Cacao Is\nNaturally Lower",
+        "subhead": "Three things keep heavy metals out of the cup — long before we ever test for them."
+      }
+    },
+    "products": {
+      "type": "safe-cacao-products",
+      "blocks": {
+        "p1": { "type": "product_card", "settings": { "placeholder": "Cacao paste photo",  "badge": "Full Strength",  "name": "Ceremonial Paste",         "description": "100% pure, stone-ground heirloom paste — the full ceremonial dose. Brew slow, drink with intention.",        "price": "Shop", "unit": "1 lb block",      "cta_label": "Shop", "cta_link": "/collections/all", "sub_link_label": "Subscribe & Save 15%", "sub_link": "/collections/all" } },
+        "p2": { "type": "product_card", "settings": { "placeholder": "Sampler photo",      "badge": "Try It First",   "name": "Single-Serving Sampler",   "description": "Single-serve sizes to taste the difference before you commit — notes of dried cherry and warm earth.",     "price": "Shop", "unit": "Sampler set",     "cta_label": "Shop", "cta_link": "/collections/all", "sub_link_label": "Subscribe & Save 15%", "sub_link": "/collections/all" } },
+        "p3": { "type": "product_card", "settings": { "placeholder": "Ground cacao photo", "badge": "Everyday",       "name": "Ground Cacao",             "description": "The same lab-tested Chuncho, ground for an easy daily cup at home, in the café, or in the studio.",         "price": "Shop", "unit": "Resealable bag",  "cta_label": "Shop", "cta_link": "/collections/all", "sub_link_label": "Subscribe & Save 15%", "sub_link": "/collections/all" } }
+      },
+      "block_order": ["p1", "p2", "p3"],
+      "settings": {
+        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "eyebrow": "Drink With Confidence",
+        "headline": "Shop Cacao You\nCan Trust",
+        "subhead": "Same lab-tested, high-elevation Chuncho — in whatever form fits your ritual. Subscribe and save 15% on every reorder."
+      }
+    },
+    "reality": {
+      "type": "safe-cacao-reality",
+      "settings": {
+        "bg_type": "color", "bg_opacity": 100, "bg_overlay_opacity": 35,
+        "eyebrow": "A Reality Check",
+        "headline": "How Much Would It\nActually Take?",
+        "big_number": "20+",
+        "body": "servings of Pacha Mana cacao every single day to even approach Prop 65 limits on lead — an amount no one consumes. Even then, much of it passes through you unabsorbed.",
+        "quote": "Lead and cadmium are handled slightly differently by the body, but they are not completely absorbed, so much of what you take passes through you after you consume it.",
+        "quote_attribution": "Dr. Stolbach, Medical Toxicologist"
+      }
+    },
+    "fullpicture": {
+      "type": "safe-cacao-fullpicture",
+      "blocks": {
+        "fear":  { "type": "panel", "settings": {
+          "heading": "Clearing Up Fear In The Cacao Market",
+          "body": "A rise in fear-based messaging followed a 2023 Consumer Reports article on heavy metals in chocolate — often shared without full context. A few things to watch out for:",
+          "list_type": "bullets",
+          "list_items": "Regulating to zero PPM — held up as an ideal, even though it is an impossible feat for any food.\nReporting heavy-metal levels without comparing them to actual safety thresholds, making safe products look risky.\nFailing to distinguish total metal content from bioavailability — not all metals present in food are absorbed.\nSwitching measurement units (PPM vs. PPB) so direct comparison gets confusing. PPM is the standard.\nCA Prop 65 uses a \"Threshold for Safety\" that over-regulates by a factor of 1000 — the strictest method there is."
+        }},
+        "foods": { "type": "panel", "settings": {
+          "heading": "Everyday Foods Higher In Cadmium & Lead",
+          "body": "Cacao gets singled out, yet many everyday foods carry cadmium and lead — without the fear campaigns. Sourced consciously, most are equally safe.",
+          "list_type": "pairs",
+          "list_items": "Spinach & Greens | A top source of cadmium, absorbed from high-phosphate soils.\nSunflower Seeds | Often higher in cadmium than cacao — a bioaccumulator grown in monoculture.\nShellfish | Lead and cadmium accumulate from ocean contamination.\nRice | Well known for arsenic and cadmium from wet, lowland growing conditions.\nBaking Powder | Some brands carry trace lead, rarely discussed — though safe options exist.",
+          "outro": "What really matters is overall exposure, proper sourcing, and a healthy body — which eliminates most lead and cadmium on its own."
+        }},
+        "chuncho": { "type": "panel", "settings": {
+          "heading": "Why High-Elevation Chuncho Is Cleaner",
+          "body": "Cacao is a bioaccumulator — it draws metals and minerals from the soil. So where it grows is everything. High-altitude Chuncho grows where cadmium in the soil is naturally lower, in volcanic ground that resists metal absorption, isolated from the industrial pollutants and contaminated water that affect lowland cacao. Heavy metals, by their nature, settle to lower elevations with density and rain runoff.",
+          "list_type": "none",
+          "image_placeholder": "High-elevation farm / grove photo"
+        }}
+      },
+      "block_order": ["fear", "foods", "chuncho"],
+      "settings": {
+        "bg_type": "color", "bg_color": "#f9f2ef", "bg_opacity": 100,
+        "eyebrow": "Go Deeper",
+        "headline": "The Full Picture"
+      }
+    },
+    "bottomline": {
+      "type": "safe-cacao-bottomline",
+      "blocks": {
+        "c1": { "type": "check", "settings": { "text": "Pacha Mana cacao has some of the lowest heavy metal levels in the industry." } },
+        "c2": { "type": "check", "settings": { "text": "High-elevation cacao, like Chuncho, is naturally lower in cadmium and lead." } },
+        "c3": { "type": "check", "settings": { "text": "You'd have to eat extreme amounts daily for heavy metals to be a concern." } },
+        "c4": { "type": "check", "settings": { "text": "Not all brands are transparent — always check test results and sourcing." } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": {
+        "bg_type": "color", "bg_color": "#fdf8f3", "bg_opacity": 100,
+        "eyebrow": "What This Means For You",
+        "headline": "The Bottom Line"
+      }
+    },
+    "cta": {
+      "type": "safe-cacao-cta",
+      "settings": {
+        "bg_type": "color", "bg_color": "#fee7be", "bg_opacity": 100,
+        "headline": "Enjoy Cacao\nWithout The Worry",
+        "subhead": "So, can you enjoy Pacha Mana cacao without worrying about heavy metals? Absolutely. Cheers.",
+        "cta1_label": "Shop Our Cacao",
+        "cta1_link": "/collections/all",
+        "cta2_label": "Subscribe & Save",
+        "cta2_link": "/collections/all"
+      }
+    }
+  },
+  "order": ["hero", "result", "why", "products", "reality", "fullpicture", "bottomline", "cta"]
+}
