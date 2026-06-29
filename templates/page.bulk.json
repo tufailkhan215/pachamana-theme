@@ -61,11 +61,12 @@
         "s3"
       ],
       "settings": {
-        "bg_type": "color",
+        "bg_type": "image",
         "bg_color": "#f9f2ef",
+        "bg_image": "shopify://shop_images/05_peruvian-ceremonial-cacao-guide.jpg",
         "bg_opacity": 100,
-        "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
+        "bg_overlay_color": "#F9F2EF",
+        "bg_overlay_opacity": 65,
         "eyebrow": "How It Works",
         "headline": "Saving Is Automatically applied",
         "subhead": ""
