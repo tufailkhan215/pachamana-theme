@@ -324,7 +324,7 @@
         "st4": {
           "type": "stat",
           "settings": {
-            "number": "4X",
+            "number": "3X",
             "label": "Fair Price, Paid to Farmers"
           }
         }
@@ -536,7 +536,7 @@
         "bg_overlay_opacity": 35,
         "eyebrow": "Ready When You Are",
         "headline": "Pour The First Cup",
-        "subhead": "Become a partner, or stock up for your circle. We'll send a sample either way.",
+        "subhead": "Become a partner, or stock up for your stores and events. We'll send a sample either way.",
         "cta1_label": "Apply For Wholesale",
         "cta1_link": "#apply",
         "cta2_label": "Shop Bulk",
