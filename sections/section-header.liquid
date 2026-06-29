@@ -25,20 +25,32 @@
     background-position: {{ header_bg_position }} !important;
     background-repeat: {{ header_bg_repeat }} !important;
   }
-  /* Nav-squeeze fix: tighten letter-spacing so more menu items fit without overflow.
-     Original Elementor value (post-57.css) was 2.4px; this scaled it down for 6+ items. */
+  /* Nav-squeeze fix v2: reduce font-size + letter-spacing + padding so 6+ items fit the dark bar
+     without clipping. Original Elementor values (post-57.css) were 22px / 2.4px / 15px-right. */
   .section-header .plus-navigation-menu .navbar-nav > li > a {
-    letter-spacing: 1.4px !important;
+    font-size: 14px !important;
+    letter-spacing: 1.0px !important;
+    padding: 0 !important;
   }
   .section-header .plus-navigation-menu .navbar-nav > li {
-    padding-right: 10px !important;
+    padding: 0 8px !important;
   }
   @media (max-width: 1280px) {
     .section-header .plus-navigation-menu .navbar-nav > li > a {
-      letter-spacing: 1.0px !important;
+      font-size: 13px !important;
+      letter-spacing: 0.6px !important;
     }
     .section-header .plus-navigation-menu .navbar-nav > li {
-      padding-right: 7px !important;
+      padding: 0 5px !important;
+    }
+  }
+  @media (max-width: 1180px) {
+    .section-header .plus-navigation-menu .navbar-nav > li > a {
+      font-size: 12px !important;
+      letter-spacing: 0.4px !important;
+    }
+    .section-header .plus-navigation-menu .navbar-nav > li {
+      padding: 0 3px !important;
     }
   }
 </style>
