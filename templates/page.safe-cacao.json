@@ -114,6 +114,7 @@
         "cad",
         "pb"
       ],
+      "disabled": true,
       "settings": {
         "bg_type": "color",
         "bg_color": "#fdf8f3",
