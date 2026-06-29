@@ -130,6 +130,10 @@
   #pmw-{{ section.id }} .pmw-calc__contact-title { margin: 10px 0; font-size: 26px; color: #f9f2ef; }
   #pmw-{{ section.id }} .pmw-calc__contact-copy { margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #e4d4c6; }
   #pmw-{{ section.id }} .pmw-calc__contact-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  /* Force button text colors against the dark cacao card — fights inherited white color */
+  #pmw-{{ section.id }} .pmw-calc__contact-ctas a.pmw-btn--primary { color: var(--pm-cacao-700) !important; }
+  #pmw-{{ section.id }} .pmw-calc__contact-ctas a.pmw-btn--secondary { color: var(--pm-cacao-700) !important; background: var(--pm-pearl-white) !important; }
+  #pmw-{{ section.id }} .pmw-calc__contact-ctas a.pmw-btn--outline { color: var(--pm-pearl-white) !important; border-color: var(--pm-pearl-white) !important; }
   #pmw-{{ section.id }} .pmw-calc__fine { margin: 18px 0 0; font-size: 14px; color: var(--page-muted); opacity: .85; }
   @media (max-width: 768px) {
     #pmw-{{ section.id }} .pmw-calc__inner { padding: 64px 20px; }
