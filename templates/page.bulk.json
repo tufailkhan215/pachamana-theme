@@ -78,7 +78,7 @@
           "settings": {
             "qty": "About 3 lbs",
             "save": "5%",
-            "note": "6 × 8 oz  ·  or 3 × 1 lb",
+            "note": "6 × 8 oz  ·  or 3 × 16 oz",
             "highlight": false
           }
         },
@@ -87,7 +87,7 @@
           "settings": {
             "qty": "About 6 lbs",
             "save": "10%",
-            "note": "12 × 8 oz  ·  or 6 × 1 lb",
+            "note": "12 × 8 oz  ·  or 6 × 16 oz",
             "highlight": false
           }
         },
@@ -96,7 +96,7 @@
           "settings": {
             "qty": "About 10 lbs",
             "save": "15%",
-            "note": "20 × 8 oz  ·  or 10 × 1 lb",
+            "note": "20 × 8 oz  ·  or 10 × 16 oz",
             "highlight": false
           }
         },
@@ -105,7 +105,7 @@
           "settings": {
             "qty": "About 20 lbs",
             "save": "20%",
-            "note": "40 × 8 oz  ·  or 20 × 1 lb",
+            "note": "40 × 8 oz  ·  or 20 × 16 oz",
             "highlight": true
           }
         },
