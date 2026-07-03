@@ -17,13 +17,13 @@
         "bg_opacity": 100,
         "bg_overlay_color": "#000000",
         "bg_overlay_opacity": 0,
-        "eyebrow": "Bulk Pricing for Non-Businesses — Automatically Applied at checkout",
-        "headline": "Bulk Cacao",
-        "subhead": "No wholesale account needed. Buy in bulk and your savings apply automatically at checkout. The more you share, the more we give back. This is Ayni, reciprocal energy in every order.",
+        "eyebrow": "Bulk Cacao · No License Needed",
+        "headline": "Buy More,\nPour More",
+        "subhead": "The same wild-harvested heirloom Chuncho cacao, at a better price when you stock up. Volume discounts apply automatically at checkout — no application, no code, no waiting on us.\n\nShop Bulk",
         "mark_image": "shopify://shop_images/Cacao_Pods_2.png",
         "cta1_label": "Shop Bulk",
         "cta1_link": "/collections/all",
-        "cta2_label": "How It Works",
+        "cta2_label": "See Price Breaks",
         "cta2_link": "#how"
       }
     },
