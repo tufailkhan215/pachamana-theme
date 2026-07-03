@@ -276,36 +276,6 @@
         "cta_link": "/collections/all"
       }
     },
-    "main_page_tHT6HB": {
-      "type": "main-page",
-      "blocks": {
-        "slide_yBzQiy": {
-          "type": "slide",
-          "settings": {}
-        },
-        "slide_jhNqfe": {
-          "type": "slide",
-          "settings": {}
-        },
-        "slide_jbqYCg": {
-          "type": "slide",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "slide_yBzQiy",
-        "slide_jhNqfe",
-        "slide_jbqYCg"
-      ],
-      "name": "Main Page",
-      "settings": {
-        "slide_duration": 5000,
-        "transition_duration": 500,
-        "loop": true,
-        "ken_burns": true,
-        "ken_burns_direction": "in"
-      }
-    },
     "segments": {
       "type": "bulk-segments",
       "blocks": {
@@ -584,7 +554,6 @@
     "calc",
     "sizes",
     "subscribe",
-    "main_page_tHT6HB",
     "segments",
     "products",
     "resell",
