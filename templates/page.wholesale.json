@@ -18,8 +18,8 @@
         "bg_overlay_color": "#000000",
         "bg_overlay_opacity": 0,
         "eyebrow": "FOr Approved Resell Partners",
-        "headline": "Wholesale cacao",
-        "subhead": "Cacao was always meant to be shared. Apply to become a wholesale partner and carry Pacha Mana in your space. Partner pricing, direct sourcing, and a story worth telling.",
+        "headline": "Share The\nCeremony",
+        "subhead": "Wild-harvested heirloom Chuncho cacao, sourced from highland families in Peru and stone-ground in small batches. Buy in bulk for your circle, or partner with us to stock your shelves.",
         "cta1_label": "Apply For Wholesale",
         "cta1_link": "#apply",
         "cta2_label": "Order on Faire",
@@ -73,7 +73,7 @@
         "bg_color": "#fdf8f3",
         "bg_image": "shopify://shop_images/09_cacao-heavy-metals-testing-explained.jpg",
         "bg_opacity": 100,
-        "bg_overlay_color": "#F9F2EF",
+        "bg_overlay_color": "#f9f2ef",
         "bg_overlay_opacity": 60,
         "eyebrow": "How It Works",
         "headline": "Four Simple Steps",
@@ -303,29 +303,29 @@
         "st1": {
           "type": "stat",
           "settings": {
-            "number": "150+",
-            "label": "Farming Families Supported"
+            "number": "40+",
+            "label": "Highland families in our circle"
           }
         },
         "st2": {
           "type": "stat",
           "settings": {
-            "number": "100+",
-            "label": "Stockists & Cafés Served"
+            "number": "150+",
+            "label": "Stockists & cafés served"
           }
         },
         "st3": {
           "type": "stat",
           "settings": {
             "number": "100%",
-            "label": "Traceable from Farm & Harvest"
+            "label": "Traceable to grove & harvest"
           }
         },
         "st4": {
           "type": "stat",
           "settings": {
-            "number": "3X",
-            "label": "Fair Price, Paid to Farmers"
+            "number": "12 yr",
+            "label": "Bean-to-cup relationships"
           }
         }
       },
@@ -341,7 +341,7 @@
         "bg_opacity": 100,
         "bg_overlay_color": "#38271d",
         "bg_overlay_opacity": 35,
-        "eyebrow": "By The Numbers",
+        "eyebrow": "Ayni · Sacred Reciprocity",
         "headline": "Rooted In Relationship"
       }
     },
