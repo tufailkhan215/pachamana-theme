@@ -17,7 +17,7 @@
         "bg_opacity": 100,
         "bg_overlay_color": "#000000",
         "bg_overlay_opacity": 0,
-        "eyebrow": "FOr Approved Resell Partners",
+        "eyebrow": "Wholesale & Bulk Cacao",
         "headline": "Share The\nCeremony",
         "subhead": "Wild-harvested heirloom Chuncho cacao, sourced from highland families in Peru and stone-ground in small batches. Buy in bulk for your circle, or partner with us to stock your shelves.",
         "cta1_label": "Apply For Wholesale",
@@ -352,40 +352,48 @@
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/PACHAMANA--194.jpg",
-            "name": "Chuncho Cacao PAste",
+            "badge": "Single Origin",
             "origin": "Cuzco, Peru",
+            "name": "Chuncho Cacao PAste",
             "price": "1 lb block",
-            "badge": "Single Origin"
+            "button_label": "Add",
+            "button_link": ""
           }
         },
         "p2": {
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/1-2.png",
-            "name": "Ground Cacao Paste",
+            "badge": "Bulk",
             "origin": "Best Seller",
+            "name": "Ground Cacao Paste",
             "price": "8 & 16 Oz. Bags",
-            "badge": "Bulk"
+            "button_label": "Add",
+            "button_link": ""
           }
         },
         "p3": {
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
-            "name": "Mushroom Vitality",
+            "badge": "Functional",
             "origin": "Cacao + Adaptogens",
+            "name": "Mushroom Vitality",
             "price": "8 & 16 Oz. Bags",
-            "badge": "Functional"
+            "button_label": "Add",
+            "button_link": ""
           }
         },
         "p4": {
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
-            "name": "Rose Vanilla",
+            "badge": "Botanical",
             "origin": "Rose + Vanilla Bean Powder",
+            "name": "Rose Vanilla",
             "price": "8 & 16 Oz. Bags",
-            "badge": "Botanical"
+            "button_label": "Add",
+            "button_link": ""
           }
         }
       },
@@ -403,7 +411,10 @@
         "bg_overlay_opacity": 0,
         "eyebrow": "The Lineup",
         "headline": "What You'll Carry",
-        "subhead": "Single-origin Chuncho cacao, in every form your customers want."
+        "subhead": "Single-origin Chuncho cacao, in every form your customers want.",
+        "bottom_copy": "This is our core range — single-serve packets, flavored grounds, and seasonal blends are all on Faire. See everything we stock and order with one account.",
+        "cta_label": "View Full Range On Faire",
+        "cta_link": ""
       }
     },
     "story": {
