@@ -1,211 +1,1104 @@
-<section class="pmw pmw-calc" id="pmw-{{ section.id }}">
+<section class="pmw pmw-price-model" id="pmw-{{ section.id }}">
   {% render 'bulk-bg', section: section %}
-  <div class="pmw__inner pmw-calc__inner">
-    <div class="pmw-calc__intro">
-      {% if section.settings.eyebrow != blank %}<span class="pmw-eyebrow">{{ section.settings.eyebrow }}</span>{% endif %}
-      <h2 class="pmw-calc__title">{{ section.settings.headline }}</h2>
-      {% if section.settings.subhead != blank %}<p class="pmw-calc__sub">{{ section.settings.subhead }}</p>{% endif %}
+
+  <div class="pmw-price-model__inner">
+    <div class="pmw-price-model__intro">
+      {% if section.settings.eyebrow != blank %}
+        <span class="pmw-price-model__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+
+      {% if section.settings.headline != blank %}
+        <h2 class="pmw-price-model__title">{{ section.settings.headline }}</h2>
+      {% endif %}
+
+      {% if section.settings.subhead != blank %}
+        <p class="pmw-price-model__sub">{{ section.settings.subhead }}</p>
+      {% endif %}
     </div>
 
-    {% if section.settings.bag_eyebrow != blank %}
-      <div class="pmw-calc__rowhead">
-        <span class="pmw-eyebrow pmw-calc__rowhead-eb">{{ section.settings.bag_eyebrow }}</span>
-        <p class="pmw-calc__rowhead-copy">{{ section.settings.bag_copy }}</p>
-        {% if section.settings.bag_pill != blank %}
-          <div class="pmw-calc__pill">
-            <span class="pmw-calc__pill-tag">Automatic</span>
-            <span class="pmw-calc__pill-text">{{ section.settings.bag_pill }}</span>
+    <div class="pmw-price-model__media">
+      {% if section.settings.pricing_image != blank %}
+        <img
+          src="{{ section.settings.pricing_image | image_url: width: 2200 }}"
+          srcset="
+            {{ section.settings.pricing_image | image_url: width: 700 }} 700w,
+            {{ section.settings.pricing_image | image_url: width: 1100 }} 1100w,
+            {{ section.settings.pricing_image | image_url: width: 1600 }} 1600w,
+            {{ section.settings.pricing_image | image_url: width: 2200 }} 2200w
+          "
+          sizes="(max-width: 768px) 100vw, 1080px"
+          alt="{{ section.settings.pricing_image.alt | default: section.settings.headline | escape }}"
+          loading="lazy"
+          width="{{ section.settings.pricing_image.width }}"
+          height="{{ section.settings.pricing_image.height }}"
+        >
+      {% else %}
+        <div class="pmw-price-model__media-placeholder">
+          <span>{{ section.settings.image_placeholder_text }}</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="pmw-price-model__ladders">
+      <div class="pmw-price-model__card">
+        <div class="pmw-price-model__card-head">
+          {% if section.settings.bag_eyebrow != blank %}
+            <h3 class="pmw-price-model__card-title">{{ section.settings.bag_eyebrow }}</h3>
+          {% endif %}
+
+          {% if section.settings.bag_copy != blank %}
+            <p class="pmw-price-model__card-sub">{{ section.settings.bag_copy }}</p>
+          {% endif %}
+
+          {% if section.settings.bag_low_price != blank or section.settings.bag_from_price != blank %}
+            <p class="pmw-price-model__card-price">
+              As low as
+              {% if section.settings.bag_low_price != blank %}
+                <span>{{ section.settings.bag_low_price }}</span>
+              {% endif %}
+              / lb
+              {% if section.settings.bag_from_price != blank %}
+                <em>(from {{ section.settings.bag_from_price }})</em>
+              {% endif %}
+            </p>
+          {% endif %}
+        </div>
+
+        {%- assign tier_blocks = section.blocks | where: 'type', 'tier' -%}
+
+        {% if tier_blocks.size > 0 %}
+          <div class="pmw-price-model__rows">
+            {% for block in tier_blocks %}
+              <div class="pmw-price-model__row{% if block.settings.highlight %} pmw-price-model__row--highlight{% endif %}" {{ block.shopify_attributes }}>
+                <div class="pmw-price-model__row-left">
+                  <div class="pmw-price-model__row-main">{{ block.settings.qty }}</div>
+                  {% if block.settings.note != blank %}
+                    <div class="pmw-price-model__row-note">{{ block.settings.note }}</div>
+                  {% endif %}
+                </div>
+
+                <div class="pmw-price-model__row-discount">
+                  {{ block.settings.save }}
+                </div>
+              </div>
+            {% endfor %}
           </div>
+        {% endif %}
+      </div>
+
+      <div class="pmw-price-model__card">
+        <div class="pmw-price-model__card-head">
+          {% if section.settings.case_eyebrow != blank %}
+            <h3 class="pmw-price-model__card-title">{{ section.settings.case_eyebrow }}</h3>
+          {% endif %}
+
+          {% if section.settings.case_copy != blank %}
+            <p class="pmw-price-model__card-sub">{{ section.settings.case_copy }}</p>
+          {% endif %}
+
+          {% if section.settings.case_low_price != blank or section.settings.case_from_price != blank %}
+            <p class="pmw-price-model__card-price">
+              As low as
+              {% if section.settings.case_low_price != blank %}
+                <span>{{ section.settings.case_low_price }}</span>
+              {% endif %}
+              / lb
+              {% if section.settings.case_from_price != blank %}
+                <em>(from {{ section.settings.case_from_price }})</em>
+              {% endif %}
+            </p>
+          {% endif %}
+        </div>
+
+        {%- assign case_blocks = section.blocks | where: 'type', 'case_row' -%}
+
+        {% if case_blocks.size > 0 %}
+          <div class="pmw-price-model__rows">
+            {% for block in case_blocks %}
+              <div class="pmw-price-model__row" {{ block.shopify_attributes }}>
+                <div class="pmw-price-model__row-left">
+                  <div class="pmw-price-model__row-main">{{ block.settings.order }}</div>
+                  {% if block.settings.save != blank %}
+                    <div class="pmw-price-model__row-note">{{ block.settings.save }}</div>
+                  {% endif %}
+                </div>
+
+                <div class="pmw-price-model__row-price">
+                  <span>{{ block.settings.price }}</span>
+                  <em>each</em>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if section.settings.cta_label != blank or section.settings.cart_note != blank %}
+      <div class="pmw-price-model__primary-cta">
+        {% if section.settings.cta_label != blank %}
+          <a class="pmw-price-model__btn pmw-price-model__btn--primary" href="{{ section.settings.cta_link | default: '/collections/all' }}">
+            {{ section.settings.cta_label }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.cart_note != blank %}
+          <span>{{ section.settings.cart_note }}</span>
         {% endif %}
       </div>
     {% endif %}
 
-    <div class="pmw-calc__tiers">
-      {%- assign tier_blocks = section.blocks | where: 'type', 'tier' -%}
-      {% for block in tier_blocks %}
-        <div class="pmw-calc__tier{% if block.settings.highlight %} pmw-calc__tier--hl{% endif %}" {{ block.shopify_attributes }}>
-          <div class="pmw-calc__tier-qty">{{ block.settings.qty }}</div>
-          <div class="pmw-calc__tier-save">{{ block.settings.save }}</div>
-          <div class="pmw-calc__tier-off">Off Your Order</div>
-          <div class="pmw-calc__tier-rule"></div>
-          <p class="pmw-calc__tier-note">{{ block.settings.note }}</p>
-        </div>
-      {% endfor %}
-    </div>
+    {% if section.settings.contact_title != blank or section.settings.contact_copy != blank %}
+      <div class="pmw-price-model__contact">
+        <div class="pmw-price-model__contact-copywrap">
+          {% if section.settings.contact_eyebrow != blank %}
+            <span class="pmw-price-model__contact-eyebrow">{{ section.settings.contact_eyebrow }}</span>
+          {% endif %}
 
-    {% if section.settings.case_eyebrow != blank %}
-      <div class="pmw-calc__case-intro">
-        <span class="pmw-eyebrow pmw-calc__rowhead-eb">{{ section.settings.case_eyebrow }}</span>
-        <p class="pmw-calc__rowhead-copy">{{ section.settings.case_copy }}</p>
+          {% if section.settings.contact_title != blank %}
+            <h3 class="pmw-price-model__contact-title">{{ section.settings.contact_title }}</h3>
+          {% endif %}
+
+          {% if section.settings.contact_copy != blank %}
+            <p>{{ section.settings.contact_copy }}</p>
+          {% endif %}
+        </div>
+
+        {% if section.settings.contact_cta1 != blank %}
+          <a class="pmw-price-model__btn pmw-price-model__btn--gold" href="{{ section.settings.contact_cta1_link | default: 'mailto:support@pachamana.com' }}">
+            {{ section.settings.contact_cta1 }}
+          </a>
+        {% endif %}
       </div>
     {% endif %}
 
-    {%- assign case_blocks = section.blocks | where: 'type', 'case_row' -%}
-    {% if case_blocks.size > 0 %}
-      <div class="pmw-calc__table">
-        <div class="pmw-calc__table-head">
-          <span>Your Order</span>
-          <span style="text-align:center;">You Save</span>
-          <span style="text-align:right;">Price Each</span>
-        </div>
-        {% for block in case_blocks %}
-          <div class="pmw-calc__table-row" {{ block.shopify_attributes }}>
-            <span class="pmw-calc__row-order">{{ block.settings.order }}</span>
-            <span class="pmw-calc__row-save">{{ block.settings.save }}</span>
-            <span class="pmw-calc__row-price">{{ block.settings.price }}</span>
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    <div class="pmw-calc__bottom">
-      {% if section.settings.why_title != blank %}
-        <div class="pmw-calc__why">
-          <span class="pmw-eyebrow">{{ section.settings.why_eyebrow }}</span>
-          <p>{{ section.settings.why_copy }}</p>
+    <div class="pmw-price-model__perks">
+      {% if section.settings.free_ship_text != blank %}
+        <div class="pmw-price-model__pill pmw-price-model__pill--gold">
+          <span>Free Shipping</span>
+          <strong>{{ section.settings.free_ship_text }}</strong>
         </div>
       {% endif %}
-      {% if section.settings.contact_title != blank %}
-        <div class="pmw-calc__contact">
-          <span class="pmw-eyebrow pmw-calc__contact-eb">{{ section.settings.contact_eyebrow }}</span>
-          <h3 class="pmw-calc__contact-title">{{ section.settings.contact_title }}</h3>
-          <p class="pmw-calc__contact-copy">{{ section.settings.contact_copy }}</p>
-          <div class="pmw-calc__contact-ctas">
-            {% if section.settings.contact_cta1 != blank %}<a class="pmw-btn pmw-btn--primary" href="{{ section.settings.contact_cta1_link | default: 'mailto:support@pachamana.com' }}">{{ section.settings.contact_cta1 }}</a>{% endif %}
-            {% if section.settings.contact_cta2 != blank %}<a class="pmw-btn pmw-btn--secondary" href="{{ section.settings.contact_cta2_link | default: '/pages/wholesale' }}">{{ section.settings.contact_cta2 }}</a>{% endif %}
-          </div>
+
+      {% if section.settings.subscribe_text != blank %}
+        <div class="pmw-price-model__pill pmw-price-model__pill--cacao">
+          <span>{{ section.settings.subscribe_label }}</span>
+          <strong>{{ section.settings.subscribe_text }}</strong>
         </div>
       {% endif %}
     </div>
 
-    {% if section.settings.free_ship_text != blank %}
-      <div class="pmw-calc__pill pmw-calc__pill--big">
-        <span class="pmw-calc__pill-tag">Free Shipping</span>
-        <span class="pmw-calc__pill-text"><strong>{{ section.settings.free_ship_text }}</strong></span>
+    {% if section.settings.why_copy != blank %}
+      <div class="pmw-price-model__why">
+        {% if section.settings.why_eyebrow != blank %}
+          <span class="pmw-price-model__eyebrow pmw-price-model__why-eyebrow">{{ section.settings.why_eyebrow }}</span>
+        {% endif %}
+
+        <p>{{ section.settings.why_copy }}</p>
       </div>
     {% endif %}
-    {% if section.settings.fine_print != blank %}<p class="pmw-calc__fine">{{ section.settings.fine_print }}</p>{% endif %}
+
+    {% if section.settings.fine_print != blank %}
+      <p class="pmw-price-model__fine">{{ section.settings.fine_print }}</p>
+    {% endif %}
   </div>
 </section>
 
 <style>
-  #pmw-{{ section.id }}.pmw-calc { padding: 0; }
-  #pmw-{{ section.id }} .pmw-calc__inner { padding: 90px 64px; max-width: 1120px; margin: 0 auto; }
-  #pmw-{{ section.id }} .pmw-calc__intro { margin-bottom: 44px; }
-  #pmw-{{ section.id }} .pmw-calc__title { margin: 14px 0 10px; font-size: 40px; }
-  #pmw-{{ section.id }} .pmw-calc__sub { margin: 0; max-width: 620px; font-size: 17px; line-height: 1.7; color: var(--page-muted); }
-  #pmw-{{ section.id }} .pmw-calc__rowhead { margin-bottom: 24px; }
-  #pmw-{{ section.id }} .pmw-calc__rowhead-eb { display: block; }
-  #pmw-{{ section.id }} .pmw-calc__rowhead-copy { margin: 8px 0 0; max-width: 620px; font-size: 16px; line-height: 1.7; color: var(--page-muted); }
-  #pmw-{{ section.id }} .pmw-calc__pill { display: inline-flex; align-items: center; gap: 12px; margin-top: 18px; background: var(--card-bg); border: 1.5px solid var(--pm-sunshine-gold); border-radius: 999px; padding: 10px 12px; box-shadow: var(--card-shadow); }
-  #pmw-{{ section.id }} .pmw-calc__pill--big { margin-top: 26px; padding-right: 20px; }
-  #pmw-{{ section.id }} .pmw-calc__pill-tag { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .1em; font-size: 11px; color: var(--pm-cacao-700); background: var(--pm-sunshine-gold); padding: 5px 12px; border-radius: 999px; }
-  #pmw-{{ section.id }} .pmw-calc__pill-text { font-size: 14px; line-height: 1.5; color: var(--page-muted); padding-right: 8px; }
-  #pmw-{{ section.id }} .pmw-calc__pill--big .pmw-calc__pill-text { font-size: 16px; color: var(--page-text); }
-  #pmw-{{ section.id }} .pmw-calc__tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-  #pmw-{{ section.id }} .pmw-calc__tier { position: relative; background: var(--card-bg); border: 1.5px solid var(--card-border); border-radius: 18px; box-shadow: var(--card-shadow); padding: 34px 26px; text-align: center; overflow: hidden; }
-  #pmw-{{ section.id }} .pmw-calc__tier--hl { background: linear-gradient(165deg,#5c402f 0%,#38271d 100%); border-color: var(--pm-sunshine-gold); color: #f9f2ef; }
-  #pmw-{{ section.id }} .pmw-calc__tier-qty { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .08em; font-size: 14px; color: var(--page-text); }
-  #pmw-{{ section.id }} .pmw-calc__tier--hl .pmw-calc__tier-qty { color: var(--pm-sunshine-gold); }
-  #pmw-{{ section.id }} .pmw-calc__tier-save { margin: 16px 0 6px; font-family: var(--font-display); font-size: 46px; line-height: 1; color: var(--page-text); }
-  #pmw-{{ section.id }} .pmw-calc__tier--hl .pmw-calc__tier-save { color: #f9f2ef; }
-  #pmw-{{ section.id }} .pmw-calc__tier-off { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .1em; font-size: 11px; color: var(--pm-gold-600); }
-  #pmw-{{ section.id }} .pmw-calc__tier--hl .pmw-calc__tier-off { color: var(--pm-sunshine-gold); }
-  #pmw-{{ section.id }} .pmw-calc__tier-rule { height: 1px; background: var(--card-border); margin: 18px 0; }
-  #pmw-{{ section.id }} .pmw-calc__tier--hl .pmw-calc__tier-rule { background: rgba(255,255,255,.16); }
-  #pmw-{{ section.id }} .pmw-calc__tier-note { margin: 0; font-size: 13px; line-height: 1.6; color: var(--page-muted); }
-  #pmw-{{ section.id }} .pmw-calc__tier--hl .pmw-calc__tier-note { color: #e4d4c6; }
-  #pmw-{{ section.id }} .pmw-calc__case-intro { margin: 56px 0 18px; }
-  #pmw-{{ section.id }} .pmw-calc__table { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; box-shadow: var(--card-shadow); overflow: hidden; }
-  #pmw-{{ section.id }} .pmw-calc__table-head { display: grid; grid-template-columns: 1.6fr 1fr 1fr; padding: 18px 32px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .1em; font-size: 11px; color: #9a8a74; background: var(--alt-bg); }
-  #pmw-{{ section.id }} .pmw-calc__table-row { display: grid; grid-template-columns: 1.6fr 1fr 1fr; align-items: center; padding: 18px 32px; border-top: 1px solid var(--card-border); }
-  #pmw-{{ section.id }} .pmw-calc__row-order { font-size: 16px; color: var(--page-text); font-weight: 500; }
-  #pmw-{{ section.id }} .pmw-calc__row-save { text-align: center; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; font-size: 14px; color: var(--pm-gold-600); }
-  #pmw-{{ section.id }} .pmw-calc__row-price { text-align: right; font-family: var(--font-display); font-size: 23px; color: var(--page-text); }
-  #pmw-{{ section.id }} .pmw-calc__bottom { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; margin-top: 34px; }
-  #pmw-{{ section.id }} .pmw-calc__why { background: #fdf3e3; border: 1px solid var(--card-border); border-radius: 18px; padding: 32px 34px; }
-  #pmw-{{ section.id }} .pmw-calc__why p { margin: 12px 0 0; font-size: 15.5px; line-height: 1.75; color: var(--page-muted); }
-  #pmw-{{ section.id }} .pmw-calc__contact { position: relative; overflow: hidden; background: linear-gradient(165deg,#5c402f 0%,#38271d 100%); border-radius: 18px; padding: 32px 34px; color: #f9f2ef; }
-  #pmw-{{ section.id }} .pmw-calc__contact-eb { color: var(--pm-sunshine-gold); display: block; }
-  #pmw-{{ section.id }} .pmw-calc__contact-title { margin: 10px 0; font-size: 26px; color: #f9f2ef; }
-  #pmw-{{ section.id }} .pmw-calc__contact-copy { margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #e4d4c6; }
-  #pmw-{{ section.id }} .pmw-calc__contact-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-  /* Force button text colors against the dark cacao card — fights inherited white color */
-  #pmw-{{ section.id }} .pmw-calc__contact-ctas a.pmw-btn--primary { color: var(--pm-cacao-700) !important; }
-  #pmw-{{ section.id }} .pmw-calc__contact-ctas a.pmw-btn--secondary { color: var(--pm-cacao-700) !important; background: var(--pm-pearl-white) !important; }
-  #pmw-{{ section.id }} .pmw-calc__contact-ctas a.pmw-btn--outline { color: var(--pm-pearl-white) !important; border-color: var(--pm-pearl-white) !important; }
-  #pmw-{{ section.id }} .pmw-calc__fine { margin: 18px 0 0; font-size: 14px; color: var(--page-muted); opacity: .85; }
+  #pmw-{{ section.id }}.pmw-price-model {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    background: var(--pm-cream, #fdf8f3);
+    color: var(--pm-cacao-900, #2b2521);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 88px 72px;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__intro {
+    max-width: 680px;
+    margin-bottom: 40px;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__eyebrow {
+    display: inline-block;
+    font-family: var(--font-display, Georgia, serif);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 13px;
+    line-height: 1.2;
+    color: var(--pm-gold-600, #ab7820);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__title {
+    margin: 14px 0 12px;
+    font-family: var(--font-display, Georgia, serif);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 44px;
+    line-height: 1.04;
+    font-weight: 400;
+    color: var(--pm-cacao-900, #2b2521);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__sub {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--pm-cacao-700, #5c402f);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__sub strong {
+    color: var(--pm-cacao-900, #2b2521);
+    font-weight: 700;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__media {
+    width: 100%;
+    height: 280px;
+    margin-bottom: 40px;
+    border: 1px solid var(--pm-border, #ece0d3);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(92, 64, 47, 0.1);
+    background: #fdf3e3;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__media-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(226, 171, 67, 0.22), transparent 30%),
+      radial-gradient(circle at 82% 72%, rgba(92, 64, 47, 0.14), transparent 34%),
+      #fdf3e3;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__media-placeholder span {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #9a8a74;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__ladders {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__card {
+    background: #ffffff;
+    border: 1px solid var(--pm-border, #ece0d3);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(92, 64, 47, 0.1);
+    overflow: hidden;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__card-head {
+    padding: 20px 26px;
+    background: #fdf3e3;
+    border-bottom: 1px solid var(--pm-border, #ece0d3);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__card-title {
+    margin: 0;
+    font-family: var(--font-display, Georgia, serif);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--pm-cacao-900, #2b2521);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__card-sub {
+    margin: 4px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #9a8a74;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__card-price {
+    margin: 8px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--pm-cacao-900, #2b2521);
+    font-weight: 600;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__card-price span {
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__card-price em {
+    color: #9a8a74;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__rows {
+    background: #ffffff;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 26px;
+    border-top: 1px solid #f0e7dc;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__rows .pmw-price-model__row:first-child {
+    border-top: 0;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row--highlight {
+    background: linear-gradient(90deg, rgba(226, 171, 67, 0.13), rgba(226, 171, 67, 0.03));
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row-left {
+    min-width: 0;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row-main {
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 22px;
+    line-height: 1.1;
+    color: var(--pm-cacao-900, #2b2521);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row-note {
+    margin-top: 2px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: #9a8a74;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row-discount {
+    flex: 0 0 auto;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 28px;
+    line-height: 1;
+    color: var(--pm-gold-600, #ab7820);
+    white-space: nowrap;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row-price {
+    flex: 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row-price span {
+    display: block;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 28px;
+    line-height: 1;
+    color: var(--pm-cacao-900, #2b2521);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__row-price em {
+    display: block;
+    margin-top: 1px;
+    font-size: 11.5px;
+    line-height: 1.3;
+    font-style: normal;
+    color: #9a8a74;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__primary-cta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__primary-cta span {
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--pm-cacao-700, #5c402f);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-family: var(--font-display, Georgia, serif);
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-size: 12px;
+    line-height: 1;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      background 180ms ease,
+      color 180ms ease,
+      border-color 180ms ease;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__btn:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__btn--primary {
+    background: var(--pm-sunshine-gold, #e2ab43);
+    color: var(--pm-cacao-700, #38271d);
+    box-shadow: 0 10px 30px rgba(226, 171, 67, 0.3);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__btn--primary:hover {
+    background: #cf962f;
+    color: var(--pm-cacao-700, #38271d);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__btn--gold {
+    background: var(--pm-sunshine-gold, #e2ab43);
+    color: var(--pm-cacao-700, #38271d);
+    box-shadow: 0 10px 30px rgba(226, 171, 67, 0.22);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__btn--gold:hover {
+    background: #f0bf62;
+    color: var(--pm-cacao-700, #38271d);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding: 30px 36px;
+    border-radius: 18px;
+    background: linear-gradient(165deg, #5c402f 0%, #38271d 100%);
+    box-shadow: 0 14px 34px rgba(56, 39, 29, 0.18);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__contact-copywrap {
+    min-width: 280px;
+    flex: 1;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__contact-eyebrow {
+    display: block;
+    font-family: var(--font-display, Georgia, serif);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--pm-sunshine-gold, #e2ab43);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__contact-title {
+    margin: 4px 0 0;
+    font-family: var(--font-display, Georgia, serif);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 25px;
+    line-height: 1.15;
+    font-weight: 400;
+    color: #f9f2ef;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__contact p {
+    max-width: 500px;
+    margin: 8px 0 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e4d4c6;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__perks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 10px 20px 10px 12px;
+    box-shadow: 0 10px 30px rgba(92, 64, 47, 0.1);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__pill--gold {
+    border: 1.5px solid var(--pm-sunshine-gold, #e2ab43);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__pill--cacao {
+    border: 1.5px solid #cdb38a;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__pill span {
+    flex: 0 0 auto;
+    font-family: var(--font-display, Georgia, serif);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 11px;
+    line-height: 1;
+    border-radius: 999px;
+    padding: 6px 12px 5px;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__pill--gold span {
+    background: var(--pm-sunshine-gold, #e2ab43);
+    color: var(--pm-cacao-700, #38271d);
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__pill--cacao span {
+    background: var(--pm-cacao-700, #5c402f);
+    color: #ffffff;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__pill strong {
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--pm-cacao-900, #2b2521);
+    font-weight: 600;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__why {
+    max-width: 680px;
+    margin-top: 30px;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__why-eyebrow {
+    letter-spacing: 0.14em;
+    font-size: 12px;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__why p {
+    margin: 8px 0 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--pm-cacao-700, #5c402f);
+    font-style: italic;
+  }
+
+  #pmw-{{ section.id }} .pmw-price-model__fine {
+    margin: 24px 0 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--pm-cacao-700, #5c402f);
+    opacity: 0.85;
+  }
+
+  @media (max-width: 980px) {
+    #pmw-{{ section.id }} .pmw-price-model__inner {
+      padding: 76px 40px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__ladders {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 768px) {
-    #pmw-{{ section.id }} .pmw-calc__inner { padding: 64px 20px; }
-    #pmw-{{ section.id }} .pmw-calc__bottom { grid-template-columns: 1fr; }
-    #pmw-{{ section.id }} .pmw-calc__table-head, #pmw-{{ section.id }} .pmw-calc__table-row { padding-left: 20px; padding-right: 20px; font-size: 14px; }
-    #pmw-{{ section.id }} .pmw-calc__row-price { font-size: 18px; }
+    #pmw-{{ section.id }} .pmw-price-model__inner {
+      padding: 64px 20px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__intro {
+      margin-bottom: 30px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__title {
+      font-size: clamp(32px, 11vw, 42px);
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__sub {
+      font-size: 16px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__media {
+      height: 210px;
+      margin-bottom: 28px;
+      border-radius: 16px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__card {
+      border-radius: 16px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__card-head {
+      padding: 20px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__row {
+      padding: 17px 20px;
+      gap: 14px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__row-main {
+      font-size: 21px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__row-discount,
+    #pmw-{{ section.id }} .pmw-price-model__row-price span {
+      font-size: 25px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__primary-cta {
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__btn {
+      width: 100%;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__contact {
+      padding: 28px 22px;
+      border-radius: 16px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__contact-copywrap {
+      min-width: 0;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__perks {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__pill {
+      width: 100%;
+      align-items: flex-start;
+      border-radius: 18px;
+      padding: 14px;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__pill span {
+      width: fit-content;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #pmw-{{ section.id }} .pmw-price-model__row {
+      align-items: flex-start;
+    }
+
+    #pmw-{{ section.id }} .pmw-price-model__row-price,
+    #pmw-{{ section.id }} .pmw-price-model__row-discount {
+      padding-top: 2px;
+    }
   }
 </style>
 
 {% schema %}
 {
-  "name": "Bulk — Price Calculator",
+  "name": "Bulk — Pricing Model",
   "tag": "section",
   "settings": [
-    { "type": "header", "content": "Background" },
-    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
-      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
-    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#fdf8f3" },
-    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
-    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
-    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
-    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
-    { "type": "header", "content": "Intro" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Pricing Model" },
-    { "type": "text", "id": "headline", "label": "Headline", "default": "The More You Buy, The More You Save" },
-    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Two ways to save, both automatic. Buy by the bag and your discount climbs with total weight — or buy our 5 lb bulk bag for a standing price that drops the more bags you take." },
-    { "type": "header", "content": "By The Bag block" },
-    { "type": "text", "id": "bag_eyebrow", "label": "By-the-bag eyebrow", "default": "By The Bag" },
-    { "type": "textarea", "id": "bag_copy", "label": "By-the-bag copy", "default": "Nothing to apply for, no code to enter. As you add bags to your cart the price drops on its own — every bag gets cheaper the more total weight you reach. Half-pound or full-pound, the reward meets at the same weight." },
-    { "type": "text", "id": "bag_pill", "label": "Automatic pill text", "default": "The discount just appears in your cart — watch every bag get cheaper as the weight adds up. No code, no minimums." },
-    { "type": "header", "content": "By The Case block" },
-    { "type": "text", "id": "case_eyebrow", "label": "By-the-case eyebrow", "default": "The 5 lb Bulk Bag" },
-    { "type": "textarea", "id": "case_copy", "label": "By-the-case copy", "default": "Our 5 lb bulk bag — available in pure ground or stone-ground paste — for facilitators and daily drinkers who move through a lot of cacao. The standing price drops the more bags you take." },
-    { "type": "header", "content": "Bottom: Why + Contact" },
-    { "type": "text", "id": "why_eyebrow", "label": "Why eyebrow", "default": "Why We Do It This Way" },
-    { "type": "textarea", "id": "why_copy", "label": "Why copy", "default": "We hear you — price matters when you're choosing your cacao, and we want this to be affordable for you. All we ask is that you carry a little more volume; that's what keeps our fulfillment sustainable. Buy more, and we'll keep meeting you with a better price." },
-    { "type": "text", "id": "contact_eyebrow", "label": "Contact eyebrow", "default": "Over 25 lb" },
-    { "type": "text", "id": "contact_title", "label": "Contact title", "default": "Let's Build Your Price" },
-    { "type": "textarea", "id": "contact_copy", "label": "Contact copy", "default": "Past 25 lb, freight shifts as the price comes down — so we set these orders up with you directly. Reach out and we'll organize a price that works for you." },
-    { "type": "text", "id": "contact_cta1", "label": "Contact CTA1", "default": "Contact Sales" },
-    { "type": "url", "id": "contact_cta1_link", "label": "Contact CTA1 link" },
-    { "type": "text", "id": "contact_cta2", "label": "Contact CTA2", "default": "Become A Wholesaler" },
-    { "type": "url", "id": "contact_cta2_link", "label": "Contact CTA2 link" },
-    { "type": "header", "content": "Footer" },
-    { "type": "text", "id": "free_ship_text", "label": "Free shipping line", "default": "Every order over $100 ships free." },
-    { "type": "textarea", "id": "fine_print", "label": "Fine print", "default": "Discounts apply to your order total at checkout — no code needed. Bulk pricing is its own reward and does not combine with subscription savings." }
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background type",
+      "default": "color",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#fdf8f3"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "bg_opacity",
+      "label": "Background opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "bg_overlay_color",
+      "label": "Image overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "bg_overlay_opacity",
+      "label": "Image overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Intro"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Pricing Model"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "The More You Buy, The More You Save"
+    },
+    {
+      "type": "textarea",
+      "id": "subhead",
+      "label": "Subhead",
+      "default": "A value discount on all our cacao — bags, gold paste bars, or bulk. The more you buy, the more you save, up to 20% off. Automatic, no codes."
+    },
+    {
+      "type": "image_picker",
+      "id": "pricing_image",
+      "label": "Pricing image"
+    },
+    {
+      "type": "text",
+      "id": "image_placeholder_text",
+      "label": "Placeholder text",
+      "default": "Drop in a photo of your cacao bars"
+    },
+    {
+      "type": "header",
+      "content": "Left card — Bag or Bar"
+    },
+    {
+      "type": "text",
+      "id": "bag_eyebrow",
+      "label": "Card title",
+      "default": "By The Bag Or Bar"
+    },
+    {
+      "type": "textarea",
+      "id": "bag_copy",
+      "label": "Card subtitle",
+      "default": "Bagged cacao (8 oz or 16 oz) + gold paste bars"
+    },
+    {
+      "type": "text",
+      "id": "bag_low_price",
+      "label": "Low price",
+      "default": "$41.60"
+    },
+    {
+      "type": "text",
+      "id": "bag_from_price",
+      "label": "From price",
+      "default": "$52"
+    },
+    {
+      "type": "header",
+      "content": "Right card — 5 LB Bulk Bag"
+    },
+    {
+      "type": "text",
+      "id": "case_eyebrow",
+      "label": "Card title",
+      "default": "5 LB Bulk Bag"
+    },
+    {
+      "type": "textarea",
+      "id": "case_copy",
+      "label": "Card subtitle",
+      "default": "Ground or stone-ground · price per bag"
+    },
+    {
+      "type": "text",
+      "id": "case_low_price",
+      "label": "Low price",
+      "default": "$36.80"
+    },
+    {
+      "type": "text",
+      "id": "case_from_price",
+      "label": "From price",
+      "default": "$46"
+    },
+    {
+      "type": "header",
+      "content": "Primary CTA"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Start Your Order"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    },
+    {
+      "type": "text",
+      "id": "cart_note",
+      "label": "Cart note",
+      "default": "Your discount appears automatically as your cart grows."
+    },
+    {
+      "type": "header",
+      "content": "More than 25 LB"
+    },
+    {
+      "type": "text",
+      "id": "contact_eyebrow",
+      "label": "Contact eyebrow",
+      "default": "More Than 25 LB"
+    },
+    {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Contact title",
+      "default": "Custom Bulk Pricing"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_copy",
+      "label": "Contact copy",
+      "default": "Freight changes past 25 lb — so we set these orders up with you directly for a custom price that works."
+    },
+    {
+      "type": "text",
+      "id": "contact_cta1",
+      "label": "Contact CTA",
+      "default": "Contact Sales"
+    },
+    {
+      "type": "url",
+      "id": "contact_cta1_link",
+      "label": "Contact CTA link"
+    },
+    {
+      "type": "header",
+      "content": "Perks"
+    },
+    {
+      "type": "text",
+      "id": "free_ship_text",
+      "label": "Free shipping text",
+      "default": "Every order over $100 ships free."
+    },
+    {
+      "type": "text",
+      "id": "subscribe_label",
+      "label": "Subscribe label",
+      "default": "Subscribe & Save"
+    },
+    {
+      "type": "textarea",
+      "id": "subscribe_text",
+      "label": "Subscribe text",
+      "default": "Want the 15% price on just 1–5 lb? Commit to a subscription — doesn’t stack with bulk pricing."
+    },
+    {
+      "type": "header",
+      "content": "Why + Fine print"
+    },
+    {
+      "type": "text",
+      "id": "why_eyebrow",
+      "label": "Why eyebrow",
+      "default": "Why We Do It This Way"
+    },
+    {
+      "type": "textarea",
+      "id": "why_copy",
+      "label": "Why copy",
+      "default": "Carrying a little more volume keeps our fulfillment sustainable — so we can keep meeting you with a better price."
+    },
+    {
+      "type": "textarea",
+      "id": "fine_print",
+      "label": "Fine print",
+      "default": "Discounts apply to your order total at checkout — no code needed. Subscribe & Save is an alternative way to reach 15% on a smaller 1–5 lb order — it can’t be stacked on top of the volume discounts above."
+    }
   ],
   "blocks": [
-    { "type": "tier", "name": "Discount tier card", "limit": 8, "settings": [
-      { "type": "text", "id": "qty", "label": "Quantity label", "default": "About 3 lbs" },
-      { "type": "text", "id": "save", "label": "Save %", "default": "5%" },
-      { "type": "text", "id": "note", "label": "Note", "default": "6 × 8 oz  ·  or 3 × 1 lb" },
-      { "type": "checkbox", "id": "highlight", "label": "Highlight (dark style)", "default": false }
-    ]},
-    { "type": "case_row", "name": "5 lb case row", "limit": 8, "settings": [
-      { "type": "text", "id": "order", "label": "Order", "default": "1 × 5 lb bag" },
-      { "type": "text", "id": "save", "label": "Save", "default": "Standing price" },
-      { "type": "text", "id": "price", "label": "Price each", "default": "$230" }
-    ]}
+    {
+      "type": "tier",
+      "name": "Bag or bar row",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "qty",
+          "label": "Weight label",
+          "default": "3 LB"
+        },
+        {
+          "type": "text",
+          "id": "save",
+          "label": "Savings",
+          "default": "5%"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Note",
+          "default": "6 × 8 oz, or 3 × 16 oz"
+        },
+        {
+          "type": "checkbox",
+          "id": "highlight",
+          "label": "Highlight row",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "case_row",
+      "name": "5 LB bulk row",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "order",
+          "label": "Weight label",
+          "default": "5 LB"
+        },
+        {
+          "type": "text",
+          "id": "save",
+          "label": "Note",
+          "default": "1 bag"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price each",
+          "default": "$230"
+        }
+      ]
+    }
   ],
-  "presets": [{
-    "name": "Bulk — Price Calculator",
-    "blocks": [
-      { "type": "tier", "settings": { "qty": "About 3 lbs", "save": "5%", "note": "6 × 8 oz  ·  or 3 × 1 lb" } },
-      { "type": "tier", "settings": { "qty": "About 6 lbs", "save": "10%", "note": "12 × 8 oz  ·  or 6 × 1 lb" } },
-      { "type": "tier", "settings": { "qty": "About 10 lbs", "save": "15%", "note": "20 × 8 oz  ·  or 10 × 1 lb" } },
-      { "type": "tier", "settings": { "qty": "About 20 lbs", "save": "20%", "note": "40 × 8 oz  ·  or 20 × 1 lb", "highlight": true } },
-      { "type": "case_row", "settings": { "order": "1 × 5 lb bag", "save": "Standing price", "price": "$230" } },
-      { "type": "case_row", "settings": { "order": "2 × 5 lb bags", "save": "10% off", "price": "$207" } },
-      { "type": "case_row", "settings": { "order": "3 × 5 lb bags", "save": "15% off", "price": "$195.50" } },
-      { "type": "case_row", "settings": { "order": "5 × 5 lb bags", "save": "20% off", "price": "$184" } }
-    ]
-  }]
+  "presets": [
+    {
+      "name": "Bulk — Pricing Model",
+      "blocks": [
+        {
+          "type": "tier",
+          "settings": {
+            "qty": "3 LB",
+            "save": "5%",
+            "note": "6 × 8 oz, or 3 × 16 oz"
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "qty": "6 LB",
+            "save": "10%",
+            "note": "12 × 8 oz, or 6 × 16 oz"
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "qty": "10 LB",
+            "save": "15%",
+            "note": "20 × 8 oz, or 10 × 16 oz"
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "qty": "20 LB",
+            "save": "20%",
+            "note": "40 × 8 oz, or 20 × 16 oz",
+            "highlight": true
+          }
+        },
+        {
+          "type": "case_row",
+          "settings": {
+            "order": "5 LB",
+            "save": "1 bag",
+            "price": "$230"
+          }
+        },
+        {
+          "type": "case_row",
+          "settings": {
+            "order": "10 LB",
+            "save": "2 bags · 10% off",
+            "price": "$207"
+          }
+        },
+        {
+          "type": "case_row",
+          "settings": {
+            "order": "15 LB",
+            "save": "3 bags · 15% off",
+            "price": "$195"
+          }
+        },
+        {
+          "type": "case_row",
+          "settings": {
+            "order": "25 LB",
+            "save": "5 bags · 20% off",
+            "price": "$184"
+          }
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
