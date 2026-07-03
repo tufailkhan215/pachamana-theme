@@ -1,0 +1,283 @@
+{{ 'bulk-shared.css' | asset_url | stylesheet_tag }}
+
+<section class="pmw pmw-scv2" id="pmw-{{ section.id }}">
+
+  {%- comment -%} HERO {%- endcomment -%}
+  <div class="pmw-scv2__hero">
+    <div class="pmw-scv2__inner pmw-scv2__hero-inner">
+      {% if section.settings.hero_eyebrow != blank %}
+        <span class="pmw-scv2__eyebrow">
+          <span class="pmw-scv2__dash"></span>{{ section.settings.hero_eyebrow }}<span class="pmw-scv2__dash"></span>
+        </span>
+      {% endif %}
+      <h1 class="pmw-scv2__h1">{{ section.settings.hero_headline }}</h1>
+      {% if section.settings.hero_tagline != blank %}
+        <p class="pmw-scv2__tagline">{{ section.settings.hero_tagline }}</p>
+      {% endif %}
+      {% if section.settings.hero_body != blank %}
+        <div class="pmw-scv2__body">{{ section.settings.hero_body }}</div>
+      {% endif %}
+      <div class="pmw-scv2__ctas">
+        {% if section.settings.hero_cta1_label != blank %}
+          <a href="{{ section.settings.hero_cta1_link | default: '#' }}" class="pmw-btn pmw-btn--primary">{{ section.settings.hero_cta1_label }}</a>
+        {% endif %}
+        {% if section.settings.hero_cta2_label != blank %}
+          <a href="{{ section.settings.hero_cta2_link | default: '#' }}" class="pmw-btn pmw-btn--outline">{{ section.settings.hero_cta2_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} PROOF STRIP {%- endcomment -%}
+  <div class="pmw-scv2__proof">
+    <div class="pmw-scv2__inner pmw-scv2__proof-inner">
+      {% if section.settings.proof_line != blank %}
+        <p class="pmw-scv2__proof-line">{{ section.settings.proof_line }}</p>
+      {% endif %}
+      {% if section.settings.proof_link_label != blank %}
+        <a href="{{ section.settings.proof_link_url | default: '#' }}" class="pmw-scv2__proof-link">{{ section.settings.proof_link_label }} <span aria-hidden="true">&rsaquo;</span></a>
+      {% endif %}
+    </div>
+  </div>
+
+  {%- comment -%} WHY IT TESTS CLEAN {%- endcomment -%}
+  <div class="pmw-scv2__why">
+    <div class="pmw-scv2__inner pmw-scv2__why-inner">
+      {% if section.settings.why_eyebrow != blank %}
+        <p class="pmw-scv2__section-eyebrow">{{ section.settings.why_eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.why_headline != blank %}
+        <h2 class="pmw-scv2__h2">{{ section.settings.why_headline }}</h2>
+      {% endif %}
+      {% if section.settings.why_body != blank %}
+        <div class="pmw-scv2__body">{{ section.settings.why_body }}</div>
+      {% endif %}
+      {% if section.settings.why_handoff_body != blank %}
+        <div class="pmw-scv2__body pmw-scv2__body--small">{{ section.settings.why_handoff_body }}</div>
+      {% endif %}
+      {% if section.settings.why_link_label != blank %}
+        <a href="{{ section.settings.why_link_url | default: '#' }}" class="pmw-scv2__inline-link">{{ section.settings.why_link_label }} <span aria-hidden="true">&rsaquo;</span></a>
+      {% endif %}
+    </div>
+  </div>
+
+  {%- comment -%} SHOP CTA {%- endcomment -%}
+  <div class="pmw-scv2__shop">
+    <div class="pmw-scv2__inner pmw-scv2__shop-inner">
+      {% if section.settings.shop_headline != blank %}
+        <h2 class="pmw-scv2__h2 pmw-scv2__h2--light">{{ section.settings.shop_headline }}</h2>
+      {% endif %}
+      {% if section.settings.shop_body != blank %}
+        <div class="pmw-scv2__body pmw-scv2__body--light">{{ section.settings.shop_body }}</div>
+      {% endif %}
+      <div class="pmw-scv2__ctas">
+        {% if section.settings.shop_cta1_label != blank %}
+          <a href="{{ section.settings.shop_cta1_link | default: '#' }}" class="pmw-btn pmw-btn--on-dark">{{ section.settings.shop_cta1_label }}</a>
+        {% endif %}
+        {% if section.settings.shop_cta2_label != blank %}
+          <a href="{{ section.settings.shop_cta2_link | default: '#' }}" class="pmw-btn pmw-btn--ghost-on-dark">{{ section.settings.shop_cta2_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} SOURCING NOTE {%- endcomment -%}
+  {% if section.settings.note_body != blank %}
+    <div class="pmw-scv2__note">
+      <div class="pmw-scv2__inner pmw-scv2__note-inner">
+        {% if section.settings.note_eyebrow != blank %}
+          <p class="pmw-scv2__section-eyebrow">{{ section.settings.note_eyebrow }}</p>
+        {% endif %}
+        <div class="pmw-scv2__note-body">{{ section.settings.note_body }}</div>
+      </div>
+    </div>
+  {% endif %}
+
+  {%- comment -%} FAQ {%- endcomment -%}
+  {%- assign faq_blocks = section.blocks | where: 'type', 'faq' -%}
+  {% if faq_blocks.size > 0 %}
+    <div class="pmw-scv2__faq">
+      <div class="pmw-scv2__inner pmw-scv2__faq-inner">
+        {% if section.settings.faq_headline != blank %}
+          <h2 class="pmw-scv2__h2 pmw-scv2__h2--faq">{{ section.settings.faq_headline }}</h2>
+        {% endif %}
+        <div class="pmw-scv2__faq-list">
+          {% for block in faq_blocks %}
+            <details class="pmw-scv2__faq-item" {{ block.shopify_attributes }}{% if forloop.first %} open{% endif %}>
+              <summary class="pmw-scv2__faq-q">
+                <span>{{ block.settings.question }}</span>
+                <span class="pmw-scv2__faq-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="pmw-scv2__faq-a">{{ block.settings.answer }}</div>
+            </details>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {%- comment -%} CLOSING {%- endcomment -%}
+  <div class="pmw-scv2__close">
+    <div class="pmw-scv2__inner pmw-scv2__close-inner">
+      {% if section.settings.close_body != blank %}
+        <div class="pmw-scv2__close-body">{{ section.settings.close_body }}</div>
+      {% endif %}
+      {% if section.settings.close_cta_label != blank %}
+        <div class="pmw-scv2__ctas">
+          <a href="{{ section.settings.close_cta_link | default: '#' }}" class="pmw-btn pmw-btn--primary">{{ section.settings.close_cta_label }}</a>
+        </div>
+      {% endif %}
+      {% if section.settings.close_contact != blank %}
+        <p class="pmw-scv2__contact">{{ section.settings.close_contact }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+
+<style>
+  #pmw-{{ section.id }}.pmw-scv2 { background: var(--pm-pearl-white); }
+  #pmw-{{ section.id }} .pmw-scv2__inner { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+  #pmw-{{ section.id }} .pmw-scv2__eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .2em; font-size: 12px; color: var(--pm-gold-600); }
+  #pmw-{{ section.id }} .pmw-scv2__dash { width: 26px; height: 1.5px; background: currentColor; opacity: .6; }
+  #pmw-{{ section.id }} .pmw-scv2__section-eyebrow { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .18em; font-size: 12px; color: var(--pm-gold-600); margin: 0 0 14px; }
+
+  /* HERO */
+  #pmw-{{ section.id }} .pmw-scv2__hero { background: var(--hero-grad); padding: 96px 0 76px; text-align: center; position: relative; overflow: hidden; }
+  #pmw-{{ section.id }} .pmw-scv2__hero-inner { text-align: center; }
+  #pmw-{{ section.id }} .pmw-scv2__h1 { margin: 22px 0 0; font-size: 60px; line-height: 1.02; color: var(--pm-cacao-800); }
+  #pmw-{{ section.id }} .pmw-scv2__tagline { margin: 18px auto 0; font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.5; color: var(--pm-cacao-500); max-width: 520px; }
+  #pmw-{{ section.id }} .pmw-scv2__body { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: var(--pm-cacao-500); margin: 28px auto 0; max-width: 640px; }
+  #pmw-{{ section.id }} .pmw-scv2__body--small { font-size: 16px; margin-top: 20px; }
+  #pmw-{{ section.id }} .pmw-scv2__body--light { color: rgba(249,242,239,.85); }
+  #pmw-{{ section.id }} .pmw-scv2__body p { margin: 0 0 14px; }
+  #pmw-{{ section.id }} .pmw-scv2__body p:last-child { margin-bottom: 0; }
+  #pmw-{{ section.id }} .pmw-scv2__ctas { display: flex; gap: 14px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+
+  /* PROOF STRIP */
+  #pmw-{{ section.id }} .pmw-scv2__proof { background: var(--pm-cacao-800); color: #f0e5d5; padding: 26px 0; }
+  #pmw-{{ section.id }} .pmw-scv2__proof-inner { display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; }
+  #pmw-{{ section.id }} .pmw-scv2__proof-line { margin: 0; font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: #f0e5d5; letter-spacing: .01em; }
+  #pmw-{{ section.id }} .pmw-scv2__proof-link { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; color: var(--pm-sunshine-gold); border-bottom: 1px solid rgba(226,171,67,.35); padding-bottom: 3px; }
+  #pmw-{{ section.id }} .pmw-scv2__proof-link:hover { color: var(--pm-tan-200); }
+
+  /* WHY */
+  #pmw-{{ section.id }} .pmw-scv2__why { padding: 88px 0 72px; background: var(--pm-pearl-white); }
+  #pmw-{{ section.id }} .pmw-scv2__why-inner { text-align: center; }
+  #pmw-{{ section.id }} .pmw-scv2__h2 { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .03em; font-size: 36px; line-height: 1.1; color: var(--pm-cacao-800); margin: 0 0 22px; }
+  #pmw-{{ section.id }} .pmw-scv2__h2--light { color: var(--pm-pearl-white); }
+  #pmw-{{ section.id }} .pmw-scv2__h2--faq { text-align: center; margin-bottom: 34px; }
+  #pmw-{{ section.id }} .pmw-scv2__inline-link { display: inline-block; margin-top: 20px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; color: var(--pm-cacao-700); border-bottom: 1.5px solid var(--pm-sunshine-gold); padding-bottom: 3px; }
+  #pmw-{{ section.id }} .pmw-scv2__inline-link:hover { color: var(--pm-gold-700); }
+
+  /* SHOP */
+  #pmw-{{ section.id }} .pmw-scv2__shop { background: var(--band-bg); padding: 84px 0; color: var(--pm-pearl-white); text-align: center; }
+  #pmw-{{ section.id }} .pmw-btn--ghost-on-dark { background: transparent; color: var(--pm-pearl-white) !important; border: 1.5px solid rgba(249,242,239,.5); }
+  #pmw-{{ section.id }} .pmw-btn--ghost-on-dark:hover { border-color: var(--pm-sunshine-gold); }
+
+  /* NOTE */
+  #pmw-{{ section.id }} .pmw-scv2__note { background: var(--alt-bg); padding: 76px 0; }
+  #pmw-{{ section.id }} .pmw-scv2__note-inner { text-align: center; }
+  #pmw-{{ section.id }} .pmw-scv2__note-body { font-family: var(--font-body); font-style: italic; font-size: 21px; line-height: 1.65; color: var(--pm-cacao-600); max-width: 640px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-scv2__note-body p { margin: 0 0 14px; }
+  #pmw-{{ section.id }} .pmw-scv2__note-body p:last-child { margin-bottom: 0; }
+
+  /* FAQ */
+  #pmw-{{ section.id }} .pmw-scv2__faq { padding: 84px 0; background: var(--pm-pearl-white); }
+  #pmw-{{ section.id }} .pmw-scv2__faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 700px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-scv2__faq-item { background: #ffffff; border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; }
+  #pmw-{{ section.id }} .pmw-scv2__faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 26px; cursor: pointer; list-style: none; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .04em; font-size: 15px; color: var(--pm-cacao-700); }
+  #pmw-{{ section.id }} .pmw-scv2__faq-q::-webkit-details-marker { display: none; }
+  #pmw-{{ section.id }} .pmw-scv2__faq-icon { font-family: var(--font-display); font-size: 26px; color: var(--pm-sunshine-gold); line-height: 1; transition: transform .25s ease; }
+  #pmw-{{ section.id }} .pmw-scv2__faq-item[open] .pmw-scv2__faq-icon { transform: rotate(45deg); }
+  #pmw-{{ section.id }} .pmw-scv2__faq-a { padding: 0 26px 22px; font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--pm-cacao-500); }
+  #pmw-{{ section.id }} .pmw-scv2__faq-a p { margin: 0; }
+
+  /* CLOSING */
+  #pmw-{{ section.id }} .pmw-scv2__close { background: var(--hero-grad); padding: 92px 0 82px; text-align: center; }
+  #pmw-{{ section.id }} .pmw-scv2__close-inner { text-align: center; }
+  #pmw-{{ section.id }} .pmw-scv2__close-body { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .04em; font-size: 32px; line-height: 1.2; color: var(--pm-cacao-800); max-width: 620px; margin: 0 auto; }
+  #pmw-{{ section.id }} .pmw-scv2__close-body p { margin: 0 0 10px; }
+  #pmw-{{ section.id }} .pmw-scv2__close-body p:last-child { margin-bottom: 0; }
+  #pmw-{{ section.id }} .pmw-scv2__contact { margin: 28px 0 0; font-family: var(--font-body); font-size: 14px; letter-spacing: .04em; color: var(--pm-cacao-500); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }} .pmw-scv2__inner { padding: 0 22px; }
+    #pmw-{{ section.id }} .pmw-scv2__hero { padding: 68px 0 56px; }
+    #pmw-{{ section.id }} .pmw-scv2__h1 { font-size: 40px; }
+    #pmw-{{ section.id }} .pmw-scv2__tagline { font-size: 17px; }
+    #pmw-{{ section.id }} .pmw-scv2__body { font-size: 16px; }
+    #pmw-{{ section.id }} .pmw-scv2__h2 { font-size: 28px; }
+    #pmw-{{ section.id }} .pmw-scv2__why, #pmw-{{ section.id }} .pmw-scv2__shop, #pmw-{{ section.id }} .pmw-scv2__note, #pmw-{{ section.id }} .pmw-scv2__faq, #pmw-{{ section.id }} .pmw-scv2__close { padding: 60px 0; }
+    #pmw-{{ section.id }} .pmw-scv2__note-body { font-size: 18px; }
+    #pmw-{{ section.id }} .pmw-scv2__close-body { font-size: 24px; }
+    #pmw-{{ section.id }} .pmw-scv2__faq-q { padding: 18px 20px; font-size: 14px; }
+    #pmw-{{ section.id }} .pmw-scv2__faq-a { padding: 0 20px 18px; font-size: 15px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Safe Cacao v2 Page",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text",     "id": "hero_eyebrow",  "label": "Hero eyebrow",  "default": "Lab-Tested Cacao" },
+    { "type": "text",     "id": "hero_headline", "label": "H1 (server-rendered)", "default": "Lab-Tested Cacao You Can Trust" },
+    { "type": "text",     "id": "hero_tagline",  "label": "Tagline",       "default": "Clean from the highland soil to your cup." },
+    { "type": "richtext", "id": "hero_body",     "label": "Hero body",     "default": "<p>We drink this cacao every morning, and we share it with the people we love. That trust is not a line on a page for us, it is the reason we test every harvest and publish the numbers. Our heirloom Chuncho grows high in the Peruvian Andes, wild-harvested by a family we have worked beside for years, stone-ground at origin, and sent to an independent lab before it ever reaches your cup.</p>" },
+    { "type": "text",     "id": "hero_cta1_label", "label": "CTA 1 label", "default": "Shop Tested Cacao" },
+    { "type": "url",      "id": "hero_cta1_link",  "label": "CTA 1 link" },
+    { "type": "text",     "id": "hero_cta2_label", "label": "CTA 2 label", "default": "See The Lab Report" },
+    { "type": "url",      "id": "hero_cta2_link",  "label": "CTA 2 link" },
+
+    { "type": "header", "content": "Proof strip" },
+    { "type": "textarea", "id": "proof_line",       "label": "Proof line",      "default": "Independently tested. Lead below 0.010 ppm. Cadmium 0.126 ppm. Both sit well under California Prop 65 and European Union limits." },
+    { "type": "text",     "id": "proof_link_label", "label": "Proof link label", "default": "Read the full lab breakdown" },
+    { "type": "url",      "id": "proof_link_url",   "label": "Proof link URL" },
+
+    { "type": "header", "content": "Why it tests clean" },
+    { "type": "text",     "id": "why_eyebrow",       "label": "Eyebrow",        "default": "Why It Tests Clean" },
+    { "type": "text",     "id": "why_headline",      "label": "Headline",       "default": "Highland Soil, Careful Hands" },
+    { "type": "richtext", "id": "why_body",          "label": "Body",           "default": "<p>High elevation is the quiet reason. Our groves sit where the air is thin and the soil is old, and those conditions keep cadmium low long before anything is harvested. From there the cacao stays clean: small family plots instead of industrial monocrop, careful post-harvest handling where lead never enters the picture, and stone grinding at origin so nothing is added on the way. We pay the family three times the local market rate so that doing it this carefully stays possible.</p>" },
+    { "type": "richtext", "id": "why_handoff_body", "label": "Handoff copy (before article link)", "default": "<p>For the science behind the results, the role of elevation and soil, and how cacao really compares to everyday foods, we wrote the whole story here.</p>" },
+    { "type": "text",     "id": "why_link_label",   "label": "Article link label", "default": "Heavy metals in cacao, explained" },
+    { "type": "url",      "id": "why_link_url",     "label": "Article link URL" },
+
+    { "type": "header", "content": "Shop CTA" },
+    { "type": "text",     "id": "shop_headline",    "label": "Headline",     "default": "Shop The Cacao Behind The Results" },
+    { "type": "richtext", "id": "shop_body",        "label": "Body",         "default": "<p>Every bag on our shelf is the same cacao that produced these numbers. Start with a single pour, or stock the season.</p>" },
+    { "type": "text",     "id": "shop_cta1_label", "label": "CTA 1 label",  "default": "Shop Cacao" },
+    { "type": "url",      "id": "shop_cta1_link",  "label": "CTA 1 link" },
+    { "type": "text",     "id": "shop_cta2_label", "label": "CTA 2 label",  "default": "Buy In Bulk" },
+    { "type": "url",      "id": "shop_cta2_link",  "label": "CTA 2 link" },
+
+    { "type": "header", "content": "Sourcing note (Ayni)" },
+    { "type": "text",     "id": "note_eyebrow", "label": "Eyebrow", "default": "A Note On How We Source" },
+    { "type": "richtext", "id": "note_body",    "label": "Body",    "default": "<p>Ayni is the Andean practice of sacred reciprocity, and it shapes every decision we make. When the farm is cared for, the cacao is clean, and the cup carries that forward. Ceremony starts at the farm.</p>" },
+
+    { "type": "header", "content": "FAQ" },
+    { "type": "text", "id": "faq_headline", "label": "Headline", "default": "Questions" },
+
+    { "type": "header", "content": "Closing" },
+    { "type": "richtext", "id": "close_body",    "label": "Body",         "default": "<p>Pour from a bag you can trust.</p><p>From Peru with love.</p>" },
+    { "type": "text",     "id": "close_cta_label","label": "CTA label",   "default": "Shop Tested Cacao" },
+    { "type": "url",      "id": "close_cta_link", "label": "CTA link" },
+    { "type": "text",     "id": "close_contact",  "label": "Contact line", "default": "hello@pachamana.com · Grass Valley, California" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ item",
+      "settings": [
+        { "type": "text",     "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer",   "label": "Answer" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    { "name": "Safe Cacao v2 Page" }
+  ]
+}
+{% endschema %}
