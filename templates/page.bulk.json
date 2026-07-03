@@ -315,40 +315,96 @@
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/7-1_8acfdfa2-3093-4aff-8ef3-1502ac73c47e.png",
-            "name": "Chuncho Paste Block",
+            "badge": "Single Origin",
             "origin": "Cuzco, Peru",
+            "name": "Chuncho Paste Block",
             "price": "1 lb block",
-            "badge": "Single Origin"
+            "button_label": "Add",
+            "button_link": ""
           }
         },
         "p2": {
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/5_lb_bag.png",
-            "name": "Ground Chuncho",
+            "badge": "Bulk",
             "origin": "Bulk Bag",
+            "name": "Ground Chuncho",
             "price": "5 lb bag",
-            "badge": "Bulk"
+            "button_label": "Add",
+            "button_link": ""
           }
         },
         "p3": {
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
-            "name": "Mushroom Vitality",
+            "badge": "Functional",
             "origin": "Cacao + Adaptogens",
+            "name": "Mushroom Vitality",
             "price": "Ground",
-            "badge": "Functional"
+            "button_label": "Add",
+            "button_link": ""
           }
         },
         "p4": {
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
-            "name": "Rose Vanilla",
+            "badge": "Botanical",
             "origin": "Rose + Vanilla Bean",
+            "name": "Rose Vanilla",
             "price": "Ground",
-            "badge": "Botanical"
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_fmyizi": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
+            "badge": "Botanical",
+            "origin": "Rose + Vanilla Bean",
+            "name": "Rose Vanilla",
+            "price": "Ground",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_4p9Ewb": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
+            "badge": "Botanical",
+            "origin": "Rose + Vanilla Bean",
+            "name": "Rose Vanilla",
+            "price": "Ground",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_VcPVt7": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
+            "badge": "Botanical",
+            "origin": "Rose + Vanilla Bean",
+            "name": "Rose Vanilla",
+            "price": "Ground",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_X6LbaJ": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
+            "badge": "Botanical",
+            "origin": "Rose + Vanilla Bean",
+            "name": "Rose Vanilla",
+            "price": "Ground",
+            "button_label": "Add",
+            "button_link": ""
           }
         }
       },
@@ -356,7 +412,11 @@
         "p1",
         "p2",
         "p3",
-        "p4"
+        "p4",
+        "product_card_fmyizi",
+        "product_card_4p9Ewb",
+        "product_card_VcPVt7",
+        "product_card_X6LbaJ"
       ],
       "settings": {
         "bg_type": "color",
@@ -366,7 +426,10 @@
         "bg_overlay_opacity": 0,
         "eyebrow": "The Range",
         "headline": "Everything Buys In Bulk",
-        "subhead": "Volume discounts apply across the full range — mix and match to reach the next tier."
+        "subhead": "Volume discounts apply across the full range — mix and match to reach the next tier.",
+        "bottom_copy": "This is our core range — single-serve packets, flavored grounds, and seasonal blends are all on Faire. See everything we stock and order with one account.",
+        "cta_label": "View Full Range On Faire",
+        "cta_link": ""
       }
     },
     "resell": {
