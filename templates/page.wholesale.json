@@ -384,7 +384,55 @@
             "button_link": ""
           }
         },
+        "product_card_BqhUgY": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
+            "badge": "Functional",
+            "origin": "Cacao + Adaptogens",
+            "name": "Mushroom Vitality",
+            "price": "8 & 16 Oz. Bags",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_bhzCFz": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
+            "badge": "Functional",
+            "origin": "Cacao + Adaptogens",
+            "name": "Mushroom Vitality",
+            "price": "8 & 16 Oz. Bags",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_DnNk8k": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
+            "badge": "Functional",
+            "origin": "Cacao + Adaptogens",
+            "name": "Mushroom Vitality",
+            "price": "8 & 16 Oz. Bags",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
         "p4": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
+            "badge": "Botanical",
+            "origin": "Rose + Vanilla Bean Powder",
+            "name": "Rose Vanilla",
+            "price": "8 & 16 Oz. Bags",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_JGj4Ng": {
           "type": "product_card",
           "settings": {
             "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
@@ -401,7 +449,11 @@
         "p1",
         "p2",
         "p3",
-        "p4"
+        "product_card_BqhUgY",
+        "product_card_bhzCFz",
+        "product_card_DnNk8k",
+        "p4",
+        "product_card_JGj4Ng"
       ],
       "settings": {
         "bg_type": "color",
