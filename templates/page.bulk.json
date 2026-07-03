@@ -261,14 +261,6 @@
         "subhead": "Start small or go all in — every size counts toward your volume discount."
       }
     },
-    "section_background_motion_W6x3WT": {
-      "type": "section-background-motion",
-      "name": "Background Motion",
-      "settings": {
-        "heading": "ceremony starts at the farm",
-        "heading1": "Wild-harvested from indigenous farmers in Peru."
-      }
-    },
     "subscribe": {
       "type": "bulk-subscribe",
       "settings": {
@@ -282,6 +274,36 @@
         "body": "You don't have to buy in bulk to get a deal. Take 15% off even a single bag — just commit to a three-month subscription. It's one path or the other, though: subscription savings don't combine with bulk pricing.",
         "cta_label": "Start A Subscription",
         "cta_link": "/collections/all"
+      }
+    },
+    "main_page_tHT6HB": {
+      "type": "main-page",
+      "blocks": {
+        "slide_yBzQiy": {
+          "type": "slide",
+          "settings": {}
+        },
+        "slide_jhNqfe": {
+          "type": "slide",
+          "settings": {}
+        },
+        "slide_jbqYCg": {
+          "type": "slide",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "slide_yBzQiy",
+        "slide_jhNqfe",
+        "slide_jbqYCg"
+      ],
+      "name": "Main Page",
+      "settings": {
+        "slide_duration": 5000,
+        "transition_duration": 500,
+        "loop": true,
+        "ken_burns": true,
+        "ken_burns_direction": "in"
       }
     },
     "segments": {
@@ -561,8 +583,8 @@
     "savings",
     "calc",
     "sizes",
-    "section_background_motion_W6x3WT",
     "subscribe",
+    "main_page_tHT6HB",
     "segments",
     "products",
     "resell",
