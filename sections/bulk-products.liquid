@@ -1,45 +1,434 @@
 <section class="pmw pmw-products" id="pmw-{{ section.id }}">
   {% render 'bulk-bg', section: section %}
-  <div class="pmw__inner">
-    {% if section.settings.eyebrow != blank %}<div class="pmw-eyebrow" style="text-align:center;display:block;">{{ section.settings.eyebrow }}</div>{% endif %}
-    <h2 class="pmw-products__title">{{ section.settings.headline }}</h2>
-    {% if section.settings.subhead != blank %}<p class="pmw-products__sub">{{ section.settings.subhead }}</p>{% endif %}
+
+  <div class="pmw-products__inner">
+    <div class="pmw-products__head">
+      {% if section.settings.eyebrow != blank %}
+        <div class="pmw-products__eyebrow">{{ section.settings.eyebrow }}</div>
+      {% endif %}
+
+      {% if section.settings.headline != blank %}
+        <h2 class="pmw-products__title">{{ section.settings.headline }}</h2>
+      {% endif %}
+
+      {% if section.settings.subhead != blank %}
+        <p class="pmw-products__sub">{{ section.settings.subhead }}</p>
+      {% endif %}
+    </div>
+
     <div class="pmw-products__grid">
       {% for block in section.blocks %}
         {% if block.type == 'product_card' %}
-          <div class="pmw-products__card" {{ block.shopify_attributes }}>
+          <article class="pmw-products__card" {{ block.shopify_attributes }}>
             <div class="pmw-products__media">
+              {% if block.settings.badge != blank %}
+                <span class="pmw-products__badge">{{ block.settings.badge }}</span>
+              {% endif %}
+
               {% if block.settings.image != blank %}
-                <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.name | escape }}" loading="lazy">
+                <img
+                  src="{{ block.settings.image | image_url: width: 700 }}"
+                  srcset="
+                    {{ block.settings.image | image_url: width: 400 }} 400w,
+                    {{ block.settings.image | image_url: width: 700 }} 700w,
+                    {{ block.settings.image | image_url: width: 1000 }} 1000w
+                  "
+                  sizes="(max-width: 640px) 88vw, (max-width: 980px) 44vw, 260px"
+                  alt="{{ block.settings.name | escape }}"
+                  loading="lazy"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
               {% else %}
-                <span class="pmw-products__placeholder">{{ block.settings.name }}</span>
+                <div class="pmw-products__image-placeholder"></div>
               {% endif %}
             </div>
-            {% if block.settings.badge != blank %}<span class="pmw-products__badge">{{ block.settings.badge }}</span>{% endif %}
-            <h3 class="pmw-products__name">{{ block.settings.name }}</h3>
-            <p class="pmw-products__origin">{{ block.settings.origin }}</p>
-            <p class="pmw-products__price">{{ block.settings.price }}</p>
-          </div>
+
+            <div class="pmw-products__content">
+              {% if block.settings.origin != blank %}
+                <p class="pmw-products__origin">{{ block.settings.origin }}</p>
+              {% endif %}
+
+              {% if block.settings.name != blank %}
+                <h3 class="pmw-products__name">{{ block.settings.name }}</h3>
+              {% endif %}
+
+              <div class="pmw-products__bottom">
+                {% if block.settings.price != blank %}
+                  <p class="pmw-products__price">{{ block.settings.price }}</p>
+                {% endif %}
+
+                {% if block.settings.button_link != blank %}
+                  <a class="pmw-products__add" href="{{ block.settings.button_link }}">
+                    {{ block.settings.button_label | default: 'Add' }}
+                  </a>
+                {% else %}
+                  <button class="pmw-products__add" type="button" disabled>
+                    {{ block.settings.button_label | default: 'Add' }}
+                  </button>
+                {% endif %}
+              </div>
+            </div>
+          </article>
         {% endif %}
       {% endfor %}
     </div>
+
+    {% if section.settings.bottom_copy != blank or section.settings.cta_label != blank %}
+      <div class="pmw-products__footer">
+        {% if section.settings.bottom_copy != blank %}
+          <p class="pmw-products__bottom-copy">{{ section.settings.bottom_copy }}</p>
+        {% endif %}
+
+        {% if section.settings.cta_label != blank %}
+          <a class="pmw-products__footer-btn" href="{{ section.settings.cta_link | default: '/collections/all' }}">
+            {{ section.settings.cta_label }}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </section>
 
 <style>
-  #pmw-{{ section.id }}.pmw-products { padding: 92px 72px; }
-  #pmw-{{ section.id }} .pmw-products__title { text-align: center; font-size: 40px; margin: 14px 0 10px; }
-  #pmw-{{ section.id }} .pmw-products__sub { text-align: center; max-width: 580px; margin: 0 auto 48px; font-size: 17px; line-height: 1.7; color: var(--page-muted); }
-  #pmw-{{ section.id }} .pmw-products__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; max-width: 1140px; margin: 0 auto; }
-  #pmw-{{ section.id }} .pmw-products__card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 24px; box-shadow: var(--card-shadow); position: relative; }
-  #pmw-{{ section.id }} .pmw-products__media { aspect-ratio: 4 / 5; background: var(--hero-grad); border-radius: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-  #pmw-{{ section.id }} .pmw-products__media img { width: 100%; height: 100%; object-fit: cover; }
-  #pmw-{{ section.id }} .pmw-products__placeholder { font-family: var(--font-display); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--pm-cacao-300); text-align: center; padding: 0 16px; }
-  #pmw-{{ section.id }} .pmw-products__badge { position: absolute; top: 36px; right: 36px; background: var(--pm-gold-100); color: var(--pm-gold-700); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
-  #pmw-{{ section.id }} .pmw-products__name { font-size: 20px; color: var(--page-text); margin-bottom: 6px; }
-  #pmw-{{ section.id }} .pmw-products__origin { font-size: 14px; color: var(--page-muted); line-height: 1.5; margin-bottom: 8px; font-style: italic; }
-  #pmw-{{ section.id }} .pmw-products__price { font-family: var(--font-display); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--pm-gold-600); }
-  @media (max-width: 768px) { #pmw-{{ section.id }}.pmw-products { padding: 64px 20px; } }
+  #pmw-{{ section.id }}.pmw-products {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    background: #f9f2ef;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 92px 20px 88px;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__head {
+    margin: 0 0 46px;
+    text-align: left;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pm-gold-600, #ab7820);
+    font-weight: 800;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__title {
+    margin: 0;
+    max-width: 820px;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: clamp(42px, 4.3vw, 58px);
+    line-height: 0.98;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--page-text, #2b2521);
+    font-weight: 900;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__sub {
+    max-width: 620px;
+    margin: 18px 0 0;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--page-muted, #6e5a4c);
+  }
+
+  #pmw-{{ section.id }} .pmw-products__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 26px 28px;
+    width: 100%;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 342px;
+    background: #ffffff;
+    border: 1px solid var(--card-border, #ece0d3);
+    border-radius: 20px;
+    box-shadow: 0 10px 26px rgba(56, 39, 29, 0.11);
+  }
+
+  #pmw-{{ section.id }} .pmw-products__media {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(255, 248, 232, 0.96) 0%, rgba(245, 210, 143, 0.9) 100%);
+    border-radius: 20px 20px 0 0;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.6), transparent 28%),
+      linear-gradient(180deg, #fff3d3 0%, #f4d598 100%);
+  }
+
+  #pmw-{{ section.id }} .pmw-products__badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: calc(100% - 36px);
+    min-height: 26px;
+    padding: 6px 13px 5px;
+    border-radius: 999px;
+    background: rgba(244, 213, 151, 0.72);
+    color: var(--pm-gold-700, #8a5f18);
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 25px 24px 24px;
+    background: #ffffff;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__origin {
+    margin: 0 0 13px;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: var(--pm-gold-600, #ab7820);
+    font-weight: 900;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__name {
+    margin: 0;
+    max-width: 96%;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 25px;
+    line-height: 0.98;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+    color: var(--page-text, #2b2521);
+    font-weight: 900;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 26px;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__price {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    line-height: 1.1;
+    color: var(--pm-cacao-700, #38271d);
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__add {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 68px;
+    min-height: 34px;
+    padding: 9px 18px 8px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--pm-sunshine-gold, #e8ad33);
+    color: var(--page-text, #2b2521);
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      transform 180ms ease,
+      background 180ms ease,
+      color 180ms ease,
+      box-shadow 180ms ease;
+    white-space: nowrap;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__add:hover {
+    transform: translateY(-1px);
+    background: #cf962f;
+    color: #ffffff;
+    box-shadow: 0 9px 18px rgba(226, 171, 67, 0.25);
+    text-decoration: none;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__add:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 30px;
+    margin-top: 34px;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__bottom-copy {
+    max-width: 600px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--page-muted, #6e5a4c);
+  }
+
+  #pmw-{{ section.id }} .pmw-products__footer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 16px 32px 15px;
+    border-radius: 999px;
+    background: var(--pm-sunshine-gold, #e8ad33);
+    color: var(--page-text, #2b2521);
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 12px 24px rgba(226, 171, 67, 0.22);
+    transition:
+      transform 180ms ease,
+      background 180ms ease,
+      color 180ms ease,
+      box-shadow 180ms ease;
+    white-space: nowrap;
+  }
+
+  #pmw-{{ section.id }} .pmw-products__footer-btn:hover {
+    transform: translateY(-1px);
+    background: #cf962f;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  @media (min-width: 1200px) {
+    #pmw-{{ section.id }} .pmw-products__inner {
+      max-width: 1180px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    #pmw-{{ section.id }} .pmw-products__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #pmw-{{ section.id }} .pmw-products__media {
+      height: 220px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #pmw-{{ section.id }} .pmw-products__inner {
+      padding: 64px 20px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__head {
+      margin-bottom: 32px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__title {
+      font-size: clamp(34px, 12vw, 46px);
+    }
+
+    #pmw-{{ section.id }} .pmw-products__sub {
+      font-size: 16px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__card {
+      min-height: 0;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__media {
+      height: 210px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__name {
+      font-size: 24px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__footer {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__footer-btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #pmw-{{ section.id }} .pmw-products__content {
+      padding: 23px 22px 22px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__bottom {
+      gap: 12px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__price {
+      font-size: 20px;
+    }
+
+    #pmw-{{ section.id }} .pmw-products__add {
+      min-width: 64px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
 </style>
 
 {% schema %}
@@ -47,36 +436,237 @@
   "name": "Bulk — Products",
   "tag": "section",
   "settings": [
-    { "type": "header", "content": "Background" },
-    { "type": "select", "id": "bg_type", "label": "Background type", "default": "color",
-      "options": [{"value":"color","label":"Color"},{"value":"image","label":"Image"}] },
-    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#f9f2ef" },
-    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
-    { "type": "range", "id": "bg_opacity", "label": "Background opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 100 },
-    { "type": "color", "id": "bg_overlay_color", "label": "Image overlay color", "default": "#000000" },
-    { "type": "range", "id": "bg_overlay_opacity", "label": "Image overlay opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 0 },
-    { "type": "header", "content": "Content" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Lineup" },
-    { "type": "text", "id": "headline", "label": "Headline", "default": "What You'll Carry" },
-    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Single-origin Chuncho cacao, in every form your customers want." }
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background type",
+      "default": "color",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f9f2ef"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "bg_opacity",
+      "label": "Background opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "bg_overlay_color",
+      "label": "Image overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "bg_overlay_opacity",
+      "label": "Image overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Range"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "What You'll Carry"
+    },
+    {
+      "type": "textarea",
+      "id": "subhead",
+      "label": "Subhead"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_copy",
+      "label": "Bottom copy",
+      "default": "This is our core range — single-serve packets, flavored grounds, and seasonal blends are all on Faire. See everything we stock and order with one account."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Bottom CTA label",
+      "default": "View Full Range On Faire"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Bottom CTA link"
+    }
   ],
   "blocks": [
-    { "type": "product_card", "name": "Product card", "limit": 8, "settings": [
-      { "type": "image_picker", "id": "image", "label": "Product photo" },
-      { "type": "text", "id": "name", "label": "Name", "default": "Chuncho Paste Block" },
-      { "type": "text", "id": "origin", "label": "Origin / sub-line", "default": "Quillabamba, Peru" },
-      { "type": "text", "id": "price", "label": "Price / size label", "default": "1 lb block" },
-      { "type": "text", "id": "badge", "label": "Badge", "default": "Single Origin" }
-    ]}
+    {
+      "type": "product_card",
+      "name": "Product card",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product photo"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "Single Origin"
+        },
+        {
+          "type": "text",
+          "id": "origin",
+          "label": "Origin / eyebrow",
+          "default": "Quillabamba, Peru"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Pure Ground Chuncho"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Size label",
+          "default": "8 oz & 16 oz"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Add"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
   ],
-  "presets": [{
-    "name": "Bulk — Products",
-    "blocks": [
-      { "type": "product_card", "settings": { "name": "Chuncho Paste Block", "origin": "Quillabamba, Peru", "price": "1 lb block", "badge": "Single Origin" } },
-      { "type": "product_card", "settings": { "name": "Ground Chuncho", "origin": "Café & Studio", "price": "5 lb bag", "badge": "Bulk" } },
-      { "type": "product_card", "settings": { "name": "Mushroom Vitality", "origin": "Cacao + Adaptogens", "price": "Ground", "badge": "Functional" } },
-      { "type": "product_card", "settings": { "name": "Rose Vanilla", "origin": "Rose + Vanilla Bean", "price": "Ground", "badge": "Botanical" } }
-    ]
-  }]
+  "presets": [
+    {
+      "name": "Bulk — Products",
+      "blocks": [
+        {
+          "type": "product_card",
+          "settings": {
+            "badge": "Single Origin",
+            "origin": "Quillabamba, Peru",
+            "name": "Pure Ground Chuncho",
+            "price": "8 oz & 16 oz",
+            "button_label": "Add"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge": "Full Strength",
+            "origin": "Quillabamba, Peru",
+            "name": "Chuncho Paste Block",
+            "price": "1 lb block",
+            "button_label": "Add"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge": "Bulk",
+            "origin": "Cafe and Studio",
+            "name": "Ground Chuncho Bulk",
+            "price": "5 lb bag",
+            "button_label": "Add"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge": "Functional",
+            "origin": "Cacao + Adaptogens",
+            "name": "Mushroom Vitality",
+            "price": "Ground",
+            "button_label": "Add"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge": "Botanical",
+            "origin": "Rose + Vanilla Bean",
+            "name": "Rose Vanilla",
+            "price": "Ground",
+            "button_label": "Add"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge": "Functional",
+            "origin": "Cacao + Turmeric",
+            "name": "Golden Milk",
+            "price": "Ground",
+            "button_label": "Add"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge": "Sweetened",
+            "origin": "Lightly Sweetened",
+            "name": "Maple Sweetened",
+            "price": "Ground",
+            "button_label": "Add"
+          }
+        },
+        {
+          "type": "product_card",
+          "settings": {
+            "badge": "Sampler",
+            "origin": "Five Flavors",
+            "name": "Single-Serve Packets",
+            "price": "Travel Size",
+            "button_label": "Add"
+          }
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
