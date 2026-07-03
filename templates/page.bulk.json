@@ -27,31 +27,6 @@
         "cta2_link": "#how"
       }
     },
-    "pas_about_hero_d4LEf3": {
-      "type": "pas-about-hero",
-      "blocks": {
-        "slide_qPnCxY": {
-          "type": "slide",
-          "settings": {}
-        },
-        "slide_M8Tkq6": {
-          "type": "slide",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "slide_qPnCxY",
-        "slide_M8Tkq6"
-      ],
-      "name": "About Hero",
-      "settings": {
-        "slide_duration": 5000,
-        "transition_duration": 500,
-        "loop": true,
-        "ken_burns": true,
-        "ken_burns_direction": "in"
-      }
-    },
     "savings": {
       "type": "bulk-savings-explainer",
       "blocks": {
@@ -549,7 +524,6 @@
   },
   "order": [
     "hero",
-    "pas_about_hero_d4LEf3",
     "savings",
     "calc",
     "sizes",
