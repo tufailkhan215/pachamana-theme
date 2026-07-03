@@ -268,7 +268,25 @@
             "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft."
           }
         },
+        "segment_JbkRPJ": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0378_2.heic",
+            "placeholder_label": "Chocolate maker photo",
+            "name": "Chocolate Makers",
+            "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft."
+          }
+        },
         "s_bulk": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27-1_539fb329-52ae-40f3-932b-f2a7d9c88cad.jpg",
+            "placeholder_label": "Refill / bulk bin photo",
+            "name": "Bulk & Refill Stores",
+            "body": "Package-free cacao for mindful, low-waste shoppers who shop their values."
+          }
+        },
+        "segment_Xxf4RK": {
           "type": "segment",
           "settings": {
             "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27-1_539fb329-52ae-40f3-932b-f2a7d9c88cad.jpg",
@@ -284,7 +302,9 @@
         "s_facilitator",
         "s_retreat",
         "s_maker",
-        "s_bulk"
+        "segment_JbkRPJ",
+        "s_bulk",
+        "segment_Xxf4RK"
       ],
       "settings": {
         "bg_type": "color",
