@@ -24,7 +24,7 @@
         "cta1_label": "Shop Bulk",
         "cta1_link": "/collections/all",
         "cta2_label": "See Price Breaks",
-        "cta2_link": "#how"
+        "cta2_link": "shopify://pages/bulk"
       }
     },
     "savings": {
