@@ -12,12 +12,41 @@
     "main": {
       "type": "safe-cacao-v2",
       "blocks": {
-        "q1": { "type": "faq", "settings": { "question": "Is every harvest tested?",       "answer": "<p>We test new harvests and publish the current results. Ask us anytime and we will send the latest report.</p>" } },
-        "q2": { "type": "faq", "settings": { "question": "Where does it ship from?",       "answer": "<p>Every order ships from Grass Valley, California, and shipping is free over $100.</p>" } },
-        "q3": { "type": "faq", "settings": { "question": "Can I order larger volumes?",    "answer": "<p>Yes. Volume discounts apply automatically on our bulk page, and shops or studios can apply for wholesale pricing.</p>" } },
-        "q4": { "type": "faq", "settings": { "question": "What if it is not the right fit?", "answer": "<p>Reach out at hello@pachamana.com and we will make it right.</p>" } }
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is every harvest tested?",
+            "answer": "<p>We test new harvests and publish the current results. Ask us anytime and we will send the latest report.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Where does it ship from?",
+            "answer": "<p>Every order ships from Grass Valley, California, and shipping is free over $100.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I order larger volumes?",
+            "answer": "<p>Yes. Volume discounts apply automatically on our bulk page, and shops or studios can apply for wholesale pricing.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "What if something is wrong with my order?",
+            "answer": "<p>Reach out at support@pachamana.com and we will make it right.</p>"
+          }
+        }
       },
-      "block_order": ["q1", "q2", "q3", "q4"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
       "settings": {
         "hero_eyebrow": "Lab-Tested Cacao",
         "hero_headline": "Lab-Tested Cacao You Can Trust",
@@ -27,36 +56,32 @@
         "hero_cta1_link": "/collections/shop-page",
         "hero_cta2_label": "See The Lab Report",
         "hero_cta2_link": "/blogs/news/heavy-metals-in-cacao-low-test-results",
-
         "proof_line": "Independently tested. Lead below 0.010 ppm. Cadmium 0.126 ppm. Both sit well under California Prop 65 and European Union limits.",
         "proof_link_label": "Read the full lab breakdown",
         "proof_link_url": "/blogs/news/heavy-metals-in-cacao-low-test-results",
-
         "why_eyebrow": "Why It Tests Clean",
         "why_headline": "Highland Soil, Careful Hands",
         "why_body": "<p>High elevation is the quiet reason. Our groves sit where the air is thin and the soil is old, and those conditions keep cadmium low long before anything is harvested. From there the cacao stays clean: small family plots instead of industrial monocrop, careful post-harvest handling where lead never enters the picture, and stone grinding at origin so nothing is added on the way. We pay the family three times the local market rate so that doing it this carefully stays possible.</p>",
         "why_handoff_body": "<p>For the science behind the results, the role of elevation and soil, and how cacao really compares to everyday foods, we wrote the whole story here.</p>",
         "why_link_label": "Heavy metals in cacao, explained",
         "why_link_url": "/blogs/news/heavy-metals-in-cacao-low-test-results",
-
         "shop_headline": "Shop The Cacao Behind The Results",
         "shop_body": "<p>Every bag on our shelf is the same cacao that produced these numbers. Start with a single pour, or stock the season.</p>",
         "shop_cta1_label": "Shop Cacao",
         "shop_cta1_link": "/collections/shop-page",
         "shop_cta2_label": "Buy In Bulk",
         "shop_cta2_link": "/pages/bulk",
-
         "note_eyebrow": "A Note On How We Source",
         "note_body": "<p>Ayni is the Andean practice of sacred reciprocity, and it shapes every decision we make. When the farm is cared for, the cacao is clean, and the cup carries that forward. Ceremony starts at the farm.</p>",
-
         "faq_headline": "Questions",
-
         "close_body": "<p>Pour from a bag you can trust.</p><p>From Peru with love.</p>",
         "close_cta_label": "Shop Tested Cacao",
         "close_cta_link": "/collections/shop-page",
-        "close_contact": "hello@pachamana.com · Grass Valley, California"
+        "close_contact": "support@pachamana.com · Grass Valley, California"
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
