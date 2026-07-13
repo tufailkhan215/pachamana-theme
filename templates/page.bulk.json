@@ -320,7 +320,7 @@
             "name": "Chuncho Paste Block",
             "price": "1 lb block",
             "button_label": "Add",
-            "button_link": ""
+            "button_link": "https://pachamana.com/products/1lb-cacao-chuncho-ceremonial-grade"
           }
         },
         "p2": {
@@ -329,10 +329,10 @@
             "image": "shopify://shop_images/5_lb_bag.png",
             "badge": "Bulk",
             "origin": "Bulk Bag",
-            "name": "Ground Chuncho",
+            "name": "Ground Chuncho Cacao",
             "price": "5 lb bag",
             "button_label": "Add",
-            "button_link": ""
+            "button_link": "https://pachamana.com/products/ground-chuncho-cacao-5lb-bag"
           }
         },
         "p3": {
@@ -344,43 +344,43 @@
             "name": "Mushroom Vitality",
             "price": "Ground",
             "button_label": "Add",
-            "button_link": ""
+            "button_link": "https://pachamana.com/products/mushroom-vitality-ground-cacao-bag"
           }
         },
         "p4": {
           "type": "product_card",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
-            "badge": "Botanical",
-            "origin": "Rose + Vanilla Bean",
-            "name": "Rose Vanilla",
+            "image": "shopify://shop_images/PACHAMANA-170.jpg",
+            "badge": "Pure",
+            "origin": "Pure Ground Cacao",
+            "name": "Pure Ground Cacao",
             "price": "Ground",
             "button_label": "Add",
-            "button_link": ""
+            "button_link": "https://pachamana.com/products/pure-ground-cermonial-cacao"
           }
         },
         "product_card_fmyizi": {
           "type": "product_card",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
-            "badge": "Botanical",
-            "origin": "Rose + Vanilla Bean",
-            "name": "Rose Vanilla",
+            "image": "shopify://shop_images/PACHAMANA-158.jpg",
+            "badge": "Sweetened",
+            "origin": "70% with Maple Sugar",
+            "name": "Maple Sweetened",
             "price": "Ground",
             "button_label": "Add",
-            "button_link": ""
+            "button_link": "https://pachamana.com/products/maple-sweetened"
           }
         },
         "product_card_4p9Ewb": {
           "type": "product_card",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
-            "badge": "Botanical",
-            "origin": "Rose + Vanilla Bean",
-            "name": "Rose Vanilla",
+            "image": "shopify://shop_images/PACHAMANA-74.webp",
+            "badge": "Warming spices",
+            "origin": "Turmeric + Ginger",
+            "name": "Golden Milk",
             "price": "Ground",
             "button_label": "Add",
-            "button_link": ""
+            "button_link": "https://pachamana.com/products/golden-milk-ground-ceremonial-cacao"
           }
         },
         "product_card_VcPVt7": {
@@ -392,19 +392,19 @@
             "name": "Rose Vanilla",
             "price": "Ground",
             "button_label": "Add",
-            "button_link": ""
+            "button_link": "https://pachamana.com/products/rose-vanilla-ground-cacao"
           }
         },
         "product_card_X6LbaJ": {
           "type": "product_card",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
-            "badge": "Botanical",
-            "origin": "Rose + Vanilla Bean",
-            "name": "Rose Vanilla",
-            "price": "Ground",
+            "image": "shopify://shop_images/Single_Serving_Product_SHot.jpg",
+            "badge": "On the Go",
+            "origin": "SIngle Serving Sizes",
+            "name": "Single Serve",
+            "price": "All Blends",
             "button_label": "Add",
-            "button_link": ""
+            "button_link": "https://pachamana.com/products/single-serving-1oz-packets"
           }
         }
       },
