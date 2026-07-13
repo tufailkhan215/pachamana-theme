@@ -429,19 +429,20 @@
         "subhead": "Volume discounts apply across the full range — mix and match to reach the next tier.",
         "bottom_copy": "If you already have a wholesale account with Faire, you can find us through our Fair direct link here.",
         "cta_label": "View Full Range On Faire",
-        "cta_link": ""
+        "cta_link": "https://pachamanacacao.faire.com"
       }
     },
     "resell": {
       "type": "bulk-reselling",
       "settings": {
-        "bg_type": "color",
+        "bg_type": "image",
         "bg_color": "#fdf8f3",
+        "bg_image": "shopify://shop_images/10_cacao-cadmium-levels-lead-results.jpg",
         "bg_opacity": 100,
         "bg_overlay_color": "#000000",
-        "bg_overlay_opacity": 0,
+        "bg_overlay_opacity": 50,
         "headline": "Reselling Our Cacao?",
-        "body": "Bulk pricing is for personal and ceremonial use. If you stock a shop, café, or studio, our wholesale program gives you partner pricing, terms, and marketing support.",
+        "body": "Bulk pricing is for personal use. If you stock a shop, café, or studio, our wholesale program gives you partner pricing, terms, and marketing support.",
         "cta_label": "Explore Wholesale",
         "cta_link": "/pages/wholesale"
       }
@@ -467,14 +468,14 @@
           "type": "faq",
           "settings": {
             "question": "Can I stack bulk pricing with a subscription?",
-            "answer": "<p>No — they don't combine. Bulk pricing is its own reward. Subscribe &amp; Save is a separate path: if you only need a bag or two, you can still take 15% off by committing to a three-month subscription instead.</p>"
+            "answer": "<p>No, they don't combine. Bulk pricing is its own reward. Subscribe & Save is a separate path: if you only need a bag or two, you can still take 15% off by committing to a three-month subscription instead.</p>"
           }
         },
         "q4": {
           "type": "faq",
           "settings": {
             "question": "How does shipping work?",
-            "answer": "<p>Orders ship from Grass Valley, California, usually within 2–3 business days, and shipping is free on orders over $100. Past 25 lb, freight changes as the price comes down — so we set those orders up with you directly. Reach out at support@pachamana.com and we'll organize a price that works for you.</p>"
+            "answer": "<p>Orders ship from Grass Valley, California, usually within 2–3 business days, and shipping is free on orders over $100. Past 25 lb, freight changes as the price comes down, so we set those orders up with you directly. Reach out at support@pachamana.com and we'll organize a price that works for you.</p>"
           }
         },
         "q5": {
