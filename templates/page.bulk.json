@@ -42,8 +42,8 @@
           "type": "step",
           "settings": {
             "number": "02",
-            "title": "Hit A Weight Tier",
-            "description": "About 3 lb saves 5%. 6 lb saves 10%. 10 lb saves 15%. 20 lb saves 20%. The savings appear automatically."
+            "title": "Hit A Price Tier",
+            "description": "$150 (3 lb) saves 5%. \n$300 (6 lb) saves 10%. \n$500 (10 lb) saves 15%. \n$999 (20 lb) saves 20%. The savings appear automatically."
           }
         },
         "s3": {
@@ -78,36 +78,36 @@
         "t1": {
           "type": "tier",
           "settings": {
-            "qty": "About 3 lbs",
-            "save": "5%",
-            "note": "6 × 8 oz  ·  or 3 × 16 oz",
+            "qty": "$150 order",
+            "save": "5% off",
+            "note": "About 3 lbs",
             "highlight": false
           }
         },
         "t2": {
           "type": "tier",
           "settings": {
-            "qty": "About 6 lbs",
-            "save": "10%",
-            "note": "12 × 8 oz  ·  or 6 × 16 oz",
+            "qty": "$300 Order",
+            "save": "10% off",
+            "note": "About 6 lbs",
             "highlight": false
           }
         },
         "t3": {
           "type": "tier",
           "settings": {
-            "qty": "About 10 lbs",
-            "save": "15%",
-            "note": "20 × 8 oz  ·  or 10 × 16 oz",
+            "qty": "$500 order",
+            "save": "15% off",
+            "note": "About 10 lbs",
             "highlight": false
           }
         },
         "t4": {
           "type": "tier",
           "settings": {
-            "qty": "About 20 lbs",
-            "save": "20%",
-            "note": "40 × 8 oz  ·  or 20 × 16 oz",
+            "qty": "$999 Order",
+            "save": "20% off",
+            "note": "About 20 lbs",
             "highlight": true
           }
         },
@@ -165,8 +165,8 @@
         "subhead": "Two ways to save, both automatic. Buy by the bag and your discount climbs with total weight — or buy our 5 lb bulk bag for a standing price that drops the more bags you take.",
         "pricing_image": "shopify://shop_images/PACHAMANA--30.jpg",
         "image_placeholder_text": "Drop in a photo of your cacao bars",
-        "bag_eyebrow": "By The Bag",
-        "bag_copy": "Nothing to apply for, no code to enter. As you add bags to your cart the price drops on its own — every bag gets cheaper the more total weight you reach. Half-pound or full-pound, the reward meets at the same weight.",
+        "bag_eyebrow": "By The Bag or Paste",
+        "bag_copy": "Nothing to apply for, no code to enter. As you add bags or the bars of paste to your cart the price drops on its own — every bag gets cheaper the more total weight you reach. Half-pound or full-pound, the reward meets at the same price threshold",
         "bag_low_price": "$41.60",
         "bag_from_price": "$52",
         "case_eyebrow": "The 5 lb Bulk Bag",
@@ -185,7 +185,7 @@
         "subscribe_label": "Subscribe & Save",
         "subscribe_text": "Want the 15% price on just 1–5 lb? Commit to a subscription — doesn’t stack with bulk pricing.",
         "why_eyebrow": "Why We Do It This Way",
-        "why_copy": "We hear you — price matters when you're choosing your cacao, and we want this to be affordable for you. All we ask is that you carry a little more volume; that's what keeps our fulfillment sustainable. Buy more, and we'll keep meeting you with a better price.",
+        "why_copy": "We have listened to you — price matters when you're choosing your cacao, and we want this to be affordable for you. All we ask is that you carry a little more volume; that's what keeps our fulfillment sustainable. Buy more, and we'll keep meeting you with a better price.",
         "fine_print": "Discounts apply to your order total at checkout — no code needed. Bulk pricing is its own reward and does not combine with subscription savings."
       }
     },
@@ -197,8 +197,8 @@
           "settings": {
             "tag": "Half Pound",
             "size": "8 oz",
-            "description": "A few weeks of daily cups, or a smaller circle. Counts toward your by-the-bag weight.",
-            "price_label": "Sold by the bag"
+            "description": "A few weeks of daily cups, or a smaller cups. Counts toward your by-the-bag amount.",
+            "price_label": "Sold by the bag or by the block"
           }
         },
         "z2": {
@@ -206,14 +206,14 @@
           "settings": {
             "tag": "Most Loved",
             "size": "1 lb",
-            "description": "The everyday ceremonial size — the best balance of value and freshness.",
-            "price_label": "Sold by the bag"
+            "description": "The everyday users size — the best balance of value and freshness.",
+            "price_label": "Sold by the bag or by the block"
           }
         },
         "z3": {
           "type": "size_card",
           "settings": {
-            "tag": "Bulk Bag",
+            "tag": "Bulk Bag or Paste",
             "size": "5 lb",
             "description": "For people who move through a lot of cacao — ground or paste, at the deepest standing discount.",
             "price_label": "$230 / bag"
