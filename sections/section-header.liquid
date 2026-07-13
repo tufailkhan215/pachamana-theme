@@ -25,6 +25,20 @@
     background-position: {{ header_bg_position }} !important;
     background-repeat: {{ header_bg_repeat }} !important;
   }
+  /* Full-bleed header. Both header containers are Elementor `e-con-boxed`, so their
+     .e-con-inner is capped at --content-width (min(100%,1140px)) and centred. Past a
+     ~1140px viewport the bar stops growing and strands itself mid-screen, exposing the
+     patterned parent down both sides. Release the cap so the bar tracks the viewport. */
+  .section-header .elementor-element-5d815ed,
+  .section-header .elementor-element-daad110 {
+    --content-width: 100% !important;
+  }
+  .section-header .elementor-element-5d815ed > .e-con-inner,
+  .section-header .elementor-element-daad110 > .e-con-inner {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
   /* Nav spacing v5: stretch the nav widget to fill space between logo and icons, then
      center the items horizontally via flexbox on the .navbar-nav itself (which is
      already a flex container by default). No layout flex on the widget — just sizing. */
