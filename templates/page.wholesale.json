@@ -466,7 +466,7 @@
         "subhead": "Single-origin Chuncho cacao, in every form your customers want.",
         "bottom_copy": "This is our core offerings. From single-serve packets, flavored grounds, and seasonal blends are all on Faire. See everything we stock and order with one account.",
         "cta_label": "View Full Range On Faire",
-        "cta_link": ""
+        "cta_link": "https://pachamanacacao.faire.com"
       }
     },
     "story": {
@@ -478,7 +478,7 @@
         "bg_overlay_color": "#000000",
         "bg_overlay_opacity": 0,
         "image_alt": "Justin and Joel, Pacha Mana",
-        "eyebrow": "Origin",
+        "eyebrow": "About our Origin",
         "headline": "Ceremony Starts At The Farm",
         "body": "<p><em>Pacha Mana is a bridge. Between a family farm in the Peruvian highlands and your shelf. Between the rarest heirloom cacao on earth and the person who drinks it. We source one variety, Chuncho, directly from the families who grow it, pay them 3x the market rate, and make every blend fresh in small batches in California.</em></p><p><em>Carry Pacha Mana and you carry the whole story: traceable, alive, and rooted in reciprocity. That's what your customers are really buying.</em></p>",
         "signature": "— The Pacha Mana Team"
@@ -530,6 +530,7 @@
         "r4",
         "r5"
       ],
+      "disabled": true,
       "settings": {
         "bg_type": "color",
         "bg_color": "#f9f2ef",
