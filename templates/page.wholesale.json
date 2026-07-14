@@ -247,7 +247,7 @@
             "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-91.jpg",
             "placeholder_label": "Ceremony circle photo",
             "name": "Ceremony Facilitators",
-            "body": "Full ceremonial-dose cacao your circle can trust, traceable to the grove and harvest."
+            "body": "Full ceremonial-dose cacao your circle can trust, traceable to the farm and harvest."
           }
         },
         "s_retreat": {
@@ -303,14 +303,14 @@
         "st1": {
           "type": "stat",
           "settings": {
-            "number": "40+",
-            "label": "Highland families in our circle"
+            "number": "150+",
+            "label": "Farming families in our circle"
           }
         },
         "st2": {
           "type": "stat",
           "settings": {
-            "number": "150+",
+            "number": "80+",
             "label": "Stockists & cafés served"
           }
         },
@@ -324,8 +324,8 @@
         "st4": {
           "type": "stat",
           "settings": {
-            "number": "12 yr",
-            "label": "Bean-to-cup relationships"
+            "number": "3x",
+            "label": "Above Fair Trade cacao pricing"
           }
         }
       },
@@ -355,7 +355,7 @@
             "badge": "Single Origin",
             "origin": "Cuzco, Peru",
             "name": "Chuncho Cacao PAste",
-            "price": "1 lb block",
+            "price": "8 & 16 oz. block",
             "button_label": "Add",
             "button_link": ""
           }
@@ -367,7 +367,7 @@
             "badge": "Bulk",
             "origin": "Best Seller",
             "name": "Ground Cacao Paste",
-            "price": "8 & 16 Oz. Bags",
+            "price": "8 & 16 oz. Bags",
             "button_label": "Add",
             "button_link": ""
           }
@@ -379,43 +379,7 @@
             "badge": "Functional",
             "origin": "Cacao + Adaptogens",
             "name": "Mushroom Vitality",
-            "price": "8 & 16 Oz. Bags",
-            "button_label": "Add",
-            "button_link": ""
-          }
-        },
-        "product_card_BqhUgY": {
-          "type": "product_card",
-          "settings": {
-            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
-            "badge": "Functional",
-            "origin": "Cacao + Adaptogens",
-            "name": "Mushroom Vitality",
-            "price": "8 & 16 Oz. Bags",
-            "button_label": "Add",
-            "button_link": ""
-          }
-        },
-        "product_card_bhzCFz": {
-          "type": "product_card",
-          "settings": {
-            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
-            "badge": "Functional",
-            "origin": "Cacao + Adaptogens",
-            "name": "Mushroom Vitality",
-            "price": "8 & 16 Oz. Bags",
-            "button_label": "Add",
-            "button_link": ""
-          }
-        },
-        "product_card_DnNk8k": {
-          "type": "product_card",
-          "settings": {
-            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
-            "badge": "Functional",
-            "origin": "Cacao + Adaptogens",
-            "name": "Mushroom Vitality",
-            "price": "8 & 16 Oz. Bags",
+            "price": "8 & 16 oz. Bags",
             "button_label": "Add",
             "button_link": ""
           }
@@ -427,7 +391,43 @@
             "badge": "Botanical",
             "origin": "Rose + Vanilla Bean Powder",
             "name": "Rose Vanilla",
-            "price": "8 & 16 Oz. Bags",
+            "price": "8 & 16 oz. Bags",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_BqhUgY": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-158.webp",
+            "badge": "Sweetened",
+            "origin": "70%  Dark Maple sugar",
+            "name": "Maple Sweetened",
+            "price": "8 & 16 oz. Bags",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_bhzCFz": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-74.webp",
+            "badge": "Warming Spices",
+            "origin": "Turmeric & Ginger",
+            "name": "Golden Milk cacao",
+            "price": "8 & 16 oz. Bags",
+            "button_label": "Add",
+            "button_link": ""
+          }
+        },
+        "product_card_DnNk8k": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/Single_Serving_Product_SHot.jpg",
+            "badge": "On-the-go",
+            "origin": "Travel Packs & gifts",
+            "name": "Single Serve Size",
+            "price": "1 oz. Bags",
             "button_label": "Add",
             "button_link": ""
           }
@@ -435,11 +435,11 @@
         "product_card_JGj4Ng": {
           "type": "product_card",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
-            "badge": "Botanical",
-            "origin": "Rose + Vanilla Bean Powder",
-            "name": "Rose Vanilla",
-            "price": "8 & 16 Oz. Bags",
+            "image": "shopify://shop_images/5_lb_bag.png",
+            "badge": "Cafes and Baristas",
+            "origin": "Bulk cacao",
+            "name": "5 lb Bag of ground  cacao",
+            "price": "5 lb Bag",
             "button_label": "Add",
             "button_link": ""
           }
@@ -449,10 +449,10 @@
         "p1",
         "p2",
         "p3",
+        "p4",
         "product_card_BqhUgY",
         "product_card_bhzCFz",
         "product_card_DnNk8k",
-        "p4",
         "product_card_JGj4Ng"
       ],
       "settings": {
@@ -461,10 +461,10 @@
         "bg_opacity": 100,
         "bg_overlay_color": "#000000",
         "bg_overlay_opacity": 0,
-        "eyebrow": "The Lineup",
+        "eyebrow": "Our blends",
         "headline": "What You'll Carry",
         "subhead": "Single-origin Chuncho cacao, in every form your customers want.",
-        "bottom_copy": "This is our core range — single-serve packets, flavored grounds, and seasonal blends are all on Faire. See everything we stock and order with one account.",
+        "bottom_copy": "This is our core offerings. From single-serve packets, flavored grounds, and seasonal blends are all on Faire. See everything we stock and order with one account.",
         "cta_label": "View Full Range On Faire",
         "cta_link": ""
       }
