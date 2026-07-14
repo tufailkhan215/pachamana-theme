@@ -8,16 +8,6 @@
         {% if section.settings.subhead != blank %}<p class="pmw-form__sub">{{ section.settings.subhead }}</p>{% endif %}
       </div>
 
-      {%- assign biz_options = '' -%}
-      {%- assign vol_options = '' -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'biz_type' -%}
-          {%- assign biz_options = biz_options | append: '<option value="' | append: block.settings.value | escape | append: '">' | append: block.settings.value | append: '</option>' -%}
-        {%- elsif block.type == 'volume' -%}
-          {%- assign vol_options = vol_options | append: '<option value="' | append: block.settings.value | escape | append: '">' | append: block.settings.value | append: '</option>' -%}
-        {%- endif -%}
-      {%- endfor -%}
-
       {% form 'contact', class: 'pmw-form__form' %}
         <input type="hidden" name="contact[subject]" value="Wholesale Application">
         <input type="hidden" name="contact[source]" value="bulk-page">
@@ -50,13 +40,21 @@
             <label class="pmw-form__field"><span>Business Type</span>
               <select name="contact[Business Type]">
                 <option value="">Select type</option>
-                {{ biz_options }}
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'biz_type' and block.settings.value != blank -%}
+                    <option value="{{ block.settings.value | escape }}">{{ block.settings.value | escape }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
               </select>
             </label>
             <label class="pmw-form__field"><span>Monthly Volume</span>
               <select name="contact[Monthly Volume]">
                 <option value="">Select volume</option>
-                {{ vol_options }}
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'volume' and block.settings.value != blank -%}
+                    <option value="{{ block.settings.value | escape }}">{{ block.settings.value | escape }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
               </select>
             </label>
           </div>
