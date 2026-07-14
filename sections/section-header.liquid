@@ -58,33 +58,48 @@
     margin: 0 auto !important;
     float: none !important;
   }
+  /* Nav v6 — logo gutter. The nav widget starts at the far-left edge of the bar, which
+     sits UNDER the logo box (logo has the higher z-index). With 5 items the centred nav
+     was narrow enough to never reach that far; at 7 items its left edge slid beneath the
+     logo and swallowed "Shop". Reserve the logo's footprint so the nav centres in the
+     space to the RIGHT of it, and tighten the items to fit seven. */
+  .section-header .elementor-element-c185d14 > .elementor-widget-container {
+    padding-left: 150px !important;
+  }
   .section-header .plus-navigation-menu .navbar-nav > li {
     display: inline-flex !important;
     align-items: center !important;
-    padding: 0 22px !important;
+    padding: 0 16px !important;
     float: none !important;
   }
   .section-header .plus-navigation-menu .navbar-nav > li > a {
     font-size: 19px !important;
-    letter-spacing: 2.0px !important;
+    letter-spacing: 1.6px !important;
     padding: 0 !important;
+    white-space: nowrap !important;
   }
   @media (max-width: 1280px) {
+    .section-header .elementor-element-c185d14 > .elementor-widget-container {
+      padding-left: 140px !important;
+    }
     .section-header .plus-navigation-menu .navbar-nav > li > a {
       font-size: 17px !important;
-      letter-spacing: 1.6px !important;
-    }
-    .section-header .plus-navigation-menu .navbar-nav > li {
-      padding: 0 16px !important;
-    }
-  }
-  @media (max-width: 1180px) {
-    .section-header .plus-navigation-menu .navbar-nav > li > a {
-      font-size: 16px !important;
       letter-spacing: 1.2px !important;
     }
     .section-header .plus-navigation-menu .navbar-nav > li {
       padding: 0 12px !important;
+    }
+  }
+  @media (max-width: 1180px) {
+    .section-header .elementor-element-c185d14 > .elementor-widget-container {
+      padding-left: 130px !important;
+    }
+    .section-header .plus-navigation-menu .navbar-nav > li > a {
+      font-size: 16px !important;
+      letter-spacing: 1.0px !important;
+    }
+    .section-header .plus-navigation-menu .navbar-nav > li {
+      padding: 0 9px !important;
     }
   }
 </style>
