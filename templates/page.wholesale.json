@@ -17,8 +17,8 @@
         "bg_opacity": 100,
         "bg_overlay_color": "#000000",
         "bg_overlay_opacity": 0,
-        "eyebrow": "Wholesale & Bulk Cacao",
-        "headline": "Share The\nCeremony",
+        "eyebrow": "For our Wholesale & Bulk Cacao Partners",
+        "headline": "Wholesale Cacao",
         "subhead": "Wild-harvested heirloom Chuncho cacao, sourced from highland families in Peru and stone-ground in small batches. Buy in bulk for your circle, or partner with us to stock your shelves.",
         "cta1_label": "Apply For Wholesale",
         "cta1_link": "#apply",
@@ -58,7 +58,7 @@
           "settings": {
             "number": "04",
             "title": "Share It",
-            "description": "We ship in 2–3 days with shelf cards and brewing guides included."
+            "description": "We ship in 2–3 days with promo cards and brewing guides included."
           }
         }
       },
@@ -259,15 +259,6 @@
             "body": "Hold space with cacao that travels well and opens hearts, batch after batch."
           }
         },
-        "s_maker": {
-          "type": "segment",
-          "settings": {
-            "image": "shopify://shop_images/IMG_0378_2.heic",
-            "placeholder_label": "Chocolate maker photo",
-            "name": "Chocolate Makers",
-            "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft."
-          }
-        },
         "segment_JbkRPJ": {
           "type": "segment",
           "settings": {
@@ -275,15 +266,6 @@
             "placeholder_label": "Chocolate maker photo",
             "name": "Chocolate Makers",
             "body": "Single-origin heirloom Chuncho paste, stone-ground and ready for your craft."
-          }
-        },
-        "s_bulk": {
-          "type": "segment",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27-1_539fb329-52ae-40f3-932b-f2a7d9c88cad.jpg",
-            "placeholder_label": "Refill / bulk bin photo",
-            "name": "Bulk & Refill Stores",
-            "body": "Package-free cacao for mindful, low-waste shoppers who shop their values."
           }
         },
         "segment_Xxf4RK": {
@@ -301,9 +283,7 @@
         "s_cafe",
         "s_facilitator",
         "s_retreat",
-        "s_maker",
         "segment_JbkRPJ",
-        "s_bulk",
         "segment_Xxf4RK"
       ],
       "settings": {
