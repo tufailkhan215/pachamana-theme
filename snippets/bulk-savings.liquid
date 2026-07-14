@@ -1,0 +1,105 @@
+{%- comment -%}
+  bulk-savings.liquid — bulk discount UI, shared by the cart page and the cart drawer.
+
+  Renders whichever part is asked for:
+    {% render 'bulk-savings', part: 'line',     item: item %}   line badge + struck original price
+    {% render 'bulk-savings', part: 'totals'    %}              TOTAL SAVINGS row
+    {% render 'bulk-savings', part: 'progress'  %}              "Add $X more to save Y%"
+
+  All money on the 'line' and 'totals' parts comes straight from Shopify's own computed
+  discount (item.original_line_price / item.line_level_discount_allocations /
+  cart.total_discount) — never recomputed here, so the cart can never disagree with checkout.
+
+  Only the 'progress' part uses the ladder, because the NEXT tier is by definition not yet
+  applied and Shopify has nothing to report for it. Per Justin: subscription lines do NOT
+  count toward the qualifying subtotal (bulk and subscriptions are separate).
+{%- endcomment -%}
+
+{%- liquid
+  assign tiers = '150,5|300,10|500,15|999,20' | split: '|'
+-%}
+
+{%- if part == 'line' -%}
+  {%- if item.line_level_total_discount > 0 -%}
+    <div class="pm-save__line">
+      {%- for alloc in item.line_level_discount_allocations -%}
+        <span class="pm-save__badge">
+          <svg class="pm-save__tag" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M8.6 1.5H3A1.5 1.5 0 0 0 1.5 3v5.6c0 .4.16.78.44 1.06l5.4 5.4a1.5 1.5 0 0 0 2.12 0l4.6-4.6a1.5 1.5 0 0 0 0-2.12l-5.4-5.4A1.5 1.5 0 0 0 8.6 1.5Zm-3.85 4.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+          </svg>
+          {{ alloc.discount_application.title }} (−{{ alloc.amount | money }})
+        </span>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+{%- elsif part == 'line_price' -%}
+  {%- if item.original_line_price > item.final_line_price -%}
+    <s class="pm-save__was">{{ item.original_line_price | money }}</s>
+    <span class="pm-save__now">{{ item.final_line_price | money }}</span>
+  {%- else -%}
+    <span class="pm-save__now">{{ item.final_line_price | money }}</span>
+  {%- endif -%}
+
+{%- elsif part == 'totals' -%}
+  {%- if cart.total_discount > 0 -%}
+    <div class="pm-save__total" data-pm-savings>
+      <span class="pm-save__total-label">
+        <svg class="pm-save__tag" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+          <path d="M8.6 1.5H3A1.5 1.5 0 0 0 1.5 3v5.6c0 .4.16.78.44 1.06l5.4 5.4a1.5 1.5 0 0 0 2.12 0l4.6-4.6a1.5 1.5 0 0 0 0-2.12l-5.4-5.4A1.5 1.5 0 0 0 8.6 1.5Zm-3.85 4.25a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+        </svg>
+        Total savings
+      </span>
+      <span class="pm-save__total-amount">−{{ cart.total_discount | money }}</span>
+    </div>
+  {%- endif -%}
+
+{%- elsif part == 'progress' -%}
+  {%- liquid
+    # Qualifying subtotal EXCLUDES subscription lines (Justin: bulk and subs are separate).
+    assign qualifying = 0
+    for item in cart.items
+      unless item.selling_plan_allocation
+        assign qualifying = qualifying | plus: item.original_line_price
+      endunless
+    endfor
+
+    assign next_threshold = 0
+    assign next_percent = 0
+    assign current_percent = 0
+    for t in tiers
+      assign pair = t | split: ','
+      assign amount = pair[0] | times: 100
+      assign pct = pair[1] | plus: 0
+      if qualifying >= amount
+        assign current_percent = pct
+      elsif next_threshold == 0
+        assign next_threshold = amount
+        assign next_percent = pct
+      endif
+    endfor
+    assign remaining = next_threshold | minus: qualifying
+  -%}
+
+  {%- if qualifying > 0 -%}
+    <div class="pm-prog" data-pm-progress>
+      {%- if next_threshold > 0 -%}
+        {%- assign pct_of_way = qualifying | times: 100.0 | divided_by: next_threshold -%}
+        <p class="pm-prog__msg">
+          Add <strong>{{ remaining | money }}</strong> more to save <strong>{{ next_percent }}%</strong>
+        </p>
+        <div class="pm-prog__bar" role="progressbar" aria-valuenow="{{ pct_of_way | round }}" aria-valuemin="0" aria-valuemax="100">
+          <span class="pm-prog__fill" style="width: {{ pct_of_way | at_most: 100 }}%"></span>
+        </div>
+        {%- if current_percent > 0 -%}
+          <p class="pm-prog__now">You're saving {{ current_percent }}% right now</p>
+        {%- endif -%}
+      {%- else -%}
+        <p class="pm-prog__msg pm-prog__msg--max">
+          🎉 You've unlocked the best price — <strong>{{ current_percent }}% off</strong>
+        </p>
+        <div class="pm-prog__bar"><span class="pm-prog__fill" style="width:100%"></span></div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endif -%}

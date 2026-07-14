@@ -1,6 +1,7 @@
 {%- comment -%}
   Main cart section - Styled to match Elementor theme
 {%- endcomment -%}
+{{ 'bulk-savings.css' | asset_url | stylesheet_tag }}
 {%- comment -%}
 <div class="woocommerce cart-page" data-elementor-type="page">
   <div class="elementor-element elementor-element-cart-container e-con e-parent" data-element_type="container">
@@ -122,8 +123,9 @@
                     
                     <td class="product-subtotal" data-title="{{ 'sections.cart.headings.total' | t | default: 'Total' }}">
                       <span class="woocommerce-Price-amount amount">
-                        <bdi>{{ item.final_line_price | money }}</bdi>
+                        <bdi>{% render 'bulk-savings', part: 'line_price', item: item %}</bdi>
                       </span>
+                      {% render 'bulk-savings', part: 'line', item: item %}
                     </td>
                     
                     <td class="product-remove">
@@ -152,16 +154,26 @@
               <div class="cart_totals">
                 <h2>{{ 'sections.cart.totals.title' | t | default: 'Cart totals' }}</h2>
                 
+                {% render 'bulk-savings', part: 'progress' %}
+
                 <table cellspacing="0" class="">
                   <tbody>
                     <tr class="cart-subtotal">
                       <th>{{ 'sections.cart.subtotal' | t | default: 'Subtotal' }}</th>
                       <td data-title="{{ 'sections.cart.subtotal' | t | default: 'Subtotal' }}">
                         <span class="woocommerce-Price-amount amount">
-                          <bdi>{{ cart.total_price | money }}</bdi>
+                          {%- comment -%} Pre-discount subtotal, so the savings row below has something to subtract from. {%- endcomment -%}
+                          <bdi>{{ cart.items_subtotal_price | plus: cart.total_discount | money }}</bdi>
                         </span>
                       </td>
                     </tr>
+                    {%- if cart.total_discount > 0 -%}
+                      <tr class="cart-savings">
+                        <th colspan="2" style="padding:0;">
+                          {% render 'bulk-savings', part: 'totals' %}
+                        </th>
+                      </tr>
+                    {%- endif -%}
                   </tbody>
                   <tfoot>
                     <tr class="order-total">
