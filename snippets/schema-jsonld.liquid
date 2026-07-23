@@ -13,9 +13,7 @@
   "name": {{ shop.name | json }},
   "url": {{ shop.url | json }},
   "email": "support@pachamana.com",
-  {%- if settings.logo %}
-  "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
-  {%- endif %}
+  "logo": "https://pachamana.com/cdn/shop/files/PACHA-MANA-STACKED-LOCKUP.svg?v=1766183706&width=500",
   "sameAs": ["https://www.instagram.com/pachamanacacao/"],
   "address": {
     "@type": "PostalAddress",
