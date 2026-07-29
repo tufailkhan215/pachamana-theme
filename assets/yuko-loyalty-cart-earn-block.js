@@ -1,18 +1,20 @@
 (function () {
   const getYukoCartEarnImageContent = () => {
-    const src =
-      window.YukoLoyalty.getYukoCartEarnWidgetConfig()?.config?.message_icon
-        ?.url;
-    if (!src) {
-      return null;
+    const icon =
+      window.YukoLoyalty.getYukoCartEarnWidgetConfig()?.config?.message_icon;
+    const U = window.YukoUtil;
+    if (U && U.renderIconEl) {
+      const el = U.renderIconEl(icon, {
+        label: "Cart earn message",
+        fontClass: "yuko_cart_earn_message_icon",
+        imgClass: "yuko_cart_earn_message_icon",
+      });
+      if (el) {
+        el.classList.add("yk-icon-20");
+      }
+      return el;
     }
-    let imageElement = document.createElement("img");
-    imageElement.className = "yuko_cart_earn_message_icon";
-    imageElement.src = src;
-    imageElement.width = 20;
-    imageElement.height = 20;
-    imageElement.alt = "Cart earn message";
-    return imageElement;
+    return null;
   };
 
   const getYukoCartEarnContent = (earning) => {
@@ -26,13 +28,18 @@
       earning.earning_type,
       earning.earning_value
     );
+    const pointsToCashRate = parseFloat(window?.Shopify?.yukoApp?.loyalty?.settings?.general_settings?.points_to_cash_rate) || 0.01;
+    const cashValue = (earning.earning_value * pointsToCashRate).toFixed(2);
+    const cf = window.YukoThemeCurrencyUtils.getThemeCurrencyFormat('<span class="price-with-currency"> Rs. {{amount}} </span>');
+    const formattedCashValue = window.YukoThemeCurrencyUtils.formatCurrency(cashValue, cf);
     const messageText = window.YukoLoyalty.getYukoCartEarnWidgetConfig()
       ?.config?.message?.replace(/\[points_value\]/g, earning.earning_value)
-      .replace(/\[points_label\]/g, earningTypeLabel);
+      .replace(/\[points_label\]/g, earningTypeLabel)
+      .replace(/\[points_cash_value\]/g, formattedCashValue);
 
     const messageElement = document.createElement("span");
     messageElement.className = "yuko-loyalty-cart-earning-message";
-    messageElement.textContent = messageText;
+    messageElement.innerHTML = messageText;
     container.appendChild(messageElement);
     return container;
   };
@@ -64,28 +71,13 @@
       const heightValue =
         height !== undefined && height !== null ? `${height}px` : "auto";
 
-      // Set CSS custom properties for dynamic values (can be overridden by custom CSS)
       el.style.setProperty("--yuko-border-color", border_color);
       el.style.setProperty("--yuko-background-color", background_color);
       el.style.setProperty("--yuko-text-color", text_color);
       el.style.setProperty("--yuko-padding", paddingValue);
       el.style.setProperty("--yuko-width", widthValue);
       el.style.setProperty("--yuko-height", heightValue);
-
-      el.style.cssText += `
-                display: flex !important;
-                border: 1px solid var(--yuko-border-color) !important;
-                background-color: var(--yuko-background-color) !important;
-                color: var(--yuko-text-color) !important;
-                align-items: center;
-                border-radius: 8px;
-                padding: var(--yuko-padding) !important;
-                width: var(--yuko-width) !important;
-                height: var(--yuko-height) !important;
-                margin-bottom: 5px;
-                flex-direction: row;
-                gap: 12px;
-              `;
+      el.style.display = "flex";
     });
 
     // Apply custom CSS if provided (with higher specificity to override inline styles)
@@ -101,8 +93,6 @@
         styleElement.id = styleId;
         document.head.appendChild(styleElement);
       }
-      // Inject custom CSS directly so nested selectors work properly
-      // Custom CSS will override inline styles because it's in a stylesheet
       styleElement.textContent = style.custom_css;
     }
   };
@@ -165,12 +155,23 @@
     });
   };
 
-  document.addEventListener("yuko:cart:fetch:success", function (response) {
-    if (window?.Shopify?.yukoApp?.features?.loyalty === false) {
-      return;
+  function isEditorMode() {
+    try {
+      return !!(window?.Shopify && window.Shopify.designMode);
+    } catch (e) {
+      return false;
     }
-    if (!window.YukoLoyalty.getYukoCartEarnWidgetConfig()?.is_enabled) {
-      return;
+  }
+
+  document.addEventListener("yuko:cart:fetch:success", function (response) {
+    const editorMode = isEditorMode();
+    if (!editorMode) {
+      if (window?.Shopify?.yukoApp?.features?.loyalty === false) {
+        return;
+      }
+      if (!window.YukoLoyalty.getYukoCartEarnWidgetConfig()?.is_enabled) {
+        return;
+      }
     }
     const cartData =
       response.detail && response.detail.cartData
@@ -182,11 +183,14 @@
   });
 
   document.addEventListener("DOMContentLoaded", function () {
-    if (window?.Shopify?.yukoApp?.features?.loyalty === false) {
-      return;
-    }
-    if (!window.YukoLoyalty.getYukoCartEarnWidgetConfig()?.is_enabled) {
-      return;
+    const editorMode = isEditorMode();
+    if (!editorMode) {
+      if (window?.Shopify?.yukoApp?.features?.loyalty === false) {
+        return;
+      }
+      if (!window.YukoLoyalty.getYukoCartEarnWidgetConfig()?.is_enabled) {
+        return;
+      }
     }
 
     // Check if loyalty is enabled before initializing
