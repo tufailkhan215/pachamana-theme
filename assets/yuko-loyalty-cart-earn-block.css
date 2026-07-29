@@ -1,3 +1,17 @@
+.yuko-cart-earn-block {
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    gap: 12px;
+    border: 1px solid var(--yuko-border-color, #ffffff);
+    background-color: var(--yuko-background-color, #e3dada);
+    color: var(--yuko-text-color, #000000);
+    padding: var(--yuko-padding, 10px);
+    width: var(--yuko-width, 100%);
+    height: var(--yuko-height, auto);
+}
+
 .yuko-cart-earn-block .yuko_cart_earn_message_icon {
     width: 20px;
     height: 20px;
