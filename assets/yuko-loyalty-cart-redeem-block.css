@@ -1,5 +1,26 @@
 .yuko-cart-redeem-block {
   display: none;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: row;
+  gap: 12px;
+  border: 1px solid var(--yuko-border-color, #e5e7eb);
+  background-color: var(--yuko-background-color, #ffffff);
+  color: var(--yuko-text-color, #111827);
+  padding: var(--yuko-padding, 10px);
+  width: var(--yuko-width, 100%);
+  height: var(--yuko-height, auto);
+}
+
+.yuko-cart-redeem-block .yuko-button {
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: var(--yuko-button-background-color, #111827);
+  color: var(--yuko-button-text-color, #ffffff);
 }
 
 .yuko-rewards-button:hover {
@@ -25,22 +46,31 @@
   width: 20px;
   height: 20px;
 }
+.yuko-redeem-message-icon .yuko-icon-font {
+  font-size: var(--yk-icon-20);
+}
 .yuko-reward-modal-vip-icon {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
+}
+.yuko-reward-modal-vip-block {
+  align-items: flex-start;
+}
+.yuko-reward-modal-illustrated-block {
+  align-items: flex-start;
 }
 .yuko-reward-modal-illustrated-block img {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
-.yuko-reward-modal-existing-reward-discount-icon {
-  width: 40px;
-  height: 40px;
-}
 .yuko-reward-modal-redeem-reward-discount-icon {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
+}
+.yuko-reward-modal-redeem-reward-discount-icon .yuko-icon-font {
+  font-size: var(--yk-icon-24);
 }
 .yuko-reward-modal-vip-benefits-title {
   font-size: 1rem;
