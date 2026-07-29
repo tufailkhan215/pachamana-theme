@@ -1,14 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+    function isEditorMode() {
+        try {
+            return !!(window?.Shopify && window.Shopify.designMode);
+        } catch (e) {
+            return false;
+        }
+    }
 
-    if (window?.Shopify?.yukoApp?.features?.loyalty === false) {
-        return;
+    const editorMode = isEditorMode();
+
+    if (!editorMode) {
+        if (window?.Shopify?.yukoApp?.features?.loyalty === false) {
+            return;
+        }
+        if (!window.YukoLoyalty.getYukoCartRedeemWidgetConfig()?.is_enabled) {
+            return;
+        }
+        if (window?.YukoUtil?.isBannedCustomer()) {
+            return;
+        }
     }
-    if (!window.YukoLoyalty.getYukoCartRedeemWidgetConfig()?.is_enabled) {
-        return;
-    }
-    if (window?.YukoUtil?.isBannedCustomer()) {
-        return;
-      }
     const container_list = document.querySelectorAll('[data-yuko-cart-redeem-block]');
     if (!container_list?.length) {
         return;
