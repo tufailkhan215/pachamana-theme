@@ -1,0 +1,352 @@
+{{ 'learn-shared.css' | asset_url | stylesheet_tag }}
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<div class="pm-learn" id="pm-learn-{{ section.id }}">
+<div style="background: var(--pm-pearl-white); font-family: var(--font-body); color: var(--text-body);">
+
+  
+    <div style="position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 40; background: rgba(226,171,67,0.14);">
+      <div style="height: 100%; background: var(--pm-gold-500); width: 0%; transition: width 120ms linear;"></div>
+    </div>
+  
+
+  <!-- Nav -->
+  
+
+  <!-- Hero -->
+  <div id="hero" style="position: relative; overflow: hidden; background: var(--gradient-sunrise);">
+    <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; right: -50px; bottom: -40px; width: 34%; opacity: 0.10; pointer-events: none;">
+    <div style="max-width: 840px; margin: 0 auto; padding: 96px 40px 92px; text-align: center; position: relative; z-index: 2;">
+      <div style="display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 13px; color: var(--pm-gold-700); margin-bottom: 26px;">
+        <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+        The Cacao Guide · Part 10 of 10
+        <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+      </div>
+      <h1 style="font-family: var(--font-display); text-transform: uppercase; font-size: 56px; line-height: 0.98; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Your First<br>Cup Of Cacao</h1>
+      <p style="font-family: var(--font-body); font-style: italic; font-size: 21px; line-height: 1.6; color: var(--pm-cacao-600); max-width: 40ch; margin: 0 auto 30px;">Everything you need to know before your first cup, and nothing you don't.</p>
+      <div style="display: inline-flex; align-items: center; gap: 20px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--pm-cacao-500);">
+        <span>13 Min Read</span>
+        <span style="width: 4px; height: 4px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span>Getting Started</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured image -->
+  <div style="width: 100%; height: 480px; position: relative;">
+    <image-slot id="beg-featured" shape="rect" fit="cover" placeholder="Featured photo: a warm mug of freshly whisked ceremonial cacao held in two hands"></image-slot>
+  </div>
+
+  <!-- Body: sticky TOC + article -->
+  <div style="max-width: 1140px; margin: 0 auto; padding: 80px 40px 40px; display: flex; gap: 72px; align-items: flex-start; justify-content: center;">
+
+    
+      <aside style="position: sticky; top: 96px; width: 216px; flex-shrink: 0; padding-top: 6px;">
+        <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 18px;">In This Guide</div>
+        <nav style="display: flex; flex-direction: column; gap: 12px; border-left: 1px solid var(--border-soft); padding-left: 18px;">
+          <a href="#s-welcome" data-goto="s-welcome" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Welcome to cacao</a>
+          <a href="#s-whatis" data-goto="s-whatis" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What it actually is</a>
+          <a href="#s-need" data-goto="s-need" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What you'll need</a>
+          <a href="#s-dose" data-goto="s-dose" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">How much to use</a>
+          <a href="#s-method" data-goto="s-method" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">The basic method</a>
+          <a href="#s-feel" data-goto="s-feel" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What you might feel</a>
+          <a href="#s-questions" data-goto="s-questions" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Common questions</a>
+          <a href="#s-week" data-goto="s-week" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Your first week</a>
+          <a href="#s-worth" data-goto="s-worth" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">A few things worth knowing</a>
+          <a href="#s-beginning" data-goto="s-beginning" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">This is just the beginning</a>
+        </nav>
+      </aside>
+    
+
+    <article style="max-width: 700px; flex: 1 1 700px; min-width: 0;">
+
+      <!-- Welcome -->
+      <section data-section="s-welcome" id="s-welcome" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">Welcome To Cacao</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">If you've just discovered ceremonial cacao, or you're holding your first bag of Pacha Mana Chuncho and wondering what to do next, this guide is for you. You don't need prior experience. You don't need a spiritual background. You don't need special equipment or elaborate rituals or a particular time of day. You need a mug, some hot water, and about ten minutes.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">What you will get from ceremonial cacao is real. The energy is real. The mood lift is real. The warmth that spreads through your chest in the first few minutes is real. People who start a daily cacao practice often describe it as one of the most quietly transformative things they've done for their wellbeing, not because cacao is magic, but because it works, and because the act of making something warm and nourishing for yourself every morning, with attention, turns out to matter more than it sounds.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.6; margin: 0; color: var(--pm-cacao-700);">Start simple. Let the experience teach you the rest.</p>
+      </section>
+
+      <!-- What is -->
+      <section data-section="s-whatis" id="s-whatis" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What Ceremonial Cacao Actually Is</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Before anything else, let's clear up the confusion most new cacao drinkers carry with them. Ceremonial cacao is not hot chocolate. It is not cocoa powder mixed with milk and sugar. It is not a chocolate-flavored drink designed to taste sweet and comforting. It is whole, minimally processed cacao, the full cacao bean, ground into a paste with nothing added and nothing removed, prepared as a warm drink.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">This means two things for your first experience. First, it will taste different from anything chocolate-flavored you've had before. Richer. More complex. Slightly bitter, in a pleasant and interesting way. Earthier. It takes a cup or two to fully appreciate and then tends to become deeply satisfying in a way sweetened chocolate never quite manages. Second, it will feel different in your body. Within twenty to thirty minutes of a full serving, most people notice a warmth in the chest, a gentle lift in energy and mood, a quality of focus softer and longer-lasting than coffee.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">It is also not the same as cacao powder. Cacao powder has had the cacao butter, the natural fat, removed through industrial pressing. That fat is the carrier for most of cacao's beneficial compounds. Without it you get some flavor and some minerals, but not the full medicine. Pacha Mana's Chuncho is whole-food cacao, the fat is intact, which is why it produces a rich, velvety drink that cacao powder simply cannot replicate.</p>
+      </section>
+
+      <!-- Need -->
+      <section data-section="s-need" id="s-need" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">What You'll Need</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">The good news: very little.</p>
+        <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-soft);">
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">The Cacao</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Pacha Mana's Chuncho, in paste or ground form. Both are the same single-ingredient heirloom cacao from Peru. The paste is the most traditional whole-food form, dense and rich, needing a little more whisking. The ground version dissolves more easily and is convenient for everyday use.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Something To Heat</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">A kettle or small saucepan. You want your liquid hot but not boiling, around 160°F to 180°F, steamy not rolling. Boiling water can degrade the more delicate compounds and flatten the flavor. No thermometer? Boil, then let it sit two to three minutes before using.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Something To Mix</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">A handheld milk frother is the easiest and most effective tool, inexpensive, easy to clean, and it produces a beautiful frothy drink. A whisk works well too, a blender works but means more cleanup. Nothing is strictly required, but a frother noticeably improves the texture if you'll drink cacao regularly.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">A Mug You Love</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">This sounds minor. It isn't. Cacao rewards slowing down, and the mug you hold matters to the experience. Choose something with weight and warmth, ceramic or pottery, something you actually like holding.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Optional Additions</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">A pinch of sea salt (genuinely transformative), a little maple syrup or raw honey if you prefer sweetness, cinnamon, cayenne, or cardamom. All optional. Many experienced drinkers take it completely pure, which lets the Chuncho bean come through clearly.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dose -->
+      <section data-section="s-dose" id="s-dose" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">How Much To Use</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">This is the question most beginners get wrong, usually by using too little. Ceremonial cacao is not a sprinkle-into-smoothie ingredient. For the energy, the mood shift, and the chest warmth people describe, you need a real serving.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;">
+          <div style="border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+            <div style="background: var(--gradient-sunrise); padding: 20px; text-align: center;">
+              <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; color: var(--pm-cacao-600); margin-bottom: 6px;">First-Timer</div>
+              <div style="font-family: var(--font-display); font-size: 32px; color: var(--pm-cacao-700);">15 to 20g</div>
+            </div>
+            <p style="font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; margin: 0; padding: 16px 20px; background: var(--surface-card);">About 1 to 1.5 tbsp of paste, or 2 tbsp ground. Start here for your first cups to learn how your body responds.</p>
+          </div>
+          <div style="border: 1px solid var(--pm-gold-300); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+            <div style="background: var(--gradient-gold); padding: 20px; text-align: center;">
+              <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; color: var(--pm-cacao-700); margin-bottom: 6px;">Daily</div>
+              <div style="font-family: var(--font-display); font-size: 32px; color: var(--pm-cacao-800);">20 to 25g</div>
+            </div>
+            <p style="font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; margin: 0; padding: 16px 20px; background: var(--surface-card);">About 1.5 to 2 tbsp paste, or 2 to 3 ground. The everyday coffee replacement or morning ritual. Full effects, daily use.</p>
+          </div>
+          <div style="border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+            <div style="background: var(--gradient-cacao); padding: 20px; text-align: center;">
+              <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; color: var(--pm-gold-400); margin-bottom: 6px;">Ceremonial</div>
+              <div style="font-family: var(--font-display); font-size: 32px; color: var(--pm-pearl-white);">40 to 50g</div>
+            </div>
+            <p style="font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; margin: 0; padding: 16px 20px; background: var(--surface-card);">About 3 to 4 tbsp paste. A deeper, more intentional experience. Reserve for when you have time and space. No more than twice a week.</p>
+          </div>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.7; margin: 0; color: var(--text-muted);">A note on weighing versus measuring: paste and ground cacao have different densities, so tablespoon amounts are approximate. If you want precision, a small kitchen scale is the most reliable tool. Twenty grams is twenty grams regardless of form.</p>
+      </section>
+
+      <!-- Method -->
+      <section data-section="s-method" id="s-method" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 28px;">How To Make It: The Basic Method</h2>
+        <ol style="list-style: none; counter-reset: step; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 18px;">
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">1</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 15px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Heat Your Liquid</div><p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.65; margin: 0;">Warm 6 to 8 ounces of your chosen liquid to just below boiling. Water is most traditional and lets the flavor come through clearest; plant milks (oat, cashew, coconut, almond) create a richer, creamier drink. Dairy milk is not recommended, it can inhibit some of cacao's beneficial compounds. Oat and cashew give the smoothest texture.</p></div>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">2</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 15px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Make A Paste First</div><p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.65; margin: 0;">Add your cacao to the mug. Pour just two or three tablespoons of hot liquid over it and whisk or froth vigorously until fully dissolved into a smooth, glossy paste. This step is the key to a lump-free drink, adding all the liquid at once tends to leave unmixed chunks at the bottom.</p></div>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">3</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 15px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Add The Rest</div><p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.65; margin: 0;">Pour the remaining hot liquid in slowly while continuing to whisk. The cacao emulsifies into a rich, velvety drink. If you're using a frother, run it 20 to 30 seconds after adding all the liquid for the best texture.</p></div>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">4</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 15px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Season</div><p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.65; margin: 0;">Add a small pinch of sea salt and taste. If you want sweetener, add a little now, a teaspoon of maple syrup or honey is usually enough. Add any spices, taste again, and adjust.</p></div>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">5</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 15px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Pause Before The First Sip</div><p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.65; margin: 0;">Hold the mug in both hands. Feel the warmth. Take one slow breath. This is not mandatory and not spiritual performance, it is simply the act of arriving in the moment before you drink, which makes the experience noticeably better. Ask yourself, even briefly: what do I need today? Then drink slowly, and let it warm you.</p></div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Feel -->
+      <section data-section="s-feel" id="s-feel" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 28px;">What You Might Feel, And When</h2>
+        <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-soft); margin-bottom: 24px;">
+          <div style="display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600);">0 to 15 min</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">During the drink: the flavor, warmth spreading into your hands from the mug, and a quality of slowing down that comes partly from the ritual and partly from the compounds beginning to work.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600);">15 to 30 min</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">When most people notice the shift: a warmth in the chest from the vasodilating effect of theobromine, a gentle lift in mood and energy, and a focus that feels softer, more settled, and more embodied than caffeine. Many describe feeling more present, more open, more themselves.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600);">30 min to 3 hr</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">The sustained phase. Theobromine has a half-life of 6 to 10 hours, so its effects extend well beyond what caffeine provides. Most people feel good, focused, and energized for several hours without a crash.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600);">First Cup</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">The full experience often deepens over the first week or two of regular drinking. Your first cup may feel subtle, pleasant, warm, gently energizing, but not dramatic. This is normal. Cacao rewards consistency; give it a week before deciding what it does.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Questions -->
+      <section data-section="s-questions" id="s-questions" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Common First-Timer Questions</h2>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">Is this going to make me jittery?</div>
+            <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">Almost certainly not. The primary stimulant is theobromine, a gentle cardiac stimulant rather than a nervous-system stimulant. There is some caffeine (roughly a third of a cup of coffee), but it is buffered by the natural fat of the cacao butter, which slows absorption. Most caffeine-sensitive people drink cacao without the jitters or heart racing coffee gives them. Start with a smaller dose if you are very sensitive.</p>
+          </div>
+          <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">Can I drink it every day?</div>
+            <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">Yes, at a daily dose of 20 to 25 grams. This is one of the things that distinguishes cacao from more intense plant medicines: it is designed for regular, daily relationship. Many people drink it every morning as a coffee replacement or alongside their coffee, and the minerals, particularly magnesium, are beneficial at this regularity.</p>
+          </div>
+          <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">Can I drink it if I'm pregnant?</div>
+            <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">Cacao contains caffeine and theobromine, so we recommend consulting your doctor or midwife before drinking ceremonial cacao during pregnancy. Many practitioners advise reduced doses in the first trimester and moderation throughout. This is a personal health decision best made with medical guidance.</p>
+          </div>
+          <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">Can I drink it if I'm on medication?</div>
+            <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">Most medications are fine alongside ceremonial cacao. The important exception is SSRIs and MAO inhibitors, cacao contains compounds that affect serotonin reuptake, and combining these with SSRIs can cause excess serotonin. If you take SSRIs or any mood-regulating medication, please speak with your doctor first.</p>
+          </div>
+          <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">What if it tastes too bitter?</div>
+            <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">A few options. Try a pinch of sea salt, which reduces the perception of bitterness more effectively than sweetener, without adding sugar. Add a small amount of maple syrup, honey, or coconut sugar. Try a plant-milk base rather than water. And give it a few cups: what first reads as bitter usually becomes deeply satisfying once your palate adjusts, the same complexity that makes dark coffee, aged cheese, and good wine interesting.</p>
+          </div>
+          <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">What time of day should I drink it?</div>
+            <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">Morning is most natural for most people, cacao makes an excellent coffee replacement or companion. The stimulant effects are mild but real, so drinking it before 2pm while you learn your response is a good starting rule. Evening cacao is fine for many people, especially at lower doses, because theobromine is gentler than caffeine and affects sleep less for most.</p>
+          </div>
+          <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">Can I drink it cold?</div>
+            <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">Yes. Cacao prepared hot then chilled is delicious and develops a thicker, more chocolatey character. Pour it over ice, blend it into a smoothie, or make it the night before and refrigerate. If you made it with plant milk, shake or whisk it again before drinking as it will separate slightly.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Week -->
+      <section data-section="s-week" id="s-week" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Your First Week: A Simple Approach</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 24px;">The best way to start with ceremonial cacao is simply to show up for it daily and pay attention.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;">
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600); margin-bottom: 10px;">Days 1 to 3</div>
+            <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.6; margin: 0;">Start with a first-timer dose of 15 to 20 grams. Focus on the preparation, making it slowly, tasting it, noticing how it feels at different points after drinking. Keep it simple so you can taste what the Chuncho bean itself tastes like.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600); margin-bottom: 10px;">Days 4 to 7</div>
+            <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.6; margin: 0;">Move to a daily dose of 20 to 25 grams if the smaller dose felt comfortable. Experiment with one addition at a time, sea salt one day, cinnamon the next, a different liquid base. Notice what you prefer.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600); margin-bottom: 10px;">After Week One</div>
+            <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.6; margin: 0;">You'll know your preferred dose, base liquid, additions, and roughly how cacao affects you. Everyone responds a little differently. From here the practice is yours to develop however feels right.</p>
+          </div>
+        </div>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 19px; line-height: 1.6; margin: 0; color: var(--pm-cacao-700);">Some people build an elaborate morning ritual around cacao. Others make it in two minutes and drink it while getting ready. Both are valid. The cacao works either way.</p>
+      </section>
+
+      <!-- Worth -->
+      <section data-section="s-worth" id="s-worth" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">A Few Things Worth Knowing</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Store It Properly</div>
+            <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">Keep it in a cool, dry place out of direct sunlight. Room temperature is fine in most climates, no need to refrigerate. Properly stored, Pacha Mana cacao keeps for 12 to 18 months.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">The White Bloom Is Fine</div>
+            <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">A pale whitish coating on the paste over time is bloom, cacao butter migrating to the surface with temperature changes. It is completely harmless and doesn't affect flavor or efficacy. Just mix it back in when you prepare your cup.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Leftovers Aren't Wasted</div>
+            <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">Pour extra into an ice cube tray and freeze, cacao cubes go straight into smoothies or remelt for the next day. Refrigerated, leftover cacao sets into a thick, mousse-like texture that is delicious with a spoon.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Cacao And Coffee Coexist</div>
+            <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">Not ready to give up coffee? Add cacao to it for a rich, bulletproof-style mocha. The cacao butter naturally slows caffeine absorption, smoothing the energy curve. Many people start here and gradually want more cacao, less coffee.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Beginning -->
+      <section data-section="s-beginning" id="s-beginning" style="margin-bottom: 8px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">This Is Just The Beginning</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Cacao is a simple drink and also, over time, a profound one. The first cup is about getting comfortable with the taste and the preparation. The tenth cup is about starting to understand your personal relationship with it. The hundredth cup is about something harder to name, a consistency of practice, a reliable access to presence and clarity and warmth, that becomes part of the architecture of your days.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">You don't need to think about any of that right now. You just need to make the first cup. Heat the water. Add the cacao. Whisk until smooth. Hold the mug in both hands and feel the warmth before you drink.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.6; margin: 0; color: var(--pm-cacao-700);">The rest follows from there.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Closing CTA -->
+  <div style="position: relative; overflow: hidden; background: var(--gradient-sunrise); margin-top: 40px;">
+    <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; left: -40px; bottom: -40px; width: 30%; opacity: 0.10; pointer-events: none;">
+    <div style="max-width: 680px; margin: 0 auto; padding: 80px 40px; text-align: center; position: relative; z-index: 2;">
+      <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="height: 58px; margin-bottom: 22px; opacity: 0.9;">
+      <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 34px; line-height: 1.05; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 16px;">Make Your First Cup</h2>
+      <p style="font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--pm-cacao-600); max-width: 48ch; margin: 0 auto 30px;">If you haven't yet found your cacao, explore Pacha Mana's Chuncho ceremonial cacao and start where it all begins: the bean.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="primary" size="lg">Shop Chuncho Cacao</x-import>
+        <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="outline" size="lg">Read The Full Guide</x-import>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--pm-cacao-600); margin: 22px 0 0;">Ready to go further? <a href="/replace-coffee-with-cacao" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">Replacing coffee with cacao</a>, <a href="/mood-science-behind-cacao" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">the mood science behind cacao</a>, and <a href="/create-your-own-cacao-ceremony" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">creating your own ceremony</a> are good next steps.</p>
+    </div>
+  </div>
+
+  <!-- Series band -->
+  <div style="background: var(--surface-card); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+      <div>
+        <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 8px;">The Cacao Guide · Part 10 of 10</div>
+        <div style="font-family: var(--font-body); font-size: 16px; color: var(--text-body);">You've reached the end of the series. <strong style="color: var(--pm-cacao-700);">Now make the first cup.</strong></div>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 26px; height: 6px; border-radius: 3px; background: var(--pm-gold-500);"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  
+
+</div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('pm-learn-{{ section.id }}');
+  if (!root) return;
+  var bar = root.querySelector('[data-pm-progress], .pm-progress-bar');
+  if (!bar) {
+    var fixed = root.querySelector('div[style*="position: fixed"][style*="height: 3px"]');
+    if (fixed) bar = fixed.firstElementChild;
+  }
+  if (!bar) return;
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+    bar.style.width = Math.min(100, Math.max(0, pct)).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+
+<style>
+  #pm-learn-{{ section.id }} { overflow-x: hidden; }
+  #pm-learn-{{ section.id }} img { max-width: 100%; }
+</style>
+
+{% schema %}
+{
+  "name": "Beginners Guide",
+  "settings": [],
+  "presets": [{ "name": "Beginners Guide" }]
+}
+{% endschema %}
