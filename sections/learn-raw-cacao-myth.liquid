@@ -1,0 +1,276 @@
+{{ 'learn-shared.css' | asset_url | stylesheet_tag }}
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<div class="pm-learn" id="pm-learn-{{ section.id }}">
+<div style="background: var(--pm-pearl-white); font-family: var(--font-body); color: var(--text-body);">
+
+  
+    <div style="position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 40; background: rgba(226,171,67,0.14);">
+      <div style="height: 100%; background: var(--pm-gold-500); width: 0%; transition: width 120ms linear;"></div>
+    </div>
+  
+
+  <!-- Nav -->
+  
+
+  <!-- Hero -->
+  <div id="hero" style="position: relative; overflow: hidden; background: var(--gradient-sunrise);">
+    <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; right: -50px; bottom: -40px; width: 34%; opacity: 0.10; pointer-events: none;">
+    <div style="max-width: 820px; margin: 0 auto; padding: 96px 40px 92px; text-align: center; position: relative; z-index: 2;">
+      <div style="display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 13px; color: var(--pm-gold-700); margin-bottom: 26px;">
+        <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+        The Cacao Guide · Part 03 of 10
+        <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+      </div>
+      <h1 style="font-family: var(--font-display); text-transform: uppercase; font-size: 60px; line-height: 0.98; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Raw Cacao<br>Is A Myth</h1>
+      <p style="font-family: var(--font-body); font-style: italic; font-size: 21px; line-height: 1.6; color: var(--pm-cacao-600); max-width: 40ch; margin: 0 auto 30px;">The uncomfortable truth about “raw” chocolate, why it doesn't exist the way you think it does, and what actually preserves the medicine in cacao.</p>
+      <div style="display: inline-flex; align-items: center; gap: 20px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--pm-cacao-500);">
+        <span>11 Min Read</span>
+        <span style="width: 4px; height: 4px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span>Sourcing &amp; Process</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured image -->
+  <div style="width: 100%; height: 480px; position: relative;">
+    <image-slot id="raw-featured" shape="rect" fit="cover" placeholder="Featured photo: cacao beans toasting over a low fire on a clay comal" src="{{ 'learn-img-ac7a00b300.webp' | asset_url }}"></image-slot>
+  </div>
+
+  <!-- Body: sticky TOC + article -->
+  <div style="max-width: 1140px; margin: 0 auto; padding: 80px 40px 40px; display: flex; gap: 72px; align-items: flex-start; justify-content: center;">
+
+    
+      <aside style="position: sticky; top: 96px; width: 216px; flex-shrink: 0; padding-top: 6px;">
+        <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 18px;">In This Guide</div>
+        <nav style="display: flex; flex-direction: column; gap: 12px; border-left: 1px solid var(--border-soft); padding-left: 18px;">
+          <a href="#s-movement" data-goto="s-movement" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">The raw food movement</a>
+          <a href="#s-raw" data-goto="s-raw" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What "raw" actually means</a>
+          <a href="#s-fermentation" data-goto="s-fermentation" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">The fermentation problem</a>
+          <a href="#s-indigenous" data-goto="s-indigenous" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What tradition does</a>
+          <a href="#s-heat" data-goto="s-heat" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What heat does to cacao</a>
+          <a href="#s-risk" data-goto="s-risk" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">High heat, not all heat</a>
+          <a href="#s-pachamana" data-goto="s-pachamana" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What we do instead</a>
+          <a href="#s-lookfor" data-goto="s-lookfor" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What to look for</a>
+          <a href="#s-word" data-goto="s-word" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">A word to raw foodies</a>
+        </nav>
+      </aside>
+    
+
+    <article style="max-width: 700px; flex: 1 1 700px; min-width: 0;">
+
+      <!-- Movement -->
+      <section data-section="s-movement" id="s-movement" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Raw Food Movement Got One Thing Wrong</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The raw food movement gave the world something genuinely valuable: a framework for thinking critically about how processing degrades the nutritional quality of food. High heat destroys enzymes. Industrial processing strips nutrients. The closer to whole and unaltered, the better.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">For fruits and vegetables, this logic holds up beautifully. A raw carrot has more living enzymes than a boiled one. Cold-pressed olive oil retains more polyphenols than refined oil. Raw honey is nutritionally superior to processed honey. The principle is sound.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">But somewhere along the way, this logic got applied to cacao, and that's where things went sideways. Because cacao is not a fruit or a vegetable. It is a seed. And seeds, unlike the soft flesh of fruits, do not follow the same rules.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">When “raw cacao” became a marketing category, it brought with it a set of assumptions that don't survive contact with how cacao is actually grown, processed, or understood by the people who have worked with it for centuries. Let's unpack this carefully, because the truth is more interesting than the myth.</p>
+      </section>
+
+      <!-- Raw meaning -->
+      <section data-section="s-raw" id="s-raw" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What "Raw" Actually Means</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 24px;">In the raw food framework, “raw” means food that has never been heated above 116°F (47°C). The idea is that above this temperature, the enzymes and beneficial compounds in food begin to degrade. This works well for foods with high water content, such as fruits, vegetables, and leafy greens, because their enzymes are vulnerable to heat at relatively low temperatures and because water conducts that heat throughout the food.</p>
+        <div style="background: var(--surface-card); border: 1px solid var(--pm-gold-200); border-left: 4px solid var(--pm-gold-500); border-radius: var(--radius-md); padding: 20px 26px; margin-bottom: 24px;">
+          <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.68; margin: 0; color: var(--pm-cacao-700);">But dried cacao beans have a water content of less than 8%. Low moisture means cacao beans are actually quite heat-stable, and this changes everything about how heat affects them.</p>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The compounds you most want to preserve in cacao, flavonoids, theobromine, polyphenols, and anandamide precursors, are not destroyed by gentle heat the way the enzymes in a raw vegetable are. In fact, the right amount of heat doesn't degrade cacao at all. It transforms it into something more bioavailable, more flavorful, and more medicinally potent.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">The “raw threshold” of 116°F was developed for a specific category of food. Applied to cacao, it is the wrong tool for the job.</p>
+      </section>
+
+      <!-- Fermentation -->
+      <section data-section="s-fermentation" id="s-fermentation" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Fermentation Problem</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Here is the part that surprises most people. Before cacao can become chocolate, before it can develop the flavor, the biochemistry, or any of the properties we associate with good cacao, it must be fermented. This is not optional. Unfermented cacao beans are bitter, astringent, and nutritionally incomplete. Fermentation is the step that unlocks the precursors to flavor and activates many of the beneficial compounds.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 26px;">Fermentation is carried out by microorganisms, yeasts and bacteria, that generate heat as a byproduct of their activity. Good cacao fermentation requires temperatures to reach and sustain 124°F to 130°F for proper development. This is well above the raw food threshold.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 26px;">
+          <div style="background: var(--gradient-sunrise); border: 1px solid var(--pm-gold-200); border-radius: var(--radius-lg); padding: 24px; text-align: center;">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px; color: var(--pm-cacao-600); margin-bottom: 8px;">Raw Threshold</div>
+            <div style="font-family: var(--font-display); font-size: 42px; line-height: 1; color: var(--pm-cacao-700);">116°F</div>
+          </div>
+          <div style="background: var(--gradient-gold); border: 1px solid var(--pm-gold-300); border-radius: var(--radius-lg); padding: 24px; text-align: center;">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px; color: var(--pm-cacao-700); margin-bottom: 8px;">Proper Fermentation</div>
+            <div style="font-family: var(--font-display); font-size: 42px; line-height: 1; color: var(--pm-cacao-800);">124 to 130°F</div>
+          </div>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">This means that any cacao that has been properly fermented, which is virtually all high-quality cacao, including every variety sold as “ceremonial grade,” has already exceeded the raw threshold before it ever reaches a roaster, a grinder, or a chocolate maker.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">When brands label their cacao as “raw,” one of two things is true: either the cacao was not properly fermented (and is therefore inferior in flavor, nutrition, and medicine), or the “raw” label is technically inaccurate because fermentation already brought temperatures above 116°F. Either way, “raw ceremonial cacao” is, at best, a marketing simplification. At worst, it's describing an inferior product.</p>
+      </section>
+
+      <!-- Indigenous -->
+      <section data-section="s-indigenous" id="s-indigenous" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What The Indigenous Traditions Actually Do</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The raw cacao movement is a modern Western construct. It has no roots in the indigenous traditions that developed the relationship with cacao over thousands of years.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Every indigenous cacao tradition we are aware of, across Mesoamerica, the Amazon, and the Andes, involves toasting the cacao bean as a fundamental step in preparation. Not because they didn't know better, but because they understood something the raw food movement missed: fire is part of the medicine.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">In Oaxacan tradition, cacao beans are toasted on a clay comal over an open fire, stirred carefully by elders who knew exactly how much heat was needed and when to stop. In Andean traditions, similar low-heat toasting methods have been used for centuries. These are not shortcuts or compromises. They are considered essential to activating the cacao, to bringing it fully alive.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.6; margin: 0; color: var(--pm-cacao-700);">Removing fire from cacao preparation in the name of “rawness” is not a return to tradition. It is a departure from it.</p>
+      </section>
+
+      <!-- Heat science -->
+      <section data-section="s-heat" id="s-heat" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What Heat Actually Does To Cacao</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">So what is actually happening during a proper low-temperature roast, and what would be lost without it?</p>
+        <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-soft); margin-bottom: 26px;">
+          <div style="display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Flavor</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">The Maillard reaction, the same chemistry behind roasted coffee and bread crust, develops the complex aromatic compounds that give fine cacao its character. Unroasted cacao often tastes flat, sour, or vegetal.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Moisture</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Roasting removes moisture left after sun-drying, which matters for shelf stability and for grinding. Too much moisture produces a gummy, uneven paste rather than a smooth one.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Shell</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">After roasting, the outer shell separates cleanly from the inner nib, making winnowing far more effective. Shell fragments left behind affect both texture and flavor.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Safety</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Gentle roasting eliminates residual microbial activity from fermentation, including unwanted bacteria and mold spores that can develop during post-harvest handling.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Activation</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Several beneficial compounds become more bioavailable after light roasting. The structure of the bean changes in ways that make it easier for the body to access what's inside.</p>
+          </div>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">None of this requires high heat. All of it requires some heat, applied with care, at the right temperature, for the right duration.</p>
+      </section>
+
+      <!-- Risk -->
+      <section data-section="s-risk" id="s-risk" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Real Risk, High Heat, Not All Heat</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Here is the distinction that matters most, and that “raw” marketing completely obscures. The problem with most commercial and industrial cacao is not that it was roasted. It is that it was over-roasted, subjected to high temperatures to force uniform results from inconsistent, low-quality inputs, and to mask the off-flavors that come from poor fermentation, poor sourcing, and poor post-harvest handling.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">High-temperature industrial roasting does degrade flavonoids and polyphenols. It does reduce the concentration of heat-sensitive beneficial compounds. It does flatten the flavor into something generic and uniform. This is a real problem, and the instinct of the raw food movement to push back against it was not wrong.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">But the solution is not zero heat. The solution is the right amount of heat: a low, slow, careful roast applied to high-quality, well-fermented beans that don't need to be corrected or masked. This is what traditional cacao makers have always done. This is what we do.</p>
+      </section>
+
+      <!-- Pacha Mana -->
+      <section data-section="s-pachamana" id="s-pachamana" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What Pacha Mana Does Instead</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 24px;">At Pacha Mana, we don't make raw cacao. We make something we believe is better: carefully slow-roasted, minimally processed, whole-food ceremonial cacao that honors both the science and the tradition.</p>
+        <div style="width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 28px;">
+          <image-slot id="raw-roast" shape="rect" fit="cover" placeholder="Photo: Chuncho cacao being slow-roasted at low temperature" src="{{ 'learn-img-3dd803255b.webp' | asset_url }}"></image-slot>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Our Chuncho cacao begins its journey in the high-altitude growing regions of the Sacred Valley in Peru, where heirloom trees produce small, flavorful pods harvested by hand by the same family collective that has stewarded this land for generations. After harvest, the cacao is fermented at origin, a careful, monitored process that develops the bean's full flavor and biochemical complexity. Temperatures during fermentation naturally reach and exceed the raw threshold, as they must for good cacao.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">After fermentation, the beans are sun-dried on raised beds, clean and covered, before being gently slow-roasted at low temperatures. This roast is calibrated to bring out the natural flavor of the Chuncho bean without pushing into temperatures that would degrade its medicinal compounds. It is a roast applied with restraint and respect, not uniformity and convenience.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The result is cacao that retains the vast majority of its bioactive compounds, flavonoids, theobromine, anandamide precursors, and polyphenols, while also being fully realized in flavor, texture, and energetic quality. Alive, but also complete. Nothing is added. Nothing is stripped away. The cacao butter remains intact, the essential fat carrier that makes all of cacao's beneficial compounds bioavailable to the body.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.6; margin: 0; color: var(--pm-cacao-700);">This is what we mean by ceremonial grade. Not raw. Not industrial. The way of fire applied with wisdom.</p>
+      </section>
+
+      <!-- Look for -->
+      <section data-section="s-lookfor" id="s-lookfor" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What To Look For Instead Of "Raw"</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">If “raw” is not the right standard for evaluating cacao quality, what is? Here are the questions that actually matter.</p>
+        <ol style="list-style: none; counter-reset: q; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 16px;">
+          <li style="counter-increment: q; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">1</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">How was it fermented?</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Proper fermentation is the foundation of good cacao, and poorly fermented cacao cannot be rescued by any downstream process. Ask whether fermentation follows best practices or is left entirely without oversight.</p></div>
+          </li>
+          <li style="counter-increment: q; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">2</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">What temperature was it roasted at?</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Low-temperature roasting preserves more beneficial compounds than high-temperature industrial roasting. A brand that knows their cacao will know their roasting temperatures.</p></div>
+          </li>
+          <li style="counter-increment: q; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">3</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Is it whole-food cacao?</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Whole cacao (paste, block, or disc) retains the cacao butter that is essential for absorbing its benefits. Powder has had this fat removed and is nutritionally inferior, regardless of whether it was called “raw.”</p></div>
+          </li>
+          <li style="counter-increment: q; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">4</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Where does it come from?</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Soil health, farming practices, and the ethical treatment of farmers all directly impact quality. Traceability is not a bonus, it's a baseline.</p></div>
+          </li>
+          <li style="counter-increment: q; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">5</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Has it been tested?</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Third-party lab testing for heavy metals, mold toxins, and other contaminants is the mark of a brand that takes quality seriously. Ask to see the <a href="/heavy-metals-testing">testing results</a>.</p></div>
+          </li>
+        </ol>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">“Raw” is a simple word that signals good intentions. But the questions above tell you far more about whether a cacao is actually worth drinking.</p>
+      </section>
+
+      <!-- Word -->
+      <section data-section="s-word" id="s-word" style="margin-bottom: 8px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">A Word To Those Who Came Through Raw Food</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">If you found ceremonial cacao through the raw food movement, your instincts brought you somewhere good. The desire for whole food, minimal processing, conscious sourcing, and genuine nourishment: these are exactly the right instincts to bring to cacao.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">What we're asking you to reconsider is not the destination, but one piece of the map. “Raw” was a useful signpost that pointed away from industrial, over-processed chocolate. But it was never quite the right word for what you were actually looking for.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">What you were looking for, what we all want from cacao, is something whole, honest, carefully handled, and deeply nourishing. Something grown with respect and prepared with intention. Something that still carries the spirit of the bean it came from.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 22px; line-height: 1.55; margin: 0; color: var(--pm-cacao-700);">That cacao exists. It just isn't raw.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Closing CTA -->
+  <div style="position: relative; overflow: hidden; background: var(--gradient-sunrise); margin-top: 40px;">
+    <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; left: -40px; bottom: -40px; width: 30%; opacity: 0.10; pointer-events: none;">
+    <div style="max-width: 680px; margin: 0 auto; padding: 80px 40px; text-align: center; position: relative; z-index: 2;">
+      <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="height: 58px; margin-bottom: 22px; opacity: 0.9;">
+      <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 34px; line-height: 1.05; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 16px;">Taste The Difference Fire Makes</h2>
+      <p style="font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--pm-cacao-600); max-width: 48ch; margin: 0 auto 30px;">Want to experience what thoughtfully slow-roasted, whole-food Chuncho cacao actually tastes and feels like? Explore our ceremonial cacao and taste the difference that process makes.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="primary" size="lg">Shop Ceremonial Cacao</x-import>
+        <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="outline" size="lg">See Our Testing</x-import>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--pm-cacao-600); margin: 22px 0 0;">More from the guide: <a href="/coffee-alternative-cacao" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">replacing coffee with cacao</a> and <a href="/mood-science-ceremonial-cacao" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">the mood science behind cacao</a>.</p>
+    </div>
+  </div>
+
+  <!-- Series band -->
+  <div style="background: var(--surface-card); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+      <div>
+        <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 8px;">The Cacao Guide · Part 03 of 10</div>
+        <div style="font-family: var(--font-body); font-size: 16px; color: var(--text-body);">Up next, <strong style="color: var(--pm-cacao-700);">Part 04: How To Read a Cacao Label.</strong></div>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 26px; height: 6px; border-radius: 3px; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  
+
+</div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('pm-learn-{{ section.id }}');
+  if (!root) return;
+  var bar = root.querySelector('[data-pm-progress], .pm-progress-bar');
+  if (!bar) {
+    var fixed = root.querySelector('div[style*="position: fixed"][style*="height: 3px"]');
+    if (fixed) bar = fixed.firstElementChild;
+  }
+  if (!bar) return;
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+    bar.style.width = Math.min(100, Math.max(0, pct)).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+
+<style>
+  #pm-learn-{{ section.id }} { overflow-x: hidden; }
+  #pm-learn-{{ section.id }} img { max-width: 100%; }
+</style>
+
+{% schema %}
+{
+  "name": "Raw Cacao Myth",
+  "settings": [],
+  "presets": [{ "name": "Raw Cacao Myth" }]
+}
+{% endschema %}

@@ -1,0 +1,338 @@
+{{ 'learn-shared.css' | asset_url | stylesheet_tag }}
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<div class="pm-learn" id="pm-learn-{{ section.id }}">
+<div style="background: var(--pm-pearl-white); font-family: var(--font-body); color: var(--text-body);">
+
+  
+    <div style="position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 40; background: rgba(226,171,67,0.14);">
+      <div style="height: 100%; background: var(--pm-gold-500); width: 0%; transition: width 120ms linear;"></div>
+    </div>
+  
+
+  <!-- Nav -->
+  
+
+  <!-- Hero -->
+  <div id="hero" style="position: relative; overflow: hidden; background: var(--gradient-sunrise);">
+    <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; right: -50px; bottom: -40px; width: 34%; opacity: 0.10; pointer-events: none;">
+    <div style="max-width: 840px; margin: 0 auto; padding: 96px 40px 92px; text-align: center; position: relative; z-index: 2;">
+      <div style="display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 13px; color: var(--pm-gold-700); margin-bottom: 26px;">
+        <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+        The Cacao Guide · Part 04 of 10
+        <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+      </div>
+      <h1 style="font-family: var(--font-display); text-transform: uppercase; font-size: 52px; line-height: 1.0; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Cacao Powder Vs<br>Ceremonial Cacao</h1>
+      <p style="font-family: var(--font-body); font-style: italic; font-size: 21px; line-height: 1.6; color: var(--pm-cacao-600); max-width: 38ch; margin: 0 auto 30px;">Why the brown powder in your pantry and the paste in your ceremonial cup are not the same thing. Not even close.</p>
+      <div style="display: inline-flex; align-items: center; gap: 20px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--pm-cacao-500);">
+        <span>12 Min Read</span>
+        <span style="width: 4px; height: 4px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span>Sourcing &amp; Process</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured image -->
+  <div style="width: 100%; height: 480px; position: relative;">
+    <image-slot id="pvc-featured" shape="rect" fit="cover" placeholder="Featured photo: cacao powder in a bowl beside a block of whole-food cacao paste" src="{{ 'learn-img-2afb0bbd37.webp' | asset_url }}"></image-slot>
+  </div>
+
+  <!-- Body: sticky TOC + article -->
+  <div style="max-width: 1140px; margin: 0 auto; padding: 80px 40px 40px; display: flex; gap: 72px; align-items: flex-start; justify-content: center;">
+
+    
+      <aside style="position: sticky; top: 96px; width: 216px; flex-shrink: 0; padding-top: 6px;">
+        <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 18px;">In This Guide</div>
+        <nav style="display: flex; flex-direction: column; gap: 12px; border-left: 1px solid var(--border-soft); padding-left: 18px;">
+          <a href="#s-confusion" data-goto="s-confusion" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">The confusion is fair</a>
+          <a href="#s-begin" data-goto="s-begin" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Where they both begin</a>
+          <a href="#s-powder" data-goto="s-powder" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What happens to powder</a>
+          <a href="#s-lost" data-goto="s-lost" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What gets lost</a>
+          <a href="#s-ceremonial" data-goto="s-ceremonial" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What ceremonial cacao is</a>
+          <a href="#s-sidebyside" data-goto="s-sidebyside" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Side by side</a>
+          <a href="#s-fine" data-goto="s-fine" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">"But I feel fine"</a>
+          <a href="#s-rawpowder" data-goto="s-rawpowder" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Raw cacao powder?</a>
+          <a href="#s-addbutter" data-goto="s-addbutter" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Adding butter back?</a>
+          <a href="#s-use" data-goto="s-use" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">How to use it</a>
+          <a href="#s-bottomline" data-goto="s-bottomline" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">The bottom line</a>
+        </nav>
+      </aside>
+    
+
+    <article style="max-width: 700px; flex: 1 1 700px; min-width: 0;">
+
+      <!-- Confusion -->
+      <section data-section="s-confusion" id="s-confusion" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Confusion Is Understandable</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Walk into any health food store and you'll find shelves of products with “cacao” on the label. Cacao powder. Raw cacao nibs. Cacao butter. Cacao paste. Ceremonial cacao. Dark chocolate with 85% cacao. They all come from the same bean. They all look related. Some are even marketed with nearly identical health claims.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">So what's actually different? Is ceremonial cacao just expensive cacao powder with a spiritual story attached to it? Or is there a genuine, meaningful distinction between them?</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">There is. And it matters more than most people realize, not just for the experience of drinking cacao, but for the actual health benefits you receive from it. What follows explains exactly what cacao powder is, how it's made, what gets lost in that process, and why whole-food ceremonial cacao is a fundamentally different product. Not a premium version of the same thing. A different thing entirely.</p>
+      </section>
+
+      <!-- Begin -->
+      <section data-section="s-begin" id="s-begin" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">Where They Both Begin, The Cacao Bean</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 26px;">Both cacao powder and ceremonial cacao start from the same place: the seeds of the Theobroma cacao tree, harvested from pods, fermented, and dried. At this point, a cacao bean is roughly half fat and half solids.</p>
+        <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); margin-bottom: 16px; display: flex; height: 96px;">
+          <div style="flex: 1; background: var(--gradient-gold); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="font-family: var(--font-display); font-size: 30px; color: var(--pm-cacao-800); line-height: 1;">50%</div>
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px; color: var(--pm-cacao-700); margin-top: 4px;">Cacao Butter</div>
+          </div>
+          <div style="flex: 1; background: var(--gradient-cacao); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="font-family: var(--font-display); font-size: 30px; color: var(--pm-pearl-white); line-height: 1;">50%</div>
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px; color: var(--pm-gold-400); margin-top: 4px;">Cacao Solids</div>
+          </div>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; margin: 0 0 20px; color: var(--text-muted);">Cacao butter is the rich, stable natural fat. Cacao solids are the fibrous, mineral-rich, flavonoid-dense dry matter.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">This 50/50 composition is not incidental. It is how nature designed the cacao bean, and it is the whole-food form in which cacao has been consumed, as medicine and as food, for thousands of years. Everything that happens after this point, the processing decisions made by whoever turns that bean into a finished product, determines what you actually receive when you drink it.</p>
+      </section>
+
+      <!-- Powder -->
+      <section data-section="s-powder" id="s-powder" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What Happens To Cacao Powder</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">Cacao powder is made through an industrial process called pressing. Here is what that looks like, step by step.</p>
+        <ol style="list-style: none; counter-reset: step; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 18px;">
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">1</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">High-heat roasting</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Beans are roasted at high temperatures to force uniformity across large batches of inconsistent, commodity-grade beans. This degrades flavonoids and polyphenols before any other step begins.</p></div>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">2</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Grinding into paste</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">The roasted beans become cacao liquor, a smooth liquid that is essentially 100% whole cacao. At this stage the product is actually nutritionally complete. The problem comes next.</p></div>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">3</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Hydraulic pressing</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Enormous pressure separates the liquor into cacao butter (the fat, pressed out) and a dry, dense cake of cacao solids (what remains after the fat is gone).</p></div>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">4</span>
+            <div><div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 16px; color: var(--pm-cacao-700); margin: 4px 0 6px;">Pulverizing into powder</div><p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">That dry cake is ground into the fine particles you know as cacao powder.</p></div>
+          </li>
+        </ol>
+        <div style="background: var(--surface-card); border: 1px solid var(--pm-gold-200); border-left: 4px solid var(--pm-gold-500); border-radius: var(--radius-md); padding: 20px 26px; margin-bottom: 20px;">
+          <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.68; margin: 0; color: var(--pm-cacao-700);">The critical thing to understand: this is done primarily to obtain the cacao butter, not the powder. Cacao butter is a high-value ingredient for luxury cosmetics, pharmaceuticals, and premium confectionery. The powder is the byproduct, what remains after the valuable fat has been extracted, and it is then marketed as a superfood.</p>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">Some powders undergo an additional step called Dutch processing, or alkalization, treatment with an alkaline solution to reduce acidity, darken the color, and mellow the flavor. This further reduces polyphenol content, sometimes dramatically. If you see “processed with alkali” or “Dutch process” on a label, the flavonoid content is likely far lower than the raw number suggests.</p>
+      </section>
+
+      <!-- Lost -->
+      <section data-section="s-lost" id="s-lost" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What Gets Lost When The Fat Is Removed</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">The removal of cacao butter is not a neutral step. It fundamentally changes what cacao is and what it can do in your body.</p>
+        <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-soft); margin-bottom: 26px;">
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">The Carrier</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Many of cacao's beneficial compounds are not water-soluble and require fat to be absorbed. Cacao butter is the specific fat nature designed to carry them, and it does the job better than any fat you add back in later.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Mineral Balance</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Minerals live in both the fat and solids of the bean. Remove the fat and the ratios shift. You get a concentrated but incomplete nutritional picture.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Energetic Quality</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Harder to quantify but consistently reported: whole-food cacao has an aliveness and presence that powder lacks, a reflection of intact biochemistry working together as a system.</p>
+          </div>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">When you remove the cacao butter and then try to compensate by mixing powder with coconut oil, you are not recreating whole-food cacao. You are attempting to reconstruct something that was never meant to be disassembled, and the body can tell the difference.</p>
+      </section>
+
+      <!-- Ceremonial -->
+      <section data-section="s-ceremonial" id="s-ceremonial" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What Ceremonial Cacao Is Instead</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 24px;">Ceremonial cacao is whole-food cacao. Nothing added, nothing removed. The whole bean, after careful fermentation, sun-drying, and low-temperature roasting, is ground into a smooth paste that keeps the full 50/50 ratio of butter to solids. Every beneficial compound is present. Every mineral is in its natural proportion. The fat and the solids are together, as they were in the bean.</p>
+        <div style="width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 28px;">
+          <image-slot id="pvc-paste" shape="rect" fit="cover" placeholder="Photo: a block of whole-food Chuncho cacao paste" src="{{ 'learn-img-155c1ec79f.webp' | asset_url }}"></image-slot>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">This is not a modern innovation. It is the oldest form of prepared cacao that exists. Ground stone, open fire, whole bean: this is how cacao has been made for thousands of years across Mesoamerica and the Andes. Ceremonial cacao is not a new product category. It is the original one.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">What makes Pacha Mana's ceremonial cacao worth understanding is the starting point: Chuncho, an ancient heirloom variety grown at high elevation in the Sacred Valley of Peru. Chuncho is not a high-yield commercial hybrid. It produces smaller pods, yields less per tree, and requires more careful attention at every stage. Smallholder family farmers tend it by hand.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">When the starting material is this good, grown in clean high-altitude soil, fermented with care, harvested by people who understand what they're handling, you don't need to correct it downstream. You don't need high heat to mask off-flavors. You don't need alkalization to smooth out bitterness. You need only to handle it with respect, preserve what's there, and get it into your cup intact.</p>
+      </section>
+
+      <!-- Side by side -->
+      <section data-section="s-sidebyside" id="s-sidebyside" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Side By Side, The Real Comparison</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div style="border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--surface-card);">
+            <div style="background: var(--gradient-cacao); padding: 20px 24px;">
+              <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 17px; color: var(--pm-pearl-white);">Cacao Powder</div>
+            </div>
+            <ul style="list-style: none; margin: 0; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-cacao-400);">×</span>Commodity-grade beans, usually with no traceability</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-cacao-400);">×</span>Roasted at high temperatures for uniformity</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-cacao-400);">×</span>Cacao butter removed by hydraulic pressing</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-cacao-400);">×</span>Often alkalized (Dutch process)</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-cacao-400);">×</span>The fat-carrying mechanism is absent</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-cacao-400);">×</span>An industrial byproduct sold as a health food</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-cacao-400);">×</span>Cheap and consistent, but nutritionally incomplete</li>
+            </ul>
+          </div>
+          <div style="border: 1px solid var(--pm-gold-300); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); background: var(--surface-card);">
+            <div style="background: var(--gradient-gold); padding: 20px 24px;">
+              <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 17px; color: var(--pm-cacao-800);">Ceremonial Cacao</div>
+            </div>
+            <ul style="list-style: none; margin: 0; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-gold-600);">✓</span>Single-origin heirloom Chuncho from traceable Peru farms</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-gold-600);">✓</span>Slow-roasted at low temperatures to preserve compounds</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-gold-600);">✓</span>Nothing removed, whole-food 50/50 ratio intact</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-gold-600);">✓</span>No additives, no alkalization, no emulsifiers</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-gold-600);">✓</span>Full cacao butter present as the natural carrier</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-gold-600);">✓</span>Fermented at origin with care and oversight</li>
+              <li style="font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--pm-gold-600);">✓</span>Costs more because it is made this way, and farmers are paid fairly</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fine -->
+      <section data-section="s-fine" id="s-fine" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">"But I've Used Cacao Powder For Years And Feel Fine"</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">This is a fair point, and we want to address it honestly. Cacao powder is not harmful. It still contains meaningful amounts of magnesium, iron, and some flavonoids, less than whole-food cacao, but not zero. If you've been using it in smoothies or baking and enjoying the benefits, that's real.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The question is not whether cacao powder has any value. The question is whether it delivers the full experience and full spectrum of benefits that whole-food ceremonial cacao does. The answer to that is clearly no.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 24px;">Think of it like comparing whole milk to skim milk. Skim milk still has protein and calcium. It's not nothing. But it's missing the fat-soluble vitamins, the fat itself, and the integrated nutritional profile of the whole food. No matter how many fortifications you add back in, it isn't the same thing as what came out of the animal.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.6; margin: 0; color: var(--pm-cacao-700);">Cacao powder is cacao that has been taken apart. Ceremonial cacao is cacao that has been left alone.</p>
+      </section>
+
+      <!-- Raw powder -->
+      <section data-section="s-rawpowder" id="s-rawpowder" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What About Raw Cacao Powder?</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">You may have seen cacao powder labeled “raw” and assumed it means less processed or more nutritionally intact than regular cocoa powder. In most cases, this is primarily a marketing distinction. Raw cacao powder has still had its cacao butter pressed out. It is still an industrial byproduct of butter extraction, just potentially processed at lower temperatures. The fat is still gone. The fundamental limitation of cacao powder remains.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">For a full explanation of why “raw cacao” is largely a myth, and what actually preserves the medicine in cacao, see our guide: <a href="/raw-cacao-myth">Raw Cacao Is a Myth, And Here's What We Do Instead</a>.</p>
+      </section>
+
+      <!-- Add butter -->
+      <section data-section="s-addbutter" id="s-addbutter" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What About Adding Cacao Butter Back?</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 24px;">Some people, having learned about the importance of cacao butter, try to reconstruct whole cacao by combining powder with separately purchased cacao butter. The logic seems reasonable. The result is not quite what they're hoping for.</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 18px 22px;">
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;"><strong style="color: var(--pm-cacao-700);">The fat was already separated under pressure and heat.</strong> Pressing changes both the powder and the butter. Recombining them is not the same as never separating them.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 18px 22px;">
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;"><strong style="color: var(--pm-cacao-700);">The ratios are hard to get right.</strong> The precise 50/50 balance of a whole bean is nearly impossible to recreate by eye at home.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 18px 22px;">
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;"><strong style="color: var(--pm-cacao-700);">The sourcing is usually separate and low quality.</strong> You are combining two commodity byproducts and hoping for a medicinal whole food.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 18px 22px;">
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;"><strong style="color: var(--pm-cacao-700);">It costs more and is more complicated</strong> than simply starting with whole-food cacao in the first place.</p>
+          </div>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">If the goal is the full benefit of cacao, start with cacao that was never taken apart.</p>
+      </section>
+
+      <!-- Use -->
+      <section data-section="s-use" id="s-use" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">How To Use Ceremonial Cacao</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">Ceremonial cacao paste or ground cacao is straightforward to prepare, and produces a drink that is richer, more satisfying, and more medicinally complete than anything made from powder.</p>
+        <ol style="list-style: none; counter-reset: step; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 16px;">
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">1</span>
+            <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Warm 6 to 8 oz of spring water or plant milk to just below boiling, steamy, not rolling.</p>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">2</span>
+            <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Add 1 to 2 tablespoons of Pacha Mana Chuncho cacao paste or ground cacao to your mug.</p>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">3</span>
+            <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Add a small splash of hot liquid and whisk vigorously until fully dissolved.</p>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">4</span>
+            <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Pour in the remaining liquid slowly, continuing to whisk or using a handheld frother.</p>
+          </li>
+          <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+            <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">5</span>
+            <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Add a pinch of sea salt. Optional: cinnamon, cayenne, or a little maple syrup or honey. Then pause before the first sip and set an intention.</p>
+          </li>
+        </ol>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">The texture is different from a powder-based drink: richer, more velvety, with a body that comes from the cacao butter naturally emulsified into the liquid. This is what chocolate was always meant to taste like.</p>
+      </section>
+
+      <!-- Bottom line -->
+      <section data-section="s-bottomline" id="s-bottomline" style="margin-bottom: 8px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Bottom Line</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Cacao powder and ceremonial cacao share a name and an origin. Beyond that, they are different products with different nutritional profiles, different preparation histories, and different relationships to the plant they came from.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Cacao powder is a useful ingredient. It belongs in brownies and smoothies and the back of your pantry. Ceremonial cacao is medicine. It belongs in your morning ritual, in your hands, warm, made with intention, from a bean that someone grew carefully and a farmer harvested by hand.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 22px; line-height: 1.55; margin: 0; color: var(--pm-cacao-700);">The difference is not just what's in the cup. It's what you receive from it.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Closing CTA -->
+  <div style="position: relative; overflow: hidden; background: var(--gradient-sunrise); margin-top: 40px;">
+    <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; left: -40px; bottom: -40px; width: 30%; opacity: 0.10; pointer-events: none;">
+    <div style="max-width: 680px; margin: 0 auto; padding: 80px 40px; text-align: center; position: relative; z-index: 2;">
+      <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="height: 58px; margin-bottom: 22px; opacity: 0.9;">
+      <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 34px; line-height: 1.05; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 16px;">Taste What Hasn't Been Taken Away</h2>
+      <p style="font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--pm-cacao-600); max-width: 48ch; margin: 0 auto 30px;">Ready to experience whole-food cacao the way it was meant to be prepared? Explore Pacha Mana's Chuncho ceremonial cacao and taste the full 50/50 bean, intact.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="primary" size="lg">Shop Chuncho Cacao</x-import>
+        <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="outline" size="lg">Read The Series</x-import>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--pm-cacao-600); margin: 22px 0 0;">More from the guide: <a href="/raw-cacao-myth" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">why raw cacao is a myth</a> and <a href="/coffee-alternative-cacao" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">replacing coffee with cacao</a>.</p>
+    </div>
+  </div>
+
+  <!-- Series band -->
+  <div style="background: var(--surface-card); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+      <div>
+        <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 8px;">The Cacao Guide · Part 04 of 10</div>
+        <div style="font-family: var(--font-body); font-size: 16px; color: var(--text-body);">Up next, <strong style="color: var(--pm-cacao-700);">Part 05: The Story of the Chuncho Bean.</strong></div>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 26px; height: 6px; border-radius: 3px; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  
+
+</div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('pm-learn-{{ section.id }}');
+  if (!root) return;
+  var bar = root.querySelector('[data-pm-progress], .pm-progress-bar');
+  if (!bar) {
+    var fixed = root.querySelector('div[style*="position: fixed"][style*="height: 3px"]');
+    if (fixed) bar = fixed.firstElementChild;
+  }
+  if (!bar) return;
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+    bar.style.width = Math.min(100, Math.max(0, pct)).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+
+<style>
+  #pm-learn-{{ section.id }} { overflow-x: hidden; }
+  #pm-learn-{{ section.id }} img { max-width: 100%; }
+</style>
+
+{% schema %}
+{
+  "name": "Powder Vs Ceremonial",
+  "settings": [],
+  "presets": [{ "name": "Powder Vs Ceremonial" }]
+}
+{% endschema %}

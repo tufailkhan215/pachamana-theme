@@ -1,0 +1,286 @@
+{{ 'learn-shared.css' | asset_url | stylesheet_tag }}
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<div class="pm-learn" id="pm-learn-{{ section.id }}">
+<div style="background: var(--pm-pearl-white); font-family: var(--font-body); color: var(--text-body);">
+
+  
+    <div style="position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 40; background: rgba(226,171,67,0.14);">
+      <div style="height: 100%; background: var(--pm-gold-500); width: 0%; transition: width 120ms linear;"></div>
+    </div>
+  
+
+  <!-- Nav -->
+  
+
+  <!-- Hero -->
+  <div id="hero" style="position: relative; overflow: hidden; background: var(--gradient-sunrise);">
+    <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; right: -50px; bottom: -40px; width: 34%; opacity: 0.10; pointer-events: none;">
+    <div style="max-width: 840px; margin: 0 auto; padding: 96px 40px 92px; text-align: center; position: relative; z-index: 2;">
+      <div style="display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 13px; color: var(--pm-gold-700); margin-bottom: 26px;">
+        <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+        The Cacao Guide · Part 06 of 10
+        <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+      </div>
+      <h1 style="font-family: var(--font-display); text-transform: uppercase; font-size: 58px; line-height: 0.98; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Why Chuncho<br>Is Different</h1>
+      <p style="font-family: var(--font-body); font-style: italic; font-size: 21px; line-height: 1.6; color: var(--pm-cacao-600); max-width: 42ch; margin: 0 auto 30px;">The genetics, the history, the flavor, the rarity, and why this one bean from the Peruvian Andes is unlike anything else you can put in your cup.</p>
+      <div style="display: inline-flex; align-items: center; gap: 20px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--pm-cacao-500);">
+        <span>12 Min Read</span>
+        <span style="width: 4px; height: 4px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span>Origin &amp; Genetics</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured image -->
+  <div style="width: 100%; height: 480px; position: relative;">
+    <image-slot id="chu-featured" shape="rect" fit="cover" placeholder="Featured photo: a Chuncho cacao pod on the tree in the high jungle near Cusco" src="{{ 'learn-img-59894fe9d2.webp' | asset_url }}"></image-slot>
+  </div>
+
+  <!-- Body: sticky TOC + article -->
+  <div style="max-width: 1140px; margin: 0 auto; padding: 80px 40px 40px; display: flex; gap: 72px; align-items: flex-start; justify-content: center;">
+
+    
+      <aside style="position: sticky; top: 96px; width: 216px; flex-shrink: 0; padding-top: 6px;">
+        <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 18px;">In This Guide</div>
+        <nav style="display: flex; flex-direction: column; gap: 12px; border-left: 1px solid var(--border-soft); padding-left: 18px;">
+          <a href="#s-secret" data-goto="s-secret" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Most cacao has a secret</a>
+          <a href="#s-what" data-goto="s-what" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What Chuncho is</a>
+          <a href="#s-genetics" data-goto="s-genetics" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Why ancient matters</a>
+          <a href="#s-where" data-goto="s-where" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Where it grows</a>
+          <a href="#s-flavor" data-goto="s-flavor" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What it tastes like</a>
+          <a href="#s-rarity" data-goto="s-rarity" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Why it's rare</a>
+          <a href="#s-people" data-goto="s-people" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Generations of stewardship</a>
+          <a href="#s-comparison" data-goto="s-comparison" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Chuncho vs the world</a>
+          <a href="#s-cup" data-goto="s-cup" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">What it means in your cup</a>
+          <a href="#s-why" data-goto="s-why" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Why we source nothing else</a>
+        </nav>
+      </aside>
+    
+
+    <article style="max-width: 700px; flex: 1 1 700px; min-width: 0;">
+
+      <!-- Secret -->
+      <section data-section="s-secret" id="s-secret" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">Most Cacao Has A Secret</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">When you buy a bar of chocolate, even an expensive one, even one with beautiful packaging and words like “single origin” and “artisan” on the label, there is a very good chance the cacao inside came from a tree that didn't exist a hundred years ago.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The vast majority of the world's chocolate supply is made from CCN-51, a hybrid variety developed in Ecuador in the 1960s. It was engineered for one purpose: yield. It produces more pods per tree, ripens faster, and is easier to grow at scale. It is also, by most accounts of people who work closely with cacao, nutritionally inferior, energetically flat, and almost completely devoid of the complex flavor and medicinal character that made cacao sacred to begin with.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">CCN-51 now accounts for a significant and growing share of global production. It is the industrial answer to global chocolate demand. And it is the quiet opposite of everything Chuncho cacao is. Understanding Chuncho requires understanding what was lost when industrial cacao took over, and what has been carefully preserved in the high-altitude valleys of southern Peru.</p>
+      </section>
+
+      <!-- What -->
+      <section data-section="s-what" id="s-what" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What Chuncho Is</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Chuncho (Theobroma cacao, Alto Amazonas genetic group) is one of the oldest known cacao varieties in the world. Its name comes from Quechua, the language of the Inca, and means roughly “native” or “from the jungle.” It is not a hybrid. It has not been engineered for yield or uniformity or shelf stability. It is cacao in something very close to its original, pre-colonial form.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Chuncho grows in the high-altitude cloud forest downriver from Cusco, Peru, a geography unlike almost anywhere else cacao is cultivated on Earth. Most commercial cacao grows at low elevations, in hot, humid equatorial conditions. Chuncho grows between 900 and 1,800 meters above sea level, in complex, biodiverse agroforestry systems that more closely resemble wild rainforest than conventional agriculture.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">It belongs to the Alto Amazonas genetic group, considered among the most ancient and genetically pure lineages of cacao, tracing back to the upper Amazon basin where cacao as a species is believed to have originated. This is not the same heritage as the Criollo, Forastero, or Trinitario categories that most specialty chocolate is classified under. Chuncho is older than those categories. It predates the colonial-era mixing and hybridization that produced them.</p>
+      </section>
+
+      <!-- Genetics -->
+      <section data-section="s-genetics" id="s-genetics" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Genetics, Why Ancient Matters</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The genetics of a cacao variety determine almost everything about it: flavor potential, nutritional profile, resilience, and the quality of compounds present in the finished product.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Modern hybrid cacao was bred to maximize one variable, pod yield per tree. In doing so, other variables were deprioritized. Flavor complexity was sacrificed for consistency. Genetic diversity was narrowed for uniformity. The rich, idiosyncratic biochemistry of heirloom varieties, the flavonoid profiles, the ratios of theobromine and other alkaloids, the aromatic precursors that develop during fermentation, was flattened into something predictable and easily managed.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Ancient heirloom varieties like Chuncho were never optimized for any of this. They were simply allowed to be what they are, which means they retain the full genetic expression of wild cacao: high flavonoid density, complex aromatic precursors, a distinct alkaloid profile, and a biochemical integrity that shows up clearly in the cup.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.6; margin: 0; color: var(--pm-cacao-700);">This is not romantic idealization. It is measurable. Researchers who analyze ancient heirloom varieties consistently find higher concentrations of beneficial compounds than in modern hybrids. The genetics carry the medicine.</p>
+      </section>
+
+      <!-- Where -->
+      <section data-section="s-where" id="s-where" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">Where It Grows</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 24px;">The region downriver from Cusco, the high jungle fringe of the Sacred Valley, sits at the intersection of the Andes and the Amazon. Cold mountain air meets tropical moisture, clouds hang in the valleys, and the sun arrives filtered through mist and canopy. It is one of the most biodiverse regions on the planet.</p>
+        <div style="width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 28px;">
+          <image-slot id="chu-valley" shape="rect" fit="cover" placeholder="Photo: cloud forest agroforestry in the high jungle near Cusco"></image-slot>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-soft); margin-bottom: 24px;">
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Elevation</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Growing at 900 to 1,800 meters means cooler temperatures and a slower season. Slower development lets more complex flavor precursors accumulate, the same principle that makes high-altitude coffee and wine more complex. Stress and patience produce depth.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Clean Soil</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">High-altitude volcanic and alluvial soils are rich and naturally low in the heavy metal contamination that plagues lower-elevation regions, supporting healthy plants without the pesticides and cadmium-leaching fertilizers standard in commodity cacao.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Shade</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Chuncho grows under a forest canopy, intercropped with dozens of other food and medicinal plants. Cacao evolved as an understory tree; growing it in full-sun monocultures is a fundamental mismatch with its nature. Grown the way it always has been, Chuncho is at home.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 210px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Clean Water</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">The family farmers actively steward the springs and waterways that feed their growing areas. Clean water at altitude, flowing through intact forest watershed, nourishes the trees in ways lowland irrigation cannot replicate.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flavor -->
+      <section data-section="s-flavor" id="s-flavor" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What It Actually Tastes Like</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">Chuncho surprises people accustomed to commercial chocolate. It is not the flat, one-dimensional bitterness of most dark chocolate, nor the aggressive intensity that some single-origin bars use to signal quality. It is more nuanced, more alive, and in many ways more gentle. Common tasting notes include:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Citrus Brightness</div>
+            <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">A clean, light acidity reminiscent of dried citrus or fruit blossom, present particularly in the opening.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Rich Creaminess</div>
+            <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">A natural, buttery body from the high cacao butter content of the whole bean and slow, careful processing.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Floral &amp; Fruity</div>
+            <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">Notes of tropical fruit, dried berry, and subtle florals that reflect the biodiversity and the quality of the fermentation.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Earthy Depth</div>
+            <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">A grounding, mineral base note that connects the flavor back to the soil and altitude. Clean and present, not heavy or musty.</p>
+          </div>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">Perhaps the most distinctive quality for new drinkers is the absence of harsh bitterness. Properly fermented and gently roasted, Chuncho does not carry the aggressive bitterness of low-quality cacao. What bitterness is present is soft and pleasant. It invites the next sip rather than challenging you to endure it. This complexity is a direct expression of the genetics, the environment, and the processing. It cannot be replicated by any industrial variety, at any price.</p>
+      </section>
+
+      <!-- Rarity -->
+      <section data-section="s-rarity" id="s-rarity" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Rarity, Why Chuncho Is Hard To Find</h2>
+        <div style="display: flex; align-items: center; gap: 24px; background: var(--gradient-sunrise); border: 1px solid var(--pm-gold-200); border-radius: var(--radius-lg); padding: 22px 26px; margin-bottom: 24px;">
+          <div style="font-family: var(--font-display); font-size: 44px; line-height: 1; color: var(--pm-cacao-700); flex-shrink: 0;">30 to 40%</div>
+          <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.6; margin: 0; color: var(--pm-cacao-600);">fewer pods than modern hybrid varieties, on smaller pods and lower yield per hectare. In a commodity market that rewards volume, that is an enormous disincentive.</p>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Many Peruvian farmers who once grew Chuncho have replaced their trees with higher-yielding hybrids. In some areas this replacement has happened at a speed that alarms botanists and cacao researchers.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The economics of specialty cacao are the only thing standing between Chuncho and significant genetic erosion. When farmers receive fair prices, prices that reflect the true value of what they produce rather than the commodity rate, they have a reason to preserve their Chuncho trees rather than replace them. This is why ethical sourcing is not just a values statement for Pacha Mana. It is a direct mechanism for preserving one of the world's most important cacao gene pools.</p>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 20px; line-height: 1.6; margin: 0; color: var(--pm-cacao-700);">Every bag of Pacha Mana cacao sold is a small act of genetic conservation.</p>
+      </section>
+
+      <!-- People -->
+      <section data-section="s-people" id="s-people" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Generations Of Stewardship</h2>
+        <div style="width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 28px;">
+          <image-slot id="chu-farmers" shape="rect" fit="cover" placeholder="Photo: a farming family tending their Chuncho cacao trees"></image-slot>
+        </div>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Chuncho cacao does not exist in isolation from the people who have grown it. It exists because of them. The Machiguenga (also known as Matsigenka) people of the Peruvian Amazon are among the earliest known cultivators of Chuncho, with a relationship to this variety extending back centuries, long before colonization, long before the word “cacao” entered European languages.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Their cultivation practices, the selection of seeds, the understanding of which trees to keep and which to leave, the intercropping systems, represent an accumulated body of knowledge that no university has formally studied and no institution has formally preserved. It lives in the hands and memories of the farming families themselves.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The family collective Pacha Mana sources from is multi-generational. The elders remember a time before hybrid varieties arrived. They know their Chuncho trees individually: which produce the most flavorful pods, which show resilience in drought years, which rootstocks to favor for the next generation.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">This knowledge is irreplaceable, and it is at risk right now, not from malice but from economics. When the commodity market does not distinguish between Chuncho and CCN-51, there is no financial reason for a family to maintain the harder, lower-yielding variety. The knowledge follows the economics. Pacha Mana's direct trade relationship is designed, in part, to change that equation.</p>
+      </section>
+
+      <!-- Comparison -->
+      <section data-section="s-comparison" id="s-comparison" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 28px;">Chuncho Vs The World</h2>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 26px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600); margin-bottom: 8px;">Vs CCN-51, most commercial chocolate</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Bred for yield, not quality. High volumes of consistent, undistinguished cacao, flat flavor, and a far lower medicinal compound profile. Typically grown in full-sun monocultures with heavy agrochemicals, often under poor farmer compensation and significant deforestation.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 26px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600); margin-bottom: 8px;">Vs Criollo, rare and prized</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Criollo is prized in premium chocolate circles for its mild, complex flavor and low bitterness. Chuncho shares some of these qualities but comes from an older, more genetically distinct lineage. Where Criollo has been crossbred extensively over centuries, Chuncho exists closer to its wild genetic roots.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 26px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600); margin-bottom: 8px;">Vs Trinitario, a Criollo and Forastero hybrid</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Trinitario was developed as a compromise: more yield than Criollo, more flavor than Forastero. Genuinely better than commodity cacao, but still a recent hybrid, without the genetic depth or ancestral lineage of a variety like Chuncho.</p>
+          </div>
+          <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 26px; box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-gold-600); margin-bottom: 8px;">Vs other Peruvian cacaos</div>
+            <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Peru produces several notable varieties. Chuncho is distinguished by its specific region (the high jungle near Cusco), its genetic classification (Alto Amazonas), and its cultivation history with indigenous Andean communities. Others may be excellent; Chuncho is exceptional and specific.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cup -->
+      <section data-section="s-cup" id="s-cup" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+        <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What This Means In Your Cup</h2>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">All of this, the genetics, the altitude, the soil, the people, the processing, converges in a single place: your cup. When you drink Pacha Mana's Chuncho ceremonial cacao, you are drinking something that carries all of it within it. Not metaphorically. Literally. The flavor notes are a direct expression of the altitude and the soil. The medicinal potency is a direct expression of the intact heirloom genetics.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The energetic quality, that particular warmth and openness people who work with Chuncho consistently describe, is inseparable from the integrity of the whole chain: from the ancient rootstock to the careful fermentation to the slow roast to the clean grind.</p>
+        <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">You cannot buy Chuncho's qualities in any other form. They are not available in commodity cacao at any price. They exist only here, in this valley, with these trees, tended by these families, for as long as the economics make it possible. This is what rarity actually means: not artificial scarcity, not limited-edition marketing, but a genuine singularity of origin, genetics, and care that produces something unrepeatable.</p>
+      </section>
+
+      <!-- Why -->
+      <section data-section="s-why" id="s-why" style="margin-bottom: 8px; scroll-margin-top: 96px;">
+        <div style="position: relative; overflow: hidden; background: var(--gradient-cacao); border-radius: var(--radius-xl); padding: 48px 44px; box-shadow: var(--shadow-md);">
+          <img src="{{ 'learn-img-7b93918a7d.png' | asset_url }}" alt="" style="position: absolute; right: -40px; bottom: -30px; width: 42%; opacity: 0.14; pointer-events: none;">
+          <div style="position: relative; z-index: 2;">
+            <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-pearl-white); margin: 0 0 20px;">Why We Source Nothing Else</h2>
+            <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.75; margin: 0 0 18px; color: var(--pm-tan-200);">We decided early on that we would source only Chuncho. Not because other cacaos are without value, but because the integrity of what we offer depends on the integrity of what we start with. We could source higher-yielding varieties and lower our prices. We could work with multiple regions and expand our line. We could optimize for margin rather than medicine. We chose not to.</p>
+            <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.75; margin: 0 0 18px; color: var(--pm-tan-200);">Because the world doesn't need another cacao brand. It needs the thing Chuncho actually is: ancient, clean, carefully grown, fairly traded, and as medicinally potent as cacao can be when nothing is compromised from seed to cup. When you choose Pacha Mana, you are not choosing a product. You are choosing a position: a belief that the oldest things are sometimes the best things, and that the people who steward them deserve to be compensated for it.</p>
+            <p style="font-family: var(--font-body); font-style: italic; font-size: 19px; line-height: 1.65; margin: 0; color: var(--pm-gold-300);">Chuncho is not the easiest cacao to source. It is the right one.</p>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Closing CTA -->
+  <div style="position: relative; overflow: hidden; background: var(--gradient-sunrise); margin-top: 40px;">
+    <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; left: -40px; bottom: -40px; width: 30%; opacity: 0.10; pointer-events: none;">
+    <div style="max-width: 680px; margin: 0 auto; padding: 80px 40px; text-align: center; position: relative; z-index: 2;">
+      <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="height: 58px; margin-bottom: 22px; opacity: 0.9;">
+      <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 34px; line-height: 1.05; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 16px;">Taste The Difference Origin Makes</h2>
+      <p style="font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--pm-cacao-600); max-width: 48ch; margin: 0 auto 30px;">Want to taste what ancient heirloom genetics, high-altitude growing, and careful whole-food processing actually produce? Explore Pacha Mana's Chuncho ceremonial cacao.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="primary" size="lg">Shop Chuncho Cacao</x-import>
+        <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="outline" size="lg">Our Story</x-import>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--pm-cacao-600); margin: 22px 0 0;">More from the guide: <a href="/cacao-powder-vs-ceremonial-cacao" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">cacao powder vs ceremonial cacao</a> and <a href="/raw-cacao-myth" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">why raw cacao is a myth</a>.</p>
+    </div>
+  </div>
+
+  <!-- Series band -->
+  <div style="background: var(--surface-card); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+      <div>
+        <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 8px;">The Cacao Guide · Part 06 of 10</div>
+        <div style="font-family: var(--font-body); font-size: 16px; color: var(--text-body);">Up next, <strong style="color: var(--pm-cacao-700);">Part 07: Ayni and the Ethics of Sourcing.</strong></div>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+        <span style="width: 26px; height: 6px; border-radius: 3px; background: var(--pm-gold-500);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  
+
+</div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('pm-learn-{{ section.id }}');
+  if (!root) return;
+  var bar = root.querySelector('[data-pm-progress], .pm-progress-bar');
+  if (!bar) {
+    var fixed = root.querySelector('div[style*="position: fixed"][style*="height: 3px"]');
+    if (fixed) bar = fixed.firstElementChild;
+  }
+  if (!bar) return;
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+    bar.style.width = Math.min(100, Math.max(0, pct)).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+
+<style>
+  #pm-learn-{{ section.id }} { overflow-x: hidden; }
+  #pm-learn-{{ section.id }} img { max-width: 100%; }
+</style>
+
+{% schema %}
+{
+  "name": "Why Chuncho Different",
+  "settings": [],
+  "presets": [{ "name": "Why Chuncho Different" }]
+}
+{% endschema %}
