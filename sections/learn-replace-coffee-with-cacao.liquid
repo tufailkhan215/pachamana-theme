@@ -1,0 +1,363 @@
+{{ 'learn-shared.css' | asset_url | stylesheet_tag }}
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<div class="pm-learn" id="pm-learn-{{ section.id }}">
+<div style="background: var(--pm-pearl-white); font-family: var(--font-body); color: var(--text-body);">
+
+ 
+  <div style="position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 40; background: rgba(226,171,67,0.14);">
+   <div style="height: 100%; background: var(--pm-gold-500); width: 0%; transition: width 120ms linear;"></div>
+  </div>
+ 
+
+ <!-- Nav -->
+ 
+
+ <!-- Hero -->
+ <div id="hero" style="position: relative; overflow: hidden; background: var(--gradient-sunrise);">
+  <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; right: -50px; bottom: -40px; width: 34%; opacity: 0.10; pointer-events: none;">
+  <div style="max-width: 820px; margin: 0 auto; padding: 96px 40px 92px; text-align: center; position: relative; z-index: 2;">
+   <div style="display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.16em; font-size: 13px; color: var(--pm-gold-700); margin-bottom: 26px;">
+    <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+    The Cacao Guide · Part 01 of 10
+    <span style="width: 28px; height: 1px; background: var(--pm-gold-500);"></span>
+   </div>
+   <h1 style="font-family: var(--font-display); text-transform: uppercase; font-size: 58px; line-height: 0.98; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Replace Your Coffee<br>With Cacao</h1>
+   <p style="font-family: var(--font-body); font-style: italic; font-size: 21px; line-height: 1.6; color: var(--pm-cacao-600); max-width: 30ch; margin: 0 auto 30px;">A gentler way to start your day, trading jitters and crashes for grounded, sustained energy, one cup at a time.</p>
+   <div style="display: inline-flex; align-items: center; gap: 20px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--pm-cacao-500);">
+    <span>12 Min Read</span>
+    <span style="width: 4px; height: 4px; border-radius: 50%; background: var(--pm-gold-500);"></span>
+    <span>Energy &amp; Mood</span>
+   </div>
+  </div>
+ </div>
+
+ <!-- Featured image -->
+ <div style="width: 100%; height: 480px; position: relative;">
+  <image-slot id="cw-featured" shape="rect" fit="cover" placeholder="Featured photo: ceremonial cacao as a nourishing coffee alternative in the morning" src="{{ 'learn-img-a59d932d8b.webp' | asset_url }}"></image-slot>
+ </div>
+
+ <!-- Body: sticky TOC + article -->
+ <div style="max-width: 1140px; margin: 0 auto; padding: 80px 40px 40px; display: flex; gap: 72px; align-items: flex-start; justify-content: center;">
+
+  
+   <aside style="position: sticky; top: 96px; width: 216px; flex-shrink: 0; padding-top: 6px;">
+    <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 18px;">In This Guide</div>
+    <nav style="display: flex; flex-direction: column; gap: 12px; border-left: 1px solid var(--border-soft); padding-left: 18px;">
+     <a href="#s-problem" data-goto="s-problem" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">The problem with coffee</a>
+     <a href="#s-body" data-goto="s-body" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Coffee in your body</a>
+     <a href="#s-theobromine" data-goto="s-theobromine" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Meet theobromine</a>
+     <a href="#s-caffeine" data-goto="s-caffeine" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Does cacao have caffeine?</a>
+     <a href="#s-energy" data-goto="s-energy" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">The energy you get</a>
+     <a href="#s-mood" data-goto="s-mood" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">The mood layer</a>
+     <a href="#s-dose" data-goto="s-dose" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">How much you need</a>
+     <a href="#s-prepare" data-goto="s-prepare" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">How to prepare</a>
+     <a href="#s-transition" data-goto="s-transition" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Making the switch</a>
+     <a href="#s-chuncho" data-goto="s-chuncho" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Why Chuncho cacao?</a>
+     <a href="#s-expectations" data-goto="s-expectations" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">A note on expectations</a>
+     <a href="#s-faq" data-goto="s-faq" style="font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: var(--text-muted);">Common questions</a>
+    </nav>
+   </aside>
+  
+
+  <article style="max-width: 700px; flex: 1 1 700px; min-width: 0;">
+
+   <!-- Problem -->
+   <section data-section="s-problem" id="s-problem" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Problem With Coffee <span style="color: var(--pm-gold-600);">(That Nobody Talks About)</span></h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Most of us didn't choose coffee. We just… inherited it. The morning ritual, the dependency, the afternoon crash, the anxiety that comes with the third cup. For millions of people, coffee is less of a pleasure and more of a requirement, a daily debt paid to stay functional.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">And yet the alternatives have always felt like a compromise. Green tea is subtle. Matcha is better but expensive and easy to over-do. Adaptogens take weeks to feel. Energy drinks are a hard no.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">What if there was something that gave you real energy, warm, embodied, sustained, while also being genuinely good for your heart, your mood, and your nervous system?</p>
+    <p style="font-family: var(--font-body); font-size: 20px; line-height: 1.7; margin: 0; color: var(--pm-cacao-700); font-style: italic;">There is. It's cacao. And it's been doing this for thousands of years.</p>
+   </section>
+
+   <!-- Coffee in body -->
+   <section data-section="s-body" id="s-body" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">What Actually Happens When You Drink Coffee</h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">To understand why cacao works so well as a coffee alternative, it helps to understand what coffee is actually doing to you.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Caffeine is a nervous system stimulant. It works by blocking adenosine receptors in your brain, adenosine is the molecule that builds up throughout the day and makes you feel tired. When caffeine blocks those receptors, you stop feeling the fatigue. But the adenosine doesn't go away. It keeps accumulating. The moment caffeine clears your system, usually 4 to 6 hours later, all of that stored tiredness hits at once. That's the crash.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Caffeine also triggers a cortisol response. For many people, especially those who are sensitive, this means elevated heart rate, anxiety, jitteriness, and disrupted sleep, even when consumed in the morning. Over time, your receptors adapt and you need more coffee to get the same effect. Dependency builds quietly.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">None of this means coffee is evil. But it does mean that for a lot of people, the relationship with coffee is more complicated than it feels.</p>
+   </section>
+
+   <!-- Theobromine -->
+   <section data-section="s-theobromine" id="s-theobromine" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">Enter Theobromine, Cacao's Primary Stimulant</h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">The primary active stimulant in ceremonial cacao is not caffeine, it's <em>theobromine</em>.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">Theobromine is a mild cardiac stimulant, which means it works on the heart and circulatory system rather than directly on the nervous system the way caffeine does. Rather than triggering a sharp spike in alertness followed by a crash, theobromine produces a slow, warm, expansive energy that builds gently and lasts.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 26px;">
+     <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Duration</div>
+      <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">A much longer half-life than caffeine, roughly 6 to 10 hours versus 4 to 6. The effect is softer and more sustained.</p>
+     </div>
+     <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Intensity</div>
+      <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">Roughly one quarter as stimulating as caffeine. For most people that means no jitters, no spike, no crash.</p>
+     </div>
+     <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Vasodilation</div>
+      <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">Unlike caffeine, theobromine relaxes and opens blood vessels rather than constricting them, improving circulation.</p>
+     </div>
+     <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-sm);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; color: var(--pm-gold-600); margin-bottom: 10px;">Nervous System</div>
+      <p style="font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; margin: 0;">It doesn't significantly stimulate the central nervous system, which is why cacao feels calm and focused rather than wired.</p>
+     </div>
+    </div>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">Pacha Mana's Chuncho cacao is rich in theobromine. When you drink a full ceremonial serving, you're getting a meaningful dose of this gentle stimulant, enough to notice, not enough to overwhelm.</p>
+   </section>
+
+   <!-- Caffeine -->
+   <section data-section="s-caffeine" id="s-caffeine" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">Does Cacao Have Caffeine?</h2>
+    <div style="display: flex; align-items: center; gap: 24px; background: var(--gradient-sunrise); border: 1px solid var(--pm-gold-200); border-radius: var(--radius-lg); padding: 22px 26px; margin-bottom: 24px;">
+     <div style="font-family: var(--font-display); font-size: 46px; line-height: 1; color: var(--pm-cacao-700); flex-shrink: 0;">30 to 50<span style="font-size: 18px;"> MG</span></div>
+     <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.6; margin: 0; color: var(--pm-cacao-600);">Caffeine per serving, roughly one third of a standard cup of coffee. But it doesn't behave the same way.</p>
+    </div>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Cacao is approximately 50% cacao butter, a rich, natural fat. That fat slows the absorption of caffeine into your bloodstream significantly, smoothing out what would otherwise be a sharp spike. The effect is similar to adding fat to your coffee (as in a “bulletproof” style drink), but built in naturally at the source.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Additionally, cacao contains compounds that modulate and balance the stimulant effect, including theobromine itself, magnesium, and various flavonoids that support relaxation and blood flow. The result is that caffeine in cacao lands very differently than caffeine in coffee, even at similar doses.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">Most people who are caffeine-sensitive find they can drink cacao without the anxiety, heart racing, or sleep disruption they experience with coffee. That said, if you are highly sensitive to caffeine, we recommend drinking cacao before 2pm while you get to know how your body responds.</p>
+   </section>
+
+   <!-- Energy -->
+   <section data-section="s-energy" id="s-energy" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">The Energy You Actually Get From Cacao</h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">People who make the switch from coffee to cacao often describe the energy differently. Not better or worse, different. Words that come up repeatedly: <em>grounded, warm, clear, open, focused, present.</em></p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Where coffee energy tends to be sharp and electric, pushing you forward, sometimes aggressively, cacao energy tends to be expansive and embodied. You feel it in your chest before you feel it in your head. It supports creativity and presence rather than urgency and output.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">This is partly theobromine, partly the mood-supporting compounds in cacao, and partly something harder to quantify, the ritual itself. Preparing a cup of cacao slowly, with intention, is already a different kind of morning than grabbing a coffee on the go.</p>
+   </section>
+
+   <!-- Mood -->
+   <section data-section="s-mood" id="s-mood" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">Why Cacao Feels Different Than Just Energy</h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">Coffee gives you alertness. Cacao gives you something closer to wellbeing, because it contains several compounds that directly support mood and emotional state, compounds that caffeine simply doesn't have.</p>
+    <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border-soft); margin-bottom: 26px;">
+     <div style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Anandamide</div>
+      <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Known as the bliss molecule, the same endocannabinoid behind the runner's high. Cacao also slows its breakdown, so the effect lingers.</p>
+     </div>
+     <div style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Phenylethylamine</div>
+      <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">Supports feelings of excitement, alertness, and the perception of time slowing down.</p>
+     </div>
+     <div style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Theobromine</div>
+      <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">As a vasodilator, it means more blood flow to brain and body, supporting cognitive clarity and physical aliveness.</p>
+     </div>
+     <div style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border-soft);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 15px; color: var(--pm-cacao-700);">Magnesium</div>
+      <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.65; margin: 0;">One of the most important minerals for nervous system regulation, and one many people are deficient in. Cacao is among the richest food sources.</p>
+     </div>
+    </div>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">The result is that the energy cacao provides has an emotional quality to it. Not euphoria, nothing dramatic, but a quiet elevation of mood that coffee doesn't produce.</p>
+   </section>
+
+   <!-- Dose -->
+   <section data-section="s-dose" id="s-dose" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">How Much Cacao Do You Need?</h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">For an everyday energy substitute, a daily dose of around 20 to 25 grams (roughly 2 heaping tablespoons of paste or ground cacao) is a good starting point, enough to feel the theobromine clearly without being overwhelming.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">For a deeper, more intentional experience, what's often called a ceremonial dose, 40 to 50 grams is more appropriate. This is not an everyday amount; we recommend no more than two ceremonial doses per week.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+     <div style="border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+      <div style="background: var(--gradient-sunrise); padding: 20px; text-align: center;">
+       <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; color: var(--pm-cacao-600); margin-bottom: 6px;">New To Cacao</div>
+       <div style="font-family: var(--font-display); font-size: 32px; color: var(--pm-cacao-700);">15 to 20g</div>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; margin: 0; padding: 16px 20px; background: var(--surface-card);">Ease in gently. Drink before noon while you learn how your body responds.</p>
+     </div>
+     <div style="border: 1px solid var(--pm-gold-300); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+      <div style="background: var(--gradient-gold); padding: 20px; text-align: center;">
+       <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; color: var(--pm-cacao-700); margin-bottom: 6px;">Daily Ritual</div>
+       <div style="font-family: var(--font-display); font-size: 32px; color: var(--pm-cacao-800);">20 to 25g</div>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; margin: 0; padding: 16px 20px; background: var(--surface-card);">The everyday replacement for your morning coffee. Feel it clearly, stay grounded.</p>
+     </div>
+     <div style="border: 1px solid var(--border-soft); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+      <div style="background: var(--gradient-cacao); padding: 20px; text-align: center;">
+       <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; color: var(--pm-gold-400); margin-bottom: 6px;">Ceremonial</div>
+       <div style="font-family: var(--font-display); font-size: 32px; color: var(--pm-pearl-white);">40 to 50g</div>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; margin: 0; padding: 16px 20px; background: var(--surface-card);">An intentional setting. Reserve for no more than twice a week.</p>
+     </div>
+    </div>
+   </section>
+
+   <!-- Prepare -->
+   <section data-section="s-prepare" id="s-prepare" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">How To Prepare Your Morning Cacao</h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">The preparation itself is part of what makes cacao work as a ritual replacement. It gives your hands and attention something to do, a moment of presence before the day starts.</p>
+    <div style="width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 32px;">
+     <image-slot id="cw-prepare" shape="rect" fit="cover" placeholder="Photo: whisking a cup of morning cacao" src="{{ 'learn-img-4e8458eaea.webp' | asset_url }}"></image-slot>
+    </div>
+    <ol style="list-style: none; counter-reset: step; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 18px;">
+     <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+      <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">1</span>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Warm 6 to 8 oz of spring water or plant milk to just below boiling, steamy, not rolling. Boiling water degrades some of cacao's more delicate compounds.</p>
+     </li>
+     <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+      <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">2</span>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Add 1 to 2 tablespoons of Pacha Mana Chuncho cacao paste or ground cacao to your mug.</p>
+     </li>
+     <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+      <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">3</span>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Add a small splash of the hot liquid and whisk vigorously until the cacao dissolves into a smooth paste.</p>
+     </li>
+     <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+      <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">4</span>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;">Pour in the rest of your liquid slowly, continuing to whisk or using a handheld frother.</p>
+     </li>
+     <li style="counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start;">
+      <span style="width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-gold); color: var(--pm-cacao-800); font-family: var(--font-display); font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-gold);">5</span>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.65; margin: 5px 0 0;"><strong style="color: var(--pm-cacao-700);">Optional:</strong> a small pinch of sea salt (it lifts the flavor significantly), a touch of cinnamon or cayenne, or a little maple syrup or honey if you prefer sweetness.</p>
+     </li>
+    </ol>
+    <div style="background: var(--surface-card); border: 1px solid var(--pm-gold-200); border-left: 3px solid var(--pm-gold-500); border-radius: var(--radius-md); padding: 20px 24px;">
+     <p style="font-family: var(--font-body); font-style: italic; font-size: 17px; line-height: 1.65; margin: 0; color: var(--pm-cacao-700);">Before your first sip, pause. Hold the cup. Set one intention for the day. That's it, ten minutes. A ritual that returns something to the morning rather than just extracting from it.</p>
+    </div>
+   </section>
+
+   <!-- Transition -->
+   <section data-section="s-transition" id="s-transition" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">Making The Transition</h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 28px;">There's no one right way to move from coffee to cacao. Three approaches that work well:</p>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+     <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 24px 26px; box-shadow: var(--shadow-sm);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 16px; color: var(--pm-gold-600); margin-bottom: 10px;">The Gradual Transition</div>
+      <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.68; margin: 0;">Replace one daily coffee with cacao, usually the first of the day, and keep the others as normal. After a week or two, notice how you feel. Many people find they naturally want less coffee once cacao is in the rotation.</p>
+     </div>
+     <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 24px 26px; box-shadow: var(--shadow-sm);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 16px; color: var(--pm-gold-600); margin-bottom: 10px;">The Full Switch</div>
+      <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.68; margin: 0;">A clean break. Expect one to three days of mild caffeine withdrawal, headaches, fatigue, low mood. This is normal and temporary. Drink plenty of water and don't skip your cacao. Most people feel noticeably better by day four.</p>
+     </div>
+     <div style="background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 24px 26px; box-shadow: var(--shadow-sm);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 16px; color: var(--pm-gold-600); margin-bottom: 10px;">The Mocha Bridge</div>
+      <p style="font-family: var(--font-body); font-size: 16px; line-height: 1.68; margin: 0;">Not ready to give up coffee? Add a tablespoon of cacao paste to your morning coffee. The cacao butter turns it into something closer to a bulletproof mocha, smoother, longer-lasting energy and a richer flavor. A completely valid long-term approach, not just a transition tool.</p>
+     </div>
+    </div>
+   </section>
+
+   <!-- Chuncho -->
+   <section data-section="s-chuncho" id="s-chuncho" style="margin-bottom: 60px; scroll-margin-top: 96px;">
+    <div style="position: relative; overflow: hidden; background: var(--gradient-cacao); border-radius: var(--radius-xl); padding: 48px 44px; box-shadow: var(--shadow-md);">
+     <img src="{{ 'learn-img-7b93918a7d.png' | asset_url }}" alt="" style="position: absolute; right: -40px; bottom: -30px; width: 42%; opacity: 0.14; pointer-events: none;">
+     <div style="position: relative; z-index: 2;">
+      <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-pearl-white); margin: 0 0 20px;">Why Chuncho Cacao Specifically?</h2>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.75; margin: 0 0 18px; color: var(--pm-tan-200);">Not all cacao is equal. The bioactive compounds that make cacao a genuine coffee alternative, theobromine, flavonoids, magnesium, anandamide precursors, are preserved or degraded depending on how the cacao is grown and processed.</p>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.75; margin: 0 0 18px; color: var(--pm-tan-200);">Pacha Mana sources exclusively from Chuncho, an ancient heirloom variety grown at high elevation in the Sacred Valley of Peru. It's grown in small quantities by family farmers practicing agroforestry, fermented carefully at origin, and slow-roasted to preserve its bioactive compounds rather than destroy them. Every batch is traceable, and we publish our <a href="/heavy-metals-testing" style="color: var(--pm-gold-300); text-decoration: underline; text-underline-offset: 3px;">heavy metals testing results</a> so you can drink with confidence.</p>
+      <p style="font-family: var(--font-body); font-style: italic; font-size: 18px; line-height: 1.7; margin: 0 0 22px; color: var(--pm-gold-300);">When you taste it, you'll notice the difference. When you feel it, you'll understand why people come back to it every morning.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: var(--font-body); font-size: 15px; color: var(--pm-tan-200);">
+       <a href="/products/chuncho-ceremonial-cacao-paste" style="color: var(--pm-gold-400); text-decoration: underline; text-underline-offset: 3px;">Chuncho ceremonial cacao paste</a>
+       <a href="/products/pure-ground-ceremonial-cacao" style="color: var(--pm-gold-400); text-decoration: underline; text-underline-offset: 3px;">Pure ground ceremonial cacao</a>
+       <a href="/products/single-serving-cacao-packets" style="color: var(--pm-gold-400); text-decoration: underline; text-underline-offset: 3px;">Single serving cacao packets</a>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- Expectations -->
+   <section data-section="s-expectations" id="s-expectations" style="margin-bottom: 8px; scroll-margin-top: 96px;">
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 20px;">A Note On Expectations</h2>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Cacao is not trying to be coffee. It won't give you the same sharp jolt. It won't replace your learned ritual associations overnight. The first cup might surprise you with how subtle it feels compared to what you're used to.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0 0 20px;">Give it a week. Notice what happens to your sleep. Notice your baseline anxiety. Notice whether your afternoons feel different without a crash. Notice whether your mornings feel more grounded.</p>
+    <p style="font-family: var(--font-body); font-size: 18.5px; line-height: 1.78; margin: 0;">Most people who make the switch don't go back, not because cacao is more powerful than coffee, but because it fits their body better. Because the energy is theirs, not borrowed.</p>
+   </section>
+
+   <!-- FAQ -->
+   <section data-section="s-faq" id="s-faq" style="margin-bottom: 8px; scroll-margin-top: 96px; padding-top: 44px; border-top: 1px solid var(--border-soft);">
+    <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 12px;">Common Questions</div>
+    <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 28px; line-height: 1.15; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 24px;">Cacao As A Coffee Alternative</h2>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+     <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">Is cacao caffeine free?</div>
+      <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">Cacao can contain small amounts of caffeine, but it is better known for theobromine.</p>
+     </div>
+     <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">Can cacao replace coffee?</div>
+      <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">For some people, yes. Others use cacao alongside coffee or as a gentler morning option a few days per week.</p>
+     </div>
+     <div style="padding: 22px 0; border-bottom: 1px solid var(--border-soft);">
+      <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-size: 17px; color: var(--pm-cacao-700); margin-bottom: 8px;">Will cacao give me energy?</div>
+      <p style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.7; margin: 0;">Many people experience steady energy from cacao, but responses vary by body and serving size.</p>
+     </div>
+    </div>
+    <p style="font-family: var(--font-body); font-size: 14px; line-height: 1.7; margin: 22px 0 0; color: var(--text-muted);">Cacao can feel strong in larger servings. If you are pregnant, nursing, taking medications, managing a heart condition, or sensitive to stimulants, speak with a qualified healthcare professional before making concentrated cacao a daily practice. Supporting reading: <a href="https://www.ncbi.nlm.nih.gov" style="color: var(--pm-gold-600);">NCBI overview of theobromine</a> and <a href="https://www.nccih.nih.gov" style="color: var(--pm-gold-600);">NCCIH guidance on product safety</a>.</p>
+   </section>
+
+  </article>
+ </div>
+
+ <!-- Closing CTA -->
+ <div style="position: relative; overflow: hidden; background: var(--gradient-sunrise); margin-top: 40px;">
+  <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="position: absolute; left: -40px; bottom: -40px; width: 30%; opacity: 0.10; pointer-events: none;">
+  <div style="max-width: 680px; margin: 0 auto; padding: 80px 40px; text-align: center; position: relative; z-index: 2;">
+   <img src="{{ 'learn-img-a044820100.png' | asset_url }}" alt="" style="height: 58px; margin-bottom: 22px; opacity: 0.9;">
+   <h2 style="font-family: var(--font-display); text-transform: uppercase; font-size: 34px; line-height: 1.05; letter-spacing: 0.01em; color: var(--pm-cacao-700); margin: 0 0 16px;">Ready To Make The Switch?</h2>
+   <p style="font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--pm-cacao-600); max-width: 46ch; margin: 0 auto 30px;">Start with our Chuncho ceremonial cacao paste or ground cacao, the cleanest, most direct way to experience what cacao can do.</p>
+   <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+    <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="primary" size="lg">Shop Chuncho Cacao</x-import>
+    <x-import component-from-global-scope="PachaManaDesignSystem_9805b9.Button" variant="outline" size="lg">Explore The Guide</x-import>
+   </div>
+   <p style="font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--pm-cacao-600); margin: 22px 0 0;">Or <a href="/shop" style="color: var(--pm-cacao-700); text-decoration: underline; text-underline-offset: 3px;">shop Pacha Mana ceremonial cacao</a> and choose the format that fits your morning.</p>
+  </div>
+ </div>
+
+ <!-- Series band -->
+ <div style="background: var(--surface-card); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+   <div>
+    <div style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--pm-gold-600); margin-bottom: 8px;">The Cacao Guide · Part 01 of 10</div>
+    <div style="font-family: var(--font-body); font-size: 16px; color: var(--text-body);">Up next, <strong style="color: var(--pm-cacao-700);">Part 02: The Chemistry of a Better Morning.</strong></div>
+   </div>
+   <div style="display: flex; gap: 8px; align-items: center;">
+    <span style="width: 26px; height: 6px; border-radius: 3px; background: var(--pm-gold-500);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300);"></span>
+   </div>
+  </div>
+ </div>
+
+ <!-- Footer -->
+ 
+
+</div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('pm-learn-{{ section.id }}');
+  if (!root) return;
+  var bar = root.querySelector('[data-pm-progress], .pm-progress-bar');
+  if (!bar) {
+    var fixed = root.querySelector('div[style*="position: fixed"][style*="height: 3px"]');
+    if (fixed) bar = fixed.firstElementChild;
+  }
+  if (!bar) return;
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+    bar.style.width = Math.min(100, Math.max(0, pct)).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+
+<style>
+  #pm-learn-{{ section.id }} { overflow-x: hidden; }
+  #pm-learn-{{ section.id }} img { max-width: 100%; }
+</style>
+
+{% schema %}
+{
+  "name": "Coffee Alternative",
+  "settings": [],
+  "presets": [{ "name": "Coffee Alternative" }]
+}
+{% endschema %}

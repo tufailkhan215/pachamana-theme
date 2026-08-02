@@ -1,0 +1,256 @@
+
+/* Oaxaca display face — served from existing theme asset */
+@font-face {
+  font-family: 'Oaxaca';
+  src: url('bulk-oaxaca.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
+/* ============================================================
+   Pacha Mana — Color Tokens
+   Warm, golden, earthy. Candlelight + sunrise. Never cold/clinical.
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ---- */
+  --pm-sunshine-gold: #e2ab43;   /* primary accent — the sun */
+  --pm-milk-chocolate: #5c402f;  /* primary dark — cacao */
+  --pm-sandy-tan: #fee7be;       /* warm light surface */
+  --pm-pearl-white: #f9f2ef;     /* off-white page base */
+
+  /* ---- Soft black (warm, from the logo ink) ----
+     CANONICAL brand ink = #2b2521 (warm). The live site's <meta theme-color>
+     is currently #333132 (cooler); update the store to #2b2521 so web,
+     packaging, and email share one ink. Never use pure #000. */
+  --pm-soft-black: #2b2521;
+
+  /* ---- Gold scale ---- */
+  --pm-gold-50:  #fdf4e2;
+  --pm-gold-100: #f9e6c0;
+  --pm-gold-200: #f2d28c;
+  --pm-gold-300: #ebbd5e;
+  --pm-gold-400: #e2ab43;  /* = Sunshine Gold */
+  --pm-gold-500: #cf962f;
+  --pm-gold-600: #ab7820;
+  --pm-gold-700: #835a18;
+
+  /* ---- Cacao / brown scale ---- */
+  --pm-cacao-50:  #f3ece6;
+  --pm-cacao-100: #e4d4c6;
+  --pm-cacao-200: #c4a48a;
+  --pm-cacao-300: #9c7758;
+  --pm-cacao-400: #785741;
+  --pm-cacao-500: #5c402f;  /* = Milk Chocolate */
+  --pm-cacao-600: #4a3326;
+  --pm-cacao-700: #38271d;
+  --pm-cacao-800: #2b2521;  /* = Soft black */
+
+  /* ---- Tan / cream scale ---- */
+  --pm-tan-50:  #fdf8f3;
+  --pm-tan-100: #fef2e0;
+  --pm-tan-200: #fee7be;  /* = Sandy Tan */
+  --pm-tan-300: #f7d79b;
+
+  /* ---- Semantic ---- */
+  --pm-success: #6e8b3d;   /* sage / leaf green */
+  --pm-warning: #cf962f;   /* deep gold */
+  --pm-danger:  #a23b29;   /* terracotta red-clay */
+  --pm-info:    #7a6a55;   /* warm taupe */
+
+  /* ---- Surfaces ---- */
+  --surface-page:    var(--pm-pearl-white);
+  --surface-card:    #ffffff;
+  --surface-warm:    var(--pm-tan-100);
+  --surface-sand:    var(--pm-sandy-tan);
+  --surface-dark:    var(--pm-cacao-500);
+  --surface-darkest: var(--pm-soft-black);
+
+  /* ---- Text ---- */
+  --text-strong:  var(--pm-soft-black);
+  --text-body:    var(--pm-cacao-600);
+  --text-muted:   var(--pm-cacao-300);
+  --text-on-dark: var(--pm-pearl-white);
+  --text-on-gold: var(--pm-cacao-700);
+  --text-accent:  var(--pm-gold-600);
+
+  /* ---- Lines & borders ---- */
+  --border-soft:   #ece0d3;
+  --border-medium: #ddc9b4;
+  --border-gold:   var(--pm-gold-400);
+  --border-dark:   var(--pm-cacao-500);
+
+  /* ---- Focus ---- */
+  --focus-ring: var(--pm-gold-400);
+}
+
+/* ============================================================
+   Pacha Mana — Typography Tokens
+   Display: Oaxaca (ALL CAPS, max ~5 words, headlines & labels)
+   Body:    Lora (serif, warm, story-driven prose)
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Oaxaca', 'Cooper Black', Georgia, serif;
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+
+  /* ---- Display scale (Oaxaca — always uppercase) ---- */
+  --display-xl: 4.5rem;   /* 72px hero */
+  --display-lg: 3.25rem;  /* 52px */
+  --display-md: 2.25rem;  /* 36px */
+  --display-sm: 1.5rem;   /* 24px */
+  --display-xs: 1.125rem; /* 18px eyebrow / label */
+
+  /* ---- Body scale (Lora) ---- */
+  --text-2xl: 1.5rem;     /* 24px lead */
+  --text-xl:  1.25rem;    /* 20px */
+  --text-lg:  1.125rem;   /* 18px */
+  --text-md:  1rem;       /* 16px base */
+  --text-sm:  0.875rem;   /* 14px */
+  --text-xs:  0.75rem;    /* 12px */
+
+  /* ---- Weights ---- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* ---- Letter spacing ---- */
+  --tracking-display: 0.04em;  /* Oaxaca breathes a little */
+  --tracking-eyebrow: 0.18em;  /* wide eyebrow caps */
+  --tracking-body: 0;
+}
+
+/* ============================================================
+   Pacha Mana — Spacing & Layout Tokens
+   Generous, breathing, ceremonial. Nothing cramped.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 0.25rem;  /* 4 */
+  --space-2: 0.5rem;   /* 8 */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.5rem;   /* 24 */
+  --space-6: 2rem;     /* 32 */
+  --space-7: 3rem;     /* 48 */
+  --space-8: 4rem;     /* 64 */
+  --space-9: 6rem;     /* 96 */
+  --space-10: 8rem;    /* 128 */
+
+  /* ---- Radii — soft, hand-shaped, never sharp/techy ---- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* ---- Container widths ---- */
+  --container-sm: 640px;
+  --container-md: 880px;
+  --container-lg: 1140px;
+  --container-xl: 1320px;
+}
+
+/* ============================================================
+   Pacha Mana — Effects: shadows, blur, gradients, motion
+   Soft warm-toned shadows. Sunrise gradients. Gentle easing.
+   ============================================================ */
+
+:root {
+  /* ---- Shadows (warm brown-tinted, soft, never harsh black) ---- */
+  --shadow-xs: 0 1px 2px rgba(92, 64, 47, 0.08);
+  --shadow-sm: 0 2px 8px rgba(92, 64, 47, 0.10);
+  --shadow-md: 0 8px 24px rgba(92, 64, 47, 0.12);
+  --shadow-lg: 0 18px 48px rgba(92, 64, 47, 0.16);
+  --shadow-gold: 0 10px 30px rgba(226, 171, 67, 0.30);
+
+  /* ---- Sunrise / candlelight gradients ---- */
+  --gradient-sunrise: linear-gradient(180deg, #fef2e0 0%, #fee7be 45%, #f7d79b 100%); /* @kind color */
+  --gradient-gold: linear-gradient(135deg, #ebbd5e 0%, #e2ab43 55%, #cf962f 100%); /* @kind color */
+  --gradient-cacao: linear-gradient(165deg, #5c402f 0%, #38271d 100%); /* @kind color */
+  --gradient-dusk: linear-gradient(180deg, #785741 0%, #2b2521 100%); /* @kind color */
+  /* Protection scrim for text over imagery */
+  --gradient-scrim: linear-gradient(180deg, rgba(43,37,33,0) 0%, rgba(43,37,33,0.72) 100%); /* @kind color */
+
+  /* ---- Focus ring (reusable — gold glow, never a harsh blue outline) ---- */
+  --focus-shadow: 0 0 0 3px rgba(226, 171, 67, 0.45); /* @kind other */
+  --focus-outline: 2px solid var(--pm-gold-500); /* @kind other */
+
+  /* ---- Motion: slow, warm, organic. No bounce. ---- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.45, 0, 0.25, 1); /* @kind other */
+  --duration-fast: 140ms; /* @kind other */
+  --duration-base: 240ms; /* @kind other */
+  --duration-slow: 420ms; /* @kind other */
+}
+
+/* Respect reduced-motion: any component built on the duration tokens
+   inherits calm, near-instant transitions when the user asks for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 1ms; /* @kind other */
+    --duration-base: 1ms; /* @kind other */
+    --duration-slow: 1ms; /* @kind other */
+  }
+}
+
+/* ============================================================
+   Pacha Mana — Base element styles (opt-in, lightweight)
+   Sets the warm page foundation and sensible typographic defaults.
+   ============================================================ */
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-display);
+  color: var(--text-strong);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
+  margin: 0 0 var(--space-4);
+}
+
+h1 { font-size: var(--display-lg); }
+h2 { font-size: var(--display-md); }
+h3 { font-size: var(--display-sm); }
+
+p { margin: 0 0 var(--space-4); text-wrap: pretty; }
+
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Eyebrow label — wide-tracked Oaxaca caps */
+.pm-eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  font-size: var(--display-xs);
+  color: var(--text-accent);
+}
+
+::selection { background: var(--pm-gold-200); color: var(--pm-cacao-700); }
+
+
+  body { margin: 0; background: var(--pm-pearl-white); }
+  a { color: var(--pm-gold-600); text-decoration: none; transition: color 200ms var(--ease-out); }
+  a:hover { color: var(--pm-gold-700); }
+  ::selection { background: var(--pm-gold-200); }
+ 
