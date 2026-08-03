@@ -1,0 +1,343 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "pm_learn_hero",
+      "settings": {
+        "eyebrow": "The Cacao Guide · Part 02 of 10",
+        "title": "The Mood Science Behind Ceremonial Cacao",
+        "deck": "Why cacao makes you feel the way it does, and what is actually happening in your brain when you drink it.",
+        "meta_read": "14 Min Read",
+        "meta_topic": "Mood &amp; Neurochemistry",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "featured": {
+      "type": "pm_learn_featured",
+      "settings": {
+        "alt": "Featured photo: a warm, quiet cacao moment in soft morning light",
+        "height": 480,
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-6629a2cd6b.webp?v=1785782948"
+      }
+    },
+    "body": {
+      "type": "pm_learn_body",
+      "blocks": {
+        "heading_12": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Cacao Affects Your Mood At All",
+            "toc_label": "Why cacao affects mood"
+          }
+        },
+        "text_13": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Most people expect chocolate to taste good. Fewer people expect it to meaningfully shift how they feel emotionally, to open their chest, lift their spirits, or drop them into a quiet, focused clarity that lasts for hours.</p><p>And yet this is exactly what people report from ceremonial cacao, consistently, across cultures and contexts.</p><p>This isn't placebo or spirituality dressed up as science. It's neurochemistry: a remarkably elegant set of naturally occurring compounds in the cacao bean that interact directly with the brain's most important mood-regulating systems.</p><p>Understanding what those compounds are, and how they work, doesn't diminish the experience of cacao. If anything, it deepens it. When you know why the medicine works, you can work with it more intentionally.</p>"
+          }
+        },
+        "heading_14": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Brain's Mood System, A Quick Map",
+            "toc_label": "The brain's mood system"
+          }
+        },
+        "text_15": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Before we get into the specific compounds in cacao, it helps to have a basic map of how mood is regulated in the brain. Your emotional state at any given moment is largely a product of neurotransmitters, chemical messengers that carry signals between neurons. The key ones involved in mood are:</p>"
+          }
+        },
+        "cards_16": {
+          "type": "cards",
+          "settings": {
+            "columns": 2,
+            "label_1": "Serotonin",
+            "text_1": "<p>Wellbeing, calm, and emotional resilience. Low serotonin is strongly linked to depression and anxiety.</p>",
+            "label_2": "Dopamine",
+            "text_2": "<p>Motivation, pleasure, and reward. The wanting of something and the satisfaction of getting it.</p>",
+            "label_3": "Anandamide",
+            "text_3": "<p>An endocannabinoid, your brain's own cannabis-like molecule, tied to bliss, flow states, and the relief of pain.</p>",
+            "label_4": "PEA",
+            "text_4": "<p>Phenylethylamine: a neuromodulator tied to excitement, focus, and the feeling that time is slowing down.</p>"
+          }
+        },
+        "text_17": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Each of these operates through a cycle: it's produced, it does its job at the synapse, and then it's broken down and recycled through a process called reuptake. The faster the reuptake, the shorter the effect.</p><p>Cacao is remarkable because it doesn't just supply some of these molecules. It also contains compounds that slow their reuptake, extending and deepening their effects. This is the same mechanism used by many pharmaceutical antidepressants, except cacao does it gently, naturally, and with a whole suite of nutritional benefits alongside it. Let's go through each one.</p>"
+          }
+        },
+        "heading_18": {
+          "type": "heading",
+          "settings": {
+            "heading": "Anandamide, The Bliss Molecule",
+            "toc_label": "Anandamide"
+          }
+        },
+        "text_19": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Anandamide gets its name from the Sanskrit word <em>ananda</em>, meaning bliss or joy. It was the first endocannabinoid ever discovered, found in the human brain in 1992, and it binds to the same receptors as THC, the active compound in cannabis.</p><p>This is why the emotional quality of cacao sometimes gets described in terms that sound almost psychedelic. Not because cacao is psychoactive in the way cannabis is, but because it activates overlapping systems. The bliss, the sense of openness, the softening of edges: these are real neurochemical phenomena.</p><p>Cacao does two things with anandamide. First, it contains anandamide itself, in small but meaningful amounts. You are literally consuming a molecule your brain recognizes as a signal for joy and ease. Second, and more importantly, cacao contains N-linoleoylethanolamine, a fatty acid that inhibits the enzyme responsible for breaking down anandamide in the body. This means the anandamide naturally present in your brain, and any that comes from the cacao itself, sticks around longer than it normally would.</p><p>The result is not a high. It's more like a gentle, sustained lifting, a reduction in the background noise of stress and rumination that many people carry without realizing how heavy it is until it's gone. This is also why many people who work with cacao ceremonially describe it as heart-opening. Anandamide is closely tied to feelings of connection, warmth, and emotional availability. When its effects are extended, the heart tends to soften.</p>"
+          }
+        },
+        "heading_1a": {
+          "type": "heading",
+          "settings": {
+            "heading": "PEA, Focus, Presence, And The Slowing Of Time",
+            "toc_label": "Phenylethylamine"
+          }
+        },
+        "text_1b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Phenylethylamine, or PEA, is a naturally occurring compound found in cacao in significant concentrations. It is sometimes called the “love molecule” because it is released in the brain during states of excitement, attraction, and deep engagement.</p><p>PEA works primarily by triggering the release of dopamine and norepinephrine, boosting alertness, focus, and a sense of positive anticipation. One of its most interesting reported effects is the perception of time slowing down. People who are deeply absorbed in creative work, or in states of flow, often describe this quality, and PEA appears to be part of why.</p><p>In everyday life, PEA is produced during exercise, during moments of excitement, and during social bonding. It is metabolized very quickly under normal circumstances, which is why its effects tend to be fleeting. Cacao contains MAO inhibitors (monoamine oxidase inhibitors) that slow PEA's breakdown, again extending and deepening its effects.</p><p>For people who drink cacao before creative work, meditation, journaling, or movement, this is part of why the practice feels productive. The focus is real. The sense of presence is real. The feeling that you have a little more time than usual, that too is a reflection of what's happening in the brain.</p>"
+          }
+        },
+        "heading_1c": {
+          "type": "heading",
+          "settings": {
+            "heading": "Serotonin, Resilience And Emotional Steadiness",
+            "toc_label": "Serotonin"
+          }
+        },
+        "text_1d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Serotonin is perhaps the most widely recognized mood molecule. It's the primary target of SSRIs (selective serotonin reuptake inhibitors), the most commonly prescribed class of antidepressants in the world.</p><p>Cacao supports serotonin through two pathways. First, cacao contains tryptophan, an essential amino acid and the direct precursor to serotonin. The body cannot manufacture tryptophan on its own, so it must come from food. When you consume tryptophan, the body converts it to 5-HTP, and then to serotonin. Second, cacao contains MAO inhibitors, the same compounds that slow PEA's breakdown, which also inhibit the reuptake of serotonin. More serotonin stays in the synapse, active and available, for longer.</p><p>The subjective experience of elevated serotonin is not dramatic or euphoric. It's more like a quiet steadiness: a sense that things are okay, that you can handle what's in front of you, that the world is not closing in. For people who live with low-grade anxiety or depression, this can feel like a meaningful shift even if it's subtle.</p>"
+          }
+        },
+        "callout_1e": {
+          "type": "callout",
+          "settings": {
+            "label": "Please Read Before Combining",
+            "text": "<p>Cacao is contraindicated with SSRIs. Because both cacao and SSRIs affect serotonin reuptake, combining them can lead to excess serotonin in the system, a condition called serotonin syndrome that ranges from uncomfortable to serious. If you are currently taking SSRIs or any MAO inhibitor medication, please consult with your doctor before working with ceremonial cacao.</p>"
+          }
+        },
+        "heading_1f": {
+          "type": "heading",
+          "settings": {
+            "heading": "Dopamine, Motivation, Pleasure, And Reward",
+            "toc_label": "Dopamine"
+          }
+        },
+        "text_1g": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dopamine is the molecule of wanting and getting: the anticipation of reward and the satisfaction of receiving it. It drives motivation, creative drive, and the felt sense of pleasure and accomplishment.</p><p>Cacao supports dopamine in a similar way to serotonin: through a precursor and through reuptake inhibition. The precursor in this case is tyrosine, an amino acid present in cacao that the body converts into dopamine (and also into norepinephrine, which is involved in focus and arousal). Cacao also contains the same MAO inhibitors that extend dopamine's active time at the synapse.</p><p>This is part of why many people report feeling motivated and creatively engaged after drinking cacao. Not the urgency of caffeine, but something more like genuine enthusiasm. The desire to make something, write something, move, connect, begin. Dopamine is the molecule behind that feeling.</p><p>It's also worth noting that dopamine is involved in the reward loop around eating and drinking itself. When food genuinely nourishes you, when it contains compounds your brain recognizes as beneficial, the experience of consuming it is accompanied by a mild dopaminergic reward. This is part of why ceremonial cacao, consumed slowly and with attention, tends to feel satisfying in a way that a handful of commercial chocolate doesn't.</p>"
+          }
+        },
+        "heading_1h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Theobromine, The Foundation That Makes It Work",
+            "toc_label": "Theobromine"
+          }
+        },
+        "text_1i": {
+          "type": "text",
+          "settings": {
+            "text": "<p>While theobromine is more commonly discussed in the context of energy (see our guide on <a href=\"/coffee-alternative-cacao\">replacing coffee with cacao</a>), it plays an important role in the mood picture as well. Not as a direct mood molecule, but as a physiological foundation.</p>"
+          }
+        },
+        "stat_1j": {
+          "type": "stat",
+          "settings": {
+            "value": "+30",
+            "suffix": "%",
+            "text": "<p>When you drink a full serving of Chuncho cacao, blood flow can increase by up to thirty percent, carrying oxygen and nutrients where they are needed.</p>"
+          }
+        },
+        "text_1k": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Theobromine is a vasodilator. It relaxes and opens blood vessels, increasing circulation throughout the body and brain. Why does this matter for mood? Because better circulation means better delivery of oxygen, glucose, and all of the nutrients, including the mood-supporting compounds in cacao itself, to the brain and nervous system. The emotional effects of cacao's neurochemical compounds are amplified by the improved blood flow that theobromine provides.</p><p>This is also why many people feel cacao physically as well as emotionally: a warmth in the chest, a sense of the body opening, a feeling of being more present in the physical self. Vasodilation is felt, not just measured.</p>"
+          }
+        },
+        "image_1l": {
+          "type": "image",
+          "settings": {
+            "alt": "Photo: hands cradling a warm cup of cacao",
+            "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-9eb3d0ec9c.webp?v=1785782947"
+          }
+        },
+        "heading_1m": {
+          "type": "heading",
+          "settings": {
+            "heading": "Magnesium, The Quiet Regulator",
+            "toc_label": "Magnesium"
+          }
+        },
+        "text_1n": {
+          "type": "text",
+          "settings": {
+            "text": "<p>No discussion of cacao and mood would be complete without magnesium. Cacao is one of the most magnesium-rich foods available, and magnesium is one of the most important minerals for nervous system regulation, sleep quality, and stress response. Estimates suggest that a significant portion of adults in the Western world are chronically low in magnesium, often without knowing it.</p><p>Magnesium deficiency is closely associated with anxiety, irritability, poor sleep, and difficulty managing stress. When magnesium levels are adequate, the nervous system is better able to regulate itself: to move out of a stress response, to settle after stimulation, to maintain emotional equilibrium.</p><p>Drinking ceremonial cacao regularly is a meaningful way to support healthy magnesium levels. And while this is a slower, more nutritional effect than the neurochemical ones described above, over time it contributes significantly to the mood-stabilizing quality that regular cacao drinkers report.</p>"
+          }
+        },
+        "heading_1o": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Long Game, Neural Pathways And Lasting Change",
+            "toc_label": "The long game"
+          }
+        },
+        "text_1p": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Everything described above is acute, what happens in the hours after a single cup of cacao. But there's a longer arc worth considering.</p><p>The brain changes in response to repeated experience. This is neuroplasticity, the brain's ability to form new neural connections and strengthen existing ones based on patterns of activation. When a particular emotional state is induced repeatedly, the neural pathways associated with that state become easier to access, even without the original stimulus.</p><p>Put plainly: if you drink cacao regularly and consistently move into states of presence, openness, gratitude, and creative engagement while under its influence, those states become more neurologically available to you in general. The cacao is training your brain to find those pathways more easily, showing it where to go.</p><p>This is why many long-term ceremonial cacao practitioners report that the benefits extend well beyond the cup. Not just more joy while drinking, but more baseline joy. Not just more focus during a morning ritual, but more capacity for focus throughout the day. This is difficult to prove in a clinical trial, and we want to be careful not to overstate it. But the mechanism is real, this is simply how neuroplasticity works, and it points toward why approaching cacao as a regular practice, rather than an occasional indulgence, may yield compounding benefits over time.</p>"
+          }
+        },
+        "heading_1q": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ceremonial Dose Vs Daily Dose, Does It Matter For Mood?",
+            "toc_label": "Dose and mood"
+          }
+        },
+        "text_1r": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Yes, meaningfully so. The difference is not just quantitative. At higher doses, many people report that cacao has a quality of drawing attention inward, a gentle insistence on presence. Emotions that have been sitting below the surface may arise. Creative insights may surface unexpectedly. The experience asks for a slower container than the daily cup.</p>"
+          }
+        },
+        "compare_1s": {
+          "type": "compare",
+          "settings": {
+            "a_label": "Daily Dose",
+            "a_value": "20 to 25g",
+            "a_text": "<p>A gentle, consistent mood-supporting effect. The right amount for a daily ritual, a coffee replacement, or light creative support.</p>",
+            "b_label": "Ceremonial Dose",
+            "b_value": "40 to 50g",
+            "b_text": "<p>A more pronounced emotional experience: deeper relaxation, stronger heart-opening, fuller anandamide and PEA effects. No more than twice a week.</p>"
+          }
+        },
+        "highlight_1t": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Why Chuncho Cacao Specifically?",
+            "text": "<p>The mood effects described here depend entirely on the bioactive compounds being present in the cacao you're drinking. And those compounds are preserved or destroyed depending on how the cacao is grown and processed.</p><p>Mass-produced cocoa powder has been stripped of its cacao butter (the fat that carries many of these compounds), roasted at high temperatures (which degrades flavonoids and other heat-sensitive molecules), and often alkalized, a process that further reduces polyphenol content.</p><p>Pacha Mana's Chuncho cacao is processed to protect these compounds. Grown at high elevation in the Sacred Valley of Peru, fermented carefully at origin, slow-roasted at low temperatures, and stone-ground into a whole-food paste. Nothing added, nothing stripped away. The result is cacao that is genuinely pharmacologically active in the ways described above. The sourcing and processing is what makes the difference between chocolate as a snack and cacao as a medicine.</p>",
+            "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948",
+            "link1_url": "/products/chuncho-ceremonial-cacao-paste",
+            "link1_label": "Chuncho ceremonial cacao paste",
+            "link2_url": "/products/pure-ground-ceremonial-cacao",
+            "link2_label": "Pure ground ceremonial cacao"
+          }
+        },
+        "heading_1u": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Final Note On The Spiritual And The Scientific",
+            "toc_label": "Spiritual and scientific"
+          }
+        },
+        "text_1v": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The neurochemistry of cacao is real and measurable. So is the cultural and spiritual dimension of working with it: the centuries of indigenous wisdom, the ceremonial containers, the intention and gratitude that practitioners bring to the cup. These two frames are not in conflict. They are, arguably, describing the same thing from different angles.</p><p>When indigenous traditions say that cacao opens the heart, they are describing something that neuroscience is now beginning to map: the activation of anandamide receptors, the extension of serotonin's effects, the vasodilation that warms the chest and opens circulation. The experience came first. The explanation followed.</p>"
+          }
+        },
+        "pullquote_1w": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>What both perspectives agree on is this: cacao works best when you meet it with presence. The molecules are there regardless. But your attention, your intention, and your willingness to slow down are what allow them to do their deepest work.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_12",
+        "text_13",
+        "heading_14",
+        "text_15",
+        "cards_16",
+        "text_17",
+        "heading_18",
+        "text_19",
+        "heading_1a",
+        "text_1b",
+        "heading_1c",
+        "text_1d",
+        "callout_1e",
+        "heading_1f",
+        "text_1g",
+        "heading_1h",
+        "text_1i",
+        "stat_1j",
+        "text_1k",
+        "image_1l",
+        "heading_1m",
+        "text_1n",
+        "heading_1o",
+        "text_1p",
+        "heading_1q",
+        "text_1r",
+        "compare_1s",
+        "highlight_1t",
+        "heading_1u",
+        "text_1v",
+        "pullquote_1w"
+      ],
+      "settings": {
+        "show_toc": true,
+        "toc_heading": "In This Guide",
+        "show_progress": true
+      }
+    },
+    "cta": {
+      "type": "pm_learn_cta",
+      "blocks": {
+        "button_1x": {
+          "type": "button",
+          "settings": {
+            "label": "Shop Ceremonial Cacao",
+            "url": "/collections/all",
+            "style": "solid"
+          }
+        },
+        "button_1y": {
+          "type": "button",
+          "settings": {
+            "label": "Read Part One",
+            "url": "/pages/learn",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "button_1x",
+        "button_1y"
+      ],
+      "settings": {
+        "heading": "Build A Practice That Lasts",
+        "text": "<p>Curious how to build a daily cacao practice that supports mood over time? Explore our ceremonial cacao, and reach out with questions. We're always happy to go deeper.</p>",
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "series": {
+      "type": "pm_learn_series",
+      "settings": {
+        "label": "The Cacao Guide · Part 02 of 10",
+        "next": "<p>Up next, <strong>Part 03: Building Your Daily Cacao Ritual.</strong></p>",
+        "show_dots": true,
+        "part": 2,
+        "total": 10
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured",
+    "body",
+    "cta",
+    "series"
+  ]
+}

@@ -1,0 +1,389 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "pm_learn_hero",
+      "settings": {
+        "eyebrow": "The Cacao Guide · Part 01 of 10",
+        "title": "Replace Your Coffee With Cacao",
+        "deck": "A gentler way to start your day, trading jitters and crashes for grounded, sustained energy, one cup at a time.",
+        "meta_read": "12 Min Read",
+        "meta_topic": "Energy &amp; Mood",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "featured": {
+      "type": "pm_learn_featured",
+      "settings": {
+        "alt": "Featured photo: ceremonial cacao as a nourishing coffee alternative in the morning",
+        "height": 480,
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a59d932d8b.webp?v=1785782948"
+      }
+    },
+    "body": {
+      "type": "pm_learn_body",
+      "blocks": {
+        "heading_1": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Problem With Coffee (That Nobody Talks About)",
+            "toc_label": "The problem with coffee"
+          }
+        },
+        "text_2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Most of us didn't choose coffee. We just… inherited it. The morning ritual, the dependency, the afternoon crash, the anxiety that comes with the third cup. For millions of people, coffee is less of a pleasure and more of a requirement, a daily debt paid to stay functional.</p><p>And yet the alternatives have always felt like a compromise. Green tea is subtle. Matcha is better but expensive and easy to over-do. Adaptogens take weeks to feel. Energy drinks are a hard no.</p><p>What if there was something that gave you real energy, warm, embodied, sustained, while also being genuinely good for your heart, your mood, and your nervous system?</p>"
+          }
+        },
+        "pullquote_3": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>There is. It's cacao. And it's been doing this for thousands of years.</p>"
+          }
+        },
+        "heading_4": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Actually Happens When You Drink Coffee",
+            "toc_label": "Coffee in your body"
+          }
+        },
+        "text_5": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To understand why cacao works so well as a coffee alternative, it helps to understand what coffee is actually doing to you.</p><p>Caffeine is a nervous system stimulant. It works by blocking adenosine receptors in your brain, adenosine is the molecule that builds up throughout the day and makes you feel tired. When caffeine blocks those receptors, you stop feeling the fatigue. But the adenosine doesn't go away. It keeps accumulating. The moment caffeine clears your system, usually 4 to 6 hours later, all of that stored tiredness hits at once. That's the crash.</p><p>Caffeine also triggers a cortisol response. For many people, especially those who are sensitive, this means elevated heart rate, anxiety, jitteriness, and disrupted sleep, even when consumed in the morning. Over time, your receptors adapt and you need more coffee to get the same effect. Dependency builds quietly.</p><p>None of this means coffee is evil. But it does mean that for a lot of people, the relationship with coffee is more complicated than it feels.</p>"
+          }
+        },
+        "heading_6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Enter Theobromine, Cacao's Primary Stimulant",
+            "toc_label": "Meet theobromine"
+          }
+        },
+        "text_7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The primary active stimulant in ceremonial cacao is not caffeine, it's <em>theobromine</em>.</p><p>Theobromine is a mild cardiac stimulant, which means it works on the heart and circulatory system rather than directly on the nervous system the way caffeine does. Rather than triggering a sharp spike in alertness followed by a crash, theobromine produces a slow, warm, expansive energy that builds gently and lasts.</p>"
+          }
+        },
+        "cards_8": {
+          "type": "cards",
+          "settings": {
+            "columns": 2,
+            "label_1": "Duration",
+            "text_1": "<p>A much longer half-life than caffeine, roughly 6 to 10 hours versus 4 to 6. The effect is softer and more sustained.</p>",
+            "label_2": "Intensity",
+            "text_2": "<p>Roughly one quarter as stimulating as caffeine. For most people that means no jitters, no spike, no crash.</p>",
+            "label_3": "Vasodilation",
+            "text_3": "<p>Unlike caffeine, theobromine relaxes and opens blood vessels rather than constricting them, improving circulation.</p>",
+            "label_4": "Nervous System",
+            "text_4": "<p>It doesn't significantly stimulate the central nervous system, which is why cacao feels calm and focused rather than wired.</p>"
+          }
+        },
+        "text_9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pacha Mana's Chuncho cacao is rich in theobromine. When you drink a full ceremonial serving, you're getting a meaningful dose of this gentle stimulant, enough to notice, not enough to overwhelm.</p>"
+          }
+        },
+        "heading_a": {
+          "type": "heading",
+          "settings": {
+            "heading": "Does Cacao Have Caffeine?"
+          }
+        },
+        "stat_b": {
+          "type": "stat",
+          "settings": {
+            "value": "30 to 50 MG",
+            "suffix": "",
+            "text": "<p>Caffeine per serving, roughly one third of a standard cup of coffee. But it doesn't behave the same way.</p>"
+          }
+        },
+        "text_c": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cacao is approximately 50% cacao butter, a rich, natural fat. That fat slows the absorption of caffeine into your bloodstream significantly, smoothing out what would otherwise be a sharp spike. The effect is similar to adding fat to your coffee (as in a “bulletproof” style drink), but built in naturally at the source.</p><p>Additionally, cacao contains compounds that modulate and balance the stimulant effect, including theobromine itself, magnesium, and various flavonoids that support relaxation and blood flow. The result is that caffeine in cacao lands very differently than caffeine in coffee, even at similar doses.</p><p>Most people who are caffeine-sensitive find they can drink cacao without the anxiety, heart racing, or sleep disruption they experience with coffee. That said, if you are highly sensitive to caffeine, we recommend drinking cacao before 2pm while you get to know how your body responds.</p>"
+          }
+        },
+        "heading_d": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Energy You Actually Get From Cacao",
+            "toc_label": "The energy you get"
+          }
+        },
+        "text_e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>People who make the switch from coffee to cacao often describe the energy differently. Not better or worse, different. Words that come up repeatedly: <em>grounded, warm, clear, open, focused, present.</em></p><p>Where coffee energy tends to be sharp and electric, pushing you forward, sometimes aggressively, cacao energy tends to be expansive and embodied. You feel it in your chest before you feel it in your head. It supports creativity and presence rather than urgency and output.</p><p>This is partly theobromine, partly the mood-supporting compounds in cacao, and partly something harder to quantify, the ritual itself. Preparing a cup of cacao slowly, with intention, is already a different kind of morning than grabbing a coffee on the go.</p>"
+          }
+        },
+        "heading_f": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Cacao Feels Different Than Just Energy",
+            "toc_label": "The mood layer"
+          }
+        },
+        "text_g": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Coffee gives you alertness. Cacao gives you something closer to wellbeing, because it contains several compounds that directly support mood and emotional state, compounds that caffeine simply doesn't have.</p>"
+          }
+        },
+        "cards_h": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "Anandamide",
+            "text_1": "<p>Known as the bliss molecule, the same endocannabinoid behind the runner's high. Cacao also slows its breakdown, so the effect lingers.</p>",
+            "label_2": "Phenylethylamine",
+            "text_2": "<p>Supports feelings of excitement, alertness, and the perception of time slowing down.</p>",
+            "label_3": "Theobromine",
+            "text_3": "<p>As a vasodilator, it means more blood flow to brain and body, supporting cognitive clarity and physical aliveness.</p>",
+            "label_4": "Magnesium",
+            "text_4": "<p>One of the most important minerals for nervous system regulation, and one many people are deficient in. Cacao is among the richest food sources.</p>"
+          }
+        },
+        "text_i": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The result is that the energy cacao provides has an emotional quality to it. Not euphoria, nothing dramatic, but a quiet elevation of mood that coffee doesn't produce.</p>"
+          }
+        },
+        "heading_j": {
+          "type": "heading",
+          "settings": {
+            "heading": "How Much Cacao Do You Need?",
+            "toc_label": "How much you need"
+          }
+        },
+        "text_k": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For an everyday energy substitute, a daily dose of around 20 to 25 grams (roughly 2 heaping tablespoons of paste or ground cacao) is a good starting point, enough to feel the theobromine clearly without being overwhelming.</p><p>For a deeper, more intentional experience, what's often called a ceremonial dose, 40 to 50 grams is more appropriate. This is not an everyday amount; we recommend no more than two ceremonial doses per week.</p>"
+          }
+        },
+        "compare_l": {
+          "type": "compare",
+          "settings": {
+            "a_label": "",
+            "a_value": "",
+            "a_text": "<p>Ease in gently. Drink before noon while you learn how your body responds.</p>",
+            "b_label": "",
+            "b_value": "",
+            "b_text": "<p>The everyday replacement for your morning coffee. Feel it clearly, stay grounded.</p>"
+          }
+        },
+        "heading_m": {
+          "type": "heading",
+          "settings": {
+            "heading": "How To Prepare Your Morning Cacao",
+            "toc_label": "How to prepare"
+          }
+        },
+        "text_n": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The preparation itself is part of what makes cacao work as a ritual replacement. It gives your hands and attention something to do, a moment of presence before the day starts.</p>"
+          }
+        },
+        "image_o": {
+          "type": "image",
+          "settings": {
+            "alt": "Photo: whisking a cup of morning cacao",
+            "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-4e8458eaea.webp?v=1785782948"
+          }
+        },
+        "text_p": {
+          "type": "text",
+          "settings": {
+            "text": "<ol><li> 1 <p>Warm 6 to 8 oz of spring water or plant milk to just below boiling, steamy, not rolling. Boiling water degrades some of cacao's more delicate compounds.</p></li><li> 2 <p>Add 1 to 2 tablespoons of Pacha Mana Chuncho cacao paste or ground cacao to your mug.</p></li><li> 3 <p>Add a small splash of the hot liquid and whisk vigorously until the cacao dissolves into a smooth paste.</p></li><li> 4 <p>Pour in the rest of your liquid slowly, continuing to whisk or using a handheld frother.</p></li><li> 5 <p><strong>Optional:</strong> a small pinch of sea salt (it lifts the flavor significantly), a touch of cinnamon or cayenne, or a little maple syrup or honey if you prefer sweetness.</p></li></ol>"
+          }
+        },
+        "text_q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Before your first sip, pause. Hold the cup. Set one intention for the day. That's it, ten minutes. A ritual that returns something to the morning rather than just extracting from it.</p>"
+          }
+        },
+        "heading_r": {
+          "type": "heading",
+          "settings": {
+            "heading": "Making The Transition",
+            "toc_label": "Making the switch"
+          }
+        },
+        "text_s": {
+          "type": "text",
+          "settings": {
+            "text": "<p>There's no one right way to move from coffee to cacao. Three approaches that work well:</p>"
+          }
+        },
+        "cards_t": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "The Gradual Transition",
+            "text_1": "<p>Replace one daily coffee with cacao, usually the first of the day, and keep the others as normal. After a week or two, notice how you feel. Many people find they naturally want less coffee once cacao is in the rotation.</p>",
+            "label_2": "The Full Switch",
+            "text_2": "<p>A clean break. Expect one to three days of mild caffeine withdrawal, headaches, fatigue, low mood. This is normal and temporary. Drink plenty of water and don't skip your cacao. Most people feel noticeably better by day four.</p>",
+            "label_3": "The Mocha Bridge",
+            "text_3": "<p>Not ready to give up coffee? Add a tablespoon of cacao paste to your morning coffee. The cacao butter turns it into something closer to a bulletproof mocha, smoother, longer-lasting energy and a richer flavor. A completely valid long-term approach, not just a transition tool.</p>"
+          }
+        },
+        "highlight_u": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Why Chuncho Cacao Specifically?",
+            "text": "<p>Not all cacao is equal. The bioactive compounds that make cacao a genuine coffee alternative, theobromine, flavonoids, magnesium, anandamide precursors, are preserved or degraded depending on how the cacao is grown and processed.</p><p>Pacha Mana sources exclusively from Chuncho, an ancient heirloom variety grown at high elevation in the Sacred Valley of Peru. It's grown in small quantities by family farmers practicing agroforestry, fermented carefully at origin, and slow-roasted to preserve its bioactive compounds rather than destroy them. Every batch is traceable, and we publish our <a href=\"/heavy-metals-testing\">heavy metals testing results</a> so you can drink with confidence.</p><p>When you taste it, you'll notice the difference. When you feel it, you'll understand why people come back to it every morning.</p>",
+            "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948",
+            "link1_url": "/products/chuncho-ceremonial-cacao-paste",
+            "link1_label": "Chuncho ceremonial cacao paste",
+            "link2_url": "/products/pure-ground-ceremonial-cacao",
+            "link2_label": "Pure ground ceremonial cacao"
+          }
+        },
+        "heading_v": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Note On Expectations"
+          }
+        },
+        "text_w": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cacao is not trying to be coffee. It won't give you the same sharp jolt. It won't replace your learned ritual associations overnight. The first cup might surprise you with how subtle it feels compared to what you're used to.</p><p>Give it a week. Notice what happens to your sleep. Notice your baseline anxiety. Notice whether your afternoons feel different without a crash. Notice whether your mornings feel more grounded.</p><p>Most people who make the switch don't go back, not because cacao is more powerful than coffee, but because it fits their body better. Because the energy is theirs, not borrowed.</p>"
+          }
+        },
+        "heading_x": {
+          "type": "heading",
+          "settings": {
+            "heading": "Cacao As A Coffee Alternative",
+            "kicker": "Common Questions",
+            "toc_label": "Common questions"
+          }
+        },
+        "faq_y": {
+          "type": "faq",
+          "settings": {
+            "q_1": "Is cacao caffeine free?",
+            "a_1": "<p>Cacao can contain small amounts of caffeine, but it is better known for theobromine.</p>",
+            "q_2": "Can cacao replace coffee?",
+            "a_2": "<p>For some people, yes. Others use cacao alongside coffee or as a gentler morning option a few days per week.</p>",
+            "q_3": "Will cacao give me energy?",
+            "a_3": "<p>Many people experience steady energy from cacao, but responses vary by body and serving size.</p>"
+          }
+        },
+        "text_z": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cacao can feel strong in larger servings. If you are pregnant, nursing, taking medications, managing a heart condition, or sensitive to stimulants, speak with a qualified healthcare professional before making concentrated cacao a daily practice. Supporting reading: <a href=\"https://www.ncbi.nlm.nih.gov\">NCBI overview of theobromine</a> and <a href=\"https://www.nccih.nih.gov\">NCCIH guidance on product safety</a>.</p>",
+            "variant": "small"
+          }
+        }
+      },
+      "block_order": [
+        "heading_1",
+        "text_2",
+        "pullquote_3",
+        "heading_4",
+        "text_5",
+        "heading_6",
+        "text_7",
+        "cards_8",
+        "text_9",
+        "heading_a",
+        "stat_b",
+        "text_c",
+        "heading_d",
+        "text_e",
+        "heading_f",
+        "text_g",
+        "cards_h",
+        "text_i",
+        "heading_j",
+        "text_k",
+        "compare_l",
+        "heading_m",
+        "text_n",
+        "image_o",
+        "text_p",
+        "text_q",
+        "heading_r",
+        "text_s",
+        "cards_t",
+        "highlight_u",
+        "heading_v",
+        "text_w",
+        "heading_x",
+        "faq_y",
+        "text_z"
+      ],
+      "settings": {
+        "show_toc": true,
+        "toc_heading": "In This Guide",
+        "show_progress": true
+      }
+    },
+    "cta": {
+      "type": "pm_learn_cta",
+      "blocks": {
+        "button_10": {
+          "type": "button",
+          "settings": {
+            "label": "Shop Chuncho Cacao",
+            "url": "/collections/all",
+            "style": "solid"
+          }
+        },
+        "button_11": {
+          "type": "button",
+          "settings": {
+            "label": "Explore The Guide",
+            "url": "/pages/learn",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "button_10",
+        "button_11"
+      ],
+      "settings": {
+        "heading": "Ready To Make The Switch?",
+        "text": "<p>Start with our Chuncho ceremonial cacao paste or ground cacao, the cleanest, most direct way to experience what cacao can do.</p>",
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "series": {
+      "type": "pm_learn_series",
+      "settings": {
+        "label": "The Cacao Guide · Part 01 of 10",
+        "next": "<p>Up next, <strong>Part 02: The Chemistry of a Better Morning.</strong></p>",
+        "show_dots": true,
+        "part": 1,
+        "total": 10
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured",
+    "body",
+    "cta",
+    "series"
+  ]
+}

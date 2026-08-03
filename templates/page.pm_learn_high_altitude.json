@@ -1,0 +1,291 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "pm_learn_hero",
+      "settings": {
+        "eyebrow": "The Cacao Guide · Part 08 of 10",
+        "title": "Grown Closer To The Sky",
+        "deck": "What happens to cacao when it grows closer to the sky, and why the air, soil, and climate of altitude produce something lowland farms simply cannot.",
+        "meta_read": "12 Min Read",
+        "meta_topic": "Terroir &amp; Purity",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "featured": {
+      "type": "pm_learn_featured",
+      "settings": {
+        "alt": "Featured photo: cacao groves on a misty high-altitude Andean hillside",
+        "height": 480
+      }
+    },
+    "body": {
+      "type": "pm_learn_body",
+      "blocks": {
+        "heading_62": {
+          "type": "heading",
+          "settings": {
+            "heading": "Cacao Has Terroir Too",
+            "toc_label": "Cacao has terroir"
+          }
+        },
+        "text_63": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The French have a word, terroir, with no perfect English translation. It refers to the complete environmental context in which a plant grows: the soil, the climate, the topography, the water, the microbial life in the earth, the quality of the light. The accumulated fingerprint of a place, expressed through what grows in it.</p><p>Wine lovers use terroir to explain why a grape grown on one hillside tastes fundamentally different from the same variety grown ten miles away at a different elevation. Coffee roasters use it to explain why beans from a specific Ethiopian valley have flavors found nowhere else on Earth. The concept is not mystical. It is the recognition that plants are not generic. They are expressions of the conditions in which they develop.</p><p>Most of the world's commercial chocolate comes from cacao grown at or near sea level, in the humid lowland zones of West Africa, where flat land, high rainfall, and industrial methods produce enormous volumes of uniform, undistinguished beans. The terroir of a flat, hot, degraded monoculture at sea level is the terroir of volume, and it tastes like it.</p>"
+          }
+        },
+        "pullquote_64": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>Chuncho cacao, grown at 900 to 1,800 meters in the high jungle valleys of southern Peru, grows in a completely different world. And that difference shows up in every dimension of what the cacao is.</p>"
+          }
+        },
+        "heading_65": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Basic Physics Of Altitude",
+            "toc_label": "The physics of altitude"
+          }
+        },
+        "cards_66": {
+          "type": "cards",
+          "settings": {
+            "columns": 2,
+            "label_1": "Where Chuncho Grows",
+            "text_1": "",
+            "label_2": "Cooler Per 1,000m",
+            "text_2": ""
+          }
+        },
+        "cards_67": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "Cooler Temperatures",
+            "text_1": "<p>Warm days drive photosynthesis; cool nights slow metabolism and let complex compounds accumulate rather than burn off. This diurnal variation is pronounced at altitude.</p>",
+            "label_2": "Lower Pressure",
+            "text_2": "<p>Slightly less atmospheric oxygen is a mild stress. Plants respond by producing more flavonoids, polyphenols, and antioxidants, precisely the compounds we most want in medicinal cacao.</p>",
+            "label_3": "More UV Light",
+            "text_3": "<p>Thinner atmosphere filters less solar radiation. Plants build more photoprotective compounds in defense. What protects the plant from UV stress is also deeply beneficial to human health.</p>",
+            "label_4": "Cleaner Rainfall",
+            "text_4": "<p>High-altitude zones receive clean, consistent rain filtered through intact forest canopy and volcanic rock, fundamentally different from the compromised irrigation of lowland industrial farms.</p>",
+            "label_5": "Longer Season",
+            "text_5": "<p>Cooler temperatures mean slower growth, and more time for flavor precursors and beneficial biochemicals to develop in the bean. The same principle that makes high-altitude coffee and wine more complex.</p>"
+          }
+        },
+        "text_68": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every one of these variables pushes in the same direction: toward greater complexity, greater purity, and greater medicinal potency. Altitude produces these qualities because the conditions of stress, slowness, and clean environment are the precise conditions under which cacao expresses its deepest potential.</p>"
+          }
+        },
+        "heading_69": {
+          "type": "heading",
+          "settings": {
+            "heading": "Volcanic, Mineral-Rich, And Alive",
+            "toc_label": "Volcanic, mineral-rich soil"
+          }
+        },
+        "image_6a": {
+          "type": "image",
+          "settings": {
+            "alt": "Photo: dark volcanic soil and forest floor in a cacao grove"
+          }
+        },
+        "text_6b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Elevation and soil are inseparable in the Peruvian Andes. The high jungle where Chuncho grows sits on a geological foundation shaped by millions of years of volcanic activity, tectonic uplift, and the continuous weathering of ancient rock into extraordinarily mineral-rich earth.</p><p>Volcanic soils, called andosols, are rich in calcium, potassium, magnesium, phosphorus, and trace minerals. They retain water well while draining freely, holding moisture through dry periods without becoming waterlogged, and are high in organic matter where leaf litter continuously replenishes the surface. The mineral profile of the soil is reflected in the mineral profile of the bean: cacao grown in magnesium-rich volcanic soil produces beans with higher magnesium content. You are not just tasting the soil. You are receiving its nutritional character.</p><p>These soils also have a quality directly relevant to the heavy metals question: they are naturally low in cadmium and lead. Cadmium in soil is strongly correlated with phosphate-rich geology and phosphate fertilizers, both characteristic of lowland commercial farming. The high-altitude volcanic soils where Chuncho grows have a different mineral balance, one that naturally limits cadmium uptake into plant tissue. No special intervention required. The soil itself is the protection.</p>"
+          }
+        },
+        "heading_6c": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heavy Metals And Altitude"
+          }
+        },
+        "text_6d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Heavy metals in cacao, primarily cadmium and lead, are a genuine concern in parts of the cacao-growing world. The key insight elevation provides is this: heavy metals are not distributed evenly across the landscape. They concentrate in low-lying areas. This happens through several mechanisms.</p>"
+          }
+        },
+        "cards_6e": {
+          "type": "cards",
+          "settings": {
+            "columns": 2,
+            "label_1": "Gravity",
+            "text_1": "<p>Airborne heavy metal particles are denser than air and settle preferentially to lower elevations. High, mountain-isolated zones accumulate dramatically less atmospheric deposition than lowland areas near roads and industry.</p>",
+            "label_2": "Water Flow",
+            "text_2": "<p>Rainfall dissolves metals and carries them downslope. Lowland water has collected inputs from the entire watershed above it. High zones sit at the top and receive only the cleanest water.</p>",
+            "label_3": "Soil Chemistry",
+            "text_3": "<p>The mineral chemistry of volcanic high-altitude soils makes cadmium less bioavailable. Even where some exists in the soil, less of it ends up in the plant.</p>",
+            "label_4": "No Agrochemicals",
+            "text_4": "<p>Lowland farming relies on synthetic phosphate fertilizers, a primary vector for cadmium. High-altitude agroforestry uses minimal synthetic inputs, eliminating this source entirely.</p>"
+          }
+        },
+        "text_6f": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The result of these combined factors is what our test results confirm directly: lead levels near or below the threshold of detection, and cadmium well within the most stringent global safety standards. This is not the result of special filtration. It is the natural outcome of growing cacao high, in volcanic soil, in agroforestry, far from industrial activity. For the full test results, see our companion piece on <a href=\"/heavy-metals-testing\">heavy metal safe cacao</a>.</p>"
+          }
+        },
+        "heading_6g": {
+          "type": "heading",
+          "settings": {
+            "heading": "Flavor At Altitude, Explained",
+            "toc_label": "Flavor at altitude"
+          }
+        },
+        "cards_6h": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "Flavonoids",
+            "text_1": "<p>The same protective compounds triggered by altitude's mild stresses are primary contributors to flavor complexity. More flavonoids mean more layers, more nuance, and more length in the finish.</p>",
+            "label_2": "Aromatic Precursors",
+            "text_2": "<p>Chocolate flavor does not exist in the raw bean; it develops from precursors that accumulate during growth. Cool temperatures and a long season allow more of them to build, a richer palette to unlock in fermentation and roasting.</p>",
+            "label_3": "Sugar Retention",
+            "text_3": "<p>Cool nights slow the tree's respiration, so more sugars remain in the bean than in lowland cacao. Those sugars drive the Maillard reaction and caramelization that produce the deepest flavor notes.</p>",
+            "label_4": "Slower Fermentation",
+            "text_4": "<p>Cooler ambient temperatures mean fermentation proceeds more slowly and at lower peaks: less harsh acetic acid, more of the complex fruity and floral esters that define fine flavor cacao.</p>",
+            "label_5": "Clean Water",
+            "text_5": "<p>Water filtered through volcanic rock and intact forest contributes clarity, the ability to taste distinct, defined notes rather than a muddy, undifferentiated mass. Lowland cacao on compromised water rarely achieves it.</p>"
+          }
+        },
+        "text_6i": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The flavor complexity of high-altitude cacao is not a marketing claim. It has measurable biochemical causes, and they all trace back to where and how the bean grew.</p>"
+          }
+        },
+        "heading_6j": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Biodiversity Factor"
+          }
+        },
+        "text_6k": {
+          "type": "text",
+          "settings": {
+            "text": "<p>High-altitude agroforestry systems exist within, and are inseparable from, extraordinary biodiversity. The Kosñipata Valley region of southern Peru is recognized as one of the most biodiverse places on Earth, home to thousands of plant species and a soil microbiome of extraordinary complexity. This biodiversity is not background scenery. It is an active participant in the quality of the cacao.</p><p>The mycorrhizal fungi networks in healthy forest soil connect the roots of different species, allowing the transfer of nutrients, water, and chemical signals between them. Cacao trees in biodiverse agroforestry are plugged into these networks, receiving support that isolated monoculture trees cannot access. The native pollinators of cacao, tiny midges of the genus Forcipomyia, require the specific microhabitat of intact forest understory; cleared monocultures often suffer poor pollination and lower yield.</p>"
+          }
+        },
+        "pullquote_6l": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>The flavor and medicine in your cup is not just the product of one plant. It is the product of an ecosystem.</p>"
+          }
+        },
+        "heading_6m": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Lowland Cacao Cannot Match It",
+            "toc_label": "Why lowland can't match it"
+          }
+        },
+        "text_6n": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Understanding what altitude provides makes it easier to understand why lowland commercial cacao, regardless of how it is processed or marketed, cannot simply replicate what high-altitude cacao naturally produces.</p><p>You cannot add altitude to a flat farm. You cannot import volcanic mineral soil. You cannot recreate the diurnal temperature variation of an Andean valley in a humid equatorial lowland. You cannot restore the mycorrhizal networks and biodiversity of intact cloud forest to a cleared monoculture. You cannot remove the atmospheric heavy metal deposition that accumulates in lowland regions over decades.</p><p>These are not processing variables. They are growing variables, fixed by geography, geology, and ecology. They cannot be compensated for downstream, no matter how skilled the fermentation, no matter how careful the roasting. This is why the sourcing decision is the most important decision in cacao. Everything else operates on what the growing environment has already determined.</p>"
+          }
+        },
+        "highlight_6o": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Elevation As Expression",
+            "text": "<p>There is a way of thinking about terroir that goes beyond the measurable, beyond flavonoid concentrations and soil mineralogy, into something harder to quantify but no less real. High-altitude landscapes have a quality of clarity. The air is thinner and cleaner. The light is more direct. The pace of growth is slower. There is a patience built into everything that grows at altitude, a willingness to take the time required to become fully what it is.</p><p>Chuncho cacao carries this quality. It is not an urgent flavor or a loud medicine. It is deep, patient, and quietly powerful, like the landscape that produced it. People who work with it ceremonially often describe something ancient and unhurried in its character, a groundedness that seems to come from the roots up. We believe this is real. It is the character of a plant that has had time, space, and the right conditions to fully express its nature.</p><p>This is what elevation gives cacao. And it is why, when you taste the difference, you don't need a chart to understand it.</p>",
+            "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948"
+          }
+        }
+      },
+      "block_order": [
+        "heading_62",
+        "text_63",
+        "pullquote_64",
+        "heading_65",
+        "cards_66",
+        "cards_67",
+        "text_68",
+        "heading_69",
+        "image_6a",
+        "text_6b",
+        "heading_6c",
+        "text_6d",
+        "cards_6e",
+        "text_6f",
+        "heading_6g",
+        "cards_6h",
+        "text_6i",
+        "heading_6j",
+        "text_6k",
+        "pullquote_6l",
+        "heading_6m",
+        "text_6n",
+        "highlight_6o"
+      ],
+      "settings": {
+        "show_toc": true,
+        "toc_heading": "In This Guide",
+        "show_progress": true
+      }
+    },
+    "cta": {
+      "type": "pm_learn_cta",
+      "blocks": {
+        "button_6p": {
+          "type": "button",
+          "settings": {
+            "label": "Shop Chuncho Cacao",
+            "url": "/collections/all",
+            "style": "solid"
+          }
+        },
+        "button_6q": {
+          "type": "button",
+          "settings": {
+            "label": "See Our Testing",
+            "url": "/pages/learn",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "button_6p",
+        "button_6q"
+      ],
+      "settings": {
+        "heading": "Taste What Altitude Produces",
+        "text": "<p>Ready to taste what altitude, volcanic soil, and centuries of careful cultivation actually produce? Explore Pacha Mana's Chuncho ceremonial cacao.</p>",
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "series": {
+      "type": "pm_learn_series",
+      "settings": {
+        "label": "The Cacao Guide · Part 08 of 10",
+        "next": "<p>Up next, <strong>Part 09: Heavy Metal Safe Cacao.</strong></p>",
+        "show_dots": true,
+        "part": 8,
+        "total": 10
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured",
+    "body",
+    "cta",
+    "series"
+  ]
+}

@@ -1,0 +1,311 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "pm_learn_hero",
+      "settings": {
+        "eyebrow": "The Cacao Guide · Part 07 of 10",
+        "title": "The Machiguenga And Chuncho Cacao",
+        "deck": "The story of a people, a plant, and a relationship that has lasted centuries, and what it means to carry that lineage forward with honesty and care.",
+        "meta_read": "14 Min Read",
+        "meta_topic": "People &amp; Origins",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "featured": {
+      "type": "pm_learn_featured",
+      "settings": {
+        "alt": "Featured photo: the high jungle territory of the Machiguenga near the Andes and Amazon",
+        "height": 480
+      }
+    },
+    "body": {
+      "type": "pm_learn_body",
+      "blocks": {
+        "heading_58": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Lineage That Predates Chocolate",
+            "toc_label": "A lineage before chocolate"
+          }
+        },
+        "text_59": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Long before cacao became a global commodity. Long before chocolate bars appeared in convenience stores and cocoa powder lined supermarket shelves. Long before European contact, colonial extraction, and the industrial food system that now produces most of the world's chocolate, there were people in the upper Amazon basin who understood cacao with an intimacy that no laboratory, no chocolate school, and no specialty food movement has yet fully replicated. Among them were the Machiguenga.</p><p>Their relationship with Chuncho cacao is not a story with a clean beginning or a tidy arc. It is an ongoing relationship, still alive, still rooted in the same valleys and cloud forests where it began, still held in the hands and knowledge of people farming this cacao today. It is not history in the past tense. It is history that is still happening.</p>"
+          }
+        },
+        "pullquote_5a": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>This is our attempt to tell that story honestly, with respect for what we know, humility about what we don't, and gratitude for the privilege of being even a small part of carrying it forward.</p>"
+          }
+        },
+        "heading_5b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who The Machiguenga Are"
+          }
+        },
+        "text_5c": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Machiguenga, also written as Matsigenka, which is closer to their own pronunciation, are an indigenous Amazonian people whose ancestral territory spans the upper Urubamba and Madre de Dios river basins in what is now southeastern Peru. Their homeland sits at the intersection of the Andes and the Amazon, in the same high-jungle region where Chuncho cacao grows.</p><p>They are not a small or isolated group. Estimates place the current Machiguenga population at somewhere between ten and fifteen thousand people, living across a range of communities: some in deep jungle, some in transitional highland-jungle zones, some in towns where their culture persists alongside modern Peruvian life. The Machiguenga language belongs to the Arawakan family, one of the most widespread language groups in South America.</p><p>They have inhabited their territory for thousands of years. Archaeological evidence and linguistic analysis suggest continuous human presence in the upper Amazon basin going back at least ten thousand years. They are farmers, hunters, fishers, and forest dwellers, and also, historically, extraordinarily skilled botanical practitioners with a detailed, multigenerational understanding of the plants in their environment, including their edible, medicinal, and spiritual properties.</p>"
+          }
+        },
+        "pullquote_5d": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>Cacao is one of those plants. And Chuncho is their cacao.</p>"
+          }
+        },
+        "heading_5e": {
+          "type": "heading",
+          "settings": {
+            "heading": "Cacao Before It Was Chocolate",
+            "toc_label": "Before it was chocolate"
+          }
+        },
+        "text_5f": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Most people encounter cacao first as chocolate, a processed, sweetened, solidified product that bears only partial resemblance to the living plant it came from. This is a recent invention, historically speaking. The industrialization of chocolate is less than two hundred years old. Before all of that, cacao was something else entirely.</p><p>In the upper Amazon basin, where the Theobroma cacao tree is believed to have originated, indigenous peoples worked with cacao primarily as a fruit. The pods were opened not for the seeds, which we now call cacao beans, but for the sweet, mucilaginous white pulp surrounding them. This pulp, called baba in Spanish, is fresh, fragrant, slightly acidic, and deeply nourishing. It was eaten fresh, fermented into beverages, and used medicinally.</p><p>The seeds themselves, bitter and astringent, were a secondary consideration in many early traditions. It was the discovery, over generations of experimentation, that fermenting and then preparing the seeds could unlock a completely different set of properties, stimulating, mood-elevating, medicinally potent, that shifted cacao from a fruit crop to something closer to what we recognize today. This did not happen in a laboratory. It happened through centuries of intimate observation and patient ecological knowledge. The people of the upper Amazon, including the Machiguenga, were among the first to understand what cacao seeds could do when handled correctly.</p>"
+          }
+        },
+        "heading_5g": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Specific Relationship"
+          }
+        },
+        "text_5h": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Chuncho cacao is native to the high jungle of what is now the Cusco department of Peru, precisely the transitional zone between the Andes and the Amazon that forms the eastern edge of Machiguenga ancestral territory. The name Chuncho itself comes from Quechua and was used historically to refer to the jungle peoples of this region. The cacao took the name of the people and the place, a quiet testimony to how deeply intertwined they were.</p><p>Ethnobotanical research has documented Machiguenga use of cacao going back at least to the 16th century, and likely considerably earlier. Spanish colonial records from the Cusco region in the 1500s describe indigenous jungle communities cultivating what they called chuncho cacao, distinguishing it explicitly from the varieties encountered in coastal and lowland regions. But the relationship almost certainly predates written records by centuries.</p><p>The Machiguenga are not people who adopted cacao. They are people who grew up alongside it, in the same forests, over the same long arc of time in which the variety itself developed its character. Their selection practices, choosing which trees to propagate, which pods to save seed from, which methods to continue, have shaped what Chuncho is just as surely as the soil and altitude have. This is what ethnobotanists call co-evolution: the long, intimate dance between a human community and a plant species in which each shapes the other over generations.</p>"
+          }
+        },
+        "heading_5i": {
+          "type": "heading",
+          "settings": {
+            "heading": "What They Knew About Cacao",
+            "toc_label": "What they knew"
+          }
+        },
+        "text_5j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What the Machiguenga understood about cacao was not a lucky guess. It was the product of generations of rigorous observation, careful experimentation, and accumulated wisdom transmitted through oral tradition, ceremony, and practice. Much of it aligns closely with what modern science has since documented.</p>"
+          }
+        },
+        "cards_5k": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "Heart-Opening",
+            "text_1": "<p>Cacao was worked with as medicine for the heart, both the physical organ and the emotional center. The vasodilating effects of theobromine, which warm the chest, were experienced and named long before biochemistry existed to explain them.</p>",
+            "label_2": "Energy, No Crash",
+            "text_2": "<p>The distinction between the gentle, sustained energy of cacao and the sharp, depleting stimulation of other substances was well understood. Cacao was a working medicine, supporting sustained effort and endurance rather than a quick high.</p>",
+            "label_3": "Spirit &amp; Emotion",
+            "text_3": "<p>Cacao was used ceremonially to support clarity, connection, and emotional openness. The compounds responsible, anandamide, phenylethylamine, serotonin precursors, were not named, but their effects were mapped and integrated into a sophisticated understanding.</p>",
+            "label_4": "Preparation",
+            "text_4": "<p>Fermentation, toasting, and grinding were not shortcuts. They were understood as essential transformations that activated the medicine in the bean, encoded in practice and passed down through generations of makers.</p>",
+            "label_5": "Reciprocity",
+            "text_5": "<p>Machiguenga practice embedded cacao within a living ecosystem rather than treating it as an extractable resource, a worldview in which human wellbeing and ecological health are understood to be the same thing.</p>"
+          }
+        },
+        "text_5l": {
+          "type": "text",
+          "settings": {
+            "text": "<p>None of this knowledge was written down in manuals or peer-reviewed journals. It lived in the hands of farmers, the memories of elders, the practices of families who prepared cacao for generations. It still does.</p>"
+          }
+        },
+        "highlight_5m": {
+          "type": "highlight",
+          "settings": {
+            "heading": "What Colonization Did To This Knowledge",
+            "text": "<p>It would be dishonest to tell this story without telling what happened to it. Spanish colonization of Peru beginning in the 16th century brought catastrophic disruption to every indigenous culture it touched, through disease, forced displacement, missionary suppression, and the wholesale destruction of knowledge systems that had no written backup. The Machiguenga, in remote jungle territory, were somewhat insulated from the worst direct violence compared to highland communities. But the pressures were persistent and cumulative.</p><p>Missionary activity through the 17th, 18th, and 19th centuries worked systematically to replace indigenous ceremonial and agricultural practices with European frameworks. Traditional plant relationships, including those with cacao, were often suppressed as “pagan.” The rubber boom of the late 19th and early 20th centuries brought waves of violent extraction, forcing many communities deeper into the forest and disrupting agricultural systems maintained for generations.</p><p>In the 20th century, development programs introduced high-yield hybrid varieties, beginning the genetic displacement that continues today. Farmers were encouraged, and sometimes financially pressured, to replace heirloom Chuncho with CCN-51. The knowledge has been disrupted. Some has been lost. What remains is held by older generations in ways not always being transmitted to younger ones. This is the context in which Pacha Mana's sourcing relationship exists: not a pristine, unchanged tradition available for purchase, but a living, partially disrupted, actively threatened lineage still worth supporting before more is lost.</p>",
+            "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948"
+          }
+        },
+        "heading_5n": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Farmers We Work With Today",
+            "toc_label": "The farmers today"
+          }
+        },
+        "image_5o": {
+          "type": "image",
+          "settings": {
+            "alt": "Photo: the multi-generational family collective who grow Chuncho for Pacha Mana"
+          }
+        },
+        "text_5p": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The family collective that grows Chuncho for Pacha Mana is not a museum piece or a cultural exhibit. They are contemporary people, farmers, parents, community members, navigating the same pressures of modern life that everyone faces, while carrying a relationship with this land and this cacao that extends back further than any of their written records.</p><p>They are multi-generational. The elders remember the cacao practices of their own grandparents. The younger family members are learning, some more willingly than others, as in every farming family everywhere. They have smartphones and market concerns and complicated lives. What they also have is knowledge that lives in their hands: which trees produce the most complex pods, how long to ferment and in what conditions, when the cacao is ready and when it needs more time, and how to read the forest systems that surround the groves.</p><p>Pacha Mana's relationship with this family is built on direct trade: we purchase from them directly, at prices that reflect the actual value of what they produce and the knowledge embedded in it, rather than commodity rates that treat Chuncho the same as CCN-51. This is not incidental to the quality of the cacao. It is the mechanism through which the quality is maintained. When farmers are compensated fairly for heirloom cacao, they have a reason to keep growing it, and the knowledge of how to grow it well is preserved and transmitted.</p>"
+          }
+        },
+        "pullquote_5q": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>Fair trade is not charity. It is the economics of cultural and genetic preservation.</p>"
+          }
+        },
+        "heading_5r": {
+          "type": "heading",
+          "settings": {
+            "heading": "What It Means To Carry This Forward",
+            "toc_label": "Carrying it forward"
+          }
+        },
+        "text_5s": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We think carefully about our role in this story. We are not Machiguenga. We did not create this cacao or develop the knowledge that surrounds it. We are participants in a chain of relationships that began long before us and that we hope will continue long after us. Our responsibility, as we understand it, is threefold.</p>"
+          }
+        },
+        "cards_5t": {
+          "type": "cards",
+          "settings": {
+            "columns": 3,
+            "label_1": "Economic",
+            "text_1": "<p>To ensure the families growing Chuncho receive compensation that makes it worth continuing, so heirloom cacao done right pays better than commodity cacao done wrong.</p>",
+            "label_2": "Educational",
+            "text_2": "<p>To tell this story accurately and respectfully, so people who drink our cacao understand where it comes from and who grew it. Not as marketing, but as genuine connection across distance.</p>",
+            "label_3": "Relational",
+            "text_3": "<p>To maintain a direct, ongoing, human relationship with the farming families, built on mutual respect, honest communication, and a shared commitment to the land and the people on it.</p>"
+          }
+        },
+        "text_5u": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are not saviors of Chuncho cacao. The Machiguenga and their farming descendants have been its stewards for centuries without our help and will continue to be its primary guardians regardless of what we do. Our role is smaller and more specific: to be a reliable, respectful, fairly compensating partner in their ongoing work. If we do that well, the cacao continues. The knowledge continues. The lineage continues. That is what we are trying to do, one cup at a time.</p>"
+          }
+        },
+        "heading_5v": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Note On Telling Other People's Stories",
+            "toc_label": "Telling other stories"
+          }
+        },
+        "text_5w": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We want to be transparent about the limits of this article. The full depth of Machiguenga knowledge about cacao, the ceremonial dimensions, the specific preparation practices, the ecological relationships, the oral histories, is not ours to fully tell. Much of it has not been documented in sources we can access. Some of it is appropriately private to the communities that hold it. And some exists only in lived practice, in the hands of people who are not us.</p><p>What we have shared here draws on published ethnobotanical research, historical records, the knowledge our farming partners have chosen to share with us, and our own direct experience of sourcing Chuncho over years of relationship. We have tried to represent what we know accurately, to be clear about the distinction between documented history and reasonable inference, and to honor the people at its center rather than instrumentalizing them for our brand.</p><p>If you are Machiguenga, or a researcher or community member with knowledge of this history, and you find errors or important omissions in this account, we genuinely want to hear from you. This story deserves to be told as fully and as accurately as possible.</p>"
+          }
+        },
+        "heading_5x": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Cup As Connection"
+          }
+        },
+        "text_5y": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every cup of Pacha Mana cacao is, among other things, a small thread connecting you to everything described here. To the high-jungle valleys of southern Peru. To the ancient Chuncho trees growing under forest canopy at altitude. To the farming families tending them with generations of knowledge. To the Machiguenga people whose relationship with this plant shaped what it is.</p><p>You don't have to think about all of this when you drink your morning cup. But knowing it is there, knowing that the warmth in your hands and the opening in your chest are connected to something real, something old, something worth preserving, changes the nature of the experience.</p>"
+          }
+        },
+        "pullquote_5z": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>Cacao has always been about relationship. When you drink consciously, with gratitude for the whole chain, you are participating in that relationship rather than just consuming its output. That participation matters. It is, in its own small way, reciprocity.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_58",
+        "text_59",
+        "pullquote_5a",
+        "heading_5b",
+        "text_5c",
+        "pullquote_5d",
+        "heading_5e",
+        "text_5f",
+        "heading_5g",
+        "text_5h",
+        "heading_5i",
+        "text_5j",
+        "cards_5k",
+        "text_5l",
+        "highlight_5m",
+        "heading_5n",
+        "image_5o",
+        "text_5p",
+        "pullquote_5q",
+        "heading_5r",
+        "text_5s",
+        "cards_5t",
+        "text_5u",
+        "heading_5v",
+        "text_5w",
+        "heading_5x",
+        "text_5y",
+        "pullquote_5z"
+      ],
+      "settings": {
+        "show_toc": true,
+        "toc_heading": "In This Guide",
+        "show_progress": true
+      }
+    },
+    "cta": {
+      "type": "pm_learn_cta",
+      "blocks": {
+        "button_60": {
+          "type": "button",
+          "settings": {
+            "label": "Shop Chuncho Cacao",
+            "url": "/collections/all",
+            "style": "solid"
+          }
+        },
+        "button_61": {
+          "type": "button",
+          "settings": {
+            "label": "Our Story",
+            "url": "/pages/learn",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "button_60",
+        "button_61"
+      ],
+      "settings": {
+        "heading": "Support The Families Behind The Bean",
+        "text": "<p>Explore our direct-trade Chuncho ceremonial cacao and support the farming families who have stewarded this lineage for generations.</p>",
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "series": {
+      "type": "pm_learn_series",
+      "settings": {
+        "label": "The Cacao Guide · Part 07 of 10",
+        "next": "<p>Up next, <strong>Part 08: Ayni, the Practice of Sacred Reciprocity.</strong></p>",
+        "show_dots": true,
+        "part": 7,
+        "total": 10
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured",
+    "body",
+    "cta",
+    "series"
+  ]
+}
