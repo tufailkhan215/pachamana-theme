@@ -1,0 +1,609 @@
+{%- comment -%}
+  Pacha Mana — Learn guide: article body.
+  Sticky contents sidebar + reorderable content blocks.
+  The contents list builds itself from the Heading blocks below.
+{%- endcomment -%}
+{{ 'pm_learn.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap">
+
+<section class="full-width pm-learn pm-learn-body" id="pm-body-{{ section.id }}">
+
+  {%- if section.settings.show_progress -%}
+    <div class="pm-learn-body__progress" aria-hidden="true"><span data-pm-bar></span></div>
+  {%- endif -%}
+
+  <div class="pm-learn-body__wrap">
+
+    {%- if section.settings.show_toc -%}
+      {%- assign heading_count = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'heading' -%}{%- assign heading_count = heading_count | plus: 1 -%}{%- endif -%}
+      {%- endfor -%}
+      {%- if heading_count > 0 -%}
+        <aside class="pm-learn-body__toc">
+          {%- if section.settings.toc_heading != blank -%}
+            <p class="pm-learn-body__toc-title">{{ section.settings.toc_heading }}</p>
+          {%- endif -%}
+          <nav>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'heading' -%}
+                {%- assign toc_label = block.settings.toc_label -%}
+                {%- if toc_label == blank -%}{%- assign toc_label = block.settings.heading -%}{%- endif -%}
+                <a href="#pm-{{ block.id }}" data-pm-goto="pm-{{ block.id }}">{{ toc_label }}</a>
+              {%- endif -%}
+            {%- endfor -%}
+          </nav>
+        </aside>
+      {%- endif -%}
+    {%- endif -%}
+
+    <article class="pm-learn-body__article">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+
+        {%- when 'heading' -%}
+          {%- if block.settings.kicker != blank -%}
+            <p class="pm-learn-body__kicker" id="pm-{{ block.id }}" {{ block.shopify_attributes }}>{{ block.settings.kicker }}</p>
+            <h2 class="pm-learn-body__h2 pm-learn-body__h2--tight">{{ block.settings.heading }}</h2>
+          {%- else -%}
+            <h2 class="pm-learn-body__h2" id="pm-{{ block.id }}" {{ block.shopify_attributes }}>{{ block.settings.heading }}</h2>
+          {%- endif -%}
+
+        {%- when 'text' -%}
+          <div class="pm-learn-body__text pm-learn-body__text--{{ block.settings.variant | default: 'body' }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+
+        {%- when 'pullquote' -%}
+          <div class="pm-learn-body__pullquote" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+
+        {%- when 'callout' -%}
+          <aside class="pm-learn-body__callout" {{ block.shopify_attributes }}>
+            {%- if block.settings.label != blank -%}<p class="pm-learn-body__callout-label">{{ block.settings.label }}</p>{%- endif -%}
+            {{ block.settings.text }}
+          </aside>
+
+        {%- when 'stat' -%}
+          <div class="pm-learn-body__stat" {{ block.shopify_attributes }}>
+            <p class="pm-learn-body__stat-value">{{ block.settings.value }}{%- if block.settings.suffix != blank -%}<sup>{{ block.settings.suffix }}</sup>{%- endif -%}</p>
+            <div class="pm-learn-body__stat-text">{{ block.settings.text }}</div>
+          </div>
+
+        {%- when 'image' -%}
+          <figure class="pm-learn-body__figure" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 1400 }}" alt="{{ block.settings.alt | escape }}" loading="lazy" width="1400" height="875">
+            {%- elsif block.settings.image_url != blank -%}
+              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.alt | escape }}" loading="lazy">
+            {%- else -%}
+              <span class="pm-learn-body__figure-ph">{{ block.settings.alt }}</span>
+            {%- endif -%}
+            {%- if block.settings.caption != blank -%}<figcaption>{{ block.settings.caption }}</figcaption>{%- endif -%}
+          </figure>
+
+        {%- when 'steps' -%}
+          <ol class="pm-learn-body__steps" {{ block.shopify_attributes }}>
+            {%- for i in (1..8) -%}
+              {%- assign tk = 'title_' | append: i -%}
+              {%- assign mk = 'meta_' | append: i -%}
+              {%- assign bk = 'text_' | append: i -%}
+              {%- assign st = block.settings[tk] -%}
+              {%- if st != blank -%}
+                <li class="pm-learn-body__step">
+                  <span class="pm-learn-body__step-num" aria-hidden="true">{{ i }}</span>
+                  <div>
+                    <p class="pm-learn-body__step-head">
+                      <span class="pm-learn-body__step-title">{{ st }}</span>
+                      {%- if block.settings[mk] != blank -%}<span class="pm-learn-body__step-pill">{{ block.settings[mk] }}</span>{%- endif -%}
+                    </p>
+                    <div class="pm-learn-body__step-text">{{ block.settings[bk] }}</div>
+                  </div>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ol>
+
+        {%- when 'faq' -%}
+          <div class="pm-learn-body__faq" {{ block.shopify_attributes }}>
+            {%- for i in (1..8) -%}
+              {%- assign qk = 'q_' | append: i -%}
+              {%- assign ak = 'a_' | append: i -%}
+              {%- assign q = block.settings[qk] -%}
+              {%- if q != blank -%}
+                <div class="pm-learn-body__faq-row">
+                  <p class="pm-learn-body__faq-q">{{ q }}</p>
+                  <div class="pm-learn-body__faq-a">{{ block.settings[ak] }}</div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+        {%- when 'cards' -%}
+          {%- assign cols = block.settings.columns | default: 2 -%}
+          <div class="pm-learn-body__cards pm-learn-body__cards--{{ cols }}" {{ block.shopify_attributes }}>
+            {%- for i in (1..6) -%}
+              {%- assign lk = 'label_' | append: i -%}
+              {%- assign tk = 'text_' | append: i -%}
+              {%- assign lbl = block.settings[lk] -%}
+              {%- assign txt = block.settings[tk] -%}
+              {%- if lbl != blank or txt != blank -%}
+                <div class="pm-learn-body__card">
+                  {%- if lbl != blank -%}<p class="pm-learn-body__card-label">{{ lbl }}</p>{%- endif -%}
+                  {%- if txt != blank -%}<div class="pm-learn-body__card-text">{{ txt }}</div>{%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+        {%- when 'compare' -%}
+          <div class="pm-learn-body__compare" {{ block.shopify_attributes }}>
+            <div class="pm-learn-body__col pm-learn-body__col--gold">
+              <div class="pm-learn-body__col-head">
+                {%- if block.settings.a_label != blank -%}<p class="pm-learn-body__col-label">{{ block.settings.a_label }}</p>{%- endif -%}
+                {%- if block.settings.a_value != blank -%}<p class="pm-learn-body__col-value">{{ block.settings.a_value }}</p>{%- endif -%}
+              </div>
+              <div class="pm-learn-body__col-text">{{ block.settings.a_text }}</div>
+            </div>
+            <div class="pm-learn-body__col pm-learn-body__col--dark">
+              <div class="pm-learn-body__col-head">
+                {%- if block.settings.b_label != blank -%}<p class="pm-learn-body__col-label">{{ block.settings.b_label }}</p>{%- endif -%}
+                {%- if block.settings.b_value != blank -%}<p class="pm-learn-body__col-value">{{ block.settings.b_value }}</p>{%- endif -%}
+              </div>
+              <div class="pm-learn-body__col-text">{{ block.settings.b_text }}</div>
+            </div>
+          </div>
+
+        {%- when 'highlight' -%}
+          <div class="pm-learn-body__highlight pm-learn-body__highlight--{{ block.settings.tone | default: 'cacao' }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.bg_image != blank -%}
+              <img class="pm-learn-body__highlight-leaf" src="{{ block.settings.bg_image | image_url: width: 900 }}" alt="" loading="lazy" width="900" height="900">
+            {%- elsif block.settings.bg_image_url != blank -%}
+              <img class="pm-learn-body__highlight-leaf" src="{{ block.settings.bg_image_url }}" alt="" loading="lazy">
+            {%- endif -%}
+            <div class="pm-learn-body__highlight-inner">
+              {%- if block.settings.heading != blank -%}
+                <h2 class="pm-learn-body__h2 pm-learn-body__h2--on-dark" id="pm-{{ block.id }}">{{ block.settings.heading }}</h2>
+              {%- endif -%}
+              {{ block.settings.text }}
+              {%- if block.settings.link1_label != blank or block.settings.link2_label != blank -%}
+                <p class="pm-learn-body__highlight-links">
+                  {%- if block.settings.link1_label != blank -%}
+                    <a href="{{ block.settings.link1_url | default: '#' }}">{{ block.settings.link1_label }}</a>
+                  {%- endif -%}
+                  {%- if block.settings.link2_label != blank -%}
+                    <a href="{{ block.settings.link2_url | default: '#' }}">{{ block.settings.link2_label }}</a>
+                  {%- endif -%}
+                </p>
+              {%- endif -%}
+            </div>
+          </div>
+
+        {%- endcase -%}
+      {%- endfor -%}
+    </article>
+  </div>
+</section>
+
+{% stylesheet %}
+.pm-learn-body__progress {
+  position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 40;
+  background: rgba(226, 171, 67, 0.14);
+}
+.pm-learn-body__progress span {
+  display: block; height: 100%; width: 0%;
+  background: var(--pm-gold-500); transition: width 120ms linear;
+}
+.pm-learn-body__wrap {
+  max-width: 1140px; margin: 0 auto; padding: 80px 40px 40px;
+  display: flex; gap: 72px; align-items: flex-start; justify-content: center;
+}
+.pm-learn-body__toc { position: sticky; top: 96px; width: 216px; flex-shrink: 0; padding-top: 6px; }
+.pm-learn-body__toc-title {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.14em;
+  font-size: 12px; color: var(--pm-gold-600); margin: 0 0 18px;
+}
+.pm-learn-body__toc nav {
+  display: flex; flex-direction: column; gap: 12px;
+  border-left: 1px solid var(--pm-line); padding-left: 18px;
+}
+.pm-learn-body__toc nav a {
+  font-size: 14px; line-height: 1.4; color: var(--pm-cacao-300);
+  transition: color 240ms var(--pm-ease);
+}
+.pm-learn-body__toc nav a:hover,
+.pm-learn-body__toc nav a.is-active { color: var(--pm-gold-700); text-decoration: none; }
+.pm-learn-body__article { max-width: 700px; flex: 1 1 700px; min-width: 0; }
+
+.pm-learn-body__h2 {
+  font-family: var(--pm-fd); text-transform: uppercase; font-weight: 400;
+  font-size: 28px; line-height: 1.15; letter-spacing: 0.01em;
+  color: var(--pm-cacao-700); margin: 60px 0 20px; scroll-margin-top: 96px;
+}
+.pm-learn-body__article > .pm-learn-body__h2:first-child { margin-top: 0; }
+.pm-learn-body__h2--tight { margin-top: 0; }
+.pm-learn-body__h2--on-dark { color: var(--pm-pearl); margin-top: 0; }
+.pm-learn-body__kicker {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.14em;
+  font-size: 12px; color: var(--pm-gold-600); margin: 60px 0 12px; scroll-margin-top: 96px;
+}
+.pm-learn-body__article > .pm-learn-body__kicker:first-child { margin-top: 0; }
+
+.pm-learn-body__text { margin: 0 0 20px; }
+.pm-learn-body__text p { font-size: 18.5px; line-height: 1.78; margin: 0 0 20px; }
+.pm-learn-body__text p:last-child { margin-bottom: 0; }
+.pm-learn-body__text ul, .pm-learn-body__text ol { margin: 0 0 20px; padding-left: 22px; }
+.pm-learn-body__text li { font-size: 18.5px; line-height: 1.78; margin-bottom: 10px; }
+.pm-learn-body__text a { text-decoration: underline; text-underline-offset: 3px; }
+.pm-learn-body__text--small p, .pm-learn-body__text--small li { font-size: 14px; line-height: 1.7; color: var(--pm-cacao-300); }
+
+.pm-learn-body__pullquote { margin: 0 0 20px; }
+.pm-learn-body__pullquote p {
+  font-size: 20px; line-height: 1.7; font-style: italic;
+  color: var(--pm-cacao-700); margin: 0 0 16px;
+}
+.pm-learn-body__pullquote p:last-child { margin-bottom: 0; }
+
+.pm-learn-body__callout {
+  background: var(--pm-card); border: 1px solid var(--pm-gold-300);
+  border-left: 4px solid var(--pm-gold-500); border-radius: 12px;
+  padding: 22px 26px; margin: 0 0 26px;
+}
+.pm-learn-body__callout-label {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.1em;
+  font-size: 13px; color: var(--pm-gold-700); margin: 0 0 10px;
+}
+.pm-learn-body__callout p { font-size: 16px; line-height: 1.68; margin: 0 0 12px; color: var(--pm-cacao-700); }
+.pm-learn-body__callout p:last-child { margin-bottom: 0; }
+
+.pm-learn-body__stat {
+  display: flex; align-items: center; gap: 24px;
+  background: var(--pm-sunrise); border: 1px solid var(--pm-gold-200);
+  border-radius: 20px; padding: 22px 26px; margin: 0 0 26px;
+}
+.pm-learn-body__stat-value {
+  font-family: var(--pm-fd); font-size: 46px; line-height: 1;
+  color: var(--pm-cacao-700); flex-shrink: 0; margin: 0;
+}
+.pm-learn-body__stat-value sup { font-size: 18px; vertical-align: baseline; }
+.pm-learn-body__stat-text p { font-size: 16px; line-height: 1.6; margin: 0; color: var(--pm-cacao-600); }
+
+.pm-learn-body__figure {
+  width: 100%; aspect-ratio: 16 / 10; border-radius: 28px; overflow: hidden;
+  box-shadow: var(--pm-sh-md); margin: 28px 0; position: relative; background: var(--pm-tan-200);
+}
+.pm-learn-body__figure img { width: 100%; height: 100%; object-fit: cover; }
+.pm-learn-body__figure-ph {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  padding: 24px; text-align: center; font-size: 14px; font-style: italic; color: var(--pm-cacao-300);
+}
+.pm-learn-body__figure figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px;
+  background: linear-gradient(180deg, rgba(43,37,33,0) 0%, rgba(43,37,33,0.72) 100%);
+  color: #fff; font-size: 14px;
+}
+
+.pm-learn-body__steps { list-style: none; margin: 0 0 26px; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+.pm-learn-body__step { display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start; }
+.pm-learn-body__step-num {
+  width: 44px; height: 44px; border-radius: 50%; background: var(--pm-goldgrad);
+  color: var(--pm-cacao-800); font-family: var(--pm-fd); font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 30px rgba(226, 171, 67, 0.30);
+}
+.pm-learn-body__step-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 3px 0 8px; }
+.pm-learn-body__step-title {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.03em;
+  font-size: 16px; color: var(--pm-cacao-700);
+}
+.pm-learn-body__step-pill {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 11px; color: var(--pm-cacao-700); background: var(--pm-tan-200);
+  border-radius: 999px; padding: 3px 10px;
+}
+.pm-learn-body__step-text p { font-size: 16px; line-height: 1.65; margin: 0 0 10px; }
+.pm-learn-body__step-text p:last-child { margin-bottom: 0; }
+
+.pm-learn-body__faq { display: flex; flex-direction: column; margin: 0 0 26px; }
+.pm-learn-body__faq-row { padding: 22px 0; border-bottom: 1px solid var(--pm-line); }
+.pm-learn-body__faq-q {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.03em;
+  font-size: 17px; color: var(--pm-cacao-700); margin: 0 0 8px;
+}
+.pm-learn-body__faq-a p { font-size: 16.5px; line-height: 1.7; margin: 0 0 10px; }
+.pm-learn-body__faq-a p:last-child { margin-bottom: 0; }
+
+.pm-learn-body__cards { display: grid; gap: 16px; margin: 0 0 26px; }
+.pm-learn-body__cards--1 { grid-template-columns: 1fr; }
+.pm-learn-body__cards--2 { grid-template-columns: 1fr 1fr; }
+.pm-learn-body__cards--3 { grid-template-columns: repeat(3, 1fr); }
+.pm-learn-body__card {
+  background: var(--pm-card); border: 1px solid var(--pm-line);
+  border-radius: 20px; padding: 22px 24px; box-shadow: var(--pm-sh-sm);
+}
+.pm-learn-body__card-label {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 14px; color: var(--pm-gold-600); margin: 0 0 10px;
+}
+.pm-learn-body__card-text p { font-size: 15.5px; line-height: 1.65; margin: 0 0 10px; }
+.pm-learn-body__card-text p:last-child { margin-bottom: 0; }
+
+.pm-learn-body__compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0 0 26px; }
+.pm-learn-body__col { border-radius: 20px; overflow: hidden; }
+.pm-learn-body__col--gold { border: 1px solid var(--pm-gold-300); box-shadow: var(--pm-sh-md); }
+.pm-learn-body__col--dark { border: 1px solid var(--pm-line); box-shadow: var(--pm-sh-sm); }
+.pm-learn-body__col-head { padding: 22px; text-align: center; }
+.pm-learn-body__col--gold .pm-learn-body__col-head { background: var(--pm-goldgrad); }
+.pm-learn-body__col--dark .pm-learn-body__col-head { background: var(--pm-cacaograd); }
+.pm-learn-body__col-label {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.04em;
+  font-size: 13px; margin: 0 0 6px;
+}
+.pm-learn-body__col--gold .pm-learn-body__col-label { color: var(--pm-cacao-700); }
+.pm-learn-body__col--dark .pm-learn-body__col-label { color: var(--pm-gold-400); }
+.pm-learn-body__col-value { font-family: var(--pm-fd); font-size: 34px; margin: 0; }
+.pm-learn-body__col--gold .pm-learn-body__col-value { color: var(--pm-cacao-800); }
+.pm-learn-body__col--dark .pm-learn-body__col-value { color: var(--pm-pearl); }
+.pm-learn-body__col-text { background: var(--pm-card); padding: 18px 22px; }
+.pm-learn-body__col-text p { font-size: 15px; line-height: 1.6; margin: 0 0 10px; }
+.pm-learn-body__col-text p:last-child { margin-bottom: 0; }
+
+.pm-learn-body__highlight {
+  position: relative; overflow: hidden; border-radius: 28px; padding: 48px 44px;
+  box-shadow: var(--pm-sh-md); margin: 60px 0 26px;
+}
+.pm-learn-body__highlight--cacao { background: var(--pm-cacaograd); }
+.pm-learn-body__highlight--dusk { background: var(--pm-duskgrad); }
+.pm-learn-body__highlight-leaf {
+  position: absolute; right: -40px; bottom: -30px; width: 42%;
+  opacity: 0.14; pointer-events: none;
+}
+.pm-learn-body__highlight-inner { position: relative; z-index: 2; }
+.pm-learn-body__highlight p { font-size: 17px; line-height: 1.75; margin: 0 0 18px; color: var(--pm-tan-200); }
+.pm-learn-body__highlight-links { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 15px; margin: 22px 0 0; }
+.pm-learn-body__highlight-links a { color: var(--pm-gold-400); text-decoration: underline; text-underline-offset: 3px; }
+.pm-learn-body__highlight-links a:hover { color: var(--pm-gold-300); }
+
+@media screen and (max-width: 989px) {
+  .pm-learn-body__wrap { gap: 40px; padding: 60px 28px 32px; }
+  .pm-learn-body__toc { display: none; }
+  .pm-learn-body__article { max-width: 100%; flex-basis: auto; }
+}
+@media screen and (max-width: 749px) {
+  .pm-learn-body__wrap { padding: 44px 22px 24px; }
+  .pm-learn-body__h2 { font-size: 23px; margin-top: 44px; }
+  .pm-learn-body__text p, .pm-learn-body__text li { font-size: 17px; }
+  .pm-learn-body__cards--2, .pm-learn-body__cards--3, .pm-learn-body__compare { grid-template-columns: 1fr; }
+  .pm-learn-body__stat { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .pm-learn-body__highlight { padding: 32px 24px; border-radius: 20px; }
+  .pm-learn-body__step { grid-template-columns: 36px 1fr; gap: 14px; }
+  .pm-learn-body__step-num { width: 36px; height: 36px; font-size: 17px; }
+}
+{% endstylesheet %}
+
+{% javascript %}
+(function () {
+  var init = function () {
+    var roots = document.querySelectorAll('.pm-learn-body');
+    Array.prototype.forEach.call(roots, function (root) {
+      if (root.dataset.pmInit === '1') { return; }
+      root.dataset.pmInit = '1';
+
+      var bar = root.querySelector('[data-pm-bar]');
+      if (bar) {
+        var onScroll = function () {
+          var h = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+          bar.style.width = Math.min(100, Math.max(0, pct)).toFixed(2) + '%';
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        onScroll();
+      }
+
+      var links = root.querySelectorAll('[data-pm-goto]');
+      if (!links.length) { return; }
+
+      Array.prototype.forEach.call(links, function (a) {
+        a.addEventListener('click', function (e) {
+          var target = document.getElementById(a.getAttribute('data-pm-goto'));
+          if (!target) { return; }
+          e.preventDefault();
+          var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        });
+      });
+
+      if (!('IntersectionObserver' in window)) { return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) { return; }
+          Array.prototype.forEach.call(links, function (a) {
+            a.classList.toggle('is-active', a.getAttribute('data-pm-goto') === entry.target.id);
+          });
+        });
+      }, { rootMargin: '-96px 0px -70% 0px', threshold: 0 });
+
+      Array.prototype.forEach.call(links, function (a) {
+        var target = document.getElementById(a.getAttribute('data-pm-goto'));
+        if (target) { io.observe(target); }
+      });
+    });
+  };
+  init();
+  // re-run when the theme editor re-renders this section
+  document.addEventListener('shopify:section:load', init);
+})();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Learn: article body",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "show_toc", "label": "Show contents sidebar", "default": true },
+    { "type": "text", "id": "toc_heading", "label": "Contents heading", "default": "In This Guide" },
+    { "type": "checkbox", "id": "show_progress", "label": "Show progress bar", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        { "type": "text", "id": "kicker", "label": "Kicker" },
+        { "type": "text", "id": "heading", "label": "Heading" },
+        { "type": "text", "id": "toc_label", "label": "Contents label", "info": "Shown in the sidebar. Defaults to the heading." }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        { "type": "richtext", "id": "text", "label": "Text" },
+        {
+          "type": "select", "id": "variant", "label": "Style", "default": "body",
+          "options": [
+            { "value": "body", "label": "Body" },
+            { "value": "small", "label": "Small print" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "pullquote",
+      "name": "Pull quote",
+      "settings": [{ "type": "richtext", "id": "text", "label": "Quote" }]
+    },
+    {
+      "type": "callout",
+      "name": "Callout box",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "stat",
+      "name": "Statistic",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Big number" },
+        { "type": "text", "id": "suffix", "label": "Suffix" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_url", "label": "Image URL" },
+        { "type": "text", "id": "alt", "label": "Alt text" },
+        { "type": "text", "id": "caption", "label": "Caption" }
+      ]
+    },
+    {
+      "type": "steps",
+      "name": "Numbered steps",
+      "settings": [
+        { "type": "text", "id": "title_1", "label": "Step 1 title" },
+        { "type": "text", "id": "meta_1", "label": "Step 1 pill" },
+        { "type": "richtext", "id": "text_1", "label": "Step 1 text" },
+        { "type": "text", "id": "title_2", "label": "Step 2 title" },
+        { "type": "text", "id": "meta_2", "label": "Step 2 pill" },
+        { "type": "richtext", "id": "text_2", "label": "Step 2 text" },
+        { "type": "text", "id": "title_3", "label": "Step 3 title" },
+        { "type": "text", "id": "meta_3", "label": "Step 3 pill" },
+        { "type": "richtext", "id": "text_3", "label": "Step 3 text" },
+        { "type": "text", "id": "title_4", "label": "Step 4 title" },
+        { "type": "text", "id": "meta_4", "label": "Step 4 pill" },
+        { "type": "richtext", "id": "text_4", "label": "Step 4 text" },
+        { "type": "text", "id": "title_5", "label": "Step 5 title" },
+        { "type": "text", "id": "meta_5", "label": "Step 5 pill" },
+        { "type": "richtext", "id": "text_5", "label": "Step 5 text" },
+        { "type": "text", "id": "title_6", "label": "Step 6 title" },
+        { "type": "text", "id": "meta_6", "label": "Step 6 pill" },
+        { "type": "richtext", "id": "text_6", "label": "Step 6 text" },
+        { "type": "text", "id": "title_7", "label": "Step 7 title" },
+        { "type": "text", "id": "meta_7", "label": "Step 7 pill" },
+        { "type": "richtext", "id": "text_7", "label": "Step 7 text" },
+        { "type": "text", "id": "title_8", "label": "Step 8 title" },
+        { "type": "text", "id": "meta_8", "label": "Step 8 pill" },
+        { "type": "richtext", "id": "text_8", "label": "Step 8 text" }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "Questions",
+      "settings": [
+        { "type": "text", "id": "q_1", "label": "Question 1" },
+        { "type": "richtext", "id": "a_1", "label": "Answer 1" },
+        { "type": "text", "id": "q_2", "label": "Question 2" },
+        { "type": "richtext", "id": "a_2", "label": "Answer 2" },
+        { "type": "text", "id": "q_3", "label": "Question 3" },
+        { "type": "richtext", "id": "a_3", "label": "Answer 3" },
+        { "type": "text", "id": "q_4", "label": "Question 4" },
+        { "type": "richtext", "id": "a_4", "label": "Answer 4" },
+        { "type": "text", "id": "q_5", "label": "Question 5" },
+        { "type": "richtext", "id": "a_5", "label": "Answer 5" },
+        { "type": "text", "id": "q_6", "label": "Question 6" },
+        { "type": "richtext", "id": "a_6", "label": "Answer 6" },
+        { "type": "text", "id": "q_7", "label": "Question 7" },
+        { "type": "richtext", "id": "a_7", "label": "Answer 7" },
+        { "type": "text", "id": "q_8", "label": "Question 8" },
+        { "type": "richtext", "id": "a_8", "label": "Answer 8" }
+      ]
+    },
+    {
+      "type": "cards",
+      "name": "Card grid",
+      "settings": [
+        { "type": "range", "id": "columns", "label": "Columns", "min": 1, "max": 3, "step": 1, "default": 2 },
+        { "type": "text", "id": "label_1", "label": "Card 1 label" },
+        { "type": "richtext", "id": "text_1", "label": "Card 1 text" },
+        { "type": "text", "id": "label_2", "label": "Card 2 label" },
+        { "type": "richtext", "id": "text_2", "label": "Card 2 text" },
+        { "type": "text", "id": "label_3", "label": "Card 3 label" },
+        { "type": "richtext", "id": "text_3", "label": "Card 3 text" },
+        { "type": "text", "id": "label_4", "label": "Card 4 label" },
+        { "type": "richtext", "id": "text_4", "label": "Card 4 text" },
+        { "type": "text", "id": "label_5", "label": "Card 5 label" },
+        { "type": "richtext", "id": "text_5", "label": "Card 5 text" },
+        { "type": "text", "id": "label_6", "label": "Card 6 label" },
+        { "type": "richtext", "id": "text_6", "label": "Card 6 text" }
+      ]
+    },
+    {
+      "type": "compare",
+      "name": "Comparison",
+      "settings": [
+        { "type": "text", "id": "a_label", "label": "Left label" },
+        { "type": "text", "id": "a_value", "label": "Left value" },
+        { "type": "richtext", "id": "a_text", "label": "Left text" },
+        { "type": "text", "id": "b_label", "label": "Right label" },
+        { "type": "text", "id": "b_value", "label": "Right value" },
+        { "type": "richtext", "id": "b_text", "label": "Right text" }
+      ]
+    },
+    {
+      "type": "highlight",
+      "name": "Dark highlight",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading" },
+        { "type": "richtext", "id": "text", "label": "Text" },
+        {
+          "type": "select", "id": "tone", "label": "Tone", "default": "cacao",
+          "options": [
+            { "value": "cacao", "label": "Cacao" },
+            { "value": "dusk", "label": "Dusk" }
+          ]
+        },
+        { "type": "image_picker", "id": "bg_image", "label": "Watermark" },
+        { "type": "text", "id": "bg_image_url", "label": "Watermark URL" },
+        { "type": "text", "id": "link1_label", "label": "Link 1 label" },
+        { "type": "url", "id": "link1_url", "label": "Link 1" },
+        { "type": "text", "id": "link2_label", "label": "Link 2 label" },
+        { "type": "url", "id": "link2_url", "label": "Link 2" }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [{ "name": "Learn: article body" }]
+}
+{% endschema %}

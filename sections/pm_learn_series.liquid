@@ -1,0 +1,73 @@
+{%- comment -%} Pacha Mana — Learn guide: series progress band. {%- endcomment -%}
+{{ 'pm_learn.css' | asset_url | stylesheet_tag }}
+
+<section class="full-width pm-learn pm-learn-series" id="pm-series-{{ section.id }}">
+  <div class="pm-learn-series__inner">
+    <div>
+      {%- if section.settings.label != blank -%}
+        <p class="pm-learn-series__label">{{ section.settings.label }}</p>
+      {%- endif -%}
+      {%- if section.settings.next != blank -%}
+        <div class="pm-learn-series__next">{{ section.settings.next }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_dots -%}
+      <div class="pm-learn-series__dots" aria-hidden="true">
+        {%- assign total = section.settings.total -%}
+        {%- assign current = section.settings.part -%}
+        {%- for i in (1..total) -%}
+          {%- if i == current -%}
+            <span class="is-current"></span>
+          {%- elsif i < current -%}
+            <span class="is-done"></span>
+          {%- else -%}
+            <span></span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+.pm-learn-series {
+  background: var(--pm-card);
+  border-top: 1px solid var(--pm-line); border-bottom: 1px solid var(--pm-line);
+}
+.pm-learn-series__inner {
+  max-width: 1140px; margin: 0 auto; padding: 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 24px;
+}
+.pm-learn-series__label {
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.14em;
+  font-size: 12px; color: var(--pm-gold-600); margin: 0 0 8px;
+}
+.pm-learn-series__next { font-size: 16px; color: var(--pm-cacao-600); }
+.pm-learn-series__next p { margin: 0; }
+.pm-learn-series__next strong { color: var(--pm-cacao-700); }
+.pm-learn-series__dots { display: flex; gap: 8px; align-items: center; }
+.pm-learn-series__dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--pm-tan-300); }
+.pm-learn-series__dots span.is-done { background: var(--pm-gold-500); }
+.pm-learn-series__dots span.is-current { width: 26px; height: 6px; border-radius: 3px; background: var(--pm-gold-500); }
+
+@media screen and (max-width: 749px) {
+  .pm-learn-series__inner { padding: 28px 22px; }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Learn: series band",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Series label" },
+    { "type": "richtext", "id": "next", "label": "Up next" },
+    { "type": "checkbox", "id": "show_dots", "label": "Show progress dots", "default": true },
+    { "type": "range", "id": "part", "label": "This part", "min": 1, "max": 20, "step": 1, "default": 1 },
+    { "type": "range", "id": "total", "label": "Total parts", "min": 1, "max": 20, "step": 1, "default": 10 }
+  ],
+  "presets": [{ "name": "Learn: series band" }]
+}
+{% endschema %}

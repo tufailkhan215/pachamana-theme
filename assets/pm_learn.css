@@ -1,0 +1,67 @@
+/* ============================================================
+   Pacha Mana — Learn / Cacao Guide shared tokens.
+   Scoped to .pm-learn so NOTHING leaks into the rest of the theme.
+   Loaded by every pm-learn-* section; the browser dedupes the request.
+   ============================================================ */
+
+@font-face {
+  font-family: 'PMOaxaca';
+  src: url('bulk-oaxaca.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.pm-learn {
+  --pm-gold-200: #f2d28c;
+  --pm-gold-300: #ebbd5e;
+  --pm-gold-400: #e2ab43;
+  --pm-gold-500: #cf962f;
+  --pm-gold-600: #ab7820;
+  --pm-gold-700: #835a18;
+  --pm-cacao-200: #c4a48a;
+  --pm-cacao-300: #9c7758;
+  --pm-cacao-500: #5c402f;
+  --pm-cacao-600: #4a3326;
+  --pm-cacao-700: #38271d;
+  --pm-cacao-800: #2b2521;
+  --pm-tan-200: #fee7be;
+  --pm-tan-300: #f7d79b;
+  --pm-pearl: #f9f2ef;
+  --pm-card: #ffffff;
+  --pm-line: #ece0d3;
+  --pm-fd: 'PMOaxaca', 'Cooper Black', Georgia, serif;
+  --pm-fb: 'Lora', Georgia, 'Times New Roman', serif;
+  --pm-sunrise: linear-gradient(180deg, #fef2e0 0%, #fee7be 45%, #f7d79b 100%);
+  --pm-goldgrad: linear-gradient(135deg, #ebbd5e 0%, #e2ab43 55%, #cf962f 100%);
+  --pm-cacaograd: linear-gradient(165deg, #5c402f 0%, #38271d 100%);
+  --pm-duskgrad: linear-gradient(180deg, #785741 0%, #2b2521 100%);
+  --pm-sh-sm: 0 2px 8px rgba(92, 64, 47, 0.10);
+  --pm-sh-md: 0 8px 24px rgba(92, 64, 47, 0.12);
+  --pm-ease: cubic-bezier(.165, .84, .44, 1);
+
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow-x: clip;
+  background: var(--pm-pearl);
+  font-family: var(--pm-fb);
+  color: var(--pm-cacao-600);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.pm-learn img { max-width: 100%; display: block; }
+.pm-learn a { color: var(--pm-gold-600); text-decoration: none; }
+.pm-learn a:hover { color: var(--pm-gold-700); text-decoration: underline; }
+.pm-learn ::selection { background: var(--pm-gold-200); color: var(--pm-cacao-700); }
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-learn *,
+  .pm-learn *::before,
+  .pm-learn *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+}

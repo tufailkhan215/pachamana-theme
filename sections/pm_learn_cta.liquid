@@ -1,0 +1,111 @@
+{%- comment -%} Pacha Mana — Learn guide: closing call to action. {%- endcomment -%}
+{{ 'pm_learn.css' | asset_url | stylesheet_tag }}
+
+<section class="full-width pm-learn pm-learn-cta" id="pm-cta-{{ section.id }}">
+  {%- if section.settings.leaf != blank -%}
+    <img class="pm-learn-cta__leaf" src="{{ section.settings.leaf | image_url: width: 900 }}" alt="" loading="lazy" width="900" height="900">
+  {%- elsif section.settings.leaf_url != blank -%}
+    <img class="pm-learn-cta__leaf" src="{{ section.settings.leaf_url }}" alt="" loading="lazy">
+  {%- endif -%}
+
+  <div class="pm-learn-cta__inner">
+    {%- if section.settings.mark != blank -%}
+      <img class="pm-learn-cta__mark" src="{{ section.settings.mark | image_url: width: 200 }}" alt="" loading="lazy" width="200" height="200">
+    {%- elsif section.settings.mark_url != blank -%}
+      <img class="pm-learn-cta__mark" src="{{ section.settings.mark_url }}" alt="" loading="lazy">
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="pm-learn-cta__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="pm-learn-cta__text">{{ section.settings.text }}</div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <p class="pm-learn-cta__buttons">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.label != blank -%}
+            <a class="pm-learn-cta__btn pm-learn-cta__btn--{{ block.settings.style | default: 'solid' }}"
+               href="{{ block.settings.url | default: '#' }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+.pm-learn-cta { position: relative; overflow: hidden; background: var(--pm-sunrise); }
+.pm-learn-cta__leaf {
+  position: absolute; left: -40px; bottom: -40px; width: 30%;
+  opacity: 0.10; pointer-events: none;
+}
+.pm-learn-cta__inner {
+  max-width: 680px; margin: 0 auto; padding: 80px 40px;
+  text-align: center; position: relative; z-index: 2;
+}
+.pm-learn-cta__mark { height: 58px; width: auto; margin: 0 auto 22px; opacity: 0.9; }
+.pm-learn-cta__title {
+  font-family: var(--pm-fd); text-transform: uppercase; font-weight: 400;
+  font-size: 34px; line-height: 1.05; letter-spacing: 0.01em;
+  color: var(--pm-cacao-700); margin: 0 0 16px;
+}
+.pm-learn-cta__text p {
+  font-size: 18px; line-height: 1.7; color: var(--pm-cacao-600);
+  max-width: 48ch; margin: 0 auto 16px;
+}
+.pm-learn-cta__buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 30px 0 0; }
+.pm-learn-cta__btn {
+  display: inline-block; padding: 15px 32px; border-radius: 999px;
+  font-family: var(--pm-fd); text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 14px; transition: transform 240ms var(--pm-ease), box-shadow 240ms var(--pm-ease);
+}
+.pm-learn-cta__btn:hover { transform: translateY(-2px); text-decoration: none; }
+.pm-learn-cta__btn--solid {
+  background: var(--pm-goldgrad); color: var(--pm-cacao-800);
+  box-shadow: 0 10px 30px rgba(226, 171, 67, 0.30);
+}
+.pm-learn-cta__btn--solid:hover { color: var(--pm-cacao-800); }
+.pm-learn-cta__btn--outline { border: 1px solid var(--pm-cacao-500); color: var(--pm-cacao-700); background: transparent; }
+.pm-learn-cta__btn--outline:hover { color: var(--pm-cacao-800); }
+
+@media screen and (max-width: 749px) {
+  .pm-learn-cta__inner { padding: 56px 22px; }
+  .pm-learn-cta__title { font-size: 26px; }
+  .pm-learn-cta__btn { padding: 13px 24px; font-size: 13px; }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Learn: closing CTA",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "mark", "label": "Logo mark" },
+    { "type": "text", "id": "mark_url", "label": "Logo mark URL" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "image_picker", "id": "leaf", "label": "Watermark image" },
+    { "type": "text", "id": "leaf_url", "label": "Watermark image URL" }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "url", "id": "url", "label": "Link" },
+        {
+          "type": "select", "id": "style", "label": "Style", "default": "solid",
+          "options": [
+            { "value": "solid", "label": "Solid gold" },
+            { "value": "outline", "label": "Outline" }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Learn: closing CTA" }]
+}
+{% endschema %}
