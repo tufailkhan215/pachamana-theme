@@ -1,0 +1,297 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "pm_learn_hero",
+      "settings": {
+        "eyebrow": "The Cacao Guide · Part 05 of 10",
+        "title": "Create Your Own Cacao Ceremony",
+        "deck": "You don't need a shaman, an altar, or a two-hour window. You need a cup, some quiet, and the willingness to show up.",
+        "meta_read": "13 Min Read",
+        "meta_topic": "Ritual &amp; Practice",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "featured": {
+      "type": "pm_learn_featured",
+      "settings": {
+        "alt": "Featured photo: a quiet ceremony space with a warm cup of cacao, candle, and journal",
+        "height": 480,
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7de0466c0c.webp?v=1785782948"
+      }
+    },
+    "body": {
+      "type": "pm_learn_body",
+      "blocks": {
+        "heading_3s": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Ceremony Actually Is"
+          }
+        },
+        "text_3t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The word “ceremony” can feel intimidating. It carries weight: ritual, tradition, sacred space, things done correctly or not at all. For many people drawn to cacao but new to working with it intentionally, the concept can feel like a barrier rather than an invitation.</p><p>So let's set something down. Ceremony is not a performance. It is not a set of steps you must execute perfectly. It is not the exclusive territory of trained practitioners, indigenous traditions, or people with dedicated meditation rooms and singing bowls.</p><p>Ceremony, at its most essential, is simply the practice of bringing your full attention to something. Of slowing down enough to be present with what you're doing and why. Of approaching an ordinary act, making a drink, sitting quietly, breathing, as if it matters. Because it does.</p><p>When you make a cup of Pacha Mana cacao with intention, when you pause before the first sip and ask what you need today, when you let the warmth of the cup reach your hands before you drink, that is the ceremony. Modest, personal, entirely yours. This guide is for that. Not the elaborate version. The real one.</p>"
+          }
+        },
+        "heading_3u": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Cacao For Ceremony?",
+            "toc_label": "Why cacao for ceremony"
+          }
+        },
+        "text_3v": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cacao is what's sometimes called an empathogen, a substance that gently opens the heart and makes deeper connection available. Unlike entheogens, which can produce experiences regardless of your intention or readiness, cacao works with you. It amplifies what you bring to it. Your intention, your attention, your willingness to be present: these are what direct the experience.</p><p>This is why the same cup of cacao can feel completely different depending on how you approach it. Drunk hurriedly on the way out the door, it's a pleasant warm drink with a gentle energy boost. Drunk slowly, with intention, in a quiet space, it can open something. Not dramatically. Not always. But reliably, over time, for people who show up for it consistently.</p><p>The compounds in cacao, anandamide, theobromine, phenylethylamine, magnesium, and serotonin precursors, can create a physiological state genuinely conducive to the inner work of ceremony. Softened nervous system. Open heart. Gentle focus. Increased circulation. A quiet sense of wellbeing that makes it easier to go inward, to feel what's present, to listen.</p>"
+          }
+        },
+        "pullquote_3w": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>Cacao doesn't do the ceremony for you. It creates conditions in which ceremony becomes more available.</p>"
+          }
+        },
+        "heading_3x": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Three Pillars"
+          }
+        },
+        "text_3y": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Across the many cultural and personal approaches to cacao ceremony, three elements appear again and again. Understand them not as rules but as anchors, things to return to if you're not sure what you're doing or why.</p>"
+          }
+        },
+        "cards_3z": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "01",
+            "text_1": "<p>Gratitude is where ceremony begins. Not a quick thanks before drinking, but a real, embodied pause to recognize what you have received: the cacao, the land it grew in, the sun and rain, the family in the Sacred Valley who tended and fermented it. When you hold the cup and really think about that, the chest opens a little and the pace of thought slows. Gratitude is the doorway. Everything else walks through it.</p>",
+            "label_2": "02",
+            "text_2": "<p>Intention is the question you bring to the cup. It doesn't need to be grand or spiritual. It can be as simple as: I want to feel more present today. Or: I need clarity on a decision. Or even: I don't know what I need, I'm open to whatever wants to come. Cacao responds to specificity, so the more specific your intention, the more directed the experience. Set it before you drink, ideally while holding the cup, from somewhere honest rather than performed.</p>",
+            "label_3": "03",
+            "text_3": "<p>Reciprocity is the understanding that ceremony is not just about receiving. It is a relationship, with the plant, the land, the people behind the cacao, and life itself. In practice it might look like choosing cacao from a source that treats farmers fairly, offering something back, and carrying the insights from ceremony into your actual life rather than leaving them in the cup. Reciprocity is what separates ceremony from consumption.</p>"
+          }
+        },
+        "heading_40": {
+          "type": "heading",
+          "settings": {
+            "heading": "What You Need"
+          }
+        },
+        "cards_41": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "The Cacao",
+            "text_1": "<p>Pacha Mana's Chuncho ceremonial cacao, paste or ground, prepared as a warm drink. About 20 to 25 grams for a daily practice, 40 to 50 grams for a deeper session.</p>",
+            "label_2": "A Vessel",
+            "text_2": "<p>Not a travel mug or a paper cup. A cup you have chosen for this purpose, something that feels right in your hands. It just needs to be yours.</p>",
+            "label_3": "A Quiet Space",
+            "text_3": "<p>Not silence, but a space where you won't be interrupted, even for just fifteen minutes. Phone on airplane mode. Door closed. A small container of undisturbed time.</p>",
+            "label_4": "Your Presence",
+            "text_4": "<p>The most important ingredient, and the one that can't be bought. Not planning your day, not half-reading something. Just here, with the cup, with whatever is present.</p>"
+          }
+        },
+        "text_42": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Optional but meaningful: a candle, a journal, music that supports the mood you want, something from nature on the table, an object that carries meaning. These are invitations, not requirements.</p>"
+          }
+        },
+        "heading_43": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Simple Ceremony, Step By Step",
+            "toc_label": "A simple ceremony"
+          }
+        },
+        "text_44": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This foundational personal ceremony works whether you have fifteen minutes or an hour. Scale it to your time and your depth.</p>"
+          }
+        },
+        "image_45": {
+          "type": "image",
+          "settings": {
+            "alt": "Photo: hands holding a warm cup of cacao in a calm, sunlit space",
+            "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7f05c33637.webp?v=1785782948"
+          }
+        },
+        "steps_46": {
+          "type": "steps",
+          "settings": {
+            "title_1": "Prepare Your Space",
+            "meta_1": "2 to 5 min",
+            "text_1": "<p>Tidy the surface in front of you, open a window, light a candle, put on quiet music, or simply sit and take three slow breaths to signal that this time is different. Preparing the space is itself ceremony, a physical declaration that what you are about to do matters.</p>",
+            "title_2": "Prepare Cacao With Attention",
+            "meta_2": "5 to 10 min",
+            "text_2": "<p>Make it slowly, as a sensory practice: the smell of the cacao dissolving, the sound of the whisk, the warmth in your hands. Heat your liquid to just below boiling, add your Chuncho cacao, and whisk until smooth and velvety. A pinch of sea salt, whatever additions feel right, then pour it into your chosen vessel.</p>",
+            "title_3": "Sit Down And Ground",
+            "meta_3": "2 to 3 min",
+            "text_3": "<p>Hold the cup in both hands. Feel the warmth. Don't drink yet. Take a few slow breaths and feel your body in contact with the surface beneath you, your feet on the floor, your weight in your seat. Come into the physical present.</p>",
+            "title_4": "Open With Gratitude",
+            "meta_4": "1 to 3 min",
+            "text_4": "<p>With the cup still in your hands, give genuine gratitude. Begin with the cacao itself, the land, the rain, the farmers, the journey from seed to cup. Then expand outward. Go past the obvious to something specific and textured, something that produces an actual feeling in your chest rather than a thought in your head. Stay until the gratitude feels real.</p>",
+            "title_5": "Set Your Intention",
+            "meta_5": "1 to 2 min",
+            "text_5": "<p>Ask yourself: what do I need today? What am I working with, working through, or opening to? Whatever arises honestly, hold it. Speak it softly if you'd like. Let it land. Then take your first sip.</p>",
+            "title_6": "Be With The Cacao",
+            "meta_6": "10 to 45 min",
+            "text_6": "<p>This is the open space of ceremony. What you do here is yours. A few ways in:</p>",
+            "title_7": "Close With Reciprocity",
+            "meta_7": "1 to 2 min",
+            "text_7": "<p>Before you re-enter your day, close. Thank the cacao. Thank yourself for showing up. Make a small commitment, even just internally, about how you will carry what came up into your actual life. The ceremony that stays in the cup doesn't change anything. The ceremony that walks out the door with you does.</p>"
+          }
+        },
+        "heading_47": {
+          "type": "heading",
+          "settings": {
+            "heading": "Four Formats For Different Lives",
+            "toc_label": "Four formats"
+          }
+        },
+        "text_48": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Not every day has the same amount of space. Four formats that work for different contexts:</p>"
+          }
+        },
+        "cards_49": {
+          "type": "cards",
+          "settings": {
+            "columns": 2,
+            "label_1": "The Ten-Minute Morning",
+            "text_1": "<p>Make your cacao, sit for two minutes before drinking, set one intention, and carry it with you. Enough to mark the beginning of the day as different from what comes after.</p>",
+            "label_2": "The Creative Hour",
+            "text_2": "<p>Make a ceremonial dose. Put on music that supports the work. Spend the first fifteen minutes in silence or journaling, then open your project and let the cacao warm the channel.</p>",
+            "label_3": "The Inner Work Session",
+            "text_3": "<p>A full ceremonial dose in a quiet, private space. No agenda beyond showing up honestly. The format for a decision, a grief, a creative block. Go gently. Trust what arises.</p>",
+            "label_4": "Ceremony With Others",
+            "text_4": "<p>One person prepares cacao for all. Begin with shared silence, each person setting an intention aloud, then sip together. Share gratitudes, sing, move, or talk honestly. Close the circle with something offered back.</p>"
+          }
+        },
+        "heading_4a": {
+          "type": "heading",
+          "settings": {
+            "heading": "Common Questions"
+          }
+        },
+        "cards_4b": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "Do I need experience with meditation?",
+            "text_1": "<p>No. Ceremony is not meditation, though meditation can be part of it. All that is required is a genuine willingness to be present. That is available to everyone.</p>",
+            "label_2": "What if nothing happens?",
+            "text_2": "<p>Sometimes a cup of cacao is just a cup of cacao. Show up anyway. Consistency over time is what builds the relationship, and the relationship is what produces the deeper experiences.</p>",
+            "label_3": "Can I do this every day?",
+            "text_3": "<p>A daily practice at a daily dose (20 to 25 grams) is entirely appropriate and encouraged. A full ceremonial dose (40 to 50 grams) is better suited to two times per week at most, because the deeper container deserves more space than every morning can offer.</p>",
+            "label_4": "What if strong emotions come up?",
+            "text_4": "<p>This is sometimes what ceremony is for. If something feels intense, slow down. Breathe. Stay with your body rather than your thoughts. Cacao tends to bring up what is ready to be felt, not more than you can handle. If you feel consistently overwhelmed, work with smaller doses and shorter sessions.</p>",
+            "label_5": "Do I need to follow a specific tradition?",
+            "text_5": "<p>No. Modern cacao ceremony draws inspiration from many traditions while belonging fully to none. Your ceremony is your own. The three pillars are universal anchors, not a prescribed form. Everything else is yours to discover.</p>"
+          }
+        },
+        "highlight_4c": {
+          "type": "highlight",
+          "settings": {
+            "heading": "A Note On Respect And Roots",
+            "text": "<p>Cacao has deep ancestral roots, in Mesoamerica, in the Amazon, in the Andes. The Chuncho variety we source at Pacha Mana originates with the Machiguenga people of Peru. These traditions are real, living, and worthy of respect.</p><p>Modern cacao ceremony is not an appropriation of those traditions. It is an extension of something universal: the human instinct to bring reverence to what nourishes us, to slow down in the presence of something that deserves our attention. Every culture that has prepared food with intention or gathered around something warm and shared has been doing some version of this.</p><p>The ceremony starts at the farm. You are the last step in a long chain of care. Honor it by showing up fully for your part.</p>",
+            "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3s",
+        "text_3t",
+        "heading_3u",
+        "text_3v",
+        "pullquote_3w",
+        "heading_3x",
+        "text_3y",
+        "cards_3z",
+        "heading_40",
+        "cards_41",
+        "text_42",
+        "heading_43",
+        "text_44",
+        "image_45",
+        "steps_46",
+        "heading_47",
+        "text_48",
+        "cards_49",
+        "heading_4a",
+        "cards_4b",
+        "highlight_4c"
+      ],
+      "settings": {
+        "show_toc": true,
+        "toc_heading": "In This Guide",
+        "show_progress": true
+      }
+    },
+    "cta": {
+      "type": "pm_learn_cta",
+      "blocks": {
+        "button_4d": {
+          "type": "button",
+          "settings": {
+            "label": "Shop Ceremonial Cacao",
+            "url": "/collections/all",
+            "style": "solid"
+          }
+        },
+        "button_4e": {
+          "type": "button",
+          "settings": {
+            "label": "How To Prepare",
+            "url": "/pages/learn",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "button_4d",
+        "button_4e"
+      ],
+      "settings": {
+        "heading": "Let The Practice Find Its Shape",
+        "text": "<p>Ready to begin? Start with our Chuncho ceremonial cacao. There is no perfect first ceremony, only the one you actually show up for.</p>",
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "series": {
+      "type": "pm_learn_series",
+      "settings": {
+        "label": "The Cacao Guide · Part 05 of 10",
+        "next": "<p>Up next, <strong>Part 06: Cacao and the Creative Practice.</strong></p>",
+        "show_dots": true,
+        "part": 5,
+        "total": 10
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured",
+    "body",
+    "cta",
+    "series"
+  ]
+}
