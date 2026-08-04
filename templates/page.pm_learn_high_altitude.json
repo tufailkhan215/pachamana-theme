@@ -254,7 +254,7 @@
           "type": "button",
           "settings": {
             "label": "See Our Testing",
-            "url": "/pages/learn",
+            "url": "/pages/safe-cacao",
             "style": "outline"
           }
         }

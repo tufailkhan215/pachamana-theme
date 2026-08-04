@@ -1,0 +1,275 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "pm_learn_hero",
+      "settings": {
+        "eyebrow": "The Cacao Guide · Part 09 of 10",
+        "title": "The Forest Made It",
+        "deck": "The farming system behind exceptional cacao, and why the way food is grown is inseparable from what it becomes.",
+        "meta_read": "15 Min Read",
+        "meta_topic": "Farming &amp; Regeneration",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "featured": {
+      "type": "pm_learn_featured",
+      "settings": {
+        "alt": "Featured photo: cacao growing beneath a layered forest canopy in an agroforestry system",
+        "height": 480
+      }
+    },
+    "body": {
+      "type": "pm_learn_body",
+      "blocks": {
+        "heading_6r": {
+          "type": "heading",
+          "settings": {
+            "heading": "Two Ways To Grow Cacao"
+          }
+        },
+        "text_6s": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Imagine two cacao farms. Both are in tropical climates. Both produce cacao beans that will eventually become chocolate. From a satellite image, they might look similar, green, dense, somewhere in the tropics. Stand in the middle of each one and the difference is immediate and total.</p>"
+          }
+        },
+        "cards_6t": {
+          "type": "cards",
+          "settings": {
+            "columns": 2,
+            "label_1": "Farm One: Monoculture",
+            "text_1": "<p>Row after row of identical cacao trees under full sun. The ground between them is bare or covered in synthetic mulch. No other crops, no large trees, no understory. Few birds, few insects beyond the pests being fought. The soil is compacted and pale, the air smells of agrochemicals, and the trees look stressed, leaves marked by the disease pressure endemic to monoculture cacao.</p>",
+            "label_2": "Farm Two: Agroforestry",
+            "text_2": "<p>You enter and it takes a moment to orient, because it doesn't look like a farm. It looks like a forest. Cacao grows beneath a canopy of taller trees that filter the light. Between them are bananas, medicinal herbs, nitrogen-fixing shrubs, edible roots. The soil is dark and soft under decomposing leaf litter. Birds call from the canopy. The cacao trees look, there is no other word for it, at home.</p>"
+          }
+        },
+        "pullquote_6u": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>These two farms can both produce cacao. What they cannot both produce is the same cacao.</p>"
+          }
+        },
+        "heading_6v": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Agroforestry Actually Is",
+            "toc_label": "What agroforestry is"
+          }
+        },
+        "text_6w": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Agroforestry is the integration of trees, crops, and sometimes livestock within the same agricultural system, managed together as a functioning ecological unit rather than as separate, competing operations.</p><p>It is not a new idea. It is, in fact, one of the oldest forms of agriculture in existence, practiced by indigenous communities across tropical regions for thousands of years before the concept was formalized by Western agricultural science in the 1970s. What Western science did was give a name and a research framework to something farming communities in the Amazon, the Andes, West Africa, and Southeast Asia had been doing based on deep ecological knowledge accumulated over generations.</p><p>At its core, agroforestry operates on a principle that is the direct opposite of industrial monoculture: diversity is not a problem to be managed, it is a resource to be cultivated. The interactions between different plants, soil organisms, insects, birds, and microclimates are not accidental complications. They are the mechanism through which the system functions and produces.</p><p>For cacao specifically, this is not just a nice-to-have. It is the growing condition cacao evolved to thrive in. Theobroma cacao is naturally an understory tree. It grows beneath the canopy of taller species in filtered light, in complex soil ecosystems, in community with hundreds of other plants. Industrial monoculture takes cacao out of this context entirely and asks it to perform under conditions fundamentally at odds with its nature. The result is a plant under constant stress, requiring constant chemical intervention to survive, producing beans that reflect that stress in their flavor and their biochemistry.</p>"
+          }
+        },
+        "pullquote_6x": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>Agroforestry puts cacao back where it belongs.</p>"
+          }
+        },
+        "heading_6y": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Key Principles Of Cacao Agroforestry",
+            "toc_label": "The key principles"
+          }
+        },
+        "cards_6z": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "Shade And Canopy Management",
+            "text_1": "<p>Cacao grows beneath a layered canopy of taller species providing partial shade, typically 30 to 50 percent coverage, mimicking a natural forest understory. That shade moderates temperature, reduces water loss through evaporation, and protects the cacao from the UV stress that in monoculture requires chemical intervention.</p><p>The shade trees are not passive infrastructure. Timber species provide long-term economic value, fruit trees feed farm families and communities, and nitrogen-fixing species improve soil fertility, together creating a diversified income and food-security base a single-crop operation can never match.</p>",
+            "label_2": "Soil Ecosystem And Biological Fertility",
+            "text_2": "<p>The soil in a functioning agroforestry system is alive in a way monoculture soil is not. Industrial agriculture treats soil as a medium for holding roots and delivering synthetic fertilizer; the soil food web is incidental, and often actively disrupted by tillage, pesticides, and synthetic inputs.</p><p>Agroforestry nurtures soil as an ecosystem. Continuous leaf litter feeds a rich decomposer community; diverse roots create habitat for mycorrhizal fungi networks that share nutrients and water. The result: cacao that is better nourished, more resilient, less disease-prone, and richer in the magnesium, iron, and zinc that make ceremonial cacao medicinally valuable.</p>",
+            "label_3": "Biodiversity As Pest Management",
+            "text_3": "<p>Diverse systems require dramatically fewer chemical inputs than monocultures, not because they have fewer pests, but because they have better pest management built in. In a monoculture, a single pathogen that finds the crop has won the lottery: unlimited food, no competition. Industrial cacao is chronically afflicted by witches' broom, frosty pod rot, and black pod disease.</p><p>In a biodiverse system those pests are present, but so are their predators and competitors. Birds and bats consume pest insects, beneficial soil fungi suppress pathogens, and diverse spacing prevents rapid spread. Peer-reviewed research consistently shows agroforestry cacao has lower disease incidence and needs fewer chemical interventions, while producing higher-quality beans.</p>",
+            "label_4": "Watershed And Water Quality",
+            "text_4": "<p>Root systems of diverse trees stabilize slopes, preventing the erosion and runoff that carry heavy metals and chemicals into waterways. The canopy intercepts rainfall and slows its movement into the soil, replenishing groundwater. For high-altitude Chuncho grown in Andean watershed regions, this is central to why the cacao is clean: the water has been filtered through intact forest, absorbed slowly through living soil, and delivered clean to the root zone, the very water quality behind Pacha Mana's lab results.</p>"
+          }
+        },
+        "highlight_70": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Syntropic Farming: Agroforestry's More Ambitious Cousin",
+            "text": "<p>Within the broader family of agroforestry approaches, syntropic farming is one of the most sophisticated and regenerative models available, and it is the framework Pacha Mana's farming partners incorporate into their practice. It was developed by Swiss farmer Ernst Götsch, who spent decades farming degraded land in Brazil, observing how natural forests grow, succeed, and regenerate.</p><p>The core insight is that ecosystems move through predictable stages of succession, from pioneer species that colonize disturbed ground, through transitional species, toward climax forest, and that a skilled farmer can work with this process rather than against it. Fast-growing pioneers rebuild soil biology and create early canopy; as the system matures they are progressively replaced by the longer-lived species that characterize mature forest, including cacao. Strategic cutting and mulching feeds the soil and accelerates succession. The whole farm is managed as a living process moving through time.</p><p>The results are remarkable. Götsch transformed severely degraded, drought-prone land into abundant, biodiverse production without irrigation, synthetic inputs, or tillage. For cacao, syntropic farming produces growing conditions of exceptional quality: soil biology built through succession rather than fertilizer is richer, more complex, and more stable, and its mineral profile feeds directly into the mineral profile of the beans.</p>",
+            "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948"
+          }
+        },
+        "heading_71": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Commodity Farming Does Instead",
+            "toc_label": "What commodity does instead"
+          }
+        },
+        "text_72": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To fully appreciate what agroforestry provides, it is worth being specific about what commodity cacao farming does instead, and what that costs.</p>"
+          }
+        },
+        "cards_73": {
+          "type": "cards",
+          "settings": {
+            "columns": 1,
+            "label_1": "Deforestation",
+            "text_1": "<p>Commodity cacao expansion is directly linked to tropical deforestation. Ghana and Côte d'Ivoire together produce roughly 60 percent of the world's cacao, much of it on land that was forest within living memory, its biodiversity, soil, and carbon storage replaced by monocultures that will themselves degrade within decades.</p>",
+            "label_2": "Synthetic Inputs",
+            "text_2": "<p>Monocultures require continuous synthetic fertilizer to compensate for the soil biology they destroyed, fungicides for the disease pressure biodiversity would control, and pesticides for pests natural predators would limit. These are expensive, damaging to soil, and leave residues in the environment and sometimes the finished product.</p>",
+            "label_3": "Poverty &amp; Labor",
+            "text_3": "<p>The commodity supply chain is among the most exploitative in agriculture. Prices set by global markets with no reference to the real cost of production frequently leave farmers unable to earn a living wage, leading to child labor as a cost-cutting measure. This is a structural feature of how the market is designed, not an exception.</p>",
+            "label_4": "Genetic Erosion",
+            "text_4": "<p>Replacing diverse heirloom varieties with high-yield hybrids like CCN-51 is quietly eliminating the genetic diversity that gives cacao its range of flavors, medicinal properties, and resilience. Once a variety leaves cultivation, recovering it is extraordinarily difficult.</p>",
+            "label_5": "Climate Fragility",
+            "text_5": "<p>Monocultures are inherently fragile, depending on the stable conditions climate change is actively disrupting. Diverse agroforestry, with built-in resilience, adapts far better. The commodity industry faces serious climate risk precisely because it bet everything on monoculture uniformity.</p>"
+          }
+        },
+        "heading_74": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Pacha Mana's Farmers Do",
+            "toc_label": "What our farmers do"
+          }
+        },
+        "image_75": {
+          "type": "image",
+          "settings": {
+            "alt": "Photo: Pacha Mana's farming partners tending their layered agroforestry grove"
+          }
+        },
+        "text_76": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The family collective that grows Chuncho cacao for Pacha Mana practices agroforestry in the deep sense, not as a certification to achieve or a label to apply, but as the way they have always farmed and the way the land around them has always worked.</p><p>Their systems incorporate multiple canopy layers, native timber trees, fruit species, and cacao at different heights, creating the layered structure of a functioning forest. The cacao grows in the filtered light it prefers, beneath species that have grown alongside it for generations. Soil is managed through the accumulation of organic matter rather than synthetic inputs. Water comes from the clean, forested watershed of the high Andes. Their practice incorporates elements of syntropic farming: an understanding of succession, of which species to introduce at which stage, of how to manage the system as a living process always moving toward greater complexity and health.</p><p>The USDA Organic certification Pacha Mana cacao carries is meaningful; it confirms the absence of synthetic inputs. But it understates what is actually happening. Organic certification is a minimum standard. What these farming partners practice is regenerative, biodiverse, succession-based agroforestry that builds ecosystem health over time.</p>"
+          }
+        },
+        "pullquote_77": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>Organic is the floor, not the ceiling.</p>"
+          }
+        },
+        "heading_78": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why This Shows Up In Your Cup",
+            "toc_label": "Why it shows up in your cup"
+          }
+        },
+        "text_79": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Everything described here converges in the cacao bean, and from there, into your cup. The mineral richness of biologically active soil shows up as the magnesium and iron that support your mood and nervous system. The biodiversity of the system shows up as the complex aromatic compounds that give Chuncho its layered flavor. The clean watershed water shows up as the low heavy-metal profile that makes this cacao safe for daily consumption. The absence of synthetic pesticides shows up as a product that carries only what the cacao bean itself contains.</p><p>The way a plant is grown is not separate from what it becomes. It is expressed in it, in its chemistry, its flavor, its medicinal properties, its energetic quality. You cannot grow exceptional cacao in a degraded monoculture and fix it downstream. You cannot add back what was never there.</p>"
+          }
+        },
+        "pullquote_7a": {
+          "type": "pullquote",
+          "settings": {
+            "text": "<p>The forest made it. The farmers tended it. You receive it.</p>"
+          }
+        },
+        "heading_7b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Agroforestry And The Bigger Picture",
+            "toc_label": "The bigger picture"
+          }
+        },
+        "text_7c": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cacao grown in biodiverse agroforestry does something else that deserves acknowledgment: it helps hold tropical ecosystems together at a moment when they are under extraordinary pressure. Tropical forests regulate climate, cycle water, store carbon, and harbor the majority of Earth's species in a fraction of its land area, and they are being lost at a pace every credible assessment calls catastrophic.</p><p>Agroforestry cacao, grown under forest canopy by farmers who depend on and therefore steward the forest around them, is one of relatively few economic activities that can generate income from tropical land without destroying the forest to do it. It creates a direct economic argument for keeping forest standing: the forest is worth more intact than cleared, because intact forest is what produces premium cacao.</p><p>When you choose agroforestry cacao, you are not just choosing a better product for yourself. You are choosing a better model for how food should be grown. And in a market where purchasing decisions aggregate into industry norms, that choice matters more than it might seem.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6r",
+        "text_6s",
+        "cards_6t",
+        "pullquote_6u",
+        "heading_6v",
+        "text_6w",
+        "pullquote_6x",
+        "heading_6y",
+        "cards_6z",
+        "highlight_70",
+        "heading_71",
+        "text_72",
+        "cards_73",
+        "heading_74",
+        "image_75",
+        "text_76",
+        "pullquote_77",
+        "heading_78",
+        "text_79",
+        "pullquote_7a",
+        "heading_7b",
+        "text_7c"
+      ],
+      "settings": {
+        "show_toc": true,
+        "toc_heading": "In This Guide",
+        "show_progress": true
+      }
+    },
+    "cta": {
+      "type": "pm_learn_cta",
+      "blocks": {
+        "button_7d": {
+          "type": "button",
+          "settings": {
+            "label": "Shop Chuncho Cacao",
+            "url": "/collections/all",
+            "style": "solid"
+          }
+        },
+        "button_7e": {
+          "type": "button",
+          "settings": {
+            "label": "Our Story",
+            "url": "/pages/about",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "button_7d",
+        "button_7e"
+      ],
+      "settings": {
+        "heading": "Taste What Agroforestry Produces",
+        "text": "<p>Ready to taste what agroforestry actually produces? Explore Pacha Mana's Chuncho ceremonial cacao, grown the way cacao was meant to grow.</p>",
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
+        "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
+      }
+    },
+    "series": {
+      "type": "pm_learn_series",
+      "settings": {
+        "label": "The Cacao Guide · Part 09 of 10",
+        "next": "<p>Up next, <strong>Part 10: A Beginner's Guide to Drinking Ceremonial Cacao.</strong></p>",
+        "show_dots": true,
+        "part": 9,
+        "total": 10
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured",
+    "body",
+    "cta",
+    "series"
+  ]
+}

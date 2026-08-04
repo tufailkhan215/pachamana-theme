@@ -275,7 +275,7 @@
           "type": "button",
           "settings": {
             "label": "Our Story",
-            "url": "/pages/learn",
+            "url": "/pages/about",
             "style": "outline"
           }
         }
