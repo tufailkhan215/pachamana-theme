@@ -146,7 +146,7 @@
         "text_1i": {
           "type": "text",
           "settings": {
-            "text": "<p>While theobromine is more commonly discussed in the context of energy (see our guide on <a href=\"/coffee-alternative-cacao\">replacing coffee with cacao</a>), it plays an important role in the mood picture as well. Not as a direct mood molecule, but as a physiological foundation.</p>"
+            "text": "<p>While theobromine is more commonly discussed in the context of energy (see our guide on <a href=\"/pages/learn-replace-coffee-with-cacao\">replacing coffee with cacao</a>), it plays an important role in the mood picture as well. Not as a direct mood molecule, but as a physiological foundation.</p>"
           }
         },
         "stat_1j": {
@@ -226,9 +226,9 @@
             "heading": "Why Chuncho Cacao Specifically?",
             "text": "<p>The mood effects described here depend entirely on the bioactive compounds being present in the cacao you're drinking. And those compounds are preserved or destroyed depending on how the cacao is grown and processed.</p><p>Mass-produced cocoa powder has been stripped of its cacao butter (the fat that carries many of these compounds), roasted at high temperatures (which degrades flavonoids and other heat-sensitive molecules), and often alkalized, a process that further reduces polyphenol content.</p><p>Pacha Mana's Chuncho cacao is processed to protect these compounds. Grown at high elevation in the Sacred Valley of Peru, fermented carefully at origin, slow-roasted at low temperatures, and stone-ground into a whole-food paste. Nothing added, nothing stripped away. The result is cacao that is genuinely pharmacologically active in the ways described above. The sourcing and processing is what makes the difference between chocolate as a snack and cacao as a medicine.</p>",
             "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948",
-            "link1_url": "/products/chuncho-ceremonial-cacao-paste",
+            "link1_url": "/products/1lb-cacao-chuncho-ceremonial-grade",
             "link1_label": "Chuncho ceremonial cacao paste",
-            "link2_url": "/products/pure-ground-ceremonial-cacao",
+            "link2_url": "/products/pure-ground-cermonial-cacao",
             "link2_label": "Pure ground ceremonial cacao"
           }
         },
@@ -306,7 +306,7 @@
           "type": "button",
           "settings": {
             "label": "Read Part One",
-            "url": "/pages/learn",
+            "url": "/pages/learn-replace-coffee-with-cacao",
             "style": "outline"
           }
         }
