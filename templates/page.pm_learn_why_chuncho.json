@@ -16,16 +16,16 @@
         "title": "Why Chuncho Is Different",
         "deck": "The genetics, the history, the flavor, the rarity, and why this one bean from the Peruvian Andes is unlike anything else you can put in your cup.",
         "meta_read": "12 Min Read",
-        "meta_topic": "Origin & Genetics",
+        "meta_topic": "Origin &amp; Genetics",
         "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
       }
     },
     "featured": {
       "type": "pm_learn_featured",
       "settings": {
-        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-59894fe9d2.webp?v=1785782948",
         "alt": "Featured photo: a Chuncho cacao pod on the tree in the high jungle near Cusco",
-        "height": 720
+        "height": 480,
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-59894fe9d2.webp?v=1785782948"
       }
     },
     "body": {
@@ -34,37 +34,30 @@
         "heading_4f": {
           "type": "heading",
           "settings": {
-            "kicker": "",
-            "heading": "Most Cacao Has A Secret",
-            "toc_label": ""
+            "heading": "Most Cacao Has A Secret"
           }
         },
         "text_4g": {
           "type": "text",
           "settings": {
-            "text": "<p>When you buy a bar of chocolate, even an expensive one, even one with beautiful packaging and words like “single origin” and “artisan” on the label, there is a very good chance the cacao inside came from a tree that didn't exist a hundred years ago.</p><p>The vast majority of the world's chocolate supply is made from CCN-51, a hybrid variety developed in Ecuador in the 1960s. It was engineered for one purpose: yield. It produces more pods per tree, ripens faster, and is easier to grow at scale. It is also, by most accounts of people who work closely with cacao, nutritionally inferior, energetically flat, and almost completely devoid of the complex flavor and medicinal character that made cacao sacred to begin with.</p><p>CCN-51 now accounts for a significant and growing share of global production. It is the industrial answer to global chocolate demand. And it is the quiet opposite of everything Chuncho cacao is. Understanding Chuncho requires understanding what was lost when industrial cacao took over, and what has been carefully preserved in the high-altitude valleys of southern Peru.</p>",
-            "variant": "body"
+            "text": "<p>When you buy a bar of chocolate, even an expensive one, even one with beautiful packaging and words like “single origin” and “artisan” on the label, there is a very good chance the cacao inside came from a tree that didn't exist a hundred years ago.</p><p>The vast majority of the world's chocolate supply is made from CCN-51, a hybrid variety developed in Ecuador in the 1960s. It was engineered for one purpose: yield. It produces more pods per tree, ripens faster, and is easier to grow at scale. It is also, by most accounts of people who work closely with cacao, nutritionally inferior, energetically flat, and almost completely devoid of the complex flavor and medicinal character that made cacao sacred to begin with.</p><p>CCN-51 now accounts for a significant and growing share of global production. It is the industrial answer to global chocolate demand. And it is the quiet opposite of everything Chuncho cacao is. Understanding Chuncho requires understanding what was lost when industrial cacao took over, and what has been carefully preserved in the high-altitude valleys of southern Peru.</p>"
           }
         },
         "heading_4h": {
           "type": "heading",
           "settings": {
-            "kicker": "",
-            "heading": "What Chuncho Is",
-            "toc_label": ""
+            "heading": "What Chuncho Is"
           }
         },
         "text_4i": {
           "type": "text",
           "settings": {
-            "text": "<p>Chuncho (Theobroma cacao, Alto Amazonas genetic group) is one of the oldest known cacao varieties in the world. Its name comes from Quechua, the language of the Inca, and means roughly “native” or “from the jungle.” It is not a hybrid. It has not been engineered for yield or uniformity or shelf stability. It is cacao in something very close to its original, pre-colonial form.</p><p>Chuncho grows in the high-altitude cloud forest downriver from Cusco, Peru, a geography unlike almost anywhere else cacao is cultivated on Earth. Most commercial cacao grows at low elevations, in hot, humid equatorial conditions. Chuncho grows between 900 and 1,800 meters above sea level, in complex, biodiverse agroforestry systems that more closely resemble wild rainforest than conventional agriculture.</p><p>It belongs to the Alto Amazonas genetic group, considered among the most ancient and genetically pure lineages of cacao, tracing back to the upper Amazon basin where cacao as a species is believed to have originated. This is not the same heritage as the Criollo, Forastero, or Trinitario categories that most specialty chocolate is classified under. Chuncho is older than those categories. It predates the colonial-era mixing and hybridization that produced them.</p>",
-            "variant": "body"
+            "text": "<p>Chuncho (Theobroma cacao, Alto Amazonas genetic group) is one of the oldest known cacao varieties in the world. Its name comes from Quechua, the language of the Inca, and means roughly “native” or “from the jungle.” It is not a hybrid. It has not been engineered for yield or uniformity or shelf stability. It is cacao in something very close to its original, pre-colonial form.</p><p>Chuncho grows in the high-altitude cloud forest downriver from Cusco, Peru, a geography unlike almost anywhere else cacao is cultivated on Earth. Most commercial cacao grows at low elevations, in hot, humid equatorial conditions. Chuncho grows between 900 and 1,800 meters above sea level, in complex, biodiverse agroforestry systems that more closely resemble wild rainforest than conventional agriculture.</p><p>It belongs to the Alto Amazonas genetic group, considered among the most ancient and genetically pure lineages of cacao, tracing back to the upper Amazon basin where cacao as a species is believed to have originated. This is not the same heritage as the Criollo, Forastero, or Trinitario categories that most specialty chocolate is classified under. Chuncho is older than those categories. It predates the colonial-era mixing and hybridization that produced them.</p>"
           }
         },
         "heading_4j": {
           "type": "heading",
           "settings": {
-            "kicker": "",
             "heading": "The Genetics, Why Ancient Matters",
             "toc_label": "Why ancient matters"
           }
@@ -72,8 +65,7 @@
         "text_4k": {
           "type": "text",
           "settings": {
-            "text": "<p>The genetics of a cacao variety determine almost everything about it: flavor potential, nutritional profile, resilience, and the quality of compounds present in the finished product.</p><p>Modern hybrid cacao was bred to maximize one variable, pod yield per tree. In doing so, other variables were deprioritized. Flavor complexity was sacrificed for consistency. Genetic diversity was narrowed for uniformity. The rich, idiosyncratic biochemistry of heirloom varieties, the flavonoid profiles, the ratios of theobromine and other alkaloids, the aromatic precursors that develop during fermentation, was flattened into something predictable and easily managed.</p><p>Ancient heirloom varieties like Chuncho were never optimized for any of this. They were simply allowed to be what they are, which means they retain the full genetic expression of wild cacao: high flavonoid density, complex aromatic precursors, a distinct alkaloid profile, and a biochemical integrity that shows up clearly in the cup.</p>",
-            "variant": "body"
+            "text": "<p>The genetics of a cacao variety determine almost everything about it: flavor potential, nutritional profile, resilience, and the quality of compounds present in the finished product.</p><p>Modern hybrid cacao was bred to maximize one variable, pod yield per tree. In doing so, other variables were deprioritized. Flavor complexity was sacrificed for consistency. Genetic diversity was narrowed for uniformity. The rich, idiosyncratic biochemistry of heirloom varieties, the flavonoid profiles, the ratios of theobromine and other alkaloids, the aromatic precursors that develop during fermentation, was flattened into something predictable and easily managed.</p><p>Ancient heirloom varieties like Chuncho were never optimized for any of this. They were simply allowed to be what they are, which means they retain the full genetic expression of wild cacao: high flavonoid density, complex aromatic precursors, a distinct alkaloid profile, and a biochemical integrity that shows up clearly in the cup.</p>"
           }
         },
         "pullquote_4l": {
@@ -85,24 +77,19 @@
         "heading_4m": {
           "type": "heading",
           "settings": {
-            "kicker": "",
-            "heading": "Where It Grows",
-            "toc_label": ""
+            "heading": "Where It Grows"
           }
         },
         "text_4n": {
           "type": "text",
           "settings": {
-            "text": "<p>The region downriver from Cusco, the high jungle fringe of the Sacred Valley, sits at the intersection of the Andes and the Amazon. Cold mountain air meets tropical moisture, clouds hang in the valleys, and the sun arrives filtered through mist and canopy. It is one of the most biodiverse regions on the planet.</p>",
-            "variant": "body"
+            "text": "<p>The region downriver from Cusco, the high jungle fringe of the Sacred Valley, sits at the intersection of the Andes and the Amazon. Cold mountain air meets tropical moisture, clouds hang in the valleys, and the sun arrives filtered through mist and canopy. It is one of the most biodiverse regions on the planet.</p>"
           }
         },
         "image_4o": {
           "type": "image",
           "settings": {
-            "image_url": "",
-            "alt": "Photo: cloud forest agroforestry in the high jungle near Cusco",
-            "caption": ""
+            "alt": "Photo: cloud forest agroforestry in the high jungle near Cusco"
           }
         },
         "cards_4p": {
@@ -116,17 +103,12 @@
             "label_3": "Shade",
             "text_3": "<p>Chuncho grows under a forest canopy, intercropped with dozens of other food and medicinal plants. Cacao evolved as an understory tree; growing it in full-sun monocultures is a fundamental mismatch with its nature. Grown the way it always has been, Chuncho is at home.</p>",
             "label_4": "Clean Water",
-            "text_4": "<p>The family farmers actively steward the springs and waterways that feed their growing areas. Clean water at altitude, flowing through intact forest watershed, nourishes the trees in ways lowland irrigation cannot replicate.</p>",
-            "label_5": "",
-            "text_5": "",
-            "label_6": "",
-            "text_6": ""
+            "text_4": "<p>The family farmers actively steward the springs and waterways that feed their growing areas. Clean water at altitude, flowing through intact forest watershed, nourishes the trees in ways lowland irrigation cannot replicate.</p>"
           }
         },
         "heading_4q": {
           "type": "heading",
           "settings": {
-            "kicker": "",
             "heading": "What It Actually Tastes Like",
             "toc_label": "What it tastes like"
           }
@@ -134,8 +116,7 @@
         "text_4r": {
           "type": "text",
           "settings": {
-            "text": "<p>Chuncho surprises people accustomed to commercial chocolate. It is not the flat, one-dimensional bitterness of most dark chocolate, nor the aggressive intensity that some single-origin bars use to signal quality. It is more nuanced, more alive, and in many ways more gentle. Common tasting notes include:</p>",
-            "variant": "body"
+            "text": "<p>Chuncho surprises people accustomed to commercial chocolate. It is not the flat, one-dimensional bitterness of most dark chocolate, nor the aggressive intensity that some single-origin bars use to signal quality. It is more nuanced, more alive, and in many ways more gentle. Common tasting notes include:</p>"
           }
         },
         "cards_4s": {
@@ -149,24 +130,18 @@
             "label_3": "Floral &amp; Fruity",
             "text_3": "<p>Notes of tropical fruit, dried berry, and subtle florals that reflect the biodiversity and the quality of the fermentation.</p>",
             "label_4": "Earthy Depth",
-            "text_4": "<p>A grounding, mineral base note that connects the flavor back to the soil and altitude. Clean and present, not heavy or musty.</p>",
-            "label_5": "",
-            "text_5": "",
-            "label_6": "",
-            "text_6": ""
+            "text_4": "<p>A grounding, mineral base note that connects the flavor back to the soil and altitude. Clean and present, not heavy or musty.</p>"
           }
         },
         "text_4t": {
           "type": "text",
           "settings": {
-            "text": "<p>Perhaps the most distinctive quality for new drinkers is the absence of harsh bitterness. Properly fermented and gently roasted, Chuncho does not carry the aggressive bitterness of low-quality cacao. What bitterness is present is soft and pleasant. It invites the next sip rather than challenging you to endure it. This complexity is a direct expression of the genetics, the environment, and the processing. It cannot be replicated by any industrial variety, at any price.</p>",
-            "variant": "body"
+            "text": "<p>Perhaps the most distinctive quality for new drinkers is the absence of harsh bitterness. Properly fermented and gently roasted, Chuncho does not carry the aggressive bitterness of low-quality cacao. What bitterness is present is soft and pleasant. It invites the next sip rather than challenging you to endure it. This complexity is a direct expression of the genetics, the environment, and the processing. It cannot be replicated by any industrial variety, at any price.</p>"
           }
         },
         "heading_4u": {
           "type": "heading",
           "settings": {
-            "kicker": "",
             "heading": "The Rarity, Why Chuncho Is Hard To Find",
             "toc_label": "Why it's rare"
           }
@@ -181,8 +156,7 @@
         "text_4w": {
           "type": "text",
           "settings": {
-            "text": "<p>Many Peruvian farmers who once grew Chuncho have replaced their trees with higher-yielding hybrids. In some areas this replacement has happened at a speed that alarms botanists and cacao researchers.</p><p>The economics of specialty cacao are the only thing standing between Chuncho and significant genetic erosion. When farmers receive fair prices, prices that reflect the true value of what they produce rather than the commodity rate, they have a reason to preserve their Chuncho trees rather than replace them. This is why ethical sourcing is not just a values statement for Pacha Mana. It is a direct mechanism for preserving one of the world's most important cacao gene pools.</p>",
-            "variant": "body"
+            "text": "<p>Many Peruvian farmers who once grew Chuncho have replaced their trees with higher-yielding hybrids. In some areas this replacement has happened at a speed that alarms botanists and cacao researchers.</p><p>The economics of specialty cacao are the only thing standing between Chuncho and significant genetic erosion. When farmers receive fair prices, prices that reflect the true value of what they produce rather than the commodity rate, they have a reason to preserve their Chuncho trees rather than replace them. This is why ethical sourcing is not just a values statement for Pacha Mana. It is a direct mechanism for preserving one of the world's most important cacao gene pools.</p>"
           }
         },
         "pullquote_4x": {
@@ -194,32 +168,25 @@
         "heading_4y": {
           "type": "heading",
           "settings": {
-            "kicker": "",
-            "heading": "Generations Of Stewardship",
-            "toc_label": ""
+            "heading": "Generations Of Stewardship"
           }
         },
         "image_4z": {
           "type": "image",
           "settings": {
-            "image_url": "",
-            "alt": "Photo: a farming family tending their Chuncho cacao trees",
-            "caption": ""
+            "alt": "Photo: a farming family tending their Chuncho cacao trees"
           }
         },
         "text_50": {
           "type": "text",
           "settings": {
-            "text": "<p>Chuncho cacao does not exist in isolation from the people who have grown it. It exists because of them. The Machiguenga (also known as Matsigenka) people of the Peruvian Amazon are among the earliest known cultivators of Chuncho, with a relationship to this variety extending back centuries, long before colonization, long before the word “cacao” entered European languages.</p><p>Their cultivation practices, the selection of seeds, the understanding of which trees to keep and which to leave, the intercropping systems, represent an accumulated body of knowledge that no university has formally studied and no institution has formally preserved. It lives in the hands and memories of the farming families themselves.</p><p>The family collective Pacha Mana sources from is multi-generational. The elders remember a time before hybrid varieties arrived. They know their Chuncho trees individually: which produce the most flavorful pods, which show resilience in drought years, which rootstocks to favor for the next generation.</p><p>This knowledge is irreplaceable, and it is at risk right now, not from malice but from economics. When the commodity market does not distinguish between Chuncho and CCN-51, there is no financial reason for a family to maintain the harder, lower-yielding variety. The knowledge follows the economics. Pacha Mana's direct trade relationship is designed, in part, to change that equation.</p>",
-            "variant": "body"
+            "text": "<p>Chuncho cacao does not exist in isolation from the people who have grown it. It exists because of them. The Machiguenga (also known as Matsigenka) people of the Peruvian Amazon are among the earliest known cultivators of Chuncho, with a relationship to this variety extending back centuries, long before colonization, long before the word “cacao” entered European languages.</p><p>Their cultivation practices, the selection of seeds, the understanding of which trees to keep and which to leave, the intercropping systems, represent an accumulated body of knowledge that no university has formally studied and no institution has formally preserved. It lives in the hands and memories of the farming families themselves.</p><p>The family collective Pacha Mana sources from is multi-generational. The elders remember a time before hybrid varieties arrived. They know their Chuncho trees individually: which produce the most flavorful pods, which show resilience in drought years, which rootstocks to favor for the next generation.</p><p>This knowledge is irreplaceable, and it is at risk right now, not from malice but from economics. When the commodity market does not distinguish between Chuncho and CCN-51, there is no financial reason for a family to maintain the harder, lower-yielding variety. The knowledge follows the economics. Pacha Mana's direct trade relationship is designed, in part, to change that equation.</p>"
           }
         },
         "heading_51": {
           "type": "heading",
           "settings": {
-            "kicker": "",
-            "heading": "Chuncho Vs The World",
-            "toc_label": ""
+            "heading": "Chuncho Vs The World"
           }
         },
         "cards_52": {
@@ -233,17 +200,12 @@
             "label_3": "Vs Trinitario, a Criollo and Forastero hybrid",
             "text_3": "<p>Trinitario was developed as a compromise: more yield than Criollo, more flavor than Forastero. Genuinely better than commodity cacao, but still a recent hybrid, without the genetic depth or ancestral lineage of a variety like Chuncho.</p>",
             "label_4": "Vs other Peruvian cacaos",
-            "text_4": "<p>Peru produces several notable varieties. Chuncho is distinguished by its specific region (the high jungle near Cusco), its genetic classification (Alto Amazonas), and its cultivation history with indigenous Andean communities. Others may be excellent; Chuncho is exceptional and specific.</p>",
-            "label_5": "",
-            "text_5": "",
-            "label_6": "",
-            "text_6": ""
+            "text_4": "<p>Peru produces several notable varieties. Chuncho is distinguished by its specific region (the high jungle near Cusco), its genetic classification (Alto Amazonas), and its cultivation history with indigenous Andean communities. Others may be excellent; Chuncho is exceptional and specific.</p>"
           }
         },
         "heading_53": {
           "type": "heading",
           "settings": {
-            "kicker": "",
             "heading": "What This Means In Your Cup",
             "toc_label": "What it means in your cup"
           }
@@ -251,8 +213,7 @@
         "text_54": {
           "type": "text",
           "settings": {
-            "text": "<p>All of this, the genetics, the altitude, the soil, the people, the processing, converges in a single place: your cup. When you drink Pacha Mana's Chuncho ceremonial cacao, you are drinking something that carries all of it within it. Not metaphorically. Literally. The flavor notes are a direct expression of the altitude and the soil. The medicinal potency is a direct expression of the intact heirloom genetics.</p><p>The energetic quality, that particular warmth and openness people who work with Chuncho consistently describe, is inseparable from the integrity of the whole chain: from the ancient rootstock to the careful fermentation to the slow roast to the clean grind.</p><p>You cannot buy Chuncho's qualities in any other form. They are not available in commodity cacao at any price. They exist only here, in this valley, with these trees, tended by these families, for as long as the economics make it possible. This is what rarity actually means: not artificial scarcity, not limited-edition marketing, but a genuine singularity of origin, genetics, and care that produces something unrepeatable.</p>",
-            "variant": "body"
+            "text": "<p>All of this, the genetics, the altitude, the soil, the people, the processing, converges in a single place: your cup. When you drink Pacha Mana's Chuncho ceremonial cacao, you are drinking something that carries all of it within it. Not metaphorically. Literally. The flavor notes are a direct expression of the altitude and the soil. The medicinal potency is a direct expression of the intact heirloom genetics.</p><p>The energetic quality, that particular warmth and openness people who work with Chuncho consistently describe, is inseparable from the integrity of the whole chain: from the ancient rootstock to the careful fermentation to the slow roast to the clean grind.</p><p>You cannot buy Chuncho's qualities in any other form. They are not available in commodity cacao at any price. They exist only here, in this valley, with these trees, tended by these families, for as long as the economics make it possible. This is what rarity actually means: not artificial scarcity, not limited-edition marketing, but a genuine singularity of origin, genetics, and care that produces something unrepeatable.</p>"
           }
         },
         "highlight_55": {
@@ -260,12 +221,7 @@
           "settings": {
             "heading": "Why We Source Nothing Else",
             "text": "<p>We decided early on that we would source only Chuncho. Not because other cacaos are without value, but because the integrity of what we offer depends on the integrity of what we start with. We could source higher-yielding varieties and lower our prices. We could work with multiple regions and expand our line. We could optimize for margin rather than medicine. We chose not to.</p><p>Because the world doesn't need another cacao brand. It needs the thing Chuncho actually is: ancient, clean, carefully grown, fairly traded, and as medicinally potent as cacao can be when nothing is compromised from seed to cup. When you choose Pacha Mana, you are not choosing a product. You are choosing a position: a belief that the oldest things are sometimes the best things, and that the people who steward them deserve to be compensated for it.</p><p>Chuncho is not the easiest cacao to source. It is the right one.</p>",
-            "tone": "cacao",
-            "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948",
-            "link1_label": "",
-            "link1_url": "",
-            "link2_label": "",
-            "link2_url": ""
+            "bg_image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-7b93918a7d.png?v=1785782948"
           }
         }
       },
@@ -329,9 +285,9 @@
         "button_57"
       ],
       "settings": {
-        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
         "heading": "Taste The Difference Origin Makes",
         "text": "<p>Want to taste what ancient heirloom genetics, high-altitude growing, and careful whole-food processing actually produce? Explore Pacha Mana's Chuncho ceremonial cacao.</p>",
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
         "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
       }
     },
