@@ -260,7 +260,7 @@
           "type": "button",
           "settings": {
             "label": "How To Prepare",
-            "url": "/pages/learn",
+            "url": "/pages/learn-beginners-guide",
             "style": "outline"
           }
         }
