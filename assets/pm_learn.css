@@ -41,9 +41,12 @@
   --pm-ease: cubic-bezier(.165, .84, .44, 1);
 
   display: block;
-  width: 100vw;
-  max-width: 100vw;
-  margin-left: calc(50% - 50vw);
+  /* The theme's .shopify-section wrapper is already full-bleed, so plain 100%
+     gives edge-to-edge. Do NOT use 100vw + negative margin here: 100vw counts
+     the vertical scrollbar, which pushed every guide page ~17px wider than the
+     viewport and produced a horizontal scrollbar on all 10 pages. */
+  width: 100%;
+  max-width: 100%;
   overflow-x: clip;
   background: var(--pm-pearl);
   font-family: var(--pm-fb);

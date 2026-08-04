@@ -30,7 +30,10 @@
 </section>
 
 {% stylesheet %}
-.pm-learn-hero { position: relative; overflow: hidden; background: var(--pm-sunrise); }
+/* Doubled class: .pm-learn (asset stylesheet) sets a base background/overflow and
+   loads AFTER this section bundle, so a single .pm-learn-hero ties on specificity
+   and loses — the sunrise gradient silently fell back to the flat pearl base. */
+.pm-learn.pm-learn-hero { position: relative; overflow: hidden; background: var(--pm-sunrise); }
 .pm-learn-hero__leaf {
   position: absolute; right: -50px; bottom: -40px; width: 34%;
   opacity: 0.10; pointer-events: none;

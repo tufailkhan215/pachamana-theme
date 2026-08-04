@@ -35,7 +35,8 @@
 </section>
 
 {% stylesheet %}
-.pm-learn-cta { position: relative; overflow: hidden; background: var(--pm-sunrise); }
+/* Doubled class — see pm_learn_hero.liquid: .pm-learn's base background loads later. */
+.pm-learn.pm-learn-cta { position: relative; overflow: hidden; background: var(--pm-sunrise); }
 .pm-learn-cta__leaf {
   position: absolute; left: -40px; bottom: -40px; width: 30%;
   opacity: 0.10; pointer-events: none;
