@@ -23,21 +23,21 @@
           "type": "faq_item",
           "settings": {
             "question": "Is your Cacao Organic?",
-            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides. The beauty of working with native genetics.</p>"
+            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to Prop 65 and EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides and low heavy metals. The beauty of working with native genetics.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
             "question": "Is your cacao tested for heavy metals?",
-            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with an absence of all of them according to EU standards and compliant with FDA laws. We are happy to say we have incredible results and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing.</p>"
+            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with incredible results. Much lower than CA Prop 65 standards, the most strict in the industry.   We are happy to say we have incredible results, and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing. <a href=\"https://pachamana.com/pages/safe-cacao\" title=\"https://pachamana.com/pages/safe-cacao\">https://pachamana.com/pages/safe-cacao</a></p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
             "question": "What’s the difference between cacao Powder and cacao paste?",
-            "answer": "<p>Cacao Paste is a whole food, 1 ingredient product that keeps the full fat integrity of cacao that is essential for carrying all the vital health  and medicinal benefits associated with cacao. Our chuncho cacao is very high in fat (58%), and minimally processed from bean to bar keeping all the essentials intact making it “the food of the Gods” as it is revered to be.</p><p>Cacao powder on the other hand is defatted (10-20%), which removes the essential carrier of health and medicinal properties of cacao. It is more convenient for adding to recipes, but lacks the nutrition associated with cacao. We carry ground cacao with full fat for this reason. We grind up fatted cacao to maintain all the health benefits you love. Check out our shop to find out more!</p>"
+            "answer": "<p>Cacao Paste is a whole food, 1 ingredient product that keeps the full fat integrity of cacao that is essential for carrying all the vital health  and medicinal benefits associated with cacao. Our chuncho cacao is very high in fat (58%), and minimally processed from bean to bar keeping all the essentials intact making it “the food of the Gods” as it is revered to be.</p><p>Cacao powder on the other hand is defatted (10-20%), which removes the essential carrier of health and medicinal properties of cacao. It is more convenient for adding to recipes, but lacks the nutrition associated with cacao. We carry ground cacao with full fat for this reason. We grind up fatted cacao to maintain all the health benefits you love. Check out our blog on the subject<br/><a href=\"https://pachamana.com/blogs/news/cacao-powder-vs-ceremonial-cacao\" title=\"https://pachamana.com/blogs/news/cacao-powder-vs-ceremonial-cacao\">https://pachamana.com/blogs/news/cacao-powder-vs-ceremonial-cacao</a></p>"
           }
         },
         "faq_5": {
@@ -86,7 +86,7 @@
           "type": "faq_item",
           "settings": {
             "question": "My cacao arrived melted, what’s the protocol here?",
-            "answer": "<p>If your cacao is melted, please contact us atpachamanacacao@gmail.comto receive a new shipment of fresh cacao, and we will add an ice pack to make sure it arrives safely! We appreciate your support.</p>"
+            "answer": "<p>If your cacao is melted, please note the cacao is not ruined, it is safe to consume. We offer Ice packs for shipping for this reason to protect it from melting, but it does occasionally happen. <br/>We are happy to replace your cacao if you are within in our shipping policy window. Please reach out and contact us at <em><strong>support@pachamana.com.</strong></em></p>"
           }
         },
         "faq_12": {
@@ -107,7 +107,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Is cacao a drug?",
-            "answer": "<p>Not at all. At Pacha Mana we see cacao as a medicine, as something that allows for healing and connecting with ourselves if used in the right context and the right dose. It is no different than chocolate, just increased in dosage. </p>"
+            "answer": "<p>Not at all. At Pacha Mana we see cacao as a medicine, as something that allows for healing and connecting with ourselves if used in the right context and the right dose. It is no different than chocolate, just in its purest form. It is no more of a drug than coffee is relatively speaking. </p>"
           }
         }
       },
