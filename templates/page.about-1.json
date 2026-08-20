@@ -15,13 +15,13 @@
         "slide_DfJ3HM": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-10.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-10.jpg"
           }
         },
         "slide_qq4W7q": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
           }
         }
       },
@@ -45,7 +45,7 @@
           "settings": {
             "heading": "",
             "content": "",
-            "image": "shopify://shop_images/PachaMana_Logos_RGB_Cacao_FullLogo_SingleLine_Horizontal_OverLight.png",
+            "image": "shopify:\/\/shop_images\/PachaMana_Logos_RGB_Cacao_FullLogo_SingleLine_Horizontal_OverLight.png",
             "image_position": "top"
           }
         },
@@ -53,7 +53,7 @@
           "type": "story",
           "settings": {
             "heading": "What does our name mean?",
-            "content": "<h6>Our name carries the earth in it. \"Pacha\" is the Quechua word for the living world — earth, cosmos, time, and space woven into one. </h6><h6><br/>\"Mana\" is the sacred energy that moves through all living things. <br/><br/>Together, Pacha Mana is the life force of the earth itself — the same force held in every pod of wild Chuncho cacao we bring to you, from the highlands of Peru with love.</h6>",
+            "content": "<h6>Our name carries the earth in it. \"Pacha\" is the Quechua word for the living world — earth, cosmos, time, and space woven into one. <\/h6><h6><br\/>\"Mana\" is the sacred energy that moves through all living things. <br\/><br\/>Together, Pacha Mana is the life force of the earth itself — the same force held in every pod of wild Chuncho cacao we bring to you, from the highlands of Peru with love.<\/h6>",
             "image_position": "top"
           }
         },
@@ -61,8 +61,8 @@
           "type": "story",
           "settings": {
             "heading": "The story of the mountains",
-            "content": "<p>High in the Peruvian highlands, where the air is thin and the soil holds memory, a rare cacao grows. Chuncho. One of the oldest, purest varieties left on earth, wild harvested by families who have tended these trees for generations.</p><p>We did not find this cacao by chance. Peru has been part of our lives for years. We have lived there, learned the language, sat at tables in the highlands, and spent long stretches walking farms and listening to the people who work them. That time earned us something money cannot buy, real relationships and real trust. When we tasted Chuncho, we knew. This was the cacao worth building a life around.</p><p>Because cacao has always been a bridge. Between people and the plants that heal them. Between ancient traditions and the lives we live now. Between a family farm in the Andes and a quiet morning in your kitchen. Pacha Mana exists to honor that bridge and keep it whole.</p><p>So we do things simply and honestly. We bring this cacao to you whole and alive, stone ground at origin, keeping more of the value in the hands that grow it. Nothing added, nothing taken away. We test every batch for purity, so you know exactly what you are drinking and where it came from. And we pay our farmers far above market rate, because reciprocity is not a marketing line. It is how we believe medicine should move through the world.</p><p>What you receive is more than a superfood. It is a relationship. With the land, with the farmers, with yourself. Chuncho is rich in theobromine, the gentle compound behind cacao's warm, heart opening feeling, the kind of stillness that turns a simple cup into a daily ritual.</p><p>When you hold a cup of Pacha Mana, you hold a thread that runs from an Andean hillside to your hands. You are not just buying cacao. You are protecting ancient genetics, supporting families, and joining a circle of reciprocity that stretches back generations.</p><p>This is cacao with a heartbeat. Grown with reverence. Shared with love.</p><p>Welcome to the bridge. Come sit with us.</p>",
-            "image": "shopify://shop_images/05_peruvian-ceremonial-cacao-guide.jpg",
+            "content": "<p>High in the Peruvian highlands, where the air is thin and the soil holds memory, a rare cacao grows. Chuncho. One of the oldest, purest varieties left on earth, wild harvested by families who have tended these trees for generations.<\/p><p>We did not find this cacao by chance. Peru has been part of our lives for years. We have lived there, learned the language, sat at tables in the highlands, and spent long stretches walking farms and listening to the people who work them. That time earned us something money cannot buy, real relationships and real trust. When we tasted Chuncho, we knew. This was the cacao worth building a life around.<\/p><p>Because cacao has always been a bridge. Between people and the plants that heal them. Between ancient traditions and the lives we live now. Between a family farm in the Andes and a quiet morning in your kitchen. Pacha Mana exists to honor that bridge and keep it whole.<\/p><p>So we do things simply and honestly. We bring this cacao to you whole and alive, stone ground at origin, keeping more of the value in the hands that grow it. Nothing added, nothing taken away. We test every batch for purity, so you know exactly what you are drinking and where it came from. And we pay our farmers far above market rate, because reciprocity is not a marketing line. It is how we believe medicine should move through the world.<\/p><p>What you receive is more than a superfood. It is a relationship. With the land, with the farmers, with yourself. Chuncho is rich in theobromine, the gentle compound behind cacao's warm, heart opening feeling, the kind of stillness that turns a simple cup into a daily ritual.<\/p><p>When you hold a cup of Pacha Mana, you hold a thread that runs from an Andean hillside to your hands. You are not just buying cacao. You are protecting ancient genetics, supporting families, and joining a circle of reciprocity that stretches back generations.<\/p><p>This is cacao with a heartbeat. Grown with reverence. Shared with love.<\/p><p>Welcome to the bridge. Come sit with us.<\/p>",
+            "image": "shopify:\/\/shop_images\/05_peruvian-ceremonial-cacao-guide.jpg",
             "image_position": "top"
           }
         },
@@ -70,8 +70,8 @@
           "type": "story",
           "settings": {
             "heading": "Our Core Mission",
-            "content": "<p>Our mission at Pacha Mana Cacao is to be able to bring sustainably grown ceremonial cacao direct to you from the farm. We believe ceremony starts at the farm. At Pacha Mana, we value the connection to the land and the protection of it for generations to come. Our vision is to create more love and prosperity in the world while protecting the Andes mountains, and the jungles of Peru.</p><p>By supporting Pacha Mana and the growing of Ceremonial Chuncho Cacao, you are choosing a more sustainable future for the forests by supporting the people most affected by its disruption.</p><p>Farmers are the last defenders, the people most capable of protecting the forest and we want to make it economically feasible for them to continue their work. Our hope is that by working directly with farmers, as well as consumers, we create a positive example for the cacao industry by eliminating unnecessary \"hands in the cookie jar\" that are historically entrenched in cacao logistics.</p><p>We strive to make our process of delivering delicious heirloom cacao from Peru to the United States become an example of how to better support the true parents of our cacao, the farmers. With more economic stability for the farmers of the highest quality organic products, these defenders will be better equipped to fight the vicious cycle of deforestation that's happening throughout the world and now in Peru.</p>",
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-14-e1712435925220_6f98b6f6-899f-4387-9d4b-e843e28230a4.webp",
+            "content": "<p>Our mission at Pacha Mana Cacao is to be able to bring sustainably grown ceremonial cacao direct to you from the farm. We believe ceremony starts at the farm. At Pacha Mana, we value the connection to the land and the protection of it for generations to come. Our vision is to create more love and prosperity in the world while protecting the Andes mountains, and the jungles of Peru.<\/p><p>By supporting Pacha Mana and the growing of Ceremonial Chuncho Cacao, you are choosing a more sustainable future for the forests by supporting the people most affected by its disruption.<\/p><p>Farmers are the last defenders, the people most capable of protecting the forest and we want to make it economically feasible for them to continue their work. Our hope is that by working directly with farmers, as well as consumers, we create a positive example for the cacao industry by eliminating unnecessary \"hands in the cookie jar\" that are historically entrenched in cacao logistics.<\/p><p>We strive to make our process of delivering delicious heirloom cacao from Peru to the United States become an example of how to better support the true parents of our cacao, the farmers. With more economic stability for the farmers of the highest quality organic products, these defenders will be better equipped to fight the vicious cycle of deforestation that's happening throughout the world and now in Peru.<\/p>",
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-14-e1712435925220_6f98b6f6-899f-4387-9d4b-e843e28230a4.webp",
             "image_position": "top"
           }
         },
@@ -79,8 +79,8 @@
           "type": "story",
           "settings": {
             "heading": "Justin's Story",
-            "content": "<p>For as long as I can remember, plants have fascinated me — their power to feed, heal, and bring beauty into the world. At 18, I left behind the life I knew to understand my place in the natural world. I settled in California and learned farming the hard way: through experience and study, from soil microbiology and mycology to genetics and regenerative technique.</p><p>I spent years studying how chemical fertilizers, pesticides, and GMO seeds affect the soil — and just how deeply our health is tied to the health of the earth beneath us. That path led me to grow my own food, heal through good relations with the land, and travel the world to commune with plants and the people who tend them.</p>",
-            "image": "shopify://shop_images/IMG_0345-scaled.jpg",
+            "content": "<p>For as long as I can remember, plants have fascinated me — their power to feed, heal, and bring beauty into the world. At 18, I left behind the life I knew to understand my place in the natural world. I settled in California and learned farming the hard way: through experience and study, from soil microbiology and mycology to genetics and regenerative technique.<\/p><p>I spent years studying how chemical fertilizers, pesticides, and GMO seeds affect the soil — and just how deeply our health is tied to the health of the earth beneath us. That path led me to grow my own food, heal through good relations with the land, and travel the world to commune with plants and the people who tend them.<\/p>",
+            "image": "shopify:\/\/shop_images\/IMG_0345-scaled.jpg",
             "image_position": "left"
           }
         },
@@ -88,8 +88,8 @@
           "type": "story",
           "settings": {
             "heading": "Mark's Story",
-            "content": "<p>Before the Peace Corps, I had no idea what my future held. In college I majored in Finance because I thought making money was what I was supposed to do — but it never fulfilled me. Then something called me to join the Peace Corps, and I spent nearly three years in Peru. That experience changed my life. I learned what real hard work was, and that the things that matter most are family and love.</p><p>Afterward I earned an MBA in International Business and took a big corporate job. Same emptiness. So I quit, moved to Maui, and started working on farms and teaching yoga. I learned where my food came from, cut out sugar, and ate pure. Years ago, cacao found me — and with every cup, I felt my heart open wider.</p><p>At the foothills of Haleakala, the name Pacha Mana came to me. I knew I couldn't do this alone, so I called my friend Justin, who shares my devotion to plants and the healing power of the heart. It's been an honor to create this with him.</p>",
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-47-1_20df20e0-7248-4746-aab6-5da5d808e869.webp",
+            "content": "<p>Before the Peace Corps, I had no idea what my future held. In college I majored in Finance because I thought making money was what I was supposed to do — but it never fulfilled me. Then something called me to join the Peace Corps, and I spent nearly three years in Peru. That experience changed my life. I learned what real hard work was, and that the things that matter most are family and love.<\/p><p>Afterward I earned an MBA in International Business and took a big corporate job. Same emptiness. So I quit, moved to Maui, and started working on farms and teaching yoga. I learned where my food came from, cut out sugar, and ate pure. Years ago, cacao found me — and with every cup, I felt my heart open wider.<\/p><p>At the foothills of Haleakala, the name Pacha Mana came to me. I knew I couldn't do this alone, so I called my friend Justin, who shares my devotion to plants and the healing power of the heart. It's been an honor to create this with him.<\/p>",
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-47-1_20df20e0-7248-4746-aab6-5da5d808e869.webp",
             "image_position": "left"
           }
         },
@@ -97,8 +97,8 @@
           "type": "story",
           "settings": {
             "heading": "The farmers",
-            "content": "<p>We give thanks to our wonderful farming family, who dedicate their lives to the sacred work of Chuncho cacao. At the heart of it stands Don Efraín — a legend in these highlands. For decades, he has been a guardian of heirloom genetics, protecting the wild, ancestral Chuncho variety from being lost to time. While much of the world chased higher yields and hybridized beans, Don Efraín stayed rooted in what matters: preserving the purity of a cacao that has grown in this region for generations. His hands have shaped not just a harvest, but a lineage. When you drink Pacha Mana, you taste the fruit of his devotion — from Peru, with love.</p>",
-            "image": "shopify://shop_images/IMG_0246_2.heic",
+            "content": "<p>We give thanks to our wonderful farming family, who dedicate their lives to the sacred work of Chuncho cacao. At the heart of it stands Don Efraín — a legend in these highlands. For decades, he has been a guardian of heirloom genetics, protecting the wild, ancestral Chuncho variety from being lost to time. While much of the world chased higher yields and hybridized beans, Don Efraín stayed rooted in what matters: preserving the purity of a cacao that has grown in this region for generations. His hands have shaped not just a harvest, but a lineage. When you drink Pacha Mana, you taste the fruit of his devotion — from Peru, with love.<\/p>",
+            "image": "shopify:\/\/shop_images\/IMG_0246_2.heic",
             "image_position": "left"
           }
         }
@@ -113,8 +113,8 @@
         "story_nyVqRB"
       ],
       "settings": {
-        "show_title": false,
-        "section_title": "Pacha Mana Cacao",
+        "show_title": true,
+        "section_title": "About Pacha Mana",
         "background_style": "light-gold",
         "padding_top": 50,
         "padding_bottom": 80
