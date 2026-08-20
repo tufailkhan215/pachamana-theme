@@ -16,16 +16,16 @@
         "title": "Cacao Powder Vs Ceremonial Cacao",
         "deck": "Why the brown powder in your pantry and the paste in your ceremonial cup are not the same thing. Not even close.",
         "meta_read": "12 Min Read",
-        "meta_topic": "Sourcing &amp; Process",
+        "meta_topic": "Difference in processing",
         "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
       }
     },
     "featured": {
       "type": "pm_learn_featured",
       "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-2afb0bbd37.webp?v=1785782947",
         "alt": "Featured photo: cacao powder in a bowl beside a block of whole-food cacao paste",
-        "height": 480,
-        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-2afb0bbd37.webp?v=1785782947"
+        "height": 480
       }
     },
     "body": {
@@ -34,6 +34,7 @@
         "heading_2t": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "The Confusion Is Understandable",
             "toc_label": "The confusion is fair"
           }
@@ -41,12 +42,14 @@
         "text_2u": {
           "type": "text",
           "settings": {
-            "text": "<p>Walk into any health food store and you'll find shelves of products with “cacao” on the label. Cacao powder. Raw cacao nibs. Cacao butter. Cacao paste. Ceremonial cacao. Dark chocolate with 85% cacao. They all come from the same bean. They all look related. Some are even marketed with nearly identical health claims.</p><p>So what's actually different? Is ceremonial cacao just expensive cacao powder with a spiritual story attached to it? Or is there a genuine, meaningful distinction between them?</p><p>There is. And it matters more than most people realize, not just for the experience of drinking cacao, but for the actual health benefits you receive from it. What follows explains exactly what cacao powder is, how it's made, what gets lost in that process, and why whole-food ceremonial cacao is a fundamentally different product. Not a premium version of the same thing. A different thing entirely.</p>"
+            "text": "<p>Walk into any health food store and you'll find shelves of products with “cacao” on the label. Cacao powder. Raw cacao nibs. Cacao butter. Cacao paste. Ceremonial cacao. Dark chocolate with 85% cacao. They all come from the same bean. They all look related. Some are even marketed with nearly identical health claims.</p><p>So what's actually different? Is ceremonial cacao just expensive cacao powder with a spiritual story attached to it? Or is there a genuine, meaningful distinction between them?</p><p>There is. And it matters more than most people realize, not just for the experience of drinking cacao, but for the actual health benefits you receive from it. What follows explains exactly what cacao powder is, how it's made, what gets lost in that process, and why whole-food ceremonial cacao is a fundamentally different product. Not a premium version of the same thing. A different thing entirely.</p>",
+            "variant": "body"
           }
         },
         "heading_2v": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "Where They Both Begin, The Cacao Bean",
             "toc_label": "Where they both begin"
           }
@@ -54,29 +57,32 @@
         "text_2w": {
           "type": "text",
           "settings": {
-            "text": "<p>Both cacao powder and ceremonial cacao start from the same place: the seeds of the Theobroma cacao tree, harvested from pods, fermented, and dried. At this point, a cacao bean is roughly half fat and half solids.</p>"
+            "text": "<p>Both cacao powder and ceremonial cacao start from the same place: the seeds of the Theobroma cacao tree, harvested from pods, fermented, and dried. At this point, a cacao bean is roughly half fat and half solids.</p>",
+            "variant": "body"
           }
         },
         "compare_2x": {
           "type": "compare",
           "settings": {
             "a_label": "",
-            "a_value": "",
+            "a_value": "50% Cacao butter",
             "a_text": "",
             "b_label": "",
-            "b_value": "",
+            "b_value": "50% Cacao Solids",
             "b_text": ""
           }
         },
         "text_2y": {
           "type": "text",
           "settings": {
-            "text": "<p>Cacao butter is the rich, stable natural fat. Cacao solids are the fibrous, mineral-rich, flavonoid-dense dry matter.</p><p>This 50/50 composition is not incidental. It is how nature designed the cacao bean, and it is the whole-food form in which cacao has been consumed, as medicine and as food, for thousands of years. Everything that happens after this point, the processing decisions made by whoever turns that bean into a finished product, determines what you actually receive when you drink it.</p>"
+            "text": "<p>Cacao butter is the rich, stable natural fat. Cacao solids are the fibrous, mineral-rich, flavonoid-dense dry matter.</p><p>This 50/50 composition is not incidental. It is how nature designed the cacao bean, and it is the whole-food form in which cacao has been consumed, as medicine and as food, for thousands of years. Everything that happens after this point, the processing decisions made by whoever turns that bean into a finished product, determines what you actually receive when you drink it.</p>",
+            "variant": "body"
           }
         },
         "heading_2z": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What Happens To Cacao Powder",
             "toc_label": "What happens to powder"
           }
@@ -84,7 +90,8 @@
         "text_30": {
           "type": "text",
           "settings": {
-            "text": "<p>Cacao powder is made through an industrial process called pressing. Here is what that looks like, step by step.</p><ol><li> 1 High-heat roasting<p>Beans are roasted at high temperatures to force uniformity across large batches of inconsistent, commodity-grade beans. This degrades flavonoids and polyphenols before any other step begins.</p></li><li> 2 Grinding into paste<p>The roasted beans become cacao liquor, a smooth liquid that is essentially 100% whole cacao. At this stage the product is actually nutritionally complete. The problem comes next.</p></li><li> 3 Hydraulic pressing<p>Enormous pressure separates the liquor into cacao butter (the fat, pressed out) and a dry, dense cake of cacao solids (what remains after the fat is gone).</p></li><li> 4 Pulverizing into powder<p>That dry cake is ground into the fine particles you know as cacao powder.</p></li></ol>"
+            "text": "<p>Cacao powder is made through an industrial process called pressing. Here is what that looks like, step by step.</p><ol><li> <strong>High-heat roasting</strong> Beans are roasted at high temperatures to force uniformity across large batches of inconsistent, commodity-grade beans. This degrades flavonoids and polyphenols before any other step begins.</li><li><strong> Grinding into paste </strong>The roasted beans become cacao liquor, a smooth liquid that is essentially 100% whole cacao. At this stage the product is actually nutritionally complete. The problem comes next.</li><li> <strong>Hydraulic pressing </strong>Enormous pressure separates the liquor into cacao butter (the fat, pressed out) and a dry, dense cake of cacao solids (what remains after the fat is gone).</li><li><strong> Pulverizing into powder </strong>That dry cake is ground into the fine particles you know as cacao powder.</li></ol>",
+            "variant": "body"
           }
         },
         "callout_31": {
@@ -97,12 +104,14 @@
         "text_32": {
           "type": "text",
           "settings": {
-            "text": "<p>Some powders undergo an additional step called Dutch processing, or alkalization, treatment with an alkaline solution to reduce acidity, darken the color, and mellow the flavor. This further reduces polyphenol content, sometimes dramatically. If you see “processed with alkali” or “Dutch process” on a label, the flavonoid content is likely far lower than the raw number suggests.</p>"
+            "text": "<p>Some powders undergo an additional step called Dutch processing, or alkalization, treatment with an alkaline solution to reduce acidity, darken the color, and mellow the flavor. This further reduces polyphenol content, sometimes dramatically. If you see “processed with alkali” or “Dutch process” on a label, the flavonoid content is likely far lower than the raw number suggests.</p>",
+            "variant": "body"
           }
         },
         "heading_33": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What Gets Lost When The Fat Is Removed",
             "toc_label": "What gets lost"
           }
@@ -110,7 +119,8 @@
         "text_34": {
           "type": "text",
           "settings": {
-            "text": "<p>The removal of cacao butter is not a neutral step. It fundamentally changes what cacao is and what it can do in your body.</p>"
+            "text": "<p>The removal of cacao butter is not a neutral step. It fundamentally changes what cacao is and what it can do in your body.</p>",
+            "variant": "body"
           }
         },
         "cards_35": {
@@ -122,18 +132,26 @@
             "label_2": "Mineral Balance",
             "text_2": "<p>Minerals live in both the fat and solids of the bean. Remove the fat and the ratios shift. You get a concentrated but incomplete nutritional picture.</p>",
             "label_3": "Energetic Quality",
-            "text_3": "<p>Harder to quantify but consistently reported: whole-food cacao has an aliveness and presence that powder lacks, a reflection of intact biochemistry working together as a system.</p>"
+            "text_3": "<p>Harder to quantify but consistently reported: whole-food cacao has an aliveness and presence that powder lacks, a reflection of intact biochemistry working together as a system.</p>",
+            "label_4": "",
+            "text_4": "",
+            "label_5": "",
+            "text_5": "",
+            "label_6": "",
+            "text_6": ""
           }
         },
         "text_36": {
           "type": "text",
           "settings": {
-            "text": "<p>When you remove the cacao butter and then try to compensate by mixing powder with coconut oil, you are not recreating whole-food cacao. You are attempting to reconstruct something that was never meant to be disassembled, and the body can tell the difference.</p>"
+            "text": "<p>When you remove the cacao butter and then try to compensate by mixing powder with coconut oil, you are not recreating whole-food cacao. You are attempting to reconstruct something that was never meant to be disassembled, and the body can tell the difference.</p>",
+            "variant": "body"
           }
         },
         "heading_37": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What Ceremonial Cacao Is Instead",
             "toc_label": "What ceremonial cacao is"
           }
@@ -141,25 +159,29 @@
         "text_38": {
           "type": "text",
           "settings": {
-            "text": "<p>Ceremonial cacao is whole-food cacao. Nothing added, nothing removed. The whole bean, after careful fermentation, sun-drying, and low-temperature roasting, is ground into a smooth paste that keeps the full 50/50 ratio of butter to solids. Every beneficial compound is present. Every mineral is in its natural proportion. The fat and the solids are together, as they were in the bean.</p>"
+            "text": "<p>Ceremonial cacao is whole-food cacao. Nothing added, nothing removed. The whole bean, after careful fermentation, sun-drying, and low-temperature roasting, is ground into a smooth paste that keeps the full 50/50 ratio of butter to solids. Every beneficial compound is present. Every mineral is in its natural proportion. The fat and the solids are together, as they were in the bean.</p>",
+            "variant": "body"
           }
         },
         "image_39": {
           "type": "image",
           "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-155c1ec79f.webp?v=1785782948",
             "alt": "Photo: a block of whole-food Chuncho cacao paste",
-            "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-155c1ec79f.webp?v=1785782948"
+            "caption": ""
           }
         },
         "text_3a": {
           "type": "text",
           "settings": {
-            "text": "<p>This is not a modern innovation. It is the oldest form of prepared cacao that exists. Ground stone, open fire, whole bean: this is how cacao has been made for thousands of years across Mesoamerica and the Andes. Ceremonial cacao is not a new product category. It is the original one.</p><p>What makes Pacha Mana's ceremonial cacao worth understanding is the starting point: Chuncho, an ancient heirloom variety grown at high elevation in the Sacred Valley of Peru. Chuncho is not a high-yield commercial hybrid. It produces smaller pods, yields less per tree, and requires more careful attention at every stage. Smallholder family farmers tend it by hand.</p><p>When the starting material is this good, grown in clean high-altitude soil, fermented with care, harvested by people who understand what they're handling, you don't need to correct it downstream. You don't need high heat to mask off-flavors. You don't need alkalization to smooth out bitterness. You need only to handle it with respect, preserve what's there, and get it into your cup intact.</p>"
+            "text": "<p>This is not a modern innovation. It is the oldest form of prepared cacao that exists. Ground stone, open fire, whole bean: this is how cacao has been made for thousands of years across Mesoamerica and the Andes. Ceremonial cacao is not a new product category. It is the original one.</p><p>What makes Pacha Mana's ceremonial cacao worth understanding is the starting point: Chuncho, an ancient heirloom variety grown at high elevation in the Sacred Valley of Peru. Chuncho is not a high-yield commercial hybrid. It produces smaller pods, yields less per tree, and requires more careful attention at every stage. Smallholder family farmers tend it by hand.</p><p>When the starting material is this good, grown in clean high-altitude soil, fermented with care, harvested by people who understand what they're handling, you don't need to correct it downstream. You don't need high heat to mask off-flavors. You don't need alkalization to smooth out bitterness. You need only to handle it with respect, preserve what's there, and get it into your cup intact.</p>",
+            "variant": "body"
           }
         },
         "heading_3b": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "Side By Side, The Real Comparison",
             "toc_label": "Side by side"
           }
@@ -167,17 +189,18 @@
         "compare_3c": {
           "type": "compare",
           "settings": {
-            "a_label": "",
+            "a_label": "Cacao Powder",
             "a_value": "",
-            "a_text": "",
-            "b_label": "",
+            "a_text": "<p>×Commodity-grade beans, usually with no traceability</p><p>×Roasted at high temperatures for uniformity</p><p>×Cacao butter removed by hydraulic pressing</p><p>×Often alkalized (Dutch process)</p><p>×The fat-carrying mechanism is absent</p><p>×An industrial byproduct sold as a health food</p><p>×Cheap and consistent, but nutritionally incomplete</p><p></p>",
+            "b_label": "Ceremonial Cacao",
             "b_value": "",
-            "b_text": ""
+            "b_text": "<p>✓Single-origin heirloom Chuncho from traceable Peru farms</p><p>✓Slow-roasted at low temperatures to preserve compounds</p><p>✓Nothing removed, whole-food 50/50 ratio intact</p><p>✓No additives, no alkalization, no emulsifiers</p><p>✓Full cacao butter present as the natural carrier</p><p>✓Fermented at origin with care and oversight</p><p>✓Costs more because it is made this way, and farmers are paid fairly</p>"
           }
         },
         "heading_3d": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "\"But I've Used Cacao Powder For Years And Feel Fine\"",
             "toc_label": "\"But I feel fine\""
           }
@@ -185,7 +208,8 @@
         "text_3e": {
           "type": "text",
           "settings": {
-            "text": "<p>This is a fair point, and we want to address it honestly. Cacao powder is not harmful. It still contains meaningful amounts of magnesium, iron, and some flavonoids, less than whole-food cacao, but not zero. If you've been using it in smoothies or baking and enjoying the benefits, that's real.</p><p>The question is not whether cacao powder has any value. The question is whether it delivers the full experience and full spectrum of benefits that whole-food ceremonial cacao does. The answer to that is clearly no.</p><p>Think of it like comparing whole milk to skim milk. Skim milk still has protein and calcium. It's not nothing. But it's missing the fat-soluble vitamins, the fat itself, and the integrated nutritional profile of the whole food. No matter how many fortifications you add back in, it isn't the same thing as what came out of the animal.</p>"
+            "text": "<p>This is a fair point, and we want to address it honestly. Cacao powder is not harmful. It still contains meaningful amounts of magnesium, iron, and some flavonoids, less than whole-food cacao, but not zero. If you've been using it in smoothies or baking and enjoying the benefits, that's real.</p><p>The question is not whether cacao powder has any value. The question is whether it delivers the full experience and full spectrum of benefits that whole-food ceremonial cacao does. The answer to that is clearly no.</p><p>Think of it like comparing whole milk to skim milk. Skim milk still has protein and calcium. It's not nothing. But it's missing the fat-soluble vitamins, the fat itself, and the integrated nutritional profile of the whole food. No matter how many fortifications you add back in, it isn't the same thing as what came out of the animal.<br/><br/>We also find that most cacao powders test higher in <em>heavy metals</em> for thsoe concerned about that.</p><p></p><p><a href=\"/pages/safe-cacao\" title=\"Heavy Metal Safe Cacao\"><strong>Here are our results</strong></a></p>",
+            "variant": "body"
           }
         },
         "pullquote_3f": {
@@ -197,6 +221,7 @@
         "heading_3g": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What About Raw Cacao Powder?",
             "toc_label": "Raw cacao powder?"
           }
@@ -204,12 +229,14 @@
         "text_3h": {
           "type": "text",
           "settings": {
-            "text": "<p>You may have seen cacao powder labeled “raw” and assumed it means less processed or more nutritionally intact than regular cocoa powder. In most cases, this is primarily a marketing distinction. Raw cacao powder has still had its cacao butter pressed out. It is still an industrial byproduct of butter extraction, just potentially processed at lower temperatures. The fat is still gone. The fundamental limitation of cacao powder remains.</p><p>For a full explanation of why “raw cacao” is largely a myth, and what actually preserves the medicine in cacao, see our guide: <a href=\"/pages/learn-raw-cacao-myth\">Raw Cacao Is a Myth, And Here's What We Do Instead</a>.</p>"
+            "text": "<p>You may have seen cacao powder labeled “raw” and assumed it means less processed or more nutritionally intact than regular cocoa powder. In most cases, this is primarily a marketing distinction. Raw cacao powder has still had its cacao butter pressed out. It is still an industrial byproduct of butter extraction, just potentially processed at lower temperatures. The fat is still gone. The fundamental limitation of cacao powder remains.</p><p>For a full explanation of why “raw cacao” is largely a myth, and what actually preserves the medicine in cacao, see our guide: <a href=\"/pages/learn-raw-cacao-myth\">Raw Cacao Is a Myth, And Here's What We Do Instead</a>.</p>",
+            "variant": "body"
           }
         },
         "heading_3i": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What About Adding Cacao Butter Back?",
             "toc_label": "Adding butter back?"
           }
@@ -217,7 +244,8 @@
         "text_3j": {
           "type": "text",
           "settings": {
-            "text": "<p>Some people, having learned about the importance of cacao butter, try to reconstruct whole cacao by combining powder with separately purchased cacao butter. The logic seems reasonable. The result is not quite what they're hoping for.</p>"
+            "text": "<p>Some people, having learned about the importance of cacao butter, try to reconstruct whole cacao by combining powder with separately purchased cacao butter. The logic seems reasonable. The result is not quite what they're hoping for.</p>",
+            "variant": "body"
           }
         },
         "cards_3k": {
@@ -231,18 +259,24 @@
             "label_3": "",
             "text_3": "<p><strong>The sourcing is usually separate and low quality.</strong> You are combining two commodity byproducts and hoping for a medicinal whole food.</p>",
             "label_4": "",
-            "text_4": "<p><strong>It costs more and is more complicated</strong> than simply starting with whole-food cacao in the first place.</p>"
+            "text_4": "<p><strong>It costs more and is more complicated</strong> than simply starting with whole-food cacao in the first place.</p>",
+            "label_5": "",
+            "text_5": "",
+            "label_6": "",
+            "text_6": ""
           }
         },
         "text_3l": {
           "type": "text",
           "settings": {
-            "text": "<p>If the goal is the full benefit of cacao, start with cacao that was never taken apart.</p>"
+            "text": "<p>If the goal is the full benefit of cacao, start with cacao that was never taken apart.</p>",
+            "variant": "body"
           }
         },
         "heading_3m": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "How To Use Ceremonial Cacao",
             "toc_label": "How to use it"
           }
@@ -250,19 +284,23 @@
         "text_3n": {
           "type": "text",
           "settings": {
-            "text": "<p>Ceremonial cacao paste or ground cacao is straightforward to prepare, and produces a drink that is richer, more satisfying, and more medicinally complete than anything made from powder.</p><ol><li> 1 <p>Warm 6 to 8 oz of spring water or plant milk to just below boiling, steamy, not rolling.</p></li><li> 2 <p>Add 1 to 2 tablespoons of Pacha Mana Chuncho cacao paste or ground cacao to your mug.</p></li><li> 3 <p>Add a small splash of hot liquid and whisk vigorously until fully dissolved.</p></li><li> 4 <p>Pour in the remaining liquid slowly, continuing to whisk or using a handheld frother.</p></li><li> 5 <p>Add a pinch of sea salt. Optional: cinnamon, cayenne, or a little maple syrup or honey. Then pause before the first sip and set an intention.</p></li></ol><p>The texture is different from a powder-based drink: richer, more velvety, with a body that comes from the cacao butter naturally emulsified into the liquid. This is what chocolate was always meant to taste like.</p>"
+            "text": "<p>Ceremonial cacao paste or ground cacao is straightforward to prepare, and produces a drink that is richer, more satisfying, and more medicinally complete than anything made from powder.</p><ol><li> Warm 6 to 8 oz of spring water or plant milk to just below boiling, steamy, not rolling.</li><li>Add 1 to 2 tablespoons of Pacha Mana <a href=\"/products/1lb-cacao-chuncho-ceremonial-grade\" title=\"Ceremonial Cacao Paste\">Chuncho cacao paste</a> or <a href=\"https://pachamana.com/products/pure-ground-cermonial-cacao\" title=\"https://pachamana.com/products/pure-ground-cermonial-cacao\">ground cacao</a> to your mug.</li><li> Add a small splash of hot liquid and whisk vigorously until fully dissolved.</li><li> Pour in the remaining liquid slowly, continuing to whisk or using a handheld frother.</li><li> Add a pinch of sea salt. Optional: cinnamon, cayenne, or a little maple syrup or honey. Then pause before the first sip and set an intention.</li></ol><p>The texture is different from a powder-based drink: richer, more velvety, with a body that comes from the cacao butter naturally emulsified into the liquid. This is what chocolate was always meant to taste like.</p>",
+            "variant": "body"
           }
         },
         "heading_3o": {
           "type": "heading",
           "settings": {
-            "heading": "The Bottom Line"
+            "kicker": "",
+            "heading": "The Bottom Line",
+            "toc_label": ""
           }
         },
         "text_3p": {
           "type": "text",
           "settings": {
-            "text": "<p>Cacao powder and ceremonial cacao share a name and an origin. Beyond that, they are different products with different nutritional profiles, different preparation histories, and different relationships to the plant they came from.</p><p>Cacao powder is a useful ingredient. It belongs in brownies and smoothies and the back of your pantry. Ceremonial cacao is medicine. It belongs in your morning ritual, in your hands, warm, made with intention, from a bean that someone grew carefully and a farmer harvested by hand.</p><p>The difference is not just what's in the cup. It's what you receive from it.</p>"
+            "text": "<p>Cacao powder and ceremonial cacao share a name and an origin. Beyond that, they are different products with different nutritional profiles, different preparation histories, and different relationships to the plant they came from.</p><p>Cacao powder is a useful ingredient. It belongs in brownies and smoothies and the back of your pantry. Ceremonial cacao is medicine. It belongs in your morning ritual, in your hands, warm, made with intention, from a bean that someone grew carefully and a farmer harvested by hand.</p><p>The difference is not just what's in the cup. It's what you receive from it.</p>",
+            "variant": "body"
           }
         }
       },
@@ -332,9 +370,9 @@
         "button_3r"
       ],
       "settings": {
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
         "heading": "Taste What Hasn't Been Taken Away",
         "text": "<p>Ready to experience whole-food cacao the way it was meant to be prepared? Explore Pacha Mana's Chuncho ceremonial cacao and taste the full 50/50 bean, intact.</p>",
-        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
         "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
       }
     },
