@@ -15,13 +15,13 @@
         "slide_HVPDFN": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-10.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-10.jpg"
           }
         },
         "slide_xAVFDC": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
           }
         }
       },
@@ -32,7 +32,7 @@
       "settings": {
         "blog": "",
         "blog_title": "PACHA MANA BLOG",
-        "posts_per_page": 3,
+        "posts_per_page": 12,
         "slide_duration": 5000,
         "transition_duration": 500,
         "loop": true,
