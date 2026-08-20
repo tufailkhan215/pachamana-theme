@@ -16,16 +16,16 @@
         "title": "Raw Cacao Is A Myth",
         "deck": "The uncomfortable truth about “raw” chocolate, why it doesn't exist the way you think it does, and what actually preserves the medicine in cacao.",
         "meta_read": "11 Min Read",
-        "meta_topic": "Sourcing &amp; Process",
+        "meta_topic": "Myth Busting",
         "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
       }
     },
     "featured": {
       "type": "pm_learn_featured",
       "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-ac7a00b300.webp?v=1785782948",
         "alt": "Featured photo: cacao beans toasting over a low fire on a clay comal",
-        "height": 480,
-        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-ac7a00b300.webp?v=1785782948"
+        "height": 480
       }
     },
     "body": {
@@ -34,6 +34,7 @@
         "heading_1z": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "The Raw Food Movement Got One Thing Wrong",
             "toc_label": "The raw food movement"
           }
@@ -41,19 +42,23 @@
         "text_20": {
           "type": "text",
           "settings": {
-            "text": "<p>The raw food movement gave the world something genuinely valuable: a framework for thinking critically about how processing degrades the nutritional quality of food. High heat destroys enzymes. Industrial processing strips nutrients. The closer to whole and unaltered, the better.</p><p>For fruits and vegetables, this logic holds up beautifully. A raw carrot has more living enzymes than a boiled one. Cold-pressed olive oil retains more polyphenols than refined oil. Raw honey is nutritionally superior to processed honey. The principle is sound.</p><p>But somewhere along the way, this logic got applied to cacao, and that's where things went sideways. Because cacao is not a fruit or a vegetable. It is a seed. And seeds, unlike the soft flesh of fruits, do not follow the same rules.</p><p>When “raw cacao” became a marketing category, it brought with it a set of assumptions that don't survive contact with how cacao is actually grown, processed, or understood by the people who have worked with it for centuries. Let's unpack this carefully, because the truth is more interesting than the myth.</p>"
+            "text": "<p>The raw food movement gave the world something genuinely valuable: a framework for thinking critically about how processing degrades the nutritional quality of food. High heat destroys enzymes. Industrial processing strips nutrients. The closer to whole and unaltered, the better.</p><p>For fruits and vegetables, this logic holds up beautifully. A raw carrot has more living enzymes than a boiled one. Cold-pressed olive oil retains more polyphenols than refined oil. Raw honey is nutritionally superior to processed honey. The principle is sound.</p><p>But somewhere along the way, this logic got applied to cacao, and that's where things went sideways. Because cacao is not a fruit or a vegetable. It is a seed. And seeds, unlike the soft flesh of fruits, do not follow the same rules.</p><p>When “raw cacao” became a marketing category, it brought with it a set of assumptions that don't survive contact with how cacao is actually grown, processed, or understood by the people who have worked with it for centuries. Let's unpack this carefully, because the truth is more interesting than the myth.</p>",
+            "variant": "body"
           }
         },
         "heading_21": {
           "type": "heading",
           "settings": {
-            "heading": "What \"Raw\" Actually Means"
+            "kicker": "",
+            "heading": "What \"Raw\" Actually Means",
+            "toc_label": ""
           }
         },
         "text_22": {
           "type": "text",
           "settings": {
-            "text": "<p>In the raw food framework, “raw” means food that has never been heated above 116°F (47°C). The idea is that above this temperature, the enzymes and beneficial compounds in food begin to degrade. This works well for foods with high water content, such as fruits, vegetables, and leafy greens, because their enzymes are vulnerable to heat at relatively low temperatures and because water conducts that heat throughout the food.</p>"
+            "text": "<p>In the raw food framework, “raw” means food that has never been heated above 116°F (47°C). The idea is that above this temperature, the enzymes and beneficial compounds in food begin to degrade. This works well for foods with high water content, such as fruits, vegetables, and leafy greens, because their enzymes are vulnerable to heat at relatively low temperatures and because water conducts that heat throughout the food.</p>",
+            "variant": "body"
           }
         },
         "callout_23": {
@@ -66,19 +71,23 @@
         "text_24": {
           "type": "text",
           "settings": {
-            "text": "<p>The compounds you most want to preserve in cacao, flavonoids, theobromine, polyphenols, and anandamide precursors, are not destroyed by gentle heat the way the enzymes in a raw vegetable are. In fact, the right amount of heat doesn't degrade cacao at all. It transforms it into something more bioavailable, more flavorful, and more medicinally potent.</p><p>The “raw threshold” of 116°F was developed for a specific category of food. Applied to cacao, it is the wrong tool for the job.</p>"
+            "text": "<p>The compounds you most want to preserve in cacao, flavonoids, theobromine, polyphenols, and anandamide precursors, are not destroyed by gentle heat the way the enzymes in a raw vegetable are. In fact, the right amount of heat doesn't degrade cacao at all. It transforms it into something more bioavailable, more flavorful, and more medicinally potent.</p><p>The “raw threshold” of 116°F was developed for a specific category of food. Applied to cacao, it is the wrong tool for the job.</p>",
+            "variant": "body"
           }
         },
         "heading_25": {
           "type": "heading",
           "settings": {
-            "heading": "The Fermentation Problem"
+            "kicker": "",
+            "heading": "The Fermentation Problem",
+            "toc_label": ""
           }
         },
         "text_26": {
           "type": "text",
           "settings": {
-            "text": "<p>Here is the part that surprises most people. Before cacao can become chocolate, before it can develop the flavor, the biochemistry, or any of the properties we associate with good cacao, it must be fermented. This is not optional. Unfermented cacao beans are bitter, astringent, and nutritionally incomplete. Fermentation is the step that unlocks the precursors to flavor and activates many of the beneficial compounds.</p><p>Fermentation is carried out by microorganisms, yeasts and bacteria, that generate heat as a byproduct of their activity. Good cacao fermentation requires temperatures to reach and sustain 124°F to 130°F for proper development. This is well above the raw food threshold.</p>"
+            "text": "<p>Here is the part that surprises most people. Before cacao can become chocolate, before it can develop the flavor, the biochemistry, or any of the properties we associate with good cacao, it must be fermented. This is not optional. Unfermented cacao beans are bitter, astringent, and nutritionally incomplete. Fermentation is the step that unlocks the precursors to flavor and activates many of the beneficial compounds.</p><p>Fermentation is carried out by microorganisms, yeasts and bacteria, that generate heat as a byproduct of their activity. Good cacao fermentation requires temperatures to reach and sustain 124°F to 130°F for proper development. This is well above the raw food threshold.</p>",
+            "variant": "body"
           }
         },
         "cards_27": {
@@ -86,20 +95,30 @@
           "settings": {
             "columns": 2,
             "label_1": "Raw Threshold",
-            "text_1": "",
+            "text_1": "<h4><strong>116°F</strong></h4>",
             "label_2": "Proper Fermentation",
-            "text_2": ""
+            "text_2": "<h4><strong>124 to 130°F</strong></h4>",
+            "label_3": "",
+            "text_3": "",
+            "label_4": "",
+            "text_4": "",
+            "label_5": "",
+            "text_5": "",
+            "label_6": "",
+            "text_6": ""
           }
         },
         "text_28": {
           "type": "text",
           "settings": {
-            "text": "<p>This means that any cacao that has been properly fermented, which is virtually all high-quality cacao, including every variety sold as “ceremonial grade,” has already exceeded the raw threshold before it ever reaches a roaster, a grinder, or a chocolate maker.</p><p>When brands label their cacao as “raw,” one of two things is true: either the cacao was not properly fermented (and is therefore inferior in flavor, nutrition, and medicine), or the “raw” label is technically inaccurate because fermentation already brought temperatures above 116°F. Either way, “raw ceremonial cacao” is, at best, a marketing simplification. At worst, it's describing an inferior product.</p>"
+            "text": "<p>This means that any cacao that has been properly fermented, which is virtually all high-quality cacao, including every variety sold as “ceremonial grade,” has already exceeded the raw threshold before it ever reaches a roaster, a grinder, or a chocolate maker.</p><p>When brands label their cacao as “raw,” one of two things is true: either the cacao was not properly fermented (and is therefore inferior in flavor, nutrition, and medicine), or the “raw” label is technically inaccurate because fermentation already brought temperatures above 116°F. Either way, “raw ceremonial cacao” is, at best, a marketing simplification. At worst, it's describing an inferior product.</p>",
+            "variant": "body"
           }
         },
         "heading_29": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What The Indigenous Traditions Actually Do",
             "toc_label": "What tradition does"
           }
@@ -107,7 +126,8 @@
         "text_2a": {
           "type": "text",
           "settings": {
-            "text": "<p>The raw cacao movement is a modern Western construct. It has no roots in the indigenous traditions that developed the relationship with cacao over thousands of years.</p><p>Every indigenous cacao tradition we are aware of, across Mesoamerica, the Amazon, and the Andes, involves toasting the cacao bean as a fundamental step in preparation. Not because they didn't know better, but because they understood something the raw food movement missed: fire is part of the medicine.</p><p>In Oaxacan tradition, cacao beans are toasted on a clay comal over an open fire, stirred carefully by elders who knew exactly how much heat was needed and when to stop. In Andean traditions, similar low-heat toasting methods have been used for centuries. These are not shortcuts or compromises. They are considered essential to activating the cacao, to bringing it fully alive.</p>"
+            "text": "<p>Raw cacao to the indigenous is easting it in the field!</p><p>The raw cacao movement is a modern Western construct. It has no roots in the indigenous traditions that developed the relationship with cacao over thousands of years.</p><p>Every indigenous cacao tradition we are aware of, across Mesoamerica, the Amazon, and the Andes, involves toasting the cacao bean as a fundamental step in preparation. Not because they didn't know better, but because they understood something the raw food movement missed: fire is part of the medicine.</p><p>In Oaxacan tradition, cacao beans are toasted on a clay comal over an open fire, stirred carefully by elders who knew exactly how much heat was needed and when to stop. In Andean traditions, similar low-heat toasting methods have been used for centuries. These are not shortcuts or compromises. They are considered essential to activating the cacao, to bringing it fully alive.</p>",
+            "variant": "body"
           }
         },
         "pullquote_2b": {
@@ -119,6 +139,7 @@
         "heading_2c": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What Heat Actually Does To Cacao",
             "toc_label": "What heat does to cacao"
           }
@@ -126,7 +147,8 @@
         "text_2d": {
           "type": "text",
           "settings": {
-            "text": "<p>So what is actually happening during a proper low-temperature roast, and what would be lost without it?</p>"
+            "text": "<p>So what is actually happening during a proper low-temperature roast, and what would be lost without it?</p>",
+            "variant": "body"
           }
         },
         "cards_2e": {
@@ -142,18 +164,22 @@
             "label_4": "Safety",
             "text_4": "<p>Gentle roasting eliminates residual microbial activity from fermentation, including unwanted bacteria and mold spores that can develop during post-harvest handling.</p>",
             "label_5": "Activation",
-            "text_5": "<p>Several beneficial compounds become more bioavailable after light roasting. The structure of the bean changes in ways that make it easier for the body to access what's inside.</p>"
+            "text_5": "<p>Several beneficial compounds become more bioavailable after light roasting. The structure of the bean changes in ways that make it easier for the body to access what's inside.</p>",
+            "label_6": "",
+            "text_6": ""
           }
         },
         "text_2f": {
           "type": "text",
           "settings": {
-            "text": "<p>None of this requires high heat. All of it requires some heat, applied with care, at the right temperature, for the right duration.</p>"
+            "text": "<p>None of this requires high heat. All of it requires some heat, applied with care, at the right temperature, for the right duration.</p>",
+            "variant": "body"
           }
         },
         "heading_2g": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "The Real Risk, High Heat, Not All Heat",
             "toc_label": "High heat, not all heat"
           }
@@ -161,12 +187,14 @@
         "text_2h": {
           "type": "text",
           "settings": {
-            "text": "<p>Here is the distinction that matters most, and that “raw” marketing completely obscures. The problem with most commercial and industrial cacao is not that it was roasted. It is that it was over-roasted, subjected to high temperatures to force uniform results from inconsistent, low-quality inputs, and to mask the off-flavors that come from poor fermentation, poor sourcing, and poor post-harvest handling.</p><p>High-temperature industrial roasting does degrade flavonoids and polyphenols. It does reduce the concentration of heat-sensitive beneficial compounds. It does flatten the flavor into something generic and uniform. This is a real problem, and the instinct of the raw food movement to push back against it was not wrong.</p><p>But the solution is not zero heat. The solution is the right amount of heat: a low, slow, careful roast applied to high-quality, well-fermented beans that don't need to be corrected or masked. This is what traditional cacao makers have always done. This is what we do.</p>"
+            "text": "<p>Here is the distinction that matters most, and that “raw” marketing completely obscures. The problem with most commercial and industrial cacao is not that it was roasted. It is that it was over-roasted, subjected to high temperatures to force uniform results from inconsistent, low-quality inputs, and to mask the off-flavors that come from poor fermentation, poor sourcing, and poor post-harvest handling.</p><p>High-temperature industrial roasting does degrade flavonoids and polyphenols. It does reduce the concentration of heat-sensitive beneficial compounds. It does flatten the flavor into something generic and uniform. This is a real problem, and the instinct of the raw food movement to push back against it was not wrong.</p><p>But the solution is not zero heat. The solution is the right amount of heat: a low, slow, careful roast applied to high-quality, well-fermented beans that don't need to be corrected or masked. This is what traditional cacao makers have always done. This is what we do.</p>",
+            "variant": "body"
           }
         },
         "heading_2i": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What Pacha Mana Does Instead",
             "toc_label": "What we do instead"
           }
@@ -174,20 +202,23 @@
         "text_2j": {
           "type": "text",
           "settings": {
-            "text": "<p>At Pacha Mana, we don't make raw cacao. We make something we believe is better: carefully slow-roasted, minimally processed, whole-food ceremonial cacao that honors both the science and the tradition.</p>"
+            "text": "<p>At Pacha Mana, we don't make raw cacao. We make something we believe is better: carefully slow-roasted, minimally processed, whole-food ceremonial cacao that honors both the science and the tradition.</p>",
+            "variant": "body"
           }
         },
         "image_2k": {
           "type": "image",
           "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-3dd803255b.webp?v=1785782948",
             "alt": "Photo: Chuncho cacao being slow-roasted at low temperature",
-            "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-3dd803255b.webp?v=1785782948"
+            "caption": ""
           }
         },
         "text_2l": {
           "type": "text",
           "settings": {
-            "text": "<p>Our Chuncho cacao begins its journey in the high-altitude growing regions of the Sacred Valley in Peru, where heirloom trees produce small, flavorful pods harvested by hand by the same family collective that has stewarded this land for generations. After harvest, the cacao is fermented at origin, a careful, monitored process that develops the bean's full flavor and biochemical complexity. Temperatures during fermentation naturally reach and exceed the raw threshold, as they must for good cacao.</p><p>After fermentation, the beans are sun-dried on raised beds, clean and covered, before being gently slow-roasted at low temperatures. This roast is calibrated to bring out the natural flavor of the Chuncho bean without pushing into temperatures that would degrade its medicinal compounds. It is a roast applied with restraint and respect, not uniformity and convenience.</p><p>The result is cacao that retains the vast majority of its bioactive compounds, flavonoids, theobromine, anandamide precursors, and polyphenols, while also being fully realized in flavor, texture, and energetic quality. Alive, but also complete. Nothing is added. Nothing is stripped away. The cacao butter remains intact, the essential fat carrier that makes all of cacao's beneficial compounds bioavailable to the body.</p>"
+            "text": "<p>Our Chuncho cacao begins its journey in the high-altitude growing regions of the Sacred Valley in Peru, where heirloom trees produce small, flavorful pods harvested by hand by the same family collective that has stewarded this land for generations. After harvest, the cacao is fermented at origin, a careful, monitored process that develops the bean's full flavor and biochemical complexity. Temperatures during fermentation naturally reach and exceed the raw threshold, as they must for good cacao.</p><p>After fermentation, the beans are sun-dried on raised beds, clean and covered, before being gently slow-roasted at low temperatures. This roast is calibrated to bring out the natural flavor of the Chuncho bean without pushing into temperatures that would degrade its medicinal compounds. It is a roast applied with restraint and respect, not uniformity and convenience.</p><p>The result is cacao that retains the vast majority of its bioactive compounds, flavonoids, theobromine, anandamide precursors, and polyphenols, while also being fully realized in flavor, texture, and energetic quality. Alive, but also complete. Nothing is added. Nothing is stripped away. The cacao butter remains intact, the essential fat carrier that makes all of cacao's beneficial compounds bioavailable to the body.</p>",
+            "variant": "body"
           }
         },
         "pullquote_2m": {
@@ -199,6 +230,7 @@
         "heading_2n": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What To Look For Instead Of \"Raw\"",
             "toc_label": "What to look for"
           }
@@ -206,12 +238,14 @@
         "text_2o": {
           "type": "text",
           "settings": {
-            "text": "<p>If “raw” is not the right standard for evaluating cacao quality, what is? Here are the questions that actually matter.</p><ol><li> 1 How was it fermented?<p>Proper fermentation is the foundation of good cacao, and poorly fermented cacao cannot be rescued by any downstream process. Ask whether fermentation follows best practices or is left entirely without oversight.</p></li><li> 2 What temperature was it roasted at?<p>Low-temperature roasting preserves more beneficial compounds than high-temperature industrial roasting. A brand that knows their cacao will know their roasting temperatures.</p></li><li> 3 Is it whole-food cacao?<p>Whole cacao (paste, block, or disc) retains the cacao butter that is essential for absorbing its benefits. Powder has had this fat removed and is nutritionally inferior, regardless of whether it was called “raw.”</p></li><li> 4 Where does it come from?<p>Soil health, farming practices, and the ethical treatment of farmers all directly impact quality. Traceability is not a bonus, it's a baseline.</p></li><li> 5 Has it been tested?<p>Third-party lab testing for heavy metals, mold toxins, and other contaminants is the mark of a brand that takes quality seriously. Ask to see the <a href=\"/heavy-metals-testing\">testing results</a>.</p></li></ol><p>“Raw” is a simple word that signals good intentions. But the questions above tell you far more about whether a cacao is actually worth drinking.</p>"
+            "text": "<p>If “raw” is not the right standard for evaluating cacao quality, what is? Here are the questions that actually matter.</p><ol><li> <strong>How was it fermented? </strong>Proper fermentation is the foundation of good cacao, and poorly fermented cacao cannot be rescued by any downstream process. Ask whether fermentation follows best practices or is left entirely without oversight.</li><li> <strong>What temperature was it roasted at? </strong>Low-temperature roasting preserves more beneficial compounds than high-temperature industrial roasting. A brand that knows their cacao will know their roasting temperatures.</li><li> <strong>Is it whole-food cacao? </strong>Whole cacao (paste, block, or disc) retains the cacao butter that is essential for absorbing its benefits. Powder has had this fat removed and is nutritionally inferior, regardless of whether it was called “raw.”</li><li> <strong>Where does it come from? </strong>Soil health, farming practices, and the ethical treatment of farmers all directly impact quality. Traceability is not a bonus, it's a baseline.</li><li> <strong>Has it been tested? </strong>Third-party lab testing for heavy metals, mold toxins, and other contaminants is the mark of a brand that takes quality seriously. Ask to see the <a href=\"/pages/safe-cacao\">testing results</a>.</li></ol><p>“Raw” is a simple word that signals good intentions. But the questions above tell you far more about whether a cacao is actually worth drinking.</p>",
+            "variant": "body"
           }
         },
         "heading_2p": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "A Word To Those Who Came Through Raw Food",
             "toc_label": "A word to raw foodies"
           }
@@ -219,7 +253,8 @@
         "text_2q": {
           "type": "text",
           "settings": {
-            "text": "<p>If you found ceremonial cacao through the raw food movement, your instincts brought you somewhere good. The desire for whole food, minimal processing, conscious sourcing, and genuine nourishment: these are exactly the right instincts to bring to cacao.</p><p>What we're asking you to reconsider is not the destination, but one piece of the map. “Raw” was a useful signpost that pointed away from industrial, over-processed chocolate. But it was never quite the right word for what you were actually looking for.</p><p>What you were looking for, what we all want from cacao, is something whole, honest, carefully handled, and deeply nourishing. Something grown with respect and prepared with intention. Something that still carries the spirit of the bean it came from.</p><p>That cacao exists. It just isn't raw.</p>"
+            "text": "<p>If you found ceremonial cacao through the raw food movement, your instincts brought you somewhere good. The desire for whole food, minimal processing, conscious sourcing, and genuine nourishment: these are exactly the right instincts to bring to cacao.</p><p>What we're asking you to reconsider is not the destination, but one piece of the map. “Raw” was a useful signpost that pointed away from industrial, over-processed chocolate. But it was never quite the right word for what you were actually looking for.</p><p>What you were looking for, what we all want from cacao, is something whole, honest, carefully handled, and deeply nourishing. Something grown with respect and prepared with intention. Something that still carries the spirit of the bean it came from.</p><p>That cacao exists. It just isn't raw.</p>",
+            "variant": "body"
           }
         }
       },
@@ -274,7 +309,7 @@
           "type": "button",
           "settings": {
             "label": "See Our Testing",
-            "url": "/pages/learn",
+            "url": "/pages/safe-cacao",
             "style": "outline"
           }
         }
@@ -284,9 +319,9 @@
         "button_2s"
       ],
       "settings": {
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
         "heading": "Taste The Difference Fire Makes",
         "text": "<p>Want to experience what thoughtfully slow-roasted, whole-food Chuncho cacao actually tastes and feels like? Explore our ceremonial cacao and taste the difference that process makes.</p>",
-        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
         "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
       }
     },
