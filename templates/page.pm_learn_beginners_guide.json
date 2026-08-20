@@ -23,6 +23,8 @@
     "featured": {
       "type": "pm_learn_featured",
       "settings": {
+        "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-76.jpg",
+        "image_url": "",
         "alt": "Featured photo: a warm mug of freshly whisked ceremonial cacao held in two hands",
         "height": 480
       }
@@ -33,13 +35,16 @@
         "heading_7f": {
           "type": "heading",
           "settings": {
-            "heading": "Welcome To Cacao"
+            "kicker": "",
+            "heading": "Welcome To Cacao",
+            "toc_label": ""
           }
         },
         "text_7g": {
           "type": "text",
           "settings": {
-            "text": "<p>If you've just discovered ceremonial cacao, or you're holding your first bag of Pacha Mana Chuncho and wondering what to do next, this guide is for you. You don't need prior experience. You don't need a spiritual background. You don't need special equipment or elaborate rituals or a particular time of day. You need a mug, some hot water, and about ten minutes.</p><p>What you will get from ceremonial cacao is real. The energy is real. The mood lift is real. The warmth that spreads through your chest in the first few minutes is real. People who start a daily cacao practice often describe it as one of the most quietly transformative things they've done for their wellbeing, not because cacao is magic, but because it works, and because the act of making something warm and nourishing for yourself every morning, with attention, turns out to matter more than it sounds.</p>"
+            "text": "<p>If you've just discovered ceremonial cacao, or you're holding your first bag of Pacha Mana Chuncho and wondering what to do next, this guide is for you. You don't need prior experience. You don't need a spiritual background. You don't need special equipment or elaborate rituals or a particular time of day. You need a mug, some hot water, and about ten minutes.</p><p>What you will get from ceremonial cacao is real. The energy is real. The mood lift is real. The warmth that spreads through your chest in the first few minutes is real. People who start a daily cacao practice often describe it as one of the most quietly transformative things they've done for their wellbeing, not because cacao is magic, but because it works, and because the act of making something warm and nourishing for yourself every morning, with attention, turns out to matter more than it sounds.</p>",
+            "variant": "body"
           }
         },
         "pullquote_7h": {
@@ -51,6 +56,7 @@
         "heading_7i": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What Ceremonial Cacao Actually Is",
             "toc_label": "What it actually is"
           }
@@ -58,19 +64,23 @@
         "text_7j": {
           "type": "text",
           "settings": {
-            "text": "<p>Before anything else, let's clear up the confusion most new cacao drinkers carry with them. Ceremonial cacao is not hot chocolate. It is not cocoa powder mixed with milk and sugar. It is not a chocolate-flavored drink designed to taste sweet and comforting. It is whole, minimally processed cacao, the full cacao bean, ground into a paste with nothing added and nothing removed, prepared as a warm drink.</p><p>This means two things for your first experience. First, it will taste different from anything chocolate-flavored you've had before. Richer. More complex. Slightly bitter, in a pleasant and interesting way. Earthier. It takes a cup or two to fully appreciate and then tends to become deeply satisfying in a way sweetened chocolate never quite manages. Second, it will feel different in your body. Within twenty to thirty minutes of a full serving, most people notice a warmth in the chest, a gentle lift in energy and mood, a quality of focus softer and longer-lasting than coffee.</p><p>It is also not the same as cacao powder. Cacao powder has had the cacao butter, the natural fat, removed through industrial pressing. That fat is the carrier for most of cacao's beneficial compounds. Without it you get some flavor and some minerals, but not the full medicine. Pacha Mana's Chuncho is whole-food cacao, the fat is intact, which is why it produces a rich, velvety drink that cacao powder simply cannot replicate.</p>"
+            "text": "<p>Before anything else, let's clear up the confusion most new cacao drinkers carry with them. Ceremonial cacao is not hot chocolate. It is not cocoa powder mixed with milk and sugar. It is not a chocolate-flavored drink designed to taste sweet and comforting. It is whole, minimally processed cacao, the full cacao bean, ground into a paste with nothing added and nothing removed, prepared as a warm drink.</p><p>This means two things for your first experience. First, it will taste different from anything chocolate-flavored you've had before. Richer. More complex. Slightly bitter, in a pleasant and interesting way. Earthier. It takes a cup or two to fully appreciate and then tends to become deeply satisfying in a way sweetened chocolate never quite manages. Second, it will feel different in your body. Within twenty to thirty minutes of a full serving, most people notice a warmth in the chest, a gentle lift in energy and mood, a quality of focus softer and longer-lasting than coffee.</p><p>It is also not the same as cacao powder. Cacao powder has had the cacao butter, the natural fat, removed through industrial pressing. That fat is the carrier for most of cacao's beneficial compounds. Without it you get some flavor and some minerals, but not the full medicine. Pacha Mana's Chuncho is whole-food cacao, the fat is intact, which is why it produces a rich, velvety drink that cacao powder simply cannot replicate.</p>",
+            "variant": "body"
           }
         },
         "heading_7k": {
           "type": "heading",
           "settings": {
-            "heading": "What You'll Need"
+            "kicker": "",
+            "heading": "What You'll Need",
+            "toc_label": ""
           }
         },
         "text_7l": {
           "type": "text",
           "settings": {
-            "text": "<p>The good news: very little.</p>"
+            "text": "<p>The good news: very little.</p>",
+            "variant": "body"
           }
         },
         "cards_7m": {
@@ -78,27 +88,32 @@
           "settings": {
             "columns": 1,
             "label_1": "The Cacao",
-            "text_1": "<p>Pacha Mana's Chuncho, in paste or ground form. Both are the same single-ingredient heirloom cacao from Peru. The paste is the most traditional whole-food form, dense and rich, needing a little more whisking. The ground version dissolves more easily and is convenient for everyday use.</p>",
+            "text_1": "<p>Pacha Mana's Chuncho, in <a href=\"/products/1lb-cacao-chuncho-ceremonial-grade\" title=\"Ceremonial Cacao Paste\">paste</a> or <a href=\"/products/pure-ground-cermonial-cacao\" title=\"Pure | Ground Ceremonial Cacao\">ground</a> form. Both are the same single-ingredient heirloom cacao from Peru. The paste is the most traditional whole-food form, dense and rich, needing a little more whisking. The ground version dissolves more easily and is convenient for everyday use.</p>",
             "label_2": "Something To Heat",
-            "text_2": "<p>A kettle or small saucepan. You want your liquid hot but not boiling, around 160°F to 180°F, steamy not rolling. Boiling water can degrade the more delicate compounds and flatten the flavor. No thermometer? Boil, then let it sit two to three minutes before using.</p>",
+            "text_2": "<p>A kettle or small saucepan, or our favorite the Milk frother! You want your liquid hot but not boiling, around 160°F to 170°F, steamy not rolling. Boiling water can degrade the more delicate compounds and flatten the flavor. No thermometer? Boil, then let it sit two to three minutes before using.</p>",
             "label_3": "Something To Mix",
-            "text_3": "<p>A handheld milk frother is the easiest and most effective tool, inexpensive, easy to clean, and it produces a beautiful frothy drink. A whisk works well too, a blender works but means more cleanup. Nothing is strictly required, but a frother noticeably improves the texture if you'll drink cacao regularly.</p>",
+            "text_3": "<p>A handheld or stationed milk frother is the easiest and most effective tool, inexpensive, easy to clean, and it produces a beautiful frothy drink. A whisk works well too, a blender works but means more cleanup. Nothing is strictly required, but a frother noticeably improves the texture if you'll drink cacao regularly.</p>",
             "label_4": "A Mug You Love",
             "text_4": "<p>This sounds minor. It isn't. Cacao rewards slowing down, and the mug you hold matters to the experience. Choose something with weight and warmth, ceramic or pottery, something you actually like holding.</p>",
             "label_5": "Optional Additions",
-            "text_5": "<p>A pinch of sea salt (genuinely transformative), a little maple syrup or raw honey if you prefer sweetness, cinnamon, cayenne, or cardamom. All optional. Many experienced drinkers take it completely pure, which lets the Chuncho bean come through clearly.</p>"
+            "text_5": "<p>A pinch of sea salt (genuinely transformative), a little maple syrup or raw honey if you prefer sweetness, cinnamon, cayenne, or cardamom. All optional. Many experienced drinkers take it completely pure, which lets the Chuncho bean come through clearly.</p>",
+            "label_6": "",
+            "text_6": ""
           }
         },
         "heading_7n": {
           "type": "heading",
           "settings": {
-            "heading": "How Much To Use"
+            "kicker": "",
+            "heading": "How Much To Use",
+            "toc_label": ""
           }
         },
         "text_7o": {
           "type": "text",
           "settings": {
-            "text": "<p>This is the question most beginners get wrong, usually by using too little. Ceremonial cacao is not a sprinkle-into-smoothie ingredient. For the energy, the mood shift, and the chest warmth people describe, you need a real serving.</p>"
+            "text": "<p>This is the question most beginners get wrong, usually by using too little. Ceremonial cacao is not a sprinkle-into-smoothie ingredient. For the energy, the mood shift, and the chest warmth people describe, you need a real serving.</p>",
+            "variant": "body"
           }
         },
         "compare_7p": {
@@ -106,21 +121,23 @@
           "settings": {
             "a_label": "",
             "a_value": "",
-            "a_text": "<p>About 1 to 1.5 tbsp of paste, or 2 tbsp ground. Start here for your first cups to learn how your body responds.</p>",
+            "a_text": "<p>About 1-2 tbsp (10-20g) of cacao ground or paste. Start here for your first cups to learn how your body responds.</p>",
             "b_label": "",
             "b_value": "",
-            "b_text": "<p>About 1.5 to 2 tbsp paste, or 2 to 3 ground. The everyday coffee replacement or morning ritual. Full effects, daily use.</p>"
+            "b_text": "<p>OR, 2 to 3 tbsp (20-30g) ground. The everyday coffee replacement or morning ritual. Full effects, daily use.</p>"
           }
         },
         "text_7q": {
           "type": "text",
           "settings": {
-            "text": "<p>A note on weighing versus measuring: paste and ground cacao have different densities, so tablespoon amounts are approximate. If you want precision, a small kitchen scale is the most reliable tool. Twenty grams is twenty grams regardless of form.</p>"
+            "text": "<p>A note on weighing versus measuring: paste and ground cacao have different densities, so tablespoon amounts are approximate. If you want precision, a small kitchen scale is the most reliable tool. Twenty grams is twenty grams regardless of form.</p>",
+            "variant": "body"
           }
         },
         "heading_7r": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "How To Make It: The Basic Method",
             "toc_label": "The basic method"
           }
@@ -128,12 +145,14 @@
         "text_7s": {
           "type": "text",
           "settings": {
-            "text": "<ol><li> 1 Heat Your Liquid<p>Warm 6 to 8 ounces of your chosen liquid to just below boiling. Water is most traditional and lets the flavor come through clearest; plant milks (oat, cashew, coconut, almond) create a richer, creamier drink. Dairy milk is not recommended, it can inhibit some of cacao's beneficial compounds. Oat and cashew give the smoothest texture.</p></li><li> 2 Make A Paste First<p>Add your cacao to the mug. Pour just two or three tablespoons of hot liquid over it and whisk or froth vigorously until fully dissolved into a smooth, glossy paste. This step is the key to a lump-free drink, adding all the liquid at once tends to leave unmixed chunks at the bottom.</p></li><li> 3 Add The Rest<p>Pour the remaining hot liquid in slowly while continuing to whisk. The cacao emulsifies into a rich, velvety drink. If you're using a frother, run it 20 to 30 seconds after adding all the liquid for the best texture.</p></li><li> 4 Season<p>Add a small pinch of sea salt and taste. If you want sweetener, add a little now, a teaspoon of maple syrup or honey is usually enough. Add any spices, taste again, and adjust.</p></li><li> 5 Pause Before The First Sip<p>Hold the mug in both hands. Feel the warmth. Take one slow breath. This is not mandatory and not spiritual performance, it is simply the act of arriving in the moment before you drink, which makes the experience noticeably better. Ask yourself, even briefly: what do I need today? Then drink slowly, and let it warm you.</p></li></ol>"
+            "text": "<ol><li> <strong>Heat Your Liquid </strong>Warm 6 to 8 ounces of your chosen liquid to just below boiling. Water is most traditional and lets the flavor come through clearest; plant milks (oat, cashew, coconut, almond) create a richer, creamier drink. Dairy milk is not recommended, it can inhibit some of cacao's beneficial compounds. Oat and cashew give the smoothest texture.</li><li> <strong>Make A Paste First </strong>Add your cacao to the mug. Pour just two or three tablespoons of hot liquid over it and whisk or froth vigorously until fully dissolved into a smooth, glossy paste. This step is the key to a lump-free drink, adding all the liquid at once tends to leave unmixed chunks at the bottom.</li><li> <strong>Add The Rest </strong>Pour the remaining hot liquid in slowly while continuing to whisk. The cacao emulsifies into a rich, velvety drink. If you're using a frother, run it 20 to 30 seconds after adding all the liquid for the best texture.</li><li> <strong>Season </strong>Add a small pinch of sea salt and taste. If you want sweetener, add a little now, a teaspoon of maple syrup or honey is usually enough. Add any spices, taste again, and adjust.</li><li> <strong>Pause Before The First Sip </strong>Hold the mug in both hands. Feel the warmth. Take one slow breath. This is not mandatory and not spiritual performance, it is simply the act of arriving in the moment before you drink, which makes the experience noticeably better. Ask yourself, even briefly: what do I need today? Then drink slowly, and let it warm you.</li></ol>",
+            "variant": "body"
           }
         },
         "heading_7t": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "What You Might Feel, And When",
             "toc_label": "What you might feel"
           }
@@ -149,12 +168,17 @@
             "label_3": "30 min to 3 hr",
             "text_3": "<p>The sustained phase. Theobromine has a half-life of 6 to 10 hours, so its effects extend well beyond what caffeine provides. Most people feel good, focused, and energized for several hours without a crash.</p>",
             "label_4": "First Cup",
-            "text_4": "<p>The full experience often deepens over the first week or two of regular drinking. Your first cup may feel subtle, pleasant, warm, gently energizing, but not dramatic. This is normal. Cacao rewards consistency; give it a week before deciding what it does.</p>"
+            "text_4": "<p>The full experience often deepens over the first week or two of regular drinking. Your first cup may feel subtle, pleasant, warm, gently energizing, but not dramatic. This is normal. Cacao rewards consistency; give it a week before deciding what it does.</p>",
+            "label_5": "",
+            "text_5": "",
+            "label_6": "",
+            "text_6": ""
           }
         },
         "heading_7v": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "Common First-Timer Questions",
             "toc_label": "Common questions"
           }
@@ -175,12 +199,15 @@
             "q_6": "What time of day should I drink it?",
             "a_6": "<p>Morning is most natural for most people, cacao makes an excellent coffee replacement or companion. The stimulant effects are mild but real, so drinking it before 2pm while you learn your response is a good starting rule. Evening cacao is fine for many people, especially at lower doses, because theobromine is gentler than caffeine and affects sleep less for most.</p>",
             "q_7": "Can I drink it cold?",
-            "a_7": "<p>Yes. Cacao prepared hot then chilled is delicious and develops a thicker, more chocolatey character. Pour it over ice, blend it into a smoothie, or make it the night before and refrigerate. If you made it with plant milk, shake or whisk it again before drinking as it will separate slightly.</p>"
+            "a_7": "<p>Yes. Cacao prepared hot then chilled is delicious and develops a thicker, more chocolatey character. Pour it over ice, blend it into a smoothie, or make it the night before and refrigerate. If you made it with plant milk, shake or whisk it again before drinking as it will separate slightly.</p>",
+            "q_8": "",
+            "a_8": ""
           }
         },
         "heading_7x": {
           "type": "heading",
           "settings": {
+            "kicker": "",
             "heading": "Your First Week: A Simple Approach",
             "toc_label": "Your first week"
           }
@@ -188,7 +215,8 @@
         "text_7y": {
           "type": "text",
           "settings": {
-            "text": "<p>The best way to start with ceremonial cacao is simply to show up for it daily and pay attention.</p>"
+            "text": "<p>The best way to start with ceremonial cacao is simply to show up for it daily and pay attention.</p>",
+            "variant": "body"
           }
         },
         "cards_7z": {
@@ -200,19 +228,28 @@
             "label_2": "Days 4 to 7",
             "text_2": "<p>Move to a daily dose of 20 to 25 grams if the smaller dose felt comfortable. Experiment with one addition at a time, sea salt one day, cinnamon the next, a different liquid base. Notice what you prefer.</p>",
             "label_3": "After Week One",
-            "text_3": "<p>You'll know your preferred dose, base liquid, additions, and roughly how cacao affects you. Everyone responds a little differently. From here the practice is yours to develop however feels right.</p>"
+            "text_3": "<p>You'll know your preferred dose, base liquid, additions, and roughly how cacao affects you. Everyone responds a little differently. From here the practice is yours to develop however feels right.</p>",
+            "label_4": "",
+            "text_4": "",
+            "label_5": "",
+            "text_5": "",
+            "label_6": "",
+            "text_6": ""
           }
         },
         "text_80": {
           "type": "text",
           "settings": {
-            "text": "<p>Some people build an elaborate morning ritual around cacao. Others make it in two minutes and drink it while getting ready. Both are valid. The cacao works either way.</p>"
+            "text": "<p>Some people build an elaborate morning ritual around cacao. Others make it in two minutes and drink it while getting ready. Both are valid. The cacao works either way.</p>",
+            "variant": "body"
           }
         },
         "heading_81": {
           "type": "heading",
           "settings": {
-            "heading": "A Few Things Worth Knowing"
+            "kicker": "",
+            "heading": "A Few Things Worth Knowing",
+            "toc_label": ""
           }
         },
         "cards_82": {
@@ -226,19 +263,26 @@
             "label_3": "Leftovers Aren't Wasted",
             "text_3": "<p>Pour extra into an ice cube tray and freeze, cacao cubes go straight into smoothies or remelt for the next day. Refrigerated, leftover cacao sets into a thick, mousse-like texture that is delicious with a spoon.</p>",
             "label_4": "Cacao And Coffee Coexist",
-            "text_4": "<p>Not ready to give up coffee? Add cacao to it for a rich, bulletproof-style mocha. The cacao butter naturally slows caffeine absorption, smoothing the energy curve. Many people start here and gradually want more cacao, less coffee.</p>"
+            "text_4": "<p>Not ready to give up coffee? Add cacao to it for a rich, bulletproof-style mocha. The cacao butter naturally slows caffeine absorption, smoothing the energy curve. Many people start here and gradually want more cacao, less coffee.</p>",
+            "label_5": "",
+            "text_5": "",
+            "label_6": "",
+            "text_6": ""
           }
         },
         "heading_83": {
           "type": "heading",
           "settings": {
-            "heading": "This Is Just The Beginning"
+            "kicker": "",
+            "heading": "This Is Just The Beginning",
+            "toc_label": ""
           }
         },
         "text_84": {
           "type": "text",
           "settings": {
-            "text": "<p>Cacao is a simple drink and also, over time, a profound one. The first cup is about getting comfortable with the taste and the preparation. The tenth cup is about starting to understand your personal relationship with it. The hundredth cup is about something harder to name, a consistency of practice, a reliable access to presence and clarity and warmth, that becomes part of the architecture of your days.</p><p>You don't need to think about any of that right now. You just need to make the first cup. Heat the water. Add the cacao. Whisk until smooth. Hold the mug in both hands and feel the warmth before you drink.</p>"
+            "text": "<p>Cacao is a simple drink and also, over time, a profound one. The first cup is about getting comfortable with the taste and the preparation. The tenth cup is about starting to understand your personal relationship with it. The hundredth cup is about something harder to name, a consistency of practice, a reliable access to presence and clarity and warmth, that becomes part of the architecture of your days.</p><p>You don't need to think about any of that right now. You just need to make the first cup. Heat the water. Add the cacao. Whisk until smooth. Hold the mug in both hands and feel the warmth before you drink.</p>",
+            "variant": "body"
           }
         },
         "pullquote_85": {
@@ -308,9 +352,9 @@
         "button_87"
       ],
       "settings": {
+        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
         "heading": "Make Your First Cup",
         "text": "<p>If you haven't yet found your cacao, explore Pacha Mana's Chuncho ceremonial cacao and start where it all begins: the bean.</p>",
-        "mark_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948",
         "leaf_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/learn-img-a044820100.png?v=1785782948"
       }
     },
