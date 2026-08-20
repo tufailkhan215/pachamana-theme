@@ -221,7 +221,7 @@
 		<div class="elementor-element elementor-element-3454e8e1 e-con-full e-flex e-con e-child" data-id="3454e8e1" data-element_type="container">
 				<div class="elementor-element elementor-element-e7c0e76 elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-woocommerce-product-title elementor-page-title elementor-widget-heading" data-id="e7c0e76" data-element_type="widget" data-widget_type="woocommerce-product-title.default">
 				<div class="elementor-widget-container">
-					<h1 class="product_title entry-title elementor-heading-title elementor-size-default">{{ product.title | escape }}</h1>				</div>
+					<div class="product_title entry-title elementor-heading-title elementor-size-default" role="heading" aria-level="1">{{ product.title | escape }}</div>				</div>
 				</div>
 				{% assign r = product.metafields['app--195190554625'].yuko_review_info.value %}
 				<span class="yuko-rating-widget"

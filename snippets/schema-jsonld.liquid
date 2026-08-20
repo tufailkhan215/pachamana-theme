@@ -26,6 +26,9 @@
 }
 </script>
 {%- if request.page_type == 'product' and product -%}
+{%- assign schema_reviews = product.metafields['app--195190554625'].yuko_review_info.value -%}
+{%- assign schema_review_count = schema_reviews.total_reviews | default: 0 | plus: 0 -%}
+{%- assign schema_rating_value = schema_reviews.average_rating | default: 0 | plus: 0 -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,6 +44,14 @@
   {%- endif %}
   "description": {{ product.description | strip_html | truncate: 500 | json }},
   "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
+  {%- if schema_review_count > 0 and schema_rating_value > 0 %}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ schema_rating_value | json }},
+    "reviewCount": {{ schema_review_count | json }},
+    "bestRating": 5
+  },
+  {%- endif %}
   "offers": [
     {%- for variant in product.variants -%}
     {

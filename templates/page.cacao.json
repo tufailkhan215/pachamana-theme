@@ -15,7 +15,7 @@
         "slide_6MwxNG": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-14-e1712435925220.webp"
           }
         }
       },
@@ -35,7 +35,7 @@
       "type": "section-full-width-banner",
       "name": "Full width banner",
       "settings": {
-        "image": "shopify://shop_images/Ora_Ceremonial_Cacao_Shop_66623c8d-6aaf-4b98-90d9-d262e52d9042.webp",
+        "image": "shopify:\/\/shop_images\/Ora_Ceremonial_Cacao_Shop_66623c8d-6aaf-4b98-90d9-d262e52d9042.webp",
         "image_alt": "",
         "hero_priority": true,
         "heading": "CEREMONIAL CACAO",
@@ -173,7 +173,7 @@
         "button_hover_bg": "#5c402f",
         "button_hover_text": "#ffffff",
         "background_color": "#f5f0eb",
-        "background_image": "shopify://shop_images/ora_ceremonial_cacao_bean_to_disc_2x_2048x_3d57b12c-a703-4da1-9923-ccdbe192b0f4.webp",
+        "background_image": "shopify:\/\/shop_images\/ora_ceremonial_cacao_bean_to_disc_2x_2048x_3d57b12c-a703-4da1-9923-ccdbe192b0f4.webp",
         "page_width": 900,
         "grid_gap": 1.5,
         "grid_gap_desktop": 2,
@@ -187,7 +187,7 @@
       "type": "section-full-width-banner",
       "name": "Full width banner v1",
       "settings": {
-        "image": "shopify://shop_images/Cacao_Ceremony_Bundle_8oz.webp",
+        "image": "shopify:\/\/shop_images\/Cacao_Ceremony_Bundle_8oz.webp",
         "image_alt": "",
         "hero_priority": false,
         "heading": "NEW TO CEREMONIAL CACAO?",
@@ -243,7 +243,7 @@
         "column_p9ywL7": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/Icon_PureCacao.svg",
+            "icon": "shopify:\/\/shop_images\/Icon_PureCacao.svg",
             "title": "Pure Organic Cacao",
             "text": "Made from minimally processed organic cacao beans and nothing else. Just combine our cacao discs with hot liquid for an easy-to-make, decadent cup of cacao.",
             "button_label": "Shop Now",
@@ -253,7 +253,7 @@
         "column_qfUzge": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/Icon_EnhancedCacao.svg",
+            "icon": "shopify:\/\/shop_images\/Icon_EnhancedCacao.svg",
             "title": "Botanical Organic Cacao",
             "text": "We grind the highest quality superfoods into our pure cacaos. Cacao is the optimal delivery mechanism for superfoods because it boosts circulation and is vasodilating.",
             "button_label": "Shop Now",
@@ -263,7 +263,7 @@
         "column_fpKVNG": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/Icon_MushroomPowder.svg",
+            "icon": "shopify:\/\/shop_images\/Icon_MushroomPowder.svg",
             "title": "Mystic Mushrooms",
             "text": "Discover the benefit of multiple mushrooms acting in synergy on unique biochemical pathways to effect positive health outcomes. Comes as 1:1 water extract powders.",
             "button_label": "SHOP NOW",
@@ -319,7 +319,7 @@
         "placeholder_email": "Email",
         "placeholder_phone": "Phone (optional)",
         "button_label": "Receive Updates",
-        "disclaimer": "By clicking \"Receive Updates\", you agree to receive marketing text messages from Ora Cacao at the number provided, including messages sent by autodialer. You may also receive marketing emails. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel.",
+        "disclaimer": "By clicking \"Receive Updates\", you agree to receive marketing text messages from Pacha Mana at the number provided, including messages sent by autodialer. You may also receive marketing emails. Consent is not a condition of any purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel.",
         "background_color": "#f0ece3",
         "input_border": "#949596",
         "input_bg": "#ffffff",
@@ -336,7 +336,7 @@
       "type": "section-full-width-banner",
       "name": "Full width banner v2",
       "settings": {
-        "image": "shopify://shop_images/Jonas_Ketterle_Founder_Ora_Cacao.webp",
+        "image": "shopify:\/\/shop_images\/Jonas_Ketterle_Founder_Ora_Cacao.webp",
         "image_alt": "",
         "hero_priority": false,
         "heading": "ENERGY MATTERS",
@@ -390,15 +390,15 @@
       "type": "section-image-carousel-reviews",
       "name": "Image carousel reviews",
       "settings": {
-        "sliding_strip_image": "shopify://shop_images/ora-cacao-customer-slider-image-2_1600x_abe177df-b124-47b2-8154-fa215e234425.jpg",
+        "sliding_strip_image": "shopify:\/\/shop_images\/ora-cacao-customer-slider-image-2_1600x_abe177df-b124-47b2-8154-fa215e234425.jpg",
         "sliding_strip_height": 200,
         "slide_duration": 120,
-        "heading": "1 million cups of Ora Cacao are sipped each year...",
+        "heading": "Make space for a cacao ritual you'll return to...",
         "heading_size": 34,
         "heading_size_mobile": 26,
         "heading_color": "#000000",
         "rating_number": "4.9",
-        "star_rating_image": "shopify://shop_images/Stars_Reviews_Section_256x256_crop_center_437ff2b9-f9fc-4025-b272-161ac67144c3.png",
+        "star_rating_image": "shopify:\/\/shop_images\/Stars_Reviews_Section_256x256_crop_center_437ff2b9-f9fc-4025-b272-161ac67144c3.png",
         "rating_label": "Average based on over 5000 reviews",
         "rating_size": 50,
         "rating_size_mobile": 42,
