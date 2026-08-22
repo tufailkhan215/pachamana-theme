@@ -13,7 +13,7 @@
       "type": "section-background-motion",
       "name": "Background Motion",
       "settings": {
-        "image": "shopify://shop_images/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png",
+        "image": "shopify:\/\/shop_images\/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png",
         "heading": "Pure Peruvian Ceremonial Cacao",
         "heading1": "Heirloom Chuncho for Daily Ritual & Heart-Opening Ceremony"
       }
@@ -108,19 +108,19 @@
       "type": "section-image-with-text-button",
       "name": "Image With Text Button",
       "settings": {
-        "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-76.jpg",
+        "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-76.jpg",
         "heading": "Ceremonial Cacao",
         "subheading": "A Healing Superfood",
         "text": "Rich, creamy, and deeply nourishing. Our ceremonial cacao is 100% pure, minimally processed, and packed with mood-boosting compounds to energize your body, open your heart, and elevate your life. Crafted with care by small-scale farmers in Peru who honor the land and the spirit of cacao.",
         "button_text": "SHOP cacao",
-        "button_url": "shopify://collections/all"
+        "button_url": "shopify:\/\/collections\/all"
       }
     },
     "section_ceremonial_grade": {
       "type": "section-image-text-banner",
       "name": "Ceremonial grade means",
       "settings": {
-        "background_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-24_a0ee49d4-0778-43c9-a0d0-eeb38abccad3.jpg",
+        "background_image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-24_a0ee49d4-0778-43c9-a0d0-eeb38abccad3.jpg",
         "enable_parallax": false,
         "parallax_speed": 0.2,
         "overlay_color": "#333132",
@@ -134,7 +134,7 @@
         "feature_3": "Cacao processed at the origin",
         "variants_text": "",
         "button_text": "Shop Ceremonial Cacao",
-        "button_link": "https://pachamanacacao.com/collections/shop-page",
+        "button_link": "https:\/\/pachamana.com\/collections\/shop-page",
         "button_text_size": 16,
         "button_padding_vertical": 14,
         "button_padding_horizontal": 44,
@@ -168,7 +168,7 @@
           "settings": {
             "group": "postpartum",
             "text": "Energy Boost",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_a8QFa3": {
@@ -176,7 +176,7 @@
           "settings": {
             "group": "postpartum",
             "text": "Mood Support",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_q9crca": {
@@ -184,7 +184,7 @@
           "settings": {
             "group": "postpartum",
             "text": "Rich in Antioxidants",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_CAJt4m": {
@@ -192,7 +192,7 @@
           "settings": {
             "group": "postpartum",
             "text": "Enhanced Nutrient Intake",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_VmRexU": {
@@ -200,7 +200,7 @@
           "settings": {
             "group": "pregnant",
             "text": "Rich in Essential Minerals",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_kr4GzU": {
@@ -208,7 +208,7 @@
           "settings": {
             "group": "pregnant",
             "text": "Mood Enhancement",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_hEiryr": {
@@ -216,7 +216,7 @@
           "settings": {
             "group": "pregnant",
             "text": "Blood Pressure Management",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_AaBTjz": {
@@ -224,7 +224,7 @@
           "settings": {
             "group": "general",
             "text": "Rich in Antioxidants",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_VkK6Db": {
@@ -232,15 +232,7 @@
           "settings": {
             "group": "general",
             "text": "Rich in Essential Minerals",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
-          }
-        },
-        "benefit_item_gxQb33": {
-          "type": "benefit_item",
-          "settings": {
-            "group": "general",
-            "text": "Rich in Antioxidants",
-            "link": ""
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_FBhFGH": {
@@ -248,7 +240,7 @@
           "settings": {
             "group": "general",
             "text": "Mood Enhancement",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_kqmzzw": {
@@ -256,7 +248,7 @@
           "settings": {
             "group": "general",
             "text": "Heart Health",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_4xXMac": {
@@ -264,7 +256,7 @@
           "settings": {
             "group": "general",
             "text": "Brain Health",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_LBrBhQ": {
@@ -272,7 +264,7 @@
           "settings": {
             "group": "general",
             "text": "Anti-Inflammatory",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_HX9mXg": {
@@ -280,7 +272,7 @@
           "settings": {
             "group": "general",
             "text": "Improved Insulin Sensitivity",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         },
         "benefit_item_hyjMM4": {
@@ -288,7 +280,7 @@
           "settings": {
             "group": "general",
             "text": "Lower LDL Cholesterol",
-            "link": "shopify://blogs/news/health-wonders-of-ceremonial-cacao"
+            "link": "shopify:\/\/blogs\/news\/health-wonders-of-ceremonial-cacao"
           }
         }
       },
@@ -302,7 +294,6 @@
         "benefit_item_hEiryr",
         "benefit_item_AaBTjz",
         "benefit_item_VkK6Db",
-        "benefit_item_gxQb33",
         "benefit_item_FBhFGH",
         "benefit_item_kqmzzw",
         "benefit_item_4xXMac",
@@ -325,10 +316,10 @@
         "grid_item_tWWKaT": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/chuncho.png",
+            "image": "shopify:\/\/shop_images\/chuncho.png",
             "title": "CHUNCHO",
-            "link": "shopify://blogs/news/farming-heirloom-cacao-chuncho",
-            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"</p>",
+            "link": "shopify:\/\/blogs\/news\/farming-heirloom-cacao-chuncho",
+            "description": "<p>Chuncho cacao is a uniquely sought-after variety, offering a rare blend of exquisite flavors like floral, fruit, and nuts. Its heirloom genetic diversity, and sustainable cultivation practices are what gives its status among other varieties. Some call chuncho \"the best criollo\"<\/p>",
             "image_width": 46,
             "mobile_width": 29
           }
@@ -336,10 +327,10 @@
         "grid_item_PJTtjd": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/nacional.png",
+            "image": "shopify:\/\/shop_images\/nacional.png",
             "title": "FORASTERO",
             "link": "",
-            "description": "<p>Forastero cacao, prevalent in Africa and essential for mass-produced chocolate, faces challenges related to labor and sustainablity practices, and provides a more uniform and less complex flavor than the rich and varied profiles of premium varieties like Chuncho</p>",
+            "description": "<p>Forastero cacao, prevalent in Africa and essential for mass-produced chocolate, faces challenges related to labor and sustainability practices, and provides a more uniform and less complex flavor than the rich and varied profiles of premium varieties like Chuncho<\/p>",
             "image_width": 52,
             "mobile_width": 29
           }
@@ -347,10 +338,10 @@
         "grid_item_h6FtQV": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/criollo.png",
+            "image": "shopify:\/\/shop_images\/criollo.png",
             "title": "CRIOLLO",
             "link": "",
-            "description": "<p>Criollo cacao, celebrated for its complex flavors and one of the worlds best cacao varieties, faces sustainability challenges due to its limited genetic diversity from cloning. Generally it is thought to be prestigious of all the varieties of cacao for its rich flavors and high health benefits </p>",
+            "description": "<p>Criollo cacao, celebrated for its complex flavors and one of the world's best cacao varieties, faces sustainability challenges due to its limited genetic diversity from cloning. Generally it is thought to be prestigious of all the varieties of cacao for its rich flavors and high health benefits <\/p>",
             "image_width": 45,
             "mobile_width": 29
           }
@@ -358,10 +349,10 @@
         "grid_item_97BDfA": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/trinitario.png",
+            "image": "shopify:\/\/shop_images\/trinitario.png",
             "title": "TRINITARIO",
             "link": "",
-            "description": "<p>Trinitario cacao, a non-heirloom hybrid developed from Criollo and Forastero varieties, combines the robustness of Forastero with the refined flavors of Criollo, offering a balanced and complex flavor profile that is highly valued in chocolate production.</p>",
+            "description": "<p>Trinitario cacao, a non-heirloom hybrid developed from Criollo and Forastero varieties, combines the robustness of Forastero with the refined flavors of Criollo, offering a balanced and complex flavor profile that is highly valued in chocolate production.<\/p>",
             "image_width": 40,
             "mobile_width": 29
           }
@@ -376,26 +367,26 @@
       "settings": {
         "heading": "TYPES OF CACAO",
         "bottom_heading": "WHY CHUNCHO?",
-        "bottom_description": "<h6>Chuncho Cacao is among the most expensive and elite cacao beans on the planet! You can taste and feel the difference </h6><p>• Grown by indigenous farmers in the High Amazon basin<br/><br/>• Often wild harvested from biodiverse forests, and intermixed with other fruits and native species</p><p><br/>• Chuncho genetics are preserving a long heritage that live in the seeds<br/><br/>• Naturally rich in cocoa butter from high-elevation growing conditions<br/><br/>• Subtle notes of Andean fruit and global prize winning, complex flavors</p><p>Its origins trace back to the Machiguenga peoples long before the Inca civilization, where cacao was cultivated in harmony with the surrounding forest.</p>"
+        "bottom_description": "<h6>Chuncho Cacao is among the most expensive and elite cacao beans on the planet! You can taste and feel the difference <\/h6><p>• Grown by indigenous farmers in the High Amazon basin<br\/><br\/>• Often wild harvested from biodiverse forests, and intermixed with other fruits and native species<\/p><p><br\/>• Chuncho genetics are preserving a long heritage that live in the seeds<br\/><br\/>• Naturally rich in cocoa butter from high-elevation growing conditions<br\/><br\/>• Subtle notes of Andean fruit and global prize winning, complex flavors<\/p><p>Its origins trace back to the Machiguenga peoples long before the Inca civilization, where cacao was cultivated in harmony with the surrounding forest.<\/p>"
       }
     },
     "section_perfect_gifting": {
       "type": "section-image-text-banner",
       "name": "Perfect for Gifting",
       "settings": {
-        "background_image": "shopify://shop_images/Pattern_Website.png",
+        "background_image": "shopify:\/\/shop_images\/Pattern_Website.png",
         "enable_parallax": false,
         "parallax_speed": 0.2,
         "overlay_color": "#5c402f",
         "overlay_opacity": 0.7,
         "heading": "Perfect for Gifting",
         "subheading": "1oz Single-Serve Packets",
-        "description": "<p><strong>Pre-measured. Portable. Perfect for stockings, travel, and sharing cacao with friends.</strong></p>",
+        "description": "<p><strong>Pre-measured. Portable. Perfect for stockings, travel, and sharing cacao with friends.<\/strong><\/p>",
         "show_features": true,
-        "feature_1": "<strong>Available in 5, 10, 15 & 20 packs</strong>",
-        "feature_2": "<strong>Pre-measured and portable</strong>",
-        "feature_3": "<strong>Perfect for sharing</strong>",
-        "variants_text": "<strong>Choose from Pure, Maple Sweetened, Mushroom Vitality, Rose Vanilla, or Golden Milk</strong>",
+        "feature_1": "<strong>Available in 5, 10, 15 & 20 packs<\/strong>",
+        "feature_2": "<strong>Pre-measured and portable<\/strong>",
+        "feature_3": "<strong>Perfect for sharing<\/strong>",
+        "variants_text": "<strong>Choose from Pure, Maple Sweetened, Mushroom Vitality, Rose Vanilla, or Golden Milk<\/strong>",
         "button_text": "Shop Single-Serve Packets",
         "button_link": "",
         "button_text_size": 16,
@@ -426,10 +417,10 @@
     "section-image-text-dynamicbg": {
       "type": "section-image-text-dynamicbg",
       "settings": {
-        "image": "shopify://shop_images/IMG_0666.jpg",
+        "image": "shopify:\/\/shop_images\/IMG_0666.jpg",
         "heading": "Ceremony starts at the farm",
-        "text": "<p>At Pacha Mana, cacao is not a commodity  it's a sacred relationship. We work directly with a multi-generational, family-run collective in the highlands of Peru who cultivate heirloom Chuncho cacao with devotion and care. Grown in harmony with native species, this cacao preserves both culture and ecosystem.</p><p>We believe true ceremonial cacao begins with integrity  from seed to ceremony.</p>",
-        "background_image": "shopify://shop_images/sacred_valley_peru.png"
+        "text": "<p>At Pacha Mana, cacao is not a commodity  it's a sacred relationship. We work directly with a multi-generational, family-run collective in the highlands of Peru who cultivate heirloom Chuncho cacao with devotion and care. Grown in harmony with native species, this cacao preserves both culture and ecosystem.<\/p><p>We believe true ceremonial cacao begins with integrity  from seed to ceremony.<\/p>",
+        "background_image": "shopify:\/\/shop_images\/sacred_valley_peru.png"
       }
     },
     "section_rescent_articles_LArLB4": {
@@ -448,289 +439,289 @@
         "gallery_image_qhxUMf": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0664.jpg"
+            "image": "shopify:\/\/shop_images\/IMG_0664.jpg"
           }
         },
         "gallery_image_N9ih7A": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-75.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-75.jpg"
           }
         },
         "gallery_image_LDw8hF": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/767072ec-9882-46ae-b0fd-7476d959988d.jpg"
+            "image": "shopify:\/\/shop_images\/767072ec-9882-46ae-b0fd-7476d959988d.jpg"
           }
         },
         "gallery_image_njpXme": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0666_30f0cb0c-703c-43c3-b7cc-7010d7e68b4c.jpg"
+            "image": "shopify:\/\/shop_images\/IMG_0666_30f0cb0c-703c-43c3-b7cc-7010d7e68b4c.jpg"
           }
         },
         "gallery_image_athVCK": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_5331.jpg"
+            "image": "shopify:\/\/shop_images\/IMG_5331.jpg"
           }
         },
         "gallery_image_rnbYnF": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/336328779_1402675783869629_1061681589902579924_n.jpg"
+            "image": "shopify:\/\/shop_images\/336328779_1402675783869629_1061681589902579924_n.jpg"
           }
         },
         "gallery_image_UmUewb": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-25_8f677828-e7bc-4f5c-98dd-85e354841f0f.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-25_8f677828-e7bc-4f5c-98dd-85e354841f0f.jpg"
           }
         },
         "gallery_image_96FMy4": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0669.jpg"
+            "image": "shopify:\/\/shop_images\/IMG_0669.jpg"
           }
         },
         "gallery_image_twcykF": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/8d4dba40-3d54-4248-8c94-61be1ee8a8df.jpg"
+            "image": "shopify:\/\/shop_images\/8d4dba40-3d54-4248-8c94-61be1ee8a8df.jpg"
           }
         },
         "gallery_image_a4EfcA": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/28702a16-1077-41d0-ac55-ce59fceeae3c.jpg"
+            "image": "shopify:\/\/shop_images\/28702a16-1077-41d0-ac55-ce59fceeae3c.jpg"
           }
         },
         "gallery_image_wmqEEi": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/b6938d2a-a239-419c-a51c-1d895ad1a796.jpg"
+            "image": "shopify:\/\/shop_images\/b6938d2a-a239-419c-a51c-1d895ad1a796.jpg"
           }
         },
         "gallery_image_rYNPjQ": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-9993-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-9993-scaled.jpg"
           }
         },
         "gallery_image_QRwnYt": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0661.jpg"
+            "image": "shopify:\/\/shop_images\/IMG_0661.jpg"
           }
         },
         "gallery_image_ETtCTT": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/fa364e32-f4fa-403d-b62c-e783ddc48268-1.jpg"
+            "image": "shopify:\/\/shop_images\/fa364e32-f4fa-403d-b62c-e783ddc48268-1.jpg"
           }
         },
         "gallery_image_EHBmXe": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-0061-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-0061-scaled.jpg"
           }
         },
         "gallery_image_bqTqkt": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_5519.jpg"
+            "image": "shopify:\/\/shop_images\/IMG_5519.jpg"
           }
         },
         "gallery_image_Jx69ii": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-9995-2-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-9995-2-scaled.jpg"
           }
         },
         "gallery_image_jdCB6P": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0662.jpg"
+            "image": "shopify:\/\/shop_images\/IMG_0662.jpg"
           }
         },
         "gallery_image_imkCxw": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-80.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-80.jpg"
           }
         },
         "gallery_image_aiVMKf": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-0632-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-0632-scaled.jpg"
           }
         },
         "gallery_image_ttddeV": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-76.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-76.jpg"
           }
         },
         "gallery_image_rxDUyz": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-37.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-37.jpg"
           }
         },
         "gallery_image_db9EYy": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-27_8af2445d-3fdc-4e2e-a35b-2d6fba804b4e.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-27_8af2445d-3fdc-4e2e-a35b-2d6fba804b4e.jpg"
           }
         },
         "gallery_image_fn6ad4": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-57.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-57.jpg"
           }
         },
         "gallery_image_LWtmwk": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-26.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-26.jpg"
           }
         },
         "gallery_image_V9yzjf": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/Mark-photo.jpg"
+            "image": "shopify:\/\/shop_images\/Mark-photo.jpg"
           }
         },
         "gallery_image_63EHBz": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-78.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-78.jpg"
           }
         },
         "gallery_image_aVPRwV": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-0088-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-0088-scaled.jpg"
           }
         },
         "gallery_image_8dKXTJ": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-10_f7e2f195-a53e-4cc7-8f07-a6e7977855b9.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-10_f7e2f195-a53e-4cc7-8f07-a6e7977855b9.jpg"
           }
         },
         "gallery_image_wMzPBX": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-56.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-56.jpg"
           }
         },
         "gallery_image_hwVQMe": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-84.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-84.jpg"
           }
         },
         "gallery_image_ACWHX7": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-29-1.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-29-1.jpg"
           }
         },
         "gallery_image_K8zRfJ": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/IMG_0667.jpg"
+            "image": "shopify:\/\/shop_images\/IMG_0667.jpg"
           }
         },
         "gallery_image_ffDHt7": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-93-1.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-93-1.jpg"
           }
         },
         "gallery_image_R4GPP9": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-64.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-64.jpg"
           }
         },
         "gallery_image_GGDXft": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-50.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-50.jpg"
           }
         },
         "gallery_image_kPkyck": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-61.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-61.jpg"
           }
         },
         "gallery_image_dgzx9d": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-9951-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-9951-scaled.jpg"
           }
         },
         "gallery_image_ixMHmE": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-24_f8b44a64-6bfa-4af7-851f-34b462065653.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-24_f8b44a64-6bfa-4af7-851f-34b462065653.jpg"
           }
         },
         "gallery_image_arrzkU": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/4699805a-8079-478a-a772-49c547ecef60.jpg"
+            "image": "shopify:\/\/shop_images\/4699805a-8079-478a-a772-49c547ecef60.jpg"
           }
         },
         "gallery_image_3tbday": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-12.jpg"
+            "image": "shopify:\/\/shop_images\/cacao-sheny-leon-photography-maui-12.jpg"
           }
         },
         "gallery_image_J4KnMD": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-174-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-174-scaled.jpg"
           }
         },
         "gallery_image_AzfQNp": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-108-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-108-scaled.jpg"
           }
         },
         "gallery_image_nJTCam": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-56-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-56-scaled.jpg"
           }
         },
         "gallery_image_KAmxMi": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-133-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-133-scaled.jpg"
           }
         },
         "gallery_image_6DFCnx": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-161-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-161-scaled.jpg"
           }
         },
         "gallery_image_FgyDi4": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/Joel-Farm-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/Joel-Farm-scaled.jpg"
           }
         },
         "gallery_image_8jMcF9": {
           "type": "gallery_image",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA-62-scaled.jpg"
+            "image": "shopify:\/\/shop_images\/PACHAMANA-62-scaled.jpg"
           }
         }
       },
@@ -795,98 +786,98 @@
           "type": "faq_item",
           "settings": {
             "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here’s a guide to finding what’s right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this “Shamanic”  Only for the serious cacao journeyers. Anymore will cause headaches</p>"
+            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here’s a guide to finding what’s right for you<\/p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.<\/p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong <\/p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!<\/p><p>~ 44g We call this “Shamanic”  Only for the serious cacao journeyers. Anymore will cause headaches<\/p>"
           }
         },
         "faq_item_E7imnL": {
           "type": "faq_item",
           "settings": {
             "question": "Is your Cacao Organic?",
-            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides. The beauty of working with native genetics.</p>"
+            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides. The beauty of working with native genetics.<\/p>"
           }
         },
         "faq_item_TDFFJk": {
           "type": "faq_item",
           "settings": {
             "question": "Is your cacao tested for heavy metals?",
-            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with an absence of all of them according to EU standards and compliant with FDA laws. We are happy to say we have incredible results and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing.</p>"
+            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with an absence of all of them according to EU standards and compliant with FDA laws. We are happy to say we have incredible results and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing.<\/p>"
           }
         },
         "faq_item_Hm73Y3": {
           "type": "faq_item",
           "settings": {
             "question": "What’s the difference between cacao Powder and cacao paste?",
-            "answer": "<p>Cacao Paste is a whole food, 1 ingredient product that keeps the full fat integrity of cacao that is essential for carrying all the vital health  and medicinal benefits associated with cacao. Our chuncho cacao is very high in fat (58%), and minimally processed from bean to bar keeping all the essentials intact making it “the food of the Gods” as it is revered to be.</p><p>Cacao powder on the other hand is defatted (10-20%), which removes the essential carrier of health and medicinal properties of cacao. It is more convenient for adding to recipes, but lacks the nutrition associated with cacao. We carry ground cacao with full fat for this reason. We grind up fatted cacao to maintain all the health benefits you love. Check out our shop to find out more!</p>"
+            "answer": "<p>Cacao Paste is a whole food, 1 ingredient product that keeps the full fat integrity of cacao that is essential for carrying all the vital health  and medicinal benefits associated with cacao. Our chuncho cacao is very high in fat (58%), and minimally processed from bean to bar keeping all the essentials intact making it “the food of the Gods” as it is revered to be.<\/p><p>Cacao powder on the other hand is defatted (10-20%), which removes the essential carrier of health and medicinal properties of cacao. It is more convenient for adding to recipes, but lacks the nutrition associated with cacao. We carry ground cacao with full fat for this reason. We grind up fatted cacao to maintain all the health benefits you love. Check out our shop to find out more!<\/p>"
           }
         },
         "faq_item_rHcCRp": {
           "type": "faq_item",
           "settings": {
             "question": "What is chuncho cacao?",
-            "answer": "<p>Ceremonial Chuncho cacao from Peru embodies the essence of ancient traditions, cultivated by indigenous farmers with reverence for their land.  Mainly wild harvested, this exquisite cacao variety boasts a rich cocoa butter content from being grown at higher elevation. It gives subtle notes of Andean fruit, offering a sensory journey steeped with history and authenticity. </p><p>Its origins date back centuries, when it was grown by the Machiguenga indigenous communities in the Amazon basin since pre Inca civilization periods. Wild harvested Chuncho cacao ensures the preservation of the biodiverse species of plants in the forests and jungles of Peru.</p>"
+            "answer": "<p>Ceremonial Chuncho cacao from Peru embodies the essence of ancient traditions, cultivated by indigenous farmers with reverence for their land.  Mainly wild harvested, this exquisite cacao variety boasts a rich cocoa butter content from being grown at higher elevation. It gives subtle notes of Andean fruit, offering a sensory journey steeped with history and authenticity. <\/p><p>Its origins date back centuries, when it was grown by the Machiguenga indigenous communities in the Amazon basin since pre Inca civilization periods. Wild harvested Chuncho cacao ensures the preservation of the biodiverse species of plants in the forests and jungles of Peru.<\/p>"
           }
         },
         "faq_item_MH7nPb": {
           "type": "faq_item",
           "settings": {
             "question": "Does it have caffeine?",
-            "answer": "<p>In short yes, but not what you are used to with coffee or tea. It is about half the amount of mg per serving than that of coffee and tea. It has around 40mg of caffeine per serving and 250 mg of theobromine.The active component called Theobromine, adds a stimulating and heart opening effect to the cacao as it is a vasodilator and a heart stimulant vs. caffeine being a nervous system stimulant . In combination these two molecules work together to make a unique experience which is ceremonial cacao.</p>"
+            "answer": "<p>In short yes, but not what you are used to with coffee or tea. It is about half the amount of mg per serving than that of coffee and tea. It has around 40mg of caffeine per serving and 250 mg of theobromine.The active component called Theobromine, adds a stimulating and heart opening effect to the cacao as it is a vasodilator and a heart stimulant vs. caffeine being a nervous system stimulant . In combination these two molecules work together to make a unique experience which is ceremonial cacao.<\/p>"
           }
         },
         "faq_item_pzzV9e": {
           "type": "faq_item",
           "settings": {
             "question": "Is your cacao fair trade?",
-            "answer": "<p>Yes our cacao is fair trade, and we actually believe it’s better than fair trade models to this day. Our direct trade model ensures economic opportunity for the farmers and those processing the cacao at origin, and keeps most of the money in their hands in Peru!</p>"
+            "answer": "<p>Yes our cacao is fair trade, and we actually believe it’s better than fair trade models to this day. Our direct trade model ensures economic opportunity for the farmers and those processing the cacao at origin, and keeps most of the money in their hands in Peru!<\/p>"
           }
         },
         "faq_item_Nqmqyy": {
           "type": "faq_item",
           "settings": {
             "question": "Is it safe for pregnant and breastfeeding women?",
-            "answer": "<p>Yes in small amounts. We argue that it is actually incredibly beneficial for prenatal and postpartum mothers. We honor the feminine force and are grateful to give discounts to people working with mothers as we feel cacao is such an essential source of vitamins, minerals, and mood enhancement which mothers so desperately need and crave! Reach out to learn more</p>"
+            "answer": "<p>Yes in small amounts. We argue that it is actually incredibly beneficial for prenatal and postpartum mothers. We honor the feminine force and are grateful to give discounts to people working with mothers as we feel cacao is such an essential source of vitamins, minerals, and mood enhancement which mothers so desperately need and crave! Reach out to learn more<\/p>"
           }
         },
         "faq_item_X7L7Nk": {
           "type": "faq_item",
           "settings": {
             "question": "What makes cacao “ceremonial” ?",
-            "answer": "<p>Ceremonial cacao is a large discussion on what it means, but for us we have one value.<strong>Ceremony Starts at the farm …</strong>The seed is planted by Indigenous farmers with the intention to help people connect with the lineage of chuncho cacao and is tended in a way that is in harmony with the Earth. This is the most crucial first step and skipping this is a huge mistake in the ceremonial cacao industry. After the cacao is grown and collected our origin makes sure to pick the finest beans for cacao processing, making sure that it’s not processed to heavily remove the nutritional and medicinal benefits that cacao has. After receiving it in the US, we make sure to spread awareness of cacao’s medicinal benefits so the lineage is never broken. Together we are creating ceremonial cacao.</p>"
+            "answer": "<p>Ceremonial cacao is a large discussion on what it means, but for us we have one value.<strong>Ceremony Starts at the farm …<\/strong>The seed is planted by Indigenous farmers with the intention to help people connect with the lineage of chuncho cacao and is tended in a way that is in harmony with the Earth. This is the most crucial first step and skipping this is a huge mistake in the ceremonial cacao industry. After the cacao is grown and collected our origin makes sure to pick the finest beans for cacao processing, making sure that it’s not processed to heavily remove the nutritional and medicinal benefits that cacao has. After receiving it in the US, we make sure to spread awareness of cacao’s medicinal benefits so the lineage is never broken. Together we are creating ceremonial cacao.<\/p>"
           }
         },
         "faq_item_UtXAU7": {
           "type": "faq_item",
           "settings": {
             "question": "How do I properly store my cacao?",
-            "answer": "<p>Cacao is incredibly shelf stable in its pure form so it doesn’t really “go bad” for at least 2 years. We recommend keeping it in a dark and cool place, at room temperature in your cupboard or pantry to ensure the taste stays wonderful. We also recommend if you purchase our block of cacao to store it in a sealed container of some sort to ensure its freshness.</p>"
+            "answer": "<p>Cacao is incredibly shelf stable in its pure form so it doesn’t really “go bad” for at least 2 years. We recommend keeping it in a dark and cool place, at room temperature in your cupboard or pantry to ensure the taste stays wonderful. We also recommend if you purchase our block of cacao to store it in a sealed container of some sort to ensure its freshness.<\/p>"
           }
         },
         "faq_item_NRJBEg": {
           "type": "faq_item",
           "settings": {
             "question": "My cacao arrived melted, what’s the protocol here?",
-            "answer": "<p>If your cacao is melted, please contact us atpachamanacacao@gmail.comto receive a new shipment of fresh cacao, and we will add an ice pack to make sure it arrives safely! We appreciate your support.</p>"
+            "answer": "<p>If your cacao is melted, please contact us at support@pachamana.com to receive a new shipment of fresh cacao, and we will add an ice pack to make sure it arrives safely! We appreciate your support.<\/p>"
           }
         },
         "faq_item_VVMBdf": {
           "type": "faq_item",
           "settings": {
             "question": "Is your cacao “raw”?",
-            "answer": "<p>In our opinions raw cacao is a myth, as it involves toasting before it’s processed, and also the fermentation process of the beans at the farm needs to get above raw temperatures of 110 degrees. Although cacao is marketed as raw, we believe that using fire in the responsible way as the indigenous communities who use cacao do, is part of its tradition and should not be taken away from the process because it also takes away from the flavor we enjoy in ceremonial cacao. We do however, roast our cacao at lower temperatures to not over roast the flavors away like traditional chocolate manufacturing does to cacao. We like to ensure all the vitalizing principles and medicinal properties ceremonial grade cacao has within by not roasting them away.<br/><br/></p>"
+            "answer": "<p>In our opinion, raw cacao is a myth, as it involves toasting before it’s processed, and also the fermentation process of the beans at the farm needs to get above raw temperatures of 110 degrees. Although cacao is marketed as raw, we believe that using fire in the responsible way as the indigenous communities who use cacao do, is part of its tradition and should not be taken away from the process because it also takes away from the flavor we enjoy in ceremonial cacao. We do however, roast our cacao at lower temperatures to not over roast the flavors away like traditional chocolate manufacturing does to cacao. We like to ensure all the vitalizing principles and medicinal properties ceremonial grade cacao has within by not roasting them away.<br\/><br\/><\/p>"
           }
         },
         "faq_item_HL7TzH": {
           "type": "faq_item",
           "settings": {
             "question": "Can cacao be used while on SSRI medications?",
-            "answer": "<p>Ceremonial cacao, celebrated for its antidepressant qualities, interacts intricately with our brain’s serotonin pathways. When combined with SSRI-based antidepressants, which enhance serotonin levels by impeding its reabsorption, ceremonial cacao can potentially overwhelm serotonin receptors. This delicate balance within our neural circuitry can lead to adverse effects, such as headaches, signaling an excess of serotonin stimulation. It’s essential to recognize that not all antidepressants operate via SSRIs; various medications, including certain anti-psychotics, also impact serotonin and dopamine pathways, posing similar contraindications with ceremonial cacao.</p><p>In group settings where ceremonial cacao is shared, it’s crucial to educate participants about potential interactions, particularly with antidepressant medications. Each individual’s medication regimen and physiological responses vary, necessitating informed decision-making. </p><p>The importance of mindfulness and responsible facilitation when incorporating ceremonial cacao into wellness practices, especially alongside antidepressant treatments. By fostering an environment of informed consent and cautious consumption, individuals can harness the therapeutic potential of cacao while mitigating potential risks.</p><p>If you feel you’ve taken too much, you may result in a headache. We recommend drinking water and resting.</p>"
+            "answer": "<p>Ceremonial cacao, celebrated for its antidepressant qualities, interacts intricately with our brain’s serotonin pathways. When combined with SSRI-based antidepressants, which enhance serotonin levels by impeding its reabsorption, ceremonial cacao can potentially overwhelm serotonin receptors. This delicate balance within our neural circuitry can lead to adverse effects, such as headaches, signaling an excess of serotonin stimulation. It’s essential to recognize that not all antidepressants operate via SSRIs; various medications, including certain anti-psychotics, also impact serotonin and dopamine pathways, posing similar contraindications with ceremonial cacao.<\/p><p>In group settings where ceremonial cacao is shared, it’s crucial to educate participants about potential interactions, particularly with antidepressant medications. Each individual’s medication regimen and physiological responses vary, necessitating informed decision-making. <\/p><p>The importance of mindfulness and responsible facilitation when incorporating ceremonial cacao into wellness practices, especially alongside antidepressant treatments. By fostering an environment of informed consent and cautious consumption, individuals can harness the therapeutic potential of cacao while mitigating potential risks.<\/p><p>If you feel you’ve taken too much, you may result in a headache. We recommend drinking water and resting.<\/p>"
           }
         },
         "faq_item_AbFw7P": {
           "type": "faq_item",
           "settings": {
             "question": "Is cacao a drug?",
-            "answer": "<p>Not at all. At Pacha Mana we see cacao as a medicine, as something that allows for healing and connecting with ourselves if used in the right context and the right dose. It is no different than chocolate, just increased in dosage. </p>"
+            "answer": "<p>Not at all. At Pacha Mana we see cacao as a medicine, as something that allows for healing and connecting with ourselves if used in the right context and the right dose. It is no different than chocolate, just increased in dosage. <\/p>"
           }
         }
       },
@@ -933,9 +924,9 @@
         "guide_label_3": "Love wellness blends?",
         "guide_item_3": "Explore Mushroom Vitality or Rose Vanilla",
         "primary_btn_text": "Shop All",
-        "primary_btn_link": "https://pachamanacacao.com/collections/shop-page",
+        "primary_btn_link": "https:\/\/pachamana.com\/collections\/shop-page",
         "secondary_btn_text": "Contact Us",
-        "secondary_btn_link": "shopify://pages/contact",
+        "secondary_btn_link": "shopify:\/\/pages\/contact",
         "title_size": 32,
         "title_color": "#e2ab43",
         "card_title_size": 20,
@@ -966,21 +957,21 @@
           "type": "faq_item",
           "settings": {
             "question": "What is a serving size?",
-            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you</p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.</p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong </p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!</p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches </p>"
+            "answer": "<p>For our cacao we have found 20 g as a base dosage is great start, however here's a guide to finding what's right for you<\/p><p>~ 11g A micro-chocolatey dose with mild flavor and not too much strength.<\/p><p>~ 22g A great dose for daily ritual, rich in flavor, not overwhelmingly strong <\/p><p>~ 33g A strong dose, packed with all of the benefits of cacao, you will definitely be feeling A LOT!<\/p><p>~ 44g We call this \"Shamanic\" Only for the serious cacao journeyers. Anymore will cause headaches <\/p>"
           }
         },
         "faq_item_qhJiAg": {
           "type": "faq_item",
           "settings": {
             "question": "Is your Cacao Organic?",
-            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides. The beauty of working with native genetics.</p>"
+            "answer": "<p>Our cacao is not certified USDA organic now, however we have done 3rd party testing according to EU standards. We have spent a lot of time with the farmers and understand the integrity levels are some of the highest in Peru that we have found. All our tests came back with 0 signs of pesticides and herbicides. The beauty of working with native genetics.<\/p>"
           }
         },
         "faq_item_3AVQUa": {
           "type": "faq_item",
           "settings": {
             "question": "Is your cacao tested for heavy metals?",
-            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with an absence of all of them according to EU standards and compliant with FDA laws. We are happy to say we have incredible results and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing.</p>"
+            "answer": "<p>Yes, our cacao has been tested for heavy metals and toxins and comes back with an absence of all of them according to EU standards and compliant with FDA laws. We are happy to say we have incredible results and we are happy to stand behind our cacao after these results. Every batch we order from Peru is tested. Find more info in our blog about this subject and our rigors of testing.<\/p>"
           }
         }
       },
@@ -998,7 +989,7 @@
       "type": "_blocks",
       "blocks": {
         "yuko_loyalty_reviews_all_reviews_product_widget_XACXyt": {
-          "type": "shopify://apps/yuko-loyalty-referral/blocks/all-reviews-product-widget/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+          "type": "shopify:\/\/apps\/yuko-loyalty-referral\/blocks\/all-reviews-product-widget\/5cda428c-b39d-45e5-80d9-bad790f2bb50",
           "settings": {}
         }
       },
