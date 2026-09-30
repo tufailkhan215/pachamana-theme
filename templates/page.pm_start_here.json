@@ -17,19 +17,6 @@
     },
     "hero": {
       "type": "pm_sh_hero",
-      "settings": {
-        "eyebrow": "Pure Peruvian ceremonial cacao",
-        "heading": "Energy that stays with you",
-        "text": "A warm, grounded lift that lasts for hours, without the jitters or the afternoon crash. Heirloom Chuncho cacao from one multigenerational family farm in Peru's Sacred Valley, made into paste at origin with all of its cacao butter left in.",
-        "button_link": "/pages/build-your-bundle?plan=subscribe",
-        "button_label": "Build Your Bundle",
-        "button_link_2": "shopify://products/ceremonial-cacao-blend-bundle",
-        "button_label_2": "Try all six blends",
-        "text_2": "Subscribe & Save 15% · Free US shipping over $100 · Every batch tested for heavy metals, pesticides and herbicides",
-        "image_url": "/cdn/shop/files/cacao-sheny-leon-photography-maui-24_a0ee49d4-0778-43c9-a0d0-eeb38abccad3.jpg?v=1766194436&width=2000",
-        "image_alt_text": "A cup of ceremonial cacao",
-        "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-three.png?v=1790710030"
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -57,14 +44,24 @@
         "item_1",
         "item_2",
         "item_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Pure Peruvian ceremonial cacao",
+        "heading": "Energy that stays with you",
+        "text": "A warm, grounded lift that lasts for hours, without the jitters or the afternoon crash. Heirloom Chuncho cacao from one multigenerational family farm in Peru's Sacred Valley, made into paste at origin with all of its cacao butter left in.",
+        "button_link": "/pages/build-your-bundle?plan=subscribe",
+        "button_label": "Build Your Bundle",
+        "button_link_2": "shopify://products/ceremonial-cacao-blend-bundle",
+        "button_label_2": "Try all six blends",
+        "text_2": "Subscribe & Save 15% · Free US shipping over $100 · Every batch tested for heavy metals, pesticides and herbicides",
+        "image_url": "/cdn/shop/files/cacao-sheny-leon-photography-maui-24_a0ee49d4-0778-43c9-a0d0-eeb38abccad3.jpg?v=1766194436&width=2000",
+        "image_alt_text": "A cup of ceremonial cacao",
+        "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-three.png?v=1790710030",
+        "image_alt_text_2": ""
+      }
     },
     "strip": {
       "type": "pm_sh_strip",
-      "settings": {
-        "separator": "✦",
-        "speed": 70
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -159,22 +156,14 @@
         "item_11",
         "item_12",
         "item_13"
-      ]
+      ],
+      "settings": {
+        "separator": "✦",
+        "speed": 70
+      }
     },
     "the_shift": {
       "type": "pm_sh_the_shift",
-      "settings": {
-        "eyebrow": "The shift",
-        "heading": "Coffee borrows tomorrow's energy. Cacao gives you today's.",
-        "text": "Caffeine hits the nervous system fast, and it leaves fast. Cacao's main stimulant is theobromine, which works more on circulation, and the bean's natural fat slows how quickly it all arrives. You feel it in the body as much as the mind.",
-        "chart_description": "Felt energy over eight hours. Coffee spikes near one hour and crashes below baseline by three hours. Cacao rises gently, holds from two to five hours, and tapers by eight.",
-        "chart_label": "Spike",
-        "chart_label_2": "Crash",
-        "chart_label_3": "Hold",
-        "chart_label_4": "Rest",
-        "chart_label_5": "felt energy",
-        "caption": "Illustrative, not a measurement."
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -219,15 +208,22 @@
         "card_3",
         "card_4",
         "card_5"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "The shift",
+        "heading": "Coffee borrows tomorrow's energy. Cacao gives you today's.",
+        "text": "Caffeine hits the nervous system fast, and it leaves fast. Cacao's main stimulant is theobromine, which works more on circulation, and the bean's natural fat slows how quickly it all arrives. You feel it in the body as much as the mind.",
+        "chart_description": "Felt energy over eight hours. Coffee spikes near one hour and crashes below baseline by three hours. Cacao rises gently, holds from two to five hours, and tapers by eight.",
+        "chart_label": "Spike",
+        "chart_label_2": "Crash",
+        "chart_label_3": "Hold",
+        "chart_label_4": "Rest",
+        "chart_label_5": "felt energy",
+        "caption": "Illustrative, not a measurement."
+      }
     },
     "when_you_begin": {
       "type": "pm_sh_when_you_begin",
-      "settings": {
-        "eyebrow": "What to expect",
-        "heading": "When you begin",
-        "text": "Cacao is a habit more than a supplement, and it builds."
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -258,15 +254,15 @@
         "card_1",
         "card_2",
         "card_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "What to expect",
+        "heading": "When you begin",
+        "text": "Cacao is a habit more than a supplement, and it builds."
+      }
     },
     "paste_or_ground": {
       "type": "pm_sh_paste_or_ground",
-      "settings": {
-        "eyebrow": "Two ways to make it",
-        "heading": "Paste or ground",
-        "text": "Both are the whole bean, full-fat, 54% cacao butter. The only real difference is how you like to make your cup."
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -294,24 +290,25 @@
       "block_order": [
         "card_1",
         "card_2"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Two ways to make it",
+        "heading": "Paste or ground",
+        "text": "Both are the whole bean, full-fat, 54% cacao butter. The only real difference is how you like to make your cup."
+      }
     },
     "the_blends": {
       "type": "pm_sh_the_blends",
-      "settings": {
-        "eyebrow": "Seven ways in",
-        "heading": "One bean, seven cups",
-        "text": "Every blend starts with the same heirloom Chuncho. The botanicals shape the mood.",
-        "button_link": "/pages/build-your-bundle?plan=subscribe",
-        "button_label": "Build Your Bundle"
-      },
       "blocks": {
         "card_1": {
           "type": "card",
           "settings": {
             "image_url": "/cdn/shop/files/1-2.png?v=1773121973&width=800",
             "image_alt_text": "Pure",
-            "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-open.png?v=1790710030",
+            "image_url_2": "",
+            "image_alt_text_2": "",
+            "image_url_3": "",
+            "image_alt_text_3": "",
             "title": "Pure",
             "label": "8 oz $27",
             "text": "100% ground Chuncho, the traditional cup.",
@@ -328,7 +325,10 @@
           "settings": {
             "image_url": "/cdn/shop/files/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=800",
             "image_alt_text": "Ceremonial Paste",
-            "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-three.png?v=1790710030",
+            "image_url_2": "",
+            "image_alt_text_2": "",
+            "image_url_3": "",
+            "image_alt_text_3": "",
             "title": "Ceremonial Paste",
             "label": "8 oz $27",
             "text": "The whole bean in a block, for slow ceremony.",
@@ -346,6 +346,9 @@
             "image_url": "/cdn/shop/files/5.png?v=1773122027&width=800",
             "image_alt_text": "Maple",
             "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/maple.png?v=1790710030",
+            "image_alt_text_2": "",
+            "image_url_3": "",
+            "image_alt_text_3": "",
             "title": "Maple",
             "label": "8 oz $27",
             "text": "Lightly sweetened with organic maple sugar.",
@@ -363,6 +366,9 @@
             "image_url": "/cdn/shop/files/3.png?v=1773176289&width=800",
             "image_alt_text": "Mushroom Vitality",
             "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/mushrooms_4fe5cdfb-df79-4f10-beea-809585cc026f.png?v=1790710030",
+            "image_alt_text_2": "",
+            "image_url_3": "",
+            "image_alt_text_3": "",
             "title": "Mushroom Vitality",
             "label": "8 oz $30",
             "text": "With adaptogenic mushrooms.",
@@ -380,7 +386,9 @@
             "image_url": "/cdn/shop/files/4.png?v=1773176302&width=800",
             "image_alt_text": "Rose Vanilla",
             "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/rose_3250211b-37ab-44de-aaff-7b8e53fdf06b.png?v=1790710030",
+            "image_alt_text_2": "",
             "image_url_3": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/vanilla_c454c02c-32b0-46e5-a73e-2c8697e06d11.png?v=1790710030",
+            "image_alt_text_3": "",
             "title": "Rose Vanilla",
             "label": "8 oz $30",
             "text": "Rose and vanilla folded into pure cacao.",
@@ -398,6 +406,9 @@
             "image_url": "/cdn/shop/files/6-1.webp?v=1773176314&width=800",
             "image_alt_text": "Golden Milk",
             "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/golden-milk.png?v=1790710030",
+            "image_alt_text_2": "",
+            "image_url_3": "",
+            "image_alt_text_3": "",
             "title": "Golden Milk",
             "label": "8 oz $30",
             "text": "Turmeric and warming spice.",
@@ -412,8 +423,13 @@
         "card_7": {
           "type": "card",
           "settings": {
-            "image_url": "/cdn/shop/files/DSCF8392-1-scaled.jpg?v=1773176376&width=800",
+            "image": "shopify://shop_images/mayan_spice_product_sjhot_final.png",
+            "image_url": "",
             "image_alt_text": "Mayan Spice",
+            "image_url_2": "",
+            "image_alt_text_2": "",
+            "image_url_3": "",
+            "image_alt_text_3": "",
             "title": "Mayan Spice",
             "label": "8 oz $30",
             "text": "Cinnamon, sea salt and cayenne.",
@@ -434,21 +450,17 @@
         "card_5",
         "card_6",
         "card_7"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Seven ways in",
+        "heading": "One bean, seven cups",
+        "text": "Every blend starts with the same heirloom Chuncho. The botanicals shape the mood.",
+        "button_link": "/pages/build-your-bundle?plan=subscribe",
+        "button_label": "Build Your Bundle"
+      }
     },
     "the_offer": {
       "type": "pm_sh_the_offer",
-      "settings": {
-        "eyebrow": "Start here",
-        "heading": "Build your ritual",
-        "text": "Choose 2, 3 or 4 bags in any blends, paste included. Subscribe & Save and every bag is 15% off, delivered before you run out.",
-        "text_2": "About $2.09 a cup for Pure on Subscribe & Save.",
-        "image_url": "/cdn/shop/t/14/assets/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
-        "label": "Included: the Pacha Mana Ritual Guide & Recipe E-book, free with your first order.",
-        "button_link": "/pages/build-your-bundle?plan=subscribe",
-        "button_label": "Build Your Bundle",
-        "text_3": "Want to try everything? <a href=\"/products/ceremonial-cacao-blend-bundle\" style=\"color:var(--pm-gold-300);\">The Ultimate Bundle has all six blends for $150 (save $24).</a>"
-      },
       "blocks": {
         "link_1": {
           "type": "link",
@@ -482,15 +494,22 @@
         "link_1",
         "link_2",
         "link_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Start here",
+        "heading": "Build your ritual",
+        "text": "Choose 2, 3 or 4 bags in any blends, paste included. Subscribe & Save and every bag is 15% off, delivered before you run out.",
+        "text_2": "About $2.09 a cup for Pure on Subscribe & Save.",
+        "image_url": "/cdn/shop/t/14/assets/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
+        "image_alt_text": "",
+        "label": "Included: the Pacha Mana Ritual Guide & Recipe E-book, free with your first order.",
+        "button_link": "/pages/build-your-bundle?plan=subscribe",
+        "button_label": "Build Your Bundle",
+        "text_3": "Want to try everything? <a href=\"/products/ceremonial-cacao-blend-bundle\" style=\"color:var(--pm-gold-300);\">The Ultimate Bundle has all six blends for $150 (save $24).</a>"
+      }
     },
     "why_it_works": {
       "type": "pm_sh_why_it_works",
-      "settings": {
-        "eyebrow": "Why it works",
-        "heading": "What the cup is doing",
-        "text": "Ceremonial cacao is the whole bean, ground, with its fat left in. That's why it works the way it does."
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -526,14 +545,15 @@
         "card_2",
         "card_3",
         "card_4"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Why it works",
+        "heading": "What the cup is doing",
+        "text": "Ceremonial cacao is the whole bean, ground, with its fat left in. That's why it works the way it does."
+      }
     },
     "reviews": {
       "type": "pm_sh_reviews",
-      "settings": {
-        "eyebrow": "From the community",
-        "heading": "Loved across 100+ five-star reviews"
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -564,15 +584,14 @@
         "item_1",
         "item_2",
         "item_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "From the community",
+        "heading": "Loved across 100+ five-star reviews"
+      }
     },
     "compared": {
       "type": "pm_sh_compared",
-      "settings": {
-        "eyebrow": "Side by side",
-        "heading": "Ceremonial cacao, compared",
-        "text": "Depends on the brand. We publish our test results so you don't have to take our word for it."
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -657,15 +676,15 @@
         "row_7",
         "row_8",
         "row_9"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Side by side",
+        "heading": "Ceremonial cacao, compared",
+        "text": "Depends on the brand. We publish our test results so you don't have to take our word for it."
+      }
     },
     "how_to_make_it": {
       "type": "pm_sh_how_to_make_it",
-      "settings": {
-        "eyebrow": "Two minutes",
-        "heading": "A simple ritual",
-        "text": "Paste or ground, the method is the same. Make it with attention, and that's the ceremony."
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -699,14 +718,15 @@
         "card_1",
         "card_2",
         "card_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Two minutes",
+        "heading": "A simple ritual",
+        "text": "Paste or ground, the method is the same. Make it with attention, and that's the ceremony."
+      }
     },
     "faq": {
       "type": "pm_sh_faq",
-      "settings": {
-        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/llama.png?v=1790710030",
-        "heading": "FAQ"
-      },
       "blocks": {
         "question_1": {
           "type": "question",
@@ -774,19 +794,15 @@
         "question_6",
         "question_7",
         "question_8"
-      ]
+      ],
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/llama.png?v=1790710030",
+        "image_alt_text": "",
+        "heading": "FAQ"
+      }
     },
     "origin": {
       "type": "pm_sh_origin",
-      "settings": {
-        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/cacao-tree.png?v=1790710030",
-        "image_url_2": "/cdn/shop/files/IMG_0666.jpg?v=1766411732&width=1400",
-        "image_alt_text_2": "The family farm in the Sacred Valley",
-        "eyebrow": "Origin",
-        "heading": "Ceremony starts at the farm",
-        "button_link": "shopify://pages/safe-cacao",
-        "button_label": "See our test results →"
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -846,12 +862,23 @@
         "item_2_6",
         "item_2_7",
         "item_2_8"
-      ]
+      ],
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/cacao-tree.png?v=1790710030",
+        "image_alt_text": "",
+        "image_url_2": "/cdn/shop/files/IMG_0666.jpg?v=1766411732&width=1400",
+        "image_alt_text_2": "The family farm in the Sacred Valley",
+        "eyebrow": "Origin",
+        "heading": "Ceremony starts at the farm",
+        "button_link": "shopify://pages/safe-cacao",
+        "button_label": "See our test results →"
+      }
     },
     "final_call": {
       "type": "pm_sh_final_call",
       "settings": {
         "image_url": "/cdn/shop/t/14/assets/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
+        "image_alt_text": "",
         "eyebrow": "Begin",
         "heading": "Trade the spike for the arc",
         "text": "Build a bundle, subscribe and save 15%, and let a week of slow mornings decide.",

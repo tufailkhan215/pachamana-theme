@@ -17,17 +17,6 @@
     },
     "hero": {
       "type": "pm_bb_hero",
-      "settings": {
-        "eyebrow": "Heirloom Chuncho · Peru",
-        "heading": "Build your cacao ritual",
-        "text": "Pick the blends that call to you, paste included. Every bag is heirloom Chuncho from one multigenerational family farm in Peru's Sacred Valley, made into paste at origin and ground in small batches in California.",
-        "button_link": "#builder",
-        "button_label": "Build my bundle",
-        "label": "<span style=\"color:var(--pm-gold-500);letter-spacing:2px;\">★★★★★</span>100+ five-star reviews",
-        "image_url": "/cdn/shop/files/Untitled-design-7.png?v=1773176331&width=1400",
-        "image_alt_text": "All seven Pacha Mana blends",
-        "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-open.png?v=1790710030"
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -55,14 +44,22 @@
         "item_1",
         "item_2",
         "item_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Heirloom Chuncho · Peru",
+        "heading": "First time? Build your bundle",
+        "text": "Pick the blends that call to you, paste included. Every bag is heirloom Chuncho from one multigenerational family farm in Peru's Sacred Valley, made into paste at origin and ground in small batches in California.",
+        "button_link": "#builder",
+        "button_label": "Build my bundle",
+        "label": "<span style=\"color:var(--pm-gold-500);letter-spacing:2px;\">★★★★★</span>100+ five-star reviews",
+        "image_url": "/cdn/shop/files/Untitled-design-7.png?v=1773176331&width=1400",
+        "image_alt_text": "All seven Pacha Mana blends",
+        "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-open.png?v=1790710030",
+        "image_alt_text_2": ""
+      }
     },
     "what_ceremonial_cacao_is": {
       "type": "pm_bb_what_ceremonial_cacao_is",
-      "settings": {
-        "eyebrow": "Start here",
-        "heading": "What ceremonial cacao is"
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -80,62 +77,14 @@
       "block_order": [
         "item_1",
         "item_2"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Start here",
+        "heading": "What ceremonial cacao is"
+      }
     },
     "builder": {
       "type": "pm_bb_builder",
-      "settings": {
-        "eyebrow": "Build your bundle",
-        "step1_label": "Step 1",
-        "step1_title": "How many 8 oz bags?",
-        "bags_word": "bags",
-        "cups_template": "about [n] cups",
-        "cups_per_bag": 11,
-        "default_tier": "3",
-        "save_template": "Save [pct]%",
-        "full_price_label": "Full price",
-        "step2_label": "Step 2",
-        "step2_title": "Choose your blends. Doubles welcome.",
-        "variant_match": "1/2 lb",
-        "add_label": "Add one",
-        "remove_label": "Remove one",
-        "sold_out_label": "Sold out",
-        "step3_label": "Step 3",
-        "step3_title": "How would you like it?",
-        "default_plan": "subscribe",
-        "sub_title": "Subscribe & Save 15%",
-        "sub_badge": "Best value",
-        "sub_text": "15% off every bag, delivered every 4, 6 or 8 weeks. 3-month minimum, then skip, push or change anytime.",
-        "frequencies": "4,6,8",
-        "freq_template": "Every [n] weeks",
-        "freq_aria": "Delivery schedule",
-        "once_title": "One-time purchase",
-        "once_text": "5% off 3 bags, 10% off 4 bags.",
-        "once_discount_3": 5,
-        "once_discount_4": 10,
-        "summary_title": "Your bundle",
-        "count_template": "[picked] of [tier] chosen",
-        "empty_text": "Nothing chosen yet. Pick the ones you're curious about.",
-        "subtotal_label": "Subtotal",
-        "sub_discount_label": "Subscribe & Save ([pct]%)",
-        "once_discount_label": "Bundle discount ([pct]%)",
-        "free_ship_threshold": 100,
-        "ship_free_text": "Your US shipping is free.",
-        "ship_more_text": "Add [amount] more for free US shipping.",
-        "total_label": "Total",
-        "per_cup_template": "[amount] per cup",
-        "need_more_template": "Choose [n] more to complete your bundle.",
-        "no_plan_text": "[names] isn't available on this delivery schedule.",
-        "cta_sub": "Start my subscription",
-        "cta_once": "Add bundle to cart",
-        "adding_label": "Adding…",
-        "error_text": "Something went wrong adding your bundle. Please try again.",
-        "sub_note": "3-month minimum, then skip, push or change anytime.",
-        "gift_text": "<strong>Included free:</strong> Pacha Mana Ritual Guide &amp; Recipe E-book, with your first order.",
-        "trust_line": "Lab-tested · Direct trade · 30-day love-it-or-your-money-back",
-        "footnote": "Want to try everything? <a href=\"/products/ceremonial-cacao-blend-bundle\">The Ultimate Bundle has all six blends for $150 (save $24).</a>",
-        "sticky_mode": "mobile"
-      },
       "blocks": {
         "blend_1": {
           "type": "blend",
@@ -209,15 +158,65 @@
         "blend_5",
         "blend_6",
         "blend_7"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Build your bundle",
+        "step1_label": "Step 1",
+        "step1_title": "How many 8 oz bags?",
+        "bags_word": "bags",
+        "cups_template": "about [n] cups",
+        "cups_per_bag": 11,
+        "default_tier": "3",
+        "save_template": "Save [pct]%",
+        "full_price_label": "Full price",
+        "step2_label": "Step 2",
+        "step2_title": "Choose your blends. Doubles welcome.",
+        "variant_match": "1/2 lb",
+        "add_label": "Add one",
+        "remove_label": "Remove one",
+        "sold_out_label": "Sold out",
+        "step3_label": "Step 3",
+        "step3_title": "How would you like it?",
+        "default_plan": "subscribe",
+        "sub_title": "Subscribe & Save 15%",
+        "sub_badge": "Best value",
+        "sub_text": "15% off every bag, delivered every 4, 6 or 8 weeks. 3-month minimum, then skip, push or change anytime.",
+        "frequencies": "4,6,8",
+        "freq_template": "Every [n] weeks",
+        "freq_aria": "Delivery schedule",
+        "once_title": "One-time purchase",
+        "once_text": "5% off 3 bags, 10% off 4 bags.",
+        "once_discount_3": 5,
+        "once_code_3": "",
+        "once_discount_4": 10,
+        "once_code_4": "",
+        "summary_title": "Your bundle",
+        "count_template": "[picked] of [tier] chosen",
+        "empty_text": "Nothing chosen yet. Pick the ones you're curious about.",
+        "subtotal_label": "Subtotal",
+        "sub_discount_label": "Subscribe & Save ([pct]%)",
+        "once_discount_label": "Bundle discount ([pct]%)",
+        "free_ship_threshold": 100,
+        "ship_free_text": "Your US shipping is free.",
+        "ship_more_text": "Add [amount] more for free US shipping.",
+        "total_label": "Total",
+        "per_cup_template": "[amount] per cup",
+        "need_more_template": "Choose [n] more to complete your bundle.",
+        "no_plan_text": "[names] isn't available on this delivery schedule.",
+        "cta_sub": "Start my subscription",
+        "cta_once": "Add bundle to cart",
+        "adding_label": "Adding…",
+        "error_text": "Something went wrong adding your bundle. Please try again.",
+        "sub_note": "3-month minimum, then skip, push or change anytime.",
+        "gift_icon_url": "",
+        "gift_text": "<strong>Included free:</strong> Pacha Mana Ritual Guide &amp; Recipe E-book, with your first order.",
+        "trust_line": "Lab-tested · Direct trade · 30-day love-it-or-your-money-back",
+        "footnote": "Want to try everything? <a href=\"/products/ceremonial-cacao-blend-bundle\">The Ultimate Bundle has all six blends for $150 (save $24).</a>",
+        "sticky_mode": "mobile"
+      }
     },
     "what_a_cup_gives_you": {
       "type": "pm_bb_what_a_cup_gives_you",
-      "settings": {
-        "eyebrow": "Why cacao",
-        "heading": "What a cup gives you",
-        "text": "Note: Cacao is contraindicated with SSRIs, SNRIs and NDRIs. If you take one of these, please talk with your doctor before drinking ceremonial doses."
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -253,15 +252,15 @@
         "card_2",
         "card_3",
         "card_4"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Why cacao",
+        "heading": "What a cup gives you",
+        "text": "Note: Cacao is contraindicated with SSRIs, SNRIs and NDRIs. If you take one of these, please talk with your doctor before drinking ceremonial doses."
+      }
     },
     "paste_or_ground": {
       "type": "pm_bb_paste_or_ground",
-      "settings": {
-        "eyebrow": "Choose your format",
-        "heading": "Paste or ground",
-        "text": "Both are full-fat, 54% cacao butter, with nothing removed. The only real difference is how you like to make it."
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -269,6 +268,7 @@
             "image_url": "/cdn/shop/files/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=800",
             "image_alt_text": "Ceremonial Cacao Paste",
             "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-three.png?v=1790710030",
+            "image_alt_text_2": "",
             "title": "Ceremonial Paste.",
             "text": "A solid block. Chop what you need and melt it slowly with a little hot water, or use a blender. This is the traditional ceremony format and the richest cup you'll make.",
             "text_2": "Best for ceremony, slow mornings and purists."
@@ -280,6 +280,7 @@
             "image_url": "/cdn/shop/files/1-2.png?v=1773121973&width=800",
             "image_alt_text": "Pure Ground cacao",
             "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-open.png?v=1790710030",
+            "image_alt_text_2": "",
             "title": "Ground Cacao.",
             "text": "The same whole bean, ground fine. Spoon it into hot water and froth. Same fat and same benefits, ready in about two minutes.",
             "text_2": "Best for daily ritual, smoothies and weekday mornings."
@@ -289,14 +290,15 @@
       "block_order": [
         "card_1",
         "card_2"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Choose your format",
+        "heading": "Paste or ground",
+        "text": "Both are full-fat, 54% cacao butter, with nothing removed. The only real difference is how you like to make it."
+      }
     },
     "how_to_prepare": {
       "type": "pm_bb_how_to_prepare",
-      "settings": {
-        "eyebrow": "Your first cup",
-        "heading": "How to prepare"
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -327,14 +329,14 @@
         "card_1",
         "card_2",
         "card_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Your first cup",
+        "heading": "How to prepare"
+      }
     },
     "reviews": {
       "type": "pm_bb_reviews",
-      "settings": {
-        "eyebrow": "From the family",
-        "heading": "What people tell us"
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -365,16 +367,14 @@
         "item_1",
         "item_2",
         "item_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "From the family",
+        "heading": "What people tell us"
+      }
     },
     "our_promise": {
       "type": "pm_bb_our_promise",
-      "settings": {
-        "eyebrow": "Our promise",
-        "heading": "Tested, traceable, whole",
-        "link": "shopify://pages/safe-cacao",
-        "link_label": "See our test results →"
-      },
       "blocks": {
         "card_1": {
           "type": "card",
@@ -418,12 +418,19 @@
         "card_3",
         "card_4",
         "card_5"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Our promise",
+        "heading": "Tested, traceable, whole",
+        "link": "shopify://pages/safe-cacao",
+        "link_label": "See our test results →"
+      }
     },
     "ayni": {
       "type": "pm_bb_ayni",
       "settings": {
         "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/cacao-tree.png?v=1790710030",
+        "image_alt_text": "",
         "image_url_2": "/cdn/shop/files/IMG_0666.jpg?v=1766411732&width=1400",
         "image_alt_text_2": "The family farm in the Sacred Valley",
         "eyebrow": "Ayni",
@@ -434,10 +441,6 @@
     },
     "faq": {
       "type": "pm_bb_faq",
-      "settings": {
-        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/llama.png?v=1790710030",
-        "heading": "FAQ"
-      },
       "blocks": {
         "question_1": {
           "type": "question",
@@ -505,16 +508,15 @@
         "question_6",
         "question_7",
         "question_8"
-      ]
+      ],
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/llama.png?v=1790710030",
+        "image_alt_text": "",
+        "heading": "FAQ"
+      }
     },
     "note_from_justin": {
       "type": "pm_bb_note_from_justin",
-      "settings": {
-        "image_url": "/cdn/shop/t/14/assets/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
-        "eyebrow": "A note before you go",
-        "button_link": "#builder",
-        "button_label": "Build my bundle"
-      },
       "blocks": {
         "item_1": {
           "type": "item",
@@ -546,7 +548,14 @@
         "item_2",
         "item_3",
         "item_4"
-      ]
+      ],
+      "settings": {
+        "image_url": "/cdn/shop/t/14/assets/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
+        "image_alt_text": "",
+        "eyebrow": "A note before you go",
+        "button_link": "#builder",
+        "button_label": "Build my bundle"
+      }
     },
     "footer": {
       "type": "pm_bb_footer",
