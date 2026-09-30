@@ -1,0 +1,147 @@
+{%- comment -%} Pacha Mana - Start page: The Shift. Converted from start-here.html; every visible string, image and link is a setting. {%- endcomment -%}
+{{ 'pm_landing.css' | asset_url | stylesheet_tag }}
+<section class="pm-landing" style="padding:clamp(64px,8vw,112px) 20px;">
+<div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
+<div style="display:flex;flex-direction:column;gap:16px;max-width:760px;">
+<span class="pm-eyebrow pm-eyebrow--gold"><span class="pm-eyebrow-rule"></span>{{ section.settings.eyebrow | escape }}</span>
+<h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(28px,3.8vw,44px);line-height:1.1;color:var(--text-strong);margin:0;text-wrap:balance;">{{ section.settings.heading | escape }}</h2>
+<p style="margin:0;font-size:18px;line-height:1.7;text-wrap:pretty;">{{ section.settings.text | escape }}</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:center;">
+<figure style="flex:1 1 460px;min-width:0;margin:0;background:#fff;border:1px solid var(--border-soft);border-radius:28px;box-shadow:var(--shadow-md);padding:clamp(16px,3vw,28px);display:flex;flex-direction:column;gap:12px;">
+<div style="display:flex;gap:20px;flex-wrap:wrap;font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:12px;color:var(--text-strong);">
+{%- for block in section.blocks -%}{%- if block.type == 'item' -%}<span {{ block.shopify_attributes }} style="display:flex;align-items:center;gap:8px;"><span style="{% cycle "item_1_style": "width:26px;border-top:3px solid var(--pm-gold-400);", "width:26px;border-top:2px dashed var(--pm-cacao-700);" %}"></span>{{ block.settings.label | escape }}</span>{%- endif -%}{%- endfor -%}
+
+</div>
+<svg aria-label="{{ section.settings.chart_description | escape }}" role="img" style="width:100%;height:auto;display:block;font-family:Lora, Georgia, serif;" viewbox="0 0 600 320">
+<line stroke="#ddc9b4" stroke-width="1" x1="50" x2="580" y1="270" y2="270"></line>
+<line stroke="#ddc9b4" stroke-width="1" x1="50" x2="50" y1="20" y2="270"></line>
+<line stroke="#ece0d3" stroke-dasharray="2 4" stroke-width="1" x1="50" x2="580" y1="200" y2="200"></line>
+<path d="M50,200 C110,200 130,112 182,110 L380,108 C460,106 520,190 580,198 L580,270 L50,270 Z" fill="rgba(226,171,67,0.18)"></path>
+<path d="M50,200 C110,200 130,112 182,110 L380,108 C460,106 520,190 580,198" fill="none" stroke="#e2ab43" stroke-linecap="round" stroke-width="4"></path>
+<path d="M50,200 C80,200 92,52 116,46 C142,40 170,228 249,236 C330,244 450,222 580,214" fill="none" stroke="#38271d" stroke-dasharray="7 6" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="#38271d" font-size="14" font-style="italic" x="124" y="38">{{ section.settings.chart_label | escape }}</text>
+<text fill="#38271d" font-size="14" font-style="italic" x="236" y="258">{{ section.settings.chart_label_2 | escape }}</text>
+<text fill="#835a18" font-size="14" font-style="italic" x="268" y="96">{{ section.settings.chart_label_3 | escape }}</text>
+<text fill="#835a18" font-size="14" font-style="italic" x="520" y="160">{{ section.settings.chart_label_4 | escape }}</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="50" y="292">0h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="116" y="292">1h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="182" y="292">2h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="249" y="292">3h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="315" y="292">4h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="381" y="292">5h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="447" y="292">6h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="514" y="292">7h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" x="580" y="292">8h</text>
+<text fill="#9c7758" font-size="12" text-anchor="middle" transform="rotate(-90)" x="-145" y="30">{{ section.settings.chart_label_5 | escape }}</text>
+</svg>
+<figcaption style="font-size:12px;font-style:italic;color:var(--text-muted);">{{ section.settings.caption | escape }}</figcaption>
+</figure>
+<div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:24px;">
+{%- for block in section.blocks -%}{%- if block.type == 'card' -%}<div {{ block.shopify_attributes }} style="{% cycle "card_0_style": "display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--pm-gold-300);padding-left:18px;", "display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--pm-gold-400);padding-left:18px;", "display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--pm-gold-500);padding-left:18px;" %}"><span style="font-family:var(--font-display);letter-spacing:0.16em;font-size:13px;color:var(--pm-gold-600);">{{ block.settings.label | escape }}</span><h3 style="font-family:var(--font-body);font-weight:600;font-size:18px;color:var(--text-strong);margin:0;">{{ block.settings.title | escape }}</h3><p style="margin:0;font-size:15px;line-height:1.7;">{{ block.settings.text | escape }}</p></div>{%- endif -%}{%- endfor -%}
+
+
+</div>
+</div>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "Start: The Shift",
+  "tag": "div",
+  "class": "pm-landing-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "textarea",
+      "id": "chart_description",
+      "label": "Chart description"
+    },
+    {
+      "type": "text",
+      "id": "chart_label",
+      "label": "Chart label"
+    },
+    {
+      "type": "text",
+      "id": "chart_label_2",
+      "label": "Chart label 2"
+    },
+    {
+      "type": "text",
+      "id": "chart_label_3",
+      "label": "Chart label 3"
+    },
+    {
+      "type": "text",
+      "id": "chart_label_4",
+      "label": "Chart label 4"
+    },
+    {
+      "type": "text",
+      "id": "chart_label_5",
+      "label": "Chart label 5"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Legend item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Phase",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Start: The Shift"
+    }
+  ]
+}
+{% endschema %}

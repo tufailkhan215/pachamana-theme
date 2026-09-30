@@ -1,0 +1,23 @@
+{%- comment -%} Pacha Mana - Start page: Top bar. Converted from start-here.html; every visible string, image and link is a setting. {%- endcomment -%}
+{{ 'pm_landing.css' | asset_url | stylesheet_tag }}
+<div class="pm-landing" style="background:var(--pm-cacao-500);color:var(--text-on-dark);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:12px;text-align:center;padding:10px 16px;line-height:1.5;text-wrap:balance;">{{ section.settings.text | escape }}</div>
+
+{% schema %}
+{
+  "name": "Start: Top bar",
+  "tag": "div",
+  "class": "pm-landing-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Start: Top bar"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,46 @@
+{%- comment -%}
+  Pacha Mana - Start page: mobile sticky call-to-action.
+  Appears once the hero has scrolled away on screens under 760px (the design's rule).
+  The spacer reserves room at the foot of the page so the bar never covers the last
+  lines of content; in the original single-page design that padding sat on the page
+  wrapper, which no longer exists once the page is split into sections.
+{%- endcomment -%}
+{{ 'pm_landing.css' | asset_url | stylesheet_tag }}
+<div class="pm-landing" style="background:transparent;">
+  <div class="pm-sticky" id="pm-sticky-{{ section.id }}" hidden style="position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(249,242,239,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border-medium);box-shadow:0 -8px 24px rgba(92,64,47,.12);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+    <div style="display:flex;flex-direction:column;gap:2px;"><span style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.08em;font-size:15px;color:var(--text-strong);">{{ section.settings.title | escape }}</span><span style="font-size:13px;color:var(--text-body);">{{ section.settings.subtitle | escape }}</span></div>
+    <a class="pm-btn pm-btn--primary pm-btn--sm" href="{{ section.settings.button_link | escape }}">{{ section.settings.button_label | escape }}</a>
+  </div>
+  <div class="pm-sticky-spacer" aria-hidden="true"></div>
+</div>
+<script>
+  (function () {
+    var bar = document.getElementById('pm-sticky-{{ section.id }}');
+    if (!bar || bar.dataset.pmInit) return;
+    bar.dataset.pmInit = '1';
+    function update() {
+      var hero = document.getElementById('pm-hero');
+      var past = hero ? hero.getBoundingClientRect().bottom < 0 : true;
+      bar.hidden = !(past && window.innerWidth < 760);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Start: Sticky bar",
+  "tag": "div",
+  "class": "pm-landing-section",
+  "settings": [
+    { "type": "paragraph", "content": "Shows on phones once the hero has scrolled out of view." },
+    { "type": "text", "id": "title", "label": "Title" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle" },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "text", "id": "button_link", "label": "Button link", "info": "A path like /pages/... or a full https:// address." }
+  ],
+  "presets": [{ "name": "Start: Sticky bar" }]
+}
+{% endschema %}
