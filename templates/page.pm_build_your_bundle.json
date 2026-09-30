@@ -128,6 +128,7 @@
             "product": "mayan-spice-ground-ceremonial-cacao",
             "name": "Mayan Spice",
             "description": "Cinnamon and chili, with traditional heat and a slow finish.",
+            "image": "shopify://shop_images/mayan_spice_product_sjhot_final.png",
             "image_url": "/cdn/shop/files/DSCF8392-1-scaled.jpg?v=1773176376&width=400"
           }
         },
@@ -265,9 +266,10 @@
         "card_1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/PACHAMANA--196.jpg",
             "image_url": "/cdn/shop/files/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=800",
             "image_alt_text": "Ceremonial Cacao Paste",
-            "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-three.png?v=1790710030",
+            "image_url_2": "",
             "image_alt_text_2": "",
             "title": "Ceremonial Paste.",
             "text": "A solid block. Chop what you need and melt it slowly with a little hot water, or use a blender. This is the traditional ceremony format and the richest cup you'll make.",
@@ -277,9 +279,10 @@
         "card_2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/PACHAMANA--8.jpg",
             "image_url": "/cdn/shop/files/1-2.png?v=1773121973&width=800",
             "image_alt_text": "Pure Ground cacao",
-            "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-open.png?v=1790710030",
+            "image_url_2": "",
             "image_alt_text_2": "",
             "title": "Ground Cacao.",
             "text": "The same whole bean, ground fine. Spoon it into hot water and froth. Same fat and same benefits, ready in about two minutes.",
