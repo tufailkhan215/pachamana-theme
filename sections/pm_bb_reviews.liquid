@@ -1,0 +1,65 @@
+{%- comment -%} Pacha Mana - Bundle page: Reviews. Converted from build-your-bundle.html; every visible string, image and link is a setting. {%- endcomment -%}
+{{ 'pm_landing.css' | asset_url | stylesheet_tag }}
+<section class="pm-landing" style="position:relative;overflow:hidden;background:var(--gradient-cacao);color:var(--text-on-dark);padding:clamp(64px,8vw,112px) 24px;">
+<div style="position:absolute;inset:0;background-image:url('https://pachamana.com/cdn/shop/files/Pattern_Website.png?v=1769670221&amp;width=1200');background-size:520px auto;opacity:.07;pointer-events:none;"></div>
+<div style="position:relative;max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:44px;">
+<div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;">
+<span class="pm-eyebrow pm-eyebrow--gold">{{ section.settings.eyebrow | escape }}</span>
+<h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(30px,4vw,44px);line-height:1.1;color:var(--pm-pearl-white);margin:0;">{{ section.settings.heading | escape }}</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+{%- for block in section.blocks -%}{%- if block.type == 'item' -%}<figure {{ block.shopify_attributes }} style="margin:0;padding:32px;border-radius:20px;background:rgba(249,242,239,.06);border:1px solid rgba(249,242,239,.14);outline:1.5px dashed rgba(235,189,94,.4);outline-offset:-9px;display:flex;flex-direction:column;gap:16px;"><span style="color:var(--pm-gold-400);letter-spacing:3px;font-size:18px;">{{ block.settings.label | escape }}</span><blockquote style="margin:0;font-style:italic;font-size:17px;line-height:1.7;color:var(--pm-pearl-white);">{{ block.settings.quote | escape }}</blockquote><figcaption style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.14em;font-size:12px;color:var(--pm-gold-300);">{{ block.settings.caption | escape }}</figcaption></figure>{%- endif -%}{%- endfor -%}
+
+
+</div>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "Bundle: Reviews",
+  "tag": "div",
+  "class": "pm-landing-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Bundle: Reviews"
+    }
+  ]
+}
+{% endschema %}
