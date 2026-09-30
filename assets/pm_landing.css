@@ -1,0 +1,230 @@
+/* Pacha Mana landing pages (Start Here, Build Your Bundle) - shared tokens + components.
+   Source: designer's shared stylesheet, adapted for Shopify sections:
+   - no body/html rules (this file must never restyle the rest of the theme)
+   - every selector scoped under .pm-landing; each section root carries that class
+   - the mobile sticky-bar spacer lives in the sticky section, not on .pm-landing,
+     because .pm-landing now sits on every section and would pad each one
+   - .pm-img-fill: a storefront app ships img{height:auto!important}, which beats
+     height:100% and lets photos spill out of their frames. min/max-height clamp the
+     used height regardless, so fixed-height image frames hold. */
+/* Pacha Mana landing pages · shared styles. Everything is scoped to .pm-landing so it won't touch the theme. */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@font-face{font-family:'Oaxaca';src:url('Oaxaca.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+/* ============================================================
+   Pacha Mana — Color Tokens
+   Warm, golden, earthy. Candlelight + sunrise. Never cold/clinical.
+   ============================================================ */
+
+.pm-landing {
+  /* ---- Brand core ---- */
+  --pm-sunshine-gold: #e2ab43;   /* primary accent — the sun */
+  --pm-milk-chocolate: #5c402f;  /* primary dark — cacao */
+  --pm-sandy-tan: #fee7be;       /* warm light surface */
+  --pm-pearl-white: #f9f2ef;     /* off-white page base */
+
+  /* ---- Soft black (warm, from the logo ink) ----
+     CANONICAL brand ink = #2b2521 (warm). The live site's <meta theme-color>
+     is currently #333132 (cooler); update the store to #2b2521 so web,
+     packaging, and email share one ink. Never use pure #000. */
+  --pm-soft-black: #2b2521;
+
+  /* ---- Gold scale ---- */
+  --pm-gold-50:  #fdf4e2;
+  --pm-gold-100: #f9e6c0;
+  --pm-gold-200: #f2d28c;
+  --pm-gold-300: #ebbd5e;
+  --pm-gold-400: #e2ab43;  /* = Sunshine Gold */
+  --pm-gold-500: #cf962f;
+  --pm-gold-600: #ab7820;
+  --pm-gold-700: #835a18;
+
+  /* ---- Cacao / brown scale ---- */
+  --pm-cacao-50:  #f3ece6;
+  --pm-cacao-100: #e4d4c6;
+  --pm-cacao-200: #c4a48a;
+  --pm-cacao-300: #9c7758;
+  --pm-cacao-400: #785741;
+  --pm-cacao-500: #5c402f;  /* = Milk Chocolate */
+  --pm-cacao-600: #4a3326;
+  --pm-cacao-700: #38271d;
+  --pm-cacao-800: #2b2521;  /* = Soft black */
+
+  /* ---- Tan / cream scale ---- */
+  --pm-tan-50:  #fdf8f3;
+  --pm-tan-100: #fef2e0;
+  --pm-tan-200: #fee7be;  /* = Sandy Tan */
+  --pm-tan-300: #f7d79b;
+
+  /* ---- Semantic ---- */
+  --pm-success: #6e8b3d;   /* sage / leaf green */
+  --pm-warning: #cf962f;   /* deep gold */
+  --pm-danger:  #a23b29;   /* terracotta red-clay */
+  --pm-info:    #7a6a55;   /* warm taupe */
+
+  /* ---- Surfaces ---- */
+  --surface-page:    var(--pm-pearl-white);
+  --surface-card:    #ffffff;
+  --surface-warm:    var(--pm-tan-100);
+  --surface-sand:    var(--pm-sandy-tan);
+  --surface-dark:    var(--pm-cacao-500);
+  --surface-darkest: var(--pm-soft-black);
+
+  /* ---- Text ---- */
+  --text-strong:  var(--pm-soft-black);
+  --text-body:    var(--pm-cacao-600);
+  --text-muted:   var(--pm-cacao-300);
+  --text-on-dark: var(--pm-pearl-white);
+  --text-on-gold: var(--pm-cacao-700);
+  --text-accent:  var(--pm-gold-600);
+
+  /* ---- Lines & borders ---- */
+  --border-soft:   #ece0d3;
+  --border-medium: #ddc9b4;
+  --border-gold:   var(--pm-gold-400);
+  --border-dark:   var(--pm-cacao-500);
+
+  /* ---- Focus ---- */
+  --focus-ring: var(--pm-gold-400);
+}
+
+/* ============================================================
+   Pacha Mana — Typography Tokens
+   Display: Oaxaca (ALL CAPS, max ~5 words, headlines & labels)
+   Body:    Lora (serif, warm, story-driven prose)
+   ============================================================ */
+
+.pm-landing {
+  /* ---- Families ---- */
+  --font-display: 'Oaxaca', 'Cooper Black', Georgia, serif;
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+
+  /* ---- Display scale (Oaxaca — always uppercase) ---- */
+  --display-xl: 4.5rem;   /* 72px hero */
+  --display-lg: 3.25rem;  /* 52px */
+  --display-md: 2.25rem;  /* 36px */
+  --display-sm: 1.5rem;   /* 24px */
+  --display-xs: 1.125rem; /* 18px eyebrow / label */
+
+  /* ---- Body scale (Lora) ---- */
+  --text-2xl: 1.5rem;     /* 24px lead */
+  --text-xl:  1.25rem;    /* 20px */
+  --text-lg:  1.125rem;   /* 18px */
+  --text-md:  1rem;       /* 16px base */
+  --text-sm:  0.875rem;   /* 14px */
+  --text-xs:  0.75rem;    /* 12px */
+
+  /* ---- Weights ---- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* ---- Letter spacing ---- */
+  --tracking-display: 0.04em;  /* Oaxaca breathes a little */
+  --tracking-eyebrow: 0.18em;  /* wide eyebrow caps */
+  --tracking-body: 0;
+}
+
+/* ============================================================
+   Pacha Mana — Spacing & Layout Tokens
+   Generous, breathing, ceremonial. Nothing cramped.
+   ============================================================ */
+
+.pm-landing {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 0.25rem;  /* 4 */
+  --space-2: 0.5rem;   /* 8 */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.5rem;   /* 24 */
+  --space-6: 2rem;     /* 32 */
+  --space-7: 3rem;     /* 48 */
+  --space-8: 4rem;     /* 64 */
+  --space-9: 6rem;     /* 96 */
+  --space-10: 8rem;    /* 128 */
+
+  /* ---- Radii — soft, hand-shaped, never sharp/techy ---- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* ---- Container widths ---- */
+  --container-sm: 640px;
+  --container-md: 880px;
+  --container-lg: 1140px;
+  --container-xl: 1320px;
+}
+
+/* ============================================================
+   Pacha Mana — Effects: shadows, blur, gradients, motion
+   Soft warm-toned shadows. Sunrise gradients. Gentle easing.
+   ============================================================ */
+
+.pm-landing {
+  /* ---- Shadows (warm brown-tinted, soft, never harsh black) ---- */
+  --shadow-xs: 0 1px 2px rgba(92, 64, 47, 0.08);
+  --shadow-sm: 0 2px 8px rgba(92, 64, 47, 0.10);
+  --shadow-md: 0 8px 24px rgba(92, 64, 47, 0.12);
+  --shadow-lg: 0 18px 48px rgba(92, 64, 47, 0.16);
+  --shadow-gold: 0 10px 30px rgba(226, 171, 67, 0.30);
+
+  /* ---- Sunrise / candlelight gradients ---- */
+  --gradient-sunrise: linear-gradient(180deg, #fef2e0 0%, #fee7be 45%, #f7d79b 100%); /* @kind color */
+  --gradient-gold: linear-gradient(135deg, #ebbd5e 0%, #e2ab43 55%, #cf962f 100%); /* @kind color */
+  --gradient-cacao: linear-gradient(165deg, #5c402f 0%, #38271d 100%); /* @kind color */
+  --gradient-dusk: linear-gradient(180deg, #785741 0%, #2b2521 100%); /* @kind color */
+  /* Protection scrim for text over imagery */
+  --gradient-scrim: linear-gradient(180deg, rgba(43,37,33,0) 0%, rgba(43,37,33,0.72) 100%); /* @kind color */
+
+  /* ---- Focus ring (reusable — gold glow, never a harsh blue outline) ---- */
+  --focus-shadow: 0 0 0 3px rgba(226, 171, 67, 0.45); /* @kind other */
+  --focus-outline: 2px solid var(--pm-gold-500); /* @kind other */
+
+  /* ---- Motion: slow, warm, organic. No bounce. ---- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.45, 0, 0.25, 1); /* @kind other */
+  --duration-fast: 140ms; /* @kind other */
+  --duration-base: 240ms; /* @kind other */
+  --duration-slow: 420ms; /* @kind other */
+}
+
+/* Respect reduced-motion: any component built on the duration tokens
+   inherits calm, near-instant transitions when the user asks for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .pm-landing {
+    --duration-fast: 1ms; /* @kind other */
+    --duration-base: 1ms; /* @kind other */
+    --duration-slow: 1ms; /* @kind other */
+  }
+}
+
+
+.pm-landing{background:var(--surface-page);font-family:var(--font-body);color:var(--text-body);-webkit-font-smoothing:antialiased;}
+.pm-landing *,.pm-landing *::before,.pm-landing *::after{box-sizing:border-box;}
+.pm-landing a{color:var(--pm-gold-700);text-decoration-thickness:1px;text-underline-offset:3px;}
+.pm-landing a:hover{color:var(--pm-cacao-500);}.pm-landing .pm-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-weight:400;border-radius:999px;border:1.5px solid transparent;cursor:pointer;text-decoration:none!important;white-space:nowrap;line-height:1.2;transition:transform 140ms var(--ease-out),background 240ms var(--ease-out),box-shadow 240ms var(--ease-out);}.pm-landing .pm-btn:active{transform:scale(.97);}.pm-landing .pm-btn--sm{padding:8px 18px;font-size:12px;gap:8px;}.pm-landing .pm-btn--md{padding:13px 28px;font-size:14px;}.pm-landing .pm-btn--lg{padding:17px 38px;font-size:16px;gap:12px;}.pm-landing .pm-btn--full{width:100%;}
+.pm-landing .pm-btn--primary{background:var(--pm-gold-400);color:var(--pm-cacao-700);box-shadow:var(--shadow-gold);}
+.pm-landing .pm-btn--primary:hover{background:var(--pm-gold-500);color:var(--pm-cacao-700);}
+.pm-landing .pm-btn--outline{background:transparent;color:var(--pm-cacao-600);border-color:var(--border-medium);}
+.pm-landing .pm-btn--outline:hover{background:var(--surface-warm);border-color:var(--border-gold);color:var(--pm-cacao-600);}.pm-landing .pm-btn[disabled]{opacity:.5;cursor:not-allowed;transform:none;}.pm-landing .pm-eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);font-size:14px;}.pm-landing .pm-eyebrow--gold{color:var(--pm-gold-600);}.pm-landing .pm-eyebrow--cacao{color:var(--pm-cacao-400);}.pm-landing .pm-eyebrow--light{color:var(--pm-tan-200);}.pm-landing .pm-eyebrow-rule{width:28px;height:1.5px;background:currentColor;opacity:.6;}.pm-landing .pm-badge{display:inline-flex;align-items:center;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-size:11px;padding:4px 11px;border-radius:999px;line-height:1.4;background:var(--pm-gold-400);color:var(--pm-cacao-700);}.pm-landing .pm-faq summary{list-style:none;}.pm-landing .pm-faq summary::-webkit-details-marker{display:none;}.pm-landing .pm-faq-icon::after{content:'+';}.pm-landing .pm-faq[open] .pm-faq-icon::after{content:'\2212';}
+@keyframes pm-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.pm-marquee{animation:none!important;}}
+@media (max-width:899px){.pm-desktop-only{display:none!important;}}
+
+.pm-landing .pm-sticky[hidden]{display:none!important;}
+
+.pm-landing img{max-width:100%;}
+.pm-landing .pm-img-fill{width:100%;height:100%;min-height:100%;max-height:100%;object-fit:cover;display:block;}
+/* inline display:flex beats the browser's own [hidden] rule, so anything toggled with the
+   hidden attribute (summary rows, sticky bars) would never disappear without this */
+.pm-landing [hidden]{display:none!important;}
+.pm-landing .pm-sticky-spacer{display:none;}
+@media (max-width:759px){.pm-landing .pm-sticky-spacer{display:block;height:84px;}}

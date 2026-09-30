@@ -1,0 +1,52 @@
+{%- comment -%} Pacha Mana - Bundle page: Footer. Converted from build-your-bundle.html; every visible string, image and link is a setting. {%- endcomment -%}
+{{ 'pm_landing.css' | asset_url | stylesheet_tag }}
+<footer class="pm-landing" style="background:var(--pm-soft-black);color:var(--pm-cacao-100);padding:56px 24px 56px;">
+<div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center;">
+<img alt="{{ section.settings.image_alt_text | escape }}" src="{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 400 }}{%- else -%}{{ section.settings.image_url | escape }}{%- endif -%}" style="height:88px;width:auto;opacity:.92;min-height:88px;max-height:88px;"/>
+<p style="margin:0;font-size:15px;">{{ section.settings.text }}</p>
+<p style="margin:0;max-width:640px;font-size:12px;line-height:1.6;color:var(--pm-cacao-200);">{{ section.settings.text_2 | escape }}</p>
+</div>
+</footer>
+
+{% schema %}
+{
+  "name": "Bundle: Footer",
+  "tag": "div",
+  "class": "pm-landing-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Image URL",
+      "info": "Used when no image is picked above."
+    },
+    {
+      "type": "text",
+      "id": "image_alt_text",
+      "label": "Image alt text",
+      "info": "Leave blank for purely decorative images."
+    },
+    {
+      "type": "html",
+      "id": "text",
+      "label": "Text",
+      "info": "Keeps the design's inline styling. Edit the words, leave the tags."
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "Text 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle: Footer"
+    }
+  ]
+}
+{% endschema %}

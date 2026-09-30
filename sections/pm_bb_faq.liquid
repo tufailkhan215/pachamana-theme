@@ -1,0 +1,76 @@
+{%- comment -%} Pacha Mana - Bundle page: FAQ. Converted from build-your-bundle.html; every visible string, image and link is a setting. {%- endcomment -%}
+{{ 'pm_landing.css' | asset_url | stylesheet_tag }}
+<section class="pm-landing" style="padding:clamp(64px,8vw,112px) 24px;">
+<div style="max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:36px;">
+<div style="display:flex;flex-direction:column;align-items:center;gap:14px;"><img alt="{{ section.settings.image_alt_text | escape }}" src="{%- if section.settings.image != blank -%}{{ section.settings.image | image_url: width: 1600 }}{%- else -%}{{ section.settings.image_url | escape }}{%- endif -%}" style="width:150px;height:auto;"/><h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(30px,4vw,44px);line-height:1.1;color:var(--text-strong);margin:0;text-align:center;">{{ section.settings.heading | escape }}</h2></div>
+<div style="display:flex;flex-direction:column;border-top:1px solid var(--border-medium);">
+{%- for block in section.blocks -%}{%- if block.type == 'question' -%}<details class="pm-faq" {{ block.shopify_attributes }} style="border-bottom:1px solid var(--border-medium);">
+<summary style="cursor:pointer;padding:20px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:var(--font-body);font-size:17px;font-weight:600;color:var(--text-strong);min-height:44px;"><span>{{ block.settings.question | escape }}</span><span class="pm-faq-icon" style="font-size:24px;font-weight:400;color:var(--pm-gold-600);flex:0 0 auto;"></span></summary>
+<p style="margin:0;padding:0 4px 22px;font-size:16px;line-height:1.75;max-width:68ch;">{{ block.settings.answer | escape }}</p>
+</details>{%- endif -%}{%- endfor -%}
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "Bundle: FAQ",
+  "tag": "div",
+  "class": "pm-landing-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Image URL",
+      "info": "Used when no image is picked above."
+    },
+    {
+      "type": "text",
+      "id": "image_alt_text",
+      "label": "Image alt text",
+      "info": "Leave blank for purely decorative images."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Bundle: FAQ"
+    }
+  ]
+}
+{% endschema %}

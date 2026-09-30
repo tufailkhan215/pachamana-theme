@@ -1,0 +1,537 @@
+{%- comment -%}
+  Pacha Mana - Build Your Bundle: the interactive builder.
+
+  The designer's file was a front-end mock ("Checkout is not wired yet"). This version
+  wires it to the store:
+    * each Blend block points at a real product; the builder adds that product's variant
+      whose name contains "Size to add" (default "1/2 lb", the 8 oz bag)
+    * prices come from the product, never from typed numbers
+    * Subscribe & Save uses the product's own Recur Pay selling plans. The saving shown is
+      the plan's real price, so if a schedule saves 10% rather than 15% the page says 10%
+    * one-time bundle savings only appear, and only apply, when a discount code is
+      entered for that bag count: the code is carried to checkout. With no code, one-time
+      bundles are honestly shown at full price
+    * the cart is added to, never cleared
+  It still fires the design's "pm:bundle-checkout" event for anything listening.
+{%- endcomment -%}
+{{ 'pm_landing.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+  assign match = s.variant_match | default: '1/2 lb'
+  assign weeks_list = s.frequencies | remove: ' ' | split: ','
+-%}
+<section class="pm-landing" id="builder" data-pm-builder="{{ section.id }}" style="position:relative;background:var(--pm-tan-100);padding:clamp(64px,8vw,104px) 24px;scroll-margin-top:70px;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);">
+  <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"><div style="position:absolute;inset:0;background-image:url('https://pachamana.com/cdn/shop/files/Pattern_Website.png?v=1769670221&amp;width=1200');background-size:520px auto;opacity:.05;pointer-events:none;"></div></div>
+  <div style="position:relative;max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;">
+      <span class="pm-eyebrow pm-eyebrow--gold"><span class="pm-eyebrow-rule"></span>{{ s.eyebrow | escape }}</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;">
+
+      <div style="flex:1 1 580px;min-width:0;display:flex;flex-direction:column;gap:40px;">
+        {%- comment -%} Step 1: bag count {%- endcomment -%}
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;gap:14px;align-items:baseline;"><span style="font-family:var(--font-display);color:var(--pm-gold-600);font-size:15px;letter-spacing:0.16em;">{{ s.step1_label | escape }}</span><h3 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(22px,2.4vw,28px);color:var(--text-strong);margin:0;">{{ s.step1_title | escape }}</h3></div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;">
+            {%- for n in (2..4) -%}
+              <button type="button" data-tier="{{ n }}" style="font-family:var(--font-body);cursor:pointer;text-align:center;padding:20px 10px;border-radius:20px;background:#fff;border:2px solid var(--border-soft);box-shadow:var(--shadow-xs);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-strong);transition:all 240ms var(--ease-out);">
+                <span style="font-family:var(--font-display);font-size:clamp(36px,5vw,48px);line-height:1;">{{ n }}</span>
+                <span style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.14em;font-size:12px;color:var(--text-muted);">{{ s.bags_word | escape }}</span>
+                {%- assign cups = n | times: s.cups_per_bag -%}
+                <span style="font-size:14px;color:var(--text-body);">{{ s.cups_template | replace: '[n]', cups | escape }}</span>
+                <span data-save style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.1em;font-size:12px;padding:4px 10px;border-radius:999px;background:var(--pm-cacao-50);color:var(--pm-cacao-400);">&nbsp;</span>
+              </button>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        {%- comment -%} Step 2: blends {%- endcomment -%}
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;"><span style="font-family:var(--font-display);color:var(--pm-gold-600);font-size:15px;letter-spacing:0.16em;">{{ s.step2_label | escape }}</span><h3 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(22px,2.4vw,28px);color:var(--text-strong);margin:0;">{{ s.step2_title | escape }}</h3></div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            {%- for block in section.blocks -%}
+              {%- assign p = block.settings.product -%}
+              {%- if p == blank -%}
+                {%- if request.design_mode -%}<div {{ block.shopify_attributes }} style="padding:14px 16px;border-radius:20px;border:1px dashed var(--border-medium);font-size:14px;color:var(--text-muted);">Pick a product for this blend.</div>{%- endif -%}
+                {%- continue -%}
+              {%- endif -%}
+              {%- assign v = nil -%}
+              {%- for var in p.variants -%}
+                {%- if var.title contains match -%}{%- assign v = var -%}{%- break -%}{%- endif -%}
+              {%- endfor -%}
+              {%- if v == nil -%}{%- assign v = p.selected_or_first_available_variant -%}{%- endif -%}
+              {%- capture img -%}{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 200 }}{%- elsif block.settings.image_url != blank -%}{{ block.settings.image_url }}{%- else -%}{{ p.featured_image | image_url: width: 200 }}{%- endif -%}{%- endcapture -%}
+              {%- assign name = block.settings.name | default: p.title -%}
+              <div data-blend="{{ block.id }}" {{ block.shopify_attributes }} style="display:flex;align-items:center;gap:16px;padding:14px 16px;background:#fff;border-radius:20px;border:1px solid var(--border-soft);box-shadow:var(--shadow-xs);transition:border-color 240ms var(--ease-out);">
+                <div style="width:64px;height:64px;flex:0 0 64px;border-radius:12px;overflow:hidden;background:var(--pm-tan-200);">
+                  <img src="{{ img | escape }}" alt="{{ name | escape }}" loading="lazy" style="width:100%;height:100%;min-height:100%;max-height:100%;object-fit:cover;display:block;">
+                </div>
+                <div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:3px;">
+                  <div style="display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;"><span style="font-weight:600;font-size:16px;color:var(--text-strong);">{{ name | escape }}</span><span data-price style="font-size:15px;color:var(--pm-gold-700);font-weight:600;"></span></div>
+                  <span style="font-size:14px;line-height:1.5;color:var(--text-body);text-wrap:pretty;">{{ block.settings.description | escape }}</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;flex:0 0 auto;">
+                  <button type="button" data-dec aria-label="{{ s.remove_label | escape }}" style="width:40px;height:40px;border-radius:999px;border:1px solid var(--border-medium);background:#fff;color:var(--pm-cacao-500);font-size:20px;line-height:1;cursor:pointer;opacity:.35;font-family:var(--font-body);">&minus;</button>
+                  <span data-count style="min-width:18px;text-align:center;font-family:var(--font-display);font-size:20px;color:var(--text-strong);">0</span>
+                  <button type="button" data-inc aria-label="{{ s.add_label | escape }}" style="width:40px;height:40px;border-radius:999px;border:1px solid var(--pm-gold-400);background:var(--pm-gold-400);color:var(--pm-cacao-700);font-size:20px;line-height:1;cursor:pointer;opacity:1;font-family:var(--font-body);">+</button>
+                </div>
+              </div>
+              <script type="application/json" data-blend-data="{{ block.id }}">
+                {
+                  "id": {{ block.id | json }},
+                  "name": {{ name | json }},
+                  "variant": {{ v.id | json }},
+                  "price": {{ v.price | json }},
+                  "available": {{ v.available | json }},
+                  "plans": [
+                    {%- for a in v.selling_plan_allocations -%}
+                      { "id": {{ a.selling_plan.id | json }}, "name": {{ a.selling_plan.name | json }}, "price": {{ a.price | json }} }{% unless forloop.last %},{% endunless %}
+                    {%- endfor -%}
+                  ]
+                }
+              </script>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        {%- comment -%} Step 3: plan {%- endcomment -%}
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;gap:14px;align-items:baseline;"><span style="font-family:var(--font-display);color:var(--pm-gold-600);font-size:15px;letter-spacing:0.16em;">{{ s.step3_label | escape }}</span><h3 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(22px,2.4vw,28px);color:var(--text-strong);margin:0;">{{ s.step3_title | escape }}</h3></div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
+            <div data-plan="subscribe" role="button" tabindex="0" style="cursor:pointer;padding:22px;border-radius:20px;background:#fff;border:2px solid var(--border-soft);box-shadow:var(--shadow-xs);display:flex;flex-direction:column;gap:10px;transition:all 240ms var(--ease-out);">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+                <div style="display:flex;align-items:center;gap:10px;"><span style="width:18px;height:18px;border-radius:999px;border:2px solid var(--pm-gold-500);display:flex;align-items:center;justify-content:center;flex:0 0 18px;"><span data-dot style="width:8px;height:8px;border-radius:999px;background:transparent;"></span></span><span style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.06em;font-size:18px;color:var(--text-strong);">{{ s.sub_title | escape }}</span></div>
+                {%- if s.sub_badge != blank -%}<span class="pm-badge">{{ s.sub_badge | escape }}</span>{%- endif -%}
+              </div>
+              <p style="margin:0;font-size:14px;line-height:1.6;">{{ s.sub_text | escape }}</p>
+              <select data-freq aria-label="{{ s.freq_aria | escape }}" style="font-family:var(--font-body);font-size:15px;color:var(--text-strong);padding:10px 12px;border-radius:12px;border:1px solid var(--border-medium);background:#fff;min-height:44px;">
+                {%- for w in weeks_list -%}
+                  <option value="{{ w | escape }}">{{ s.freq_template | replace: '[n]', w | escape }}</option>
+                {%- endfor -%}
+              </select>
+            </div>
+            <div data-plan="once" role="button" tabindex="0" style="cursor:pointer;padding:22px;border-radius:20px;background:#fff;border:2px solid var(--border-soft);box-shadow:var(--shadow-xs);display:flex;flex-direction:column;gap:10px;transition:all 240ms var(--ease-out);">
+              <div style="display:flex;align-items:center;gap:10px;"><span style="width:18px;height:18px;border-radius:999px;border:2px solid var(--pm-gold-500);display:flex;align-items:center;justify-content:center;flex:0 0 18px;"><span data-dot style="width:8px;height:8px;border-radius:999px;background:transparent;"></span></span><span style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.06em;font-size:18px;color:var(--text-strong);">{{ s.once_title | escape }}</span></div>
+              <p style="margin:0;font-size:14px;line-height:1.6;">{{ s.once_text | escape }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {%- comment -%} Summary {%- endcomment -%}
+      <aside style="flex:1 1 320px;min-width:0;position:sticky;top:88px;display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#fff;border-radius:28px;border:1px solid var(--border-soft);box-shadow:var(--shadow-md);padding:28px;display:flex;flex-direction:column;gap:18px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+            <span style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.08em;font-size:20px;color:var(--text-strong);">{{ s.summary_title | escape }}</span>
+            <span data-count-label style="font-size:14px;color:var(--text-muted);"></span>
+          </div>
+          <div style="height:6px;border-radius:999px;background:var(--pm-cacao-50);overflow:hidden;"><div data-progress style="height:100%;width:0%;background:var(--gradient-gold);border-radius:999px;transition:width 420ms var(--ease-out);"></div></div>
+          <p data-empty style="margin:0;font-size:15px;line-height:1.6;font-style:italic;color:var(--text-muted);">{{ s.empty_text | escape }}</p>
+          <div data-picks hidden style="display:flex;flex-direction:column;gap:18px;">
+            <div data-lines style="display:flex;flex-direction:column;gap:8px;"></div>
+            <div style="border-top:1px solid var(--border-soft);padding-top:14px;display:flex;flex-direction:column;gap:8px;font-size:15px;">
+              <div style="display:flex;justify-content:space-between;gap:12px;"><span>{{ s.subtotal_label | escape }}</span><span data-subtotal></span></div>
+              <div data-discount-row hidden style="display:flex;justify-content:space-between;gap:12px;color:var(--pm-success);"><span data-discount-label></span><span data-discount-amt></span></div>
+              <div data-ship style="font-size:14px;color:var(--pm-gold-700);font-style:italic;"></div>
+            </div>
+            <div style="border-top:1px solid var(--border-soft);padding-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+              <span style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.08em;font-size:18px;color:var(--text-strong);">{{ s.total_label | escape }}</span>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;"><span data-total style="font-family:var(--font-display);font-size:30px;color:var(--text-strong);letter-spacing:0.02em;"></span><span data-per-cup style="font-size:13px;color:var(--text-muted);"></span></div>
+            </div>
+          </div>
+          <p data-need style="margin:0;font-size:14px;color:var(--text-body);text-align:center;"></p>
+          <button class="pm-btn pm-btn--primary pm-btn--lg pm-btn--full" data-cta type="button" disabled></button>
+          <p data-sub-note style="margin:-6px 0 0;font-size:13px;text-align:center;color:var(--text-muted);">{{ s.sub_note | escape }}</p>
+          <p data-error role="alert" hidden style="margin:0;font-size:14px;text-align:center;color:var(--pm-danger);"></p>
+          {%- if s.gift_text != blank -%}
+            <div style="display:flex;gap:12px;align-items:center;padding:14px;border-radius:12px;background:var(--pm-gold-50);border:1px dashed var(--pm-gold-300);">
+              {%- comment -%} falls back to the theme's own logomark so it never points at another theme {%- endcomment -%}
+              <img src="{%- if s.gift_icon != blank -%}{{ s.gift_icon | image_url: width: 80 }}{%- elsif s.gift_icon_url != blank -%}{{ s.gift_icon_url | escape }}{%- else -%}{{ 'PACHA-MANA-LOGOMARK-GOLD.svg' | asset_url }}{%- endif -%}" alt="" style="width:34px;height:34px;min-height:34px;max-height:34px;object-fit:contain;flex:0 0 34px;">
+              <span style="font-size:14px;line-height:1.5;color:var(--text-strong);">{{ s.gift_text }}</span>
+            </div>
+          {%- endif -%}
+        </div>
+        {%- if s.trust_line != blank -%}
+          <p style="margin:0;text-align:center;font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.1em;font-size:12px;color:var(--pm-cacao-400);line-height:1.7;">{{ s.trust_line | escape }}</p>
+        {%- endif -%}
+      </aside>
+    </div>
+
+    {%- if s.footnote != blank -%}
+      <p style="margin:0;text-align:center;font-size:17px;line-height:1.6;color:var(--text-strong);text-wrap:balance;">{{ s.footnote }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Mobile sticky summary {%- endcomment -%}
+  <div data-sticky hidden style="position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(249,242,239,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border-medium);box-shadow:0 -8px 24px rgba(92,64,47,.12);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+    <span data-sticky-text style="font-size:14px;color:var(--text-strong);line-height:1.4;"></span>
+    <button class="pm-btn pm-btn--primary pm-btn--sm" data-cta type="button" disabled></button>
+  </div>
+
+  <script type="application/json" data-config>
+    {
+      "defaultTier": {{ s.default_tier | plus: 0 }},
+      "defaultPlan": {{ s.default_plan | json }},
+      "cupsPerBag": {{ s.cups_per_bag | plus: 0 }},
+      "freeShip": {{ s.free_ship_threshold | times: 100 }},
+      "sticky": {{ s.sticky_mode | json }},
+      "currency": {{ cart.currency.iso_code | json }},
+      "once": {
+        "3": { "pct": {{ s.once_discount_3 | plus: 0 }}, "code": {{ s.once_code_3 | strip | json }} },
+        "4": { "pct": {{ s.once_discount_4 | plus: 0 }}, "code": {{ s.once_code_4 | strip | json }} }
+      },
+      "t": {
+        "count": {{ s.count_template | json }},
+        "saveSub": {{ s.save_template | json }},
+        "fullPrice": {{ s.full_price_label | json }},
+        "discSub": {{ s.sub_discount_label | json }},
+        "discOnce": {{ s.once_discount_label | json }},
+        "shipFree": {{ s.ship_free_text | json }},
+        "shipMore": {{ s.ship_more_text | json }},
+        "perCup": {{ s.per_cup_template | json }},
+        "need": {{ s.need_more_template | json }},
+        "ctaSub": {{ s.cta_sub | json }},
+        "ctaOnce": {{ s.cta_once | json }},
+        "soldOut": {{ s.sold_out_label | json }},
+        "noPlan": {{ s.no_plan_text | json }},
+        "error": {{ s.error_text | json }},
+        "adding": {{ s.adding_label | json }}
+      }
+    }
+  </script>
+</section>
+
+<script>
+  (function () {
+    function init(root) {
+      if (!root || root.dataset.pmInit) return;
+      root.dataset.pmInit = '1';
+      var cfg = JSON.parse(root.querySelector('[data-config]').textContent);
+      var T = cfg.t;
+      var blends = [].slice.call(root.querySelectorAll('[data-blend-data]')).map(function (n) {
+        return JSON.parse(n.textContent);
+      });
+      var byId = {};
+      blends.forEach(function (b) { byId[b.id] = b; });
+
+      var fmt = function (cents, whole) {
+        var n = cents / 100;
+        try {
+          return new Intl.NumberFormat(undefined, {
+            style: 'currency', currency: cfg.currency || 'USD',
+            minimumFractionDigits: whole && n % 1 === 0 ? 0 : 2, maximumFractionDigits: whole && n % 1 === 0 ? 0 : 2
+          }).format(n);
+        } catch (e) { return '$' + n.toFixed(2); }
+      };
+      var fill = function (tpl, map) {
+        return String(tpl || '').replace(/\[(\w+)\]/g, function (m, k) { return k in map ? map[k] : m; });
+      };
+      var weeksOf = function (plan) { var m = /(\d+)\s*week/i.exec(plan.name || ''); return m ? +m[1] : null; };
+      var planFor = function (blend, weeks) {
+        for (var i = 0; i < blend.plans.length; i++) if (weeksOf(blend.plans[i]) === weeks) return blend.plans[i];
+        return null;
+      };
+
+      var q = new URLSearchParams(location.search).get('plan');
+      var state = {
+        tier: [2, 3, 4].indexOf(cfg.defaultTier) > -1 ? cfg.defaultTier : 3,
+        plan: q === 'once' ? 'once' : q === 'subscribe' ? 'subscribe' : (cfg.defaultPlan === 'once' ? 'once' : 'subscribe'),
+        weeks: null,
+        order: [],
+        busy: false
+      };
+      var freqSel = root.querySelector('[data-freq]');
+      if (freqSel) state.weeks = +freqSel.value;
+
+      var gold = 'var(--pm-gold-400)', soft = 'var(--border-soft)';
+      function onceRate(n) {
+        var o = cfg.once[String(n)];
+        return o && o.code ? o.pct / 100 : 0;          // no code, no promise
+      }
+      function subPct() {
+        // the saving the chosen schedule really gives, read from the products' plans
+        var best = 0;
+        blends.forEach(function (b) {
+          var p = planFor(b, state.weeks);
+          if (p && b.price) best = Math.max(best, Math.round((1 - p.price / b.price) * 100));
+        });
+        return best;
+      }
+
+      function totals() {
+        var sub = state.plan === 'subscribe';
+        var subtotal = 0, paid = 0, missing = [];
+        state.order.forEach(function (id) {
+          var b = byId[id];
+          subtotal += b.price;
+          if (sub) {
+            var p = planFor(b, state.weeks);
+            if (p) paid += p.price; else { paid += b.price; missing.push(b.name); }
+          }
+        });
+        if (!sub) paid = Math.round(subtotal * (1 - onceRate(state.tier)));
+        return { subtotal: subtotal, total: paid, discount: subtotal - paid, missing: missing };
+      }
+
+      function render() {
+        var sub = state.plan === 'subscribe';
+        var picked = state.order.length, full = picked >= state.tier;
+        var counts = {};
+        state.order.forEach(function (id) { counts[id] = (counts[id] || 0) + 1; });
+        var sp = subPct();
+
+        [].forEach.call(root.querySelectorAll('[data-tier]'), function (btn) {
+          var n = +btn.dataset.tier, sel = n === state.tier;
+          var pct = sub ? sp : Math.round(onceRate(n) * 100);
+          var save = pct > 0 ? fill(T.saveSub, { pct: pct }) : T.fullPrice;
+          btn.style.background = sel ? 'var(--pm-gold-50)' : '#fff';
+          btn.style.borderColor = sel ? gold : soft;
+          btn.style.boxShadow = sel ? 'var(--shadow-gold)' : 'var(--shadow-xs)';
+          btn.setAttribute('aria-pressed', sel);
+          var badge = btn.querySelector('[data-save]');
+          badge.textContent = save;
+          badge.style.background = pct > 0 ? (sel ? 'var(--pm-gold-400)' : 'var(--pm-gold-100)') : 'var(--pm-cacao-50)';
+          badge.style.color = pct > 0 ? 'var(--pm-cacao-700)' : 'var(--pm-cacao-400)';
+        });
+
+        [].forEach.call(root.querySelectorAll('[data-blend]'), function (row) {
+          var b = byId[row.dataset.blend]; if (!b) return;
+          var c = counts[b.id] || 0;
+          row.style.borderColor = c ? gold : soft;
+          row.querySelector('[data-count]').textContent = c;
+          row.querySelector('[data-price]').textContent = b.available ? fmt(b.price, true) : T.soldOut;
+          var inc = row.querySelector('[data-inc]'), dec = row.querySelector('[data-dec]');
+          inc.disabled = full || !b.available; inc.style.opacity = inc.disabled ? 0.35 : 1;
+          dec.disabled = c === 0; dec.style.opacity = c === 0 ? 0.35 : 1;
+        });
+
+        [].forEach.call(root.querySelectorAll('[data-plan]'), function (card) {
+          var on = card.dataset.plan === state.plan;
+          card.style.background = on ? 'var(--pm-gold-50)' : '#fff';
+          card.style.borderColor = on ? gold : soft;
+          card.style.boxShadow = on ? 'var(--shadow-gold)' : 'var(--shadow-xs)';
+          card.setAttribute('aria-pressed', on);
+          card.querySelector('[data-dot]').style.background = on ? 'var(--pm-gold-500)' : 'transparent';
+        });
+
+        var t = totals();
+        root.querySelector('[data-count-label]').textContent = fill(T.count, { picked: picked, tier: state.tier });
+        root.querySelector('[data-progress]').style.width = Math.min(100, picked / state.tier * 100) + '%';
+        root.querySelector('[data-empty]').hidden = picked > 0;
+        root.querySelector('[data-picks]').hidden = picked === 0;
+
+        var lines = root.querySelector('[data-lines]');
+        lines.innerHTML = '';
+        blends.forEach(function (b) {
+          if (!counts[b.id]) return;
+          var row = document.createElement('div');
+          row.style.cssText = 'display:flex;justify-content:space-between;gap:12px;font-size:15px;';
+          var a = document.createElement('span'); a.style.color = 'var(--text-strong)';
+          a.textContent = counts[b.id] + ' × ' + b.name;
+          var z = document.createElement('span'); z.textContent = fmt(b.price * counts[b.id]);
+          row.appendChild(a); row.appendChild(z); lines.appendChild(row);
+        });
+        root.querySelector('[data-subtotal]').textContent = fmt(t.subtotal);
+        var dr = root.querySelector('[data-discount-row]');
+        dr.hidden = t.discount <= 0;
+        if (t.discount > 0) {
+          var pct = Math.round(t.discount / t.subtotal * 100);
+          root.querySelector('[data-discount-label]').textContent = fill(sub ? T.discSub : T.discOnce, { pct: pct });
+          root.querySelector('[data-discount-amt]').textContent = '−' + fmt(t.discount);
+        }
+        root.querySelector('[data-ship]').textContent = t.total >= cfg.freeShip
+          ? T.shipFree : fill(T.shipMore, { amount: fmt(cfg.freeShip - t.total) });
+        root.querySelector('[data-total]').textContent = fmt(t.total);
+        root.querySelector('[data-per-cup]').textContent = picked
+          ? fill(T.perCup, { amount: fmt(Math.round(t.total / (picked * cfg.cupsPerBag))) }) : '';
+
+        var need = state.tier - picked;
+        var needEl = root.querySelector('[data-need]');
+        var blocked = sub && t.missing.length ? fill(T.noPlan, { names: t.missing.join(', ') }) : '';
+        needEl.textContent = blocked || (need > 0 ? fill(T.need, { n: need }) : '');
+        needEl.hidden = !needEl.textContent;
+
+        var ready = full && !blocked && !state.busy;
+        [].forEach.call(root.querySelectorAll('[data-cta]'), function (b) {
+          b.textContent = state.busy ? T.adding : (sub ? T.ctaSub : T.ctaOnce);
+          b.disabled = !ready;
+        });
+        root.querySelector('[data-sub-note]').hidden = !sub;
+        root.querySelector('[data-sticky-text]').textContent =
+          fill(T.count, { picked: picked, tier: state.tier }) + ' · ' + fmt(t.total);
+        stickyUpdate();
+      }
+
+      function stickyUpdate() {
+        var bar = root.querySelector('[data-sticky]');
+        var mobile = window.innerWidth < 760;
+        bar.hidden = !(cfg.sticky === 'always' || (cfg.sticky !== 'never' && mobile));
+      }
+
+      function checkout() {
+        var sub = state.plan === 'subscribe';
+        var t = totals();
+        if (state.order.length < state.tier || (sub && t.missing.length)) return;
+        var qty = {};
+        state.order.forEach(function (id) { qty[id] = (qty[id] || 0) + 1; });
+        var items = Object.keys(qty).map(function (id) {
+          var b = byId[id], item = { id: b.variant, quantity: qty[id] };
+          if (sub) item.selling_plan = planFor(b, state.weeks).id;
+          return item;
+        });
+        var once = cfg.once[String(state.tier)];
+        var code = !sub && once && once.code ? once.code : '';
+        document.dispatchEvent(new CustomEvent('pm:bundle-checkout', {
+          detail: { plan: state.plan, frequency: sub ? state.weeks : null, bags: state.tier, items: items }
+        }));
+        var base = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
+        var err = root.querySelector('[data-error]');
+        err.hidden = true;
+        state.busy = true; render();
+        fetch(base + 'cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ items: items })
+        })
+          .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw j; return j; }); })
+          .then(function () {
+            location.href = code
+              ? base + 'discount/' + encodeURIComponent(code) + '?redirect=' + encodeURIComponent(base + 'cart')
+              : base + 'cart';
+          })
+          .catch(function (e) {
+            state.busy = false; render();
+            err.textContent = (e && (e.description || e.message)) || T.error;
+            err.hidden = false;
+          });
+      }
+
+      root.addEventListener('click', function (e) {
+        var el = e.target.closest('[data-tier],[data-inc],[data-dec],[data-plan],[data-cta]');
+        if (!el || !root.contains(el)) return;
+        if (el.hasAttribute('data-tier')) {
+          state.tier = +el.dataset.tier;
+          state.order = state.order.slice(0, state.tier);
+        } else if (el.hasAttribute('data-inc')) {
+          var id = el.closest('[data-blend]').dataset.blend;
+          if (state.order.length < state.tier) state.order.push(id);
+        } else if (el.hasAttribute('data-dec')) {
+          var rid = el.closest('[data-blend]').dataset.blend, i = state.order.lastIndexOf(rid);
+          if (i > -1) state.order.splice(i, 1);
+        } else if (el.hasAttribute('data-plan')) {
+          if (e.target.closest('[data-freq]')) return;
+          state.plan = el.dataset.plan;
+        } else if (el.hasAttribute('data-cta')) {
+          checkout(); return;
+        }
+        render();
+      });
+      root.addEventListener('keydown', function (e) {
+        var card = e.target.closest && e.target.closest('[data-plan]');
+        if (card && (e.key === 'Enter' || e.key === ' ') && !e.target.closest('[data-freq]')) {
+          e.preventDefault(); state.plan = card.dataset.plan; render();
+        }
+      });
+      if (freqSel) freqSel.addEventListener('change', function () {
+        state.weeks = +freqSel.value; state.plan = 'subscribe'; render();
+      });
+      window.addEventListener('resize', stickyUpdate);
+      render();
+    }
+
+    function boot() { [].forEach.call(document.querySelectorAll('[data-pm-builder]'), init); }
+    if (document.readyState !== 'loading') boot(); else document.addEventListener('DOMContentLoaded', boot);
+    document.addEventListener('shopify:section:load', boot);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Bundle: Builder",
+  "tag": "div",
+  "class": "pm-landing-section",
+  "settings": [
+    { "type": "header", "content": "Heading" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+
+    { "type": "header", "content": "Step 1: bag count" },
+    { "type": "text", "id": "step1_label", "label": "Step label" },
+    { "type": "text", "id": "step1_title", "label": "Step title" },
+    { "type": "text", "id": "bags_word", "label": "Word under the number" },
+    { "type": "text", "id": "cups_template", "label": "Cups line", "info": "[n] becomes bags x cups per bag." },
+    { "type": "number", "id": "cups_per_bag", "label": "Cups per bag", "default": 11 },
+    { "type": "select", "id": "default_tier", "label": "Bags selected at first", "options": [{ "value": "2", "label": "2" }, { "value": "3", "label": "3" }, { "value": "4", "label": "4" }], "default": "3" },
+    { "type": "text", "id": "save_template", "label": "Saving badge", "info": "[pct] becomes the real saving." },
+    { "type": "text", "id": "full_price_label", "label": "No-saving badge" },
+
+    { "type": "header", "content": "Step 2: blends" },
+    { "type": "text", "id": "step2_label", "label": "Step label" },
+    { "type": "text", "id": "step2_title", "label": "Step title" },
+    { "type": "text", "id": "variant_match", "label": "Size to add", "default": "1/2 lb", "info": "Each blend adds its variant whose name contains this text." },
+    { "type": "text", "id": "add_label", "label": "Add button (screen readers)" },
+    { "type": "text", "id": "remove_label", "label": "Remove button (screen readers)" },
+    { "type": "text", "id": "sold_out_label", "label": "Sold out label" },
+
+    { "type": "header", "content": "Step 3: plan" },
+    { "type": "text", "id": "step3_label", "label": "Step label" },
+    { "type": "text", "id": "step3_title", "label": "Step title" },
+    { "type": "select", "id": "default_plan", "label": "Plan selected at first", "options": [{ "value": "subscribe", "label": "Subscribe & Save" }, { "value": "once", "label": "One-time" }], "default": "subscribe" },
+    { "type": "text", "id": "sub_title", "label": "Subscribe title" },
+    { "type": "text", "id": "sub_badge", "label": "Subscribe badge" },
+    { "type": "textarea", "id": "sub_text", "label": "Subscribe description" },
+    { "type": "text", "id": "frequencies", "label": "Delivery schedules (weeks)", "default": "4,6,8", "info": "Comma separated. Each must match a Recur Pay plan on the products, e.g. 'Delivery every 4 Weeks'." },
+    { "type": "text", "id": "freq_template", "label": "Schedule option", "info": "[n] becomes the number of weeks." },
+    { "type": "text", "id": "freq_aria", "label": "Schedule menu (screen readers)" },
+    { "type": "text", "id": "once_title", "label": "One-time title" },
+    { "type": "textarea", "id": "once_text", "label": "One-time description" },
+    { "type": "paragraph", "content": "One-time bundle savings only show and apply when a discount code is entered below. Create the code under Discounts first, with the same percentage." },
+    { "type": "range", "id": "once_discount_3", "label": "3 bags: saving", "min": 0, "max": 30, "step": 1, "unit": "%", "default": 5 },
+    { "type": "text", "id": "once_code_3", "label": "3 bags: discount code" },
+    { "type": "range", "id": "once_discount_4", "label": "4 bags: saving", "min": 0, "max": 30, "step": 1, "unit": "%", "default": 10 },
+    { "type": "text", "id": "once_code_4", "label": "4 bags: discount code" },
+
+    { "type": "header", "content": "Summary" },
+    { "type": "text", "id": "summary_title", "label": "Title" },
+    { "type": "text", "id": "count_template", "label": "Count", "info": "[picked] and [tier] are filled in." },
+    { "type": "text", "id": "empty_text", "label": "Empty message" },
+    { "type": "text", "id": "subtotal_label", "label": "Subtotal label" },
+    { "type": "text", "id": "sub_discount_label", "label": "Subscription saving line", "info": "[pct] becomes the real saving." },
+    { "type": "text", "id": "once_discount_label", "label": "Bundle saving line", "info": "[pct] becomes the saving." },
+    { "type": "number", "id": "free_ship_threshold", "label": "Free shipping from", "default": 100 },
+    { "type": "text", "id": "ship_free_text", "label": "Free shipping reached" },
+    { "type": "text", "id": "ship_more_text", "label": "Free shipping not yet reached", "info": "[amount] is filled in." },
+    { "type": "text", "id": "total_label", "label": "Total label" },
+    { "type": "text", "id": "per_cup_template", "label": "Per cup", "info": "[amount] is filled in." },
+    { "type": "text", "id": "need_more_template", "label": "Still to choose", "info": "[n] is filled in." },
+    { "type": "text", "id": "no_plan_text", "label": "No plan for this schedule", "info": "[names] is filled in." },
+    { "type": "text", "id": "cta_sub", "label": "Button: subscription" },
+    { "type": "text", "id": "cta_once", "label": "Button: one-time" },
+    { "type": "text", "id": "adding_label", "label": "Button while adding" },
+    { "type": "text", "id": "error_text", "label": "Error message" },
+    { "type": "text", "id": "sub_note", "label": "Subscription note" },
+    { "type": "image_picker", "id": "gift_icon", "label": "Gift icon" },
+    { "type": "text", "id": "gift_icon_url", "label": "Gift icon URL", "info": "Optional. Defaults to the Pacha Mana logomark." },
+    { "type": "inline_richtext", "id": "gift_text", "label": "Gift text" },
+    { "type": "text", "id": "trust_line", "label": "Trust line" },
+    { "type": "inline_richtext", "id": "footnote", "label": "Footnote" },
+
+    { "type": "header", "content": "Mobile sticky bar" },
+    { "type": "select", "id": "sticky_mode", "label": "Show", "options": [{ "value": "mobile", "label": "On phones" }, { "value": "always", "label": "Always" }, { "value": "never", "label": "Never" }], "default": "mobile" }
+  ],
+  "blocks": [
+    {
+      "type": "blend",
+      "name": "Blend",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "name", "label": "Name", "info": "Defaults to the product title." },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Defaults to the product image." },
+        { "type": "text", "id": "image_url", "label": "Image URL", "info": "Used when no image is picked above." }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [{ "name": "Bundle: Builder" }]
+}
+{% endschema %}
