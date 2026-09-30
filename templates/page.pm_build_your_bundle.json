@@ -1,0 +1,576 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "top_bar": {
+      "type": "pm_bb_top_bar",
+      "settings": {
+        "text": "Subscribe & Save 15% · Free US shipping over $100 · Free Ritual Guide with your first order"
+      }
+    },
+    "hero": {
+      "type": "pm_bb_hero",
+      "settings": {
+        "eyebrow": "Heirloom Chuncho · Peru",
+        "heading": "Build your cacao ritual",
+        "text": "Pick the blends that call to you, paste included. Every bag is heirloom Chuncho from one multigenerational family farm in Peru's Sacred Valley, made into paste at origin and ground in small batches in California.",
+        "button_link": "#builder",
+        "button_label": "Build my bundle",
+        "label": "<span style=\"color:var(--pm-gold-500);letter-spacing:2px;\">★★★★★</span>100+ five-star reviews",
+        "image_url": "/cdn/shop/files/Untitled-design-7.png?v=1773176331&width=1400",
+        "image_alt_text": "All seven Pacha Mana blends",
+        "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-open.png?v=1790710030"
+      },
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "label": "01",
+            "label_2": "Choose 2, 3 or 4 eight-ounce bags"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "label": "02",
+            "label_2": "Mix any blends and the ceremonial paste"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "label": "03",
+            "label_2": "Subscribe & Save 15%, or buy once"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ]
+    },
+    "what_ceremonial_cacao_is": {
+      "type": "pm_bb_what_ceremonial_cacao_is",
+      "settings": {
+        "eyebrow": "Start here",
+        "heading": "What ceremonial cacao is"
+      },
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "It's the whole cacao bean, fermented and stone-ground with its natural cacao butter left in, all 54% of it. That's the difference between a cup of ceremonial cacao and a scoop of cocoa powder."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "Most people come to it looking for a gentler morning than coffee. What they stay for is the ten quiet minutes it asks of them."
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2"
+      ]
+    },
+    "builder": {
+      "type": "pm_bb_builder",
+      "settings": {
+        "eyebrow": "Build your bundle",
+        "step1_label": "Step 1",
+        "step1_title": "How many 8 oz bags?",
+        "bags_word": "bags",
+        "cups_template": "about [n] cups",
+        "cups_per_bag": 11,
+        "default_tier": "3",
+        "save_template": "Save [pct]%",
+        "full_price_label": "Full price",
+        "step2_label": "Step 2",
+        "step2_title": "Choose your blends. Doubles welcome.",
+        "variant_match": "1/2 lb",
+        "add_label": "Add one",
+        "remove_label": "Remove one",
+        "sold_out_label": "Sold out",
+        "step3_label": "Step 3",
+        "step3_title": "How would you like it?",
+        "default_plan": "subscribe",
+        "sub_title": "Subscribe & Save 15%",
+        "sub_badge": "Best value",
+        "sub_text": "15% off every bag, delivered every 4, 6 or 8 weeks. 3-month minimum, then skip, push or change anytime.",
+        "frequencies": "4,6,8",
+        "freq_template": "Every [n] weeks",
+        "freq_aria": "Delivery schedule",
+        "once_title": "One-time purchase",
+        "once_text": "5% off 3 bags, 10% off 4 bags.",
+        "once_discount_3": 5,
+        "once_discount_4": 10,
+        "summary_title": "Your bundle",
+        "count_template": "[picked] of [tier] chosen",
+        "empty_text": "Nothing chosen yet. Pick the ones you're curious about.",
+        "subtotal_label": "Subtotal",
+        "sub_discount_label": "Subscribe & Save ([pct]%)",
+        "once_discount_label": "Bundle discount ([pct]%)",
+        "free_ship_threshold": 100,
+        "ship_free_text": "Your US shipping is free.",
+        "ship_more_text": "Add [amount] more for free US shipping.",
+        "total_label": "Total",
+        "per_cup_template": "[amount] per cup",
+        "need_more_template": "Choose [n] more to complete your bundle.",
+        "no_plan_text": "[names] isn't available on this delivery schedule.",
+        "cta_sub": "Start my subscription",
+        "cta_once": "Add bundle to cart",
+        "adding_label": "Adding…",
+        "error_text": "Something went wrong adding your bundle. Please try again.",
+        "sub_note": "3-month minimum, then skip, push or change anytime.",
+        "gift_text": "<strong>Included free:</strong> Pacha Mana Ritual Guide &amp; Recipe E-book, with your first order.",
+        "trust_line": "Lab-tested · Direct trade · 30-day love-it-or-your-money-back",
+        "footnote": "Want to try everything? <a href=\"/products/ceremonial-cacao-blend-bundle\">The Ultimate Bundle has all six blends for $150 (save $24).</a>",
+        "sticky_mode": "mobile"
+      },
+      "blocks": {
+        "blend_1": {
+          "type": "blend",
+          "settings": {
+            "product": "1lb-cacao-chuncho-ceremonial-grade",
+            "name": "Ceremonial Cacao Paste",
+            "description": "A stone-ground block with notes of dried cherry, roasted hazelnut and warm earth.",
+            "image_url": "/cdn/shop/files/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=400"
+          }
+        },
+        "blend_2": {
+          "type": "blend",
+          "settings": {
+            "product": "pure-ground-cermonial-cacao",
+            "name": "Pure Ground",
+            "description": "One ingredient, the full-strength daily cup.",
+            "image_url": "/cdn/shop/files/1-2.png?v=1773121973&width=400"
+          }
+        },
+        "blend_3": {
+          "type": "blend",
+          "settings": {
+            "product": "maple-sweetened",
+            "name": "Maple Sweetened",
+            "description": "Lightly sweetened with maple, and the easiest place to start.",
+            "image_url": "/cdn/shop/files/5.png?v=1773122027&width=400"
+          }
+        },
+        "blend_4": {
+          "type": "blend",
+          "settings": {
+            "product": "golden-milk-ground-ceremonial-cacao",
+            "name": "Golden Milk",
+            "description": "Turmeric, ginger and black pepper. Warming and grounding.",
+            "image_url": "/cdn/shop/files/6-1.webp?v=1773176314&width=400"
+          }
+        },
+        "blend_5": {
+          "type": "blend",
+          "settings": {
+            "product": "mayan-spice-ground-ceremonial-cacao",
+            "name": "Mayan Spice",
+            "description": "Cinnamon and chili, with traditional heat and a slow finish.",
+            "image_url": "/cdn/shop/files/DSCF8392-1-scaled.jpg?v=1773176376&width=400"
+          }
+        },
+        "blend_6": {
+          "type": "blend",
+          "settings": {
+            "product": "rose-vanilla-ground-cacao",
+            "name": "Rose Vanilla",
+            "description": "Floral and soft, a heart-opening evening cup.",
+            "image_url": "/cdn/shop/files/4.png?v=1773176302&width=400"
+          }
+        },
+        "blend_7": {
+          "type": "blend",
+          "settings": {
+            "product": "mushroom-vitality-ground-cacao-bag",
+            "name": "Mushroom Vitality",
+            "description": "Lion's mane, reishi and cordyceps for focus with calm.",
+            "image_url": "/cdn/shop/files/3.png?v=1773176289&width=400"
+          }
+        }
+      },
+      "block_order": [
+        "blend_1",
+        "blend_2",
+        "blend_3",
+        "blend_4",
+        "blend_5",
+        "blend_6",
+        "blend_7"
+      ]
+    },
+    "what_a_cup_gives_you": {
+      "type": "pm_bb_what_a_cup_gives_you",
+      "settings": {
+        "eyebrow": "Why cacao",
+        "heading": "What a cup gives you",
+        "text": "Note: Cacao is contraindicated with SSRIs, SNRIs and NDRIs. If you take one of these, please talk with your doctor before drinking ceremonial doses."
+      },
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "title": "Steady energy.",
+            "text": "Theobromine is a gentle stimulant with a long half-life. It lifts you without the jitters or the crash, which is why so many people use cacao to ease off coffee."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "title": "Lifted mood.",
+            "text": "Cacao carries anandamide, phenylethylamine and the building blocks of serotonin and dopamine, along with compounds that help them linger."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "title": "Deep minerals.",
+            "text": "Cacao is one of the richest natural sources of magnesium, and it brings iron, zinc, copper and manganese too. The cacao butter helps carry them in."
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "title": "A slower morning.",
+            "text": "Ceremony is simply attention: warming the cup, setting an intention, drinking without a screen. Ten minutes that change the shape of a day."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ]
+    },
+    "paste_or_ground": {
+      "type": "pm_bb_paste_or_ground",
+      "settings": {
+        "eyebrow": "Choose your format",
+        "heading": "Paste or ground",
+        "text": "Both are full-fat, 54% cacao butter, with nothing removed. The only real difference is how you like to make it."
+      },
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "image_url": "/cdn/shop/files/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=800",
+            "image_alt_text": "Ceremonial Cacao Paste",
+            "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-three.png?v=1790710030",
+            "title": "Ceremonial Paste.",
+            "text": "A solid block. Chop what you need and melt it slowly with a little hot water, or use a blender. This is the traditional ceremony format and the richest cup you'll make.",
+            "text_2": "Best for ceremony, slow mornings and purists."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "image_url": "/cdn/shop/files/1-2.png?v=1773121973&width=800",
+            "image_alt_text": "Pure Ground cacao",
+            "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-open.png?v=1790710030",
+            "title": "Ground Cacao.",
+            "text": "The same whole bean, ground fine. Spoon it into hot water and froth. Same fat and same benefits, ready in about two minutes.",
+            "text_2": "Best for daily ritual, smoothies and weekday mornings."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2"
+      ]
+    },
+    "how_to_prepare": {
+      "type": "pm_bb_how_to_prepare",
+      "settings": {
+        "eyebrow": "Your first cup",
+        "heading": "How to prepare"
+      },
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "label": "01",
+            "title": "Measure.",
+            "text": "Start with about 2 tablespoons (20 g) for a daily cup. Once you know how it sits with you, work up to a fuller ceremonial dose."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "label": "02",
+            "title": "Warm.",
+            "text": "Add 6 to 8 oz of hot water or plant milk, around 175°F. Keep it off a hard boil, because boiling water dulls the flavor."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "label": "03",
+            "title": "Froth and sit.",
+            "text": "Blend or froth for ten seconds, which is what makes the texture. Then set an intention and drink it slowly, away from your screen."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ]
+    },
+    "reviews": {
+      "type": "pm_bb_reviews",
+      "settings": {
+        "eyebrow": "From the family",
+        "heading": "What people tell us"
+      },
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "label": "★★★★★",
+            "quote": "\"I wanted to cut back on coffee and ended up finding a morning I actually look forward to. One cup and I am ready, without the crash.\"",
+            "caption": "Verified buyer"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "label": "★★★★★",
+            "quote": "\"The Mayan Spice is unreal. Rich, warm, not sweet. You can taste that nothing was stripped out of it.\"",
+            "caption": "Verified buyer"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "label": "★★★★★",
+            "quote": "\"I came for the health benefits and stayed for the ritual. It has become the ten minutes of my day that belong to me.\"",
+            "caption": "Verified buyer"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ]
+    },
+    "our_promise": {
+      "type": "pm_bb_our_promise",
+      "settings": {
+        "eyebrow": "Our promise",
+        "heading": "Tested, traceable, whole",
+        "link": "shopify://pages/safe-cacao",
+        "link_label": "See our test results →"
+      },
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "title": "Metals tested.",
+            "text": "Third-party tested, with our lead and cadmium results published on the Safe Cacao page."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "title": "Clean inputs.",
+            "text": "Screened for herbicides and pesticides, with no added sugar in the pure blends."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "title": "Regenerative.",
+            "text": "Grown under canopy by a family and community caring for their own land."
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "title": "Direct trade.",
+            "text": "We buy from the farm directly and pay 3x above fair trade."
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "title": "Vegan and non-GMO.",
+            "text": "One ingredient in the pure blends, and nothing you can't pronounce in the others."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5"
+      ]
+    },
+    "ayni": {
+      "type": "pm_bb_ayni",
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/cacao-tree.png?v=1790710030",
+        "image_url_2": "/cdn/shop/files/IMG_0666.jpg?v=1766411732&width=1400",
+        "image_alt_text_2": "The family farm in the Sacred Valley",
+        "eyebrow": "Ayni",
+        "heading": "Ceremony starts at the farm",
+        "text": "<em>Ayni</em> is the Quechua word for sacred reciprocity, the understanding that what you take and what you give must stay in balance. It's one of the oldest agreements in the Andes, and it's the one we work by.",
+        "text_2": "Our Chuncho comes from one multigenerational family farm in the Sacred Valley, just outside Cusco, in the ceja de selva where the Andes meet the jungle. They work hand in hand with the Quechua and Machiguenga farming families around them. It's wild-harvested heirloom Chuncho, grown regeneratively, bought direct, and traceable to the grove it came from."
+      }
+    },
+    "faq": {
+      "type": "pm_bb_faq",
+      "settings": {
+        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/llama.png?v=1790710030",
+        "heading": "FAQ"
+      },
+      "blocks": {
+        "question_1": {
+          "type": "question",
+          "settings": {
+            "question": "How is this different from cocoa powder?",
+            "answer": "Cocoa powder has most of its cacao butter pressed out. Ours is the whole bean with all 54% of its butter left in, so it melts into a rich cup and carries the minerals and theobromine with it."
+          }
+        },
+        "question_2": {
+          "type": "question",
+          "settings": {
+            "question": "How does Subscribe & Save work?",
+            "answer": "Every bag in your bundle is 15% off, delivered every 4, 6 or 8 weeks. There's a 3-month minimum, and after that you can skip, push or change your order from your account."
+          }
+        },
+        "question_3": {
+          "type": "question",
+          "settings": {
+            "question": "Will it keep me up at night?",
+            "answer": "One cup has roughly a third of the caffeine of a cup of coffee, balanced by theobromine, which is slower and softer. Most people drink it before 2pm while they get used to it."
+          }
+        },
+        "question_4": {
+          "type": "question",
+          "settings": {
+            "question": "Which blend should a beginner pick?",
+            "answer": "Maple Sweetened is the gentlest start. Pair it with Pure so you can taste what unsweetened Chuncho is like, then branch out."
+          }
+        },
+        "question_5": {
+          "type": "question",
+          "settings": {
+            "question": "Do I need special equipment?",
+            "answer": "A small whisk works. An electric frother or blender works better, and ten seconds of blending is the difference between gritty and silky."
+          }
+        },
+        "question_6": {
+          "type": "question",
+          "settings": {
+            "question": "Is it tested for heavy metals?",
+            "answer": "Yes. Every batch is third-party tested and the results are published on our Safe Cacao page."
+          }
+        },
+        "question_7": {
+          "type": "question",
+          "settings": {
+            "question": "What if I don't love it?",
+            "answer": "Write to us within 30 days and we'll make it right."
+          }
+        },
+        "question_8": {
+          "type": "question",
+          "settings": {
+            "question": "When does the Ritual Guide arrive?",
+            "answer": "It's emailed within a few minutes of your first order, with the recipes and a short walkthrough of a home ceremony."
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5",
+        "question_6",
+        "question_7",
+        "question_8"
+      ]
+    },
+    "note_from_justin": {
+      "type": "pm_bb_note_from_justin",
+      "settings": {
+        "image_url": "/cdn/shop/t/14/assets/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
+        "eyebrow": "A note before you go",
+        "button_link": "#builder",
+        "button_label": "Build my bundle"
+      },
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "Friend, the first time I sat with real ceremonial cacao, I didn't expect much. I'd been drinking cocoa my whole life. What I got instead was an hour of feeling completely present, and a clear sense that I'd been handed something much older than me."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "That's what we try to put in every bag: whole beans from a family who has tended these groves for generations, ground slowly and sent to you with nothing taken out. Start with two bags and see what a week of slow mornings does."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "With gratitude, Justin"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "P.S. The Ritual Guide that comes with your first bundle has the recipes we actually make at home: the maple oat cup, the spiced evening version, and the one my daughter asks for. It's the part I would have wanted on day one."
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ]
+    },
+    "footer": {
+      "type": "pm_bb_footer",
+      "settings": {
+        "image_url": "/cdn/shop/files/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png?v=1766190980&width=400",
+        "image_alt_text": "Pacha Mana, Ceremony Starts At The Farm",
+        "text": "Free US shipping over $100 · Questions? <a href=\"mailto:support@pachamana.com\" style=\"color:var(--pm-gold-300);\">support@pachamana.com</a>",
+        "text_2": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
+      }
+    }
+  },
+  "order": [
+    "top_bar",
+    "hero",
+    "what_ceremonial_cacao_is",
+    "builder",
+    "what_a_cup_gives_you",
+    "paste_or_ground",
+    "how_to_prepare",
+    "reviews",
+    "our_promise",
+    "ayni",
+    "faq",
+    "note_from_justin",
+    "footer"
+  ]
+}
