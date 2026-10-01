@@ -48,11 +48,11 @@
       "settings": {
         "eyebrow": "Pure Peruvian ceremonial cacao",
         "heading": "Energy that stays with you",
-        "text": "A warm, grounded lift that lasts for hours, without the jitters or the afternoon crash. Heirloom Chuncho cacao from one multigenerational family farm in Peru's Sacred Valley, made into paste at origin with all of its cacao butter left in.",
-        "button_link": "/pages/build-your-bundle?plan=subscribe",
+        "text": "A warm, grounded lift that lasts for hours, without the jitters or the afternoon crash.\nChuncho cacao from a multigenerational family farm in Peru's Sacred Valley, made into paste at origin.",
+        "button_link": "https://pachamana.com/pages/build-your-bundle",
         "button_label": "Build Your Bundle",
         "button_link_2": "shopify://products/ceremonial-cacao-blend-bundle",
-        "button_label_2": "Try all six blends",
+        "button_label_2": "or: Try all six blends",
         "text_2": "Subscribe & Save 15% · Free US shipping over $100 · Every batch tested for heavy metals, pesticides and herbicides",
         "image_url": "/cdn/shop/files/cacao-sheny-leon-photography-maui-24_a0ee49d4-0778-43c9-a0d0-eeb38abccad3.jpg?v=1766194436&width=2000",
         "image_alt_text": "A cup of ceremonial cacao",
@@ -180,15 +180,15 @@
         "card_3": {
           "type": "card",
           "settings": {
-            "label": "Rise",
-            "title": "Warmth first, then attention.",
+            "label": "At First",
+            "title": "Feelings of Warmth",
             "text": "Theobromine opens the blood vessels instead of jolting the nervous system. Most people feel it as a warmth in the chest that spreads out from there."
           }
         },
         "card_4": {
           "type": "card",
           "settings": {
-            "label": "Hold",
+            "label": "Then",
             "title": "A long, even plateau.",
             "text": "Cacao butter carries the compounds and slows their release, so the focus feels clear and grounded for most of a working day."
           }
@@ -196,9 +196,9 @@
         "card_5": {
           "type": "card",
           "settings": {
-            "label": "Rest",
+            "label": "the Rest",
             "title": "It leaves as gently as it came.",
-            "text": "There's no crash to chase with a second cup, and your evening stays your own."
+            "text": "No crash to chase with a second cup, and your evening stays calm"
           }
         }
       },
@@ -255,10 +255,32 @@
         "card_2",
         "card_3"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "What to expect",
         "heading": "When you begin",
         "text": "Cacao is a habit more than a supplement, and it builds."
+      }
+    },
+    "1790820366598a2451": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_02bef43_q6Uzhq": {
+          "type": "ai_gen_block_02bef43",
+          "settings": {
+            "desktop_width_percent": 100,
+            "divider_color": "#5C402F",
+            "thickness": 1,
+            "spacing": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_02bef43_q6Uzhq"
+      ],
+      "settings": {
+        "section_label": "Content block"
       }
     },
     "paste_or_ground": {
@@ -271,8 +293,8 @@
             "image_alt_text": "Ceremonial Paste",
             "title": "Ceremonial Paste",
             "label": "8 oz $27",
-            "text": "A solid block, the traditional ceremony format. Shave or chop what you need and melt it slowly with a little hot water. The richest cup you'll make.",
-            "text_2": "Best for ceremony, slow mornings and purists."
+            "text": "A solid block, the traditional format. Shave or chop what you need and melt it slowly with a little hot water. The richest cup you'll make.",
+            "text_2": "Best for the ritual, slow mornings and purists."
           }
         },
         "card_2": {
@@ -282,8 +304,8 @@
             "image_alt_text": "Pure Ground",
             "title": "Pure Ground",
             "label": "8 oz $27",
-            "text": "The same paste, ground fine in California. Spoon it into hot water and froth. Same fat, same benefits, ready in about two minutes.",
-            "text_2": "Best for daily ritual and busy weekday mornings."
+            "text": "The same paste, ground up in California. Spoon it into hot water and froth. Same fat, same benefits, ready in about two minutes.",
+            "text_2": "Best for daily ritual and busy lives"
           }
         }
       },
@@ -905,6 +927,7 @@
     "strip",
     "the_shift",
     "when_you_begin",
+    "1790820366598a2451",
     "paste_or_ground",
     "the_blends",
     "the_offer",
