@@ -48,12 +48,12 @@
       "settings": {
         "eyebrow": "Pure Peruvian ceremonial cacao",
         "heading": "Energy that stays with you",
-        "text": "A warm, grounded lift that lasts for hours, without the jitters or the afternoon crash.\nChuncho cacao from a multigenerational family farm in Peru's Sacred Valley, made into paste at origin.",
+        "text": "A warm, grounded lift that lasts for hours, without the jitters or the afternoon crash.\nChuncho Cacao from a multigenerational family farm in Peru's Sacred Valley, made into paste at origin.",
         "button_link": "https://pachamana.com/pages/build-your-bundle",
         "button_label": "Build Your Bundle",
         "button_link_2": "shopify://products/ceremonial-cacao-blend-bundle",
-        "button_label_2": "or: Try all six blends",
-        "text_2": "Subscribe & Save 15% · Free US shipping over $100 · Every batch tested for heavy metals, pesticides and herbicides",
+        "button_label_2": "or: Try all 6 blends",
+        "text_2": "Subscribe & Save 15% · Free US shipping over $100 · Every batch tested for heavy metals",
         "image_url": "/cdn/shop/files/cacao-sheny-leon-photography-maui-24_a0ee49d4-0778-43c9-a0d0-eeb38abccad3.jpg?v=1766194436&width=2000",
         "image_alt_text": "A cup of ceremonial cacao",
         "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-three.png?v=1790710030",
@@ -269,7 +269,7 @@
           "type": "ai_gen_block_02bef43",
           "settings": {
             "desktop_width_percent": 100,
-            "divider_color": "#5C402F",
+            "divider_color": "#5c402f",
             "thickness": 1,
             "spacing": 20
           },
@@ -519,7 +519,7 @@
       ],
       "settings": {
         "eyebrow": "Start here",
-        "heading": "Build your ritual",
+        "heading": "Build your Bundle",
         "text": "Choose 2, 3 or 4 bags in any blends, paste included. Subscribe & Save and every bag is 15% off, delivered before you run out.",
         "text_2": "About $2.09 a cup for Pure on Subscribe & Save.",
         "image_url": "/cdn/shop/t/14/assets/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
@@ -931,8 +931,8 @@
     "paste_or_ground",
     "the_blends",
     "the_offer",
-    "why_it_works",
     "reviews",
+    "why_it_works",
     "compared",
     "how_to_make_it",
     "faq",
