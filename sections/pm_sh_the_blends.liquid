@@ -1,38 +1,515 @@
-{%- comment -%} Pacha Mana - Start page: The blends. Converted from start-here.html; every visible string, image and link is a setting. {%- endcomment -%}
+{%- comment -%}
+  Pacha Mana — Start page: The blends.
+  Original desktop design retained.
+  Mobile: swipeable cards, snap scrolling, arrows and slide counter.
+  Existing settings and Blend blocks are unchanged.
+{%- endcomment -%}
+
+{%- liquid
+  assign blends_id = 'PMBlends-' | append: section.id
+  assign blend_blocks = section.blocks | where: 'type', 'card'
+-%}
+
 {{ 'pm_landing.css' | asset_url | stylesheet_tag }}
-<section class="pm-landing" style="position:relative;overflow:hidden;background:var(--pm-sandy-tan);padding:clamp(64px,8vw,112px) 20px;">
-<div style="position:absolute;inset:0;background-image:url('https://pachamana.com/cdn/shop/files/Pattern_Website.png?v=1769670221&amp;width=1200');background-size:520px auto;opacity:.06;pointer-events:none;"></div>
-<div style="position:relative;max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
-<div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;">
-<span class="pm-eyebrow pm-eyebrow--cacao">{{ section.settings.eyebrow | escape }}</span>
-<h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(30px,4vw,44px);line-height:1.1;color:var(--text-strong);margin:0;">{{ section.settings.heading | escape }}</h2>
-<p style="margin:0;max-width:600px;font-size:17px;line-height:1.7;text-wrap:pretty;">{{ section.settings.text | escape }}</p>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;">
-{%- for block in section.blocks -%}{%- if block.type == 'card' -%}<div {{ block.shopify_attributes }} style="background:var(--pm-tan-50);border:1px solid var(--border-soft);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;">
-<div style="position:relative;aspect-ratio:1/1;background:#fff;"><img alt="{{ block.settings.image_alt_text | escape }}" src="{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 800 }}{%- else -%}{{ block.settings.image_url | escape }}{%- endif -%}" style="width:100%;height:100%;object-fit:cover;display:block;min-height:100%;max-height:100%;"/>
-{%- if block.settings.image_2 != blank or block.settings.image_url_2 != blank -%}<img alt="{{ block.settings.image_alt_text_2 | escape }}" src="{%- if block.settings.image_2 != blank -%}{{ block.settings.image_2 | image_url: width: 1600 }}{%- else -%}{{ block.settings.image_url_2 | escape }}{%- endif -%}" style="position:absolute;right:10px;bottom:10px;width:34%;height:auto;filter:drop-shadow(0 4px 8px rgba(92,64,47,.22));pointer-events:none;"/>{%- endif -%}
-{%- if block.settings.image_3 != blank or block.settings.image_url_3 != blank -%}<img alt="{{ block.settings.image_alt_text_3 | escape }}" src="{%- if block.settings.image_3 != blank -%}{{ block.settings.image_3 | image_url: width: 1600 }}{%- else -%}{{ block.settings.image_url_3 | escape }}{%- endif -%}" style="position:absolute;right:30%;bottom:6px;width:24%;height:auto;filter:drop-shadow(0 4px 8px rgba(92,64,47,.22));pointer-events:none;"/>{%- endif -%}</div>
-<div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;">
-<div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;"><h3 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:0.06em;font-size:19px;color:var(--text-strong);margin:0;">{{ block.settings.title | escape }}</h3><span style="font-size:14px;font-weight:600;color:var(--pm-gold-700);flex:0 0 auto;">{{ block.settings.label | escape }}</span></div>
-<p style="margin:0;font-size:15px;line-height:1.6;color:var(--text-strong);">{{ block.settings.text | escape }}</p>
-<dl style="margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:13px;line-height:1.5;border-top:1px solid var(--border-soft);padding-top:12px;">
-<dt style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:11px;color:var(--pm-cacao-400);padding-top:2px;">{{ block.settings.text_2 | escape }}</dt><dd style="margin:0;">{{ block.settings.text_3 | escape }}</dd>
-<dt style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:11px;color:var(--pm-cacao-400);padding-top:2px;">{{ block.settings.text_4 | escape }}</dt><dd style="margin:0;">{{ block.settings.text_5 | escape }}</dd>
-<dt style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:11px;color:var(--pm-cacao-400);padding-top:2px;">{{ block.settings.text_6 | escape }}</dt><dd style="margin:0;font-style:italic;">{{ block.settings.text_7 | escape }}</dd>
-</dl>
-</div>
-</div>{%- endif -%}{%- endfor -%}
 
+<style>
+  /* Original desktop grid. All added styles belong to this instance. */
+  #{{ blends_id }} .pm-blends__carousel {
+    display: block;
+    min-width: 0;
+  }
 
+  #{{ blends_id }} .pm-blends__track {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+  }
 
+  #{{ blends_id }} .pm-blends__controls {
+    display: none;
+  }
 
+  #{{ blends_id }} .pm-blends__controls[hidden] {
+    display: none !important;
+  }
 
+  /* Mobile only — desktop card styling is not overridden. */
+  @media screen and (max-width: 767px) {
+    #{{ blends_id }} .pm-blends__track {
+      display: flex;
+      align-items: stretch;
+      gap: 14px;
+      box-sizing: border-box;
+      width: calc(100% + 40px);
+      max-width: none;
+      margin-inline: -20px;
+      padding: 0 20px 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 20px;
+      scroll-behavior: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
 
-</div>
-<div style="display:flex;justify-content:center;"><a class="pm-btn pm-btn--primary pm-btn--lg" href="{{ section.settings.button_link | escape }}">{{ section.settings.button_label | escape }}</a></div>
-</div>
+    #{{ blends_id }} .pm-blends__carousel[data-ready] .pm-blends__track {
+      scrollbar-width: none;
+    }
+
+    #{{ blends_id }} .pm-blends__carousel[data-ready] .pm-blends__track::-webkit-scrollbar {
+      display: none;
+    }
+
+    #{{ blends_id }} .pm-blends__card {
+      box-sizing: border-box;
+      flex: 0 0 86%;
+      min-width: 0;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    #{{ blends_id }} .pm-blends__card:only-child {
+      flex-basis: 100%;
+    }
+
+    #{{ blends_id }} .pm-blends__media {
+      flex-shrink: 0;
+    }
+
+    #{{ blends_id }} .pm-blends__card :is(h3, p, dt, dd) {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    #{{ blends_id }} .pm-blends__controls:not([hidden]) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    #{{ blends_id }} .pm-blends__arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--border-soft, #d7c9ba);
+      border-radius: 50%;
+      background: var(--pm-tan-50, #f8f3ec);
+      color: var(--text-strong, #5c402f);
+      box-shadow: none;
+      appearance: none;
+      cursor: pointer;
+      transition: opacity .2s ease, background-color .2s ease;
+    }
+
+    #{{ blends_id }} .pm-blends__arrow::before,
+    #{{ blends_id }} .pm-blends__arrow::after {
+      content: none;
+    }
+
+    #{{ blends_id }} .pm-blends__arrow:disabled {
+      opacity: .35;
+      cursor: default;
+    }
+
+    #{{ blends_id }} .pm-blends__arrow svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    #{{ blends_id }} .pm-blends__counter {
+      min-width: 82px;
+      color: var(--text-strong, #5c402f);
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #{{ blends_id }} .pm-blends__arrow:focus-visible,
+    #{{ blends_id }} .pm-blends__track:focus-visible {
+      outline: 2px solid var(--pm-cacao-400, #5c402f);
+      outline-offset: -3px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #{{ blends_id }} .pm-blends__arrow {
+      transition: none;
+    }
+  }
+</style>
+
+<section
+  id="{{ blends_id }}"
+  class="pm-landing"
+  style="position:relative;overflow:hidden;background:var(--pm-sandy-tan);padding:clamp(64px,8vw,112px) 20px;"
+>
+  <div
+    aria-hidden="true"
+    style="position:absolute;inset:0;background-image:url('https://pachamana.com/cdn/shop/files/Pattern_Website.png?v=1769670221&amp;width=1200');background-size:520px auto;opacity:.06;pointer-events:none;"
+  ></div>
+
+  <div style="position:relative;max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:40px;">
+
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;">
+      <span class="pm-eyebrow pm-eyebrow--cacao">
+        {{ section.settings.eyebrow | escape }}
+      </span>
+
+      <h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(30px,4vw,44px);line-height:1.1;color:var(--text-strong);margin:0;">
+        {{ section.settings.heading | escape }}
+      </h2>
+
+      <p style="margin:0;max-width:600px;font-size:17px;line-height:1.7;text-wrap:pretty;">
+        {{ section.settings.text | escape }}
+      </p>
+    </div>
+
+    <pm-blends-mobile-carousel-v1
+      class="pm-blends__carousel"
+      role="region"
+      aria-label="{{ section.settings.heading | default: 'The blends' | escape }}"
+    >
+      <div
+        id="{{ blends_id }}-track"
+        class="pm-blends__track"
+        data-pm-track
+        role="list"
+      >
+        {%- for block in blend_blocks -%}
+          <div
+            class="pm-blends__card"
+            data-pm-card
+            role="listitem"
+            {{ block.shopify_attributes }}
+            style="background:var(--pm-tan-50);border:1px solid var(--border-soft);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;"
+          >
+            <div
+              class="pm-blends__media"
+              style="position:relative;aspect-ratio:1/1;background:#fff;"
+            >
+              <img
+                alt="{{ block.settings.image_alt_text | escape }}"
+                src="{%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 800 }}{%- else -%}{{ block.settings.image_url | escape }}{%- endif -%}"
+                style="width:100%;height:100%;object-fit:cover;display:block;min-height:100%;max-height:100%;"
+              >
+
+              {%- if block.settings.image_2 != blank or block.settings.image_url_2 != blank -%}
+                <img
+                  alt="{{ block.settings.image_alt_text_2 | escape }}"
+                  src="{%- if block.settings.image_2 != blank -%}{{ block.settings.image_2 | image_url: width: 1600 }}{%- else -%}{{ block.settings.image_url_2 | escape }}{%- endif -%}"
+                  style="position:absolute;right:10px;bottom:10px;width:34%;height:auto;filter:drop-shadow(0 4px 8px rgba(92,64,47,.22));pointer-events:none;"
+                >
+              {%- endif -%}
+
+              {%- if block.settings.image_3 != blank or block.settings.image_url_3 != blank -%}
+                <img
+                  alt="{{ block.settings.image_alt_text_3 | escape }}"
+                  src="{%- if block.settings.image_3 != blank -%}{{ block.settings.image_3 | image_url: width: 1600 }}{%- else -%}{{ block.settings.image_url_3 | escape }}{%- endif -%}"
+                  style="position:absolute;right:30%;bottom:6px;width:24%;height:auto;filter:drop-shadow(0 4px 8px rgba(92,64,47,.22));pointer-events:none;"
+                >
+              {%- endif -%}
+            </div>
+
+            <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;">
+                <h3 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:0.06em;font-size:19px;color:var(--text-strong);margin:0;">
+                  {{ block.settings.title | escape }}
+                </h3>
+
+                <span style="font-size:14px;font-weight:600;color:var(--pm-gold-700);flex:0 0 auto;">
+                  {{ block.settings.label | escape }}
+                </span>
+              </div>
+
+              <p style="margin:0;font-size:15px;line-height:1.6;color:var(--text-strong);">
+                {{ block.settings.text | escape }}
+              </p>
+
+              <dl style="margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:13px;line-height:1.5;border-top:1px solid var(--border-soft);padding-top:12px;">
+                <dt style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:11px;color:var(--pm-cacao-400);padding-top:2px;">
+                  {{ block.settings.text_2 | escape }}
+                </dt>
+                <dd style="margin:0;">{{ block.settings.text_3 | escape }}</dd>
+
+                <dt style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:11px;color:var(--pm-cacao-400);padding-top:2px;">
+                  {{ block.settings.text_4 | escape }}
+                </dt>
+                <dd style="margin:0;">{{ block.settings.text_5 | escape }}</dd>
+
+                <dt style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:11px;color:var(--pm-cacao-400);padding-top:2px;">
+                  {{ block.settings.text_6 | escape }}
+                </dt>
+                <dd style="margin:0;font-style:italic;">{{ block.settings.text_7 | escape }}</dd>
+              </dl>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="pm-blends__controls" data-pm-controls hidden>
+        <button
+          type="button"
+          class="pm-blends__arrow"
+          data-pm-prev
+          aria-label="Previous blend"
+          aria-controls="{{ blends_id }}-track"
+          disabled
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 12H5m6-6-6 6 6 6"/>
+          </svg>
+        </button>
+
+        <span
+          class="pm-blends__counter"
+          data-pm-counter
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          1 / {{ blend_blocks.size }}
+        </span>
+
+        <button
+          type="button"
+          class="pm-blends__arrow"
+          data-pm-next
+          aria-label="Next blend"
+          aria-controls="{{ blends_id }}-track"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6"/>
+          </svg>
+        </button>
+      </div>
+    </pm-blends-mobile-carousel-v1>
+
+    <div style="display:flex;justify-content:center;">
+      <a
+        class="pm-btn pm-btn--primary pm-btn--lg"
+        href="{{ section.settings.button_link | escape }}"
+      >
+        {{ section.settings.button_label | escape }}
+      </a>
+    </div>
+
+  </div>
 </section>
+
+<script>
+(() => {
+  const tag = 'pm-blends-mobile-carousel-v1';
+  if (!window.customElements || customElements.get(tag)) return;
+
+  customElements.define(tag, class extends HTMLElement {
+    connectedCallback() {
+      this.boot = requestAnimationFrame(() => this.init());
+    }
+
+    init() {
+      if (!this.isConnected || this.events) return;
+
+      this.track = this.querySelector('[data-pm-track]');
+      this.cards = [...this.querySelectorAll('[data-pm-card]')];
+      this.controls = this.querySelector('[data-pm-controls]');
+      this.previous = this.querySelector('[data-pm-prev]');
+      this.next = this.querySelector('[data-pm-next]');
+      this.counter = this.querySelector('[data-pm-counter]');
+      this.mobile = matchMedia('(max-width: 767px)');
+      this.reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      this.events = new AbortController();
+      const signal = this.events.signal;
+
+      const schedule = () => {
+        if (this.frame) return;
+        this.frame = requestAnimationFrame(() => this.update());
+      };
+
+      this.track.addEventListener('scroll', schedule, {
+        passive: true,
+        signal
+      });
+
+      window.addEventListener('resize', schedule, {
+        passive: true,
+        signal
+      });
+
+      this.mobile.addEventListener('change', schedule, { signal });
+
+      this.previous.addEventListener(
+        'click',
+        () => this.go(this.index - 1),
+        { signal }
+      );
+
+      this.next.addEventListener(
+        'click',
+        () => this.go(this.index + 1),
+        { signal }
+      );
+
+      this.track.addEventListener('keydown', event => {
+        if (!this.mobile.matches || event.target !== this.track) return;
+
+        const rtl = getComputedStyle(this.track).direction === 'rtl';
+        let target;
+
+        if (event.key === 'ArrowRight') {
+          target = this.index + (rtl ? -1 : 1);
+        }
+
+        if (event.key === 'ArrowLeft') {
+          target = this.index + (rtl ? 1 : -1);
+        }
+
+        if (event.key === 'Home') {
+          target = 0;
+        }
+
+        if (event.key === 'End') {
+          target = this.cards.length - 1;
+        }
+
+        if (target !== undefined) {
+          event.preventDefault();
+          this.go(target);
+        }
+      }, { signal });
+
+      // Reveal a selected Blend when editing it in Shopify.
+      this.addEventListener('shopify:block:select', event => {
+        const card = event.target.closest('[data-pm-card]');
+        const index = this.cards.indexOf(card);
+
+        if (index >= 0) {
+          this.go(index, true);
+        }
+      }, { signal });
+
+      if ('ResizeObserver' in window) {
+        this.observer = new ResizeObserver(schedule);
+        this.observer.observe(this.track);
+      }
+
+      this.setAttribute('data-ready', '');
+      this.update();
+    }
+
+    positions() {
+      if (!this.cards.length) return [];
+
+      const first = this.cards[0].getBoundingClientRect();
+
+      const max = Math.max(
+        0,
+        this.track.scrollWidth - this.track.clientWidth
+      );
+
+      const rtl = getComputedStyle(this.track).direction === 'rtl';
+
+      return this.cards.map(card => {
+        const rect = card.getBoundingClientRect();
+
+        const offset = rtl
+          ? first.right - rect.right
+          : rect.left - first.left;
+
+        return Math.min(max, Math.max(0, offset));
+      });
+    }
+
+    update() {
+      this.frame = 0;
+      if (!this.isConnected) return;
+
+      const active = this.mobile.matches && this.cards.length > 1;
+      this.controls.hidden = !active;
+
+      if (!active) {
+        this.track.removeAttribute('tabindex');
+        this.removeAttribute('aria-roledescription');
+        return;
+      }
+
+      this.track.tabIndex = 0;
+      this.setAttribute('aria-roledescription', 'carousel');
+
+      const position = Math.abs(this.track.scrollLeft);
+      const points = this.positions();
+
+      this.index = 0;
+
+      points.forEach((point, index) => {
+        if (
+          Math.abs(point - position) <
+          Math.abs(points[this.index] - position)
+        ) {
+          this.index = index;
+        }
+      });
+
+      this.previous.disabled = this.index === 0;
+      this.next.disabled = this.index === this.cards.length - 1;
+
+      const label = `${this.index + 1} / ${this.cards.length}`;
+
+      if (this.counter.textContent.trim() !== label) {
+        this.counter.textContent = label;
+      }
+    }
+
+    go(index, instant = false) {
+      if (!this.mobile.matches || !this.cards.length) return;
+
+      const target = Math.max(
+        0,
+        Math.min(this.cards.length - 1, index)
+      );
+
+      const rtl = getComputedStyle(this.track).direction === 'rtl';
+
+      this.track.scrollTo({
+        left: this.positions()[target] * (rtl ? -1 : 1),
+        behavior: instant || this.reducedMotion.matches
+          ? 'instant'
+          : 'smooth'
+      });
+    }
+
+    disconnectedCallback() {
+      cancelAnimationFrame(this.boot);
+      cancelAnimationFrame(this.frame);
+
+      this.frame = 0;
+
+      this.events?.abort();
+      this.observer?.disconnect();
+
+      if (this.controls) {
+        this.controls.hidden = true;
+      }
+
+      this.events = null;
+      this.removeAttribute('data-ready');
+    }
+  });
+})();
+</script>
 
 {% schema %}
 {
