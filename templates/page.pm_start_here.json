@@ -530,6 +530,44 @@
         "text_3": "Want to try everything? <a href=\"/products/ceremonial-cacao-blend-bundle\" style=\"color:var(--pm-gold-300);\">The Ultimate Bundle has all six blends for $150 (save $24).</a>"
       }
     },
+    "reviews": {
+      "type": "pm_sh_reviews",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "label": "★★★★★",
+            "quote": "\"Best cacao\nThe ground is just as good as the paste!\"",
+            "caption": "-Jen · Verified buyer"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "label": "★★★★★",
+            "quote": "\"I've tried other brands and this is so much smoother.\"",
+            "caption": "David · Verified buyer"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "label": "★★★★★",
+            "quote": "Wanted something to replace my current cacao that is tested for heavy metals etc.\nIt is important for me to have a good source because I drink it every day in place of coffee. You will not be disappointed.",
+            "caption": "JAckie · Verified buyer"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "eyebrow": "From the community",
+        "heading": "Loved across 100+ five-star reviews"
+      }
+    },
     "why_it_works": {
       "type": "pm_sh_why_it_works",
       "blocks": {
@@ -558,7 +596,7 @@
           "type": "card",
           "settings": {
             "title": "54% cacao butter.",
-            "text": "The fat carries the compounds and slows their release. We never defat."
+            "text": "The fat carries the compounds and slows their release. We never defat. This is not your normal store bought cacao powder"
           }
         }
       },
@@ -572,44 +610,6 @@
         "eyebrow": "Why it works",
         "heading": "What the cup is doing",
         "text": "Ceremonial cacao is the whole bean, ground, with its fat left in. That's why it works the way it does."
-      }
-    },
-    "reviews": {
-      "type": "pm_sh_reviews",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "label": "★★★★★",
-            "quote": "\"I was skeptical about the price but it's worth every penny.\"",
-            "caption": "Sarah M. · California"
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "label": "★★★★★",
-            "quote": "\"I've tried other brands and this is so much smoother.\"",
-            "caption": "David · DC"
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "label": "★★★★★",
-            "quote": "\"I wanted to cut back on coffee and ended up finding a morning I actually look forward to. One cup and I am ready, without the crash.\"",
-            "caption": "Verified buyer"
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ],
-      "settings": {
-        "eyebrow": "From the community",
-        "heading": "Loved across 100+ five-star reviews"
       }
     },
     "compared": {
@@ -714,7 +714,7 @@
             "label": "01",
             "title": "Measure",
             "text": "About 2 tablespoons (20 g).",
-            "text_2": "Two heaping tablespoons of ground, or a chunk of paste about the size of your thumb."
+            "text_2": "Two heaping tablespoons of ground, or a chunk of paste that fits in your palm"
           }
         },
         "card_2": {
@@ -723,7 +723,7 @@
             "label": "02",
             "title": "Pour",
             "text": "6 to 8 oz, just off the boil.",
-            "text_2": "Hot water for the purest cup, or a plant milk for something rounder."
+            "text_2": "170° Hot water for the purest cup, or a plant milk for something rounder."
           }
         },
         "card_3": {
@@ -732,7 +732,7 @@
             "label": "03",
             "title": "Froth",
             "text": "Ten seconds.",
-            "text_2": "An electric frother is easiest. Add a pinch of cinnamon or a little maple if you like."
+            "text_2": "An electric frother is easiest. I like my Vitamix blender. Add a pinch of salt or maple syrup, and emulsify the cacao!"
           }
         }
       },
@@ -744,7 +744,7 @@
       "settings": {
         "eyebrow": "Two minutes",
         "heading": "A simple ritual",
-        "text": "Paste or ground, the method is the same. Make it with attention, and that's the ceremony."
+        "text": "Paste or ground, the method is the same. Make it with intention and attention, and that's the ritual."
       }
     },
     "faq": {
@@ -754,7 +754,7 @@
           "type": "question",
           "settings": {
             "question": "Does ceremonial cacao have caffeine?",
-            "answer": "A little, far less than coffee. One cup has roughly a third of the caffeine of a cup of coffee. Cacao's main stimulant is theobromine, and the bean's natural fat slows how fast anything is absorbed, so the lift is gentler and longer."
+            "answer": "A little, far less than coffee. One cup has roughly a quarter of the caffeine of a cup of coffee. Cacao's main stimulant is theobromine, and the bean's natural fat slows how fast anything is absorbed, so the lift is gentler and longer."
           }
         },
         "question_2": {
@@ -768,21 +768,21 @@
           "type": "question",
           "settings": {
             "question": "Isn't this just cocoa powder?",
-            "answer": "No. Cocoa powder has most of its cacao butter pressed out. Ours is the whole bean with all 54% of its butter left in, so it melts into hot water and carries the minerals and theobromine with it."
+            "answer": "No. Cocoa powder has most of its cacao butter pressed out. Ours is the whole bean with all 54% of its butter left in, so it melts into hot water and carries the minerals and theobromine with it. This is a much healthier form of cacao"
           }
         },
         "question_4": {
           "type": "question",
           "settings": {
             "question": "How does Subscribe & Save work?",
-            "answer": "Pick your bundle, choose how often it arrives, and every bag is 15% off. There's a 3-month minimum, and after that you can skip, push or change your order from your account."
+            "answer": "Pick your bundle, choose how often it arrives, and every bag is 15% off. You can skip, push or change your order from your account at anytime."
           }
         },
         "question_5": {
           "type": "question",
           "settings": {
             "question": "Is it tested?",
-            "answer": "Yes. Every batch is tested for heavy metals, herbicides and pesticides, and the results are on our Safe Cacao page."
+            "answer": "Yes. Every batch is tested for heavy metals, and the results are on our Safe Cacao page.\nhttps://pachamana.com/pages/safe-cacao"
           }
         },
         "question_6": {
@@ -865,7 +865,7 @@
         "item_2_7": {
           "type": "item_2",
           "settings": {
-            "list_item": "<span style=\"color:var(--pm-gold-400);flex:0 0 auto;\">✦</span>Tested for heavy metals, herbicides and pesticides, results published"
+            "list_item": "<span style=\"color:var(--pm-gold-400);flex:0 0 auto;\">✦</span>Tested for heavy metals, results published"
           }
         },
         "item_2_8": {
@@ -913,6 +913,7 @@
     },
     "sticky": {
       "type": "pm_sh_sticky",
+      "disabled": true,
       "settings": {
         "title": "Subscribe & Save 15%",
         "subtitle": "Any 2–4 bags",
