@@ -1,0 +1,705 @@
+{%- comment -%}
+  Pacha Mana — Start page: Compared.
+  Desktop: original comparison table and styling.
+  Mobile: one swipeable card per comparison column, arrows and counter.
+  All existing section and block settings are retained.
+{%- endcomment -%}
+
+{%- liquid
+  assign compared_id = 'PMCompared-' | append: section.id
+  assign comparison_columns = section.blocks | where: 'type', 'item'
+  assign comparison_rows = section.blocks | where: 'type', 'row'
+  assign slide_count = comparison_columns.size | at_most: 3
+-%}
+
+{{ 'pm_landing.css' | asset_url | stylesheet_tag }}
+
+<style>
+  #{{ compared_id }} .pm-compared__carousel {
+    display: block;
+    min-width: 0;
+  }
+
+  #{{ compared_id }} .pm-compared__mobile,
+  #{{ compared_id }} .pm-compared__controls {
+    display: none;
+  }
+
+  #{{ compared_id }} .pm-compared__controls[hidden] {
+    display: none !important;
+  }
+
+  /* Mobile only. The desktop table is not restyled. */
+  @media screen and (max-width: 767px) {
+    #{{ compared_id }} [data-mobile-enabled] .pm-compared__desktop {
+      display: none;
+    }
+
+    #{{ compared_id }} .pm-compared__mobile {
+      display: block;
+      min-width: 0;
+    }
+
+    #{{ compared_id }} .pm-compared__track {
+      display: flex;
+      align-items: stretch;
+      gap: 14px;
+      box-sizing: border-box;
+      width: calc(100% + 40px);
+      max-width: none;
+      margin-inline: -20px;
+      padding: 0 20px 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 20px;
+      scroll-behavior: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    #{{ compared_id }} [data-ready] .pm-compared__track {
+      scrollbar-width: none;
+    }
+
+    #{{ compared_id }} [data-ready] .pm-compared__track::-webkit-scrollbar {
+      display: none;
+    }
+
+    #{{ compared_id }} .pm-compared__card {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 86%;
+      box-sizing: border-box;
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--border-soft, #ded5ca);
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    #{{ compared_id }} .pm-compared__card:only-child {
+      flex-basis: 100%;
+    }
+
+    #{{ compared_id }} .pm-compared__card-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      min-height: 76px;
+      margin: 0;
+      padding: 20px;
+      border-bottom: 1px solid var(--border-soft, #ded5ca);
+      background: #fff;
+      color: var(--text-strong, #5c402f);
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-align: center;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+    }
+
+    #{{ compared_id }} .pm-compared__card--featured .pm-compared__card-heading {
+      border-bottom-color: #044C4B;
+      background: #044C4B;
+      color: var(--pm-pearl-white, #fff);
+    }
+
+    #{{ compared_id }} .pm-compared__list {
+      flex: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    #{{ compared_id }} .pm-compared__card--featured .pm-compared__list {
+      background: rgba(4, 76, 75, .06);
+    }
+
+    #{{ compared_id }} .pm-compared__row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 14px;
+      box-sizing: border-box;
+      min-height: 66px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-soft, #ded5ca);
+    }
+
+    #{{ compared_id }} .pm-compared__row:last-child {
+      border-bottom: 0;
+    }
+
+    #{{ compared_id }} .pm-compared__row dt,
+    #{{ compared_id }} .pm-compared__row dd {
+      min-width: 0;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-strong, #5c402f);
+      overflow-wrap: anywhere;
+    }
+
+    #{{ compared_id }} .pm-compared__row dt {
+      font-weight: 400;
+      text-align: start;
+    }
+
+    #{{ compared_id }} .pm-compared__row dd {
+      text-align: end;
+    }
+
+    #{{ compared_id }} .pm-compared__card--featured dd {
+      color: #044C4B;
+      font-weight: 600;
+    }
+
+    #{{ compared_id }} .pm-compared__controls:not([hidden]) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    #{{ compared_id }} .pm-compared__arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--border-soft, #ded5ca);
+      border-radius: 50%;
+      background: var(--pm-tan-50, #f8f3ec);
+      color: var(--text-strong, #5c402f);
+      box-shadow: none;
+      appearance: none;
+      cursor: pointer;
+      transition: opacity .2s ease;
+    }
+
+    #{{ compared_id }} .pm-compared__arrow::before,
+    #{{ compared_id }} .pm-compared__arrow::after {
+      content: none;
+    }
+
+    #{{ compared_id }} .pm-compared__arrow:disabled {
+      opacity: .35;
+      cursor: default;
+    }
+
+    #{{ compared_id }} .pm-compared__arrow svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    #{{ compared_id }} .pm-compared__counter {
+      min-width: 82px;
+      color: var(--text-strong, #5c402f);
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #{{ compared_id }} .pm-compared__arrow:focus-visible,
+    #{{ compared_id }} .pm-compared__track:focus-visible {
+      outline: 2px solid #044C4B;
+      outline-offset: -3px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #{{ compared_id }} .pm-compared__arrow {
+      transition: none;
+    }
+  }
+</style>
+
+<section
+  id="{{ compared_id }}"
+  class="pm-landing"
+  style="padding:clamp(64px,8vw,112px) 20px;"
+>
+  <div style="max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
+
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;">
+      <span class="pm-eyebrow pm-eyebrow--gold">
+        {{ section.settings.eyebrow | escape }}
+      </span>
+
+      <h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;letter-spacing:var(--tracking-display);font-size:clamp(28px,3.8vw,44px);line-height:1.1;color:var(--text-strong);margin:0;">
+        {{ section.settings.heading | escape }}
+      </h2>
+    </div>
+
+    <pm-compared-mobile-carousel-v1
+      class="pm-compared__carousel"
+      role="region"
+      aria-label="{{ section.settings.heading | default: 'Comparison' | escape }}"
+      {% if slide_count > 0 %}data-mobile-enabled{% endif %}
+    >
+
+      <!-- ORIGINAL DESKTOP TABLE -->
+
+      <div
+        class="pm-compared__desktop"
+        style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0 20px 8px;"
+      >
+        <table style="width:100%;min-width:640px;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--border-soft);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);font-size:15px;">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:18px 20px;border-bottom:1px solid var(--border-soft);width:44%;"></th>
+
+              {%- for block in comparison_columns -%}
+                <th
+                  scope="col"
+                  data-pmc-column-id="{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                  style="{% cycle 'item_0_style': 'padding:18px 16px;background:#044C4B;color:var(--pm-pearl-white);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.1em;font-weight:400;font-size:14px;', 'padding:18px 16px;border-bottom:1px solid var(--border-soft);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.1em;font-weight:400;font-size:14px;color:var(--text-strong);', 'padding:18px 16px;border-bottom:1px solid var(--border-soft);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.1em;font-weight:400;font-size:14px;color:var(--text-strong);' %}"
+                >
+                  {{ block.settings.column_heading | escape }}
+                </th>
+              {%- endfor -%}
+            </tr>
+          </thead>
+
+          <tbody>
+            {%- for block in comparison_rows -%}
+              <tr {{ block.shopify_attributes }}>
+                <td style="padding:16px 20px;border-bottom:1px solid var(--border-soft);color:var(--text-strong);line-height:1.5;">
+                  {{ block.settings.cell | escape }}
+                </td>
+
+                <td style="padding:16px;text-align:center;border-bottom:1px solid rgba(4,76,75,.14);background:rgba(4,76,75,.06);color:#044C4B;font-weight:600;">
+                  {{ block.settings.cell_2 | escape }}
+                </td>
+
+                <td style="padding:16px;text-align:center;border-bottom:1px solid var(--border-soft);">
+                  {{ block.settings.cell_3 | escape }}
+                </td>
+
+                <td style="padding:16px;text-align:center;border-bottom:1px solid var(--border-soft);">
+                  {{ block.settings.cell_4 | escape }}
+                </td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- MOBILE CARDS: same headings, row labels and values. -->
+
+      {%- if slide_count > 0 -%}
+        <div class="pm-compared__mobile">
+          <div
+            id="{{ compared_id }}-track"
+            class="pm-compared__track"
+            data-pmc-track
+            role="list"
+          >
+            {%- comment -%}
+              The original row settings provide three comparison values:
+              cell_2, cell_3 and cell_4, in Column block order.
+            {%- endcomment -%}
+
+            {%- for column in comparison_columns limit: 3 -%}
+              {%- liquid
+                assign value_index = forloop.index | plus: 1
+                assign value_key = 'cell_' | append: value_index
+              -%}
+
+              <article
+                class="pm-compared__card{% if forloop.first %} pm-compared__card--featured{% endif %}"
+                data-pmc-card
+                data-pmc-column-id="{{ column.id }}"
+                role="listitem"
+                aria-labelledby="{{ compared_id }}-column-{{ column.id }}"
+              >
+                <h3
+                  id="{{ compared_id }}-column-{{ column.id }}"
+                  class="pm-compared__card-heading"
+                >
+                  {{ column.settings.column_heading | escape }}
+                </h3>
+
+                <dl class="pm-compared__list">
+                  {%- for row in comparison_rows -%}
+                    <div class="pm-compared__row">
+                      <dt>{{ row.settings.cell | escape }}</dt>
+                      <dd>{{ row.settings[value_key] | escape }}</dd>
+                    </div>
+                  {%- endfor -%}
+                </dl>
+              </article>
+            {%- endfor -%}
+          </div>
+
+          <div class="pm-compared__controls" data-pmc-controls hidden>
+            <button
+              type="button"
+              class="pm-compared__arrow"
+              data-pmc-prev
+              aria-label="Previous comparison"
+              aria-controls="{{ compared_id }}-track"
+              disabled
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 12H5m6-6-6 6 6 6"/>
+              </svg>
+            </button>
+
+            <span
+              class="pm-compared__counter"
+              data-pmc-counter
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              1 / {{ slide_count }}
+            </span>
+
+            <button
+              type="button"
+              class="pm-compared__arrow"
+              data-pmc-next
+              aria-label="Next comparison"
+              aria-controls="{{ compared_id }}-track"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      {%- endif -%}
+
+    </pm-compared-mobile-carousel-v1>
+
+    <p style="margin:0;text-align:center;font-size:14px;font-style:italic;color:var(--pm-cacao-400);text-wrap:balance;">
+      {{ section.settings.text | escape }}
+    </p>
+
+  </div>
+</section>
+
+<script>
+(() => {
+  const tag = 'pm-compared-mobile-carousel-v1';
+  if (!window.customElements || customElements.get(tag)) return;
+
+  customElements.define(tag, class extends HTMLElement {
+    connectedCallback() {
+      this.boot = requestAnimationFrame(() => this.init());
+    }
+
+    init() {
+      if (!this.isConnected || this.events) return;
+
+      this.track = this.querySelector('[data-pmc-track]');
+      this.cards = [...this.querySelectorAll('[data-pmc-card]')];
+      if (!this.track || !this.cards.length) return;
+
+      this.controls = this.querySelector('[data-pmc-controls]');
+      this.previous = this.querySelector('[data-pmc-prev]');
+      this.next = this.querySelector('[data-pmc-next]');
+      this.counter = this.querySelector('[data-pmc-counter]');
+      this.mobile = matchMedia('(max-width: 767px)');
+      this.reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      this.events = new AbortController();
+      this.index = 0;
+      this.targetIndex = null;
+      const signal = this.events.signal;
+
+      const schedule = () => {
+        if (this.frame) return;
+        this.frame = requestAnimationFrame(() => this.update());
+      };
+
+      this.track.addEventListener('scroll', schedule, {
+        passive: true,
+        signal
+      });
+
+      window.addEventListener('resize', schedule, {
+        passive: true,
+        signal
+      });
+
+      this.mobile.addEventListener('change', schedule, {
+        signal
+      });
+
+      this.previous.addEventListener('click', () => {
+        this.go((this.targetIndex ?? this.index) - 1);
+      }, { signal });
+
+      this.next.addEventListener('click', () => {
+        this.go((this.targetIndex ?? this.index) + 1);
+      }, { signal });
+
+      const releaseTarget = () => {
+        this.targetIndex = null;
+      };
+
+      this.track.addEventListener('pointerdown', releaseTarget, {
+        passive: true,
+        signal
+      });
+
+      this.track.addEventListener('wheel', releaseTarget, {
+        passive: true,
+        signal
+      });
+
+      this.track.addEventListener('keydown', event => {
+        if (!this.mobile.matches || event.target !== this.track) return;
+
+        const rtl = getComputedStyle(this.track).direction === 'rtl';
+        const current = this.targetIndex ?? this.index;
+        let target;
+
+        if (event.key === 'ArrowRight') {
+          target = current + (rtl ? -1 : 1);
+        }
+
+        if (event.key === 'ArrowLeft') {
+          target = current + (rtl ? 1 : -1);
+        }
+
+        if (event.key === 'Home') {
+          target = 0;
+        }
+
+        if (event.key === 'End') {
+          target = this.cards.length - 1;
+        }
+
+        if (target !== undefined) {
+          event.preventDefault();
+          this.go(target);
+        }
+      }, { signal });
+
+      // Selecting a Column in the Theme Editor reveals its mobile card.
+      this.addEventListener('shopify:block:select', event => {
+        if (!(event.target instanceof Element)) return;
+
+        const column = event.target.closest('[data-pmc-column-id]');
+        if (!column) return;
+
+        const index = this.cards.findIndex(card => {
+          return card.dataset.pmcColumnId === column.dataset.pmcColumnId;
+        });
+
+        if (index >= 0) {
+          this.go(index, true);
+        }
+      }, { signal });
+
+      if ('ResizeObserver' in window) {
+        this.observer = new ResizeObserver(schedule);
+        this.observer.observe(this.track);
+      }
+
+      this.setAttribute('data-ready', '');
+      this.update();
+    }
+
+    positions() {
+      const first = this.cards[0].getBoundingClientRect();
+
+      const max = Math.max(
+        0,
+        this.track.scrollWidth - this.track.clientWidth
+      );
+
+      const rtl = getComputedStyle(this.track).direction === 'rtl';
+
+      return this.cards.map(card => {
+        const rect = card.getBoundingClientRect();
+
+        const offset = rtl
+          ? first.right - rect.right
+          : rect.left - first.left;
+
+        return Math.min(max, Math.max(0, offset));
+      });
+    }
+
+    update() {
+      this.frame = 0;
+      if (!this.isConnected) return;
+
+      const active = this.mobile.matches && this.cards.length > 1;
+      this.controls.hidden = !active;
+
+      if (!active) {
+        this.track.removeAttribute('tabindex');
+        this.removeAttribute('aria-roledescription');
+        this.targetIndex = null;
+        return;
+      }
+
+      this.track.tabIndex = 0;
+      this.setAttribute('aria-roledescription', 'carousel');
+
+      const position = Math.abs(this.track.scrollLeft);
+      const points = this.positions();
+      this.index = 0;
+
+      points.forEach((point, index) => {
+        if (
+          Math.abs(point - position) <
+          Math.abs(points[this.index] - position)
+        ) {
+          this.index = index;
+        }
+      });
+
+      if (
+        this.targetIndex !== null &&
+        Math.abs(points[this.targetIndex] - position) < 2
+      ) {
+        this.targetIndex = null;
+      }
+
+      this.previous.disabled = this.index === 0;
+      this.next.disabled = this.index === this.cards.length - 1;
+
+      const label = `${this.index + 1} / ${this.cards.length}`;
+
+      if (this.counter.textContent.trim() !== label) {
+        this.counter.textContent = label;
+      }
+    }
+
+    go(index, instant = false) {
+      if (!this.mobile.matches || !this.cards.length) return;
+
+      const target = Math.max(
+        0,
+        Math.min(this.cards.length - 1, index)
+      );
+
+      const rtl = getComputedStyle(this.track).direction === 'rtl';
+      this.targetIndex = target;
+
+      this.track.scrollTo({
+        left: this.positions()[target] * (rtl ? -1 : 1),
+        behavior: instant || this.reducedMotion.matches
+          ? 'auto'
+          : 'smooth'
+      });
+    }
+
+    disconnectedCallback() {
+      cancelAnimationFrame(this.boot);
+      cancelAnimationFrame(this.frame);
+      this.frame = 0;
+
+      this.events?.abort();
+      this.observer?.disconnect();
+
+      if (this.controls) {
+        this.controls.hidden = true;
+      }
+
+      if (this.track) {
+        this.track.removeAttribute('tabindex');
+      }
+
+      this.events = null;
+      this.removeAttribute('data-ready');
+      this.removeAttribute('aria-roledescription');
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Start: Compared",
+  "tag": "div",
+  "class": "pm-landing-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_heading",
+          "label": "Column heading"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "cell",
+          "label": "Cell"
+        },
+        {
+          "type": "text",
+          "id": "cell_2",
+          "label": "Cell 2"
+        },
+        {
+          "type": "text",
+          "id": "cell_3",
+          "label": "Cell 3"
+        },
+        {
+          "type": "text",
+          "id": "cell_4",
+          "label": "Cell 4"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Start: Compared"
+    }
+  ]
+}
+{% endschema %}
