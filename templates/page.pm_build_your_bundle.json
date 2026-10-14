@@ -51,11 +51,11 @@
         "text": "Pick the blends that call to you, paste included. Every bag is heirloom Chuncho from one multigenerational family farm in Peru's Sacred Valley, made into paste at origin and ground in small batches in California.",
         "button_link": "#builder",
         "button_label": "Build my bundle",
-        "label": "<span style=\"color:var(--pm-gold-500);letter-spacing:2px;\">★★★★★</span>100+ five-star reviews",
-        "image": "shopify://shop_images/001914620021_3.jpg",
-        "image_url": "/cdn/shop/files/Untitled-design-7.png?v=1773176331&width=1400",
+        "label": "<span style=\"color:var(--pm-gold-500);letter-spacing:2px;\">★★★★★<\/span>100+ five-star reviews",
+        "image": "shopify:\/\/shop_images\/001914620021_3.jpg",
+        "image_url": "\/cdn\/shop\/files\/Untitled-design-7.png?v=1773176331&width=1400",
         "image_alt_text": "All seven Pacha Mana blends",
-        "image_url_2": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pods-open.png?v=1790710030",
+        "image_url_2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0725\/1188\/1261\/files\/pods-open.png?v=1790710030",
         "image_alt_text_2": ""
       }
     },
@@ -93,7 +93,7 @@
             "product": "1lb-cacao-chuncho-ceremonial-grade",
             "name": "Ceremonial Cacao Paste",
             "description": "A stone-ground block with notes of dried cherry, roasted hazelnut and warm earth.",
-            "image_url": "/cdn/shop/files/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=400"
+            "image_url": "\/cdn\/shop\/files\/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=400"
           }
         },
         "blend_2": {
@@ -102,7 +102,7 @@
             "product": "pure-ground-cermonial-cacao",
             "name": "Pure Ground",
             "description": "One ingredient, the full-strength daily cup.",
-            "image_url": "/cdn/shop/files/1-2.png?v=1773121973&width=400"
+            "image_url": "\/cdn\/shop\/files\/1-2.png?v=1773121973&width=400"
           }
         },
         "blend_3": {
@@ -111,7 +111,7 @@
             "product": "maple-sweetened",
             "name": "Maple Sweetened",
             "description": "Lightly sweetened with maple, and the easiest place to start.",
-            "image_url": "/cdn/shop/files/5.png?v=1773122027&width=400"
+            "image_url": "\/cdn\/shop\/files\/5.png?v=1773122027&width=400"
           }
         },
         "blend_4": {
@@ -120,7 +120,7 @@
             "product": "golden-milk-ground-ceremonial-cacao",
             "name": "Golden Milk",
             "description": "Turmeric, ginger and black pepper. Warming and grounding.",
-            "image_url": "/cdn/shop/files/6-1.webp?v=1773176314&width=400"
+            "image_url": "\/cdn\/shop\/files\/6-1.webp?v=1773176314&width=400"
           }
         },
         "blend_5": {
@@ -129,8 +129,8 @@
             "product": "mayan-spice-ground-ceremonial-cacao",
             "name": "Mayan Spice",
             "description": "Cinnamon and chili, with traditional heat and a slow finish.",
-            "image": "shopify://shop_images/mayan_spice_product_sjhot_final.png",
-            "image_url": "/cdn/shop/files/DSCF8392-1-scaled.jpg?v=1773176376&width=400"
+            "image": "shopify:\/\/shop_images\/mayan_spice_product_sjhot_final.png",
+            "image_url": "\/cdn\/shop\/files\/DSCF8392-1-scaled.jpg?v=1773176376&width=400"
           }
         },
         "blend_6": {
@@ -139,7 +139,7 @@
             "product": "rose-vanilla-ground-cacao",
             "name": "Rose Vanilla",
             "description": "Floral and soft, a heart-opening evening cup.",
-            "image_url": "/cdn/shop/files/4.png?v=1773176302&width=400"
+            "image_url": "\/cdn\/shop\/files\/4.png?v=1773176302&width=400"
           }
         },
         "blend_7": {
@@ -148,7 +148,7 @@
             "product": "mushroom-vitality-ground-cacao-bag",
             "name": "Mushroom Vitality",
             "description": "Lion's mane, reishi and cordyceps for focus with calm.",
-            "image_url": "/cdn/shop/files/3.png?v=1773176289&width=400"
+            "image_url": "\/cdn\/shop\/files\/3.png?v=1773176289&width=400"
           }
         }
       },
@@ -168,12 +168,12 @@
         "bags_word": "bags",
         "cups_template": "about [n] cups",
         "cups_per_bag": 11,
-        "default_tier": "3",
+        "default_tier": "2",
         "save_template": "Save [pct]%",
         "full_price_label": "Full price",
         "step2_label": "Step 2",
         "step2_title": "Choose your blends. Doubles welcome.",
-        "variant_match": "1/2 lb",
+        "variant_match": "1\/2 lb",
         "add_label": "Add one",
         "remove_label": "Remove one",
         "sold_out_label": "Sold out",
@@ -182,8 +182,9 @@
         "default_plan": "subscribe",
         "sub_title": "Subscribe & Save 15%",
         "sub_badge": "Best value",
-        "sub_text": "15% off every bag, delivered every 4, 6 or 8 weeks. 3-month minimum, then skip, push or change anytime.",
-        "frequencies": "4,6,8",
+        "sub_text": "15% off every bag, delivered every 4, 6, 8, 12 or 16 weeks. No minimum. Skip, push, change or cancel anytime.",
+        "frequencies": "4,6,8,12,16",
+        "default_frequency": "6",
         "freq_template": "Every [n] weeks",
         "freq_aria": "Delivery schedule",
         "once_title": "One-time purchase",
@@ -209,11 +210,11 @@
         "cta_once": "Add bundle to cart",
         "adding_label": "Adding…",
         "error_text": "Something went wrong adding your bundle. Please try again.",
-        "sub_note": "3-month minimum, then skip, push or change anytime.",
+        "sub_note": "No minimum. Skip, push, change or cancel anytime.",
         "gift_icon_url": "",
-        "gift_text": "<strong>Included free:</strong> Pacha Mana Ritual Guide &amp; Recipe E-book, with your first order.",
+        "gift_text": "<strong>Included free:<\/strong> Pacha Mana Ritual Guide &amp; Recipe E-book, with your first order.",
         "trust_line": "Lab-tested · Direct trade · 30-day love-it-or-your-money-back",
-        "footnote": "Want to try everything? <a href=\"/products/ceremonial-cacao-blend-bundle\">The Ultimate Bundle has all six blends for $150 (save $24).</a>",
+        "footnote": "Want to try everything? <a href=\"\/products\/ceremonial-cacao-blend-bundle\">The Ultimate Bundle has all six blends for $150 (save $24).<\/a>",
         "sticky_mode": "mobile"
       }
     },
@@ -267,8 +268,8 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA--196.jpg",
-            "image_url": "/cdn/shop/files/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=800",
+            "image": "shopify:\/\/shop_images\/PACHAMANA--196.jpg",
+            "image_url": "\/cdn\/shop\/files\/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=800",
             "image_alt_text": "Ceremonial Cacao Paste",
             "image_url_2": "",
             "image_alt_text_2": "",
@@ -280,8 +281,8 @@
         "card_2": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/PACHAMANA--8.jpg",
-            "image_url": "/cdn/shop/files/1-2.png?v=1773121973&width=800",
+            "image": "shopify:\/\/shop_images\/PACHAMANA--8.jpg",
+            "image_url": "\/cdn\/shop\/files\/1-2.png?v=1773121973&width=800",
             "image_alt_text": "Pure Ground cacao",
             "image_url_2": "",
             "image_alt_text_2": "",
@@ -317,7 +318,7 @@
           "settings": {
             "label": "02",
             "title": "Warm.",
-            "text": "Add 6 to 8 oz of hot water or plant milk, around 175°F. Keep it off a hard boil, because boiling water dulls the flavor."
+            "text": "Add 6 to 8 oz of hot water or plant milk, around 170°F. Keep it off a hard boil, because boiling water dulls the flavor."
           }
         },
         "card_3": {
@@ -426,20 +427,20 @@
       "settings": {
         "eyebrow": "Our promise",
         "heading": "Tested, traceable, whole",
-        "link": "shopify://pages/safe-cacao",
+        "link": "shopify:\/\/pages\/safe-cacao",
         "link_label": "See our test results →"
       }
     },
     "ayni": {
       "type": "pm_bb_ayni",
       "settings": {
-        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/cacao-tree.png?v=1790710030",
+        "image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0725\/1188\/1261\/files\/cacao-tree.png?v=1790710030",
         "image_alt_text": "",
-        "image_url_2": "/cdn/shop/files/IMG_0666.jpg?v=1766411732&width=1400",
+        "image_url_2": "\/cdn\/shop\/files\/IMG_0666.jpg?v=1766411732&width=1400",
         "image_alt_text_2": "The family farm in the Sacred Valley",
         "eyebrow": "Ayni",
         "heading": "Ceremony starts at the farm",
-        "text": "<em>Ayni</em> is the Quechua word for sacred reciprocity, the understanding that what you take and what you give must stay in balance. It's one of the oldest agreements in the Andes, and it's the one we work by.",
+        "text": "<em>Ayni<\/em> is the Quechua word for sacred reciprocity, the understanding that what you take and what you give must stay in balance. It's one of the oldest agreements in the Andes, and it's the one we work by.",
         "text_2": "Our Chuncho comes from one multigenerational family farm in the Sacred Valley, just outside Cusco, in the ceja de selva where the Andes meet the jungle. They work hand in hand with the Quechua and Machiguenga farming families around them. It's wild-harvested heirloom Chuncho, grown regeneratively, bought direct, and traceable to the grove it came from."
       }
     },
@@ -457,7 +458,7 @@
           "type": "question",
           "settings": {
             "question": "How does Subscribe & Save work?",
-            "answer": "Every bag in your bundle is 15% off, delivered every 4, 6 or 8 weeks. There's a 3-month minimum, and after that you can skip, push or change your order from your account."
+            "answer": "Every bag in your bundle is 15% off, delivered every 4, 6, 8, 12 or 16 weeks. No minimum. Skip, push, change or cancel anytime."
           }
         },
         "question_3": {
@@ -514,7 +515,7 @@
         "question_8"
       ],
       "settings": {
-        "image_url": "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/llama.png?v=1790710030",
+        "image_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0725\/1188\/1261\/files\/llama.png?v=1790710030",
         "image_alt_text": "",
         "heading": "FAQ"
       }
@@ -554,7 +555,7 @@
         "item_4"
       ],
       "settings": {
-        "image_url": "/cdn/shop/t/14/assets/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
+        "image_url": "\/cdn\/shop\/t\/14\/assets\/PACHA-MANA-LOGOMARK-GOLD.svg?v=117172361544967395051766190711",
         "image_alt_text": "",
         "eyebrow": "A note before you go",
         "button_link": "#builder",
@@ -564,9 +565,9 @@
     "footer": {
       "type": "pm_bb_footer",
       "settings": {
-        "image_url": "/cdn/shop/files/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png?v=1766190980&width=400",
+        "image_url": "\/cdn\/shop\/files\/PachaMana_Logos_RGB_Cacao_FullLogo_OverDark-1-e1706645290541.png?v=1766190980&width=400",
         "image_alt_text": "Pacha Mana, Ceremony Starts At The Farm",
-        "text": "Free US shipping over $100 · Questions? <a href=\"mailto:support@pachamana.com\" style=\"color:var(--pm-gold-300);\">support@pachamana.com</a>",
+        "text": "Free US shipping over $100 · Questions? <a href=\"mailto:support@pachamana.com\" style=\"color:var(--pm-gold-300);\">support@pachamana.com<\/a>",
         "text_2": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
       }
     }

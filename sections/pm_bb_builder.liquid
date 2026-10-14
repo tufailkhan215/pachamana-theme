@@ -19,6 +19,7 @@
   assign s = section.settings
   assign match = s.variant_match | default: '1/2 lb'
   assign weeks_list = s.frequencies | remove: ' ' | split: ','
+  assign default_weeks = s.default_frequency | remove: ' '
 -%}
 <section class="pm-landing" id="builder" data-pm-builder="{{ section.id }}" style="position:relative;background:var(--pm-tan-100);padding:clamp(64px,8vw,104px) 24px;scroll-margin-top:70px;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);">
   <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"><div style="position:absolute;inset:0;background-image:url('https://pachamana.com/cdn/shop/files/Pattern_Website.png?v=1769670221&amp;width=1200');background-size:520px auto;opacity:.05;pointer-events:none;"></div></div>
@@ -106,7 +107,7 @@
               <p style="margin:0;font-size:14px;line-height:1.6;">{{ s.sub_text | escape }}</p>
               <select data-freq aria-label="{{ s.freq_aria | escape }}" style="font-family:var(--font-body);font-size:15px;color:var(--text-strong);padding:10px 12px;border-radius:12px;border:1px solid var(--border-medium);background:#fff;min-height:44px;">
                 {%- for w in weeks_list -%}
-                  <option value="{{ w | escape }}">{{ s.freq_template | replace: '[n]', w | escape }}</option>
+                  <option value="{{ w | escape }}"{% if w == default_weeks %} selected{% endif %}>{{ s.freq_template | replace: '[n]', w | escape }}</option>
                 {%- endfor -%}
               </select>
             </div>
@@ -234,7 +235,7 @@
 
       var q = new URLSearchParams(location.search).get('plan');
       var state = {
-        tier: [2, 3, 4].indexOf(cfg.defaultTier) > -1 ? cfg.defaultTier : 3,
+        tier: [2, 3, 4].indexOf(cfg.defaultTier) > -1 ? cfg.defaultTier : 2,
         plan: q === 'once' ? 'once' : q === 'subscribe' ? 'subscribe' : (cfg.defaultPlan === 'once' ? 'once' : 'subscribe'),
         weeks: null,
         order: [],
@@ -460,7 +461,7 @@
     { "type": "text", "id": "bags_word", "label": "Word under the number" },
     { "type": "text", "id": "cups_template", "label": "Cups line", "info": "[n] becomes bags x cups per bag." },
     { "type": "number", "id": "cups_per_bag", "label": "Cups per bag", "default": 11 },
-    { "type": "select", "id": "default_tier", "label": "Bags selected at first", "options": [{ "value": "2", "label": "2" }, { "value": "3", "label": "3" }, { "value": "4", "label": "4" }], "default": "3" },
+    { "type": "select", "id": "default_tier", "label": "Bags selected at first", "options": [{ "value": "2", "label": "2" }, { "value": "3", "label": "3" }, { "value": "4", "label": "4" }], "default": "2" },
     { "type": "text", "id": "save_template", "label": "Saving badge", "info": "[pct] becomes the real saving." },
     { "type": "text", "id": "full_price_label", "label": "No-saving badge" },
 
@@ -480,6 +481,7 @@
     { "type": "text", "id": "sub_badge", "label": "Subscribe badge" },
     { "type": "textarea", "id": "sub_text", "label": "Subscribe description" },
     { "type": "text", "id": "frequencies", "label": "Delivery schedules (weeks)", "default": "4,6,8", "info": "Comma separated. Each must match a Recur Pay plan on the products, e.g. 'Delivery every 4 Weeks'." },
+    { "type": "text", "id": "default_frequency", "label": "Schedule selected at first", "default": "6", "info": "One of the schedules above, e.g. 6. If it isn't in the list, the first one is used." },
     { "type": "text", "id": "freq_template", "label": "Schedule option", "info": "[n] becomes the number of weeks." },
     { "type": "text", "id": "freq_aria", "label": "Schedule menu (screen readers)" },
     { "type": "text", "id": "once_title", "label": "One-time title" },
