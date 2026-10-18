@@ -12,7 +12,7 @@
     "hero": {
       "type": "pm_learn_hero",
       "settings": {
-        "eyebrow": "The Cacao Guide · Part 01 of 10",
+        "eyebrow": "The Cacao Guide",
         "title": "Replace Your Coffee With Cacao",
         "deck": "A gentler way to start your day, trading jitters and crashes for grounded, sustained energy, one cup at a time.",
         "meta_read": "12 Min Read",
@@ -113,7 +113,7 @@
         "text_c": {
           "type": "text",
           "settings": {
-            "text": "<p>Cacao is approximately 50% cacao butter, a rich, natural fat. That fat slows the absorption of caffeine into your bloodstream significantly, smoothing out what would otherwise be a sharp spike. The effect is similar to adding fat to your coffee (as in a “bulletproof” style drink), but built in naturally at the source.</p><p>Additionally, cacao contains compounds that modulate and balance the stimulant effect, including theobromine itself, magnesium, and various flavonoids that support relaxation and blood flow. The result is that caffeine in cacao lands very differently than caffeine in coffee, even at similar doses.</p><p>Most people who are caffeine-sensitive find they can drink cacao without the anxiety, heart racing, or sleep disruption they experience with coffee. That said, if you are highly sensitive to caffeine, we recommend drinking cacao before 2pm while you get to know how your body responds.</p>"
+            "text": "<p>Cacao is about 54% cacao butter, a rich, natural fat. That fat slows the absorption of caffeine into your bloodstream significantly, smoothing out what would otherwise be a sharp spike. The effect is similar to adding fat to your coffee (as in a “bulletproof” style drink), but built in naturally at the source.</p><p>Additionally, cacao contains compounds that modulate and balance the stimulant effect, including theobromine itself, magnesium, and various flavonoids that support relaxation and blood flow. The result is that caffeine in cacao lands very differently than caffeine in coffee, even at similar doses.</p><p>Most people who are caffeine-sensitive find they can drink cacao without the anxiety, heart racing, or sleep disruption they experience with coffee. That said, if you are highly sensitive to caffeine, we recommend drinking cacao before 2pm while you get to know how your body responds.</p>"
           }
         },
         "heading_d": {
@@ -371,9 +371,9 @@
     "series": {
       "type": "pm_learn_series",
       "settings": {
-        "label": "The Cacao Guide · Part 01 of 10",
-        "next": "<p>Up next, <strong>Part 02: The Chemistry of a Better Morning.</strong></p>",
-        "show_dots": true,
+        "label": "The Cacao Guide",
+        "next": "<p>Up next: <strong>The Mood Science Behind Ceremonial Cacao</strong></p>",
+        "show_dots": false,
         "part": 1,
         "total": 10
       }
