@@ -12,7 +12,7 @@
     "hero": {
       "type": "pm_learn_hero",
       "settings": {
-        "eyebrow": "The Cacao Guide · Part 02 of 10",
+        "eyebrow": "The Cacao Guide",
         "title": "The Mood Science Behind Ceremonial Cacao",
         "deck": "Why cacao makes you feel the way it does, and what is actually happening in your brain when you drink it.",
         "meta_read": "14 Min Read",
@@ -305,7 +305,7 @@
         "button_1y": {
           "type": "button",
           "settings": {
-            "label": "Read Part One",
+            "label": "Replace Your Coffee With Cacao",
             "url": "/pages/learn-replace-coffee-with-cacao",
             "style": "outline"
           }
@@ -325,9 +325,9 @@
     "series": {
       "type": "pm_learn_series",
       "settings": {
-        "label": "The Cacao Guide · Part 02 of 10",
-        "next": "<p>Up next, <strong>Part 03: Building Your Daily Cacao Ritual.</strong></p>",
-        "show_dots": true,
+        "label": "The Cacao Guide",
+        "next": "<p>Keep reading: <strong>Replace Your Coffee With Cacao</strong></p>",
+        "show_dots": false,
         "part": 2,
         "total": 10
       }
