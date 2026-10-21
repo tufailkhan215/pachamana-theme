@@ -37,27 +37,27 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "I was skeptical about the price but it's worth every penny",
-            "customer_name": "Sarah M.",
-            "customer_location": "California"
+            "review_text": "This is life changing.  Almost 2 years having cacao every morning.  I crave it.  It’s amazing",
+            "customer_name": "Verified customer",
+            "customer_location": ""
           }
         },
         "review_whNUUB": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "I've tried other brands and this is so much smoother",
-            "customer_name": "David.",
-            "customer_location": "DC"
+            "review_text": "I drink a lot of cacao, this is the good stuff!",
+            "customer_name": "Verified customer",
+            "customer_location": ""
           }
         },
         "review_c9taEx": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "The single-serve packets are perfect for my busy mornings",
-            "customer_name": "Tom M.",
-            "customer_location": "LA"
+            "review_text": "The cacao is top quality. The customer service is reliable.",
+            "customer_name": "Verified customer",
+            "customer_location": ""
           }
         }
       },
