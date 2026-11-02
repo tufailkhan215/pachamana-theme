@@ -19,7 +19,7 @@
         "bg_overlay_opacity": 0,
         "eyebrow": "Bulk Cacao · No License Needed",
         "headline": "Buy More,\nPour More",
-        "subhead": "We are on a mission to make cacao afforadble. The same wild-harvested heirloom Chuncho cacao, at a better price when you stock up. Volume discounts apply automatically at checkout — no application, no code, no waiting on us.",
+        "subhead": "We are on a mission to make cacao affordable. The same wild-harvested heirloom Chuncho cacao, at a better price when you stock up. Volume discounts apply automatically at checkout — no application, no code, no waiting on us.",
         "mark_image": "shopify://shop_images/Cacao_Pods_2.png",
         "cta1_label": "Shop Bulk",
         "cta1_link": "/collections/all",
@@ -116,7 +116,7 @@
           "settings": {
             "order": "1 × 5 lb bag",
             "save": "Standing price",
-            "price": "$230"
+            "price": "$240"
           }
         },
         "c2": {
@@ -124,7 +124,7 @@
           "settings": {
             "order": "2 × 5 lb bags",
             "save": "10% off",
-            "price": "$207"
+            "price": "$216"
           }
         },
         "c3": {
@@ -132,7 +132,7 @@
           "settings": {
             "order": "3 × 5 lb bags",
             "save": "15% off",
-            "price": "$195.50"
+            "price": "$204"
           }
         },
         "c4": {
@@ -140,7 +140,7 @@
           "settings": {
             "order": "5 × 5 lb bags",
             "save": "20% off",
-            "price": "$184"
+            "price": "$192"
           }
         }
       },
@@ -171,8 +171,8 @@
         "bag_from_price": "$52",
         "case_eyebrow": "The 5 lb Bulk Bag",
         "case_copy": "Our 5 lb bulk bag — available in pure ground or stone-ground paste — for facilitators and daily drinkers who move through a lot of cacao. The standing price drops the more bags you take.",
-        "case_low_price": "$36.80",
-        "case_from_price": "$46",
+        "case_low_price": "$38.40",
+        "case_from_price": "$48",
         "cta_label": "Start Your Order",
         "cta_link": "",
         "cart_note": "Your discount appears automatically as your cart grows.",
@@ -216,7 +216,7 @@
             "tag": "Bulk Bag or Paste",
             "size": "5 lb",
             "description": "For people who move through a lot of cacao — ground or paste, at the deepest standing discount.",
-            "price_label": "$230 / bag"
+            "price_label": "$240 / bag"
           }
         }
       },
@@ -246,7 +246,7 @@
         "bg_overlay_opacity": 0,
         "eyebrow": "Only Need A Bag Or Two?",
         "headline": "Subscribe & Save 15%",
-        "body": "You don't have to buy in bulk to get a deal. Take 15% off even a single bag — just commit to a three-month subscription. It's one path or the other, though: subscription savings don't combine with bulk pricing.",
+        "body": "You don't have to buy in bulk to get a deal. Take 15% off even a single bag — just subscribe. No minimum: skip, change or cancel anytime. It's one path or the other, though: subscription savings don't combine with bulk pricing.",
         "cta_label": "Start A Subscription",
         "cta_link": "/collections/all"
       }
@@ -468,7 +468,7 @@
           "type": "faq",
           "settings": {
             "question": "Can I stack bulk pricing with a subscription?",
-            "answer": "<p>No, they don't combine. Bulk pricing is its own reward. Subscribe & Save is a separate path: if you only need a bag or two, you can still take 15% off by committing to a three-month subscription instead.</p>"
+            "answer": "<p>No, they don't combine. Bulk pricing is its own reward. Subscribe & Save is a separate path: if you only need a bag or two, you can still take 15% off by subscribing instead, with no minimum: skip, change or cancel anytime.</p>"
           }
         },
         "q4": {
