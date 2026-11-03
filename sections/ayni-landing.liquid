@@ -49,14 +49,9 @@
 .ayni-lp .fact b{display:block;font:400 26px/1.15 var(--display);color:var(--gold);margin:0 0 6px;font-weight:400;}
 .ayni-lp .fact span{font:400 13px/1.4 var(--sans);letter-spacing:.4px;color:#e9d8bd;}
 
-/* intro */
-.ayni-lp .intro .wrap{display:grid;grid-template-columns:5fr 6fr;gap:80px;align-items:start;}
-.ayni-lp .intro .big{font:400 40px/1.25 var(--display);color:var(--head);}
-.ayni-lp .intro .big em{font-style:normal;color:var(--accent);}
-.ayni-lp .intro p+p{margin-top:20px;}
-
 /* steps */
-.ayni-lp .steps{background:var(--page);}
+.ayni-lp .steps{background:var(--body);}
+.ayni-lp .steps .step{background:var(--page);}
 .ayni-lp .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:56px 0 54px;counter-reset:s;}
 .ayni-lp .step{position:relative;background:var(--body);padding:44px 36px 40px;border-top:3px solid var(--gold);}
 .ayni-lp .step .n{font:400 64px/1 var(--display);color:var(--alt);margin:0 0 22px;}
@@ -75,7 +70,7 @@
 .ayni-lp .offer-card li:before{content:"\25C6";position:absolute;left:0;top:1px;color:var(--gold);font-size:13px;}
 .ayni-lp .offer-card .small{margin:28px 0 0;font:400 13px/1.6 var(--sans);color:#e9d8bd;position:relative;z-index:1;}
 .ayni-lp .offer-card .btn{position:relative;z-index:1;}
-.ayni-lp .math{background:var(--page);padding:64px 56px;}
+.ayni-lp .math{background:var(--body);padding:64px 56px;}
 .ayni-lp .row{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;border-top:1px solid var(--accent);}
 .ayni-lp .row:last-child{border-bottom:1px solid var(--accent);}
 .ayni-lp .row b{display:block;font:600 18px/1.4 var(--serif);color:var(--head);}
@@ -129,6 +124,8 @@
 .ayni-lp .origin .ph{background:url('https://cdn.shopify.com/s/files/1/0725/1188/1261/files/ayni26-beans-hands.jpg?v=1793308591') center/cover no-repeat;min-height:640px;}
 .ayni-lp .origin p{font-size:18px;}
 .ayni-lp .origin p+p{margin-top:18px;}
+.ayni-lp .origin h2 em{font-style:normal;color:var(--accent);}
+.ayni-lp .offer-card li strong{color:var(--gold);font-weight:600;}
 .ayni-lp .origin .badges{display:flex;gap:12px;flex-wrap:wrap;margin:34px 0 0;}
 .ayni-lp .origin .badges span{border:1px solid var(--accent);padding:10px 14px;font:700 11px/1 var(--sans);
  letter-spacing:1.6px;text-transform:uppercase;color:var(--head);}
@@ -178,8 +175,7 @@
  .ayni-lp .fact:nth-child(2n){border-left:1px solid rgba(226,171,67,.28);}
  .ayni-lp .fact:nth-child(-n+2){border-top:0;}
  .ayni-lp .fact b{font-size:21px;}
- .ayni-lp .intro .wrap,.ayni-lp .offer .wrap,.ayni-lp .five .wrap,.ayni-lp .faq .wrap{grid-template-columns:1fr;gap:30px;}
- .ayni-lp .intro .big{font-size:30px;}
+ .ayni-lp .offer .wrap,.ayni-lp .five .wrap,.ayni-lp .faq .wrap{grid-template-columns:1fr;gap:30px;}
  .ayni-lp .steps-grid{grid-template-columns:1fr;gap:16px;margin:36px 0 40px;}
  .ayni-lp .step{padding:30px 26px;display:grid;grid-template-columns:62px 1fr;column-gap:8px;}
  .ayni-lp .step .n{font-size:44px;grid-row:span 2;margin:0;}
@@ -226,54 +222,14 @@
  <div class="fact"><b>Every batch tested</b><span>heavy metals, herbicides, pesticides</span></div>
 </div></div>
 
-<section class="sec intro"><div class="wrap">
- <div><p class="eyebrow">What is Ayni</p><p class="big">Ayni is the Andean way of sacred reciprocity: <em>when you give, you receive.</em></p></div>
- <div><p>Once a year we live it out loud.</p>
- <p>We learned Ayni from the families we work with in Peru. They care for old cacao trees the way their families always have, make the paste at the farm and wrap every bar there. We pay them 3x above fair trade, and we buy direct, with no broker in between.</p>
- <p>This week is our way of passing that on.</p></div>
-</div></section>
-
-<div class="band"></div>
-
-<section class="sec steps" id="how"><div class="wrap center">
- <p class="eyebrow">How it works</p><h2 class="h2">The free cacao adds itself.</h2>
- <div class="steps-grid" style="text-align:left;">
-  <div class="step"><p class="n">01</p><div><h3>Pick your pounds.</h3><p>Any 1 lb bag or bar, ground, paste or a blend. Mix them however you like.</p></div></div>
-  <div class="step"><p class="n">02</p><div><h3>Your free cacao appears.</h3><p>For every pound in your cart, a half pound of the same cacao drops in at $0. 2 lb brings 1 lb free. A 5 lb bag brings 2 lb free.</p></div></div>
-  <div class="step"><p class="n">03</p><div><h3>Check out.</h3><p>No code to enter. The free cacao is for full price orders, so it doesn&rsquo;t combine with codes or subscriptions.</p></div></div>
+<section class="origin" id="ayni">
+ <div class="txt"><p class="eyebrow">What is Ayni</p><h2 class="h2">Ayni is the Andean way of sacred reciprocity: <em>when you give, you receive.</em></h2>
+  <p>Once a year we live it out loud. We learned Ayni from the families we work with in Peru: one multigenerational family farm we work with directly, in the Sacred Valley region just outside Cusco, in the ceja de selva, the eyebrow of the jungle. They work hand in hand with the Quechua and Machiguenga farming families around them, care for old cacao trees the way their families always have, and make the paste and wrap every bar at the farm.</p>
+  <p>We pay them 3x above fair trade and buy direct, with no broker in between. It&rsquo;s not transactional. It&rsquo;s relational. This week is our way of passing that on.</p>
+  <p>Every batch is tested for heavy metals, herbicides and pesticides. <a href="/pages/safe-cacao" style="color:var(--head);">See the lab results.</a></p>
+  <div class="badges"><span>Direct trade</span><span>3x above fair trade</span><span>Every batch tested</span></div>
  </div>
- <a class="btn" href="/collections/shop-page">Choose your cacao</a>
-</div></section>
-
-<section class="sec offer" style="padding-top:0;background:var(--page);"><div class="wrap">
- <div class="offer-card">
-  <p class="eyebrow">The Ayni Holiday Event</p>
-  <p class="when">Monday 11/23 through Giving Tuesday 12/1</p>
-  <p class="big">Buy 2 lb,<br>get 1 lb free.</p>
-  <ul><li>Every pound you buy comes with a half pound free, of the same cacao.</li>
-  <li>Buy a 5 lb bag, get 2 lb free. Buy 10 lb, get 4 lb free.</li>
-  <li>The 6-blend bundle comes with a pound of Pure.</li></ul>
-  <a class="btn" href="/collections/shop-page">Start your order</a>
-  <p class="small">Full price only. Codes and subscriptions don&rsquo;t qualify.<br>Free shipping is paused during Ayni... your free cacao more than covers it.</p>
- </div>
- <div class="math">
-  <p class="eyebrow">The Ayni math</p><h2 class="h2">Half again, on every pound.</h2>
-  <p style="margin:0 0 30px;">Your free cacao always matches the cacao you chose. Here&rsquo;s what a pound works out to during Ayni.</p>
-  <div class="row"><div><b>Pure, Paste or Maple</b><small>1 lb $52, with &frac12; lb free</small></div><span class="p">$34.67 <i>/ lb</i></span></div>
-  <div class="row"><div><b>The blends</b><small>1 lb $58, with &frac12; lb free</small></div><span class="p">$38.67 <i>/ lb</i></span></div>
-  <div class="row"><div><b>5 lb bag, ground or paste</b><small>$240, with 2 lb free</small></div><span class="p">$34.29 <i>/ lb</i></span></div>
- </div>
-</div></section>
-
-<section class="gift">
- <div class="ph" role="img" aria-label="Two people holding cups of ceremonial cacao together"></div>
- <div class="txt"><p class="eyebrow">The extra half pound</p><h2 class="h2">Who will you give it to?</h2>
-  <p class="lede">The extra cacao? That&rsquo;s your gift to give.</p>
-  <ul><li><strong>The friend going through it.</strong> A warm cup, a quiet morning, something that says I&rsquo;m thinking of you.</li>
-  <li><strong>The one who&rsquo;s never had real cacao.</strong> Not hot chocolate. The real thing, from one farm we know by name.</li>
-  <li><strong>The one who holds space.</strong> The yoga teacher, the healer, the one who shows up for everyone else.</li>
-  <li><strong>You.</strong> Self-love is sacred too.</li></ul>
- </div>
+ <div class="ph" role="img" aria-label="Hands holding cacao beans"></div>
 </section>
 
 <div class="band"></div>
@@ -283,6 +239,37 @@
  <p class="lede narrow">Heirloom Chuncho, the ancestor of all cacao. Not bitter, and the most user friendly ceremonial cacao we know of.</p>
  <div class="grid" style="text-align:left;"><a class="card" href="/products/1lb-cacao-chuncho-ceremonial-grade"><div class="im"><img src="https://cdn.shopify.com/s/files/1/0725/1188/1261/files/2-2_23246115-b1af-4eed-8147-9227fe79f0cc.png?v=1773121956&width=700" alt="Chuncho Paste" loading="lazy"><span class="tag">+ &frac12; lb free</span></div><div class="meta"><span class="sub">Paste block</span><h3>Chuncho Paste</h3><span class="pr">1 lb $52 + &frac12; lb free</span><span class="go">Shop now</span></div></a><a class="card" href="/products/pure-ground-cermonial-cacao"><div class="im"><img src="https://cdn.shopify.com/s/files/1/0725/1188/1261/files/1-2.png?v=1773121973&width=700" alt="Pure Ground" loading="lazy"><span class="tag">+ &frac12; lb free</span></div><div class="meta"><span class="sub">100% ground cacao</span><h3>Pure Ground</h3><span class="pr">1 lb $52 + &frac12; lb free</span><span class="go">Shop now</span></div></a><a class="card" href="/products/maple-sweetened"><div class="im"><img src="https://cdn.shopify.com/s/files/1/0725/1188/1261/files/5.png?v=1773122027&width=700" alt="Maple Sweetened" loading="lazy"><span class="tag">+ &frac12; lb free</span></div><div class="meta"><span class="sub">70% with maple sugar</span><h3>Maple Sweetened</h3><span class="pr">1 lb $52 + &frac12; lb free</span><span class="go">Shop now</span></div></a><a class="card" href="/products/ground-chuncho-cacao-5lb-bag"><div class="im"><img src="https://cdn.shopify.com/s/files/1/0725/1188/1261/files/5lb_bag_product_shop_final.png?v=1789424725&width=700" alt="5 lb Bulk Bag" loading="lazy"><span class="tag">+ 2 lb free</span></div><div class="meta"><span class="sub">Ground or paste</span><h3>5 lb Bulk Bag</h3><span class="pr">$240 + 2 lb free</span><span class="go">Shop now</span></div></a><a class="card" href="/products/rose-vanilla-ground-cacao"><div class="im"><img src="https://cdn.shopify.com/s/files/1/0725/1188/1261/files/4.png?v=1773176302&width=700" alt="Rose Vanilla" loading="lazy"><span class="tag">+ &frac12; lb free</span></div><div class="meta"><span class="sub">Rose + vanilla bean</span><h3>Rose Vanilla</h3><span class="pr">1 lb $58 + &frac12; lb free</span><span class="go">Shop now</span></div></a><a class="card" href="/products/golden-milk-ground-ceremonial-cacao"><div class="im"><img src="https://cdn.shopify.com/s/files/1/0725/1188/1261/files/6-1.webp?v=1773176314&width=700" alt="Golden Milk" loading="lazy"><span class="tag">+ &frac12; lb free</span></div><div class="meta"><span class="sub">Turmeric + ginger</span><h3>Golden Milk</h3><span class="pr">1 lb $58 + &frac12; lb free</span><span class="go">Shop now</span></div></a><a class="card" href="/products/mayan-spice-ground-ceremonial-cacao"><div class="im"><img src="https://cdn.shopify.com/s/files/1/0725/1188/1261/files/mayan_spice_product_sjhot_final.png?v=1789424194&width=700" alt="Mayan Spice" loading="lazy"><span class="tag">+ &frac12; lb free</span></div><div class="meta"><span class="sub">Cinnamon + cayenne + sea salt</span><h3>Mayan Spice</h3><span class="pr">1 lb $58 + &frac12; lb free</span><span class="go">Shop now</span></div></a><a class="card" href="/products/mushroom-vitality-ground-cacao-bag"><div class="im"><img src="https://cdn.shopify.com/s/files/1/0725/1188/1261/files/3.png?v=1773176289&width=700" alt="Mushroom Vitality" loading="lazy"><span class="tag">+ &frac12; lb free</span></div><div class="meta"><span class="sub">Cacao + adaptogens</span><h3>Mushroom Vitality</h3><span class="pr">1 lb $58 + &frac12; lb free</span><span class="go">Shop now</span></div></a></div>
  <a class="btn" href="/collections/shop-page">See the whole shop</a>
+</div></section>
+
+<section class="sec steps" id="how"><div class="wrap center">
+ <p class="eyebrow">How it works</p><h2 class="h2">The free cacao adds itself.</h2>
+ <div class="steps-grid" style="text-align:left;">
+  <div class="step"><p class="n">01</p><div><h3>Pick your pounds.</h3><p>Any 1 lb bag or bar, ground, paste or a blend. Mix them however you like.</p></div></div>
+  <div class="step"><p class="n">02</p><div><h3>Your free cacao appears.</h3><p>For every pound in your cart, a half pound of the same cacao drops in at $0. 2 lb brings 1 lb free. A 5 lb bag brings 2 lb free.</p></div></div>
+  <div class="step"><p class="n">03</p><div><h3>Check out.</h3><p>No code to enter. The free cacao is for full price orders, so it doesn&rsquo;t combine with codes or subscriptions.</p></div></div>
+ </div>
+ <a class="btn" href="#shop">Choose your cacao</a>
+</div></section>
+
+<section class="sec offer" style="padding-top:0;background:var(--body);"><div class="wrap">
+ <div class="offer-card">
+  <p class="eyebrow">The Ayni Holiday Event</p>
+  <p class="when">Monday 11/23 through Giving Tuesday 12/1</p>
+  <p class="big">Buy 2 lb,<br>get 1 lb free.</p>
+  <ul><li><strong>You pay full price.</strong> No code, no discount. Just more cacao.</li>
+  <li>Every pound you buy comes with a half pound free, of the same cacao.</li>
+  <li>Buy a 5 lb bag, get 2 lb free. Buy 10 lb, get 4 lb free.</li>
+  <li>The 6-blend bundle comes with a pound of Pure.</li></ul>
+  <a class="btn" href="#shop">Start your order</a>
+  <p class="small">Full price only. Codes and subscriptions don&rsquo;t qualify.<br>Free shipping is paused during Ayni... your free cacao more than covers it.</p>
+ </div>
+ <div class="math">
+  <p class="eyebrow">The Ayni math</p><h2 class="h2">A half pound more, on every pound.</h2>
+  <p style="margin:0 0 16px;">Ayni isn&rsquo;t a discount. You pay the same full price you always do, and we send you more cacao: a free half pound with every pound, always the same cacao you chose.</p><p style="margin:0 0 30px;">Here&rsquo;s what a pound works out to when the extra cacao is counted in.</p>
+  <div class="row"><div><b>Pure, Paste or Maple</b><small>1 lb $52, with &frac12; lb free</small></div><span class="p">$34.67 <i>/ lb</i></span></div>
+  <div class="row"><div><b>The blends</b><small>1 lb $58, with &frac12; lb free</small></div><span class="p">$38.67 <i>/ lb</i></span></div>
+  <div class="row"><div><b>5 lb bag, ground or paste</b><small>$240, with 2 lb free</small></div><span class="p">$34.29 <i>/ lb</i></span></div>
+ </div>
 </div></section>
 
 <section class="sec five"><div class="wrap">
@@ -298,14 +285,18 @@
  <p class="who">Verified customer</p>
 </div></section>
 
-<section class="origin">
- <div class="txt"><p class="eyebrow">Where it comes from</p><h2 class="h2">It&rsquo;s not transactional. It&rsquo;s relational.</h2>
-  <p>Our cacao comes from one multigenerational family farm we work with directly, in the Sacred Valley region just outside Cusco, in the ceja de selva, the eyebrow of the jungle. They work hand in hand with the Quechua and Machiguenga farming families around them.</p>
-  <p>Every batch is tested for heavy metals, herbicides and pesticides. <a href="/pages/safe-cacao" style="color:var(--head);">See the lab results.</a></p>
-  <div class="badges"><span>Direct trade</span><span>3x above fair trade</span><span>Every batch tested</span></div>
+<section class="gift">
+ <div class="ph" role="img" aria-label="Two people holding cups of ceremonial cacao together"></div>
+ <div class="txt"><p class="eyebrow">The extra half pound</p><h2 class="h2">Who will you give it to?</h2>
+  <p class="lede">The extra cacao? That&rsquo;s your gift to give.</p>
+  <ul><li><strong>The friend going through it.</strong> A warm cup, a quiet morning, something that says I&rsquo;m thinking of you.</li>
+  <li><strong>The one who&rsquo;s never had real cacao.</strong> Not hot chocolate. The real thing, from one farm we know by name.</li>
+  <li><strong>The one who holds space.</strong> The yoga teacher, the healer, the one who shows up for everyone else.</li>
+  <li><strong>You.</strong> Self-love is sacred too.</li></ul>
  </div>
- <div class="ph" role="img" aria-label="Hands holding cacao beans"></div>
 </section>
+
+<div class="band"></div>
 
 <section class="sec faq"><div class="wrap">
  <div class="side"><p class="eyebrow">Questions</p><h2 class="h2">Good to know.</h2>
