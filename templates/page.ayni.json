@@ -9,166 +9,504 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "blocks": {
-        "slide_jE3d6e": {
-          "type": "slide",
-          "settings": {}
-        },
-        "slide_bVe7Ta": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-85-1.webp"
-          }
-        }
-      },
-      "block_order": [
-        "slide_jE3d6e",
-        "slide_bVe7Ta"
-      ],
-      "disabled": true,
+    "hero": {
+      "type": "bulk-hero",
       "settings": {
-        "slide_duration": 5000,
-        "transition_duration": 500,
-        "loop": true,
-        "ken_burns": true,
-        "ken_burns_direction": "in"
+        "bg_type": "color",
+        "bg_color": "#fee7be",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
+        "eyebrow": "The AYNI Holiday Event · Mon 11/23 to Tue 12/1",
+        "headline": "Buy 2 lb, Get 1 lb Free",
+        "subhead": "Ayni is the Andean way of sacred reciprocity: when you give, you receive. Once a year we live it out loud. Every pound you take comes with a free half pound of the same cacao, to keep or to pass on.",
+        "mark_image": "shopify://shop_images/Cacao_Pods_2.png",
+        "cta1_label": "Choose Your Cacao",
+        "cta1_link": "/collections/all",
+        "cta2_label": "See The Lab Results",
+        "cta2_link": "/pages/safe-cacao"
       }
     },
-    "177430428325042baf": {
-      "type": "_blocks",
+    "savings": {
+      "type": "bulk-savings-explainer",
       "blocks": {
-        "yuko_loyalty_reviews_loyalty_page_hero_banner_DEfLUT": {
-          "type": "shopify://apps/yuko-loyalty-referral/blocks/loyalty-page-hero-banner/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+        "s1": {
+          "type": "step",
           "settings": {
-            "hero_anonymous_background_color": "#f8f8f8",
-            "hero_anonymous_icon": "shopify://shop_images/Untitled-design-7.png",
-            "hero_anonymous_image_brightness": 100,
-            "hero_anonymous_card_background_color": "#F5F5F5",
-            "hero_anonymous_card_heading": "#000000",
-            "hero_anonymous_card_text": "#000000",
-            "hero_anonymous_card_position": "center",
-            "hero_anonymous_card_vertical_position": "center",
-            "hero_anonymous_card_text_alignment": "center",
-            "hero_anonymous_card_spacing": 20,
-            "hero_button_alignment": "center",
-            "hero_primary_button_background_color": "#000000",
-            "hero_primary_button_text_color": "#ffffff",
-            "hero_secondary_button_background_color": "#ffffff",
-            "hero_secondary_button_text_color": "#000000",
-            "section_height": 500,
-            "section_padding": 40,
-            "heading_size": 32,
-            "text_size": 16,
-            "section_height_mobile": 300,
-            "section_padding_mobile": 20,
-            "heading_size_mobile": 24,
-            "text_size_mobile": 14,
-            "hero_anonymous_card_position_mobile": "below_hero_banner",
-            "custom_css": ""
-          }
-        }
-      },
-      "block_order": [
-        "yuko_loyalty_reviews_loyalty_page_hero_banner_DEfLUT"
-      ],
-      "settings": {
-        "section_label": "Content block"
-      }
-    },
-    "1774304300661ffd62": {
-      "type": "_blocks",
-      "blocks": {
-        "yuko_loyalty_reviews_loyalty_page_ways_to_earn_RGjiQ9": {
-          "type": "shopify://apps/yuko-loyalty-referral/blocks/loyalty-page-ways-to-earn/5cda428c-b39d-45e5-80d9-bad790f2bb50",
-          "settings": {
-            "ordering": "ordering_asc",
-            "ways_to_earn_background_color": "#ffffff",
-            "ways_to_earn_heading_color": "#000000",
-            "ways_to_earn_text_color": "#000000",
-            "campaign_card_background_color": "#ffffff",
-            "campaign_card_border_color": "#f0f0f0",
-            "campaign_card_spacing": 20,
-            "campaign_title_color": "#333333",
-            "campaign_title_size": 16,
-            "campaign_points_color": "#333333",
-            "campaign_points_size": 14,
-            "campaign_icon_color": "#333333",
-            "campaign_icon_size": 56,
-            "join_button_background_color": "#000000",
-            "join_button_text_color": "#ffffff",
-            "custom_css": ""
+            "number": "01",
+            "title": "Pick Your Pounds",
+            "description": "Any 1 lb bag or bar, ground, paste or a blend. Mix them however you like."
           }
         },
-        "yuko_loyalty_reviews_loyalty_page_ways_to_redeem_BPRwLH": {
-          "type": "shopify://apps/yuko-loyalty-referral/blocks/loyalty-page-ways-to-redeem/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+        "s2": {
+          "type": "step",
           "settings": {
-            "ordering": "ordering_asc",
-            "ways_to_redeem_background_color": "#ffffff",
-            "ways_to_redeem_heading_color": "#000000",
-            "ways_to_redeem_text_color": "#000000",
-            "reward_card_background_color": "#ffffff",
-            "reward_card_border_color": "#f0f0f0",
-            "reward_card_spacing": 20,
-            "reward_title_color": "#333333",
-            "reward_title_size": 16,
-            "reward_points_color": "#333333",
-            "reward_points_size": 14,
-            "reward_icon_color": "#333333",
-            "reward_icon_size": 56,
-            "join_button_background_color": "#000000",
-            "join_button_text_color": "#ffffff",
-            "custom_css": ""
+            "number": "02",
+            "title": "Your Free Cacao Appears",
+            "description": "For every pound in your cart, a half pound of the same cacao drops in at $0. 2 lb brings 1 lb free. A 5 lb bag brings 2 lb free."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Check Out",
+            "description": "No code to enter. The free cacao is for full price orders, so it doesn't combine with codes or subscriptions."
           }
         }
       },
       "block_order": [
-        "yuko_loyalty_reviews_loyalty_page_ways_to_earn_RGjiQ9",
-        "yuko_loyalty_reviews_loyalty_page_ways_to_redeem_BPRwLH"
+        "s1",
+        "s2",
+        "s3"
       ],
       "settings": {
-        "section_label": "Content block"
+        "bg_type": "image",
+        "bg_color": "#f9f2ef",
+        "bg_image": "shopify://shop_images/05_peruvian-ceremonial-cacao-guide.jpg",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#f9f2ef",
+        "bg_overlay_opacity": 65,
+        "eyebrow": "How It Works",
+        "headline": "The Free Cacao Adds Itself",
+        "subhead": ""
       }
     },
-    "1774304327c9c0f079": {
-      "type": "_blocks",
+    "calc": {
+      "type": "bulk-calculator",
       "blocks": {
-        "yuko_loyalty_reviews_loyalty_page_vip_tiers_DLcpMb": {
-          "type": "shopify://apps/yuko-loyalty-referral/blocks/loyalty-page-vip-tiers/5cda428c-b39d-45e5-80d9-bad790f2bb50",
+        "t1": {
+          "type": "tier",
           "settings": {
-            "vip_tiers_background_color": "#ffffff",
-            "vip_tiers_heading_color": "#000000",
-            "vip_tiers_text_color": "#000000",
-            "tier_card_background_color": "#ffffff",
-            "current_tier_background_color": "#f8f9fa",
-            "current_tier_border_color": "#007bff",
-            "current_tier_badge_background": "#007bff",
-            "current_tier_badge_text": "#ffffff",
-            "tier_name_color": "#333333",
-            "tier_name_size": 18,
-            "tier_description_color": "#000000",
-            "tier_description_size": 14,
-            "benefit_text_color": "#666666",
-            "benefit_text_size": 14,
-            "benefit_icon_size": 16,
-            "benefit_gap": 8,
-            "custom_css": ""
+            "qty": "1 lb",
+            "save": "+ ½ lb free",
+            "note": "1.5 lb in all",
+            "highlight": false
+          }
+        },
+        "t2": {
+          "type": "tier",
+          "settings": {
+            "qty": "2 lb",
+            "save": "+ 1 lb free",
+            "note": "3 lb in all",
+            "highlight": true
+          }
+        },
+        "t3": {
+          "type": "tier",
+          "settings": {
+            "qty": "4 lb",
+            "save": "+ 2 lb free",
+            "note": "6 lb in all",
+            "highlight": false
+          }
+        },
+        "t4": {
+          "type": "tier",
+          "settings": {
+            "qty": "6 lb",
+            "save": "+ 3 lb free",
+            "note": "9 lb in all",
+            "highlight": false
+          }
+        },
+        "c1": {
+          "type": "case_row",
+          "settings": {
+            "order": "1 × 5 lb bag",
+            "save": "+ 2 lb free",
+            "price": "$240"
+          }
+        },
+        "c2": {
+          "type": "case_row",
+          "settings": {
+            "order": "2 × 5 lb bags",
+            "save": "+ 4 lb free",
+            "price": "$480"
           }
         }
       },
       "block_order": [
-        "yuko_loyalty_reviews_loyalty_page_vip_tiers_DLcpMb"
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "c1",
+        "c2"
       ],
       "settings": {
-        "section_label": "Content block"
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
+        "eyebrow": "The Ayni Math",
+        "headline": "Half Again, On Every Pound",
+        "subhead": "Every way in is automatic. Buy by the pound and get half a pound free for each one, or take the 5 lb bag and get 2 lb free.",
+        "pricing_image": "shopify://shop_images/PACHAMANA--30.jpg",
+        "image_placeholder_text": "Cacao bars",
+        "bag_eyebrow": "By The Pound",
+        "bag_copy": "Every 1 lb bag or bar comes with a free half pound of the same cacao, and it repeats for each pound you add. Pure, Paste and Maple work out to $34.67 a pound. The blends work out to $38.67.",
+        "bag_low_price": "$34.67",
+        "bag_from_price": "$52",
+        "case_eyebrow": "The 5 lb Bulk Bag",
+        "case_copy": "Our 5 lb bag, in pure ground or paste, comes with 2 lb of the same cacao free. 7 lb for $240, the best price per pound we offer all year.",
+        "case_low_price": "$34.29",
+        "case_from_price": "$48",
+        "cta_label": "Start Your Order",
+        "cta_link": "/collections/all",
+        "cart_note": "Your free cacao appears in your cart on its own.",
+        "contact_eyebrow": "25 lb Or More",
+        "contact_title": "Stocking Up For A Circle?",
+        "contact_copy": "For bigger orders, write to us and we'll set it up with you directly.",
+        "contact_cta1": "Write To Us",
+        "contact_cta1_link": "mailto:support@pachamana.com",
+        "free_ship_text": "Free shipping is paused during AYNI. Your free cacao more than covers it.",
+        "subscribe_label": "Subscribers",
+        "subscribe_text": "Subscriptions don't qualify, and your Subscribe & Save price stays the same.",
+        "why_eyebrow": "Why We Give More",
+        "why_copy": "We learned Ayni from the families we work with in Peru. They care for old cacao trees the way their families always have, make the paste at the farm and wrap every bar there. We pay them 3x above fair trade, and we buy direct, with no broker in between. This week is our way of passing that on.",
+        "fine_print": "Full price items only. The free cacao doesn't combine with any code, subscription or other discount. Runs Mon 11/23, 12am PT, to Tue 12/1, 11:59pm PT."
+      }
+    },
+    "sizes": {
+      "type": "bulk-three-ways",
+      "blocks": {
+        "z1": {
+          "type": "size_card",
+          "settings": {
+            "tag": "Pure, Paste or Maple",
+            "size": "1 lb",
+            "description": "$52 a pound, with a free half pound of the same cacao.",
+            "price_label": "$34.67 / lb during AYNI"
+          }
+        },
+        "z2": {
+          "type": "size_card",
+          "settings": {
+            "tag": "The Blends",
+            "size": "1 lb",
+            "description": "Rose Vanilla, Golden Milk, Mayan Spice or Mushroom Vitality. $58 a pound, with a free half pound of the same blend.",
+            "price_label": "$38.67 / lb during AYNI"
+          }
+        },
+        "z3": {
+          "type": "size_card",
+          "settings": {
+            "tag": "Bulk Bag or Paste",
+            "size": "5 lb",
+            "description": "Our biggest bag, with 2 lb of the same cacao free. The best price per pound we offer all year.",
+            "price_label": "$240 for 7 lb"
+          }
+        }
+      },
+      "block_order": [
+        "z1",
+        "z2",
+        "z3"
+      ],
+      "settings": {
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
+        "eyebrow": "What You Get",
+        "headline": "The Same Cacao, With Extra",
+        "subhead": "Your free half pound always matches the cacao you chose."
+      }
+    },
+    "givers": {
+      "type": "bulk-segments",
+      "blocks": {
+        "g1": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-91.jpg",
+            "placeholder_label": "Two cups",
+            "name": "The Friend Going Through It",
+            "body": "A warm cup, a quiet morning, something that says I'm thinking of you."
+          }
+        },
+        "g2": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-0506.jpg",
+            "placeholder_label": "Family kitchen",
+            "name": "The One Who's Never Had Real Cacao",
+            "body": "Not hot chocolate. The real thing, from one farm we know by name."
+          }
+        },
+        "g3": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/cacao-sheny-leon-photography-maui-31_53e67bde-fad6-455d-9ecc-3bae0939fda1.jpg",
+            "placeholder_label": "Holding space",
+            "name": "The One Who Holds Space",
+            "body": "The yoga teacher, the healer, the one who shows up for everyone else. Hold some space for them."
+          }
+        },
+        "g4": {
+          "type": "segment",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-0064.jpg",
+            "placeholder_label": "Morning cup",
+            "name": "You",
+            "body": "Or keep it for yourself, because self-love is sacred too."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "bg_type": "color",
+        "bg_color": "#fdf8f3",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
+        "eyebrow": "The Extra Is Yours To Share",
+        "headline": "Who Will You Give It To?",
+        "subhead": "The extra cacao? That's your gift to give."
+      }
+    },
+    "products": {
+      "type": "bulk-products",
+      "blocks": {
+        "p1": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/7-1_8acfdfa2-3093-4aff-8ef3-1502ac73c47e.png",
+            "badge": "Single Origin",
+            "origin": "Paste Block",
+            "name": "Chuncho Paste",
+            "price": "1 lb $52 + ½ lb free",
+            "button_label": "Add",
+            "button_link": "https://pachamana.com/products/1lb-cacao-chuncho-ceremonial-grade"
+          }
+        },
+        "p2": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-170.jpg",
+            "badge": "Pure",
+            "origin": "Pure Ground Cacao",
+            "name": "Pure Ground",
+            "price": "1 lb $52 + ½ lb free",
+            "button_label": "Add",
+            "button_link": "https://pachamana.com/products/pure-ground-cermonial-cacao"
+          }
+        },
+        "p3": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-158.jpg",
+            "badge": "Sweetened",
+            "origin": "70% with Maple Sugar",
+            "name": "Maple Sweetened",
+            "price": "1 lb $52 + ½ lb free",
+            "button_label": "Add",
+            "button_link": "https://pachamana.com/products/maple-sweetened"
+          }
+        },
+        "p4": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/5_lb_bag.png",
+            "badge": "Best Value",
+            "origin": "Ground or Paste",
+            "name": "5 lb Bulk Bag",
+            "price": "$240 + 2 lb free",
+            "button_label": "Add",
+            "button_link": "https://pachamana.com/products/ground-chuncho-cacao-5lb-bag"
+          }
+        },
+        "p5": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA--93_copy.jpg",
+            "badge": "Botanical",
+            "origin": "Rose + Vanilla Bean",
+            "name": "Rose Vanilla",
+            "price": "1 lb $58 + ½ lb free",
+            "button_label": "Add",
+            "button_link": "https://pachamana.com/products/rose-vanilla-ground-cacao"
+          }
+        },
+        "p6": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/PACHAMANA-74.webp",
+            "badge": "Warming Spices",
+            "origin": "Turmeric + Ginger",
+            "name": "Golden Milk",
+            "price": "1 lb $58 + ½ lb free",
+            "button_label": "Add",
+            "button_link": "https://pachamana.com/products/golden-milk-ground-ceremonial-cacao"
+          }
+        },
+        "p7": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/mayan_spice_product_sjhot_final.png",
+            "badge": "Fire Ritual",
+            "origin": "Cinnamon + Cayenne + Sea Salt",
+            "name": "Mayan Spice",
+            "price": "1 lb $58 + ½ lb free",
+            "button_label": "Add",
+            "button_link": "https://pachamana.com/products/mayan-spice-ground-ceremonial-cacao"
+          }
+        },
+        "p8": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/20_mushroom-cacao-benefits-use.jpg",
+            "badge": "Functional",
+            "origin": "Cacao + Adaptogens",
+            "name": "Mushroom Vitality",
+            "price": "1 lb $58 + ½ lb free",
+            "button_label": "Add",
+            "button_link": "https://pachamana.com/products/mushroom-vitality-ground-cacao-bag"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "settings": {
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
+        "eyebrow": "Choose Your Cacao",
+        "headline": "Every Pound Comes With A Free Half Pound",
+        "subhead": "Heirloom Chuncho, the ancestor of all cacao. Not bitter, and the most user friendly ceremonial cacao we know of.",
+        "bottom_copy": "Every batch is tested for heavy metals, herbicides and pesticides.",
+        "cta_label": "See The Lab Results",
+        "cta_link": "/pages/safe-cacao"
+      }
+    },
+    "story": {
+      "type": "bulk-reselling",
+      "settings": {
+        "bg_type": "image",
+        "bg_color": "#fdf8f3",
+        "bg_image": "shopify://shop_images/10_cacao-cadmium-levels-lead-results.jpg",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 50,
+        "headline": "It's Not Transactional. It's Relational.",
+        "body": "Our cacao comes from one multigenerational family farm we work with directly, in the Sacred Valley region just outside Cusco, in the ceja de selva, the eyebrow of the jungle. They work hand in hand with the Quechua and Machiguenga farming families around them. When you give, you receive.",
+        "cta_label": "Our Story",
+        "cta_link": "/pages/about"
+      }
+    },
+    "faq": {
+      "type": "bulk-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "When does AYNI start and end?",
+            "answer": "<p>Monday 11/23 at 12am Pacific through Giving Tuesday, 12/1, at 11:59pm Pacific. It's our one giving-back event of the year.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need a code?",
+            "answer": "<p>No. Your free cacao adds itself to your cart. It doesn't combine with any code or discount, so entering a code removes the free cacao.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "What about the 6 blend bundle?",
+            "answer": "<p>The Ultimate Ceremonial Cacao Bundle comes with a free pound of Pure.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do subscriptions count?",
+            "answer": "<p>No, the free cacao is for one-time, full price orders. Your Subscribe &amp; Save price and schedule stay as they are, with no minimum: skip, push, change or cancel anytime.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "How does shipping work?",
+            "answer": "<p>Free shipping is paused during AYNI. Your free cacao more than covers it. Orders ship at our regular $9 rate from Grass Valley, California, and go out on our next ship day (Monday, Wednesday or Friday).</p>"
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "Is it safe?",
+            "answer": "<p>Every batch is tested for heavy metals, herbicides and pesticides, and the results are on our <a href='/pages/safe-cacao'>Safe Cacao page</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "bg_type": "color",
+        "bg_color": "#f9f2ef",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#000000",
+        "bg_overlay_opacity": 0,
+        "eyebrow": "Questions",
+        "headline": "Good To Know"
+      }
+    },
+    "cta": {
+      "type": "bulk-cta",
+      "settings": {
+        "bg_type": "image",
+        "bg_color": "",
+        "bg_image": "shopify://shop_images/cacao-sheny-leon-photography-maui-85.jpg",
+        "bg_opacity": 100,
+        "bg_overlay_color": "#5c402f",
+        "bg_overlay_opacity": 80,
+        "eyebrow": "Mon 11/23 to Giving Tuesday 12/1",
+        "headline": "When You Give, You Receive",
+        "subhead": "This isn't a sale. It's a cycle of giving and receiving. It is Ayni.",
+        "cta1_label": "Choose Your Cacao",
+        "cta1_link": "/collections/all",
+        "cta2_label": "Read Our Story",
+        "cta2_link": "/pages/about",
+        "contact_line": "support@pachamana.com · Grass Valley, California"
       }
     }
   },
   "order": [
-    "main",
-    "177430428325042baf",
-    "1774304300661ffd62",
-    "1774304327c9c0f079"
+    "hero",
+    "savings",
+    "calc",
+    "sizes",
+    "givers",
+    "products",
+    "story",
+    "faq",
+    "cta"
   ]
 }
