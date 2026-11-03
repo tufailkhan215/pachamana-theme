@@ -1,0 +1,38 @@
+{%- comment -%} AYNI 2026 product note. Built by pacha-mana/marketing/website/ayni-2026-banner/build.py. Do not edit here. {%- endcomment -%}
+{%- assign ayni_now = 'now' | date: '%s' | plus: 0 -%}
+{%- assign ayni_phase = 'off' -%}
+{%- if ayni_now >= 1795334400 and ayni_now < 1795420800 -%}{%- assign ayni_phase = 'early' -%}{%- endif -%}
+{%- if ayni_now >= 1795420800 and ayni_now <= 1796198399 -%}{%- assign ayni_phase = 'live' -%}{%- endif -%}
+{%- assign ayni_body = '' -%}{%- assign ayni_sizes = '' -%}
+{%- case product.handle -%}
+{%- when '1lb-cacao-chuncho-ceremonial-grade' -%}{%- capture ayni_body -%}Every 1 lb earns a free half pound of the same cacao, and every 5 lb earns two free 1 lb bars.{%- endcapture -%}{%- capture ayni_sizes -%}The &frac12; lb and 1 kilo sizes don&rsquo;t include the gift.{%- endcapture -%}
+{%- when 'pure-ground-cermonial-cacao' -%}{%- capture ayni_body -%}Every 1 lb earns a free half pound of the same cacao, and every 5 lb bag earns two free 1 lb bags.{%- endcapture -%}{%- capture ayni_sizes -%}The &frac12; lb bag and packets don&rsquo;t include the gift.{%- endcapture -%}
+{%- when 'mayan-spice-ground-ceremonial-cacao' -%}{%- capture ayni_body -%}Every 1 lb bag earns a free half pound of the same blend.{%- endcapture -%}{%- capture ayni_sizes -%}The &frac12; lb bag and packets don&rsquo;t include the gift.{%- endcapture -%}
+{%- when 'golden-milk-ground-ceremonial-cacao' -%}{%- capture ayni_body -%}Every 1 lb bag earns a free half pound of the same blend.{%- endcapture -%}{%- capture ayni_sizes -%}The &frac12; lb bag and packets don&rsquo;t include the gift.{%- endcapture -%}
+{%- when 'rose-vanilla-ground-cacao' -%}{%- capture ayni_body -%}Every 1 lb bag earns a free half pound of the same blend.{%- endcapture -%}{%- capture ayni_sizes -%}The &frac12; lb bag and packets don&rsquo;t include the gift.{%- endcapture -%}
+{%- when 'mushroom-vitality-ground-cacao-bag' -%}{%- capture ayni_body -%}Every 1 lb bag earns a free half pound of the same blend.{%- endcapture -%}{%- capture ayni_sizes -%}The &frac12; lb bag and packets don&rsquo;t include the gift.{%- endcapture -%}
+{%- when 'maple-sweetened' -%}{%- capture ayni_body -%}Every 1 lb bag earns a free half pound of the same blend.{%- endcapture -%}{%- capture ayni_sizes -%}The &frac12; lb bag and packets don&rsquo;t include the gift.{%- endcapture -%}
+{%- when 'ground-chuncho-cacao-5lb-bag' -%}{%- capture ayni_body -%}Every 5 lb earns two free 1 lb bags of the same cacao.{%- endcapture -%}
+{%- when 'ceremonial-cacao-blend-bundle' -%}{%- capture ayni_body -%}This bundle comes with a free 1 lb bag of Pure Ground.{%- endcapture -%}
+{%- endcase -%}
+{%- if ayni_body != '' and ayni_now <= 1796198399 -%}
+<style>
+.ayni-note{display:none;margin:0 0 18px;padding:16px 18px;border-radius:10px;font-family:Lora,Georgia,serif;font-size:16px;line-height:1.5;text-align:left;}
+.ayni-note[data-phase="live"]{display:block;}
+.ayni-note__label{display:block;margin:0 0 6px;font-family:OAXACA,Lora,Georgia,serif;font-size:15px;letter-spacing:.06em;text-transform:uppercase;}
+.ayni-note__body{margin:0;}
+.ayni-note__small{margin:8px 0 0;font-size:14px;opacity:.85;}
+.ayni-note__link{color:inherit;text-decoration:underline;text-underline-offset:3px;font-size:14px;}
+/* A */ .ayni-note--a{background:#f9f2ef;color:#5c402f;border:1px solid #c18d1a;} .ayni-note--a .ayni-note__label{color:#c53e15;}
+/* B */ .ayni-note--b{background:#5c402f;color:#f9f2ef;} .ayni-note--b .ayni-note__label{color:#e2ab43;}
+/* C */ .ayni-note--c{background:#fee7be;color:#5c402f;border-left:5px solid #eca920;border-radius:4px 10px 10px 4px;} .ayni-note--c .ayni-note__label{color:#5c402f;}
+</style>
+<div class="ayni-note ayni-note--c" data-phase="{{ ayni_phase }}">
+  <span class="ayni-note__label">The Ayni Holiday Event</span>
+  <p class="ayni-note__body">{{ ayni_body }} Added at checkout, nothing to enter.</p>
+  <p class="ayni-note__small">One-time orders only, through Tuesday 12/1. Can&rsquo;t be combined with codes or Subscribe &amp; Save. {{ ayni_sizes }} <a class="ayni-note__link" href="/pages/ayni?utm_source=site&amp;utm_medium=product_note&amp;utm_campaign=ayni_bf_2026">How Ayni works</a></p>
+</div>
+<script>
+(function(){var n=document.currentScript.previousElementSibling;try{if(new URLSearchParams(location.search).get('ayni_preview')==='live'){n.setAttribute('data-phase','live');}}catch(e){}})();
+</script>
+{%- endif -%}
