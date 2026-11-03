@@ -1,0 +1,47 @@
+{%- comment -%} AYNI 2026 banner. Built by pacha-mana/marketing/website/ayni-2026-banner/build.py. Do not edit here. {%- endcomment -%}
+{%- assign ayni_now = 'now' | date: '%s' | plus: 0 -%}
+{%- assign ayni_phase = 'off' -%}
+{%- if ayni_now >= 1795334400 and ayni_now < 1795420800 -%}{%- assign ayni_phase = 'early' -%}{%- endif -%}
+{%- if ayni_now >= 1795420800 and ayni_now <= 1796198399 -%}{%- assign ayni_phase = 'live' -%}{%- endif -%}
+{%- if ayni_now <= 1796198399 -%}
+<style>
+.ayni-bar{display:none;position:relative;z-index:60;font-family:Lora,Georgia,serif;font-size:15px;line-height:1.35;text-align:center;}
+.ayni-bar[data-phase="early"],.ayni-bar[data-phase="live"]{display:block;}
+.ayni-bar a.ayni-bar__in{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px 48px;text-decoration:none;color:inherit;}
+.ayni-bar__label{font-family:OAXACA,Lora,Georgia,serif;letter-spacing:.06em;text-transform:uppercase;font-size:15px;}
+.ayni-bar__go{text-decoration:underline;text-underline-offset:3px;white-space:nowrap;}
+.ayni-bar [data-show]{display:none;}
+.ayni-bar[data-phase="early"] .ayni-bar__label[data-show="early"],.ayni-bar[data-phase="live"] .ayni-bar__label[data-show="live"],
+.ayni-bar[data-phase="early"] .ayni-bar__desk[data-show="early"],.ayni-bar[data-phase="live"] .ayni-bar__desk[data-show="live"]{display:inline;}
+.ayni-bar__x{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;background:none;color:inherit;font-size:20px;line-height:1;cursor:pointer;opacity:.75;}
+.ayni-bar__x:hover{opacity:1;}
+@media (max-width:749px){.ayni-bar a.ayni-bar__in{gap:8px;padding:9px 44px 9px 14px;font-size:14px;}.ayni-bar__label{font-size:13px;}.ayni-bar .ayni-bar__desk{display:none!important;}.ayni-bar[data-phase="early"] .ayni-bar__phone[data-show="early"],.ayni-bar[data-phase="live"] .ayni-bar__phone[data-show="live"]{display:inline;}}
+/* A: wheat */
+.ayni-bar--a{background:#f4d5a4;color:#5c402f;border-bottom:1px solid #c18d1a;}
+.ayni-bar--a .ayni-bar__label{color:#c53e15;}
+/* B: milk chocolate */
+.ayni-bar--b{background:#5c402f;color:#f9f2ef;border-bottom:2px solid #eca920;}
+.ayni-bar--b .ayni-bar__label{color:#e2ab43;}
+/* C: marigold */
+.ayni-bar--c{background:#eca920;color:#5c402f;}
+.ayni-bar--c .ayni-bar__label{color:#5c402f;}
+.ayni-bar--c .ayni-bar__go{font-weight:600;}
+</style>
+<div class="ayni-bar ayni-bar--c" data-phase="{{ ayni_phase }}" role="region" aria-label="Ayni Holiday Event">
+  <a class="ayni-bar__in" href="/pages/ayni?utm_source=site&amp;utm_medium=banner&amp;utm_campaign=ayni_bf_2026">
+    <span class="ayni-bar__label" data-show="early">Ayni starts Monday</span><span class="ayni-bar__label" data-show="live">The Ayni Holiday Event</span>
+    <span class="ayni-bar__desk" data-show="early">Our yearly giving back: buy 2 lb, get 1 lb free &middot; $9 standard shipping through 12/1</span><span class="ayni-bar__desk" data-show="live">Our yearly giving back: buy 2 lb, get 1 lb free &middot; $9 standard shipping through 12/1</span>
+    <span class="ayni-bar__phone" data-show="early">Buy 2 lb, get 1 lb free</span><span class="ayni-bar__phone" data-show="live">Buy 2 lb, get 1 lb free</span>
+    <span class="ayni-bar__go ayni-bar__desk" data-show-all>See how it works &rarr;</span>
+  </a>
+  <button type="button" class="ayni-bar__x" aria-label="Close">&times;</button>
+</div>
+<script>
+(function(){
+  var bar=document.currentScript.previousElementSibling; if(!bar) return;
+  try{var p=new URLSearchParams(location.search).get('ayni_preview'); if(p==='early'||p==='live'){bar.setAttribute('data-phase',p);}}catch(e){}
+  try{if(sessionStorage.getItem('ayniBarClosed')==='1'){bar.style.display='none';}}catch(e){}
+  bar.querySelector('.ayni-bar__x').addEventListener('click',function(){bar.style.display='none';try{sessionStorage.setItem('ayniBarClosed','1');}catch(e){}});
+})();
+</script>
+{%- endif -%}
