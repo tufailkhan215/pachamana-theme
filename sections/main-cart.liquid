@@ -75,7 +75,7 @@
               </thead>
               <tbody>
                 {%- for item in cart.items -%}
-                  <tr class="woocommerce-cart-form__cart-item cart_item" data-cart-item-key="{{ item.key }}">
+                  <tr class="woocommerce-cart-form__cart-item cart_item" data-cart-item-key="{{ item.key }}"{% if item.properties['_bogos_trigger_type'] != blank %} data-free-gift{% endif %}>
                     <td class="product-thumbnail">
                       {%- if item.image -%}
                         <a href="{{ item.url }}">
