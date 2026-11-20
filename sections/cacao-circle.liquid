@@ -57,7 +57,7 @@
 
 .cc-lp .origin{display:grid;grid-template-columns:1fr 1fr;background:var(--page);}
 .cc-lp .origin .txt{padding:110px 80px;align-self:center;max-width:640px;justify-self:end;}
-.cc-lp .origin .ph{background:url('https://cdn.shopify.com/s/files/1/0725/1188/1261/files/Mark-photo.jpg?v=1769424884&width=1200') center 30%/cover no-repeat;min-height:640px;}
+.cc-lp .origin .ph{background:url('https://cdn.shopify.com/s/files/1/0725/1188/1261/files/pm-mark-cacao-circle-w1600.jpg?v=1795132923&width=1200') center 22%/cover no-repeat;min-height:640px;}
 
 .cc-lp .cup{background:var(--body);}
 .cc-lp .cup .wrap{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;}
@@ -133,7 +133,7 @@
 
 <div class="facts"><div class="wrap">
  <div class="fact"><b>{{ section.settings.circle_date | escape }}</b><span>next circle</span></div>
- <div class="fact"><b>6pm Pacific</b><span>9pm Eastern / 4pm Hawaii</span></div>
+ <div class="fact"><b>{{ section.settings.circle_time | escape }}</b><span>{{ section.settings.circle_time_other | escape }}</span></div>
  <div class="fact"><b>60 minutes</b><span>on Google Meet</span></div>
  <div class="fact"><b>Free</b><span>no experience needed</span></div>
 </div></div>
@@ -154,9 +154,9 @@
 
 <section class="origin">
  <div class="txt"><p class="eyebrow">Your guide</p><h2 class="h2">Meet Mark</h2>
-  <p>Mark Gregory is one of our founders. He fell in love with ceremonial cacao during his Peace Corps years in Peru, and in 2022 he went back to look for a farm, sending samples home to California until we found the right one: a multigenerational family farm in the Sacred Valley region just outside Cusco, in the ceja de selva, the &ldquo;eyebrow of the jungle.&rdquo; It&rsquo;s the farm we still work with today. Mark lives on Maui and will guide the circle from there.</p>
+  <p>Mark Gregory is one of our founders. He fell in love with ceremonial cacao while working on a farm in East Maui, and in 2022 he went back to Peru (where he had previously served as a Peace Corps Volunteer) to look for a farm, sending samples home to California until we found the right one: a multigenerational family farm in the Sacred Valley region just outside Cusco. It&rsquo;s the farm we still work with today. Mark lives on Maui and will guide the circle from there.</p>
  </div>
- <div class="ph" role="img" aria-label="Mark Gregory at the farm in Peru with drying cacao beans"></div>
+ <div class="ph" role="img" aria-label="Mark Gregory holding a cup of ceremonial cacao"></div>
 </section>
 
 <section class="sec cup"><div class="wrap">
@@ -175,7 +175,7 @@
 
 <section class="sec signup" id="save-my-spot"><div class="wrap"><div class="box">
  <p class="eyebrow">Join us</p><h2 class="h2">Save my spot</h2>
- <p class="date">{{ section.settings.circle_date | escape }} &middot; 6pm Pacific / 9pm Eastern / 4pm Hawaii</p>
+ <p class="date">{{ section.settings.circle_date | escape }} &middot; {{ section.settings.circle_time | escape }} / {{ section.settings.circle_time_other | escape }}</p>
  <div class="klaviyo-form-{{ section.settings.form_id | escape }}"></div>
  <p class="fine">You&rsquo;ll get the link by email. We&rsquo;ll also send our newsletter, and you can unsubscribe anytime.</p>
 </div></div></section>
@@ -187,4 +187,4 @@
 if(!b||!('IntersectionObserver' in window))return;var hv=true,cv=false;function s(){b.classList.toggle('on',!hv&&!cv);}
 new IntersectionObserver(function(e){hv=e[0].isIntersecting;s();}).observe(h);
 new IntersectionObserver(function(e){cv=e[0].isIntersecting;s();}).observe(c);})();</script>
-</div>{% schema %}{"name": "Cacao Circle page", "settings": [{"type": "text", "id": "circle_date", "label": "Next circle date", "default": "Thursday, January 21, 2027", "info": "Change each month, e.g. Saturday, February 20, 2027"}, {"type": "text", "id": "order_by", "label": "Order by date", "default": "Wednesday, January 13", "info": "A ship day (Mon, Wed or Fri) about a week before the circle"}, {"type": "text", "id": "form_id", "label": "Klaviyo form ID", "default": "WHsuGM"}]}{% endschema %}
+</div>{% schema %}{"name": "Cacao Circle page", "settings": [{"type": "text", "id": "circle_date", "label": "Next circle date", "default": "Friday, January 22, 2027", "info": "Change each month, e.g. Saturday, February 20, 2027"}, {"type": "text", "id": "circle_time", "label": "Start time (main)", "default": "6pm Pacific", "info": "Shown big, e.g. 6pm Pacific"}, {"type": "text", "id": "circle_time_other", "label": "Start time (other zones)", "default": "9pm Eastern / 4pm Hawaii", "info": "e.g. 9pm Eastern / 4pm Hawaii"}, {"type": "text", "id": "order_by", "label": "Order by date", "default": "Wednesday, January 13", "info": "A ship day (Mon, Wed or Fri) about a week before the circle"}, {"type": "text", "id": "form_id", "label": "Klaviyo form ID", "default": "WHsuGM"}]}{% endschema %}
