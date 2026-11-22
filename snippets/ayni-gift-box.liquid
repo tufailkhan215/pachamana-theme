@@ -1,0 +1,48 @@
+{%- comment -%}
+  AYNI 2026: restyles the BOGOS free-gift box on product pages (Justin, 11/22).
+  One stacked box under Add to cart, clear labels, 5 lb bag photo on the 5 lb line, no countdown.
+  Source: pacha-mana/marketing/website/ayni-2026-banner/snippets/ayni-gift-box.liquid
+  Outputs nothing after Tue 12/1 11:59pm PT. Remove the render line from theme.liquid on 12/2.
+{%- endcomment -%}
+{%- assign ayni_now = 'now' | date: '%s' | plus: 0 -%}
+{%- if ayni_now < 1796198340 -%}
+<style id="ayni-gift-box">
+.e-atc-qty-button-holder.sca-fg-form-thumbnail-product-page{flex-wrap:wrap !important;row-gap:14px}
+.e-atc-qty-button-holder.sca-fg-form-thumbnail-product-page > .quantity{flex:0 0 auto !important;order:1}
+.e-atc-qty-button-holder.sca-fg-form-thumbnail-product-page > button{flex:1 1 0 !important;min-width:0 !important;order:2}
+.e-atc-qty-button-holder.sca-fg-form-thumbnail-product-page > #sca-gift-thumbnail{order:3;flex:0 0 100% !important;width:100% !important;max-width:100% !important;margin:0 !important}
+#sca-gift-thumbnail .fg-gift-thumbnail-container{display:block !important;width:100% !important;background:#fdf6ea;border:0 !important;border-left:4px solid #eca920 !important;border-radius:6px;padding:14px 16px !important;box-shadow:none !important}
+#sca-gift-thumbnail .fg-gift-thumbnail-container::before{content:"Your free Ayni gift";display:block;font-family:OAXACA,Lora,Georgia,serif;letter-spacing:.06em;text-transform:uppercase;font-size:14px;color:#5c402f;margin-bottom:8px}
+#sca-gift-thumbnail .fg-gift-thumbnail-offer{display:grid !important;grid-template-columns:56px 1fr;align-items:center;column-gap:12px;width:100% !important;border:0 !important;border-radius:0 !important;background:transparent !important;padding:8px 0 !important;margin:0 !important;box-shadow:none !important}
+#sca-gift-thumbnail .fg-gift-thumbnail-offer + .fg-gift-thumbnail-offer{border-top:1px solid rgba(92,64,47,.15) !important}
+#sca-gift-thumbnail .fg-gift-thumbnail-offer-time,#sca-gift-thumbnail .fg-gift-thumbnail-offer-footer{display:none !important}
+#sca-gift-thumbnail .fg-gift-thumbnail-offer-header{grid-column:2;grid-row:1;background:transparent !important;padding:0 !important;min-height:0 !important}
+#sca-gift-thumbnail .fg-gift-thumbnail-offer-title{font-family:Lora,Georgia,serif !important;font-size:16px !important;font-weight:400 !important;line-height:1.4 !important;color:#5c402f !important;padding:0 !important;letter-spacing:0 !important}
+#sca-gift-thumbnail .fg-gift-thumbnail-offer-body{grid-column:1;grid-row:1;padding:0 !important;width:56px !important}
+#sca-gift-thumbnail .glider-contain,#sca-gift-thumbnail .glider{width:56px !important;height:56px !important}
+#sca-gift-thumbnail .product-item,#sca-gift-thumbnail .product-item img{width:56px !important;height:56px !important;border-radius:6px;object-fit:cover}
+</style>
+<script>
+(function(){
+  var BAG5 = "https://cdn.shopify.com/s/files/1/0725/1188/1261/files/5lb_bag_product_shop_final.png?v=1789424725&width=160";
+  function fix(){
+    var box = document.getElementById('sca-gift-thumbnail');
+    if(!box) return;
+    box.querySelectorAll('.fg-gift-thumbnail-offer').forEach(function(o){
+      var t = o.querySelector('.fg-gift-thumbnail-offer-title');
+      if(!t || t.getAttribute('data-ayni')) return;
+      var s = t.textContent;
+      if(/half pound/i.test(s)){ t.textContent = 'With each 1 lb: a free ½ lb of the same cacao'; }
+      else if(/two free pounds/i.test(s)){
+        t.textContent = 'With each 5 lb bag: 2 lb free';
+        o.querySelectorAll('.product-item img').forEach(function(i){ i.src = BAG5; i.removeAttribute('srcset'); });
+      }
+      else if(/kilo/i.test(s)){ t.textContent = 'Buy 2 kilos: a third kilo free'; }
+      t.setAttribute('data-ayni','1');
+    });
+  }
+  new MutationObserver(fix).observe(document.documentElement,{childList:true,subtree:true});
+  document.addEventListener('DOMContentLoaded', fix);
+})();
+</script>
+{%- endif -%}
