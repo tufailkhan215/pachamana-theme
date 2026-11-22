@@ -19,7 +19,7 @@
         "bg_overlay_opacity": 0,
         "eyebrow": "Bulk Cacao · No License Needed",
         "headline": "Buy More,\nPour More",
-        "subhead": "We are on a mission to make cacao affordable. The same wild-harvested heirloom Chuncho cacao, at a better price when you stock up. Volume discounts apply automatically at checkout — no application, no code, no waiting on us.",
+        "subhead": "During Ayni, through Tuesday 12/1, our volume discounts take a short rest. Instead, every pound you buy comes with a free half pound, and each 5 lb bag comes with 2 lb free. Bulk pricing comes back Wednesday 12/2.",
         "mark_image": "shopify://shop_images/Cacao_Pods_2.png",
         "cta1_label": "Shop Bulk",
         "cta1_link": "/collections/all",
@@ -69,7 +69,7 @@
         "bg_overlay_opacity": 65,
         "eyebrow": "How It Works",
         "headline": "Saving Is Automatically applied",
-        "subhead": ""
+        "subhead": "Paused for Ayni through 12/1: your free cacao is added to your cart instead. Bulk pricing comes back Wednesday 12/2."
       }
     },
     "calc": {
@@ -175,13 +175,13 @@
         "case_from_price": "$48",
         "cta_label": "Start Your Order",
         "cta_link": "",
-        "cart_note": "Your discount appears automatically as your cart grows.",
+        "cart_note": "During Ayni your free cacao appears in your cart instead. Bulk pricing comes back 12/2.",
         "contact_eyebrow": "Over 25 lb",
         "contact_title": "Let's Build Your Price",
         "contact_copy": "Past 25 lb, freight shifts as the price comes down — so we set these orders up with you directly. Reach out and we'll organize a price that works for you.",
         "contact_cta1": "Contact Sales",
         "contact_cta1_link": "mailto:support@pachamana.com",
-        "free_ship_text": "Every order over $100 ships free.",
+        "free_ship_text": "Standard shipping is $9 on every order during Ayni, through 12/1.",
         "subscribe_label": "Subscribe & Save",
         "subscribe_text": "Want the 15% price on just 1–5 lb? Commit to a subscription — doesn’t stack with bulk pricing.",
         "why_eyebrow": "Why We Do It This Way",
